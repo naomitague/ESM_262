@@ -16,7 +16,7 @@ website:
       - href: index.qmd
         text: home
       - text: syllabus
-        href: https://docs.google.com/document/d/1hoo2DEroXlqBhhc6LmnsYFe8_7IbHny5yk7yXLfQp-4/edit?usp=sharing
+        href: ESM_262_syllabus.qmd
         target: _blank
       - text: course materials
         menu:

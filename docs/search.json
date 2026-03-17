@@ -166,5 +166,61 @@
     "title": "EDS 123",
     "section": "",
     "text": "You can arrange content in columns\n\n\n\nLearn more about the MEDS program on the Bren website."
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#a-bit-about-me",
+    "href": "ESM_262_syllabus.html#a-bit-about-me",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "A bit about me",
+    "text": "A bit about me\n\n\n\n\n\nGrowing skills"
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#course-description",
+    "href": "ESM_262_syllabus.html#course-description",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "Course description",
+    "text": "Course description\nESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.\n\nprogramming language concepts;\nmodular program design;\ndata structures and flow control,\nversion control,\ntesting,\ndocumentation and reproducibility.\n\nThe course features R for programming, Git for version control, Markdown for workflow, and GitHub for collaboration and publishing, but many concepts would be applicable in other software design tools.\nClass will include a mix of lectures and hands-on examples, using students’ own computers."
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#course-where-and-when",
+    "href": "ESM_262_syllabus.html#course-where-and-when",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "Course where and when",
+    "text": "Course where and when\nT/TH 8:00 AM - 9:15 AM (Bren Hall 1414)\nTeaching Team\nInstructor: Naomi Tague (www.tagueteamlab.org)\n\nOffice hours: email me\nemail (tague@ucsb.edu)\ngit user id naomitague\n\nTeaching assistant: Ojas Sarup\n\nOffice hours: Tuesday / Thursday 3pm-4pm\nemail (ojassarup@ucsb.edu )\ngit user id osarup"
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#learning-objectives",
+    "href": "ESM_262_syllabus.html#learning-objectives",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n3 BIG concepts in programming are modularity, data structure, looping - we will learn skills related to all three of these\nlearn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)\n\ndocumentation\ntesting\n\nlearn some new Rskills that are helpful for a wide variety of data science applications\npractice partner coding"
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#computing-set-up",
+    "href": "ESM_262_syllabus.html#computing-set-up",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "Computing set up",
+    "text": "Computing set up\n\nMake sure you have installed git, R, R-studio\nPlease bring your laptop to class"
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#course-materials-and-how-we-will-work",
+    "href": "ESM_262_syllabus.html#course-materials-and-how-we-will-work",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "Course materials and how we will work",
+    "text": "Course materials and how we will work\nAll lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Canvas)\nPrior to most classes, I will ask you to study an Rmarkdown document (and often an example R-functions) before class Then at the beginning of class, I will briefly go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document. This way we use the class time as a lab - where you can get guidance.\nthis mean its essential for you to do the review before class\nWhy structure it this way? You learn to code by doing - not so much by watching others do!"
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#topics",
+    "href": "ESM_262_syllabus.html#topics",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "Topics",
+    "text": "Topics\n\n\n\n\n\n#\nDate\nType\nTopic\n\n\n\n\n1\nTue, Apr 15\nRegular\n\n\n\n2\nThu, Apr 17\nRegular\n\n\n\n3\nTue, Apr 22\nRegular\n\n\n\n4\nThu, Apr 24\nRegular\n\n\n\n5\nTue, Apr 29\nRegular\n\n\n\n6\nThu, May 1\nRegular\n\n\n\n7\nTue, May 6\nRegular\n\n\n\n8\nThu, May 8\nRegular\n\n\n\n9\nMon, May 12\nEvening\n\n\n\n10\nTue, May 13\nRegular\n\n\n\n11\nThu, May 15\nRegular\n\n\n\n12\nMon, May 19\nEvening\n\n\n\n13\nTue, May 20\nRegular\n\n\n\n14\nThu, May 22\nRegular\n\n\n\n15\nTue, May 27\nRegular\n\n\n\n16\nThu, May 29\nRegular\n\n\n\n17\nTue, Jun 3\nRegular\n\n\n\n18\nThu, Jun 5\nRegular"
+  },
+  {
+    "objectID": "ESM_262_syllabus.html#assignments",
+    "href": "ESM_262_syllabus.html#assignments",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "Assignments",
+    "text": "Assignments\nThere will be 5 assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups."
   }
 ]
