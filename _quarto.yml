@@ -17,7 +17,6 @@ website:
         text: home
       - text: syllabus
         href: ESM_262_syllabus.qmd
-        target: _blank
       - text: course materials
         menu:
           - text: week 1 (DD/MM)
