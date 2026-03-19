@@ -306,5 +306,12 @@
     "title": "Quarto- Spring 2026",
     "section": "Some Hints",
     "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nstart with a setup section at the top to load all packages and set options\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#comments-on-papers",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#comments-on-papers",
+    "title": "Quarto- Spring 2026",
+    "section": "Comments on papers",
+    "text": "Comments on papers"
   }
 ]
