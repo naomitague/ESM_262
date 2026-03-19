@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<link href="./images/bren-hex.png" rel="icon" type="image/png">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../images/bren-hex.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>EDS 123 – Syllabus ESM 262 - Spring 2026</title>
+  <title>EDS 123 – Quarto- Spring 2026</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-832775eafbd512325564c8c290c39367.css">
-  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-832775eafbd512325564c8c290c39367.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -127,287 +127,107 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Syllabus ESM 262 - Spring 2026</h1>
+  <h1 class="title">Quarto- Spring 2026</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="a-bit-about-me" class="slide level2">
-<h2>A bit about me</h2>
+<section id="quarto" class="slide level2">
+<h2>Quarto</h2>
+<p>Quarto is a scientific and technical publishing system built on Pandoc. It enables you to combine content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+<p>Its a lot like R Markdown, but with more features and capabilities. It also has a lot of similarities to Jupyter Notebooks, but with more features and capabilities.</p>
+</section>
+<section id="classic-example-of-quarto" class="slide level2">
+<h2>Classic Example of Quarto</h2>
+<ul>
+<li>dowload <em>hello.qmd</em> from the course website</li>
+<li>open it in RStudio</li>
+</ul>
+</section>
+<section id="lets-go-through-the-code-in-hello.qmd-and-see-how-it-works" class="slide level2">
+<h2>Lets go through the code in hello.qmd and see how it works</h2>
+<p>Quarto documents are made up of three main components:</p>
+<ol type="1">
+<li>YAML header</li>
+<li>Markdown content</li>
+<li>Code chunks</li>
+</ol>
+</section>
+<section id="yaml-header" class="slide level2 scrollable">
+<h2>YAML header</h2>
+<p>The YAML header is where you specify</p>
+<ul>
+<li>the title of your document,</li>
+<li>the output format, and other metadata.</li>
+</ul>
+<p>In this example, the output format is <code>revealjs</code>, which is a presentation format.</p>
+<p>Other formats include</p>
+<ul>
+<li>html</li>
+<li>pdf</li>
+<li>word</li>
+</ul>
+<p>You may need to install additional software to use some of these formats (e.g.&nbsp;pandoc, latex).</p>
+</section>
+<section id="yaml-header-1" class="slide level2">
+<h2>Yaml Header</h2>
+<p>Some other things you can put in YAML header - author - date - resources (e.g.&nbsp;images, css files) - theme (for presentations)</p>
+<p>Resources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.</p>
+<p>Paths will be relative to the location of your .qmd file. So if you have an image in a folder called “images” that is in the same directory as your .qmd file, you can specify the path to that image as “images/image.png”.</p>
+<p>Some themes for presentaion inlucde - solarized - metropolis - night - sky</p>
+</section>
+<section id="markdown-and-code-chunks" class="slide level2">
+<h2>Markdown and Code Chunks</h2>
+<p>Should be familiar to you - much like R Markdown.</p>
+<p>Quarto can also include other languages, such as Python, Julia, and JavaScript.</p>
+</section>
+<section id="rendering" class="slide level2">
+<h2>Rendering</h2>
+<p>To render a Quarto document, use the “Render” button in RStudio.</p>
+<p>When you render a Quarto document, it will execute all the code chunks and include the output in the final document.</p>
+<p>In Rstudio - you have two views of the <em>quarto</em> document</p>
+<ul>
+<li><em>Source</em> view is where you write your code and markdown.</li>
+<li><em>Visual</em> view is where you see the final output of your document.</li>
+</ul>
+</section>
+<section id="lets-look-at-the-code-in-hello.qmd-and-see-how-it-works" class="slide level2">
+<h2>Lets look at the code in <em>hello.qmd</em> and see how it works</h2>
+</section>
+<section id="meet-the-penguins" class="slide level2 scrollable">
+<h2>Meet the penguins</h2>
+<p><img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png" style="float:right;" alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401"></p>
+<p>The <code>penguins</code> data from the <a href="https://allisonhorst.github.io/palmerpenguins" title="palmerpenguins R package"><strong>palmerpenguins</strong></a> package contains size measurements for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.</p>
+<p>The plot below shows the relationship between flipper and bill lengths of these penguins.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure>
-<p><img data-src="images/whoIam.jpeg" style="width:90.0%;height:90.0%"></p>
-<figcaption>Growing skills</figcaption>
+<p><img data-src="lecture1.quarto-slides_files/figure-revealjs/plot-penguins-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="course-description" class="slide level2">
-<h2><span style="color:orange">Course description</span></h2>
-<p>ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.</p>
+<section id="play" class="slide level2">
+<h2>Play</h2>
+<p>Make some changes to the hello.qmd</p>
 <ul>
-<li>programming language concepts</li>
-<li>loops and repetition</li>
-<li>data types and structures</li>
-<li>modular program design;</li>
-<li>reproducibility and version control;</li>
-<li>testing, documentation, and workflow;</li>
-</ul>
-<p>The course features <strong>R</strong> for programming, <strong>Git</strong> for version control, <strong>Quarto</strong> for workflow and editing, and <strong>GitHub</strong> for collaboration and publishing, but many concepts would be applicable in other software design tools.</p>
-<p>Class will include a mix of lectures and hands-on examples, using students’ own computers.</p>
-</section>
-<section id="course-where-and-when" class="slide level2">
-<h2><span style="color:orange">Course where and when</span></h2>
-<p><strong>T/TH</strong> 8:00 AM - 9:15 AM (Bren Hall 1414)</p>
-<p>Teaching Team</p>
-<p><strong>Instructor:</strong> Naomi Tague (www.tagueteamlab.org)</p>
-<ul>
-<li><strong>Office hours:</strong> email me</li>
-<li><strong>email</strong> (tague@ucsb.edu)</li>
-<li><strong>git user id</strong> naomitague</li>
-</ul>
-<p><strong>Teaching assistant:</strong> Ojas Sarup</p>
-<ul>
-<li><strong>Office hours:</strong> Tuesday / Thursday 3pm-4pm</li>
-<li><strong>email</strong> (ojassarup@ucsb.edu )</li>
-<li><strong>git user id</strong> osarup</li>
+<li>change the title</li>
+<li>add a new R code chunk</li>
+<li>add some markdown content</li>
+<li>change to a presentation by replacing html in YAML header “format: revealjs: theme: solarized”</li>
+<li>try a different theme</li>
+<li>render the document and see how it works!</li>
 </ul>
 </section>
-<section id="learning-objectives" class="slide level2">
-<h2><span style="color:orange">Learning objectives</span></h2>
+<section id="some-hints" class="slide level2">
+<h2>Some Hints</h2>
 <ul>
-<li><p>practice partner coding and reproducible workflows</p></li>
-<li><p>3 <em>BIG</em> concepts in programming are <em>modularity</em>, <em>data structure</em>, <em>looping</em> - we will learn skills related to all three of these</p></li>
-<li><p>learn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)</p>
-<ul>
-<li>documentation</li>
-<li>testing</li>
-</ul></li>
-<li><p>learn some new Rskills that are helpful for a wide variety of data science applications</p></li>
-</ul>
-</section>
-<section id="computing-set-up" class="slide level2">
-<h2><span style="color:orange">Computing set up</span></h2>
-<ul>
-<li><p>R, R-studio</p></li>
-<li><p>Please bring your laptop to class</p></li>
-</ul>
-</section>
-<section id="course-materials-and-how-we-will-work" class="slide level2">
-<h2><span style="color:orange">Course materials and how we will work</span></h2>
-<p>All lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Canvas)</p>
-<p>Prior to many classes, I will ask you to study an Quarto document (and often an example R-functions) before class Then at the beginning of class, I will <strong>briefly</strong> go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document. This way we use the class time as a lab - where you can get guidance.</p>
-<p><strong>this mean its essential for you to do the review before class</strong></p>
-<p>Why structure it this way? You learn to code by doing - not so much by watching others do!</p>
-</section>
-<section id="topics" class="slide level2 scrollable">
-<h2><span style="color:orange">Topics</span></h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<colgroup>
-<col style="width: 3%">
-<col style="width: 15%">
-<col style="width: 10%">
-<col style="width: 69%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">#</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">Tue, Apr 14</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Course overview and setup</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">Thu, Apr 16</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Quarto</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">Tue, Apr 21</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Git and GitHub</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">Thu, Apr 23</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Git and conflicts</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">Tue, Apr 28</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">APIs and servers</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">Thu, Apr 30</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Data Types and Structures, Strings and Dates</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">Tue, May 5</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Data structures - Lists</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">Thu, May 7</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Loops</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">Mon, May 11</td>
-<td style="text-align: left;">Evening</td>
-<td style="text-align: left;">Functions!</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">Tue, May 12</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Functions 2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">Thu, May 14</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Repeating</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">Mon, May 18</td>
-<td style="text-align: left;">Evening</td>
-<td style="text-align: left;">Project Design, Modularity and Workflow - Practicing</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">Tue, May 19</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Flow Control</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">Thu, May 21</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Modular design</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">Tue, May 26</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Working with the shell</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td style="text-align: left;">Thu, May 28</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Testing and debugging</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td style="text-align: left;">Tue, Jun 2</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Documentation</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">Thu, Jun 4</td>
-<td style="text-align: left;">Regular</td>
-<td style="text-align: left;">Where does AI fit</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="assignments" class="slide level2">
-<h2><span style="color:orange">Assignments</span></h2>
-<p>There will be 5 assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups.</p>
-</section>
-<section id="assignment-materials-and-dates" class="title-slide slide level1 center">
-<h1>Assignment materials and dates</h1>
-<table class="caption-top">
-<colgroup>
-<col style="width: 8%">
-<col style="width: 42%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Name</th>
-<th>Assigned</th>
-<th>Due date</th>
-<th>Group (G)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Modular Design</td>
-<td>2025-02-13</td>
-<td>2025-02-17</td>
-<td>G</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Making a function</td>
-<td>2025-02-18</td>
-<td>2025-02-24</td>
-<td>I</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Using Git with your function</td>
-<td>2025-02-25</td>
-<td>2025-03-03</td>
-<td>I</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Looping</td>
-<td>2025-03-4</td>
-<td>2025-03-10</td>
-<td>I</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Functions and testing</td>
-<td>2025-3-11</td>
-<td>2025-3-18</td>
-<td>G</td>
-</tr>
-</tbody>
-</table>
-</section>
-
-<section id="assignment-expectations-and-grading" class="title-slide slide level1 center">
-<h1>Assignment expectations and grading</h1>
-<ul>
-<li>All assignments submitted on Canvas</li>
-<li>Late Assignments 10% each day. Try to submit on time as we build on the concepts and materials covered in each assignment</li>
-<li>Style counts; So make sure your follow good programming practices including adding documentation and using informative variable names</li>
-<li>You can use AI (ChatGPT etc) to help you learn syntax, but write the code yourself; this is how you learn</li>
-<li>You can resubmit your assignment for additional feedback and we will upgrade your grade. Please do so with in one week of getting the assignment back</li>
+<li>name your code chunks - this makes it easier to debug and understand your code</li>
+<li>start with a setup section at the top to load all packages and set options</li>
+<li>use the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)</li>
 </ul>
 
 
@@ -420,19 +240,19 @@
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

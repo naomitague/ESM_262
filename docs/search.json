@@ -30,16 +30,16 @@
   {
     "objectID": "course-materials/week1.html",
     "href": "course-materials/week1.html",
-    "title": "This week’s topic(s)",
+    "title": "Working with Quarto",
     "section": "",
-    "text": "TipThe following layout is only a suggestion\n\n\n\nAdd / arrange content in whatever way is best your course – be sure to check out examples of other MEDS course websites for inspiration!"
+    "text": "Tip\n\n\n\n:\n\n\n\n\n\n\n\n\nLecture slides\n\n\n\n\nLecture 1.1: topic Intro\n\n\nLecture 1.2: topic Quarto }\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\nDD/MM/YYYY\nDD/MM/YYYY, 11:59pm PT"
   },
   {
     "objectID": "course-materials/week1.html#lecture-materials",
     "href": "course-materials/week1.html#lecture-materials",
-    "title": "This week’s topic(s)",
-    "section": " Lecture Materials",
-    "text": "Lecture Materials\nConsider linking to lecture materials in a table. Check out this Markdown Tables Generator for quickly formatting tables.\n\n\n\n\n\n\n\n\nLecture slides\nLab\nAnswer key\n\n\n\n\nLecture 1.1: topic X\nLab 1.1\nLab 1.1 Key\n\n\nLecture 1.2: topic X\nNA\nNA"
+    "title": "Working with Quarto",
+    "section": "",
+    "text": "Lecture slides\n\n\n\n\nLecture 1.1: topic Intro\n\n\nLecture 1.2: topic Quarto }"
   },
   {
     "objectID": "course-materials/week1.html#discussion-materials",
@@ -51,9 +51,9 @@
   {
     "objectID": "course-materials/week1.html#assignment-reminders",
     "href": "course-materials/week1.html#assignment-reminders",
-    "title": "This week’s topic(s)",
-    "section": " Assignment Reminders",
-    "text": "Assignment Reminders\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\nDD/MM/YYYY\nDD/MM/YYYY, 11:59pm PT"
+    "title": "Working with Quarto",
+    "section": "",
+    "text": "Assignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\nDD/MM/YYYY\nDD/MM/YYYY, 11:59pm PT"
   },
   {
     "objectID": "ESM_262_syllabus.html#a-bit-about-me",
@@ -67,7 +67,7 @@
     "href": "ESM_262_syllabus.html#course-description",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Course description",
-    "text": "Course description\nESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.\n\nprogramming language concepts;\nmodular program design;\ndata structures and flow control,\nversion control,\ntesting,\ndocumentation and reproducibility.\n\nThe course features R for programming, Git for version control, Markdown for workflow, and GitHub for collaboration and publishing, but many concepts would be applicable in other software design tools.\nClass will include a mix of lectures and hands-on examples, using students’ own computers."
+    "text": "Course description\nESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.\n\nprogramming language concepts\nloops and repetition\ndata types and structures\nmodular program design;\nreproducibility and version control;\ntesting, documentation, and workflow;\n\nThe course features R for programming, Git for version control, Quarto for workflow and editing, and GitHub for collaboration and publishing, but many concepts would be applicable in other software design tools.\nClass will include a mix of lectures and hands-on examples, using students’ own computers."
   },
   {
     "objectID": "ESM_262_syllabus.html#course-where-and-when",
@@ -81,28 +81,28 @@
     "href": "ESM_262_syllabus.html#learning-objectives",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n3 BIG concepts in programming are modularity, data structure, looping - we will learn skills related to all three of these\nlearn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)\n\ndocumentation\ntesting\n\nlearn some new Rskills that are helpful for a wide variety of data science applications\npractice partner coding"
+    "text": "Learning objectives\n\npractice partner coding and reproducible workflows\n3 BIG concepts in programming are modularity, data structure, looping - we will learn skills related to all three of these\nlearn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)\n\ndocumentation\ntesting\n\nlearn some new Rskills that are helpful for a wide variety of data science applications"
   },
   {
     "objectID": "ESM_262_syllabus.html#computing-set-up",
     "href": "ESM_262_syllabus.html#computing-set-up",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Computing set up",
-    "text": "Computing set up\n\nMake sure you have installed git, R, R-studio\nPlease bring your laptop to class"
+    "text": "Computing set up\n\nR, R-studio\nPlease bring your laptop to class"
   },
   {
     "objectID": "ESM_262_syllabus.html#course-materials-and-how-we-will-work",
     "href": "ESM_262_syllabus.html#course-materials-and-how-we-will-work",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Course materials and how we will work",
-    "text": "Course materials and how we will work\nAll lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Canvas)\nPrior to most classes, I will ask you to study an Rmarkdown document (and often an example R-functions) before class Then at the beginning of class, I will briefly go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document. This way we use the class time as a lab - where you can get guidance.\nthis mean its essential for you to do the review before class\nWhy structure it this way? You learn to code by doing - not so much by watching others do!"
+    "text": "Course materials and how we will work\nAll lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Canvas)\nPrior to many classes, I will ask you to study an Quarto document (and often an example R-functions) before class Then at the beginning of class, I will briefly go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document. This way we use the class time as a lab - where you can get guidance.\nthis mean its essential for you to do the review before class\nWhy structure it this way? You learn to code by doing - not so much by watching others do!"
   },
   {
     "objectID": "ESM_262_syllabus.html#topics",
     "href": "ESM_262_syllabus.html#topics",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Topics",
-    "text": "Topics\n\n\n\n\n\n\n\n\n\n\n\n#\nDate\nType\nTopic\n\n\n\n\n1\nTue, Apr 14\nRegular\nCourse overview and setup\n\n\n2\nThu, Apr 16\nRegular\nQuarto and File Organization\n\n\n3\nTue, Apr 21\nRegular\nData Types\n\n\n4\nThu, Apr 23\nRegular\nData structures\n\n\n5\nTue, Apr 28\nRegular\nAPIs and servers\n\n\n6\nThu, Apr 30\nRegular\nData Wrangling with tidyverse\n\n\n7\nTue, May 5\nRegular\nData Wrangling - Dates\n\n\n8\nThu, May 7\nRegular\nGit and Reproducibility\n\n\n9\nMon, May 11\nEvening\nFunctions!\n\n\n10\nTue, May 12\nRegular\nFlow control\n\n\n11\nThu, May 14\nRegular\nLoops\n\n\n12\nMon, May 18\nEvening\nProject Design, Modularity and Workflow - Practicing\n\n\n13\nTue, May 19\nRegular\nVisualizing Data\n\n\n14\nThu, May 21\nRegular\nWorking with the shell\n\n\n15\nTue, May 26\nRegular\nTesting and debugging\n\n\n16\nThu, May 28\nRegular\nDocumentation\n\n\n17\nTue, Jun 2\nRegular\nWhere does AI fit\n\n\n18\nThu, Jun 4\nRegular\nWrap up"
+    "text": "Topics\n\n\n\n\n\n\n\n\n\n\n\n#\nDate\nType\nTopic\n\n\n\n\n1\nTue, Apr 14\nRegular\nCourse overview and setup\n\n\n2\nThu, Apr 16\nRegular\nQuarto\n\n\n3\nTue, Apr 21\nRegular\nGit and GitHub\n\n\n4\nThu, Apr 23\nRegular\nGit and conflicts\n\n\n5\nTue, Apr 28\nRegular\nAPIs and servers\n\n\n6\nThu, Apr 30\nRegular\nData Types and Structures, Strings and Dates\n\n\n7\nTue, May 5\nRegular\nData structures - Lists\n\n\n8\nThu, May 7\nRegular\nLoops\n\n\n9\nMon, May 11\nEvening\nFunctions!\n\n\n10\nTue, May 12\nRegular\nFunctions 2\n\n\n11\nThu, May 14\nRegular\nRepeating\n\n\n12\nMon, May 18\nEvening\nProject Design, Modularity and Workflow - Practicing\n\n\n13\nTue, May 19\nRegular\nFlow Control\n\n\n14\nThu, May 21\nRegular\nModular design\n\n\n15\nTue, May 26\nRegular\nWorking with the shell\n\n\n16\nThu, May 28\nRegular\nTesting and debugging\n\n\n17\nTue, Jun 2\nRegular\nDocumentation\n\n\n18\nThu, Jun 4\nRegular\nWhere does AI fit"
   },
   {
     "objectID": "ESM_262_syllabus.html#assignments",
@@ -222,5 +222,89 @@
     "title": "EDS 123",
     "section": "",
     "text": "You can arrange content in columns\n\n\n\nLearn more about the MEDS program on the Bren website."
+  },
+  {
+    "objectID": "ESM_262_syllabus.html",
+    "href": "ESM_262_syllabus.html",
+    "title": "Syllabus ESM 262 - Spring 2026",
+    "section": "",
+    "text": "Growing skills"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#quarto",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#quarto",
+    "title": "Quarto- Spring 2026",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is a scientific and technical publishing system built on Pandoc. It enables you to combine content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\nIts a lot like R Markdown, but with more features and capabilities. It also has a lot of similarities to Jupyter Notebooks, but with more features and capabilities."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#classic-example-of-quarto",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#classic-example-of-quarto",
+    "title": "Quarto- Spring 2026",
+    "section": "Classic Example of Quarto",
+    "text": "Classic Example of Quarto\n\ndowload hello.qmd from the course website\nopen it in RStudio"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#meet-the-penguins",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#meet-the-penguins",
+    "title": "Quarto- Spring 2026",
+    "section": "Meet the penguins",
+    "text": "Meet the penguins\n\nThe penguins data from the palmerpenguins package contains size measurements for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.\nThe plot below shows the relationship between flipper and bill lengths of these penguins."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-go-through-the-code-in-hello.qmd-and-see-how-it-works",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-go-through-the-code-in-hello.qmd-and-see-how-it-works",
+    "title": "Quarto- Spring 2026",
+    "section": "Lets go through the code in hello.qmd and see how it works",
+    "text": "Lets go through the code in hello.qmd and see how it works\nQuarto documents are made up of three main components:\n\nYAML header\nMarkdown content\nCode chunks"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
+    "title": "Quarto- Spring 2026",
+    "section": "YAML header",
+    "text": "YAML header\nThe YAML header is where you specify\n\nthe title of your document,\nthe output format, and other metadata.\n\nIn this example, the output format is revealjs, which is a presentation format.\nOther formats include\n\nhtml\npdf\nword\n\nYou may need to install additional software to use some of these formats (e.g. pandoc, latex)."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-and-code-chunks",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-and-code-chunks",
+    "title": "Quarto- Spring 2026",
+    "section": "Markdown and Code Chunks",
+    "text": "Markdown and Code Chunks\nShould be familiar to you - much like R Markdown.\nQuarto can also include other languages, such as Python, Julia, and JavaScript."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#rendering",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#rendering",
+    "title": "Quarto- Spring 2026",
+    "section": "Rendering",
+    "text": "Rendering\nTo render a Quarto document, use the “Render” button in RStudio.\nWhen you render a Quarto document, it will execute all the code chunks and include the output in the final document.\nIn Rstudio - you have two views of the quarto document\n\nSource view is where you write your code and markdown.\nVisual view is where you see the final output of your document."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-look-at-the-code-in-hello.qmd-and-see-how-it-works",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-look-at-the-code-in-hello.qmd-and-see-how-it-works",
+    "title": "Quarto- Spring 2026",
+    "section": "Lets look at the code in hello.qmd and see how it works",
+    "text": "Lets look at the code in hello.qmd and see how it works"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
+    "title": "Quarto- Spring 2026",
+    "section": "Yaml Header",
+    "text": "Yaml Header\nSome other things you can put in YAML header - author - date - resources (e.g. images, css files) - theme (for presentations)\nResources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.\nPaths will be relative to the location of your .qmd file. So if you have an image in a folder called “images” that is in the same directory as your .qmd file, you can specify the path to that image as “images/image.png”.\nSome themes for presentaion inlucde - solarized - metropolis - night - sky"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#play",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#play",
+    "title": "Quarto- Spring 2026",
+    "section": "Play",
+    "text": "Play\nMake some changes to the hello.qmd\n\nchange the title\nadd a new R code chunk\nadd some markdown content\nchange to a presentation by replacing html in YAML header “format: revealjs: theme: solarized”\ntry a different theme\nrender the document and see how it works!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
+    "title": "Quarto- Spring 2026",
+    "section": "Some Hints",
+    "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nstart with a setup section at the top to load all packages and set options\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
   }
 ]

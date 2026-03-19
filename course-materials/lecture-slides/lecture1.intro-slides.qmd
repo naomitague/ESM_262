@@ -1,0 +1,17 @@
+---
+title: 'Intro- Spring 2026'
+format:
+  revealjs:
+    theme: solarized
+    resources: ["img/"]
+editor: visual
+---
+
+# Installation Guide
+
+# Homework
+
+* Complete Installation Part 1 
+* Complete the getting to know you survey
+
+

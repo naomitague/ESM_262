@@ -23,14 +23,15 @@ knitr::include_graphics("images/whoIam.jpeg")
 
 ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.
 
--   programming language concepts;
+-   programming language concepts
+  * loops and repetition
+  * data types and structures
 -   modular program design;
--   data structures and flow control,
--   version control,
--   testing,
--   documentation and reproducibility.
+-   reproducibility and version control;
+-   testing, documentation, and workflow;
 
-The course features **R** for programming, **Git** for version control, **Markdown** for workflow, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
+
+The course features **R** for programming, **Git** for version control, **Quarto** for workflow and editing, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
 
 Class will include a mix of lectures and hands-on examples, using students' own computers.
 
@@ -54,6 +55,9 @@ Teaching Team
 
 ## [Learning objectives]{style="color:orange"}
 
+
+-   practice partner coding and reproducible workflows  
+
 -   3 *BIG* concepts in programming are *modularity*, *data structure*, *looping* - we will learn skills related to all three of these
 
 -   learn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)
@@ -63,11 +67,11 @@ Teaching Team
 
 -   learn some new Rskills that are helpful for a wide variety of data science applications
 
--   practice partner coding
+
 
 ## [Computing set up]{style="color:orange"}
 
--   Make sure you have installed git, R, R-studio
+-   R, R-studio
 
 -   Please bring your laptop to class
 
@@ -75,14 +79,13 @@ Teaching Team
 
 All lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Canvas)
 
-Prior to most classes, I will ask you to study an Rmarkdown document (and often an example R-functions) before class Then at the beginning of class, I will **briefly** go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document. This way we use the class time as a lab - where you can get guidance.
+Prior to many classes, I will ask you to study an Quarto document (and often an example R-functions) before class Then at the beginning of class, I will **briefly** go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document. This way we use the class time as a lab - where you can get guidance.
 
 **this mean its essential for you to do the review before class**
 
 Why structure it this way? You learn to code by doing - not so much by watching others do!
 
-## [Topics]{style="color:orange"}{.scrollable}
-
+## [Topics]{style="color:orange"} {.scrollable}
 
 ```{r, sch}
 
@@ -102,21 +105,21 @@ schedule <- data.frame(
   Type = "Regular",
   Topic = c(
     "Course overview and setup",
-    "Quarto and File Organization",
-    "Data Types",
-    "Data structures",
-    "APIs and servers",
-    "Data Wrangling with tidyverse",
-    "Data Wrangling - Dates",
-    "Git and Reproducibility",
+    "Quarto",
+    "Git and GitHub",
     "Git and conflicts",
-    "Flow control",
+    "APIs and servers",
+    "Data Types and Structures, Strings and Dates",
+    "Data structures - Lists",
     "Loops",
-    "Visualizing Data",
+    "Functions 2",
+    "Repeating",
+    "Flow Control",
+    "Modular design",
     "Working with the shell",
     "Testing and debugging",
     "Documentation",
-    "Where does AI fit",
+    "Where does AI fit"
   )
 )
 
@@ -173,3 +176,5 @@ There will be 5 assignments (more or less one for each week). You will usually h
 -   Style counts; So make sure your follow good programming practices including adding documentation and using informative variable names
 -   You can use AI (ChatGPT etc) to help you learn syntax, but write the code yourself; this is how you learn
 -   You can resubmit your assignment for additional feedback and we will upgrade your grade. Please do so with in one week of getting the assignment back
+
+
