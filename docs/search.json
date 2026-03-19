@@ -102,7 +102,7 @@
     "href": "ESM_262_syllabus.html#topics",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Topics",
-    "text": "Topics\n\n\n\n\n\n#\nDate\nType\nTopic\n\n\n\n\n1\nTue, Apr 15\nRegular\n\n\n\n2\nThu, Apr 17\nRegular\n\n\n\n3\nTue, Apr 22\nRegular\n\n\n\n4\nThu, Apr 24\nRegular\n\n\n\n5\nTue, Apr 29\nRegular\n\n\n\n6\nThu, May 1\nRegular\n\n\n\n7\nTue, May 6\nRegular\n\n\n\n8\nThu, May 8\nRegular\n\n\n\n9\nMon, May 12\nEvening\n\n\n\n10\nTue, May 13\nRegular\n\n\n\n11\nThu, May 15\nRegular\n\n\n\n12\nMon, May 19\nEvening\n\n\n\n13\nTue, May 20\nRegular\n\n\n\n14\nThu, May 22\nRegular\n\n\n\n15\nTue, May 27\nRegular\n\n\n\n16\nThu, May 29\nRegular\n\n\n\n17\nTue, Jun 3\nRegular\n\n\n\n18\nThu, Jun 5\nRegular"
+    "text": "Topics\n\n\n\n\n\n\n\n\n\n\n\n#\nDate\nType\nTopic\n\n\n\n\n1\nTue, Apr 14\nRegular\nCourse overview and setup\n\n\n2\nThu, Apr 16\nRegular\nQuarto and File Organization\n\n\n3\nTue, Apr 21\nRegular\nData Types\n\n\n4\nThu, Apr 23\nRegular\nData structures\n\n\n5\nTue, Apr 28\nRegular\nAPIs and servers\n\n\n6\nThu, Apr 30\nRegular\nData Wrangling with tidyverse\n\n\n7\nTue, May 5\nRegular\nData Wrangling - Dates\n\n\n8\nThu, May 7\nRegular\nGit and Reproducibility\n\n\n9\nMon, May 11\nEvening\nFunctions!\n\n\n10\nTue, May 12\nRegular\nFlow control\n\n\n11\nThu, May 14\nRegular\nLoops\n\n\n12\nMon, May 18\nEvening\nProject Design, Modularity and Workflow - Practicing\n\n\n13\nTue, May 19\nRegular\nVisualizing Data\n\n\n14\nThu, May 21\nRegular\nWorking with the shell\n\n\n15\nTue, May 26\nRegular\nTesting and debugging\n\n\n16\nThu, May 28\nRegular\nDocumentation\n\n\n17\nTue, Jun 2\nRegular\nWhere does AI fit\n\n\n18\nThu, Jun 4\nRegular\nWrap up"
   },
   {
     "objectID": "ESM_262_syllabus.html#assignments",

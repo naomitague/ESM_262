@@ -81,48 +81,66 @@ Prior to most classes, I will ask you to study an Rmarkdown document (and often 
 
 Why structure it this way? You learn to code by doing - not so much by watching others do!
 
-## [Topics]{style="color:orange"}
+## [Topics]{style="color:orange"}{.scrollable}
+
 
 ```{r, sch}
+
 #| echo: false
 #| message: false
-
 library(dplyr)
 library(knitr)
 
-# Generate Tue/Thu dates from Apr 14 (first Tuesday) through Jun 5
-dates <- seq(as.Date("2025-04-15"), as.Date("2025-06-05"), by = "day")
+# Generate Tue/Thu dates from Apr 14 (first Tuesday) through Jun 4 2026
+dates <- seq(as.Date("2026-04-14"), as.Date("2026-06-04"), by = "day")
 class_dates <- dates[weekdays(dates) %in% c("Tuesday", "Thursday")]
 
 # Build the data frame
 schedule <- data.frame(
   Lecture = seq_along(class_dates),
   Date = format(class_dates, "%a, %b %e"),
-  Type = ifelse(
-    class_dates %in% as.Date(c("2025-05-12", "2025-05-19")),
-    "Evening", "Regular"
-  ),
-  Topic = ""
+  Type = "Regular",
+  Topic = c(
+    "Course overview and setup",
+    "Quarto and File Organization",
+    "Data Types",
+    "Data structures",
+    "APIs and servers",
+    "Data Wrangling with tidyverse",
+    "Data Wrangling - Dates",
+    "Git and Reproducibility",
+    "Git and conflicts",
+    "Flow control",
+    "Loops",
+    "Visualizing Data",
+    "Working with the shell",
+    "Testing and debugging",
+    "Documentation",
+    "Where does AI fit",
+  )
 )
 
-# Add evening rows (May 12 and May 19 are Mondays — insert after May 8 and May 15)
+# Evening lectures: Mondays May 11 and May 18, 2026
+# Insert after May 7 (Thu) and May 14 (Thu)
 evening_rows <- data.frame(
   Lecture = NA,
-  Date = format(as.Date(c("2025-05-12", "2025-05-19")), "%a, %b %e"),
+  Date = format(as.Date(c("2026-05-11", "2026-05-18")), "%a, %b %e"),
   Type = "Evening",
-  Topic = ""
+  Topic = c(
+    "Functions!",
+    "Project Design, Modularity and Workflow - Practicing"
+  )
 )
 
-# Insert after lecture on May 8 and May 15
-idx_may8  <- which(class_dates == as.Date("2025-05-08"))
-idx_may15 <- which(class_dates == as.Date("2025-05-15"))
+idx_may7  <- which(class_dates == as.Date("2026-05-07"))
+idx_may14 <- which(class_dates == as.Date("2026-05-14"))
 
 schedule <- bind_rows(
-  schedule[1:idx_may8, ],
+  schedule[1:idx_may7, ],
   evening_rows[1, ],
-  schedule[(idx_may8 + 1):idx_may15, ],
+  schedule[(idx_may7 + 1):idx_may14, ],
   evening_rows[2, ],
-  schedule[(idx_may15 + 1):nrow(schedule), ]
+  schedule[(idx_may14 + 1):nrow(schedule), ]
 ) |>
   mutate(Lecture = row_number())
 
