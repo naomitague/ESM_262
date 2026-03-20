@@ -180,6 +180,12 @@
 <p>Paths will be relative to the location of your .qmd file. So if you have an image in a folder called “images” that is in the same directory as your .qmd file, you can specify the path to that image as “images/image.png”.</p>
 <p>Some themes for presentaion inlucde - solarized - metropolis - night - sky</p>
 </section>
+<section id="yaml-execute" class="slide level2">
+<h2>Yaml Execute</h2>
+<p>The <code>execute</code> section of the YAML header sets how code chunks are executed. For example, - <code>echo: false</code>. - <code>warning: false</code> - <code>message: false</code>.</p>
+<p>You can overrides in an R code chunk using</p>
+<p>#| echo: true</p>
+</section>
 <section id="markdown-and-code-chunks" class="slide level2">
 <h2>Markdown and Code Chunks</h2>
 <p>Should be familiar to you - much like R Markdown.</p>
@@ -229,7 +235,7 @@
 <h2>Some Hints</h2>
 <ul>
 <li>name your code chunks - this makes it easier to debug and understand your code</li>
-<li>start with a setup section at the top to load all packages and set options</li>
+<li>start with a setup R chunk at the top to load all packages and set global options for your code chunks (e.g.&nbsp;echo, warning, message)</li>
 <li>use the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)</li>
 </ul>
 

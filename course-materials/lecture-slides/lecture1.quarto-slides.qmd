@@ -5,29 +5,45 @@ format:
     theme: solarized
     resources: ["images"]
 editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
 ---
 
 ## Comments on papers
-
 
 ## Quarto
 
 Quarto is a scientific and technical publishing system built on Pandoc. It enables you to combine content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-Its a lot like R Markdown, but with more features and capabilities. It also has a lot of similarities to Jupyter Notebooks, but with more features and capabilities.
+Its a lot like R Markdown, but with more features and capabilities.
+
+ similarities to Jupyter Notebooks, but with more features and capabilities.
 
 ## Classic Example of Quarto
 
 -   dowload *hello.qmd* from the course website
 -   open it in RStudio
 
+## Rendering
+
+To render a Quarto document, use the "Render" button in RStudio.
+
+When you render a Quarto document, it will execute all the code chunks and include the output in the final document.
+
+In Rstudio - you have two views of the *quarto* document
+
+-   *Source* view is where you write your code and markdown.
+-   *Visual* view is where you see the final output of your document.
+
 ## Lets go through the code in hello.qmd and see how it works
 
-Quarto documents are made up of three main components: 
+Quarto documents are made up of three main components:
 
-1. YAML header 
-2. Markdown content 
-3. Code chunks
+1.  YAML header
+2.  Markdown content
+3.  Code chunks
 
 ## YAML header {.scrollable}
 
@@ -48,21 +64,25 @@ You may need to install additional software to use some of these formats (e.g. p
 
 ## Yaml Header
 
-Some other things you can put in YAML header
--   author
--   date
--   resources (e.g. images, css files)
--   theme (for presentations)
+Some other things you can put in YAML header - author - date - resources (e.g. images, css files) - theme (for presentations)
 
 Resources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.
 
 Paths will be relative to the location of your .qmd file. So if you have an image in a folder called "images" that is in the same directory as your .qmd file, you can specify the path to that image as "images/image.png".
 
-Some themes for presentaion inlucde
--   solarized
--   metropolis
--   night
--   sky
+Some themes for presentaion inlucde - solarized - metropolis - night - sky
+
+## Yaml Execute
+
+The `execute` section of the YAML header sets how code chunks are executed. 
+For example, 
+- `echo: false`. 
+- `warning: false` 
+- `message: false`.
+
+You can overrides in an R code chunk using 
+
+\#| echo: true
 
 
 
@@ -72,16 +92,6 @@ Should be familiar to you - much like R Markdown.
 
 Quarto can also include other languages, such as Python, Julia, and JavaScript.
 
-## Rendering
-
-To render a Quarto document, use the "Render" button in RStudio.
-
-When you render a Quarto document, it will execute all the code chunks and include the output in the final document.
-
-In Rstudio - you have two views of the *quarto* document
-
-- *Source* view is where you write your code and markdown.
-- *Visual* view is where you see the final output of your document.
 
 ## Lets look at the code in *hello.qmd* and see how it works
 
@@ -119,26 +129,19 @@ ggplot(penguins,
   theme_minimal()
 ```
 
-
 ## Play
 
 Make some changes to the hello.qmd
 
 -   change the title
--  add a new R code chunk
--  add some markdown content
- - change to a presentation by replacing html in YAML header
-  "format:
-  revealjs:
-    theme: solarized"
-  - try a different theme
-- render the document and see how it works!
-
+-   add a new R code chunk
+-   add some markdown content
+-   change to a presentation by replacing html in YAML header "format: revealjs: theme: solarized"
+-   try a different theme
+-   render the document and see how it works!
 
 ## Some Hints
 
-- name your code chunks - this makes it easier to debug and understand your code
-- start with a setup section at the top to load all packages and set options
-- use the "include" option to control whether code chunks are included in the final document 
-    (put include: false in the YAML header of a code chunk to exclude it from the final document)
- 
+-   name your code chunks - this makes it easier to debug and understand your code
+-   start with a setup R chunk at the top to load all packages and set global options for your code chunks (e.g. echo, warning, message)
+-   use the "include" option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)

@@ -7,11 +7,36 @@ format:
 editor: visual
 ---
 
+
+## new AI tools and Data Science
+
+Should we use it? When? How? Why? Why not?
+
+-   used I use tools like ChatGPT, github copilot to help me in this course?
+
+-   benefit/costs?
+
+## Some thoughful papers for further reading
+
+High level perspective
+
+-   includes some thoughts on job market preparation
+
+-   [Communications of the ACM](%22../papers/AIinComputingEducation.pdf%22)
+
+-   [Practical overview/perspective](%22../papers/perspectives_ai_coding.pdf%22)
+
+-   [Recent review on potential harmful consequenses](%22../papers/review-of-harms-fromAIcodingedu.pdf%22)
+
 # Installation Guide
+
+## Some 
 
 # Homework
 
 * Complete Installation Part 1 
 * Complete the getting to know you survey
+* Read one of the AI papers and think of one thing you found interesting
+
 
 
