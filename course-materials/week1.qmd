@@ -4,8 +4,7 @@ subtitle: "Week 1"
 description: "Monday April 14^th^, 2026"
 ---
 
-::: {.callout-tip}
-:
+
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
@@ -13,13 +12,13 @@ description: "Monday April 14^th^, 2026"
 |----------------|------------------|
 | [Lecture 1.1: topic Intro](lecture-slides/lecture1.intro-slides.qmd){target="_blank"}   ||
 | [Lecture 1.2: topic Quarto](lecture-slides/lecture1.quarto-slides.qmd){target="_blank"} |<a href="../downloadables/week1/hello.qmd" download>Download hello.qmd</a> |
-: {.hover .bordered tbl-colwidths="[50,25,25]"} 
-
+||<a href="../downloadables/week1/p301.csv" download>Download p301.csv</a> |
+: {.hover .bordered tbl-colwidths="[50,25,25]"} |
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| HW              | [Homework Assignment #1](assignments/HW1.qmd) | DD/MM/YYYY     | DD/MM/YYYY, 11:59pm PT     |
+| HW              | [Homework Assignment #1](assignments/HW1.qmd) | 16/4/2026      | 20/4/2026 , 11:59pm PT     |
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
 

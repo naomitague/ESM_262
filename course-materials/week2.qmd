@@ -1,7 +1,23 @@
 ---
-title: "This week's topic(s)"
+title: "Git and Reproducible Workflows"
 subtitle: "Week 2"
-description: "Monday January 13^th^, 2025"
+description: "Monday April 20^th^, 2026"
 ---
 
-[*Week 2 materials coming soon!*]{.body-text-l}
+
+
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
+
+| Lecture slides | Materials | 
+|----------------|------------------|
+| [Lecture 2.1: topic Intro](lecture-slides/lecture2.git-slides.qmd){target="_blank"}   ||
+| [Lecture 2.2: topic Quarto](lecture-slides/lecture1.moregit-slides.qmd){target="_blank"} |<a href="../downloadables/week1/hello.qmd" download>Download hello.qmd</a> |
+||<a href="../downloadables/week1/p301.csv" download>Download p301.csv</a> |
+: {.hover .bordered tbl-colwidths="[50,25,25]"} |
+
+## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
+
+| Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
+|-----------------|-----------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #2](assignments/HW2.qmd) | 16/4/2026      | 20/4/2026 , 11:59pm PT     |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"} 

@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
-  <title>ESM 262 – Quarto- Spring 2026</title>
+  <title>ESM 262 – Git Spring 2026</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,132 +127,157 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Quarto- Spring 2026</h1>
+  <h1 class="title">Git Spring 2026</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="comments-on-papers" class="slide level2">
-<h2>Comments on papers</h2>
+<section id="pair-and-share" class="slide level2">
+<h2>Pair and Share</h2>
+<p>Look at your partner’s Quarto - Any suggestions?</p>
 </section>
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Quarto is a scientific and technical publishing system built on Pandoc. It enables you to combine content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-<p>Its a lot like R Markdown, but with more features and capabilities.</p>
-<p>similarities to Jupyter Notebooks, but with more features and capabilities.</p>
+<section id="file-organization" class="slide level2">
+<h2>File Organization</h2>
+<p>Recall from ESM-206</p>
 </section>
-<section id="classic-example-of-quarto" class="slide level2">
-<h2>Classic Example of Quarto</h2>
+<section id="suggested-organization" class="slide level2">
+<h2>Suggested Organization</h2>
 <ul>
-<li>download <a href="&quot;../downloadables/Week1/hello.qmd&quot;">hello.qmd</a> from the course website</li>
-<li>open it in RStudio</li>
+<li>R Project for this course</li>
+<li>Folders for R scripts, data, and figures</li>
+<li>Sub folders for each Week</li>
+<li>Folder for Assignments</li>
+</ul>
+<p>Create this as a new project and add you Assignment 1, and the data file you used for Assignment 1 to the appropriate folders.</p>
+</section>
+<section id="reproducibility-with-git-and-github" class="slide level2">
+<h2><span style="color:orange">Reproducibility with Git and Github </span></h2>
+<ul>
+<li><p>Why reproducibility and what does it mean?</p></li>
+<li><p>What is a workflow?</p>
+<ul>
+<li>not usually linear</li>
+<li>often involves iterative steps</li>
+<li>often involves multiple people</li>
+</ul></li>
 </ul>
 </section>
-<section id="rendering" class="slide level2">
-<h2>Rendering</h2>
-<p>To render a Quarto document, use the “Render” button in RStudio.</p>
-<p>When you render a Quarto document, it will execute all the code chunks and include the output in the final document.</p>
-<p>In Rstudio - you have two views of the <em>quarto</em> document</p>
+<section id="git-and-what-to-do-with-it" class="slide level2">
+<h2><span style="color:orange"> Git and what to do with it </span></h2>
+<p><span style="color:green">Local Git</span></p>
 <ul>
-<li><em>Source</em> view is where you write your code and markdown.</li>
-<li><em>Visual</em> view is where you see the final output of your document.</li>
+<li>keep track of changes to your code on your computer</li>
+<li>when necessary, go back to early versions</li>
+</ul>
+<p><span style="color:green">GitHub</span></p>
+<ul>
+<li>access your code from different places</li>
+<li>collaborate with others
+<ul>
+<li>others who will use your code</li>
+<li>coding together</li>
+</ul></li>
+</ul>
+
+<img data-src="&quot;week2/gitandgithub.jpg&quot;" class="r-stretch quarto-figure-center"><p class="caption">git</p></section>
+<section id="example" class="title-slide slide level1 center">
+<h1><span style="color:orange"> Example </span></h1>
+<p><a href="https://github.com/naomitague/ESM_262_Examples">GitHub Repository that I’ll use in the course</a></p>
+</section>
+
+<section id="the-basics" class="title-slide slide level1 center">
+<h1><span style="color:orange"> The Basics </span></h1>
+<p><span style="color:green"> Commit</span></p>
+<ul>
+<li>saves the current version locally each commit has a label so you can backtrack if needed</li>
+<li>you can look at what changes between commits</li>
+<li>gives you an opportunity to comment on what changes</li>
+</ul>
+<p><span style="color:green"> Push/Pull</span></p>
+<ul>
+<li><strong>push</strong> integrates any local commits/changes to central GitHub<br>
+</li>
+<li><strong>pull</strong> integrates any commits/changes from central GitHb to local</li>
+</ul>
+<p><span style="color:green"> History</span></p>
+<ul>
+<li>shows your sequence of commit messages</li>
+</ul>
+<p><span style="color:green"> Diff</span></p>
+<ul>
+<li>shows what changed in a file since last commit</li>
+</ul>
+<p><span style="color:green"> Revert</span></p>
+<ul>
+<li>go back to last commit GitHub’s <a href="https://github.com/git-guides">Git Guides</a> are a really wonderful resource to refer to!</li>
 </ul>
 </section>
-<section id="lets-go-through-the-code-in-hello.qmd-and-see-how-it-works" class="slide level2">
-<h2>Lets go through the code in hello.qmd and see how it works</h2>
-<p>Quarto documents are made up of three main components:</p>
+
+<section id="lets-try" class="title-slide slide level1 center">
+<h1><span style="color:orange">Lets try</span></h1>
+<p>Steps</p>
 <ol type="1">
-<li>YAML header</li>
-<li>Markdown content</li>
-<li>Code chunks</li>
+<li><p>In <em>GitHub</em>, create a new repository; you will use this for an assignment, so name it appropriately.</p>
+<ul>
+<li><p>Make it a public repo.</p></li>
+<li><p>Get the link for cloning.</p></li>
+</ul></li>
+<li><p>In <em>Rstudio</em> create a new project;</p>
+<ul>
+<li><p>put it in a new directory</p></li>
+<li><p>make sure you enable <em>git</em> in project set up (if you miss this go to Project Options)</p></li>
+<li><p>set your link to <em>GitHub</em> repository</p></li>
+</ul></li>
+<li><p>Add a new file</p>
+<ul>
+<li><p>create a subdirectory called <em>R</em></p></li>
+<li><p>move/copy your function from the last assignment to this subdirectory</p></li>
+</ul></li>
+<li><p>Tell Git (local) about your new file</p>
+<ul>
+<li><p>go to the commit section</p></li>
+<li><p>you new file will have a ?, check the box it will turn to A for add</p></li>
+<li><p>add a commit message; somethink like “added a function to do X to the project”</p></li>
+<li><p>click commit</p></li>
+</ul></li>
+<li><p>Now change something in your R code; you could just add a comment ,then go to the Git tab</p>
+<ul>
+<li><p>add your change and save the file</p></li>
+<li><p>see how this shows up in git diff</p></li>
+</ul></li>
+<li><p>Once you like what you changed, commit it</p>
+<ul>
+<li><p>your file should have an <em>M</em> for modified, check this to “stage” your changes for commit</p></li>
+<li><p>add a message briefly describing what you changed</p></li>
+<li><p>commit</p></li>
+</ul></li>
+<li><p>Send changes to <em>github</em> by pushing</p></li>
+<li><p>Go to <em>github</em> and check to see if your file and recent changes are there</p></li>
 </ol>
 </section>
-<section id="markdown-content" class="slide level2">
-<h2>Markdown Content</h2>
-<p>What you are familiar with</p>
-<p>Some text formatting</p>
+
+<section id="add-another-file" class="title-slide slide level1 center">
+<h1><span style="color:orange">Add another file</span></h1>
+<ol type="1">
+<li><p>Create a new file - maybe a Quatro file that will do something with your R function - add 1-2 lines</p></li>
+<li><p>Save it into the appropriate directory ( using organized directory structures is good programming practice )</p></li>
+<li><p>Add it to Git local</p>
 <ul>
-<li>Headers (with different numbers of pound signs, #, ##, … to start the line)</li>
-<li>Bullet points (asterisks, *, or dashes, -, to start lines)</li>
-<li>Links (<a href="link here">text here!</a>)</li>
-<li>Bold (double asterisk) &amp; italics (single asterisk)</li>
-</ul>
-</section>
-<section id="yaml-header" class="slide level2 scrollable">
-<h2>YAML header</h2>
-<p>The YAML header is where you specify</p>
+<li><p>go to Git and then commit</p></li>
+<li><p>find your file, should have a “?”, check so that it becomes an “A”</p></li>
+<li><p>add a commit message</p></li>
+<li><p>commit</p></li>
+</ul></li>
+<li><p>Continue to edit your file but this time add something you don’t want</p>
 <ul>
-<li>the title of your document,</li>
-<li>the output format, and other metadata.</li>
-</ul>
-<p>In this example, the output format is <code>revealjs</code>, which is a presentation format.</p>
-<p>Other formats include</p>
-<ul>
-<li>html</li>
-<li>pdf</li>
-<li>word</li>
-</ul>
-<p>You may need to install additional software to use some of these formats (e.g.&nbsp;pandoc, latex).</p>
-</section>
-<section id="yaml-header-1" class="slide level2">
-<h2>Yaml Header</h2>
-<p>Some other things you can put in YAML header - author - date - resources (e.g.&nbsp;images, css files) - theme (for presentations)</p>
-<p>Resources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.</p>
-<p>Paths will be relative to the location of your .qmd file. So if you have an image in a folder called “images” that is in the same directory as your .qmd file, you can specify the path to that image as “images/image.png”.</p>
-<p>Some themes for presentaion inlucde - solarized - metropolis - night - sky</p>
-</section>
-<section id="yaml-execute" class="slide level2">
-<h2>Yaml Execute</h2>
-<p>The <code>execute</code> section of the YAML header sets how code chunks are executed. For example, - <code>echo: false</code>. - <code>warning: false</code> - <code>message: false</code>.</p>
-<p>You can overrides in an R code chunk using</p>
-<p>#| echo: true</p>
-</section>
-<section id="markdown-and-code-chunks" class="slide level2">
-<h2>Markdown and Code Chunks</h2>
-<p>Should be familiar to you - much like R Markdown.</p>
-<p>Quarto can also include other languages, such as Python, Julia, and JavaScript.</p>
-</section>
-<section id="lets-look-at-the-code-in-hello.qmd-and-see-how-it-works" class="slide level2">
-<h2>Lets look at the code in <em>hello.qmd</em> and see how it works</h2>
-</section>
-<section id="meet-the-penguins" class="slide level2 scrollable">
-<h2>Meet the penguins</h2>
-<p><img data-src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png" style="float:right;" alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401"></p>
-<p>The <code>penguins</code> data from the <a href="https://allisonhorst.github.io/palmerpenguins" title="palmerpenguins R package"><strong>palmerpenguins</strong></a> package contains size measurements for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.</p>
-<p>The plot below shows the relationship between flipper and bill lengths of these penguins.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture1.quarto-slides_files/figure-revealjs/plot-penguins-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="play" class="slide level2">
-<h2>Play</h2>
-<p>Make some changes to the hello.qmd</p>
-<ul>
-<li>change the title</li>
-<li>add a new R code chunk</li>
-<li>add some markdown content</li>
-<li>change to a presentation by replacing html in YAML header “format: revealjs: theme: solarized”</li>
-<li>try a different theme</li>
-<li>render the document and see how it works!</li>
-</ul>
-</section>
-<section id="some-hints" class="slide level2">
-<h2>Some Hints</h2>
-<ul>
-<li>name your code chunks - this makes it easier to debug and understand your code</li>
-<li>start with a setup R chunk at the top to load all packages and set global options for your code chunks (e.g.&nbsp;echo, warning, message)</li>
-<li>use the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)</li>
-</ul>
-</section>
-<section id="assignment-1" class="slide level2">
-<h2>Assignment 1</h2>
+<li><p>make a change and save</p></li>
+<li><p>go to your file and look at the changes</p></li>
+<li><p>click revert to get rid of the changes that you don’t want</p></li>
+<li><p>look at file to make sure unwanted edit is not there</p></li>
+</ul></li>
+</ol>
+<p>We will talk about how to get something back <em>after</em> you’ve committed it next class</p>
 
 
 </section>
@@ -471,44 +496,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

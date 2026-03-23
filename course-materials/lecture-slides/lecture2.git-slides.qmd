@@ -1,0 +1,180 @@
+---
+title: 'Git Spring 2026'
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+## Pair and Share
+
+Look at your partner's Quarto - Any suggestions?
+
+## File Organization
+
+Recall from ESM-206 
+
+
+## Suggested Organization
+
+- R Project for this course
+-   Folders for R scripts, data, and figures
+-   Sub folders for each Week
+-   Folder for Assignments
+
+
+Create this as a new project and add you Assignment 1, and the data file you used for Assignment 1 to the appropriate folders.
+
+##  <span style="color:orange">Reproducibility with Git and Github </span>
+
+* Why reproducibility and what does it mean?
+
+* What is a workflow?
+  * not usually linear
+  * often involves iterative steps
+  * often involves multiple people 
+
+## <span style="color:orange"> Git and what to do with it </span>
+
+<span style="color:green">Local Git</span>
+
+* keep track of changes to your code on your computer
+* when necessary, go back to early versions
+
+<span style="color:green">GitHub</span>
+
+* access your code from different places
+* collaborate with others
+  * others who will use your code
+  * coding together
+ 
+
+![git]("week2/gitandgithub.jpg")
+
+
+## <span style="color:orange"> Example </span>
+
+[GitHub Repository that I'll use in the course](https://github.com/naomitague/ESM_262_Examples)
+
+## <span style="color:orange"> The Basics </span>
+
+
+<span style="color:green"> Commit</span>
+
+* saves the current version locally
+  each commit has a label so you can backtrack if needed
+* you can look at what changes between commits
+* gives you an opportunity to comment on what changes
+
+<span style="color:green"> Push/Pull</span>
+
+* **push** integrates any local commits/changes to central GitHub  
+* **pull** integrates any commits/changes from central GitHb to local
+
+
+<span style="color:green"> History</span> 
+
+* shows your sequence of commit messages
+
+<span style="color:green"> Diff</span> 
+
+* shows what changed in a file since last commit
+
+<span style="color:green"> Revert</span> 
+
+* go back to last commit
+GitHub's [Git Guides](https://github.com/git-guides) are a really wonderful resource to refer to!
+
+
+## <span style="color:orange">Lets try</span>
+
+Steps
+
+1. In *GitHub*, create a new repository; you will use this for an assignment, so name it appropriately.
+
+    * Make it a public repo.
+    
+    * Get the link for cloning.
+    
+2. In *Rstudio* create a new project; 
+
+    * put it in a new directory 
+  
+    * make sure you enable *git* in project set up (if you miss this go to Project Options) 
+  
+    * set your link to *GitHub* repository
+  
+3. Add a new file
+
+  
+    * create a subdirectory called *R*
+  
+    * move/copy your function from the last assignment to this subdirectory
+    
+    
+  
+4. Tell Git (local) about your new file 
+
+    * go to the commit section
+    
+    * you new file will have a ?, check the box it
+      will turn to A for add
+  
+    * add a commit message; somethink like "added a function to do X to the project"
+    
+    * click commit
+  
+5. Now change something in your R code; you could just add a comment ,then go to the Git tab
+
+    
+    * add your change and save the file
+    
+    * see how this shows up in git diff
+  
+    
+  
+6. Once you like what you changed, commit it
+
+    * your file should have an *M* for modified, check this to "stage" your changes for commit
+    
+    * add a message briefly describing what you changed
+  
+    * commit
+  
+7. Send changes to *github* by pushing
+
+8. Go to *github* and check to see if your file and recent changes are there
+
+
+
+# <span style="color:orange">Add another file</span>
+
+1. Create a new file - maybe a Quatro file that will do something with your R function - add 1-2 lines
+
+2. Save it into the appropriate directory
+( using organized directory structures is good programming practice )  
+
+3. Add it to Git local
+
+    * go to Git and then commit
+    
+    * find your file, should have a "?", check so that it becomes an "A"
+    * add a commit message
+    * commit
+  
+4. Continue to edit your file but this time add something you don't want 
+
+    * make a change and save
+    
+    * go to your file and look at the changes
+    
+    * click revert to get rid of the changes that you don't want
+    * look at file to make sure  unwanted edit is not there
+
+We will talk about how to get something back *after* you've committed it next class
+

@@ -1,4 +1,64 @@
 ---
 title: "Assignment #1"
-subtitle: "Assigned Mon DD/MM/YYYY | Due Sat DD/MM/YYYY"
+subtitle: "Assigned Thursday 16/04/2026| Due Monday 20/04/2026"
 ---
+
+Work with a partner!
+
+1. Download and read in  *p301.csv* - find it under materials for Week 1
+
+2. In an Quarto document, complete two data-analysis task (whatever you think might be interesting)
+
+3. Documents your motivation, and comment on results
+
+4. Render your Quarto complete with code, comments and results
+
+5. Submit *pdf* on Canvas for Assignment 1
+
+
+You can be creative here -  you could summarize precipitation by water year, find the mean annual precipitation and then graph annual time series (don't pick this one, since I suggested it :) 
+You could look at the relationship between two variables using regression or correlation; you could split the data in some way and do a t-test to look at whether means are different; you could look at trends. Its up to you
+
+
+# The data
+
+**p301.csv**
+
+Climate and estimates of water and forest carbon information from USFS experimental watershed  in the Southern California Sierra (above Fresno )
+
+# What the variables are (metadata)
+```{r, metadata, echo=FALSE}
+library(knitr)
+
+df <- data.frame(
+  Variable = c(
+    "month", "year", "day", "wy", "tmax", "tmin", "precip",
+    "transpiration", "evaporation", "NPP", "plant_carbon",
+    "streamflow", "snowpack", "direct solar", "diffuse solar"
+  ),
+  Description = c(
+    "Month",
+    "Year",
+    "Day",
+    "Water Year (Oct–Sept hydrologic year)",
+    "Maximum daily temperature",
+    "Minimum daily temperature",
+    "Depth of precipitation",
+    "Estimated forest transpiration",
+    "Estimated evaporation",
+    "Estimated net carbon uptake by trees",
+    "Estimated standing biomass in units of carbon",
+    "Streamflow (per watershed area)",
+    "Amount of snow on the ground (water equivalent)",
+    "Incoming direct solar radiation",
+    "Incoming diffuse solar radiation"
+  ),
+  Units = c(
+    "", "", "", "", "°C", "°C", "mm", "m/m²/day", "m/m²/day",
+    "kgC/m²/day", "kg/m²", "m/m²/day", "m/m²", "kJ/m²/day", "kJ/m²/day"
+  )
+)
+
+kable(df)
+```
+

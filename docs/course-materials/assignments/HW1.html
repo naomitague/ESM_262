@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-65803ac9f8b9a226f900d64efc7d6e1f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cd4e4562af9062d9f200841793bf5c06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-833e0e720c7009349b75861f93ae2f75.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -80,6 +80,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ESM 262</span>
     </a>
@@ -159,14 +161,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Assignment #1</h1>
-            <p class="subtitle lead">Assigned Mon DD/MM/YYYY | Due Sat DD/MM/YYYY</p>
+            <p class="subtitle lead">Assigned Thursday 16/04/2026| Due Monday 20/04/2026</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -177,18 +179,137 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data">The data</a></li>
+  <li><a href="#what-the-variables-are-metadata" id="toc-what-the-variables-are-metadata" class="nav-link" data-scroll-target="#what-the-variables-are-metadata">What the variables are (metadata)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<p>Work with a partner!</p>
+<ol type="1">
+<li><p>Download and read in <em>p301.csv</em> - find it under materials for Week 1</p></li>
+<li><p>In an Quarto document, complete two data-analysis task (whatever you think might be interesting)</p></li>
+<li><p>Documents your motivation, and comment on results</p></li>
+<li><p>Render your Quarto complete with code, comments and results</p></li>
+<li><p>Submit <em>pdf</em> on Canvas for Assignment 1</p></li>
+</ol>
+<p>You can be creative here - you could summarize precipitation by water year, find the mean annual precipitation and then graph annual time series (don’t pick this one, since I suggested it :) You could look at the relationship between two variables using regression or correlation; you could split the data in some way and do a t-test to look at whether means are different; you could look at trends. Its up to you</p>
+<section id="the-data" class="level1">
+<h1>The data</h1>
+<p><strong>p301.csv</strong></p>
+<p>Climate and estimates of water and forest carbon information from USFS experimental watershed in the Southern California Sierra (above Fresno )</p>
+</section>
+<section id="what-the-variables-are-metadata" class="level1">
+<h1>What the variables are (metadata)</h1>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 65%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">month</td>
+<td style="text-align: left;">Month</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year</td>
+<td style="text-align: left;">Year</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">day</td>
+<td style="text-align: left;">Day</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">wy</td>
+<td style="text-align: left;">Water Year (Oct–Sept hydrologic year)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tmax</td>
+<td style="text-align: left;">Maximum daily temperature</td>
+<td style="text-align: left;">°C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tmin</td>
+<td style="text-align: left;">Minimum daily temperature</td>
+<td style="text-align: left;">°C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">precip</td>
+<td style="text-align: left;">Depth of precipitation</td>
+<td style="text-align: left;">mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">transpiration</td>
+<td style="text-align: left;">Estimated forest transpiration</td>
+<td style="text-align: left;">m/m²/day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">evaporation</td>
+<td style="text-align: left;">Estimated evaporation</td>
+<td style="text-align: left;">m/m²/day</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NPP</td>
+<td style="text-align: left;">Estimated net carbon uptake by trees</td>
+<td style="text-align: left;">kgC/m²/day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">plant_carbon</td>
+<td style="text-align: left;">Estimated standing biomass in units of carbon</td>
+<td style="text-align: left;">kg/m²</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">streamflow</td>
+<td style="text-align: left;">Streamflow (per watershed area)</td>
+<td style="text-align: left;">m/m²/day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">snowpack</td>
+<td style="text-align: left;">Amount of snow on the ground (water equivalent)</td>
+<td style="text-align: left;">m/m²</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">direct solar</td>
+<td style="text-align: left;">Incoming direct solar radiation</td>
+<td style="text-align: left;">kJ/m²/day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">diffuse solar</td>
+<td style="text-align: left;">Incoming diffuse solar radiation</td>
+<td style="text-align: left;">kJ/m²/day</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
