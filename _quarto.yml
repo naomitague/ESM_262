@@ -3,11 +3,6 @@ project:
   output-dir: docs
 
 website:
-  announcement:
-    icon: info-circle
-    dismissable: false
-    type: primary
-    position: above-navbar
   title: "ESM 262"
   favicon: images/bren-hex.png
   navbar:
@@ -25,7 +20,7 @@ website:
       - text: assignments
         href: assignments.qmd
       - text: resources
-        menu: 
+        menu:
           - text: Recommended readings & resources
             href: resources.qmd
           - text: Installation guide
@@ -39,8 +34,8 @@ website:
             url: https://github.com/UCSB-MEDS/EDS-website-template/issues
   page-footer:
     background: dark
-    right: This website is built with [{{< fa brands github title="the github octocat logo" >}}](https://github.com/UCSB-MEDS/EDS-website-template) and [Quarto](https://quarto.org/)
-    left: This work is licensed under \<your preferred license\> 
+    right: "[GitHub](https://github.com/UCSB-MEDS/EDS-website-template) and [Quarto](https://quarto.org/)"
+    left: "This work is licensed under your preferred license"
 
 format:
   html:
@@ -48,6 +43,4 @@ format:
     page-layout: full
     toc: true
     title-block-banner: true
-
-
 

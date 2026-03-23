@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.8.25" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>install-guide – ESM 262</title>
@@ -59,7 +57,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/bren-hex.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-65803ac9f8b9a226f900d64efc7d6e1f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3e4451a4e685fbe35aa494f96bb93b28.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -92,76 +111,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body>
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <div id="quarto-announcement" data-announcement-id="d41d8cd98f00b204e9800998ecf8427e" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content"></div></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="/index.html" class="navbar-brand navbar-brand-logo">
-    </a>
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">ESM 262</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/ESM_262_syllabus.html"> 
+    <a class="nav-link" href="./ESM_262_syllabus.pdf"> 
 <span class="menu-text">syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">course materials</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
         <li>
-    <a class="dropdown-item" href="/course-materials/week1.html">
+    <a class="dropdown-item" href="./course-materials/week1.html">
  <span class="dropdown-text">week 1 (DD/MM)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/course-materials/week2.html">
+    <a class="dropdown-item" href="./course-materials/week2.html">
  <span class="dropdown-text">week 2 (DD/MM)</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/assignments.html"> 
+    <a class="nav-link" href="./assignments.html"> 
 <span class="menu-text">assignments</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">resources</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="/resources.html">
+    <a class="dropdown-item" href="./resources.html">
  <span class="dropdown-text">Recommended readings &amp; resources</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="/install-guide.html" target="_blank">
+    <a class="dropdown-item" href="./install-guide.html" target="_blank">
  <span class="dropdown-text">Installation guide</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
-      <i 
-  class="bi bi-github" 
-  role="img" 
->
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span>
     </a>
@@ -184,49 +195,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div id="quarto-toc-target"></div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-
-<nav id="TOC" role="doc-toc">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-R" id="toc-install-R">1. Install or update R</a></li>
-  <li><a href="#install-RStudio" id="toc-install-RStudio">2. Install or update RStudio</a></li>
-  <li><a href="#Quarto" id="toc-Quarto">3. Install Quarto <em>if necessary</em> (automatically installed with RStudio)</a></li>
-  <li><a href="#wait-on-this-untill-we-get-to-git-in-course" id="toc-wait-on-this-untill-we-get-to-git-in-course">WAIT ON THIS UNTILL WE GET TO GIT IN COURSE</a>
-  <ul>
-  <li><a href="#check-git" id="toc-check-git">4. Git -</a></li>
-  <li><a href="#GitHub" id="toc-GitHub">5. Create a GitHub account</a></li>
-  <li><a href="#configure-git" id="toc-configure-git">6. Configure git</a></li>
-  <li><a href="#GitHub-PAT" id="toc-GitHub-PAT">7. Store your GitHub personal access token (PAT)</a></li>
-  <li><a href="#install-Cyberduck" id="toc-install-Cyberduck">8. Install Cyberduck</a></li>
-  <li><a href="#install-VPN" id="toc-install-VPN">9. Install UCSB’s Ivanti Campus VPN (Virtual Private Network)</a></li>
+  <li><a href="#install-R" id="toc-install-R" class="nav-link active" data-scroll-target="#install-R">1. Install or update R</a></li>
+  <li><a href="#install-RStudio" id="toc-install-RStudio" class="nav-link" data-scroll-target="#install-RStudio">2. Install or update RStudio</a></li>
+  <li><a href="#Quarto" id="toc-Quarto" class="nav-link" data-scroll-target="#Quarto">3. Install Quarto <em>if necessary</em> (automatically installed with RStudio)</a></li>
+  <li><a href="#wait-on-this-untill-we-get-to-git-in-course" id="toc-wait-on-this-untill-we-get-to-git-in-course" class="nav-link" data-scroll-target="#wait-on-this-untill-we-get-to-git-in-course">WAIT ON THIS UNTILL WE GET TO GIT IN COURSE</a>
+  <ul class="collapse">
+  <li><a href="#check-git" id="toc-check-git" class="nav-link" data-scroll-target="#check-git">4. Git -</a></li>
+  <li><a href="#GitHub" id="toc-GitHub" class="nav-link" data-scroll-target="#GitHub">5. Create a GitHub account</a></li>
+  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git">6. Configure git</a></li>
+  <li><a href="#GitHub-PAT" id="toc-GitHub-PAT" class="nav-link" data-scroll-target="#GitHub-PAT">7. Store your GitHub personal access token (PAT)</a></li>
+  <li><a href="#install-Cyberduck" id="toc-install-Cyberduck" class="nav-link" data-scroll-target="#install-Cyberduck">8. Install Cyberduck</a></li>
+  <li><a href="#install-VPN" id="toc-install-VPN" class="nav-link" data-scroll-target="#install-VPN">9. Install UCSB’s Ivanti Campus VPN (Virtual Private Network)</a></li>
   </ul></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+
 <section id="install-R" class="level3">
-<h3>1. Install or update R</h3>
+<h3 class="anchored" data-anchor-id="install-R">1. Install or update R</h3>
 <p>Visit <a href="https://cloud.r-project.org/">cloud.r-project.org</a> to download the most recent version of R for your operating system. You should have <em>at least</em> version 4.4.0 (released 2024-04-24) running when you start MEDS.</p>
 </section>
 <section id="install-RStudio" class="level3">
-<h3>2. Install or update RStudio</h3>
+<h3 class="anchored" data-anchor-id="install-RStudio">2. Install or update RStudio</h3>
 <p>While R is a programming language, RStudio is a software (often referred to as an IDE, <strong>I</strong>ntegrated <strong>D</strong>evelopment <strong>E</strong>nvironment) that provides R programmers with a neat, easy-to-use interface for coding in R. There are a number of IDEs out there, but RStudio is arguably the best and definitely most popular among R programmers.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Note</span>NOTE: You need <em>both</em> R and RStudio installed
@@ -237,8 +248,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/R_RStudio.png" class="img-fluid quarto-figure quarto-figure-center" width="859" /></p>
+<figure class="figure">
+<p><img src="images/R_RStudio.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -256,8 +267,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/rstudio-logo.png" class="img-fluid quarto-figure quarto-figure-center" style="width:15.0%" /></p>
+<figure class="figure">
+<p><img src="images/rstudio-logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:15.0%"></p>
 </figure>
 </div>
 </div>
@@ -265,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Note</span>Note for <i class="fa-brands fa-apple" aria-label="apple"></i> <em>Mac</em> users: you may need to install command line tools and XQuartz.
@@ -282,23 +293,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="Quarto" class="level3">
-<h3>3. Install Quarto <em>if necessary</em> (automatically installed with RStudio)</h3>
+<h3 class="anchored" data-anchor-id="Quarto">3. Install Quarto <em>if necessary</em> (automatically installed with RStudio)</h3>
 <p>Quarto is a scientific publishing tool built on Pandoc that allows R, Python, Julia, and ObservableJS users to create dynamic documents, websites, books and more. Don’t worry if you don’t know what all of these are - we will use it to create documents with Rstudio.</p>
 <p>Quarto is included with RStudio v2022.07.1+ <strong>so there no need for a separate download/install</strong> if you have the latest version of RStudio! You can find all releases (current, pre, and older releases) on the Quarto website <a href="https://quarto.org/docs/download/">download page</a>, should you want/need to reference them.</p>
 </section>
 <section id="wait-on-this-untill-we-get-to-git-in-course" class="level2">
-<h2>WAIT ON THIS UNTILL WE GET TO GIT IN COURSE</h2>
-<p>Later in the course we will learn about using <em>Git</em> and <em>Github</em><br />
+<h2 class="anchored" data-anchor-id="wait-on-this-untill-we-get-to-git-in-course">WAIT ON THIS UNTILL WE GET TO GIT IN COURSE</h2>
+<p>Later in the course we will learn about using <em>Git</em> and <em>Github</em><br>
 for reproducibility, collaboration and tracking code changes</p>
 <p>Setting up requires some use of the <em>terminal</em> in Rstudio, if you are familiar with that you can go ahead and set up - otherwise wait and we will take you through</p>
 <section id="check-git" class="level3">
-<h3>4. Git -</h3>
+<h3 class="anchored" data-anchor-id="check-git">4. Git -</h3>
 <ul>
 <li><p>Check to see if <em>git</em> is installed</p></li>
 <li><p>Open RStudio</p></li>
 <li><p>In the Terminal, run the following command (choose the option for your operating system):</p></li>
 </ul>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><i class="fa-brands fa-apple" aria-label="apple"></i> Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="fa-brands fa-windows" aria-label="windows"></i> Windows</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
@@ -307,7 +318,7 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash cell-code"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> git</span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -317,24 +328,24 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash cell-code"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">where</span> git</span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">where</span> git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 <ul>
-<li>If you get something that looks like a file path to git on your computer (e.g. <code>/usr/local/bin/git</code> on a Mac, <code>C:\Program Files\Git\mingw64\bin\git.exe</code> on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download &amp; install git here: <a href="https://git-scm.com/downloads">git-scm.com/downloads</a></li>
+<li>If you get something that looks like a file path to git on your computer (e.g.&nbsp;<code>/usr/local/bin/git</code> on a Mac, <code>C:\Program Files\Git\mingw64\bin\git.exe</code> on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download &amp; install git here: <a href="https://git-scm.com/downloads">git-scm.com/downloads</a></li>
 </ul>
 </section>
 <section id="GitHub" class="level3">
-<h3>5. Create a GitHub account</h3>
+<h3 class="anchored" data-anchor-id="GitHub">5. Create a GitHub account</h3>
 <ul>
 <li>If you don’t already have a GitHub account, go to <a href="https://github.com" class="uri">https://github.com</a> and create one. Check out Jenny Bryan’s <a href="https://happygitwithr.com/github-acct.html">Happy Git with R, Ch. 4</a> for some helpful considerations when choosing a username. We suggest that you use a <em>personal email</em> or your <span class="citation" data-cites="bren.ucsb.edu">@bren.ucsb.edu</span> email when setting up your account (rather than your <span class="citation" data-cites="ucsb.edu">@ucsb.edu</span> <em>email</em>, which will be deactivated after you graduate).</li>
 </ul>
 </section>
 <section id="configure-git" class="level3">
-<h3>6. Configure git</h3>
+<h3 class="anchored" data-anchor-id="configure-git">6. Configure git</h3>
 <ul>
 <li>In RStudio, open the Terminal. Run the following commands (by pressing <strong>return</strong> after each line). Be sure to replace the username (keep the quotation marks!) with <em>your</em> GitHub username and the email with the email you used for your GitHub account.</li>
 </ul>
@@ -343,8 +354,8 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash cell-code"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Jane Doe&quot;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email janedoe@example.com</span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Jane Doe"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email janedoe@example.com</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <ul>
@@ -355,16 +366,16 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash cell-code"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--global</span></span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--global</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>IMPORTANT: If you’re configuring git on a <strong>Bren server</strong> (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal
+<span class="screen-reader-only">Important</span>IMPORTANT: If you’re configuring git on a <strong>Bren server</strong> (e.g.&nbsp;workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -373,17 +384,17 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Terminal</strong></pre>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash cell-code"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper <span class="st">&#39;cache --timeout=10000000&#39;</span></span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper <span class="st">'cache --timeout=10000000'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>This prevents important credentials (e.g. a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You <strong>do not</strong> need to complete this step when configuring git on your local computer.</p>
+<p>This prevents important credentials (e.g.&nbsp;a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You <strong>do not</strong> need to complete this step when configuring git on your local computer.</p>
 </div>
 </div>
 </section>
 <section id="GitHub-PAT" class="level3">
-<h3>7. Store your GitHub personal access token (PAT)</h3>
+<h3 class="anchored" data-anchor-id="GitHub-PAT">7. Store your GitHub personal access token (PAT)</h3>
 <p><strong>First:</strong> What even is a personal access token? From GitHub’s documentation:</p>
-<blockquote>
+<blockquote class="blockquote">
 <p>Personal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the <a href="https://docs.github.com/en/rest/overview/other-authentication-methods#via-oauth-and-personal-access-tokens">GitHub API</a> or the <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#using-a-token-on-the-command-line">command line</a>.</p>
 </blockquote>
 <p>This means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. <strong>Importantly, you’ll need to generate a PAT for each computer you wish to work from.</strong> For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:</p>
@@ -395,15 +406,15 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Console</strong></pre>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;usethis&quot;</span>)</span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>A lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/install-pkg-success.png" class="img-fluid quarto-figure quarto-figure-center" width="520" /></p>
+<figure class="figure">
+<p><img src="images/install-pkg-success.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -416,7 +427,7 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Console</strong></pre>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>() </span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <ul>
@@ -425,8 +436,8 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/new-pat.png" class="img-fluid quarto-figure quarto-figure-center" width="1000" /></p>
+<figure class="figure">
+<p><img src="images/new-pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -438,8 +449,8 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/generate-token.png" class="img-fluid quarto-figure quarto-figure-center" width="615" /></p>
+<figure class="figure">
+<p><img src="images/generate-token.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -453,15 +464,15 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Console</strong></pre>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>This will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/gitcreds-set.png" class="img-fluid quarto-figure quarto-figure-center" width="489" /></p>
+<figure class="figure">
+<p><img src="images/gitcreds-set.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -474,15 +485,15 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="code-with-filename-file">
 <pre><strong>RStudio Console</strong></pre>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Does it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img src="images/git_sitrep.png" class="img-fluid quarto-figure quarto-figure-center" width="469" /></p>
+<figure class="figure">
+<p><img src="images/git_sitrep.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
@@ -490,7 +501,7 @@ for reproducibility, collaboration and tracking code changes</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Note</span><strong>A note on expiring tokens:</strong>
@@ -502,11 +513,11 @@ for reproducibility, collaboration and tracking code changes</p>
 </div>
 </section>
 <section id="install-Cyberduck" class="level3">
-<h3>8. Install Cyberduck</h3>
+<h3 class="anchored" data-anchor-id="install-Cyberduck">8. Install Cyberduck</h3>
 <p>Cyberduck is a program that allows you to browse files on a remote server. <a href="https://cyberduck.io/">Download here</a>.</p>
 </section>
 <section id="install-VPN" class="level3">
-<h3>9. Install UCSB’s Ivanti Campus VPN (Virtual Private Network)</h3>
+<h3 class="anchored" data-anchor-id="install-VPN">9. Install UCSB’s Ivanti Campus VPN (Virtual Private Network)</h3>
 <p>You probably already did this - but just in case!</p>
 <p>For secure remote access to the UCSB’s campus network when you’re not physically present on campus, you’ll need to download and install the Ivanti VPN client. This will allow you to access UCSB’s technology resources (including servers, journal subscriptions, etc.) anytime and from anywhere.</p>
 <p>See this <a href="https://it.ucsb.edu/network-infrastructure-services/ivanti-connect-secure-campus-vpn">UCSB Information Technology article</a> for directions on how to get started.</p>
@@ -514,23 +525,13 @@ for reproducibility, collaboration and tracking code changes</p>
 <p><strong><em>~ END Installation Guide ~</em></strong></p>
 </div>
 <p><br></p>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">ESM 262</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">ESM 262</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6aG9tZQ==">home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6c3lsbGFidXM=">syllabus</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L0VTTV8yNjJfc3lsbGFidXMuaHRtbA==">/ESM_262_syllabus.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Y291cnNlIG1hdGVyaWFscw==">course materials</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6d2VlayAxIChERC9NTSk=">week 1 (DD/MM)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvdXJzZS1tYXRlcmlhbHMvd2VlazEuaHRtbA==">/course-materials/week1.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6d2VlayAyIChERC9NTSk=">week 2 (DD/MM)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2NvdXJzZS1tYXRlcmlhbHMvd2VlazIuaHRtbA==">/course-materials/week2.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6YXNzaWdubWVudHM=">assignments</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Fzc2lnbm1lbnRzLmh0bWw=">/assignments.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6cmVzb3VyY2Vz">resources</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb21tZW5kZWQgcmVhZGluZ3MgJiByZXNvdXJjZXM=">Recommended readings &amp; resources</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Jlc291cmNlcy5odG1s">/resources.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SW5zdGFsbGF0aW9uIGd1aWRl">Installation guide</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luc3RhbGwtZ3VpZGUuaHRtbA==">/install-guide.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291cmNlIENvZGU=">Source Code</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6aHR0cHM6Ly9naXRodWIuY29tL1VDU0ItTUVEUy9FRFMtd2Vic2l0ZS10ZW1wbGF0ZQ==">https://github.com/UCSB-MEDS/EDS-website-template</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVwb3J0IGEgQnVn">Report a Bug</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6aHR0cHM6Ly9naXRodWIuY29tL1VDU0ItTUVEUy9FRFMtd2Vic2l0ZS10ZW1wbGF0ZS9pc3N1ZXM=">https://github.com/UCSB-MEDS/EDS-website-template/issues</span></p>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWxlZnQ=">
-<p>This work is licensed under &lt;your preferred license&gt;</p>
-</div>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLXJpZ2h0">
-<p>This website is built with <a href="https://github.com/UCSB-MEDS/EDS-website-template"><i class="fa-brands fa-github" title="the github octocat logo" aria-label="github"></i></a> and <a href="https://quarto.org/">Quarto</a></p>
-</div>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">ESM 262</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">ESM 262</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">ESM 262</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">ESM 262</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
-</div>
+
+
 </section>
 </section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -934,17 +935,19 @@ for reproducibility, collaboration and tracking code changes</p>
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <div class='footer-contents'>This work is licensed under \<your preferred license\></div>  
-    </div>   
+<p>This work is licensed under your preferred license</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-      <div class='footer-contents'>This website is built with [](https://github.com/UCSB-MEDS/EDS-website-template) and [Quarto](https://quarto.org/)</div>  
-    </div>
+<p><a href="https://github.com/UCSB-MEDS/EDS-website-template">GitHub</a> and <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
 
-</body>
 
-</html>
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
