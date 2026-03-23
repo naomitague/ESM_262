@@ -9,21 +9,21 @@
   {
     "objectID": "index.html#course-description",
     "href": "index.html#course-description",
-    "title": "Course Title",
+    "title": "Computing for Environmental Science and Management",
     "section": "Course Description",
-    "text": "Course Description\nAdd your course description here (can be copied over from your syllabus or the affiliated Bren course page)"
+    "text": "Course Description\nAn introduction to computing for environmental applications. The course provides practical training in some core programming skills and best practices for data science and software design. The course features R for programming, Git for version control, Quarto for workflow and editing, and GitHub for collaboration and publishing, but many concepts would be applicable in other software design tools."
   },
   {
     "objectID": "index.html#teaching-team",
     "href": "index.html#teaching-team",
-    "title": "Course Title",
+    "title": "Computing for Environmental Science and Management",
     "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nInstructor’s Name\nEmail: email@ucsb.edu\nLearn more: link to preferred online profile here\n\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nTA’s Name\nEmail: email@bren.ucsb.edu\nLearn more: link to preferred online profile here"
+    "text": "Teaching Team\n\n\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nNaomi Tague\nEmail: tague@ucsb.edu\n**Learn more:Tague Team Lab\n\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nOjas Sarup\nEmail: ojassarup@ucsb.edu"
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
-    "title": "Course Title",
+    "title": "Computing for Environmental Science and Management",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nAdd any acknowledgements here (e.g. any resources or people you drew lots of inspiration or help from when building your materials?)"
   },
