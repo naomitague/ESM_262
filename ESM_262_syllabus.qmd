@@ -158,10 +158,10 @@ There will be 8 assignments (more or less one for each week). You will usually h
 
 | Week | Name                         | Assigned   | Due date   | Group (G) |
 |------|------------------------------|------------|------------|-----------|
-| 1    | Quarto Intro              | 2026-04-16 | 2026-04-21 | G         |
-| 2    | Git             | 2025-04-21 | 2025-04-28 | I         |
+| 1    | Quarto Intro                 | 2026-04-16 | 2026-04-21 | G         |
+| 2    | Git                          | 2025-04-21 | 2025-04-28 | I         |
 | 3    | Using Git with your function | 2025-02-25 | 2025-03-03 | I         |
-| 4    | Data Structure                     | 2025-03-4  | 2025-03-10 | I         |
+| 4    | Data Structure               | 2025-03-4  | 2025-03-10 | I         |
 | 5    | Functions and testing        | 2025-3-11  | 2025-3-18  | G         |
 
 # Assignment expectations and grading
