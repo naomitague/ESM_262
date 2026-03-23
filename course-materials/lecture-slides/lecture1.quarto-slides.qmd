@@ -19,7 +19,7 @@ Quarto is a scientific and technical publishing system built on Pandoc. It enabl
 
 Its a lot like R Markdown, but with more features and capabilities.
 
- similarities to Jupyter Notebooks, but with more features and capabilities.
+similarities to Jupyter Notebooks, but with more features and capabilities.
 
 ## Classic Example of Quarto
 
@@ -44,6 +44,17 @@ Quarto documents are made up of three main components:
 1.  YAML header
 2.  Markdown content
 3.  Code chunks
+
+## Markdown Content
+
+What you are familiar with
+
+Some text formatting
+
+* Headers (with different numbers of pound signs, #, ##, … to start the line)
+* Bullet points (asterisks, *, or dashes, -, to start lines)
+* Links ([text here!](link here))
+* Bold (double asterisk) & italics (single asterisk)
 
 ## YAML header {.scrollable}
 
@@ -74,24 +85,17 @@ Some themes for presentaion inlucde - solarized - metropolis - night - sky
 
 ## Yaml Execute
 
-The `execute` section of the YAML header sets how code chunks are executed. 
-For example, 
-- `echo: false`. 
-- `warning: false` 
-- `message: false`.
+The `execute` section of the YAML header sets how code chunks are executed. For example, - `echo: false`. - `warning: false` - `message: false`.
 
-You can overrides in an R code chunk using 
+You can overrides in an R code chunk using
 
-\#| echo: true
-
-
+#\| echo: true
 
 ## Markdown and Code Chunks
 
 Should be familiar to you - much like R Markdown.
 
 Quarto can also include other languages, such as Python, Julia, and JavaScript.
-
 
 ## Lets look at the code in *hello.qmd* and see how it works
 

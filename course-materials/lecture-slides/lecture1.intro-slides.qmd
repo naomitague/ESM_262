@@ -7,6 +7,32 @@ format:
 editor: visual
 ---
 
+## Attendance
+
+1. Why Attendance Matters
+
+* hands-on learning in class
+
+  
+* staying on track with course material and assignments
+* asking questions and getting help in real time
+* building connections with peers and instructors
+  ** YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer **
+* some assignments and quizes are done in class
+
+2. Missing a class
+
+* if you are sick - stay home! -health is key
+* email Ojas and I so we know
+* check course website and Canvas for lectures/assignments
+  * go through them
+  * attend Ojas's office hours if you have questions
+  * email us with questions
+* if you need to be late for an assignment - let us know in advance
+* for group assignments or quizes in class, we can let you know how to make up
+* if absences are extensive, we need a plan  - contact the me, Ojas AND the Director of Student Affairs 
+
+
 
 ## new AI tools and Data Science
 
@@ -28,15 +54,25 @@ High level perspective
 
 -   [Recent review on potential harmful consequenses](%22../papers/review-of-harms-fromAIcodingedu.pdf%22)
 
-# Installation Guide
+# Using AI-tools in this course
 
-## Some 
+-   AI-tools great resources but effective use requires understanding how to ask good questions
 
-# Homework
+-   Use this course to build that understanding,
 
-* Complete Installation Part 1 
-* Complete the getting to know you survey
-* Read one of the AI papers and think of one thing you found interesting
+-   You gain skills by **Practicing**, so start without AI-tools
 
+-   For assignments/practice
 
+    -   **Always** write the code yourself -
+    -   How we will use AI - tools later in the course
+    -   Supportive ways to use AI-tools
+        -   use AI-tools to help find syntax
+        -   Use AI-tools to explain other peoples code (including class examples)
+        -   Use AI-tools to help interpret error messages
 
+# Homework (not-graded)
+
+-   Complete Installation Part 1
+-   Complete the getting to know you survey
+-   Read one of the AI papers and think of one thing you found interesting

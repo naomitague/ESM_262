@@ -74,14 +74,14 @@
     "href": "ESM_262_syllabus.html#course-where-and-when",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Course where and when",
-    "text": "Course where and when\nT/TH 8:00 AM - 9:15 AM (Bren Hall 1414)\nTeaching Team\nInstructor: Naomi Tague (www.tagueteamlab.org)\n\nOffice hours: email me\nemail (tague@ucsb.edu)\ngit user id naomitague\n\nTeaching assistant: Ojas Sarup\n\nOffice hours: Tuesday / Thursday 3pm-4pm\nemail (ojassarup@ucsb.edu )\ngit user id osarup"
+    "text": "Course where and when\nT/TH 8:00 AM - 9:15 AM (Bren Hall 1414)\nTeaching Team\nInstructor: Naomi Tague (www.tagueteamlab.org)\n\nOffice hours: email me\nemail (tague@ucsb.edu)\ngit user id naomitague\n\nTeaching assistant: Ojas Sarup\n\nOffice hours: TBD\nemail (ojassarup@ucsb.edu )\ngit user id osarup"
   },
   {
     "objectID": "ESM_262_syllabus.html#learning-objectives",
     "href": "ESM_262_syllabus.html#learning-objectives",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\npractice partner coding and reproducible workflows\n3 BIG concepts in programming are modularity, data structure, looping - we will learn skills related to all three of these\nlearn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)\n\ndocumentation\ntesting\n\nlearn some new Rskills that are helpful for a wide variety of data science applications"
+    "text": "Learning objectives\n\npractice partner coding and reproducible workflows\n3 BIG concepts in programming are modularity, data structure, repetition - we will learn skills related to all three of these\nlearn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)\n\ndocumentation\ntesting\nreproducibity\n\nlearn some new Rskills that are helpful for a wide variety of data science applications"
   },
   {
     "objectID": "ESM_262_syllabus.html#computing-set-up",
@@ -109,7 +109,7 @@
     "href": "ESM_262_syllabus.html#assignments",
     "title": "Syllabus ESM 262 - Spring 2026",
     "section": "Assignments",
-    "text": "Assignments\nThere will be 5 assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups."
+    "text": "Assignments\nThere will be 8 assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups."
   },
   {
     "objectID": "assignments.html",

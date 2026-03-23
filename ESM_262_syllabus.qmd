@@ -1,9 +1,7 @@
 ---
 title: 'Syllabus ESM 262 - Spring 2026'
-format:
-  revealjs:
-    theme: solarized
-    resources: ["img/"]
+format: pdf
+resources: ["img/"]
 editor: visual
 ---
 
@@ -24,12 +22,11 @@ knitr::include_graphics("images/whoIam.jpeg")
 ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.
 
 -   programming language concepts
-  * loops and repetition
-  * data types and structures
+-   loops and repetition
+-   data types and structures
 -   modular program design;
 -   reproducibility and version control;
 -   testing, documentation, and workflow;
-
 
 The course features **R** for programming, **Git** for version control, **Quarto** for workflow and editing, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
 
@@ -49,25 +46,23 @@ Teaching Team
 
 **Teaching assistant:** Ojas Sarup
 
--   **Office hours:** Tuesday / Thursday 3pm-4pm
+-   **Office hours:** TBD
 -   **email** (ojassarup\@ucsb.edu )
 -   **git user id** osarup
 
 ## [Learning objectives]{style="color:orange"}
 
+-   practice partner coding and reproducible workflows
 
--   practice partner coding and reproducible workflows  
-
--   3 *BIG* concepts in programming are *modularity*, *data structure*, *looping* - we will learn skills related to all three of these
+-   3 *BIG* concepts in programming are *modularity*, *data structure*, *repetition* - we will learn skills related to all three of these
 
 -   learn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)
 
     -   documentation
     -   testing
+    -   reproducibity
 
 -   learn some new Rskills that are helpful for a wide variety of data science applications
-
-
 
 ## [Computing set up]{style="color:orange"}
 
@@ -157,16 +152,16 @@ kable(
 
 ## [Assignments]{style="color:orange"}
 
-There will be 5 assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups.
+There will be 8 assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups.
 
 # Assignment materials and dates
 
 | Week | Name                         | Assigned   | Due date   | Group (G) |
 |------|------------------------------|------------|------------|-----------|
-| 1    | Modular Design               | 2025-02-13 | 2025-02-17 | G         |
-| 2    | Making a function            | 2025-02-18 | 2025-02-24 | I         |
+| 1    | Quarto Intro              | 2026-04-16 | 2026-04-21 | G         |
+| 2    | Git             | 2025-04-21 | 2025-04-28 | I         |
 | 3    | Using Git with your function | 2025-02-25 | 2025-03-03 | I         |
-| 4    | Looping                      | 2025-03-4  | 2025-03-10 | I         |
+| 4    | Data Structure                     | 2025-03-4  | 2025-03-10 | I         |
 | 5    | Functions and testing        | 2025-3-11  | 2025-3-18  | G         |
 
 # Assignment expectations and grading
@@ -176,5 +171,3 @@ There will be 5 assignments (more or less one for each week). You will usually h
 -   Style counts; So make sure your follow good programming practices including adding documentation and using informative variable names
 -   You can use AI (ChatGPT etc) to help you learn syntax, but write the code yourself; this is how you learn
 -   You can resubmit your assignment for additional feedback and we will upgrade your grade. Please do so with in one week of getting the assignment back
-
-
