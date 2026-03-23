@@ -9,10 +9,10 @@ description: "Monday April 14^th^, 2026"
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 
-| Lecture slides | 
-|----------------|
-| [Lecture 1.1: topic Intro](lecture-slides/lecture1.intro-slides.qmd){target="_blank"} 
-| [Lecture 1.2: topic Quarto](lecture-slides/lecture1.quarto-slides.qmd){target="_blank"} } | 
+| Lecture slides | Materials | 
+|----------------|------------------|
+| [Lecture 1.1: topic Intro](lecture-slides/lecture1.intro-slides.qmd){target="_blank"}   ||
+| [Lecture 1.2: topic Quarto](lecture-slides/lecture1.quarto-slides.qmd){target="_blank"} |<a href="../downloadables/week1/hello.qmd" download>Download hello.qmd</a> |
 : {.hover .bordered tbl-colwidths="[50,25,25]"} 
 
 

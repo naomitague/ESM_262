@@ -1,17 +1,17 @@
 ---
-title: "Course Title"
-subtitle: "Master of Environmental Data Science (MEDS)"
-description: "Winter 2025"
+title: "Computing for Environmental Science and Management "
+subtitle: "ESM 262"
+description: "Spring 2026"
 title-block-banner: false
 toc: false
 ---
 
 ::: {.center-text}
-![](images/bren-meds-hex.png){width="25%" fig-alt="Alt text here."}
+![](images/ESM262-logo.png){width="25%" fig-alt="Alt text here."}
 :::
 
 ::: {.center-text .gray-text}
-*Add your own relevant image to the `images/` folder, then update the file name in `index.qmd` so that it points to the correct image.* 
+
 :::
 
 <br>
@@ -26,7 +26,7 @@ toc: false
 
 ## Course Description
 
-Add your course description here (can be copied over from your syllabus or the affiliated Bren course page)
+An introduction to computing for environmental applications. The course provides practical training in some core programming skills and best practices for data science and software design. The course features **R** for programming, **Git** for version control, **Quarto** for workflow and editing, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools. 
 
 ## Teaching Team
 
@@ -46,12 +46,12 @@ Add your course description here (can be copied over from your syllabus or the a
 #| echo: false
 #| fig-align: "center"
 #| out-width: "45%" 
-knitr::include_graphics("images/tbd.png")
+knitr::include_graphics("images/naomi_circular.png")
 ```
 ::: {.center-text}
-[**Instructor's Name**]{.teal-text}  
-**Email:** [email@ucsb.edu](mailto::email@bren.ucsb.edu)  
-**Learn more:** link to preferred online profile here  
+[**Naomi Tague**]{.teal-text}  
+**Email:** [tague@ucsb.edu](mailto::tague@bren.ucsb.edu)  
+**Learn more:[Tague Team Lab](www.tagueteamlab.org)
 :::
 :::
 
@@ -68,9 +68,9 @@ knitr::include_graphics("images/tbd.png")
 knitr::include_graphics("images/tbd.png")
 ```
 ::: {.center-text}
-[**TA's Name**]{.teal-text}  
-**Email:** [email@bren.ucsb.edu](mailto::email@bren.ucsb.edu)   
-**Learn more:** link to preferred online profile here
+[**Ojas Sarup**]{.teal-text}  
+**Email:** [ojassarup@ucsb.edu](mailto::ojassarup@ucsb.edu)   
+
 :::
 :::
 
