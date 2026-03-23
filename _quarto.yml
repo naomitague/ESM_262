@@ -1,7 +1,16 @@
 project:
   type: website
   output-dir: docs
-
+  render:
+    - "*.qmd"
+    - "course-materials/*.qmd"
+    - "assignments.qmd"
+    - "resources.qmd"
+    - "install-guide.qmd"
+    - "!downloadables/**"
+  resources:
+    - downloadables/**
+    
 website:
   title: "ESM 262"
   favicon: images/bren-hex.png
