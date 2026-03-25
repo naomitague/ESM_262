@@ -150,4 +150,17 @@ Make some changes to the hello.qmd
 -   start with a setup R chunk at the top to load all packages and set global options for your code chunks (e.g. echo, warning, message)
 -   use the "include" option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)
 
-## Assignment 1
+## Start working on Assignment 1  
+
+* access on website
+* do with a partner
+* submit on Canvas before Tuesday's class
+
+
+
+## For next class
+
+* Go through Git and Github set up in the "install-guide" 
+  * reach out to Ojas if you have issues
+* Assignment 1
+
