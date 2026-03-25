@@ -123,7 +123,7 @@ git config --list --global
 ```
 
 ::: callout-important
-## IMPORTANT: If you're configuring git on a **Bren server** (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal
+## FOR FUTURE REFERENCE: If you're configuring git on a **Bren server** (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal
 
 ```{bash filename="RStudio Terminal"}
 #| eval: false
@@ -219,18 +219,6 @@ knitr::include_graphics("images/git_sitrep.png")
 Setting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it's time to regenerate a token that's about to expire. Follow the email prompts, then use `gitcreds::gitcreds_set()` to reset your token.
 :::
 
-
-### 8. Install Cyberduck {#install-Cyberduck}
-
-Cyberduck is a program that allows you to browse files on a remote server. [Download here](https://cyberduck.io/).
-
-### 9. Install UCSB's Ivanti Campus VPN (Virtual Private Network) {#install-VPN}
-
-You probably already did this - but just in case!
-
-For secure remote access to the UCSB's campus network when you're not physically present on campus, you'll need to download and install the Ivanti VPN client. This will allow you to access UCSB's technology resources (including servers, journal subscriptions, etc.) anytime and from anywhere.
-
-See this [UCSB Information Technology article](https://it.ucsb.edu/network-infrastructure-services/ivanti-connect-secure-campus-vpn) for directions on how to get started.
 
 
 ::: {.center-text .body-text-l .dark-blue-text}

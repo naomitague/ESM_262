@@ -3,36 +3,35 @@ title: 'Intro- Spring 2026'
 format:
   revealjs:
     theme: solarized
-    resources: ["img/"]
+    resources: ["images/Week1"]
 editor: visual
 ---
 
 ## Attendance
 
-1. Why Attendance Matters
+1.  Why Attendance Matters
 
-* hands-on learning in class
+-   hands-on learning in class
 
-  
-* staying on track with course material and assignments
-* asking questions and getting help in real time
-* building connections with peers and instructors
-  ** YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer **
-* some assignments and quizes are done in class
+-   staying on track with course material and assignments
 
-2. Missing a class
+-   asking questions and getting help in real time
 
-* if you are sick - stay home! -health is key
-* email Ojas and I so we know
-* check course website and Canvas for lectures/assignments
-  * go through them
-  * attend Ojas's office hours if you have questions
-  * email us with questions
-* if you need to be late for an assignment - let us know in advance
-* for group assignments or quizes in class, we can let you know how to make up
-* if absences are extensive, we need a plan  - contact the me, Ojas AND the Director of Student Affairs 
+-   building connections with peers and instructors \*\* YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer \*\*
 
+-   some assignments and quizes are done in class
 
+2.  Missing a class
+
+-   if you are sick - stay home! -health is key
+-   email Ojas and I so we know
+-   check course website and Canvas for lectures/assignments
+    -   go through them
+    -   attend Ojas's office hours if you have questions
+    -   email us with questions
+-   if you need to be late for an assignment - let us know in advance
+-   for group assignments or quizes in class, we can let you know how to make up
+-   if absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs
 
 ## new AI tools and Data Science
 

@@ -292,5 +292,26 @@
     "title": "Git Spring 2026",
     "section": " Git and what to do with it ",
     "text": "Git and what to do with it \nLocal Git\n\nkeep track of changes to your code on your computer\nwhen necessary, go back to early versions\n\nGitHub\n\naccess your code from different places\ncollaborate with others\n\nothers who will use your code\ncoding together\n\n\n\ngit"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#example",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#example",
+    "title": "Git Spring 2026",
+    "section": " Example ",
+    "text": "Example \nGitHub Repository that I’ll use in the course"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
+    "title": "Git Spring 2026",
+    "section": " The Basics ",
+    "text": "The Basics \n Commit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\n Push/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\n History\n\nshows your sequence of commit messages\n\n Diff\n\nshows what changed in a file since last commit\n\n Revert\n\ngo back to last commit GitHub’s Git Guides are a really wonderful resource to refer to!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
+    "title": "Git Spring 2026",
+    "section": "Lets try",
+    "text": "Lets try\nSteps\n\nIn GitHub, create a new repository; you will use this for an assignment, so name it appropriately.\n\nMake it a public repo.\nGet the link for cloning.\n\nIn Rstudio create a new project;\n\nput it in a new directory\nmake sure you enable git in project set up (if you miss this go to Project Options)\nset your link to GitHub repository\n\nAdd a new file\n\ncreate a subdirectory called R\nmove/copy your function from the last assignment to this subdirectory\n\nTell Git (local) about your new file\n\ngo to the commit section\nyou new file will have a ?, check the box it will turn to A for add\nadd a commit message; somethink like “added a function to do X to the project”\nclick commit\n\nNow change something in your R code; you could just add a comment ,then go to the Git tab\n\nadd your change and save the file\nsee how this shows up in git diff\n\nOnce you like what you changed, commit it\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
   }
 ]
