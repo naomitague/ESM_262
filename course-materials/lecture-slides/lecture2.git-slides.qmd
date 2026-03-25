@@ -27,11 +27,14 @@ Recall from ESM-206
 
 -   Sub folders for each Week, and within them Quarto, Data, Images
 
-Create this as a new project 
+Create this as a new R project in Rstudio
 
-Add you Assignment 1, and the data file you used for Assignment 1 to the Week1 Folder
 
-## Reproducibility 
+[Check: Create a git repository]{style="color:red"}
+
+Add you Assignment 1 to the Week1 Folder
+
+## Reproducibility
 
 -   Why reproducibility and what does it mean?
 
@@ -43,13 +46,14 @@ Add you Assignment 1, and the data file you used for Assignment 1 to the Week1 F
 
 ## Reproducibility and Git/Github
 
- Github is
+Github is
 
 ## Git Concept
 
 Alison Figure
 
-## Git Concept More
+## Git Concept More {.scrollable}
+
 [Local Git]{style="color:green"}
 
 -   keep track of changes to your code on your computer
@@ -62,72 +66,81 @@ Alison Figure
     -   others who will use your code
     -   coding together
 
-![git figure with connections]("week2/gitandgithub.jpg")
+![git figure with connections](%22week2/gitandgithub.jpg%22)
 
-##  Example 
+## Example {.scrollable}
 
-[GitHub Repository that I'll use in this  course](https://github.com/naomitague/ESM_262_Examples)
+[GitHub Repository that I'll use in this course](https://github.com/naomitague/ESM_262_Examples)
 
-## The Basics 
+## The Basics {.scrollable}
 
-[ Commit]{style="color:green"}
+[Commit]{style="color:green"}
 
 -   saves the current version locally each commit has a label so you can backtrack if needed
 -   you can look at what changes between commits
 -   gives you an opportunity to comment on what changes
 
-[ Push/Pull]{style="color:green"}
+[Push/Pull]{style="color:green"}
 
 -   **push** integrates any local commits/changes to central GitHub\
 -   **pull** integrates any commits/changes from central GitHb to local
 
-[ History]{style="color:green"}
+[History]{style="color:green"}
 
 -   shows your sequence of commit messages
 
-[ Diff]{style="color:green"}
+[Diff]{style="color:green"}
 
 -   shows what changed in a file since last commit
 
-[ Revert]{style="color:green"}
+[Revert]{style="color:green"}
 
 -   go back to last commit GitHub's [Git Guides](https://github.com/git-guides) are a really wonderful resource to refer to!
 
-## [Lets try]{style="color:orange"}
+## [Lets try]{style="color:orange"}{.scrollable}
 
 Steps
 
 1.  In *GitHub*, create a new repository; you will use this for an assignment, so name it appropriately.
 
     -   Make it a public repo.
+    
+    -   [Important - do NOT add a readme]{style="color:green"}
 
     -   Get the link for cloning.
 
 2.  In *Rstudio* open your class project;
 
-    -   put it in a new directory
 
-    -   make sure you enable *git* in project set up (if you miss this go to Project Options)
+    - get the ".gitignore" file from class and add to your main/working directory, 
+  
+    - run the following in the R console 
+      * note this only works if you successfully set up a personal access token (PAT)
 
-    -   set your link to *GitHub* repository
+```{r, github, echo=TRUE, eval=FALSE}
+install.packages("usethis")
+usethis::use_git()        # initializes git
+usethis::use_github()     # creates the GitHub repo and links it
+```
 
-3.  Add a new file
+::: {.callout-note}
 
-    -   create a subdirectory called *R*
+if PAT doesn't work, you can do this in the Terminal window using
 
-    -   move/copy your function from the last assignment to this subdirectory
+* git init
+* git add .
+* git commit -m "Initial commit"
+* git branch -M main
+* git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+* git push -u origin main
+::: 
 
-4.  Tell Git (local) about your new file
+ 3. Go to *GitHub* and check to see that all of your files are in your repo
+ 
+## Lets try it - Tracking Changes {.scrollable}
 
-    -   go to the commit section
 
-    -   you new file will have a ?, check the box it will turn to A for add
-
-    -   add a commit message; somethink like "added a function to do X to the project"
-
-    -   click commit
-
-5.  Now change something in your R code; you could just add a comment ,then go to the Git tab
+5.  Now change something in your Quarto file; you could just add a comment ,then go to the Git tab
 
     -   add your change and save the file
 
@@ -145,9 +158,9 @@ Steps
 
 8.  Go to *github* and check to see if your file and recent changes are there
 
-# [Add another file]{style="color:orange"}
+# Adding another file {.scrollable}
 
-1.  Create a new file - maybe a Quatro file that will do something with your R function - add 1-2 lines
+1.  Create a new file - maybe another Quatro file 
 
 2.  Save it into the appropriate directory ( using organized directory structures is good programming practice )
 
@@ -161,7 +174,12 @@ Steps
 
     -   commit
 
-4.  Continue to edit your file but this time add something you don't want
+4. When you are ready Send changes to *github* by pushing
+
+
+## Correcting Mistakes {.scrollable}
+
+Continue to edit your file but this time add something you don't want
 
     -   make a change and save
 
@@ -173,8 +191,20 @@ Steps
 
 We will talk about how to get something back *after* you've committed it next class
 
-## A few things to note
+## A few things to note {.scrollable}
 
-* if you are starting an R project from scratch, you can check the option set up a git repository on creation
+-   there are ways to add *git* and *github* to an existing project
+[Happy Git is a good resource here](https://happygitwithr.com/existing-github-last)
 
+- what is *.gitignore*
 
+This file tells *git* the types of files you don't want to track
+Why?
+  * automatically generated files that collaborators don't need (re-generated by R)
+  * really big files you don't want to shre
+  * private stuff you don't want to share
+  * computer specific stuff (usually also auto-generated)
+  
+  
+
+ 

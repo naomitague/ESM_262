@@ -45,5 +45,3 @@ ggplot(penguins,
   ) +
   theme_minimal()
 ```
-
-

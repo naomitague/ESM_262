@@ -32,14 +32,14 @@
     "href": "course-materials/week1.html",
     "title": "Working with Quarto",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv\n\n\n: {.hover .bordered tbl-colwidths=“[50,25,25]”}"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv"
   },
   {
     "objectID": "course-materials/week1.html#lecture-materials",
     "href": "course-materials/week1.html#lecture-materials",
     "title": "Working with Quarto",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv\n\n\n: {.hover .bordered tbl-colwidths=“[50,25,25]”}"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv"
   },
   {
     "objectID": "course-materials/week1.html#assignment-reminders",
@@ -47,69 +47,6 @@
     "title": "Working with Quarto",
     "section": " Assignments",
     "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\n16/4/2026\n20/4/2026 , 11:59pm PT"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
-    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
-    "title": "Intro- Spring 2026",
-    "section": "Attendance",
-    "text": "Attendance\n\nWhy Attendance Matters\n\n\nhands-on learning in class\nstaying on track with course material and assignments\nasking questions and getting help in real time\nbuilding connections with peers and instructors ** YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer **\nsome assignments and quizes are done in class\n\n\nMissing a class\n\n\nif you are sick - stay home! -health is key\nemail Ojas and I so we know\ncheck course website and Canvas for lectures/assignments\n\ngo through them\nattend Ojas’s office hours if you have questions\nemail us with questions\n\nif you need to be late for an assignment - let us know in advance\nfor group assignments or quizes in class, we can let you know how to make up\nif absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
-    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
-    "title": "Intro- Spring 2026",
-    "section": "new AI tools and Data Science",
-    "text": "new AI tools and Data Science\nShould we use it? When? How? Why? Why not?\n\nused I use tools like ChatGPT, github copilot to help me in this course?\nbenefit/costs?"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#some-thoughful-papers-for-further-reading",
-    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#some-thoughful-papers-for-further-reading",
-    "title": "Intro- Spring 2026",
-    "section": "Some thoughful papers for further reading",
-    "text": "Some thoughful papers for further reading\nHigh level perspective\n\nincludes some thoughts on job market preparation\nCommunications of the ACM\nPractical overview/perspective\nRecent review on potential harmful consequenses"
-  },
-  {
-    "objectID": "course-materials/discussion-materials/week1-discussion-slides.html#title-slide",
-    "href": "course-materials/discussion-materials/week1-discussion-slides.html#title-slide",
-    "title": "ESM 262",
-    "section": "",
-    "text": "EDS 240: Discussion 1\nToday’s topic here\n\nWeek 1 | January 7th, 2024"
-  },
-  {
-    "objectID": "course-materials/discussion-materials/week1-discussion-slides.html#slide-slug-here",
-    "href": "course-materials/discussion-materials/week1-discussion-slides.html#slide-slug-here",
-    "title": "ESM 262",
-    "section": "",
-    "text": "Slide title"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "ImportantImportant: 11:59 PM submission deadline\n\n\n\nAll assignments are due at 11:59 PM on the dates listed in the table, below.\n\n\n\n\n\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHomework Assignment #1\n16/4/2026\n20/4/2026\n\n\nHomework Assignment #2\nDD/MM/YYY\nDD/MM/YYY\n\n\nHomework Assignment #3\nDD/MM/YYY\nDD/MM/YYY\n\n\nHomework Assignment #4\nDD/MM/YYY\nDD/MM/YYY"
-  },
-  {
-    "objectID": "course-materials/keys/key1.1.html",
-    "href": "course-materials/keys/key1.1.html",
-    "title": "Lab 1.1 KEY",
-    "section": "",
-    "text": "# load packages ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)"
-  },
-  {
-    "objectID": "course-materials/keys/key1.1.html#setup",
-    "href": "course-materials/keys/key1.1.html#setup",
-    "title": "Lab 1.1 KEY",
-    "section": "",
-    "text": "# load packages ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)"
-  },
-  {
-    "objectID": "course-materials/keys/key1.1.html#tidy-data-review",
-    "href": "course-materials/keys/key1.1.html#tidy-data-review",
-    "title": "Lab 1.1 KEY",
-    "section": "Tidy Data Review",
-    "text": "Tidy Data Review\nExample untidy / wide data:\n\n# create some untidy temperature data ----\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\n# print it out ----\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\nUsing pivot_longer() to “lengthen” / tidy our data:\n\n# convert data from wide &gt; long ----\ntemp_data_long &lt;- temp_data_wide |&gt; \n  pivot_longer(cols = starts_with(\"station\"),\n               names_to = \"station_id\",\n               values_to = \"temp_c\")\n\n# print it out ----\nprint(temp_data_long)\n\n# A tibble: 9 × 3\n  date       station_id temp_c\n  &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n1 2023-10-01 station1     30.1\n2 2023-10-01 station2     29.8\n3 2023-10-01 station3     31.2\n4 2023-11-01 station1     28.6\n5 2023-11-01 station2     29.1\n6 2023-11-01 station3     33.4\n7 2023-12-01 station1     29.9\n8 2023-12-01 station2     28.5\n9 2023-12-01 station3     32.3"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#comments-on-papers",
@@ -210,32 +147,39 @@
     "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nstart with a setup R chunk at the top to load all packages and set global options for your code chunks (e.g. echo, warning, message)\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
   },
   {
-    "objectID": "course-materials/week2.html",
-    "href": "course-materials/week2.html",
-    "title": "Git and Reproducible Workflows",
-    "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: topic Intro\n\n\n\nLecture 2.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv\n\n\n: {.hover .bordered tbl-colwidths=“[50,25,25]”}"
-  },
-  {
-    "objectID": "install-guide.html",
-    "href": "install-guide.html",
-    "title": "ESM 262",
-    "section": "",
-    "text": "Visit cloud.r-project.org to download the most recent version of R for your operating system. You should have at least version 4.4.0 (released 2024-04-24) running when you start MEDS."
-  },
-  {
-    "objectID": "install-guide.html#wait-on-this-untill-we-get-to-git-in-course",
-    "href": "install-guide.html#wait-on-this-untill-we-get-to-git-in-course",
-    "title": "ESM 262",
-    "section": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE",
-    "text": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE\nLater in the course we will learn about using Git and Github\nfor reproducibility, collaboration and tracking code changes\nSetting up requires some use of the terminal in Rstudio, if you are familiar with that you can go ahead and set up - otherwise wait and we will take you through\n\n4. Git -\n\nCheck to see if git is installed\nOpen RStudio\nIn the Terminal, run the following command (choose the option for your operating system):\n\n\n Mac Windows\n\n\n\n\n\nRStudio Terminal\n\nwhich git\n\n\n\n\n\n\n\nRStudio Terminal\n\nwhere git\n\n\n\n\n\n\nIf you get something that looks like a file path to git on your computer (e.g. /usr/local/bin/git on a Mac, C:\\Program Files\\Git\\mingw64\\bin\\git.exe on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download & install git here: git-scm.com/downloads\n\n\n\n5. Create a GitHub account\n\nIf you don’t already have a GitHub account, go to https://github.com and create one. Check out Jenny Bryan’s Happy Git with R, Ch. 4 for some helpful considerations when choosing a username. We suggest that you use a personal email or your @bren.ucsb.edu email when setting up your account (rather than your @ucsb.edu email, which will be deactivated after you graduate).\n\n\n\n6. Configure git\n\nIn RStudio, open the Terminal. Run the following commands (by pressing return after each line). Be sure to replace the username (keep the quotation marks!) with your GitHub username and the email with the email you used for your GitHub account.\n\n\n\n\nRStudio Terminal\n\ngit config --global user.name \"Jane Doe\"\ngit config --global user.email janedoe@example.com\n\n\n\nThen, in the Terminal run the following, and carefully check that the name and email returned match your GitHub information:\n\n\n\n\nRStudio Terminal\n\ngit config --list --global\n\n\n\n\n\n\n\n\nImportantIMPORTANT: If you’re configuring git on a Bren server (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal\n\n\n\n\n\n\nRStudio Terminal\n\ngit config --global credential.helper 'cache --timeout=10000000'\n\n\nThis prevents important credentials (e.g. a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You do not need to complete this step when configuring git on your local computer.\n\n\n\n\n7. Store your GitHub personal access token (PAT)\nFirst: What even is a personal access token? From GitHub’s documentation:\n\nPersonal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.\n\nThis means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. Importantly, you’ll need to generate a PAT for each computer you wish to work from. For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:\n\nOnce you have git configured successfully, install the {usethis} package in R by running the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\ninstall.packages(\"usethis\")\n\n\nA lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.\n\n\n\n\n\n\n\n\n\n\nRun the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\nusethis::create_github_token() \n\n\n\nEnter your GitHub password if/when prompted. You’ll be taken to a screen that looks like this:\n\n\n\n\n\n\n\n\n\n\n\nIn the Note field, you should see some autopopulated text: R:GITHUB_PAT. We suggest changing this to something that signifies what machine it’s being used for. For example, if you are generating a PAT for your laptop, you might choose to rename it, My Personal Laptop.\nNext, you’ll see a section called Select scopes with reasonable options already selected for you. Do not change anything. Just scroll down to the bottom of that page and click the green Generate token button:\n\n\n\n\n\n\n\n\n\n\n\nCopy the generated PAT to your clipboard\nBack in RStudio, run the following in the Console:\n\n\n\n\nRStudio Console\n\ngitcreds::gitcreds_set()\n\n\nThis will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):\n\n\n\n\n\n\n\n\n\n\nIn the RStudio Console, run:\n\n\n\n\nRStudio Console\n\nusethis::git_sitrep()\n\n\nDoes it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteA note on expiring tokens:\n\n\n\nSetting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it’s time to regenerate a token that’s about to expire. Follow the email prompts, then use gitcreds::gitcreds_set() to reset your token.\n\n\n\n\n8. Install Cyberduck\nCyberduck is a program that allows you to browse files on a remote server. Download here.\n\n\n9. Install UCSB’s Ivanti Campus VPN (Virtual Private Network)\nYou probably already did this - but just in case!\nFor secure remote access to the UCSB’s campus network when you’re not physically present on campus, you’ll need to download and install the Ivanti VPN client. This will allow you to access UCSB’s technology resources (including servers, journal subscriptions, etc.) anytime and from anywhere.\nSee this UCSB Information Technology article for directions on how to get started.\n\n~ END Installation Guide ~"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#assignment-1",
-    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#assignment-1",
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#start-working-on-assignment-1",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#start-working-on-assignment-1",
     "title": "Quarto- Spring 2026",
-    "section": "Assignment 1",
-    "text": "Assignment 1"
+    "section": "Start working on Assignment 1",
+    "text": "Start working on Assignment 1\n\naccess on website\ndo with a partner\nsubmit on Canvas before Tuesday’s class"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#for-next-class",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#for-next-class",
+    "title": "Quarto- Spring 2026",
+    "section": "For next class",
+    "text": "For next class\n\nGo through Git and Github set up in the “install-guide”\n\nreach out to Ojas if you have issues\n\nAssignment 1"
+  },
+  {
+    "objectID": "course-materials/keys/key1.1.html",
+    "href": "course-materials/keys/key1.1.html",
+    "title": "Lab 1.1 KEY",
+    "section": "",
+    "text": "# load packages ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "course-materials/keys/key1.1.html#setup",
+    "href": "course-materials/keys/key1.1.html#setup",
+    "title": "Lab 1.1 KEY",
+    "section": "",
+    "text": "# load packages ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "course-materials/keys/key1.1.html#tidy-data-review",
+    "href": "course-materials/keys/key1.1.html#tidy-data-review",
+    "title": "Lab 1.1 KEY",
+    "section": "Tidy Data Review",
+    "text": "Tidy Data Review\nExample untidy / wide data:\n\n# create some untidy temperature data ----\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\n# print it out ----\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\nUsing pivot_longer() to “lengthen” / tidy our data:\n\n# convert data from wide &gt; long ----\ntemp_data_long &lt;- temp_data_wide |&gt; \n  pivot_longer(cols = starts_with(\"station\"),\n               names_to = \"station_id\",\n               values_to = \"temp_c\")\n\n# print it out ----\nprint(temp_data_long)\n\n# A tibble: 9 × 3\n  date       station_id temp_c\n  &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n1 2023-10-01 station1     30.1\n2 2023-10-01 station2     29.8\n3 2023-10-01 station3     31.2\n4 2023-11-01 station1     28.6\n5 2023-11-01 station2     29.1\n6 2023-11-01 station3     33.4\n7 2023-12-01 station1     29.9\n8 2023-12-01 station2     28.5\n9 2023-12-01 station3     32.3"
   },
   {
     "objectID": "course-materials/assignments/HW1.html",
@@ -245,18 +189,46 @@
     "text": "Work with a partner!\n\nDownload and read in p301.csv - find it under materials for Week 1\nIn an Quarto document, complete two data-analysis task (whatever you think might be interesting)\nDocuments your motivation, and comment on results\nRender your Quarto complete with code, comments and results\nSubmit pdf on Canvas for Assignment 1\n\nYou can be creative here - you could summarize precipitation by water year, find the mean annual precipitation and then graph annual time series (don’t pick this one, since I suggested it :) You could look at the relationship between two variables using regression or correlation; you could split the data in some way and do a t-test to look at whether means are different; you could look at trends. Its up to you\n\nThe data\np301.csv\nClimate and estimates of water and forest carbon information from USFS experimental watershed in the Southern California Sierra (above Fresno )\n\n\nWhat the variables are (metadata)\n\n\n\n\n\n\n\n\n\n\nVariable\nDescription\nUnits\n\n\n\n\nmonth\nMonth\n\n\n\nyear\nYear\n\n\n\nday\nDay\n\n\n\nwy\nWater Year (Oct–Sept hydrologic year)\n\n\n\ntmax\nMaximum daily temperature\n°C\n\n\ntmin\nMinimum daily temperature\n°C\n\n\nprecip\nDepth of precipitation\nmm\n\n\ntranspiration\nEstimated forest transpiration\nm/m²/day\n\n\nevaporation\nEstimated evaporation\nm/m²/day\n\n\nNPP\nEstimated net carbon uptake by trees\nkgC/m²/day\n\n\nplant_carbon\nEstimated standing biomass in units of carbon\nkg/m²\n\n\nstreamflow\nStreamflow (per watershed area)\nm/m²/day\n\n\nsnowpack\nAmount of snow on the ground (water equivalent)\nm/m²\n\n\ndirect solar\nIncoming direct solar radiation\nkJ/m²/day\n\n\ndiffuse solar\nIncoming diffuse solar radiation\nkJ/m²/day"
   },
   {
-    "objectID": "course-materials/week2.html#lecture-materials",
-    "href": "course-materials/week2.html#lecture-materials",
-    "title": "Git and Reproducible Workflows",
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: topic Intro\n\n\n\nLecture 2.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv\n\n\n: {.hover .bordered tbl-colwidths=“[50,25,25]”}"
+    "text": "ImportantImportant: 11:59 PM submission deadline\n\n\n\nAll assignments are due at 11:59 PM on the dates listed in the table, below.\n\n\n\n\n\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHomework Assignment #1\n16/4/2026\n20/4/2026\n\n\nHomework Assignment #2\nDD/MM/YYY\nDD/MM/YYY\n\n\nHomework Assignment #3\nDD/MM/YYY\nDD/MM/YYY\n\n\nHomework Assignment #4\nDD/MM/YYY\nDD/MM/YYY"
   },
   {
-    "objectID": "course-materials/week2.html#assignment-reminders",
-    "href": "course-materials/week2.html#assignment-reminders",
-    "title": "Git and Reproducible Workflows",
-    "section": " Assignments",
-    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #2\n16/4/2026\n20/4/2026 , 11:59pm PT"
+    "objectID": "course-materials/discussion-materials/week1-discussion-slides.html#title-slide",
+    "href": "course-materials/discussion-materials/week1-discussion-slides.html#title-slide",
+    "title": "ESM 262",
+    "section": "",
+    "text": "EDS 240: Discussion 1\nToday’s topic here\n\nWeek 1 | January 7th, 2024"
+  },
+  {
+    "objectID": "course-materials/discussion-materials/week1-discussion-slides.html#slide-slug-here",
+    "href": "course-materials/discussion-materials/week1-discussion-slides.html#slide-slug-here",
+    "title": "ESM 262",
+    "section": "",
+    "text": "Slide title"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
+    "title": "Intro- Spring 2026",
+    "section": "Attendance",
+    "text": "Attendance\n\nWhy Attendance Matters\n\n\nhands-on learning in class\nstaying on track with course material and assignments\nasking questions and getting help in real time\nbuilding connections with peers and instructors ** YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer **\nsome assignments and quizes are done in class\n\n\nMissing a class\n\n\nif you are sick - stay home! -health is key\nemail Ojas and I so we know\ncheck course website and Canvas for lectures/assignments\n\ngo through them\nattend Ojas’s office hours if you have questions\nemail us with questions\n\nif you need to be late for an assignment - let us know in advance\nfor group assignments or quizes in class, we can let you know how to make up\nif absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
+    "title": "Intro- Spring 2026",
+    "section": "new AI tools and Data Science",
+    "text": "new AI tools and Data Science\nShould we use it? When? How? Why? Why not?\n\nused I use tools like ChatGPT, github copilot to help me in this course?\nbenefit/costs?"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#some-thoughful-papers-for-further-reading",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#some-thoughful-papers-for-further-reading",
+    "title": "Intro- Spring 2026",
+    "section": "Some thoughful papers for further reading",
+    "text": "Some thoughful papers for further reading\nHigh level perspective\n\nincludes some thoughts on job market preparation\nCommunications of the ACM\nPractical overview/perspective\nRecent review on potential harmful consequenses"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#pair-and-share",
@@ -277,41 +249,111 @@
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#suggested-organization",
     "title": "Git Spring 2026",
     "section": "Suggested Organization",
-    "text": "Suggested Organization\n\nR Project for this course\nFolders for R scripts, data, and figures\nSub folders for each Week\nFolder for Assignments\n\nCreate this as a new project and add you Assignment 1, and the data file you used for Assignment 1 to the appropriate folders."
+    "text": "Suggested Organization\n\nR Project for this course\nFolders for R scripts for functions (TBD)\nSub folders for each Week, and within them Quarto, Data, Images\n\nCreate this as a new R project in Rstudio\nCheck: Create a git repository\nAdd you Assignment 1 to the Week1 Folder"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-with-git-and-github",
-    "href": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-with-git-and-github",
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility",
     "title": "Git Spring 2026",
-    "section": "Reproducibility with Git and Github ",
-    "text": "Reproducibility with Git and Github \n\nWhy reproducibility and what does it mean?\nWhat is a workflow?\n\nnot usually linear\noften involves iterative steps\noften involves multiple people"
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\nWhy reproducibility and what does it mean?\nWhat is a workflow?\n\nnot usually linear\noften involves iterative steps\noften involves multiple people"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-and-what-to-do-with-it",
-    "href": "course-materials/lecture-slides/lecture2.git-slides.html#git-and-what-to-do-with-it",
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-and-gitgithub",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-and-gitgithub",
     "title": "Git Spring 2026",
-    "section": " Git and what to do with it ",
-    "text": "Git and what to do with it \nLocal Git\n\nkeep track of changes to your code on your computer\nwhen necessary, go back to early versions\n\nGitHub\n\naccess your code from different places\ncollaborate with others\n\nothers who will use your code\ncoding together\n\n\n\ngit"
+    "section": "Reproducibility and Git/Github",
+    "text": "Reproducibility and Git/Github\nGithub is"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
+    "title": "Git Spring 2026",
+    "section": "Git Concept",
+    "text": "Git Concept\nAlison Figure"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept-more",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept-more",
+    "title": "Git Spring 2026",
+    "section": "Git Concept More",
+    "text": "Git Concept More\nLocal Git\n\nkeep track of changes to your code on your computer\nwhen necessary, go back to early versions\n\nGitHub\n\naccess your code from different places\ncollaborate with others\n\nothers who will use your code\ncoding together\n\n\n\ngit figure with connections"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#example",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#example",
     "title": "Git Spring 2026",
-    "section": " Example ",
-    "text": "Example \nGitHub Repository that I’ll use in the course"
+    "section": "Example",
+    "text": "Example\nGitHub Repository that I’ll use in this course"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
     "title": "Git Spring 2026",
-    "section": " The Basics ",
-    "text": "The Basics \n Commit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\n Push/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\n History\n\nshows your sequence of commit messages\n\n Diff\n\nshows what changed in a file since last commit\n\n Revert\n\ngo back to last commit GitHub’s Git Guides are a really wonderful resource to refer to!"
+    "section": "The Basics",
+    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s Git Guides are a really wonderful resource to refer to!"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
     "title": "Git Spring 2026",
     "section": "Lets try",
-    "text": "Lets try\nSteps\n\nIn GitHub, create a new repository; you will use this for an assignment, so name it appropriately.\n\nMake it a public repo.\nGet the link for cloning.\n\nIn Rstudio create a new project;\n\nput it in a new directory\nmake sure you enable git in project set up (if you miss this go to Project Options)\nset your link to GitHub repository\n\nAdd a new file\n\ncreate a subdirectory called R\nmove/copy your function from the last assignment to this subdirectory\n\nTell Git (local) about your new file\n\ngo to the commit section\nyou new file will have a ?, check the box it will turn to A for add\nadd a commit message; somethink like “added a function to do X to the project”\nclick commit\n\nNow change something in your R code; you could just add a comment ,then go to the Git tab\n\nadd your change and save the file\nsee how this shows up in git diff\n\nOnce you like what you changed, commit it\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
+    "text": "Lets try\nSteps\n\nIn GitHub, create a new repository; you will use this for an assignment, so name it appropriately.\n\nMake it a public repo.\nImportant - do NOT add a readme\nGet the link for cloning.\n\nIn Rstudio open your class project;\n\nget the “.gitignore” file from class and add to your main/working directory,\nrun the following in the R console\n\nnote this only works if you successfully set up a personal access token (PAT)\n\n\n\n\ninstall.packages(\"usethis\")\nusethis::use_git()        # initializes git\nusethis::use_github()     # creates the GitHub repo and links it\n\n\n\n\n\n\n\nNote\n\n\nif PAT doesn’t work, you can do this in the Terminal window using\n\ngit init\ngit add .\ngit commit -m “Initial commit”\ngit branch -M main\ngit remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git\ngit push -u origin main\n\n\n\n\n\nGo to GitHub and check to see that all of your files are in your repo"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try-it---tracking-changes",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try-it---tracking-changes",
+    "title": "Git Spring 2026",
+    "section": "Lets try it - Tracking Changes",
+    "text": "Lets try it - Tracking Changes\n\nNow change something in your Quarto file; you could just add a comment ,then go to the Git tab\n\nadd your change and save the file\nsee how this shows up in git diff\n\nOnce you like what you changed, commit it\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
+    "title": "Git Spring 2026",
+    "section": "Correcting Mistakes",
+    "text": "Correcting Mistakes\nContinue to edit your file but this time add something you don’t want\n-   make a change and save\n\n-   go to your file and look at the changes\n\n-   click revert to get rid of the changes that you don't want\n\n-   look at file to make sure unwanted edit is not there\nWe will talk about how to get something back after you’ve committed it next class"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#a-few-things-to-note",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#a-few-things-to-note",
+    "title": "Git Spring 2026",
+    "section": "A few things to note",
+    "text": "A few things to note\n\nthere are ways to add git and github to an existing project Happy Git is a good resource here\nwhat is .gitignore\n\nThis file tells git the types of files you don’t want to track Why? * automatically generated files that collaborators don’t need (re-generated by R) * really big files you don’t want to shre * private stuff you don’t want to share * computer specific stuff (usually also auto-generated)"
+  },
+  {
+    "objectID": "course-materials/week2.html",
+    "href": "course-materials/week2.html",
+    "title": "Git and Reproducible Workflows",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: topic Git Download .gitignore\nLecture 2.2: topic More Git"
+  },
+  {
+    "objectID": "course-materials/week2.html#lecture-materials",
+    "href": "course-materials/week2.html#lecture-materials",
+    "title": "Git and Reproducible Workflows",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: topic Git Download .gitignore\nLecture 2.2: topic More Git"
+  },
+  {
+    "objectID": "course-materials/week2.html#assignment-reminders",
+    "href": "course-materials/week2.html#assignment-reminders",
+    "title": "Git and Reproducible Workflows",
+    "section": " Assignments",
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #2\n16/4/2026\n20/4/2026 , 11:59pm PT"
+  },
+  {
+    "objectID": "install-guide.html",
+    "href": "install-guide.html",
+    "title": "ESM 262",
+    "section": "",
+    "text": "Visit cloud.r-project.org to download the most recent version of R for your operating system. You should have at least version 4.4.0 (released 2024-04-24) running when you start MEDS."
+  },
+  {
+    "objectID": "install-guide.html#wait-on-this-untill-we-get-to-git-in-course",
+    "href": "install-guide.html#wait-on-this-untill-we-get-to-git-in-course",
+    "title": "ESM 262",
+    "section": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE",
+    "text": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE\nLater in the course we will learn about using Git and Github\nfor reproducibility, collaboration and tracking code changes\nSetting up requires some use of the terminal in Rstudio, if you are familiar with that you can go ahead and set up - otherwise wait and we will take you through\n\n4. Git -\n\nCheck to see if git is installed\nOpen RStudio\nIn the Terminal, run the following command (choose the option for your operating system):\n\n\n Mac Windows\n\n\n\n\n\nRStudio Terminal\n\nwhich git\n\n\n\n\n\n\n\nRStudio Terminal\n\nwhere git\n\n\n\n\n\n\nIf you get something that looks like a file path to git on your computer (e.g. /usr/local/bin/git on a Mac, C:\\Program Files\\Git\\mingw64\\bin\\git.exe on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download & install git here: git-scm.com/downloads\n\n\n\n5. Create a GitHub account\n\nIf you don’t already have a GitHub account, go to https://github.com and create one. Check out Jenny Bryan’s Happy Git with R, Ch. 4 for some helpful considerations when choosing a username. We suggest that you use a personal email or your @bren.ucsb.edu email when setting up your account (rather than your @ucsb.edu email, which will be deactivated after you graduate).\n\n\n\n6. Configure git\n\nIn RStudio, open the Terminal. Run the following commands (by pressing return after each line). Be sure to replace the username (keep the quotation marks!) with your GitHub username and the email with the email you used for your GitHub account.\n\n\n\n\nRStudio Terminal\n\ngit config --global user.name \"Jane Doe\"\ngit config --global user.email janedoe@example.com\n\n\n\nThen, in the Terminal run the following, and carefully check that the name and email returned match your GitHub information:\n\n\n\n\nRStudio Terminal\n\ngit config --list --global\n\n\n\n\n\n\n\n\nImportantFOR FUTURE REFERENCE: If you’re configuring git on a Bren server (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal\n\n\n\n\n\n\nRStudio Terminal\n\ngit config --global credential.helper 'cache --timeout=10000000'\n\n\nThis prevents important credentials (e.g. a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You do not need to complete this step when configuring git on your local computer.\n\n\n\n\n7. Store your GitHub personal access token (PAT)\nFirst: What even is a personal access token? From GitHub’s documentation:\n\nPersonal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.\n\nThis means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. Importantly, you’ll need to generate a PAT for each computer you wish to work from. For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:\n\nOnce you have git configured successfully, install the {usethis} package in R by running the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\ninstall.packages(\"usethis\")\n\n\nA lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.\n\n\n\n\n\n\n\n\n\n\nRun the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\nusethis::create_github_token() \n\n\n\nEnter your GitHub password if/when prompted. You’ll be taken to a screen that looks like this:\n\n\n\n\n\n\n\n\n\n\n\nIn the Note field, you should see some autopopulated text: R:GITHUB_PAT. We suggest changing this to something that signifies what machine it’s being used for. For example, if you are generating a PAT for your laptop, you might choose to rename it, My Personal Laptop.\nNext, you’ll see a section called Select scopes with reasonable options already selected for you. Do not change anything. Just scroll down to the bottom of that page and click the green Generate token button:\n\n\n\n\n\n\n\n\n\n\n\nCopy the generated PAT to your clipboard\nBack in RStudio, run the following in the Console:\n\n\n\n\nRStudio Console\n\ngitcreds::gitcreds_set()\n\n\nThis will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):\n\n\n\n\n\n\n\n\n\n\nIn the RStudio Console, run:\n\n\n\n\nRStudio Console\n\nusethis::git_sitrep()\n\n\nDoes it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteA note on expiring tokens:\n\n\n\nSetting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it’s time to regenerate a token that’s about to expire. Follow the email prompts, then use gitcreds::gitcreds_set() to reset your token.\n\n\n\n~ END Installation Guide ~"
   }
 ]

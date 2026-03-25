@@ -13,7 +13,7 @@ description: "Monday April 14^th^, 2026"
 | [Lecture 1.1: topic Intro](lecture-slides/lecture1.intro-slides.qmd){target="_blank"}   ||
 | [Lecture 1.2: topic Quarto](lecture-slides/lecture1.quarto-slides.qmd){target="_blank"} |<a href="../downloadables/week1/hello.qmd" download>Download hello.qmd</a> |
 ||<a href="../downloadables/week1/p301.csv" download>Download p301.csv</a> |
-: {.hover .bordered tbl-colwidths="[50,25,25]"} |
+
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
 
