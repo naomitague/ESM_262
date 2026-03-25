@@ -46,7 +46,16 @@ Add you Assignment 1 to the Week1 Folder
 
 ## Reproducibility and Git/Github
  
+ Version control systems help you track all of the changes to your files,
+ (kind of like track changes for data, programs...everything ...and more sophisticated)
+ 
+ Git is a free and open source distributed version control system. 
 
+ Developed by programmer (creater of Linux - Linus Torvalds) -
+ 
+  GitHub platform acquired by Microsoft in 2018
+ 
+ 
 ## Git concept
 
 
@@ -77,6 +86,12 @@ Add you Assignment 1 to the Week1 Folder
 ![git figure with connections](%22week2/gitandgithub.jpg%22)
 
 ## Example {.scrollable}
+
+Directly under the navigation bar (top-left) you will find the name of the repository (orange)
+Above the files listing, there is information about the latest commit to this repository (blue)
+On the left, you will have the files and folder names (red)
+In the middle, the last commit message on this file (or file contained in a folder) (purple)
+On the right, the time stamps of the latest commit (green)
 
 [GitHub Repository that I'll use in this course](https://github.com/naomitague/ESM_262_Examples)
 
