@@ -25,7 +25,7 @@ Recall from ESM-206
 
 -   Folders for R scripts for functions (TBD)
 
--   Sub folders for each Week, and within them Quarto, Data, Images
+-   Sub folders for each Week, with Data, Images subfolders
 
 Create this as a new R project in Rstudio
 
@@ -45,12 +45,20 @@ Add you Assignment 1 to the Week1 Folder
     -   often involves multiple people
 
 ## Reproducibility and Git/Github
+ 
 
-Github is
+## Git concept
+
+
+
+ "Artwork by @allison_horst".
+ 
 
 ## Git Concept
 
-Alison Figure
+![git local remote ](images/week2/gitconcept.png)
+
+ "Artwork by @allison_horst".
 
 ## Git Concept More {.scrollable}
 

@@ -9,7 +9,7 @@ description: "Monday April 20^th^, 2026"
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 | Lecture slides | Materials | 
 |----------------|------------------|
-| [Lecture 2.1: topic Git](lecture-slides/lecture2.git-slides.qmd){target="_blank"} <a href="../downloables/Week2/.gitignore" download=".gitignore"><button>Download .gitignore</button></a> | [Lecture 2.2: topic More Git](lecture-slides/lecture1.moregit-slides.qmd){target="_blank"} |
+| [Lecture 2.1: topic Git](lecture-slides/lecture2.git-slides.qmd){target="_blank"} <a href="../downloables/Week2/.gitignore" download=".gitignore"><button>Download .gitignore</button></a>  [Lecture 2.2: topic More Git](lecture-slides/lecture1.moregit-slides.qmd){target="_blank"} |
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
 
