@@ -11,9 +11,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## A bit about me
 
-```{r, out.width = "90%", out.height="90%",fig.cap = "Growing skills"}
-
-
+```{r,fig.cap = "Growing skills"}
 knitr::include_graphics("images/whoIam.jpeg")
 ```
 
@@ -34,7 +32,7 @@ Class will include a mix of lectures and hands-on examples, using students' own 
 
 ## [Course where and when]{style="color:orange"}
 
-**T/TH** 8:00 AM - 9:15 AM (Bren Hall 1414)
+**T/TH** 8:00 AM - 9:15 AM (Bren Hall 1424)
 
 Teaching Team
 
@@ -66,21 +64,61 @@ Teaching Team
 
 ## [Computing set up]{style="color:orange"}
 
--   R, R-studio
+-   Please complete the install-guide on the course website
 
 -   Please bring your laptop to class
 
 ## [Course materials and how we will work]{style="color:orange"}
 
-All lecture materials will be available on this course website as well as assignments. (But you will submit assignments on Canvas)
+All lecture materials will be available on the course website as well as assignments. But you will submit assignments on Canvas
 
-Prior to many classes, I will ask you to study an Quarto document (and often an example R-functions) before class Then at the beginning of class, I will **briefly** go over the document and we will discuss any questions. Occasionally I spend 10-15 minutes lecturing. We will spend most of the class working on practical applications of what was in the document. This way we use the class time as a lab - where you can get guidance.
+https://naomitague.github.io/ESM_262/
 
-**this mean its essential for you to do the review before class**
+Class time will involve lectures and working on practical applications . This way we use the class time as a lab - where you can get guidance.
 
 Why structure it this way? You learn to code by doing - not so much by watching others do!
 
-## [Topics]{style="color:orange"} {.scrollable}
+# ChatGPT and other AI-tools
+
+There are pro's and con's to using AI-tools while you are learning environmental modeling (coding in general)
+
+We will discuss and make use of these tools later in the course (mid-way)
+
+Tools
+
+-   Github Copilot (widely used by programmers)
+-   ChatGPT, Claude etc
+
+(both built from CODEX by OpenAI)
+
+# Using AI-tools in this course
+
+-   AI-tools great resources but effective use requires understanding how to ask good questions
+
+-   Use this course to build that understanding, think about the meta concepts.
+
+-   Ask yourself - What are situations you might apply a technique/idea/concept;
+
+-   You gain skills by **Practicing**, so start without AI-tools
+
+-   For assignments/practice
+
+    -   **Always** write the code yourself -
+    -   How we will use AI - tools later in the course
+    -   Supportive ways to use AI-tools
+        -   use AI-tools to help find syntax
+        -   Use AI-tools to explain other peoples code (including class examples)
+        -   Use AI-tools to help interpret error messages
+
+# Attendance
+
+-   You are expected to come to class - its part of the learning! 
+
+-   We will regularly have in-class quizzes - These are not really "quizzes" where you answer is right or wrong. They are designed to help you think through the material and provide feedback to me as the instructor. For each quiz you will get full credit for attempting the question in class.
+
+-   If you have to miss class let Ojas and me know by email
+
+## [Tentative Schedule]{style="color:orange"} {.scrollable}
 
 ```{r, sch}
 
@@ -150,19 +188,10 @@ kable(
 )
 ```
 
+
 ## [Assignments]{style="color:orange"}
 
-There will be 8 assignments (more or less one for each week). You will usually have time to work on the assignment in class and most will be in groups.
-
-# Assignment materials and dates
-
-| Week | Name                         | Assigned   | Due date   | Group (G) |
-|------|------------------------------|------------|------------|-----------|
-| 1    | Quarto Intro                 | 2026-04-16 | 2026-04-21 | G         |
-| 2    | Git                          | 2025-04-21 | 2025-04-28 | I         |
-| 3    | Using Git with your function | 2025-02-25 | 2025-03-03 | I         |
-| 4    | Data Structure               | 2025-03-4  | 2025-03-10 | I         |
-| 5    | Functions and testing        | 2025-3-11  | 2025-3-18  | G         |
+There will be 8 assignments (more or less one for each week). You will usually have time to start the assignment in class and most will be in groups. We will also have 6 quizes 
 
 # Assignment expectations and grading
 

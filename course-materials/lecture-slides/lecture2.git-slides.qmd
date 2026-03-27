@@ -19,6 +19,11 @@ Look at your partner's Quarto - Any suggestions?
 
 Recall from ESM-206
 
+![file structure example](images/week2/filestructure.png)
+
+
+remember the "here" command!
+
 ## Suggested Organization
 
 -   R Project for this course
@@ -28,7 +33,6 @@ Recall from ESM-206
 -   Sub folders for each Week, with Data, Images subfolders
 
 Create this as a new R project in Rstudio
-
 
 [Check: Create a git repository]{style="color:red"}
 
@@ -45,29 +49,20 @@ Add you Assignment 1 to the Week1 Folder
     -   often involves multiple people
 
 ## Reproducibility and Git/Github
- 
- Version control systems help you track all of the changes to your files,
- (kind of like track changes for data, programs...everything ...and more sophisticated)
- 
- Git is a free and open source distributed version control system. 
 
- Developed by programmer (creater of Linux - Linus Torvalds) -
- 
-  GitHub platform acquired by Microsoft in 2018
- 
- 
-## Git concept
+Version control systems help you track all of the changes to your files, (kind of like track changes for data, programs...everything ...and more sophisticated)
 
+Git is a free and open source distributed version control system.
 
+Developed by programmer (creater of Linux - Linus Torvalds) -
 
- "Artwork by @allison_horst".
- 
+GitHub platform acquired by Microsoft in 2018
 
 ## Git Concept
 
-![git local remote ](images/week2/gitconcept.png)
+![git local remote](images/week2/gitconcept.png)
 
- "Artwork by @allison_horst".
+"Artwork by @allison_horst".
 
 ## Git Concept More {.scrollable}
 
@@ -84,16 +79,6 @@ Add you Assignment 1 to the Week1 Folder
     -   coding together
 
 ![git figure with connections](%22week2/gitandgithub.jpg%22)
-
-## Example {.scrollable}
-
-Directly under the navigation bar (top-left) you will find the name of the repository (orange)
-Above the files listing, there is information about the latest commit to this repository (blue)
-On the left, you will have the files and folder names (red)
-In the middle, the last commit message on this file (or file contained in a folder) (purple)
-On the right, the time stamps of the latest commit (green)
-
-[GitHub Repository that I'll use in this course](https://github.com/naomitague/ESM_262_Examples)
 
 ## The Basics {.scrollable}
 
@@ -118,27 +103,38 @@ On the right, the time stamps of the latest commit (green)
 
 [Revert]{style="color:green"}
 
--   go back to last commit GitHub's [Git Guides](https://github.com/git-guides) are a really wonderful resource to refer to!
+-   go back to last commit GitHub's
 
-## [Lets try]{style="color:orange"}{.scrollable}
+[Git Guides](https://github.com/git-guides) are a really wonderful resource to refer to!
+
+## Example {.scrollable}
+
+[GitHub Repository that I'll use in this course](https://github.com/naomitague/ESM_262_Examples)
+
+-   Directly under the navigation bar (top-left) you will find the name of the repository
+
+-   next line tel you information about current branch - other branches
+
+-   the Code button gives you the identifier of the repository that you can use to download locally
+
+-   Above the files listing, there is information about the latest commit to this repository
+
+-   On the left, you will have the files and folder names
+
+-   In the middle, the last commit message on this file (or file contained in a folder)
+
+-   On the right, the time stamps of the latest commit
+
+## [Lets try]{style="color:orange"} {.scrollable}
 
 Steps
 
-1.  In *GitHub*, create a new repository; you will use this for an assignment, so name it appropriately.
-
-    -   Make it a public repo.
-    
-    -   [Important - do NOT add a readme]{style="color:green"}
-
-    -   Get the link for cloning.
-
-2.  In *Rstudio* open your class project;
 
 
-    - get the ".gitignore" file from class and add to your main/working directory, 
-  
-    - run the following in the R console 
-      * note this only works if you successfully set up a personal access token (PAT)
+1.  In *Rstudio* open your class project;
+
+    -   run the following in the R console
+    -   note this only works if you successfully set up a personal access token (PAT)
 
 ```{r, github, echo=TRUE, eval=FALSE}
 install.packages("usethis")
@@ -146,24 +142,28 @@ usethis::use_git()        # initializes git
 usethis::use_github()     # creates the GitHub repo and links it
 ```
 
-::: {.callout-note}
 
-if PAT doesn't work, you can do this in the Terminal window using
 
-* git init
-* git add .
-* git commit -m "Initial commit"
-* git branch -M main
-* git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-* git push -u origin main
-::: 
+2.  Go to *GitHub* and check to see that all of your files are in your repo
 
- 3. Go to *GitHub* and check to see that all of your files are in your repo
- 
+::: callout-note
+if PAT doesn't work, you can do this **manually**
+
+1. Create a new repository (no readme file) on *GitHub* - give it a name
+
+2. in the Terminal window using
+
+-   git init
+-   git add .
+-   git commit -m "Initial commit"
+-   git branch -M main
+-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+-   git push -u origin main
+:::
+
 ## Lets try it - Tracking Changes {.scrollable}
 
-
-5.  Now change something in your Quarto file; you could just add a comment ,then go to the Git tab
+Now change something in your Quarto file; you could just add a comment ,then go to the Git tab
 
     -   add your change and save the file
 
@@ -183,7 +183,7 @@ if PAT doesn't work, you can do this in the Terminal window using
 
 # Adding another file {.scrollable}
 
-1.  Create a new file - maybe another Quatro file 
+1.  Create a new file - maybe another Quatro file
 
 2.  Save it into the appropriate directory ( using organized directory structures is good programming practice )
 
@@ -197,37 +197,33 @@ if PAT doesn't work, you can do this in the Terminal window using
 
     -   commit
 
-4. When you are ready Send changes to *github* by pushing
-
+4.  When you are ready Send changes to *github* by pushing
 
 ## Correcting Mistakes {.scrollable}
 
 Continue to edit your file but this time add something you don't want
 
-    -   make a change and save
+    
+-   make a change and save
 
-    -   go to your file and look at the changes
+-   go to your file and look at the changes
 
-    -   click revert to get rid of the changes that you don't want
+-   click *revert* to get rid of the changes that you don't want
 
-    -   look at file to make sure unwanted edit is not there
+-   look at file to make sure unwanted edit is not there
+
 
 We will talk about how to get something back *after* you've committed it next class
 
 ## A few things to note {.scrollable}
 
--   there are ways to add *git* and *github* to an existing project
-[Happy Git is a good resource here](https://happygitwithr.com/existing-github-last)
+-   there are ways to add *git* and *github* to an existing project [Happy Git is a good resource here](https://happygitwithr.com/existing-github-last)
 
-- what is *.gitignore*
+-   what is *.gitignore*
 
-This file tells *git* the types of files you don't want to track
-Why?
-  * automatically generated files that collaborators don't need (re-generated by R)
-  * really big files you don't want to shre
-  * private stuff you don't want to share
-  * computer specific stuff (usually also auto-generated)
-  
-  
+This file tells *git* the types of files you don't want to track W
 
- 
+ - automatically generated files that collaborators don't need (re-generated by R)
+ - really big files you don't want to share
+ - private stuff you don't want to share 
+ - computer specific stuff (usually also auto-generated)
