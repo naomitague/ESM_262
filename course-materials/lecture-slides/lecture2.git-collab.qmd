@@ -94,7 +94,11 @@ The terminal window allows you to access a *shell* - it's a way to interact with
 
 I'll try and then you
 
+## A bit more
 
+'git revert HEAD" goes back to the last change but if you want to go back to a specific commit, you can use the commit ID (the long string of numbers and letters that identifies each commit) instead of HEAD.
+
+'git revert 
 
 
 
