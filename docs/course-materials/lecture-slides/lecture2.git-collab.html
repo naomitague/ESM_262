@@ -205,13 +205,11 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(here)</span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="git" class="slide level2">
+<h2>Git</h2>
 
 <img data-src="images/week2/gitconcept.png" class="r-stretch quarto-figure-center"><p class="caption">git local remote</p></section>
-<section>
-<section id="git-concept-more" class="title-slide slide level1 scrollable center">
-<h1>Git Concept More</h1>
-
-</section>
 <section id="the-basics" class="slide level2 scrollable">
 <h2>The Basics</h2>
 <p><span style="color:green">Commit</span></p>
@@ -239,10 +237,15 @@
 <li>go back to last commit GitHub’s</li>
 </ul>
 <p><a href="https://github.com/git-guides">Git Guides</a> are a really wonderful resource to refer to!</p>
-</section></section>
+</section>
+<section>
 <section id="history-with-git" class="title-slide slide level1 center">
 <h1>History with GIT</h1>
-<p>locally- use the little clock button or commit history - see the history of your commits - click on a commit to see what changed</p>
+<p>locally- use the little clock button or <strong>commit</strong></p>
+<ul>
+<li>see the history of your commits</li>
+<li>click on a commit to see what changed</li>
+</ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -257,26 +260,39 @@
 </div>
 </div>
 </section>
-
-<section id="correcting-misktakes" class="title-slide slide level1 scrollable center">
-<h1>Correcting Misktakes</h1>
+<section id="correcting-misktakes-if-you-havent-committed" class="slide level2 scrollable">
+<h2>Correcting Misktakes if you haven’t committed</h2>
 <ul>
 <li>make a change and save</li>
 <li>commit the change</li>
 <li>look at your commit history and find the commit you want to revert to</li>
 <li>click <em>revert</em> to get rid of the changes that you don’t want</li>
 </ul>
-<p>BUT What if you’ve already pushed your changes to GitHub? And you want to go back to an earlier version</p>
-<ul>
-<li>make a change and save</li>
-<li>commit the change</li>
-<li>push the change to GitHub</li>
-<li>look at your commit history and find the commit you want to revert to</li>
-<li>click <em>revert</em> to get rid of the changes that you don’t want</li>
-</ul>
-
-
+<p>I’ll try it</p>
 </section>
+<section id="correcting-mistakes-if-you-have-committed" class="slide level2">
+<h2>Correcting Mistakes if you have committed</h2>
+<p>Here we use the <em>terminal</em> window</p>
+<p>The terminal window allows you to access a <em>shell</em> - it’s a way to interact with your computer using text commands instead of clicking on things.</p>
+<p><em>Terminal</em> is a powerful tool that:</p>
+<ul>
+<li>allows you to do things that you can’t do with the graphical interface</li>
+<li>uses <em>Git</em> commands that work everywhere not just with R, Rstudio</li>
+<li>we will work with <em>Terminal</em> command more in the course</li>
+</ul>
+</section>
+<section id="what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version" class="slide level2">
+<h2>What to do in Terminal to get your code back to an earlier version</h2>
+<ul>
+<li><p>make a change and save</p></li>
+<li><p>commit the change</p></li>
+<li><p>in terminal type `git revert HEAD’</p></li>
+<li><p>this will create a new commit that undoes the changes you just made</p></li>
+</ul>
+<p>I’ll try and then you</p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

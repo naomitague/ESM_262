@@ -376,5 +376,33 @@
     "title": "Git Continued Spring 2026",
     "section": "The Basics",
     "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s\n\nGit Guides are a really wonderful resource to refer to!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#git",
+    "title": "Git Continued Spring 2026",
+    "section": "Git",
+    "text": "Git\n\ngit local remote"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
+    "title": "Git Continued Spring 2026",
+    "section": "Correcting Misktakes if you haven’t committed",
+    "text": "Correcting Misktakes if you haven’t committed\n\nmake a change and save\ncommit the change\nlook at your commit history and find the commit you want to revert to\nclick revert to get rid of the changes that you don’t want\n\nI’ll try it"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
+    "title": "Git Continued Spring 2026",
+    "section": "Correcting Mistakes if you have committed",
+    "text": "Correcting Mistakes if you have committed\nHere we use the terminal window\nThe terminal window allows you to access a shell - it’s a way to interact with your computer using text commands instead of clicking on things.\nTerminal is a powerful tool that:\n\nallows you to do things that you can’t do with the graphical interface\nuses Git commands that work everywhere not just with R, Rstudio\nwe will work with Terminal command more in the course"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
+    "title": "Git Continued Spring 2026",
+    "section": "What to do in Terminal to get your code back to an earlier version",
+    "text": "What to do in Terminal to get your code back to an earlier version\n\nmake a change and save\ncommit the change\nin terminal type `git revert HEAD’\nthis will create a new commit that undoes the changes you just made\n\nI’ll try and then you"
   }
 ]
