@@ -98,7 +98,9 @@ I'll try and then you
 
 'git revert HEAD" goes back to the last change but if you want to go back to a specific commit, you can use the commit ID (the long string of numbers and letters that identifies each commit) instead of HEAD.
 
-'git revert 
+'git revert <commit ID>'
+
+
 
 
 
