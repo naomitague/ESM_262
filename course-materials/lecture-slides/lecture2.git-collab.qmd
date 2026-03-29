@@ -71,7 +71,7 @@ commit messages helps understand history
 
 
 ## Lets try it
-
+I am going to make a mistake that I don't notice until later
 
 BUT What if you've already pushed your changes to GitHub? And you want to go back to an earlier version
 
