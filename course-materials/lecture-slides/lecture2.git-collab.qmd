@@ -62,24 +62,38 @@ locally- use the little clock button or **commit**
 commit messages helps understand history 
 :::
 
-## Correcting Misktakes {.scrollable}
+## Correcting Misktakes if you haven't committed {.scrollable}
 
 -   make a change and save
 -   commit the change
 -   look at your commit history and find the commit you want to revert to
 -   click *revert* to get rid of the changes that you don't want
 
+I'll try it
 
-## Lets try it
-I am going to make a mistake that I don't notice until later
+## Correcting Mistakes if you have committed 
 
-BUT What if you've already pushed your changes to GitHub? And you want to go back to an earlier version
+Here we use the *terminal* window
+
+The terminal window allows you to access a *shell* - it's a way to interact with your computer using text commands instead of clicking on things.
+
+*Terminal* is a powerful tool that:
+
+-  allows you to do things that you can't do with the graphical interface
+-  uses *Git* commands that work everywhere not just with R, Rstudio
+-  we will work with *Terminal* command more in the course
+
+
+## What to do in Terminal to get your code back to an earlier version
 
 -   make a change and save
 -   commit the change
--   push the change to GitHub
--   look at your commit history and find the commit you want to revert to
--   click *revert* to get rid of the changes that you don't want
+-   in terminal type `git revert HEAD'
+
+-   this will create a new commit that undoes the changes you just made
+
+I'll try and then you
+
 
 
 
