@@ -373,36 +373,71 @@
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
-    "title": "Git Continued Spring 2026",
+    "title": "Git Continued",
     "section": "The Basics",
     "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s\n\nGit Guides are a really wonderful resource to refer to!"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git",
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#git",
-    "title": "Git Continued Spring 2026",
+    "title": "Git Continued",
     "section": "Git",
     "text": "Git\n\ngit local remote"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
-    "title": "Git Continued Spring 2026",
+    "title": "Git Continued",
     "section": "Correcting Misktakes if you haven’t committed",
     "text": "Correcting Misktakes if you haven’t committed\n\nmake a change and save\ncommit the change\nlook at your commit history and find the commit you want to revert to\nclick revert to get rid of the changes that you don’t want\n\nI’ll try it"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
-    "title": "Git Continued Spring 2026",
+    "title": "Git Continued",
     "section": "Correcting Mistakes if you have committed",
     "text": "Correcting Mistakes if you have committed\nHere we use the terminal window\nThe terminal window allows you to access a shell - it’s a way to interact with your computer using text commands instead of clicking on things.\nTerminal is a powerful tool that:\n\nallows you to do things that you can’t do with the graphical interface\nuses Git commands that work everywhere not just with R, Rstudio\nwe will work with Terminal command more in the course"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
-    "title": "Git Continued Spring 2026",
+    "title": "Git Continued",
     "section": "What to do in Terminal to get your code back to an earlier version",
     "text": "What to do in Terminal to get your code back to an earlier version\n\nmake a change and save\ncommit the change\nin terminal type `git revert HEAD’\nthis will create a new commit that undoes the changes you just made\n\nI’ll try and then you"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#go-back-farther-in-time",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#go-back-farther-in-time",
+    "title": "Git Continued",
+    "section": "Go back farther in time",
+    "text": "Go back farther in time\n\ngit revert"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#some-other-useful-git-commands-in-terminal",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#some-other-useful-git-commands-in-terminal",
+    "title": "Git Continued",
+    "section": "Some other useful Git commands in Terminal",
+    "text": "Some other useful Git commands in Terminal\n\ngit status - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)\ngit log - shows you the commit history with commit messages and IDs\ngit diff - shows you the differences between your current files and the last commit (what changes you have made)\ngit push - pushes your local commits to GitHub\ngit pull - pulls the latest changes from GitHub to your local repository\ngit commit filename -m \"your commit message\" - commits your changes to the file with a message describing what you did.\ngit commit -a -m \"your commit message\" - commits all your changes with a message describing what you did.\ngit add filename - stages a file for commit (you need to stage files before you can commit them)\ngit checkout -- filename - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#flow-chart-on-correction-changes",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#flow-chart-on-correction-changes",
+    "title": "Git Continued Spring 2026",
+    "section": "Flow chart on correction changes",
+    "text": "Flow chart on correction changes\n\nflowchart TD\n\nA[\"You made a commit...\"] --&gt; B{\"Pushed to GitHub?\"}\n\nB --&gt;|No| C{\"What do you want?\"}\nB --&gt;|Yes| G[\"Use revert (safe for shared history)\"]\n\nC --&gt; D[\"Get old version of ONE file\"]\nC --&gt; E[\"Undo commit, keep changes\"]\nC --&gt; F[\"Undo commit AND delete changes\"]\n\nD --&gt; D1[\"git checkout HEAD~1 -- file\"]\nE --&gt; E1[\"git reset --soft HEAD~1\"]\nF --&gt; F1[\"git reset --hard HEAD~1\"]\n\nG --&gt; G1[\"git revert HEAD\"]\n\n\n\n\nflowchart TD\n\nA[\"You made a commit...\"] --&gt; B{\"Pushed to GitHub?\"}\n\nB --&gt;|No| C{\"What do you want?\"}\nB --&gt;|Yes| G[\"Use revert (safe for shared history)\"]\n\nC --&gt; D[\"Get old version of ONE file\"]\nC --&gt; E[\"Undo commit, keep changes\"]\nC --&gt; F[\"Undo commit AND delete changes\"]\n\nD --&gt; D1[\"git checkout HEAD~1 -- file\"]\nE --&gt; E1[\"git reset --soft HEAD~1\"]\nF --&gt; F1[\"git reset --hard HEAD~1\"]\n\nG --&gt; G1[\"git revert HEAD\"]"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git-commands",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#git-commands",
+    "title": "Git Continued",
+    "section": "Git commands",
+    "text": "Git commands\n’git revert HEAD” goes back to the last change but if you want to go back to a specific commit, you can use the commit ID\ncommit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.\n‘git revert ’\nFind the SHA number (same as commit ID) in your Git History\nTry it!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#other-ways-to-go-back-in-time",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#other-ways-to-go-back-in-time",
+    "title": "Git Continued",
+    "section": "Other ways to go back in time",
+    "text": "Other ways to go back in time\nThere are other options, git reset and git checkout\nA bit more dangerous because they discard/overwrite changes instead of creating a new commit that undoes the changes\nuseful to keep things from getting ‘messy’ but we won’t go into here"
   }
 ]

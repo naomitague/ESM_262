@@ -78,9 +78,11 @@ Add you Assignment 1 to the Week1 Folder
 
 ## Reproducibility and Git/Github
 
-Version control systems help you track all of the changes to your files, (kind of like track changes for data, programs...everything ...and more sophisticated)
+*Version control systems* help you track all of the changes to your files, (kind of like track changes for data, programs...everything ...and more sophisticated)
 
-Git is a free and open source distributed version control system.
+*Git* is a free and open source distributed version control system. Its the most popular, used by millions
+
+*Git* works with many code-bases - not just R, but also Python, C, Java, etc. and can be used also for data storage, websites, and more
 
 Developed by programmer (creater of Linux - Linus Torvalds) -
 

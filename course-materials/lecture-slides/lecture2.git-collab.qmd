@@ -1,5 +1,5 @@
 ---
-title: 'Git Continued Spring 2026'
+title: 'Git Continued '
 format:
   revealjs:
     theme: solarized
@@ -12,7 +12,7 @@ execute:
 ---
 
 
-```{r, setup, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+```{r, setup, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
 library(here)
 library(tidyverse)
 ```
@@ -94,14 +94,71 @@ The terminal window allows you to access a *shell* - it's a way to interact with
 
 I'll try and then you
 
-## A bit more
+## Go back farther in time
+![git revert](images/week2/gitrevert.png)
 
-'git revert HEAD" goes back to the last change but if you want to go back to a specific commit, you can use the commit ID (the long string of numbers and letters that identifies each commit) instead of HEAD.
+## Git commands
+'git revert HEAD" goes back to the last change but if you want to go back to a specific commit, you can use the commit ID 
+
+commit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.
 
 'git revert <commit ID>'
 
+Find the SHA number (same as commit ID) in your Git History
 
-MISTAKE
+Try it!
 
+## Other ways to go back in time
+
+There are other options, *git reset* and *git checkout*
+
+A bit more dangerous because they discard/overwrite changes instead of creating a new commit that undoes the changes
+
+ useful to keep things from getting 'messy' but
+we won't go into here
+
+## Some other useful Git commands in Terminal {.scrollable}
+
+-   `git status` - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)
+
+-   `git log` - shows you the commit history with commit messages and IDs
+-   `git diff` - shows you the differences between your current files and the last commit (what changes you have made)
+-   `git push` - pushes your local commits to GitHub
+-   `git pull` - pulls the latest changes from GitHub to your local repository
+-  `git commit filename -m "your commit message"` - commits your changes to the file with a message describing what you did.
+-  `git commit -a -m "your commit message"` - commits all your changes with a message describing what you did.
+- `git add filename` - stages a file for commit (you need to stage files before you can commit them) 
+- `git checkout -- filename` - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)
+
+## Collaboration with GitHub
+
+![git and github](images/week2/gitandgithub.png)
+
+## Collaboration through GitHub
+
+- add a collaborator to your *GitHub* repository
+  - under *settings* on *Github*
+- they will get an email invitation to collaborate on your repository
+- they can clone the repository to their local computer and make changes
+- they can commit and push their changes to GitHub
+
+
+::: callout-note
+ *Git* doesn't like having nested repositories
+ so don't clone a repository inside another repository!!!
+:::
+
+## Try it
+
+- with a partner, add each other to your repo
+
+- start a new *Rproject* - 
+  - select the option to clone from existing repo
+  - make sure you save different directory than your original project!
+  
+- make a change (maybe add a file, edit their quarto file, etc.)
+  - commit and push
+  
+- check on *GitHub* to see if your change is there
 
 
