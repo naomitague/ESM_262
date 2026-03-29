@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
-  <title>ESM 262 – Git Spring 2026</title>
+  <title>ESM 262 – Git Continued Spring 2026</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -193,104 +193,25 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Git Spring 2026</h1>
+  <h1 class="title">Git Continued Spring 2026</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="pair-and-share" class="slide level2">
-<h2>Pair and Share</h2>
-<p>Look at your partner’s Quarto - Any suggestions?</p>
-</section>
-<section id="file-organization" class="slide level2">
-<h2>File Organization</h2>
-<p>Recall from ESM-206</p>
+<section class="slide level2">
 
-<img data-src="images/week2/filestructure.png" class="r-stretch quarto-figure-center"><p class="caption">file structure example</p></section>
-<section id="remember-the-here-command" class="slide level2 scrollable">
-<h2>Remember the “here” command!</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(here)</span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># this will show you the path to your project folder</span></span>
-<span id="cb2-2"><a></a><span class="fu">here</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/naomitague/Courses/ESM_262"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># this will let you open a file in your project folder</span></span>
-<span id="cb4-2"><a></a>p301 <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"downloadables/Week1"</span>, <span class="st">"p301.csv"</span>))</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="co"># lets make month names nicer</span></span>
-<span id="cb4-5"><a></a>p301<span class="sc">$</span>month_lab <span class="ot">&lt;-</span> <span class="fu">factor</span>(p301<span class="sc">$</span>month, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">labels =</span> month.abb)</span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a><span class="co"># plot direct solar radiation by month</span></span>
-<span id="cb4-8"><a></a><span class="fu">ggplot</span>(p301, <span class="fu">aes</span>(<span class="at">x =</span> month_lab,</span>
-<span id="cb4-9"><a></a>                <span class="at">y =</span> direct_solar,</span>
-<span id="cb4-10"><a></a>                <span class="at">group =</span> month_lab,</span>
-<span id="cb4-11"><a></a>                <span class="at">fill =</span> month_lab)) <span class="sc">+</span></span>
-<span id="cb4-12"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb4-13"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb4-14"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Direct Solar Radiation </span><span class="sc">\n</span><span class="st">(W/m^2)"</span>, <span class="at">x =</span> <span class="st">"Month"</span>) <span class="sc">+</span></span>
-<span id="cb4-15"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-
-</div>
-<img data-src="lecture2.git-slides_files/figure-revealjs/demouse-1.png" width="960" class="r-stretch"></section>
-<section id="suggested-organization" class="slide level2">
-<h2>Suggested Organization</h2>
-<ul>
-<li><p>R Project for this course</p></li>
-<li><p>Folders for R scripts for functions (TBD)</p></li>
-<li><p>Sub folders for each Week, with Data, Images subfolders</p></li>
-</ul>
-<p>Create this as a new R project in Rstudio</p>
-<p><span style="color:red">Check: Create a git repository</span></p>
-<p>Add you Assignment 1 to the Week1 Folder</p>
-</section>
-<section id="reproducibility" class="slide level2">
-<h2>Reproducibility</h2>
-<ul>
-<li><p>Why reproducibility and what does it mean?</p></li>
-<li><p>What is a workflow?</p>
-<ul>
-<li>not usually linear</li>
-<li>often involves iterative steps</li>
-<li>often involves multiple people</li>
-</ul></li>
-</ul>
-</section>
-<section id="reproducibility-and-gitgithub" class="slide level2">
-<h2>Reproducibility and Git/Github</h2>
-<p>Version control systems help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)</p>
-<p>Git is a free and open source distributed version control system.</p>
-<p>Developed by programmer (creater of Linux - Linus Torvalds) -</p>
-<p>GitHub platform acquired by Microsoft in 2018</p>
-</section>
-<section id="git-concept" class="slide level2">
-<h2>Git Concept</h2>
-
-<img data-src="images/week2/gitconcept.png" class="r-stretch quarto-figure-center"><p class="caption">git local remote</p><p>“Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span>”.</p>
-</section>
-<section id="git-concept-more" class="slide level2 scrollable">
-<h2>Git Concept More</h2>
-<p><span style="color:green">Local Git</span></p>
-<ul>
-<li>keep track of changes to your code on your computer</li>
-<li>when necessary, go back to early versions</li>
-</ul>
-<p><span style="color:green">GitHub</span></p>
-<ul>
-<li>access your code from different places</li>
-<li>collaborate with others
-<ul>
-<li>others who will use your code</li>
-<li>coding together</li>
-</ul></li>
-</ul>
 
 <img data-src="&quot;week2/gitandgithub.jpg&quot;" class="r-stretch quarto-figure-center"><p class="caption">git figure with connections</p></section>
+<section>
+<section id="git-concept-more" class="title-slide slide level1 scrollable center">
+<h1>Git Concept More</h1>
+
+</section>
 <section id="the-basics" class="slide level2 scrollable">
 <h2>The Basics</h2>
 <p><span style="color:green">Commit</span></p>
@@ -318,38 +239,10 @@
 <li>go back to last commit GitHub’s</li>
 </ul>
 <p><a href="https://github.com/git-guides">Git Guides</a> are a really wonderful resource to refer to!</p>
-</section>
-<section id="example" class="slide level2 scrollable">
-<h2>Example</h2>
-<p><a href="https://github.com/naomitague/ESM_262_Examples">GitHub Repository that I’ll use in this course</a></p>
-<ul>
-<li><p>Directly under the navigation bar (top-left) you will find the name of the repository</p></li>
-<li><p>next line tel you information about current branch - other branches</p></li>
-<li><p>the Code button gives you the identifier of the repository that you can use to download locally</p></li>
-<li><p>Above the files listing, there is information about the latest commit to this repository</p></li>
-<li><p>On the left, you will have the files and folder names</p></li>
-<li><p>In the middle, the last commit message on this file (or file contained in a folder)</p></li>
-<li><p>On the right, the time stamps of the latest commit</p></li>
-</ul>
-</section>
-<section id="lets-try" class="slide level2 scrollable">
-<h2><span style="color:orange">Lets try</span></h2>
-<p>Steps</p>
-<ol type="1">
-<li><p>In <em>Rstudio</em> open your class project;</p>
-<ul>
-<li>run the following in the R console</li>
-<li>note this only works if you successfully set up a personal access token (PAT)</li>
-</ul></li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
-<span id="cb5-2"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()        <span class="co"># initializes git</span></span>
-<span id="cb5-3"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()     <span class="co"># creates the GitHub repo and links it</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ol start="2" type="1">
-<li>Go to <em>GitHub</em> and check to see that all of your files are in your repo</li>
-</ol>
+</section></section>
+<section id="history-with-git" class="title-slide slide level1 center">
+<h1>History with GIT</h1>
+<p>locally- use the little clock button or commit history - see the history of your commits - click on a commit to see what changed</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -359,83 +252,31 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>if PAT doesn’t work, you can do this <strong>manually</strong></p>
-<ol type="1">
-<li><p>Create a new repository (no readme file) on <em>GitHub</em> - give it a name</p></li>
-<li><p>in the Terminal window using</p></li>
-</ol>
-<ul>
-<li>git init</li>
-<li>git add .</li>
-<li>git commit -m “Initial commit”</li>
-<li>git branch -M main</li>
-<li>git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git</li>
-<li>git push -u origin main</li>
-</ul>
+<p>notice that have going commit messages helps understand history</p>
 </div>
 </div>
 </div>
 </section>
-<section id="lets-try-it---tracking-changes" class="slide level2 scrollable">
-<h2>Lets try it - Tracking Changes</h2>
-<p>Now change something in your Quarto file; you could just add a comment ,then go to the Git tab</p>
-<pre><code>-   add your change and save the file
 
--   see how this shows up in git diff</code></pre>
-<ol start="6" type="1">
-<li><p>Once you like what you changed, commit it</p>
+<section id="correcting-misktakes" class="title-slide slide level1 scrollable center">
+<h1>Correcting Misktakes</h1>
 <ul>
-<li><p>your file should have an <em>M</em> for modified, check this to “stage” your changes for commit</p></li>
-<li><p>add a message briefly describing what you changed</p></li>
-<li><p>commit</p></li>
-</ul></li>
-<li><p>Send changes to <em>github</em> by pushing</p></li>
-<li><p>Go to <em>github</em> and check to see if your file and recent changes are there</p></li>
-</ol>
-</section>
-<section>
-<section id="adding-another-file" class="title-slide slide level1 scrollable center">
-<h1>Adding another file</h1>
-<ol type="1">
-<li><p>Create a new file - maybe another Quatro file</p></li>
-<li><p>Save it into the appropriate directory ( using organized directory structures is good programming practice )</p></li>
-<li><p>Add it to Git local</p>
-<ul>
-<li><p>go to Git and then commit</p></li>
-<li><p>find your file, should have a “?”, check so that it becomes an “A”</p></li>
-<li><p>add a commit message</p></li>
-<li><p>commit</p></li>
-</ul></li>
-<li><p>When you are ready Send changes to <em>github</em> by pushing</p></li>
-</ol>
-</section>
-<section id="correcting-mistakes" class="slide level2 scrollable">
-<h2>Correcting Mistakes</h2>
-<p>Continue to edit your file but this time add something you don’t want</p>
-<ul>
-<li><p>make a change and save</p></li>
-<li><p>go to your file and look at the changes</p></li>
-<li><p>click <em>revert</em> to get rid of the changes that you don’t want</p></li>
-<li><p>look at file to make sure unwanted edit is not there</p></li>
+<li>make a change and save</li>
+<li>commit the change</li>
+<li>look at your commit history and find the commit you want to revert to</li>
+<li>click <em>revert</em> to get rid of the changes that you don’t want</li>
 </ul>
-<p>We will talk about how to get something back <em>after</em> you’ve committed it next class</p>
-</section>
-<section id="a-few-things-to-note" class="slide level2 scrollable">
-<h2>A few things to note</h2>
+<p>BUT What if you’ve already pushed your changes to GitHub? And you want to go back to an earlier version</p>
 <ul>
-<li><p>there are ways to add <em>git</em> and <em>github</em> to an existing project <a href="https://happygitwithr.com/existing-github-last">Happy Git is a good resource here</a></p></li>
-<li><p>what is <em>.gitignore</em></p></li>
-</ul>
-<p>This file tells <em>git</em> the types of files you don’t want to track W</p>
-<ul>
-<li>automatically generated files that collaborators don’t need (re-generated by R)</li>
-<li>really big files you don’t want to share</li>
-<li>private stuff you don’t want to share</li>
-<li>computer specific stuff (usually also auto-generated)</li>
+<li>make a change and save</li>
+<li>commit the change</li>
+<li>push the change to GitHub</li>
+<li>look at your commit history and find the commit you want to revert to</li>
+<li>click <em>revert</em> to get rid of the changes that you don’t want</li>
 </ul>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

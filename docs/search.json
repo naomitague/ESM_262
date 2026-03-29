@@ -242,7 +242,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#file-organization",
     "title": "Git Spring 2026",
     "section": "File Organization",
-    "text": "File Organization\nRecall from ESM-206"
+    "text": "File Organization\nRecall from ESM-206\n\nfile structure example"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#suggested-organization",
@@ -269,8 +269,8 @@
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
     "title": "Git Spring 2026",
-    "section": "Git concept",
-    "text": "Git concept\n“Artwork by @allison_horst”."
+    "section": "Git Concept",
+    "text": "Git Concept\n\ngit local remote“Artwork by @allison_horst”."
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept-1",
@@ -291,42 +291,42 @@
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#example",
     "title": "Git Spring 2026",
     "section": "Example",
-    "text": "Example\nDirectly under the navigation bar (top-left) you will find the name of the repository (orange) Above the files listing, there is information about the latest commit to this repository (blue) On the left, you will have the files and folder names (red) In the middle, the last commit message on this file (or file contained in a folder) (purple) On the right, the time stamps of the latest commit (green)\nGitHub Repository that I’ll use in this course"
+    "text": "Example\nGitHub Repository that I’ll use in this course\n\nDirectly under the navigation bar (top-left) you will find the name of the repository\nnext line tel you information about current branch - other branches\nthe Code button gives you the identifier of the repository that you can use to download locally\nAbove the files listing, there is information about the latest commit to this repository\nOn the left, you will have the files and folder names\nIn the middle, the last commit message on this file (or file contained in a folder)\nOn the right, the time stamps of the latest commit"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
     "title": "Git Spring 2026",
     "section": "The Basics",
-    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s Git Guides are a really wonderful resource to refer to!"
+    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s\n\nGit Guides are a really wonderful resource to refer to!"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
     "title": "Git Spring 2026",
     "section": "Lets try",
-    "text": "Lets try\nSteps\n\nIn GitHub, create a new repository; you will use this for an assignment, so name it appropriately.\n\nMake it a public repo.\nImportant - do NOT add a readme\nGet the link for cloning.\n\nIn Rstudio open your class project;\n\nget the “.gitignore” file from class and add to your main/working directory,\nrun the following in the R console\n\nnote this only works if you successfully set up a personal access token (PAT)\n\n\n\n\ninstall.packages(\"usethis\")\nusethis::use_git()        # initializes git\nusethis::use_github()     # creates the GitHub repo and links it\n\n\n\n\n\n\n\nNote\n\n\nif PAT doesn’t work, you can do this in the Terminal window using\n\ngit init\ngit add .\ngit commit -m “Initial commit”\ngit branch -M main\ngit remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git\ngit push -u origin main\n\n\n\n\n\nGo to GitHub and check to see that all of your files are in your repo"
+    "text": "Lets try\nSteps\n\nIn Rstudio open your class project;\n\nrun the following in the R console\nnote this only works if you successfully set up a personal access token (PAT)\n\n\n\ninstall.packages(\"usethis\")\nusethis::use_git()        # initializes git\nusethis::use_github()     # creates the GitHub repo and links it\n\n\nGo to GitHub and check to see that all of your files are in your repo\n\n\n\n\n\n\n\nNote\n\n\nif PAT doesn’t work, you can do this manually\n\nCreate a new repository (no readme file) on GitHub - give it a name\nin the Terminal window using\n\n\ngit init\ngit add .\ngit commit -m “Initial commit”\ngit branch -M main\ngit remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git\ngit push -u origin main"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try-it---tracking-changes",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try-it---tracking-changes",
     "title": "Git Spring 2026",
     "section": "Lets try it - Tracking Changes",
-    "text": "Lets try it - Tracking Changes\n\nNow change something in your Quarto file; you could just add a comment ,then go to the Git tab\n\nadd your change and save the file\nsee how this shows up in git diff\n\nOnce you like what you changed, commit it\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
+    "text": "Lets try it - Tracking Changes\nNow change something in your Quarto file; you could just add a comment ,then go to the Git tab\n-   add your change and save the file\n\n-   see how this shows up in git diff\n\nOnce you like what you changed, commit it\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
     "title": "Git Spring 2026",
     "section": "Correcting Mistakes",
-    "text": "Correcting Mistakes\nContinue to edit your file but this time add something you don’t want\n-   make a change and save\n\n-   go to your file and look at the changes\n\n-   click revert to get rid of the changes that you don't want\n\n-   look at file to make sure unwanted edit is not there\nWe will talk about how to get something back after you’ve committed it next class"
+    "text": "Correcting Mistakes\nContinue to edit your file but this time add something you don’t want\n\nmake a change and save\ngo to your file and look at the changes\nclick revert to get rid of the changes that you don’t want\nlook at file to make sure unwanted edit is not there\n\nWe will talk about how to get something back after you’ve committed it next class"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#a-few-things-to-note",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#a-few-things-to-note",
     "title": "Git Spring 2026",
     "section": "A few things to note",
-    "text": "A few things to note\n\nthere are ways to add git and github to an existing project Happy Git is a good resource here\nwhat is .gitignore\n\nThis file tells git the types of files you don’t want to track Why? * automatically generated files that collaborators don’t need (re-generated by R) * really big files you don’t want to shre * private stuff you don’t want to share * computer specific stuff (usually also auto-generated)"
+    "text": "A few things to note\n\nthere are ways to add git and github to an existing project Happy Git is a good resource here\nwhat is .gitignore\n\nThis file tells git the types of files you don’t want to track W\n\nautomatically generated files that collaborators don’t need (re-generated by R)\nreally big files you don’t want to share\nprivate stuff you don’t want to share\ncomputer specific stuff (usually also auto-generated)"
   },
   {
     "objectID": "course-materials/week2.html",
@@ -362,5 +362,19 @@
     "title": "ESM 262",
     "section": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE",
     "text": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE\nLater in the course we will learn about using Git and Github\nfor reproducibility, collaboration and tracking code changes\nSetting up requires some use of the terminal in Rstudio, if you are familiar with that you can go ahead and set up - otherwise wait and we will take you through\n\n4. Git -\n\nCheck to see if git is installed\nOpen RStudio\nIn the Terminal, run the following command (choose the option for your operating system):\n\n\n Mac Windows\n\n\n\n\n\nRStudio Terminal\n\nwhich git\n\n\n\n\n\n\n\nRStudio Terminal\n\nwhere git\n\n\n\n\n\n\nIf you get something that looks like a file path to git on your computer (e.g. /usr/local/bin/git on a Mac, C:\\Program Files\\Git\\mingw64\\bin\\git.exe on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download & install git here: git-scm.com/downloads\n\n\n\n5. Create a GitHub account\n\nIf you don’t already have a GitHub account, go to https://github.com and create one. Check out Jenny Bryan’s Happy Git with R, Ch. 4 for some helpful considerations when choosing a username. We suggest that you use a personal email or your @bren.ucsb.edu email when setting up your account (rather than your @ucsb.edu email, which will be deactivated after you graduate).\n\n\n\n6. Configure git\n\nIn RStudio, open the Terminal. Run the following commands (by pressing return after each line). Be sure to replace the username (keep the quotation marks!) with your GitHub username and the email with the email you used for your GitHub account.\n\n\n\n\nRStudio Terminal\n\ngit config --global user.name \"Jane Doe\"\ngit config --global user.email janedoe@example.com\n\n\n\nThen, in the Terminal run the following, and carefully check that the name and email returned match your GitHub information:\n\n\n\n\nRStudio Terminal\n\ngit config --list --global\n\n\n\n\n\n\n\n\nImportantFOR FUTURE REFERENCE: If you’re configuring git on a Bren server (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal\n\n\n\n\n\n\nRStudio Terminal\n\ngit config --global credential.helper 'cache --timeout=10000000'\n\n\nThis prevents important credentials (e.g. a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You do not need to complete this step when configuring git on your local computer.\n\n\n\n\n7. Store your GitHub personal access token (PAT)\nFirst: What even is a personal access token? From GitHub’s documentation:\n\nPersonal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.\n\nThis means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. Importantly, you’ll need to generate a PAT for each computer you wish to work from. For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:\n\nOnce you have git configured successfully, install the {usethis} package in R by running the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\ninstall.packages(\"usethis\")\n\n\nA lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.\n\n\n\n\n\n\n\n\n\n\nRun the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\nusethis::create_github_token() \n\n\n\nEnter your GitHub password if/when prompted. You’ll be taken to a screen that looks like this:\n\n\n\n\n\n\n\n\n\n\n\nIn the Note field, you should see some autopopulated text: R:GITHUB_PAT. We suggest changing this to something that signifies what machine it’s being used for. For example, if you are generating a PAT for your laptop, you might choose to rename it, My Personal Laptop.\nNext, you’ll see a section called Select scopes with reasonable options already selected for you. Do not change anything. Just scroll down to the bottom of that page and click the green Generate token button:\n\n\n\n\n\n\n\n\n\n\n\nCopy the generated PAT to your clipboard\nBack in RStudio, run the following in the Console:\n\n\n\n\nRStudio Console\n\ngitcreds::gitcreds_set()\n\n\nThis will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):\n\n\n\n\n\n\n\n\n\n\nIn the RStudio Console, run:\n\n\n\n\nRStudio Console\n\nusethis::git_sitrep()\n\n\nDoes it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteA note on expiring tokens:\n\n\n\nSetting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it’s time to regenerate a token that’s about to expire. Follow the email prompts, then use gitcreds::gitcreds_set() to reset your token.\n\n\n\n~ END Installation Guide ~"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#remember-the-here-command",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#remember-the-here-command",
+    "title": "Git Spring 2026",
+    "section": "Remember the “here” command!",
+    "text": "Remember the “here” command!\n\nlibrary(here)\nlibrary(tidyverse)\n\n\n# this will show you the path to your project folder\nhere()\n\n[1] \"/Users/naomitague/Courses/ESM_262\"\n\n# this will let you open a file in your project folder\np301 = read.csv(here(\"downloadables/Week1\", \"p301.csv\"))\n\n# lets make month names nicer\np301$month_lab &lt;- factor(p301$month, levels = 1:12, labels = month.abb)\n\n# plot direct solar radiation by month\nggplot(p301, aes(x = month_lab,\n                y = direct_solar,\n                group = month_lab,\n                fill = month_lab)) +\n  geom_boxplot() +\n  theme_bw() +\n  labs(y = \"Direct Solar Radiation \\n(W/m^2)\", x = \"Month\") +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
+    "title": "Git Continued Spring 2026",
+    "section": "The Basics",
+    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s\n\nGit Guides are a really wonderful resource to refer to!"
   }
 ]
