@@ -18,9 +18,11 @@ library(tidyverse)
 ```
 
 
-![git local remote](images/week2/gitconcept.png)
 
-# Git Concept More {.scrollable}
+
+## Git 
+
+![git local remote](images/week2/gitconcept.png)
 
 ## The Basics {.scrollable}
 
@@ -51,7 +53,8 @@ library(tidyverse)
 
 # History with GIT
 
-locally- use the little clock button or commit history 
+locally- use the little clock button or **commit** 
+
  - see the history of your commits
  - click on a commit to see what changed
 
@@ -59,12 +62,16 @@ locally- use the little clock button or commit history
 commit messages helps understand history 
 :::
 
-# Correcting Misktakes {.scrollable}
+## Correcting Misktakes {.scrollable}
 
 -   make a change and save
 -   commit the change
 -   look at your commit history and find the commit you want to revert to
 -   click *revert* to get rid of the changes that you don't want
+
+
+## Lets try it
+
 
 BUT What if you've already pushed your changes to GitHub? And you want to go back to an earlier version
 
