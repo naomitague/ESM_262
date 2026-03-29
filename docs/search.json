@@ -263,7 +263,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-and-gitgithub",
     "title": "Git Spring 2026",
     "section": "Reproducibility and Git/Github",
-    "text": "Reproducibility and Git/Github\nVersion control systems help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)\nGit is a free and open source distributed version control system.\nDeveloped by programmer (creater of Linux - Linus Torvalds) -\nGitHub platform acquired by Microsoft in 2018"
+    "text": "Reproducibility and Git/Github\nVersion control systems help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)\nGit is a free and open source distributed version control system. Its the most popular, used by millions\nGit works with many code-bases - not just R, but also Python, C, Java, etc. and can be used also for data storage, websites, and more\nDeveloped by programmer (creater of Linux - Linus Torvalds) -\nGitHub platform acquired by Microsoft in 2018"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
@@ -333,14 +333,14 @@
     "href": "course-materials/week2.html",
     "title": "Git and Reproducible Workflows",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: topic Git Download .gitignore Lecture 2.2: topic More Git"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Collaborating with Git"
   },
   {
     "objectID": "course-materials/week2.html#lecture-materials",
     "href": "course-materials/week2.html#lecture-materials",
     "title": "Git and Reproducible Workflows",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: topic Git Download .gitignore Lecture 2.2: topic More Git"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Collaborating with Git"
   },
   {
     "objectID": "course-materials/week2.html#assignment-reminders",
@@ -439,5 +439,33 @@
     "title": "Git Continued",
     "section": "Other ways to go back in time",
     "text": "Other ways to go back in time\nThere are other options, git reset and git checkout\nA bit more dangerous because they discard/overwrite changes instead of creating a new commit that undoes the changes\nuseful to keep things from getting ‘messy’ but we won’t go into here"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-with-github",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-with-github",
+    "title": "Git Continued",
+    "section": "Collaboration with GitHub",
+    "text": "Collaboration with GitHub\n\ngit and github"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-through-github",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-through-github",
+    "title": "Git Continued",
+    "section": "Collaboration through GitHub",
+    "text": "Collaboration through GitHub\n\nadd a collaborator to your GitHub repository\n\nunder settings on Github\n\nthey will get an email invitation to collaborate on your repository\nthey can clone the repository to their local computer and make changes\nthey can commit and push their changes to GitHub\n\n\n\n\n\n\n\nNote\n\n\nGit doesn’t like having nested repositories so don’t clone a repository inside another repository!!!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#try-it",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#try-it",
+    "title": "Git Continued",
+    "section": "Try it",
+    "text": "Try it\n\nwith a partner, add each other to your repo\nstart a new Rproject -\n\nselect the option to clone from existing repo\nmake sure you save different directory than your original project!\n\nmake a change (maybe add a file, edit their quarto file, etc.)\n\ncommit and push\n\ncheck on GitHub to see if your change is there"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#homework",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#homework",
+    "title": "Git Continued",
+    "section": "homework",
+    "text": "homework\nNot to hand in - practice using Git and GitHub to get familiar with this"
   }
 ]

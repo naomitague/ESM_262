@@ -132,7 +132,7 @@ we won't go into here
 
 ## Collaboration with GitHub
 
-![git and github](images/week2/gitandgithub.png)
+![git and github](images/week2/gitandgithub.jpg)
 
 ## Collaboration through GitHub
 
@@ -161,4 +161,6 @@ we won't go into here
   
 - check on *GitHub* to see if your change is there
 
+## homework
 
+Not to hand in - practice using Git and GitHub to get familiar with this
