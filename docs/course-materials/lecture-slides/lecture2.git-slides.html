@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <title>ESM 262 – Git Spring 2026</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -218,10 +218,10 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># this will show you the path to your project folder</span></span>
 <span id="cb2-2"><a></a><span class="fu">here</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/naomitague/Courses/ESM_262"</code></pre>
+<pre><code>[1] "/Users/naomitague/Desktop/Courses/ESM_262"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># this will let you open a file in your project folder</span></span>
-<span id="cb4-2"><a></a>p301 <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"downloadables/Week1"</span>, <span class="st">"p301.csv"</span>))</span>
+<span id="cb4-2"><a></a>p301 <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"downloadables/Data"</span>, <span class="st">"p301.csv"</span>))</span>
 <span id="cb4-3"><a></a></span>
 <span id="cb4-4"><a></a><span class="co"># lets make month names nicer</span></span>
 <span id="cb4-5"><a></a>p301<span class="sc">$</span>month_lab <span class="ot">&lt;-</span> <span class="fu">factor</span>(p301<span class="sc">$</span>month, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">labels =</span> month.abb)</span>

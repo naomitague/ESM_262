@@ -20,14 +20,69 @@ library(tidyverse)
 
 ## Git
 
-![git local remote](images/week2/gitconcept.png)
+![git conflicts](images/week2/git_workflow_diagram.svg)
 
-## Conflicts {.scrollable}
+## Conflicts Review {.scrollable}
 
-## Branching and Forking
+* note that conflicts must be resolved before continuing
 
-## Getting other repos
+* remember if you really mess up you can *revert* to earlier version
 
+* frequent *push* and *pull* can help avoid conflicts
+
+## Branching 
+
+Sometimes you want to experiment with a new feature or make a change that might break things, could get messy to do this with *commit* and then *revert* if it doesn't work
+
+*Git* thought of this and created *branching* 
+
+*Branching* allows you to create a separate version of your code where you can make changes without affecting the main version (called *main*  branch)
+
+Later once branch is working you can *merge* into *main* branch
+
+## Branching
+
+![git branchings](images/week3/git_branching_animals.svg)
+
+## Lets try
+
+* working in your class repo
+
+* create a new branch called *experiment* 
+
+
+* add a new quarto document, and in it describe some data analysis that you'd like to experiment with
+
+
+## Merging
+
+* in a collaborative project, or if you want to maintain a good copy of your code, you might want to merge branch back into main
+
+* go back to *main* branch on git
+* *pull* to get any recent changes
+* click *merge* and select the branch you want to merge in
+
+or in terminal 
+
+*git merge experiment*
+
+Try it
+
+## Forking
+
+Forking is more removed than branching - it creates a copy of the entire repository under your GitHub account
+
+Forks are their own *repo*
+
+How do forks interact with original
+  - fork can pull from original repo
+  - add a *pull request* to add changes from *fork* to orginal
+  
+Forks are good when you are working on a repo that you are not closely collaborating with others  
+(and the owner of the repo maintains strong controll over it)
+
+
+We won't practice them here but good to know
 
 
 ## Recall useful Git commands in Terminal {.scrollable}
@@ -50,44 +105,93 @@ library(tidyverse)
 
 -   `git checkout -- filename` - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)
 
-## Collaboration with GitHub
+-   `git branch branchname` - creates a new branch with the name "branchname"
 
-![git and github](images/week2/gitandgithub.jpg)
+-  `git checkout branchname` - switches to the branch "branchname"
 
-# <span style="color:orange">PACKAGES in R</span>
+- `git merge branchname` - merges the branch "branchname" into the current branch
 
-## <span style="color:orange">Definitions</span>
 
-* **Package**: An extension of the R base system with functions, data and documentation in standardized
-format.
-* **Library**: A directory containing installed packages.
-* **Repository**: A website providing packages for installation.
-* **Source**: The original version of a package with human-readable text and code.
-* **Binary**: A compiled version of a package with computer-readable text and code, may work only
-on a specic platform.
-* **Base packages**: Part of the R source tree, maintained by R Core.
-* **Recommended packages**: Part of every R installation, but not necessarily maintained by R
-Core.
-* **Contributed packages**: All the rest. This does not mean that these packages are necessarily of
-lesser quality than the above, e.g., many contributed packages on CRAN are written and
-maintained by R Core members. They simply try to keep the base distribution as lean as
-possible.
-* **User packages**: Packages that you write, share with a smaller community - not downloadable
-from CRAN, but can be downloaded (or sent as a zip file) and loaded into R
+## Assignment: Git and Stream Temperature
 
-#  <span style="color:orange">Installing User Packages</span>
-* looks similar to CRAN packages
 
-* uncompiled (they can be compiled but not always) so  you can **see** the code
+For this assignment, we are going to download some USGS data on stream temperature from the Willametter River in Oregon
 
-You can load my package *rainbow* by 
+Here's some R code to download it, 
+* X_00010_00003 is the water temperature in C
 
-  * downloading *rainbow.tar.gz *
-    * DON'T UNZIP
-  
-  * install from a *package archive*
-  
-  
- Alternatively you can install from *github* - you need the *devtools* library to do this
- 
- install_github("naomitague/rainbow")
+```{r}
+install.packages("dataRetrieval")
+library(dataRetrieval)
+
+siteNumbers <- c("14211720", "14211010", "14166000")
+parameterCd <- "00010"  # water temperature
+startDate <- "2010-01-01"
+endDate <- "2023-12-31"
+
+temp_data <- readNWISdv(siteNumbers, parameterCd, startDate, endDate)
+colnames(temp_data) <- c("agency_cd", "site_no", "Date", "temp_C")
+temp_data$month = month(temp_data$Date, label=TRUE)
+temp_data$year = year(temp_data$Date)
+
+# check by plotting
+ggplot(temp_data, aes(x=Date, y=temp_C, color=site_no)) +
+  geom_line() +
+  labs(title="Stream Temperature at Willamette River Sites",
+       x="Date", y="Temperature (°C)", color="Site Number") +
+  theme_minimal()
+```
+
+
+Working together create a new repository
+
+* add a quarto file, with nice documentation, that downloads the data (call it something informative)
+* also store the data in the repository (e.g. as a csv file) so that you can work with it without having to download it again
+* add the option to load the data to your quarto file 
+* add a code chunk that plots the data (e.g. using ggplot)
+* add a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)
+
+Make sure you push to *GitHub*. 
+
+Now imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if there slope (trend)
+
+Have each partner focus on trends for a particular month
+
+Here's some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increase/decreases per year)  - And site_no coefficient is telling you how much the temperature differs between sites (relative to the reference site which is site_no 14166000 in this case)
+
+```{r}
+library(tidyverse)
+# filter for July temperatures
+july_data <- subset(temp_data, month == "Jul")
+# fit a GLM model to see if there is a trend in July temperatures over time
+july_model <- glm(temp_C ~ year+site_no, data = july_data)
+summary(july_model)
+
+```
+
+
+Each partner creates their own branch, and does their own analysis based on a particular month
+(if you want to can expand a bit and compare trends between site)
+
+Then merge your branches back into main and create a summary document (quarto), that
+sumamrizes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager
+
+
+Turn in your *GitHub* repo link on Canvas  
+
+
+Grading Rubric
+
+* Code is well documented and organized (20 points)
+* Created a new repository and added a quarto file with code to download, load, and analyze the data (20 points)
+* Each partner created a branch and analyzed trends for a particular month (20 points)
+* Merged branches back into main  (20 points)
+* Summary plot and analysis (20 points)
+
+
+
+
+
+
+
+

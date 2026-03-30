@@ -323,5 +323,33 @@ compute_season_flow(str, kind="max")
 * common flow control approaches
 * returning multiple items from a function
 
+# <span style="color:orange">PACKAGES from Git/span>
 
+* **Package**: An extension of the R base system with functions, data and documentation in standardized
+format.
+* **Library**: A directory containing installed packages.
+* **Repository**: A website providing packages for installation.
+* **Source**: The original version of a package with human-readable text and code.
+* **Binary**: A compiled version of a package with computer-readable text and code, may work only
+on a specic platform.
+* **Base packages**: Part of the R source tree, maintained by R Core.
+* **Recommended packages**: Part of every R installation, but not necessarily maintained by R
+Core.
+* **Contributed packages**: All the rest. This does not mean that these packages are necessarily of
+lesser quality than the above, e.g., many contributed packages on CRAN are written and
+maintained by R Core members. They simply try to keep the base distribution as lean as
+possible.
+* **User packages**: Packages that you write, share with a smaller community - not downloadable
+from CRAN, but can be downloaded (or sent as a zip file) and loaded into R
+
+## <span style="color:orange">Installing packages from GitHub</span>
+ 
+ you can install user packages from *github* - you need the *devtools* library to do this
+ 
+ install_github("naomitague/rainbow")
+ 
+ *Important* this doesn't create a *repo* of rainbow inside you working repository - so its safe!
+ But you cannot *clone* or create a *repo* inside the directory structure of another one
+ 
+ 
 

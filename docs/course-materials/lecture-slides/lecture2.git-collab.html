@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>ESM 262 – Git Continued</title>
+  <title>ESM 262 – Git Collaborate and Revise</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,7 +127,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Git Continued</h1>
+  <h1 class="title">Git Collaborate and Revise</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -240,7 +240,7 @@
 <h2>Collaboration with GitHub</h2>
 
 <img data-src="images/week2/gitandgithub.jpg" class="r-stretch quarto-figure-center"><p class="caption">git and github</p></section>
-<section id="collaboration-through-github" class="slide level2">
+<section id="collaboration-through-github" class="slide level2 scrollable">
 <h2>Collaboration through GitHub</h2>
 <ul>
 <li>add a collaborator to your <em>GitHub</em> repository
@@ -281,12 +281,52 @@
 <li><p>check on <em>GitHub</em> to see if your change is there</p></li>
 </ul>
 </section>
-<section id="homework" class="slide level2">
-<h2>homework</h2>
-<p>Not to hand in - practice using Git and GitHub to get familiar with this</p>
-
-
+<section id="conflicts" class="slide level2 scrollable">
+<h2>Conflicts</h2>
+<ul>
+<li><p>what happens if you and your collaborator change the same file and try to push/pull</p></li>
+<li><p>this could be you from two different computers :)</p></li>
+<li><p><em>Git</em> and <em>GitHub</em> manage this</p>
+<ul>
+<li><em>Github</em> will try to merge the changes</li>
+<li>if it can’t (you both changed the same line or something like that) - <strong>Conflict</strong></li>
+</ul></li>
+<li><p>when a Conflict occurs</p>
+<ul>
+<li><em>Git</em> rewrites the file to show you the conflicting changes using markers</li>
+</ul></li>
+</ul>
+</section>
+<section id="conflict-markers-in-git" class="slide level2 scrollable">
+<h2>Conflict Markers in Git</h2>
+<p>In the file where the conflict occurs - <em>Git</em> marks it by</p>
+<ul>
+<li><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> - start of your local version</li>
+<li><code>=======</code> - divider between your local version and <em>Github</em> version</li>
+<li><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; commit-ID</code> - the end of the conflicting changes from the remote</li>
+</ul>
+</section>
+<section id="what-you-do" class="slide level2">
+<h2>What you do</h2>
+<ul>
+<li>when file is conflicted Rstudio markes it with a U (unmerged)</li>
+<li>edit that file to resolve conflict by choosing which version you want</li>
+<li>stage and commit the resolved file and push to GitHub</li>
+</ul>
 </section></section>
+<section id="for-next-class" class="title-slide slide level1 scrollable center">
+<h1>For Next Class</h1>
+<ul>
+<li><p>add a collaborator to your repository</p></li>
+<li><p>create a conflict by editing the same file and pushing/pulling</p></li>
+<li><p>edit the conflicted file to resolve the conflict and push the resolved version to GitHub</p></li>
+</ul>
+<p><strong>IMPORTANT</strong></p>
+<p>you will have two R Projects - yours and your partners - make sure they are in separte places on your computer</p>
+<p>you should try this twice - once for each persons repository</p>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

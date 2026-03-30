@@ -23,7 +23,7 @@ similarities to Jupyter Notebooks, but with more features and capabilities.
 
 ## Classic Example of Quarto
 
--   download [hello.qmd](%22../downloadables/Week1/hello.qmd%22) from the course website
+-   download [hello.qmd](%22../downloadables/Quarto/hello.qmd%22) from the course website
 -   open it in RStudio
 
 ## Rendering

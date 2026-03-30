@@ -21,8 +21,6 @@ Recall from ESM-206
 
 ![file structure example](images/week2/filestructure.png)
 
-
-
 ## Remember the "here" command! {.scrollable}
 
 ```{r, setup, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
@@ -35,7 +33,7 @@ library(tidyverse)
 here()
 
 # this will let you open a file in your project folder
-p301 = read.csv(here("downloadables/Week1", "p301.csv"))
+p301 = read.csv(here("downloadables/Data", "p301.csv"))
 
 # lets make month names nicer
 p301$month_lab <- factor(p301$month, levels = 1:12, labels = month.abb)
@@ -50,7 +48,6 @@ ggplot(p301, aes(x = month_lab,
   labs(y = "Direct Solar Radiation \n(W/m^2)", x = "Month") +
   theme(legend.position = "none")
 ```
-
 
 ## Suggested Organization
 

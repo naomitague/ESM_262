@@ -1,5 +1,5 @@
 ---
-title: 'Git Continued '
+title: 'Git Collaborate and Revise '
 format:
   revealjs:
     theme: solarized
@@ -125,7 +125,7 @@ useful to keep things from getting 'messy' but we won't go into here
 
 ![git and github](images/week2/gitandgithub.jpg)
 
-## Collaboration through GitHub
+## Collaboration through GitHub {.scrollable}
 
 -   add a collaborator to your *GitHub* repository
     -   under *settings* on *Github*
@@ -152,6 +152,57 @@ useful to keep things from getting 'messy' but we won't go into here
 
 -   check on *GitHub* to see if your change is there
 
-## homework
+## Conflicts
+![git conflicts](images/week2/git_workflow_diagram.svg)
 
-Not to hand in - practice using Git and GitHub to get familiar with this
+## Conflicts {.scrollable}
+
+- what happens if you and your collaborator change the same file and try to push/pull 
+
+- this could be you from two different computers :)
+
+- *Git* and *GitHub* manage this
+  - *Github* will try to merge the changes 
+  - if it can't (you both changed the same line or something like that) - **Conflict**
+  
+- when a Conflict occurs
+  - *Git* rewrites the file to show you the conflicting changes using markers
+  
+  
+## Conflict Markers in Git {.scrollable}
+
+In the file where the conflict occurs - *Git* marks it by
+
+-   `<<<<<<< HEAD` - start of your local version
+-   `=======` - divider between your local version and *Github* version
+-   `>>>>>>> commit-ID` - the end of the conflicting changes from the remote
+
+Lets try it
+
+
+## What you do
+
+* when file is conflicted Rstudio markes it with a U (unmerged)
+* edit that file to resolve conflict by choosing which version you want
+* stage and commit the resolved file and push to GitHub
+
+
+# For Next Class {.scrollable}
+
+* add a collaborator to your repository
+
+* create a conflict by editing the same file and pushing/pulling
+
+* edit the conflicted file to resolve the conflict and push the resolved version to GitHub
+
+**IMPORTANT** 
+
+you will have two R Projects - yours and your partners - make sure they are in separte places on your computer 
+
+you should try this twice - once for each persons repository
+
+
+
+
+
+

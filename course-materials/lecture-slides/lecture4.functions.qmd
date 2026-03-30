@@ -60,7 +60,7 @@ See
 
 ```{r diversity, echo=TRUE}
 
-source("R/compute_simpson_index.R")
+source(here("course-materials/R/compute_simpson_index.R"))
 compute_simpson_index
 
 
@@ -93,7 +93,7 @@ Lets start with diversity - many be want to know a bit more about the dataset
 ```{r diversitylist, echo=TRUE}
 
 # repeat with a list
-source("R/computediversity.R")
+source(here("course-materials/R/computediversity.R"))
 
 computediversity
 
@@ -108,10 +108,11 @@ We can also allow the user to make choices about what to return
 
 ```{r str, echo=TRUE}
 
-source("R/compute_season_meanflow.R")
+source(here("course-materials/R/compute_season_meanflow.R"))
 compute_season_flow
 
-str = read.table("data/str.txt", header=T)
+str = read.table(here("downloadables/Data", "str.txt"), header=T)
+
 compute_season_flow(str)
 
 compute_season_flow(str, kind="max")

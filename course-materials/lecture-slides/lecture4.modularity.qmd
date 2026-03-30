@@ -16,52 +16,49 @@ library(here)
 library(tidyverse)
 ```
 
+# Programming Always Starts with
 
+[ Conceptual Design ]{style="color: cyan;"}
 
-# Programming Always Starts with 
-
-<span style="color: cyan;"> Conceptual Design </span>
-
-* What is the goal
-* How can you break this goal into sub-task
-* For the overall project and each sub-task
-  * What are the inputs
-  * What are the outputs
-
+-   What is the goal
+-   How can you break this goal into sub-task
+-   For the overall project and each sub-task
+    -   What are the inputs
+    -   What are the outputs
 
 # Modularity
 
-* Programs are made up of building blocks
-* A **main program** that controls the flow and **calls** functions/modules/building blocks
+-   Programs are made up of building blocks
+-   A **main program** that controls the flow and **calls** functions/modules/building blocks
 
 [Modular Housing](https://images.app.goo.gl/moGdSXVHWiRvHm3X8/)
 
-
 # Modules take you from inputs to outputs in pieces
 
-- helpful to start a software engineering project by **diagramming** or
-**flow charting ** your program 
+-   helpful to start a software engineering project by **diagramming** or **flow charting** your program
 
-* what is the goal
-* what are key building blocks - modules or functions
-* inputs and output
-* how do you put the blocks together to go from input to output - main program
+-   what is the goal
+
+-   what are key building blocks - modules or functions
+
+-   inputs and output
+
+-   how do you put the blocks together to go from input to output - main program
 
 # Flow Chart Example
 
 [Flow chart Example](https://images.app.goo.gl/ktxjSGC2Dyi1WQFA6)
-
 
 # Designing Modularity
 
 Breaking your instructions down into individual pieces
 
 identifying instructions that can be reused
- 
+
 EXAMPLES
 
-* an ecosystem model might re-use instructions for calculating how a living organism grows
-* an accounting program might re-use instructions for computing net present value from interest rates
+-   an ecosystem model might re-use instructions for calculating how a living organism grows
+-   an accounting program might re-use instructions for computing net present value from interest rates
 
 # Designing Modularity
 
@@ -69,41 +66,40 @@ Modules often become ‘black boxes’ which hides detail that might make unders
 
 Most languages have lots of black boxes already written and most allow you to write your own
 
-
-
 # STEPS IN Program Design for Each Module and Overal Program Design
 
-1. Clearly define your goal in words/figures as precisely as possible, what do you want your program to do
-     
-      * input/output of the entire program
-      + modules
-        + inputs/parameters
-        + outputs
-  
-      * flow between modules
-     
-      
+1.  Clearly define your goal in words/figures as precisely as possible, what do you want your program to do
 
-2. Implement AND document as you go
-3. Test
-4. Refine
-5. Test again
-6. Create User Documentation and Distribute
+    -   input/output of the entire program
+    -   modules
+        -   inputs/parameters
+        -   outputs
+    -   flow between modules
 
----
+2.  Implement AND document as you go
+
+3.  Test
+
+4.  Refine
+
+5.  Test again
+
+6.  Create User Documentation and Distribute
+
+------------------------------------------------------------------------
 
 # Some Examples
 
 **Inputs** - sometimes separated into input data and parameters
 
-* input data = the “what” that is manipulated
-* parameters determine “how” the manipulation is done
+-   input data = the “what” that is manipulated
+-   parameters determine “how” the manipulation is done
 
 Here's an example of a R black box function -**sort**
 
-* inputs - data stream
+-   inputs - data stream
 
-* parameters - how to do the sort
+-   parameters - how to do the sort
 
 # Some Examples
 
@@ -127,40 +123,37 @@ result = sort(BOD[,"demand"], decreasing=TRUE, method="quick")
 head(result)
 ```
 
-
 In this example, parameters are **decreasing** and **method**
 
-output is a sorted version of saved to “result”
----
+## output is a sorted version of saved to “result”
 
 # Another Example
 
 An phone app for calculating car mileage
 
-* inputs are location, price,  gallons and odometer readings at each fill up
-* graph of is miles/gallon over time
-* parameters control units (could be km/liter, output couple be presented as a graph or an average value)
+-   inputs are location, price, gallons and odometer readings at each fill up
+-   graph of is miles/gallon over time
+-   parameters control units (could be km/liter, output couple be presented as a graph or an average value)
 
 [Gas Mileage App](https://www.igeeksblog.com/jerrycan-iphone-app/)
 
-*examples a)  simple (single box); b)  more complex (3 boxes)*
+*examples a) simple (single box); b) more complex (3 boxes)*
 
 # Designing Modularity
 
-Breaking your instructions down into individual pieces
-identifying instructions that can be reused
+Breaking your instructions down into individual pieces identifying instructions that can be reused
 
-basic modules are called **functions** in R 
+basic modules are called **functions** in R
 
 # Learn to think in terms of functions/modules
 
-* break your tasks into boxes with inputs, parameters and output
-* **WRITE DOWN** the *contract* for each box/function
+-   break your tasks into boxes with inputs, parameters and output
+-   **WRITE DOWN** the *contract* for each box/function
 
 **CONTRACT**
 
-* if the users gives you A, the function with return B
-* specify A and B as precisely as you can (units, time/space scale, parameters, options)
+-   if the users gives you A, the function with return B
+-   specify A and B as precisely as you can (units, time/space scale, parameters, options)
 
 # A simple function example - just one module
 
@@ -174,38 +167,34 @@ Contract
 
 *Input*: Reservoir height (m) and flow rate (m3/sec) (as a single value in time or a time series)
 
-*Output*: Instantaneous power generation (W/s)  (as a single value or value for each reservoir height and flow rate combination)
+*Output*: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)
 
 *Parameters*: KEff, ρ (density of water), g (acceleration due to gravity)
 
-What the function will do - compute power using the following equation - *body* of the function 
+What the function will do - compute power using the following equation - *body* of the function
 
-P = ρ * h * r * g * KEff;
+P = ρ \* h \* r \* g \* KEff;
 
-P is Power in watts, ρ is the density of water (~1000 kg/m3), h is height in meters, r is flow rate in cubic meters per second, g is acceleration due to gravity of 9.8 m/s2, KEff is a coefficient of efficiency ranging from 0 to 1.
+P is Power in watts, ρ is the density of water (\~1000 kg/m3), h is height in meters, r is flow rate in cubic meters per second, g is acceleration due to gravity of 9.8 m/s2, KEff is a coefficient of efficiency ranging from 0 to 1.
 
-
-Lets think about a more complex program...
----
-
-
+## Lets think about a more complex program...
 
 # A more complex one
 
-* Goal  - Calculate profit from a reservoir feed by river, if a minimum reservoir volume must be maintained and otherwise reservoir is operated at a flow rate, that is set by the user
+-   Goal - Calculate profit from a reservoir feed by river, if a minimum reservoir volume must be maintained and otherwise reservoir is operated at a flow rate, that is set by the user
 
-*Input*  Stream gage data (m3/sec)
+*Input* Stream gage data (m3/sec)
 
-*Parameters* Efficiency, ρ (density of water), g (acceleration due to gravity), Maximum Reservoir Capacity $(m^3)$, Minimum Reservoir Volume $(m^3)$, Set flow rate $(m^3/sec)$, Price of power $($/W)$
+*Parameters* Efficiency, ρ (density of water), g (acceleration due to gravity), Maximum Reservoir Capacity $(m^3)$, Minimum Reservoir Volume $(m^3)$, Set flow rate $(m^3/sec)$, Price of power $($/W)\$
 
-*Output* Profit ($)
+*Output* Profit (\$)
 
 *Modules*
 
-* Compute Power from a given reservoir height and flow rate (compute_power)
-* Keep track of reservoir volume given inflow and output (reservoir_state)
-* Determine flow rate, given operator desiered flow rate but need for minium capacity (determine_flow_rate)
-* Compute profit from power (compute_profit)
+-   Compute Power from a given reservoir height and flow rate (compute_power)
+-   Keep track of reservoir volume given inflow and output (reservoir_state)
+-   Determine flow rate, given operator desiered flow rate but need for minium capacity (determine_flow_rate)
+-   Compute profit from power (compute_profit)
 
 Each module would have its own inputs, parameters and output
 
@@ -215,7 +204,7 @@ Flow control diagrm - puts the modules together
 
 There are many options for making flow charts or diagrams to support your programmming
 
-I like  this free one accessible online from chrome
+I like this free one accessible online from chrome
 
 [Diagram.net](https://www.diagrams.net/)
 
@@ -225,12 +214,12 @@ I like  this free one accessible online from chrome
 
 With your group, think of an example program that you might want to design that is complex enough to involve several modules
 
-* write a contract for the overall program (input, output, parameters)
-* break the program in to modules (naming them appropriately), write a contract for each one
-* create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)
+-   write a contract for the overall program (input, output, parameters)
+-   break the program in to modules (naming them appropriately), write a contract for each one
+-   create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)
 
 Create a document that includes the diagram and the contract for the overall program and each of the modules in the diagram. Submit as a pdf
 
--  <span style="color: maroon;">Submit on Canvas as GROUP submission for Assignment 1 </span>
+-   [Submit on Canvas as GROUP submission for Assignment 1 ]{style="color: maroon;"}
 
 **Due Monday Feb 17th**

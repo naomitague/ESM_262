@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>ESM 262 – Intro- Spring 2026</title>
+  <title>ESM 262 – Functions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-832775eafbd512325564c8c290c39367.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -127,86 +193,234 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Intro- Spring 2026</h1>
+  <h1 class="title">Functions</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="attendance" class="slide level2">
-<h2>Attendance</h2>
-<ol type="1">
-<li>Why Attendance Matters</li>
-</ol>
+<section id="programming-always-starts-with" class="title-slide slide level1 center">
+<h1>Programming Always Starts with</h1>
+<p><span style="color: cyan;">Conceptual Design</span></p>
 <ul>
-<li><p>hands-on learning in class</p></li>
-<li><p>staying on track with course material and assignments</p></li>
-<li><p>asking questions and getting help in real time</p></li>
-<li><p>building connections with peers and instructors ** YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer **</p></li>
-<li><p>some assignments and quizes are done in class</p></li>
-</ul>
-<ol start="2" type="1">
-<li>Missing a class</li>
-</ol>
+<li>What is the goal</li>
+<li>How can you break this goal into sub-task</li>
+<li>For the overall project and each sub-task
 <ul>
-<li>if you are sick - stay home! -health is key</li>
-<li>email Ojas and I so we know</li>
-<li>check course website and Canvas for lectures/assignments
-<ul>
-<li>go through them</li>
-<li>attend Ojas’s office hours if you have questions</li>
-<li>email us with questions</li>
-</ul></li>
-<li>if you need to be late for an assignment - let us know in advance</li>
-<li>for group assignments or quizes in class, we can let you know how to make up</li>
-<li>if absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs</li>
-</ul>
-</section>
-<section id="new-ai-tools-and-data-science" class="slide level2">
-<h2>new AI tools and Data Science</h2>
-<p>Should we use it? When? How? Why? Why not?</p>
-<ul>
-<li><p>used I use tools like ChatGPT, github copilot to help me in this course?</p></li>
-<li><p>benefit/costs?</p></li>
-</ul>
-</section>
-<section id="some-thoughful-papers-for-further-reading" class="slide level2">
-<h2>Some thoughful papers for further reading</h2>
-<p>High level perspective</p>
-<ul>
-<li><p>includes some thoughts on job market preparation</p></li>
-<li><p><a href="&quot;../papers/AIinComputingEducation.pdf&quot;">Communications of the ACM</a></p></li>
-<li><p><a href="&quot;../papers/perspectives_ai_coding.pdf&quot;">Practical overview/perspective</a></p></li>
-<li><p><a href="&quot;../papers/review-of-harms-fromAIcodingedu.pdf&quot;">Recent review on potential harmful consequenses</a></p></li>
-</ul>
-</section>
-<section id="using-ai-tools-in-this-course" class="title-slide slide level1 center">
-<h1>Using AI-tools in this course</h1>
-<ul>
-<li><p>AI-tools great resources but effective use requires understanding how to ask good questions</p></li>
-<li><p>Use this course to build that understanding,</p></li>
-<li><p>You gain skills by <strong>Practicing</strong>, so start without AI-tools</p></li>
-<li><p>For assignments/practice</p>
-<ul>
-<li><strong>Always</strong> write the code yourself -</li>
-<li>How we will use AI - tools later in the course</li>
-<li>Supportive ways to use AI-tools
-<ul>
-<li>use AI-tools to help find syntax</li>
-<li>Use AI-tools to explain other peoples code (including class examples)</li>
-<li>Use AI-tools to help interpret error messages</li>
-</ul></li>
+<li>What are the inputs</li>
+<li>What are the outputs</li>
 </ul></li>
 </ul>
 </section>
 
-<section id="homework-not-graded" class="title-slide slide level1 center">
-<h1>Homework (not-graded)</h1>
+<section id="modularity" class="title-slide slide level1 center">
+<h1>Modularity</h1>
 <ul>
-<li>Complete Installation Part 1</li>
-<li>Complete the getting to know you survey</li>
-<li>Read one of the AI papers and think of one thing you found interesting</li>
+<li>Programs are made up of building blocks</li>
+<li>A <strong>main program</strong> that controls the flow and <strong>calls</strong> functions/modules/building blocks</li>
 </ul>
+<p><a href="https://images.app.goo.gl/moGdSXVHWiRvHm3X8/">Modular Housing</a></p>
+</section>
+
+<section id="modules-take-you-from-inputs-to-outputs-in-pieces" class="title-slide slide level1 center">
+<h1>Modules take you from inputs to outputs in pieces</h1>
+<ul>
+<li><p>helpful to start a software engineering project by <strong>diagramming</strong> or <strong>flow charting</strong> your program</p></li>
+<li><p>what is the goal</p></li>
+<li><p>what are key building blocks - modules or functions</p></li>
+<li><p>inputs and output</p></li>
+<li><p>how do you put the blocks together to go from input to output - main program</p></li>
+</ul>
+</section>
+
+<section id="flow-chart-example" class="title-slide slide level1 center">
+<h1>Flow Chart Example</h1>
+<p><a href="https://images.app.goo.gl/ktxjSGC2Dyi1WQFA6">Flow chart Example</a></p>
+</section>
+
+<section id="designing-modularity" class="title-slide slide level1 center">
+<h1>Designing Modularity</h1>
+<p>Breaking your instructions down into individual pieces</p>
+<p>identifying instructions that can be reused</p>
+<p>EXAMPLES</p>
+<ul>
+<li>an ecosystem model might re-use instructions for calculating how a living organism grows</li>
+<li>an accounting program might re-use instructions for computing net present value from interest rates</li>
+</ul>
+</section>
+
+<section id="designing-modularity-1" class="title-slide slide level1 center">
+<h1>Designing Modularity</h1>
+<p>Modules often become ‘black boxes’ which hides detail that might make understanding the program overly complex</p>
+<p>Most languages have lots of black boxes already written and most allow you to write your own</p>
+</section>
+
+<section>
+<section id="steps-in-program-design-for-each-module-and-overal-program-design" class="title-slide slide level1 center">
+<h1>STEPS IN Program Design for Each Module and Overal Program Design</h1>
+<ol type="1">
+<li><p>Clearly define your goal in words/figures as precisely as possible, what do you want your program to do</p>
+<ul>
+<li>input/output of the entire program</li>
+<li>modules
+<ul>
+<li>inputs/parameters</li>
+<li>outputs</li>
+</ul></li>
+<li>flow between modules</li>
+</ul></li>
+<li><p>Implement AND document as you go</p></li>
+<li><p>Test</p></li>
+<li><p>Refine</p></li>
+<li><p>Test again</p></li>
+<li><p>Create User Documentation and Distribute</p></li>
+</ol>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section id="some-examples" class="title-slide slide level1 center">
+<h1>Some Examples</h1>
+<p><strong>Inputs</strong> - sometimes separated into input data and parameters</p>
+<ul>
+<li>input data = the “what” that is manipulated</li>
+<li>parameters determine “how” the manipulation is done</li>
+</ul>
+<p>Here’s an example of a R black box function -<strong>sort</strong></p>
+<ul>
+<li><p>inputs - data stream</p></li>
+<li><p>parameters - how to do the sort</p></li>
+</ul>
+</section>
+
+<section>
+<section id="some-examples-1" class="title-slide slide level1 center">
+<h1>Some Examples</h1>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># look at a R data set on Biological Oxygen Demand over time</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="co"># notice the use of data - R function that brings pre-stored datasets into the work space</span></span>
+<span id="cb1-4"><a></a><span class="fu">data</span>(BOD)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a><span class="co"># notice "help" and the information that it provides</span></span>
+<span id="cb1-7"><a></a><span class="fu">help</span>(BOD)</span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a><span class="co"># options for looking at data</span></span>
+<span id="cb1-10"><a></a><span class="fu">view</span>(BOD)</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="fu">head</span>(BOD)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Time demand
+1    1    8.3
+2    2   10.3
+3    3   19.0
+4    4   16.0
+5    5   15.6
+6    7   19.8</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># example of a function - SORT</span></span>
+<span id="cb3-2"><a></a>result <span class="ot">=</span> <span class="fu">sort</span>(BOD[,<span class="st">"demand"</span>], <span class="at">decreasing=</span><span class="cn">TRUE</span>, <span class="at">method=</span><span class="st">"quick"</span>)</span>
+<span id="cb3-3"><a></a><span class="fu">head</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19.8 19.0 16.0 15.6 10.3  8.3</code></pre>
+</div>
+</div>
+<p>In this example, parameters are <strong>decreasing</strong> and <strong>method</strong></p>
+</section>
+<section id="output-is-a-sorted-version-of-saved-to-result" class="slide level2">
+<h2>output is a sorted version of saved to “result”</h2>
+</section></section>
+<section id="another-example" class="title-slide slide level1 center">
+<h1>Another Example</h1>
+<p>An phone app for calculating car mileage</p>
+<ul>
+<li>inputs are location, price, gallons and odometer readings at each fill up</li>
+<li>graph of is miles/gallon over time</li>
+<li>parameters control units (could be km/liter, output couple be presented as a graph or an average value)</li>
+</ul>
+<p><a href="https://www.igeeksblog.com/jerrycan-iphone-app/">Gas Mileage App</a></p>
+<p><em>examples a) simple (single box); b) more complex (3 boxes)</em></p>
+</section>
+
+<section id="designing-modularity-2" class="title-slide slide level1 center">
+<h1>Designing Modularity</h1>
+<p>Breaking your instructions down into individual pieces identifying instructions that can be reused</p>
+<p>basic modules are called <strong>functions</strong> in R</p>
+</section>
+
+<section id="learn-to-think-in-terms-of-functionsmodules" class="title-slide slide level1 center">
+<h1>Learn to think in terms of functions/modules</h1>
+<ul>
+<li>break your tasks into boxes with inputs, parameters and output</li>
+<li><strong>WRITE DOWN</strong> the <em>contract</em> for each box/function</li>
+</ul>
+<p><strong>CONTRACT</strong></p>
+<ul>
+<li>if the users gives you A, the function with return B</li>
+<li>specify A and B as precisely as you can (units, time/space scale, parameters, options)</li>
+</ul>
+</section>
+
+<section id="a-simple-function-example---just-one-module" class="title-slide slide level1 center">
+<h1>A simple function example - just one module</h1>
+<p>Lets say we want to develop a program that computes power generated from hydro-reservoir</p>
+<p>We know that power generation depends on water release rates and the potential energy (from the reservoir height)</p>
+</section>
+
+<section>
+<section id="lets-break-it-down" class="title-slide slide level1 center">
+<h1>Lets break it down</h1>
+<p>Contract</p>
+<p><em>Input</em>: Reservoir height (m) and flow rate (m3/sec) (as a single value in time or a time series)</p>
+<p><em>Output</em>: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)</p>
+<p><em>Parameters</em>: KEff, ρ (density of water), g (acceleration due to gravity)</p>
+<p>What the function will do - compute power using the following equation - <em>body</em> of the function</p>
+<p>P = ρ * h * r * g * KEff;</p>
+<p>P is Power in watts, ρ is the density of water (~1000 kg/m3), h is height in meters, r is flow rate in cubic meters per second, g is acceleration due to gravity of 9.8 m/s2, KEff is a coefficient of efficiency ranging from 0 to 1.</p>
+</section>
+<section id="lets-think-about-a-more-complex-program" class="slide level2">
+<h2>Lets think about a more complex program…</h2>
+</section></section>
+<section id="a-more-complex-one" class="title-slide slide level1 center">
+<h1>A more complex one</h1>
+<ul>
+<li>Goal - Calculate profit from a reservoir feed by river, if a minimum reservoir volume must be maintained and otherwise reservoir is operated at a flow rate, that is set by the user</li>
+</ul>
+<p><em>Input</em> Stream gage data (m3/sec)</p>
+<p><em>Parameters</em> Efficiency, ρ (density of water), g (acceleration due to gravity), Maximum Reservoir Capacity <span class="math inline">\((m^3)\)</span>, Minimum Reservoir Volume <span class="math inline">\((m^3)\)</span>, Set flow rate <span class="math inline">\((m^3/sec)\)</span>, Price of power <span class="math inline">\((\)</span>/W)$</p>
+<p><em>Output</em> Profit ($)</p>
+<p><em>Modules</em></p>
+<ul>
+<li>Compute Power from a given reservoir height and flow rate (compute_power)</li>
+<li>Keep track of reservoir volume given inflow and output (reservoir_state)</li>
+<li>Determine flow rate, given operator desiered flow rate but need for minium capacity (determine_flow_rate)</li>
+<li>Compute profit from power (compute_profit)</li>
+</ul>
+<p>Each module would have its own inputs, parameters and output</p>
+<p>Flow control diagrm - puts the modules together</p>
+</section>
+
+<section id="making-diagrams" class="title-slide slide level1 center">
+<h1>Making Diagrams</h1>
+<p>There are many options for making flow charts or diagrams to support your programmming</p>
+<p>I like this free one accessible online from chrome</p>
+<p><a href="https://www.diagrams.net/">Diagram.net</a></p>
+<p><a href="https://drive.google.com/file/d/1UaDyKDgf0RQCjicMWUXA7gr4l1QK-X1y/view?usp=sharing">Example</a></p>
+</section>
+
+<section id="your-task" class="title-slide slide level1 center">
+<h1>Your Task</h1>
+<p>With your group, think of an example program that you might want to design that is complex enough to involve several modules</p>
+<ul>
+<li>write a contract for the overall program (input, output, parameters)</li>
+<li>break the program in to modules (naming them appropriately), write a contract for each one</li>
+<li>create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)</li>
+</ul>
+<p>Create a document that includes the diagram and the contract for the overall program and each of the modules in the diagram. Submit as a pdf</p>
+<ul>
+<li><span style="color: maroon;">Submit on Canvas as GROUP submission for Assignment 1</span></li>
+</ul>
+<p><strong>Due Monday Feb 17th</strong></p>
 
 
 </section>
@@ -425,6 +639,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
