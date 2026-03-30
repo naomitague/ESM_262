@@ -71,8 +71,6 @@ The terminal window allows you to access a *shell* - it's a way to interact with
 
 -   commit the change
 
-LETS MAKE A MISTAKE HERE
-
 -   in terminal type *git revert HEAD*
 
 -   this will create a new commit that undoes the changes you just made

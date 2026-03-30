@@ -1,0 +1,119 @@
+---
+title: 'Functions'
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r, setup, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+library(here)
+library(tidyverse)
+```
+
+# Programming Always Starts with
+
+[ Conceptual Design ]{style="color: cyan;"}
+
+-   What is the goal
+-   How can you break this goal into sub-task
+-   For the overall project and each sub-task
+    -   What are the inputs
+    -   What are the outputs
+
+# Modularity
+
+-   Programs are made up of building blocks
+-   A **main program** that controls the flow and **calls** functions/modules/building blocks
+
+[Modular Housing](https://images.app.goo.gl/moGdSXVHWiRvHm3X8/)
+
+# Modules take you from inputs to outputs in pieces
+
+-   helpful to start a software engineering project by **diagramming** or **flow charting** your program
+
+-   what is the goal
+
+-   what are key building blocks - modules or functions
+
+-   inputs and output
+
+-   how do you put the blocks together to go from input to output - main program
+
+# <span style="color:blue"> Functions with factors 
+
+Lets generate a function that makes use of categorical data
+species diversity is a good example
+
+"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species 
+
+Value is between 0 and 1, with lower values associated with *lower* diversity
+
+See 
+[Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
+
+
+```{r diversity, echo=TRUE}
+
+source("R/compute_simpson_index.R")
+compute_simpson_index
+
+
+possible.fish = as.factor(c("salmon","steelhead","shark","tuna","cod"))
+# simulate a random recording of catch by fisherman
+
+
+# note here is answer to above challenge
+catch1 = sample(possible.fish, size=10, prob = c(0.2, 0.2, 0.1, 0.1, 0.4), replace=T)
+# lets create a test case that should have low diversity, by repeating the same thing
+catch2 = c(rep("salmon", times=10), rep("cod", times=10))
+
+compute_simpson_index(catch1)
+compute_simpson_index(catch2)
+
+```
+
+
+# Using lists to return multiple items from a function
+
+We can use *lists* to return multiple,diverse pieces of information from our functions
+Lets start with diversity - many be want to know a bit more about the dataset
+
+* Simpson diversity
+* most frequent species
+* number of distinct species
+
+
+
+```{r diversitylist, echo=TRUE}
+
+# repeat with a list
+source("R/computediversity.R")
+
+computediversity
+
+computediversity(catch1)
+computediversity(catch2)
+```
+
+
+# Another example
+
+We can also allow the user to make choices about what to return
+
+```{r str, echo=TRUE}
+
+source("R/compute_season_meanflow.R")
+compute_season_flow
+
+str = read.table("data/str.txt", header=T)
+compute_season_flow(str)
+
+compute_season_flow(str, kind="max")
+```
+

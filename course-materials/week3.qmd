@@ -1,0 +1,21 @@
+---
+title: "More Git and Data"
+subtitle: "Week 2"
+description: "Monday April 20^th^, 2026"
+---
+
+
+
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
+| Lecture slides | Materials |
+|----------------|-----------|
+| [Lecture 3.1:  Git Branching ](lecture-slides/lecture3.git-part3.qmd){target="_blank"} |  |
+| [Lecture 3.2: Data Types ](lecture-slides/lecture3.datatypes.qmd){target="_blank"} |  |
+
+
+## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
+
+| Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
+|-----------------|-----------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #2](assignments/HW2.qmd) | 16/4/2026      | 20/4/2026 , 11:59pm PT     |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"} 
