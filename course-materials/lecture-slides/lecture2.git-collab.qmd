@@ -11,16 +11,12 @@ execute:
   message: true
 ---
 
-
 ```{r, setup, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
 library(here)
 library(tidyverse)
 ```
 
-
-
-
-## Git 
+## Git
 
 ![git local remote](images/week2/gitconcept.png)
 
@@ -37,41 +33,27 @@ library(tidyverse)
 -   **push** integrates any local commits/changes to central GitHub\
 -   **pull** integrates any commits/changes from central GitHb to local
 
-[History]{style="color:green"}
-
--   shows your sequence of commit messages
-
-[Diff]{style="color:green"}
-
--   shows what changed in a file since last commit
-
-[Revert]{style="color:green"}
-
--   go back to last commit GitHub's
-
 [Git Guides](https://github.com/git-guides) are a really wonderful resource to refer to!
 
 # History with GIT
 
-locally- use the little clock button or **commit** 
+locally- use the little clock button or **commit**
 
- - see the history of your commits
- - click on a commit to see what changed
+-   see the history of your commits
+-   click on a commit to see what changed
 
 ::: callout-note
-commit messages helps understand history 
+informative commit messages helps understand history
 :::
 
 ## Correcting Misktakes if you haven't committed {.scrollable}
 
 -   make a change and save
--   commit the change
--   look at your commit history and find the commit you want to revert to
 -   click *revert* to get rid of the changes that you don't want
 
 I'll try it
 
-## Correcting Mistakes if you have committed 
+## Correcting Mistakes if you have committed
 
 Here we use the *terminal* window
 
@@ -79,26 +61,29 @@ The terminal window allows you to access a *shell* - it's a way to interact with
 
 *Terminal* is a powerful tool that:
 
--  allows you to do things that you can't do with the graphical interface
--  uses *Git* commands that work everywhere not just with R, Rstudio
--  we will work with *Terminal* command more in the course
-
+-   allows you to do things that you can't do with the graphical interface
+-   uses *Git* commands that work everywhere not just with R, Rstudio
+-   we will work with *Terminal* command more in the course
 
 ## What to do in Terminal to get your code back to an earlier version
 
 -   make a change and save
+
 -   commit the change
--   in terminal type `git revert HEAD'
+
+-   in terminal type \`git revert HEAD'
 
 -   this will create a new commit that undoes the changes you just made
 
 I'll try and then you
 
 ## Go back farther in time
+
 ![git revert](images/week2/gitrevert.png)
 
 ## Git commands
-'git revert HEAD" goes back to the last change but if you want to go back to a specific commit, you can use the commit ID 
+
+'git revert HEAD" goes back to the last change but if you want to go back to a specific commit, you can use the commit ID
 
 commit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.
 
@@ -114,21 +99,27 @@ There are other options, *git reset* and *git checkout*
 
 A bit more dangerous because they discard/overwrite changes instead of creating a new commit that undoes the changes
 
- useful to keep things from getting 'messy' but
-we won't go into here
+useful to keep things from getting 'messy' but we won't go into here
 
 ## Some other useful Git commands in Terminal {.scrollable}
 
 -   `git status` - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)
 
 -   `git log` - shows you the commit history with commit messages and IDs
+
 -   `git diff` - shows you the differences between your current files and the last commit (what changes you have made)
+
 -   `git push` - pushes your local commits to GitHub
+
 -   `git pull` - pulls the latest changes from GitHub to your local repository
--  `git commit filename -m "your commit message"` - commits your changes to the file with a message describing what you did.
--  `git commit -a -m "your commit message"` - commits all your changes with a message describing what you did.
-- `git add filename` - stages a file for commit (you need to stage files before you can commit them) 
-- `git checkout -- filename` - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)
+
+-   `git commit filename -m "your commit message"` - commits your changes to the file with a message describing what you did.
+
+-   `git commit -a -m "your commit message"` - commits all your changes with a message describing what you did.
+
+-   `git add filename` - stages a file for commit (you need to stage files before you can commit them)
+
+-   `git checkout -- filename` - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)
 
 ## Collaboration with GitHub
 
@@ -136,30 +127,30 @@ we won't go into here
 
 ## Collaboration through GitHub
 
-- add a collaborator to your *GitHub* repository
-  - under *settings* on *Github*
-- they will get an email invitation to collaborate on your repository
-- they can clone the repository to their local computer and make changes
-- they can commit and push their changes to GitHub
-
+-   add a collaborator to your *GitHub* repository
+    -   under *settings* on *Github*
+-   they will get an email invitation to collaborate on your repository
+-   they can clone the repository to their local computer and make changes
+-   they can commit and push their changes to GitHub
 
 ::: callout-note
- *Git* doesn't like having nested repositories
- so don't clone a repository inside another repository!!!
+*Git* doesn't like having nested repositories so don't clone a repository inside another repository!!!
 :::
 
 ## Try it
 
-- with a partner, add each other to your repo
+-   with a partner, add each other to your repo
 
-- start a new *Rproject* - 
-  - select the option to clone from existing repo
-  - make sure you save different directory than your original project!
-  
-- make a change (maybe add a file, edit their quarto file, etc.)
-  - commit and push
-  
-- check on *GitHub* to see if your change is there
+-   start a new *Rproject* -
+
+    -   select the option to clone from existing repo
+    -   make sure you save different directory than your original project!
+
+-   make a change (maybe add a file, edit their quarto file, etc.)
+
+    -   commit and push
+
+-   check on *GitHub* to see if your change is there
 
 ## homework
 
