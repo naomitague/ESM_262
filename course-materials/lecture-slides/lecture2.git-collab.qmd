@@ -71,7 +71,7 @@ The terminal window allows you to access a *shell* - it's a way to interact with
 
 -   commit the change
 
--   in terminal type \`git revert HEAD'
+-   in terminal type *git revert HEAD*
 
 -   this will create a new commit that undoes the changes you just made
 
@@ -83,11 +83,11 @@ I'll try and then you
 
 ## Git commands
 
-'git revert HEAD" goes back to the last change but if you want to go back to a specific commit, you can use the commit ID
+*git revert HEAD* goes back to the last change but if you want to go back to a specific commit, you can use the commit ID
 
 commit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.
 
-'git revert <commit ID>'
+*git revert <commit ID>*
 
 Find the SHA number (same as commit ID) in your Git History
 

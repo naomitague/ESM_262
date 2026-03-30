@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
 
   <title>ESM 262 – Git Continued</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -151,18 +151,6 @@
 </li>
 <li><strong>pull</strong> integrates any commits/changes from central GitHb to local</li>
 </ul>
-<p><span style="color:green">History</span></p>
-<ul>
-<li>shows your sequence of commit messages</li>
-</ul>
-<p><span style="color:green">Diff</span></p>
-<ul>
-<li>shows what changed in a file since last commit</li>
-</ul>
-<p><span style="color:green">Revert</span></p>
-<ul>
-<li>go back to last commit GitHub’s</li>
-</ul>
 <p><a href="https://github.com/git-guides">Git Guides</a> are a really wonderful resource to refer to!</p>
 </section>
 <section>
@@ -182,7 +170,7 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>commit messages helps understand history</p>
+<p>informative commit messages helps understand history</p>
 </div>
 </div>
 </div>
@@ -191,8 +179,6 @@
 <h2>Correcting Misktakes if you haven’t committed</h2>
 <ul>
 <li>make a change and save</li>
-<li>commit the change</li>
-<li>look at your commit history and find the commit you want to revert to</li>
 <li>click <em>revert</em> to get rid of the changes that you don’t want</li>
 </ul>
 <p>I’ll try it</p>
@@ -213,7 +199,7 @@
 <ul>
 <li><p>make a change and save</p></li>
 <li><p>commit the change</p></li>
-<li><p>in terminal type `git revert HEAD’</p></li>
+<li><p>in terminal type <em>git revert HEAD</em></p></li>
 <li><p>this will create a new commit that undoes the changes you just made</p></li>
 </ul>
 <p>I’ll try and then you</p>
@@ -224,9 +210,9 @@
 <img data-src="images/week2/gitrevert.png" class="r-stretch quarto-figure-center"><p class="caption">git revert</p></section>
 <section id="git-commands" class="slide level2">
 <h2>Git commands</h2>
-<p>’git revert HEAD” goes back to the last change but if you want to go back to a specific commit, you can use the commit ID</p>
+<p><em>git revert HEAD</em> goes back to the last change but if you want to go back to a specific commit, you can use the commit ID</p>
 <p>commit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.</p>
-<p>‘git revert <commit id="">’</commit></p>
+<p><em>git revert <commit id=""></commit></em></p>
 <p>Find the SHA number (same as commit ID) in your Git History</p>
 <p>Try it!</p>
 </section>

@@ -375,7 +375,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
     "title": "Git Continued",
     "section": "The Basics",
-    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s\n\nGit Guides are a really wonderful resource to refer to!"
+    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nGit Guides are a really wonderful resource to refer to!"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git",
@@ -389,7 +389,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
     "title": "Git Continued",
     "section": "Correcting Misktakes if you haven’t committed",
-    "text": "Correcting Misktakes if you haven’t committed\n\nmake a change and save\ncommit the change\nlook at your commit history and find the commit you want to revert to\nclick revert to get rid of the changes that you don’t want\n\nI’ll try it"
+    "text": "Correcting Misktakes if you haven’t committed\n\nmake a change and save\nclick revert to get rid of the changes that you don’t want\n\nI’ll try it"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
@@ -403,7 +403,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
     "title": "Git Continued",
     "section": "What to do in Terminal to get your code back to an earlier version",
-    "text": "What to do in Terminal to get your code back to an earlier version\n\nmake a change and save\ncommit the change\nin terminal type `git revert HEAD’\nthis will create a new commit that undoes the changes you just made\n\nI’ll try and then you"
+    "text": "What to do in Terminal to get your code back to an earlier version\n\nmake a change and save\ncommit the change\nin terminal type git revert HEAD\nthis will create a new commit that undoes the changes you just made\n\nI’ll try and then you"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#go-back-farther-in-time",
@@ -431,7 +431,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#git-commands",
     "title": "Git Continued",
     "section": "Git commands",
-    "text": "Git commands\n’git revert HEAD” goes back to the last change but if you want to go back to a specific commit, you can use the commit ID\ncommit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.\n‘git revert ’\nFind the SHA number (same as commit ID) in your Git History\nTry it!"
+    "text": "Git commands\ngit revert HEAD goes back to the last change but if you want to go back to a specific commit, you can use the commit ID\ncommit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.\ngit revert \nFind the SHA number (same as commit ID) in your Git History\nTry it!"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#other-ways-to-go-back-in-time",
