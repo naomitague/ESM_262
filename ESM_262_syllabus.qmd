@@ -78,7 +78,7 @@ Class time will involve lectures and working on practical applications . This wa
 
 Why structure it this way? You learn to code by doing - not so much by watching others do!
 
-# ChatGPT and other AI-tools
+#  AI-tools
 
 There are pro's and con's to using AI-tools while you are learning environmental modeling (coding in general)
 
@@ -104,7 +104,7 @@ Tools
 -   For assignments/practice
 
     -   **Always** write the code yourself -
-    -   How we will use AI - tools later in the course
+    
     -   Supportive ways to use AI-tools
         -   use AI-tools to help find syntax
         -   Use AI-tools to explain other peoples code (including class examples)
@@ -112,7 +112,7 @@ Tools
 
 # Attendance
 
--   You are expected to come to class - its part of the learning! 
+-   You are expected to come to class - its part of the learning!
 
 -   We will regularly have in-class quizzes - These are not really "quizzes" where you answer is right or wrong. They are designed to help you think through the material and provide feedback to me as the instructor. For each quiz you will get full credit for attempting the question in class.
 
@@ -120,7 +120,7 @@ Tools
 
 ## [Tentative Schedule]{style="color:orange"} {.scrollable}
 
-```{r, sch}
+```{r, sch, echo=FALSE, message=FALSE}
 
 #| echo: false
 #| message: false
@@ -188,10 +188,9 @@ kable(
 )
 ```
 
-
 ## [Assignments]{style="color:orange"}
 
-There will be 8 assignments (more or less one for each week). You will usually have time to start the assignment in class and most will be in groups. We will also have 6 quizes 
+There will be 6 assignments (more or less one for each week). You will usually have time to start the assignment in class and most will be in groups. We will also have 6 quizes
 
 # Assignment expectations and grading
 
