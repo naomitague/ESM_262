@@ -18,7 +18,7 @@ library(tidyverse)
 
 # Programming Always Starts with
 
-[ Conceptual Design ]{style="color: cyan;"}
+[Conceptual Design]{style="color: cyan;"}
 
 -   What is the goal
 -   How can you break this goal into sub-task
@@ -45,18 +45,15 @@ library(tidyverse)
 
 -   how do you put the blocks together to go from input to output - main program
 
-# <span style="color:blue"> Functions with factors 
+# <span style="color:blue"> Functions with factors
 
-Lets generate a function that makes use of categorical data
-species diversity is a good example
+Lets generate a function that makes use of categorical data species diversity is a good example
 
-"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species 
+"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species
 
 Value is between 0 and 1, with lower values associated with *lower* diversity
 
-See 
-[Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
-
+See [Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
 
 ```{r diversity, echo=TRUE}
 
@@ -78,17 +75,13 @@ compute_simpson_index(catch2)
 
 ```
 
-
 # Using lists to return multiple items from a function
 
-We can use *lists* to return multiple,diverse pieces of information from our functions
-Lets start with diversity - many be want to know a bit more about the dataset
+We can use *lists* to return multiple,diverse pieces of information from our functions Lets start with diversity - many be want to know a bit more about the dataset
 
-* Simpson diversity
-* most frequent species
-* number of distinct species
-
-
+-   Simpson diversity
+-   most frequent species
+-   number of distinct species
 
 ```{r diversitylist, echo=TRUE}
 
@@ -100,7 +93,6 @@ computediversity
 computediversity(catch1)
 computediversity(catch2)
 ```
-
 
 # Another example
 
@@ -118,3 +110,15 @@ compute_season_flow(str)
 compute_season_flow(str, kind="max")
 ```
 
+-   
+
+    -   
+
+-   Repeating
+
+    -   in R - *purrr* package, also *apply* family of function
+    -   classic *for* loops
+
+If you need it a good source to review working with *purrr* to extract items from list and repeat operations
+
+[Useful Purrr Resource](https://www.rebeccabarter.com/blog/2019-08-19_purrr/)

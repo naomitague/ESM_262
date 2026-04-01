@@ -16,48 +16,126 @@ knitr::opts_chunk$set(echo =TRUE)
 knitr::opts_chunk$set(error=TRUE)
 
 library(tidyverse)
-library(purrr)
 
 ```
 
-# <span style="color:blue"> Data types 
+# <span style="color:blue"> Data types
 
 All programming languages use data-types, or structures to hold information
 
-* integer
-* floating point/ real / numeric
-* character 
-* string
+-   integer
+-   floating point/ real / numeric
+-   character
+-   string
 
-Often data types are multi-dimensional 
-Some useful ones in R
+Often data types are multi-dimensional Some useful ones in R
 
-* vector
-* matrix
-* data frame
-* tibble
-* factors
-* lists
+-   vector
+-   matrix
+-   data frame
+-   tibble
+-   factors
+-   lists
 
-Programming often involves selecting and building data structures. Like the **res** matrix we built last class to hold the results from our **for** loop
+Programming often involves selecting and building data structures
 
 Good data structures are
 
-* as simple as possible
-* easy to understand (readable names)
-* easy to manipulate 
-* easy to visualize
+-   as simple as possible
+-   easy to understand (readable names)
+-   easy to manipulate
+-   easy to visualize
 
-# <span style="color:blue"> Factors \span
+## Ways to generate data {.scrollable}
 
-something that has different **classes** or **groups**
-useful for doing calculations with categories
+For testing your code, often helpful to generate *test* data
+
+We also often generate random data to explore the behavior of our code and to understand how it works
+
+    -   *runif(min,max)* (sampling from a uniform distribution)
+    -   *rnorm(mean,sd)* (sampling from uniform and normal distributions)
+    -   *rpois(lambda)* (sampling from a Poisson distribution)
+    
+(many other options - here's a good *cheatsheet* for random number generation in R 
+
+[Random Generation](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Randomh)
+
+Other ways to generate data
+
+    -   *sample(vector,size,replace)* (sampling from a vector of values)
+    
+    -   *seq(start,end,by)* (for creating a sequence of numbers)
+
+
+## Example
+
+```{r}
+# want to random start 20  fires in a fire model, locations numbered from 1 to 100
+firestarts = runif(20, min=0, max=100)
+ggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()
+# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg
+otterweight = rnorm(20, mean=10, sd=2)
+ggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()
+# notice how the more you sample the more it looks normal
+otterweight = rnorm(2000, mean=10, sd=2)
+ggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()
+
+
+# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025
+# two options - we allow a year to be picked more than once
+pick = sample(seq(2000,2025), size=20, replace=T)
+pick
+# no repeat years
+pick = sample(seq(2000,2025), size=20, replace=F)
+pick
+
+```
+
+# Data in R Packages
+
+* Many Packages in R have datasets associated with them
+
+* To see this you can use the **data()** command
+
+* To load a dataset from a package you can use **data(datasetname)**
+
+Lets try and then use *sample* to sample from one
+
+```{r}
+
+data()
+
+# Lets look at New York Air Quality Measurement
+# load into your R environment
+data(airquality)
+# learn about dataset
+help(airquality)
+# a good way to see structure of data
+str(airquality)
+
+# does Ozone correlate with air temperature
+ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()
+
+# lets say we are testing a new product and we want a sample of 5 ozone measurement that conforms to the distribution in this dataset
+ozone_sample = sample(airquality$Ozone, size=5, replace=F)
+ozone_sample
+
+# plot our sample days
+
+ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+
+  geom_point(data=data.frame(Temp=airquality$Temp[ozone_sample], Ozone=ozone_sample), color="red", size=3)
+
+```
+
+# <span style="color:blue"> Data Types: Factors \span
+
+something that has different **classes** or **groups** useful for doing calculations with categories
 
 Here's an example:
 
 First lets look at a standard numeric vector
 
-```{r} 
+```{r}
 a = c(1.3, 1, 4, 1.3, 22)
 # compute the mean
 mean(a)
@@ -66,7 +144,8 @@ mean(a)
 What if **a** is a factor
 
 What do commands like **mean** do
-```{r} 
+
+```{r}
 a = as.factor(a)
 # compute the mean
 mean(a)
@@ -80,8 +159,6 @@ a
 ```
 
 We can use **summary** with factors to get frequencies in each category (or “level” )
-
-
 
 ```{r fishes}
 
@@ -121,37 +198,51 @@ names(which.max(summary(catch1)))
 
 ## On your own
 
-In a quarto document
-* create a new population of some creature (could be mythical) 
-* sample from the population
-* use summary to explore the distribution of your sample
-
-
+In a quarto document \* create a new population of some creature (could be mythical) \* sample from the population \* use summary to explore the distribution of your sample
 
 ## Strings and how to work with them
 
-In R
+Strings are character data types that are used to represent text
+
+All programming languages have ways to deal with strings
+Some commonly used R functions
+-   **paste** and **paste0** for concatenating strings together
+-   **strsplit** for splitting strings into parts
+-  **sprintf** for creating formatted strings 
+-   **gsub** for replacing parts of strings
+-   **tolower** and **toupper** for changing case
+-   **nchar** for counting the number of characters in a string
+
+Most of these are easy to use - just look at help for the function and try it out
+
+**sprintf** however takes some specialized knowledge
 
 ## Creating strings with sprintf
 
- **sprintf**
+**sprintf** used something called
+*format string syntax* to create formatted strings
 
-some useful syntax if you want to generate strings
+*format string syntax* is used in many places -for searching for and creating strings - AND - its used by many programming languages 
 
-* **%s** replace with a string
-* **%d** replace with an integer value
-* **%f** replace with a real value
-* **%4.1f** replace with a real value with 4 digist, two after decimal
-* **\\n** add a line return
+- C / C++ → printf
+- Python → old-style % formatting and str.format()
+- Java / JavaScript → similar formatting ideas
+- SQL (some dialects), 
+- Unix Shell (terminal window) 
 
-Try it
+## format string syntax
+
+-   **%s** replace with a string
+-   **%d** replace with an integer value
+-   **%f** replace with a real value
+-   **%4.1f** replace with a real value with 4 digits, two after decimal
+-   **\\n** add a line return
+
+
+## Example
 
 make a string with **sprintf** and add to plot title
 
-The *syntax* of **sprintf** is a bit weird but it is very useful for creating informative text and plot titles
-of course you can also use **paste** and **paste0** but **sprintf** gives you more control over formatting
-
-AND *sprintf* syntax is used in many other programing languages
 
 ```{r}
 # use results for creating text
@@ -166,44 +257,9 @@ ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=
 
 ```
 
-# <span style="color:blue"> Functions with factors 
+## But I don't want a factor
 
-Lets generate a function that makes use of categorical data
-species diversity is a good example
-
-"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species 
-
-Value is between 0 and 1, with lower values associated with *lower* diversity
-
-See 
-[Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
-
-
-```{r diversity, echo=TRUE}
-
-source("R/compute_simpson_index.R")
-compute_simpson_index
-
-
-possible.fish = as.factor(c("salmon","steelhead","shark","tuna","cod"))
-# simulate a random recording of catch by fisherman
-
-
-# note here is answer to above challenge
-catch1 = sample(possible.fish, size=10, prob = c(0.2, 0.2, 0.1, 0.1, 0.4), replace=T)
-# lets create a test case that should have low diversity, by repeating the same thing
-catch2 = c(rep("salmon", times=10), rep("cod", times=10))
-
-compute_simpson_index(catch1)
-compute_simpson_index(catch2)
-
-```
-
-
-Sometimes you don't want factors and R thinks something should be
-How to change back? **as.numeric** makes sense ...but
-
-
+Sometimes you don't want factors and R thinks something should be How to change back? **as.numeric** makes sense ...but
 
 ```{r, echo=TRUE}
 
@@ -222,15 +278,14 @@ b
 sum(b)
 ```
 
-#  <span style="color:blue"> Returning multiple things from a function \span
+# <span style="color:blue"> Lists \span
 
-In R, to do this we use LISTS
 
-* Lists are the most “informal” data structures in R
-* List are really useful for keeping track of and organizing groups of things that are not all the same
-* A list could be a table where number of rows is different for each column
-* A list can have numeric, character, factors all mixed together
-* List are often used for returning more complex information from function (e.g. lm)
+-   Lists are the most “informal” data structures in R
+-   List are really useful for keeping track of and organizing groups of things that are not all the same
+-   A list could be a table where number of rows is different for each column
+-   A list can have numeric, character, factors all mixed together
+-   List are often used for returning more complex information from function (e.g. lm)
 
 ```{r introlist, echo=TRUE}
 
@@ -273,83 +328,29 @@ sum(sale[[4]])
 
 ```
 
-# Generating Data
-
-* review 
-* also create data for testing your code
-
-
-# Using lists to return multiple items from a function
-
-We can use *lists* to return multiple,diverse pieces of information from our functions
-Lets start with diversity - many be want to know a bit more about the dataset
-
-* Simpson diversity
-* most frequent species
-* number of distinct species
-
-
-
-```{r diversitylist, echo=TRUE}
-
-# repeat with a list
-source("R/computediversity.R")
-
-computediversity
-
-computediversity(catch1)
-computediversity(catch2)
-```
-
-
-# Another example
-
-We can also allow the user to make choices about what to return
-
-```{r str, echo=TRUE}
-
-source("R/compute_season_meanflow.R")
-compute_season_flow
-
-str = read.table("data/str.txt", header=T)
-compute_season_flow(str)
-
-compute_season_flow(str, kind="max")
-```
-
 # What you've learned
 
-* common data types
-* common flow control approaches
-* returning multiple items from a function
+-   common data types
+-   ways to generate data 
+-   string format syntax
+-   lists
 
-# <span style="color:orange">PACKAGES from Git/span>
+# <span style="color:orange">PACKAGES from Git/span\>
 
-* **Package**: An extension of the R base system with functions, data and documentation in standardized
-format.
-* **Library**: A directory containing installed packages.
-* **Repository**: A website providing packages for installation.
-* **Source**: The original version of a package with human-readable text and code.
-* **Binary**: A compiled version of a package with computer-readable text and code, may work only
-on a specic platform.
-* **Base packages**: Part of the R source tree, maintained by R Core.
-* **Recommended packages**: Part of every R installation, but not necessarily maintained by R
-Core.
-* **Contributed packages**: All the rest. This does not mean that these packages are necessarily of
-lesser quality than the above, e.g., many contributed packages on CRAN are written and
-maintained by R Core members. They simply try to keep the base distribution as lean as
-possible.
-* **User packages**: Packages that you write, share with a smaller community - not downloadable
-from CRAN, but can be downloaded (or sent as a zip file) and loaded into R
+-   **Package**: An extension of the R base system with functions, data and documentation in standardized format.
+-   **Library**: A directory containing installed packages.
+-   **Repository**: A website providing packages for installation.
+-   **Source**: The original version of a package with human-readable text and code.
+-   **Binary**: A compiled version of a package with computer-readable text and code, may work only on a specic platform.
+-   **Base packages**: Part of the R source tree, maintained by R Core.
+-   **Recommended packages**: Part of every R installation, but not necessarily maintained by R Core.
+-   **Contributed packages**: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.
+-   **User packages**: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R
 
-## <span style="color:orange">Installing packages from GitHub</span>
- 
- you can install user packages from *github* - you need the *devtools* library to do this
- 
- install_github("naomitague/rainbow")
- 
- *Important* this doesn't create a *repo* of rainbow inside you working repository - so its safe!
- But you cannot *clone* or create a *repo* inside the directory structure of another one
- 
- 
+## [Installing packages from GitHub]{style="color:orange"}
 
+you can install user packages from *github* - you need the *devtools* library to do this
+
+install_github("naomitague/rainbow")
+
+*Important* this doesn't create a *repo* of rainbow inside you working repository - so its safe! But you cannot *clone* or create a *repo* inside the directory structure of another one
