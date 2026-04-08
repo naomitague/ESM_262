@@ -17,9 +17,9 @@ editor: visual
 
 -   asking questions and getting help in real time
 
--   building connections with peers and instructors \*\* YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer \*\*
+-   building connections with peers and instructors \*\*YOUR CONTRIBUTIONS MATTER - we learn together\*\*
 
--   some assignments and quizes are done in class
+-   some assignments and quizzes are done in class
 
 2.  Missing a class
 
@@ -30,10 +30,10 @@ editor: visual
     -   attend Ojas's office hours if you have questions
     -   email us with questions
 -   if you need to be late for an assignment - let us know in advance
--   for group assignments or quizes in class, we can let you know how to make up
+-   for group assignments or quizzes in class, we can let you know how to make up
 -   if absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs
 
-## new AI tools and Data Science
+## New AI tools and Data Science
 
 Should we use it? When? How? Why? Why not?
 
@@ -41,7 +41,7 @@ Should we use it? When? How? Why? Why not?
 
 -   benefit/costs?
 
-## Some thoughful papers for further reading
+## Some thoughtful papers for further reading
 
 High level perspective
 
@@ -51,7 +51,7 @@ High level perspective
 
 -   [Practical overview/perspective](%22../papers/perspectives_ai_coding.pdf%22)
 
--   [Recent review on potential harmful consequenses](%22../papers/review-of-harms-fromAIcodingedu.pdf%22)
+-   [Recent review on potential harmful consequences](%22../papers/review-of-harms-fromAIcodingedu.pdf%22)
 
 # Using AI-tools in this course
 
@@ -66,7 +66,7 @@ High level perspective
     -   **Always** write the code yourself -
     -   How we will use AI - tools later in the course
     -   Supportive ways to use AI-tools
-        -   use AI-tools to help find syntax
+        -   Use AI-tools to help find syntax
         -   Use AI-tools to explain other peoples code (including class examples)
         -   Use AI-tools to help interpret error messages
 

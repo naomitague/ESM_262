@@ -51,7 +51,7 @@ What you are familiar with
 
 Some text formatting
 
--   Headers (with different numbers of pound signs, #, ##, … to start the line)
+-   Headers (with different numbers of pound signs, #, ##, ... to start the line)
 -   Bullet points (asterisks, \*, or dashes, -, to start lines)
 -   Links ([text here!](link%20here))
 -   Bold (double asterisk) & italics (single asterisk)
@@ -73,7 +73,7 @@ Other formats include
 
 You may need to install additional software to use some of these formats (e.g. pandoc, latex).
 
-## Yaml Header
+## Yaml Header {.scrollable}
 
 Some other things you can put in YAML header - author - date - resources (e.g. images, css files) - theme (for presentations)
 
@@ -97,11 +97,11 @@ Should be familiar to you - much like R Markdown.
 
 Quarto can also include other languages, such as Python, Julia, and JavaScript.
 
-## Lets look at the code in *hello.qmd* and see how it works
+## Lets look at the code in *hello.qmd* and see how it works {.scrollable}
 
 ```{r}
-#| label: load-packages
-#| include: false
+#|label: load-packages
+#|include: false
 
 library(tidyverse)
 library(palmerpenguins)
