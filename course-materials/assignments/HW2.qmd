@@ -11,8 +11,9 @@ First download some USGS data on stream temperature from the Willametter River i
 Here's some R code to download it, \* X_00010_00003 is the water temperature in C
 
 ```{r}
-install.packages("dataRetrieval")
+#install.packages("dataRetrieval")
 library(dataRetrieval)
+library(tidyverse)
 
 siteNumbers <- c("14211720", "14211010", "14166000")
 parameterCd <- "00010"  # water temperature

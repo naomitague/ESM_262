@@ -11,15 +11,7 @@ execute:
   message: true
 ---
 
-## Comments on papers
-
-## Quarto
-
-Quarto is a scientific and technical publishing system built on Pandoc. It enables you to combine content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-Its a lot like R Markdown, but with more features and capabilities.
-
-similarities to Jupyter Notebooks, but with more features and capabilities.
+## Paper Thoughts?
 
 ## Classic Example of Quarto
 
@@ -36,6 +28,8 @@ In Rstudio - you have two views of the *quarto* document
 
 -   *Source* view is where you write your code and markdown.
 -   *Visual* view is where you see the final output of your document.
+
+
 
 ## Lets go through the code in hello.qmd and see how it works
 

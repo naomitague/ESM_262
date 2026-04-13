@@ -199,6 +199,7 @@
 </div>
 
 </section>
+<section>
 <section id="data-types" class="title-slide slide level1 center">
 <h1><span style="color:blue"> Data types</span></h1>
 <p>All programming languages use data-types, or structures to hold information</p>
@@ -217,7 +218,7 @@
 <li>factors</li>
 <li>lists</li>
 </ul>
-<p>Programming often involves selecting and building data structures. Like the <strong>res</strong> matrix we built last class to hold the results from our <strong>for</strong> loop</p>
+<p>Programming often involves selecting and building data structures</p>
 <p>Good data structures are</p>
 <ul>
 <li>as simple as possible</li>
@@ -226,17 +227,153 @@
 <li>easy to visualize</li>
 </ul>
 </section>
+<section id="ways-to-generate-data" class="slide level2 scrollable">
+<h2>Ways to generate data</h2>
+<p>For testing your code, often helpful to generate <em>test</em> data</p>
+<p>We also often generate random data to explore the behavior of our code and to understand how it works</p>
+<pre><code>-   *runif(min,max)* (sampling from a uniform distribution)
+-   *rnorm(mean,sd)* (sampling from uniform and normal distributions)
+-   *rpois(lambda)* (sampling from a Poisson distribution)</code></pre>
+<p>(many other options - here’s a good <em>cheatsheet</em> for random number generation in R</p>
+<p><a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Randomh">Random Generation</a></p>
+<p>Other ways to generate data</p>
+<pre><code>-   *sample(vector,size,replace)* (sampling from a vector of values)
+
+-   *seq(start,end,by)* (for creating a sequence of numbers)</code></pre>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># want to random start 20  fires in a fire model, locations numbered from 1 to 100</span></span>
+<span id="cb3-2"><a></a>firestarts <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">100</span>)</span>
+<span id="cb3-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">firestarts=</span>firestarts), <span class="fu">aes</span>(firestarts))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg</span></span>
+<span id="cb5-2"><a></a>otterweight <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)</span>
+<span id="cb5-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(otterweight), <span class="fu">aes</span>(otterweight))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-1-2.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># notice how the more you sample the more it looks normal</span></span>
+<span id="cb7-2"><a></a>otterweight <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">2000</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)</span>
+<span id="cb7-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(otterweight), <span class="fu">aes</span>(otterweight))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-1-3.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025</span></span>
+<span id="cb9-2"><a></a><span class="co"># two options - we allow a year to be picked more than once</span></span>
+<span id="cb9-3"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
+<span id="cb9-4"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 2004 2018 2018 2002 2001 2012 2013 2025 2003 2021 2015 2000 2007 2022 2020
+[16] 2006 2001 2007 2016 2013</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># no repeat years</span></span>
+<span id="cb11-2"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>F)</span>
+<span id="cb11-3"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 2006 2001 2024 2019 2005 2002 2014 2018 2004 2016 2009 2003 2010 2023 2013
+[16] 2007 2011 2021 2017 2000</code></pre>
+</div>
+</div>
+</section></section>
+<section id="data-in-r-packages" class="title-slide slide level1 center">
+<h1>Data in R Packages</h1>
+<ul>
+<li><p>Many Packages in R have datasets associated with them</p></li>
+<li><p>To see this you can use the <strong>data()</strong> command</p></li>
+<li><p>To load a dataset from a package you can use <strong>data(datasetname)</strong></p></li>
+</ul>
+<p>Lets try and then use <em>sample</em> to sample from one</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">data</span>()</span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a><span class="co"># Lets look at New York Air Quality Measurement</span></span>
+<span id="cb13-4"><a></a><span class="co"># load into your R environment</span></span>
+<span id="cb13-5"><a></a><span class="fu">data</span>(airquality)</span>
+<span id="cb13-6"><a></a><span class="co"># learn about dataset</span></span>
+<span id="cb13-7"><a></a><span class="fu">help</span>(airquality)</span>
+<span id="cb13-8"><a></a><span class="co"># a good way to see structure of data</span></span>
+<span id="cb13-9"><a></a><span class="fu">str</span>(airquality)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   153 obs. of  6 variables:
+ $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+ $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+ $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+ $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+ $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+ $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># does Ozone correlate with air temperature</span></span>
+<span id="cb15-2"><a></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(<span class="at">x=</span>Temp, <span class="at">y=</span>Ozone))<span class="sc">+</span><span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 37 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># lets say we are testing a new product and we want a sample of 5 ozone measurement that conforms to the distribution in this dataset</span></span>
+<span id="cb17-2"><a></a>ozone_sample <span class="ot">=</span> <span class="fu">sample</span>(airquality<span class="sc">$</span>Ozone, <span class="at">size=</span><span class="dv">5</span>, <span class="at">replace=</span>F)</span>
+<span id="cb17-3"><a></a>ozone_sample</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 46 13 91 77 64</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># plot our sample days</span></span>
+<span id="cb19-2"><a></a></span>
+<span id="cb19-3"><a></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(<span class="at">x=</span>Temp, <span class="at">y=</span>Ozone))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb19-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">Temp=</span>airquality<span class="sc">$</span>Temp[ozone_sample], <span class="at">Ozone=</span>ozone_sample), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 37 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-2-2.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 
 <section>
-<section id="factors" class="title-slide slide level1 center">
-<h1><span style="color:blue"> Factors </span></h1>
+<section id="data-types-factors" class="title-slide slide level1 center">
+<h1><span style="color:blue"> Data Types: Factors </span></h1>
 <p>something that has different <strong>classes</strong> or <strong>groups</strong> useful for doing calculations with categories</p>
 <p>Here’s an example:</p>
 <p>First lets look at a standard numeric vector</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>a <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">1.3</span>, <span class="dv">22</span>)</span>
-<span id="cb1-2"><a></a><span class="co"># compute the mean</span></span>
-<span id="cb1-3"><a></a><span class="fu">mean</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>a <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">1.3</span>, <span class="dv">22</span>)</span>
+<span id="cb21-2"><a></a><span class="co"># compute the mean</span></span>
+<span id="cb21-3"><a></a><span class="fu">mean</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.92</code></pre>
 </div>
@@ -244,17 +381,17 @@
 <p>What if <strong>a</strong> is a factor</p>
 <p>What do commands like <strong>mean</strong> do</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>a <span class="ot">=</span> <span class="fu">as.factor</span>(a)</span>
-<span id="cb3-2"><a></a><span class="co"># compute the mean</span></span>
-<span id="cb3-3"><a></a><span class="fu">mean</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>a <span class="ot">=</span> <span class="fu">as.factor</span>(a)</span>
+<span id="cb23-2"><a></a><span class="co"># compute the mean</span></span>
+<span id="cb23-3"><a></a><span class="fu">mean</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in mean.default(a): argument is not numeric or logical: returning NA</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co">#why? lets look</span></span>
-<span id="cb6-2"><a></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co">#why? lets look</span></span>
+<span id="cb26-2"><a></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.3 1   4   1.3 22 
 Levels: 1 1.3 4 22</code></pre>
@@ -262,58 +399,58 @@ Levels: 1 1.3 4 22</code></pre>
 </div>
 <p>We can use <strong>summary</strong> with factors to get frequencies in each category (or “level” )</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># create vector of possible fish </span></span>
-<span id="cb8-2"><a></a>possible.fish <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"salmon"</span>,<span class="st">"steelhead"</span>,<span class="st">"shark"</span>,<span class="st">"tuna"</span>,<span class="st">"cod"</span>)</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="co"># we can use sample to simulate a random recording of catch by fisherman, lets say we pick 20 fish from the net</span></span>
-<span id="cb8-5"><a></a></span>
-<span id="cb8-6"><a></a>catch1 <span class="ot">=</span> base<span class="sc">::</span><span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
-<span id="cb8-7"><a></a><span class="co"># because possible.fish was a factor catch1 will be a factor</span></span>
-<span id="cb8-8"><a></a>catch1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># create vector of possible fish </span></span>
+<span id="cb28-2"><a></a>possible.fish <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"salmon"</span>,<span class="st">"steelhead"</span>,<span class="st">"shark"</span>,<span class="st">"tuna"</span>,<span class="st">"cod"</span>)</span>
+<span id="cb28-3"><a></a></span>
+<span id="cb28-4"><a></a><span class="co"># we can use sample to simulate a random recording of catch by fisherman, lets say we pick 20 fish from the net</span></span>
+<span id="cb28-5"><a></a></span>
+<span id="cb28-6"><a></a>catch1 <span class="ot">=</span> base<span class="sc">::</span><span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
+<span id="cb28-7"><a></a><span class="co"># because possible.fish was a factor catch1 will be a factor</span></span>
+<span id="cb28-8"><a></a>catch1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "cod"       "steelhead" "steelhead" "shark"     "shark"     "cod"      
- [7] "steelhead" "tuna"      "tuna"      "tuna"      "salmon"    "steelhead"
-[13] "cod"       "shark"     "tuna"      "steelhead" "shark"     "cod"      
-[19] "salmon"    "cod"      </code></pre>
+<pre><code> [1] "steelhead" "shark"     "tuna"      "shark"     "cod"       "tuna"     
+ [7] "steelhead" "salmon"    "tuna"      "shark"     "steelhead" "tuna"     
+[13] "tuna"      "steelhead" "shark"     "salmon"    "steelhead" "tuna"     
+[19] "cod"       "tuna"     </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Length     Class      Mode 
        20 character character </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># if we want summary to be more useful - make this a factor</span></span>
-<span id="cb12-2"><a></a>catch1 <span class="ot">=</span> <span class="fu">as.factor</span>(catch1)</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a></span>
-<span id="cb12-5"><a></a><span class="co"># to quickly get frequencies of different fish and to plot </span></span>
-<span id="cb12-6"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># if we want summary to be more useful - make this a factor</span></span>
+<span id="cb32-2"><a></a>catch1 <span class="ot">=</span> <span class="fu">as.factor</span>(catch1)</span>
+<span id="cb32-3"><a></a></span>
+<span id="cb32-4"><a></a></span>
+<span id="cb32-5"><a></a><span class="co"># to quickly get frequencies of different fish and to plot </span></span>
+<span id="cb32-6"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      cod    salmon     shark steelhead      tuna 
-        5         2         4         5         4 </code></pre>
+        2         2         4         5         7 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">plot</span>(catch1, <span class="at">col=</span><span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">plot</span>(catch1, <span class="at">col=</span><span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># we can also use summary to explore and return information about the distribution</span></span>
-<span id="cb15-2"><a></a><span class="co"># mean frequency of a particular type of fish</span></span>
-<span id="cb15-3"><a></a><span class="fu">mean</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="co"># we can also use summary to explore and return information about the distribution</span></span>
+<span id="cb35-2"><a></a><span class="co"># mean frequency of a particular type of fish</span></span>
+<span id="cb35-3"><a></a><span class="fu">mean</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># maximum frequency</span></span>
-<span id="cb17-2"><a></a><span class="fu">max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="co"># maximum frequency</span></span>
+<span id="cb37-2"><a></a><span class="fu">max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 7</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># which fish was most frequently caught</span></span>
-<span id="cb19-2"><a></a><span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="co"># which fish was most frequently caught</span></span>
+<span id="cb39-2"><a></a><span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>cod 
-  1 </code></pre>
+<pre><code>tuna 
+   5 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co">#to get just the name </span></span>
-<span id="cb21-2"><a></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co">#to get just the name </span></span>
+<span id="cb41-2"><a></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "cod"</code></pre>
+<pre><code>[1] "tuna"</code></pre>
 </div>
 </div>
 <img data-src="lecture3.datatypes_files/figure-revealjs/fishes-1.png" width="960" class="r-stretch"></section>
@@ -323,29 +460,42 @@ Levels: 1 1.3 4 22</code></pre>
 </section>
 <section id="strings-and-how-to-work-with-them" class="slide level2">
 <h2>Strings and how to work with them</h2>
-<p>In R</p>
+<p>Strings are character data types that are used to represent text</p>
+<p>All programming languages have ways to deal with strings Some commonly used R functions - <strong>paste</strong> and <strong>paste0</strong> for concatenating strings together - <strong>strsplit</strong> for splitting strings into parts - <strong>sprintf</strong> for creating formatted strings - <strong>gsub</strong> for replacing parts of strings - <strong>tolower</strong> and <strong>toupper</strong> for changing case - <strong>nchar</strong> for counting the number of characters in a string</p>
+<p>Most of these are easy to use - just look at help for the function and try it out</p>
+<p><strong>sprintf</strong> however takes some specialized knowledge</p>
 </section>
 <section id="creating-strings-with-sprintf" class="slide level2">
 <h2>Creating strings with sprintf</h2>
-<p><strong>sprintf</strong></p>
-<p>some useful syntax if you want to generate strings</p>
+<p><strong>sprintf</strong> used something called <em>format string syntax</em> to create formatted strings</p>
+<p><em>format string syntax</em> is used in many places -for searching for and creating strings - AND - its used by many programming languages</p>
+<ul>
+<li>C / C++ → printf</li>
+<li>Python → old-style % formatting and str.format()</li>
+<li>Java / JavaScript → similar formatting ideas</li>
+<li>SQL (some dialects),</li>
+<li>Unix Shell (terminal window)</li>
+</ul>
+</section>
+<section id="format-string-syntax" class="slide level2">
+<h2>format string syntax</h2>
 <ul>
 <li><strong>%s</strong> replace with a string</li>
 <li><strong>%d</strong> replace with an integer value</li>
 <li><strong>%f</strong> replace with a real value</li>
-<li><strong>%4.1f</strong> replace with a real value with 4 digist, two after decimal</li>
+<li><strong>%4.1f</strong> replace with a real value with 4 digits, two after decimal</li>
 <li><strong>\n</strong> add a line return</li>
 </ul>
-<p>Try it</p>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
 <p>make a string with <strong>sprintf</strong> and add to plot title</p>
-<p>The <em>syntax</em> of <strong>sprintf</strong> is a bit weird but it is very useful for creating informative text and plot titles of course you can also use <strong>paste</strong> and <strong>paste0</strong> but <strong>sprintf</strong> gives you more control over formatting</p>
-<p>AND <em>sprintf</em> syntax is used in many other programing languages</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># use results for creating text</span></span>
-<span id="cb23-2"><a></a><span class="co"># sprintf creates a string %s mean use what ever is after the , to fill in a string</span></span>
-<span id="cb23-3"><a></a>plottitle<span class="ot">=</span><span class="fu">sprintf</span>(<span class="st">"We like %s"</span>, <span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))))</span>
-<span id="cb23-4"><a></a></span>
-<span id="cb23-5"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="co"># use results for creating text</span></span>
+<span id="cb43-2"><a></a><span class="co"># sprintf creates a string %s mean use what ever is after the , to fill in a string</span></span>
+<span id="cb43-3"><a></a>plottitle<span class="ot">=</span><span class="fu">sprintf</span>(<span class="st">"We like %s"</span>, <span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))))</span>
+<span id="cb43-4"><a></a></span>
+<span id="cb43-5"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_histogram(stat = "count"): Ignoring unknown parameters:
 `binwidth` and `bins`</code></pre>
@@ -353,13 +503,13 @@ Levels: 1 1.3 4 22</code></pre>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># you can also add numbers to the string</span></span>
-<span id="cb25-2"><a></a>plottitle<span class="ot">=</span><span class="fu">sprintf</span>(<span class="st">"We mostly caught %s </span><span class="sc">\n</span><span class="st"> max catch(%d)"</span>, <span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))), <span class="fu">max</span>(<span class="fu">summary</span>(catch1)))</span>
-<span id="cb25-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># you can also add numbers to the string</span></span>
+<span id="cb45-2"><a></a>plottitle<span class="ot">=</span><span class="fu">sprintf</span>(<span class="st">"We mostly caught %s </span><span class="sc">\n</span><span class="st"> max catch(%d)"</span>, <span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))), <span class="fu">max</span>(<span class="fu">summary</span>(catch1)))</span>
+<span id="cb45-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_histogram(stat = "count"): Ignoring unknown parameters:
 `binwidth` and `bins`</code></pre>
@@ -367,81 +517,44 @@ Levels: 1 1.3 4 22</code></pre>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-3-2.png" width="960"></p>
+<p><img data-src="lecture3.datatypes_files/figure-revealjs/unnamed-chunk-5-2.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section></section>
-<section id="functions-with-factors" class="title-slide slide level1 center">
-<h1><span style="color:blue"> Functions with factors</span></h1>
-<p>Lets generate a function that makes use of categorical data species diversity is a good example</p>
-<p>“Simpson’s Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species</p>
-<p>Value is between 0 and 1, with lower values associated with <em>lower</em> diversity</p>
-<p>See <a href="http://www.countrysideinfo.co.uk/simpsons.htm">Simpson Biodiversity</a></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">source</span>(<span class="st">"R/compute_simpson_index.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in file(filename, "r", encoding = encoding): cannot open file
-'R/compute_simpson_index.R': No such file or directory</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in file(filename, "r", encoding = encoding): cannot open the connection</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>compute_simpson_index</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'compute_simpson_index' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>possible.fish <span class="ot">=</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">"salmon"</span>,<span class="st">"steelhead"</span>,<span class="st">"shark"</span>,<span class="st">"tuna"</span>,<span class="st">"cod"</span>))</span>
-<span id="cb32-2"><a></a><span class="co"># simulate a random recording of catch by fisherman</span></span>
-<span id="cb32-3"><a></a></span>
-<span id="cb32-4"><a></a></span>
-<span id="cb32-5"><a></a><span class="co"># note here is answer to above challenge</span></span>
-<span id="cb32-6"><a></a>catch1 <span class="ot">=</span> <span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.4</span>), <span class="at">replace=</span>T)</span>
-<span id="cb32-7"><a></a><span class="co"># lets create a test case that should have low diversity, by repeating the same thing</span></span>
-<span id="cb32-8"><a></a>catch2 <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"salmon"</span>, <span class="at">times=</span><span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">"cod"</span>, <span class="at">times=</span><span class="dv">10</span>))</span>
-<span id="cb32-9"><a></a></span>
-<span id="cb32-10"><a></a><span class="fu">compute_simpson_index</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in compute_simpson_index(catch1): could not find function "compute_simpson_index"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">compute_simpson_index</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in compute_simpson_index(catch2): could not find function "compute_simpson_index"</code></pre>
-</div>
-</div>
+</section>
+<section id="but-i-dont-want-a-factor" class="slide level2">
+<h2>But I don’t want a factor</h2>
 <p>Sometimes you don’t want factors and R thinks something should be How to change back? <strong>as.numeric</strong> makes sense …but</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>a <span class="ot">=</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="fl">1.3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">1.3</span>, <span class="dv">22</span>))</span>
-<span id="cb36-2"><a></a><span class="co">#sum(a)</span></span>
-<span id="cb36-3"><a></a></span>
-<span id="cb36-4"><a></a><span class="co"># try to make a numeric version from the factor</span></span>
-<span id="cb36-5"><a></a>b <span class="ot">=</span> <span class="fu">as.numeric</span>(a)</span>
-<span id="cb36-6"><a></a><span class="fu">sum</span>(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>a <span class="ot">=</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="fl">1.3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="fl">1.3</span>, <span class="dv">22</span>))</span>
+<span id="cb47-2"><a></a><span class="co">#sum(a)</span></span>
+<span id="cb47-3"><a></a></span>
+<span id="cb47-4"><a></a><span class="co"># try to make a numeric version from the factor</span></span>
+<span id="cb47-5"><a></a>b <span class="ot">=</span> <span class="fu">as.numeric</span>(a)</span>
+<span id="cb47-6"><a></a><span class="fu">sum</span>(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 12</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2 1 3 2 4</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="co"># better</span></span>
-<span id="cb40-2"><a></a>b <span class="ot">=</span> <span class="fu">as.character</span>(a)</span>
-<span id="cb40-3"><a></a>b <span class="ot">=</span> <span class="fu">as.numeric</span>(b)</span>
-<span id="cb40-4"><a></a>b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="co"># better</span></span>
+<span id="cb51-2"><a></a>b <span class="ot">=</span> <span class="fu">as.character</span>(a)</span>
+<span id="cb51-3"><a></a>b <span class="ot">=</span> <span class="fu">as.numeric</span>(b)</span>
+<span id="cb51-4"><a></a>b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1.3  1.0  4.0  1.3 22.0</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">sum</span>(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">sum</span>(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 29.6</code></pre>
 </div>
 </div>
-</section>
-
-<section id="returning-multiple-things-from-a-function" class="title-slide slide level1 center">
-<h1><span style="color:blue"> Returning multiple things from a function </span></h1>
-<p>In R, to do this we use LISTS</p>
+</section></section>
+<section id="lists" class="title-slide slide level1 center">
+<h1><span style="color:blue"> Lists </span></h1>
 <ul>
 <li>Lists are the most “informal” data structures in R</li>
 <li>List are really useful for keeping track of and organizing groups of things that are not all the same</li>
@@ -450,9 +563,9 @@ Levels: 1 1.3 4 22</code></pre>
 <li>List are often used for returning more complex information from function (e.g.&nbsp;lm)</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="co"># make a list</span></span>
-<span id="cb44-2"><a></a>sale <span class="ot">=</span> <span class="fu">list</span>(<span class="at">id=</span><span class="dv">2</span>, <span class="at">quality=</span><span class="st">"high"</span>, <span class="at">contents=</span><span class="fu">c</span>(<span class="st">"apple"</span>,<span class="st">"cherry"</span>), <span class="at">cost=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>))</span>
-<span id="cb44-3"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="co"># make a list</span></span>
+<span id="cb55-2"><a></a>sale <span class="ot">=</span> <span class="fu">list</span>(<span class="at">id=</span><span class="dv">2</span>, <span class="at">quality=</span><span class="st">"high"</span>, <span class="at">contents=</span><span class="fu">c</span>(<span class="st">"apple"</span>,<span class="st">"cherry"</span>), <span class="at">cost=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>))</span>
+<span id="cb55-3"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$id
 [1] 2
@@ -466,32 +579,32 @@ $contents
 $cost
 [1] 4 5</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co">#ways to access elements</span></span>
-<span id="cb46-2"><a></a>sale<span class="sc">$</span>id</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="co">#ways to access elements</span></span>
+<span id="cb57-2"><a></a>sale<span class="sc">$</span>id</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>sale<span class="sc">$</span>what</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>sale<span class="sc">$</span>what</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>NULL</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="co"># you can also access by list item number</span></span>
-<span id="cb50-2"><a></a><span class="co"># the [x] denotes the xth item in the list</span></span>
-<span id="cb50-3"><a></a>sale[[<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="co"># you can also access by list item number</span></span>
+<span id="cb61-2"><a></a><span class="co"># the [x] denotes the xth item in the list</span></span>
+<span id="cb61-3"><a></a>sale[[<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "apple"  "cherry"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>sale[[<span class="st">"contents"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>sale[[<span class="st">"contents"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "apple"  "cherry"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co"># how do you get the second element in the vector that has the contents</span></span>
-<span id="cb54-2"><a></a><span class="co"># there are two ways</span></span>
-<span id="cb54-3"><a></a></span>
-<span id="cb54-4"><a></a></span>
-<span id="cb54-5"><a></a><span class="co"># add to a list</span></span>
-<span id="cb54-6"><a></a>sale<span class="sc">$</span>location <span class="ot">=</span> <span class="st">"Farmers market"</span></span>
-<span id="cb54-7"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="co"># how do you get the second element in the vector that has the contents</span></span>
+<span id="cb65-2"><a></a><span class="co"># there are two ways</span></span>
+<span id="cb65-3"><a></a></span>
+<span id="cb65-4"><a></a></span>
+<span id="cb65-5"><a></a><span class="co"># add to a list</span></span>
+<span id="cb65-6"><a></a>sale<span class="sc">$</span>location <span class="ot">=</span> <span class="st">"Farmers market"</span></span>
+<span id="cb65-7"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$id
 [1] 2
@@ -508,9 +621,9 @@ $cost
 $location
 [1] "Farmers market"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="co"># or remove</span></span>
-<span id="cb56-2"><a></a>sale<span class="sc">$</span>location <span class="ot">=</span> <span class="cn">NULL</span></span>
-<span id="cb56-3"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="co"># or remove</span></span>
+<span id="cb67-2"><a></a>sale<span class="sc">$</span>location <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb67-3"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$id
 [1] 2
@@ -524,103 +637,27 @@ $contents
 $cost
 [1] 4 5</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="co"># some tricky things</span></span>
-<span id="cb58-2"><a></a><span class="co"># correct accessing items in list</span></span>
-<span id="cb58-3"><a></a>sale<span class="sc">$</span>cost</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a><span class="co"># some tricky things</span></span>
+<span id="cb69-2"><a></a><span class="co"># correct accessing items in list</span></span>
+<span id="cb69-3"><a></a>sale<span class="sc">$</span>cost</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4 5</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>sale[[<span class="dv">4</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a>sale[[<span class="dv">4</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4 5</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a><span class="co"># works but</span></span>
-<span id="cb62-2"><a></a><span class="co">#sale[4]</span></span>
-<span id="cb62-3"><a></a></span>
-<span id="cb62-4"><a></a></span>
-<span id="cb62-5"><a></a><span class="fu">sum</span>(sale<span class="sc">$</span>cost)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="co"># works but</span></span>
+<span id="cb73-2"><a></a><span class="co">#sale[4]</span></span>
+<span id="cb73-3"><a></a></span>
+<span id="cb73-4"><a></a></span>
+<span id="cb73-5"><a></a><span class="fu">sum</span>(sale<span class="sc">$</span>cost)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a><span class="fu">sum</span>(sale[[<span class="dv">4</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="fu">sum</span>(sale[[<span class="dv">4</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9</code></pre>
-</div>
-</div>
-</section>
-
-<section id="generating-data" class="title-slide slide level1 center">
-<h1>Generating Data</h1>
-<ul>
-<li>review</li>
-<li>also create data for testing your code</li>
-</ul>
-</section>
-
-<section id="using-lists-to-return-multiple-items-from-a-function" class="title-slide slide level1 center">
-<h1>Using lists to return multiple items from a function</h1>
-<p>We can use <em>lists</em> to return multiple,diverse pieces of information from our functions Lets start with diversity - many be want to know a bit more about the dataset</p>
-<ul>
-<li>Simpson diversity</li>
-<li>most frequent species</li>
-<li>number of distinct species</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="co"># repeat with a list</span></span>
-<span id="cb66-2"><a></a><span class="fu">source</span>(<span class="st">"R/computediversity.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in file(filename, "r", encoding = encoding): cannot open file
-'R/computediversity.R': No such file or directory</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in file(filename, "r", encoding = encoding): cannot open the connection</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>computediversity</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'computediversity' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a><span class="fu">computediversity</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in computediversity(catch1): could not find function "computediversity"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="fu">computediversity</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in computediversity(catch2): could not find function "computediversity"</code></pre>
-</div>
-</div>
-</section>
-
-<section id="another-example" class="title-slide slide level1 center">
-<h1>Another example</h1>
-<p>We can also allow the user to make choices about what to return</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="fu">source</span>(<span class="st">"R/compute_season_meanflow.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in file(filename, "r", encoding = encoding): cannot open file
-'R/compute_season_meanflow.R': No such file or directory</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in file(filename, "r", encoding = encoding): cannot open the connection</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a>compute_season_flow</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'compute_season_flow' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a>str <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"data/str.txt"</span>, <span class="at">header=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in file(file, "rt"): cannot open file 'data/str.txt': No such file or
-directory</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in file(file, "rt"): cannot open the connection</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="fu">compute_season_flow</span>(str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in compute_season_flow(str): could not find function "compute_season_flow"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="fu">compute_season_flow</span>(str, <span class="at">kind=</span><span class="st">"max"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in compute_season_flow(str, kind = "max"): could not find function "compute_season_flow"</code></pre>
 </div>
 </div>
 </section>
@@ -629,12 +666,35 @@ directory</code></pre>
 <h1>What you’ve learned</h1>
 <ul>
 <li>common data types</li>
-<li>common flow control approaches</li>
-<li>returning multiple items from a function</li>
+<li>ways to generate data</li>
+<li>string format syntax</li>
+<li>lists</li>
 </ul>
-
-
 </section>
+
+<section>
+<section id="packages-from-gitspan" class="title-slide slide level1 center">
+<h1><span style="color:orange">PACKAGES from Git/span&gt;</span></h1>
+<ul>
+<li><strong>Package</strong>: An extension of the R base system with functions, data and documentation in standardized format.</li>
+<li><strong>Library</strong>: A directory containing installed packages.</li>
+<li><strong>Repository</strong>: A website providing packages for installation.</li>
+<li><strong>Source</strong>: The original version of a package with human-readable text and code.</li>
+<li><strong>Binary</strong>: A compiled version of a package with computer-readable text and code, may work only on a specic platform.</li>
+<li><strong>Base packages</strong>: Part of the R source tree, maintained by R Core.</li>
+<li><strong>Recommended packages</strong>: Part of every R installation, but not necessarily maintained by R Core.</li>
+<li><strong>Contributed packages</strong>: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.</li>
+<li><strong>User packages</strong>: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R</li>
+</ul>
+</section>
+<section id="installing-packages-from-github" class="slide level2">
+<h2><span style="color:orange">Installing packages from GitHub</span></h2>
+<p>you can install user packages from <em>github</em> - you need the <em>devtools</em> library to do this</p>
+<p>install_github(“naomitague/rainbow”)</p>
+<p><em>Important</em> this doesn’t create a <em>repo</em> of rainbow inside you working repository - so its safe! But you cannot <em>clone</em> or create a <em>repo</em> inside the directory structure of another one</p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

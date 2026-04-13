@@ -1,21 +1,23 @@
 ---
 title: 'Syllabus ESM 262 - Spring 2026'
 format: pdf
-resources: ["img/"]
+resources: ["images/"]
 editor: visual
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(here)
 ```
 
 ## A bit about me
 
 ```{r,fig.cap = "Growing skills"}
-knitr::include_graphics("images/whoIam.jpeg")
+
+knitr::include_graphics(here::here("images/whoIam.jpeg"))
 ```
 
-## [Course description]{style="color:orange"}
+## [Course description]{style="color:orange"}{.scrollable}
 
 ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.
 
@@ -44,11 +46,11 @@ Teaching Team
 
 **Teaching assistant:** Ojas Sarup
 
--   **Office hours:** TBD
+-   **Office hours:** Thursday 11am - 1pm (Bren Hall 1005)
 -   **email** (ojassarup\@ucsb.edu )
 -   **git user id** osarup
 
-## [Learning objectives]{style="color:orange"}
+## [Learning objectives]{style="color:orange"}{.scrollable}
 
 -   practice partner coding and reproducible workflows
 
@@ -62,7 +64,7 @@ Teaching Team
 
 -   learn some new Rskills that are helpful for a wide variety of data science applications
 
-## [Computing set up]{style="color:orange"}
+## [Computing set up]{style="color:orange"}{.scrollable}
 
 -   Please complete the install-guide on the course website
 
@@ -78,18 +80,7 @@ Class time will involve lectures and working on practical applications . This wa
 
 Why structure it this way? You learn to code by doing - not so much by watching others do!
 
-#  AI-tools
 
-There are pro's and con's to using AI-tools while you are learning environmental modeling (coding in general)
-
-We will discuss and make use of these tools later in the course (mid-way)
-
-Tools
-
--   Github Copilot (widely used by programmers)
--   ChatGPT, Claude etc
-
-(both built from CODEX by OpenAI)
 
 # Using AI-tools in this course
 
