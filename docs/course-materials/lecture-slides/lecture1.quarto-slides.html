@@ -254,6 +254,14 @@
 <li>word</li>
 </ul>
 <p>You may need to install additional software to use some of these formats (e.g.&nbsp;pandoc, latex).</p>
+<p>Try it with <em>hello.qmd</em> - change to html</p>
+<p><span style="color: orange;">Indentation Matters in YAML</span></p>
+</section>
+<section id="a-bit-more-on-yaml" class="slide level2">
+<h2>A bit more on YAML</h2>
+<p>YAML stands for “YAML Ain’t markup Language”</p>
+<p>its a human readable way to control and configure applications/documents</p>
+<p>Also used in - GitHub Actions - automate code testing and deployment of website - Docker - code containers - Automating R documentation</p>
 </section>
 <section id="yaml-header-1" class="slide level2 scrollable">
 <h2>Yaml Header</h2>
@@ -264,6 +272,15 @@
 <li>resources (e.g.&nbsp;images, css files)</li>
 <li>format (for presentations)</li>
 </ul>
+<p>Try adding an author and date</p>
+<ul>
+<li>author: “Naomi Tague”</li>
+<li>date: “2024-06-01”</li>
+</ul>
+</section>
+<section>
+<section id="format-in-yaml-header" class="title-slide slide level1 scrollable center">
+<h1>Format in YAML header</h1>
 <p>Some Format types can include themes</p>
 <p>For presentation format (<strong>revealjs</strong>) themes include</p>
 <ul>
@@ -271,14 +288,14 @@
 <li>night</li>
 <li>sky</li>
 </ul>
-<p>To add format and theme in YAML header, indentation matters</p>
+<p>To add format and theme in YAML header, <em>indentation matters</em></p>
 <p>format: revealjs: theme: sky</p>
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
 <p>Resources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.</p>
 <p>resources: [“../images/”]</p>
-</section>
+</section></section>
 <section>
 <section id="paths-to-resources-can-be-relative-or-absolute." class="title-slide slide level1 center">
 <h1>Paths to resources can be relative or absolute.</h1>
@@ -286,7 +303,7 @@
 <p>So if you have an image in a folder called “images” that is in the same directory as your .qmd file, you can specify the path to that image as “images/image.png”.</p>
 </section>
 <section id="yaml-execute" class="slide level2">
-<h2>Yaml Execute</h2>
+<h2>YAML Execute</h2>
 <p>The <code>execute</code> section of the YAML header sets how code chunks are executed. For example,</p>
 <ul>
 <li><code>echo: false</code>.</li>
@@ -307,8 +324,14 @@
 <li>JavaScript.</li>
 </ul>
 </section>
-<section id="lets-look-at-the-code-in-hello.qmd-and-see-how-it-works" class="slide level2">
+<section id="lets-look-at-the-code-in-hello.qmd-and-see-how-it-works" class="slide level2 scrollable">
 <h2>Lets look at the code in <em>hello.qmd</em> and see how it works</h2>
+<p>NOTE - code chunks have options that control how they are executed and how they appear in the final document.</p>
+<p>Alternative</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="meet-the-penguins" class="slide level2 scrollable">
 <h2>Meet the penguins</h2>
@@ -348,17 +371,17 @@
 <li>can also set global options for your code chunks (e.g.&nbsp;echo, warning, message) but better to do in quarto YAML header</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>here() starts at /Users/naomitague/Desktop/Courses/ESM_262</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb3-4"><a></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-5"><a></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb3-6"><a></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
-<span id="cb3-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb4-4"><a></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-5"><a></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-6"><a></a>  <span class="at">message =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-7"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="some-hints" class="slide level2">
@@ -367,6 +390,13 @@
 <li><p>name your code chunks - this makes it easier to debug and understand your code</p></li>
 <li><p>use the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)</p></li>
 </ul>
+</section>
+<section id="assignment-1" class="slide level2">
+<h2>Assignment 1</h2>
+<p>Goal: Practice working with Quarto and ‘wake-up’ you Data Analysis skills from 206</p>
+<p>Dataset of Estimated Biological, Hydrologic and Climate Variables for a field site in the California Sierra</p>
+<p><a href="https://czo-archive.criticalzone.org/sierra/infrastructure/field-area/providence-creek-subcatchment-p301/">P301 Watershed</a></p>
+<p>Use your educated intuition to explore (find relationships/patterns of interest).</p>
 </section>
 <section id="start-working-on-assignment-1" class="slide level2">
 <h2>Start working on Assignment 1</h2>

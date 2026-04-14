@@ -67,6 +67,23 @@ Other formats include
 
 You may need to install additional software to use some of these formats (e.g. pandoc, latex).
 
+Try it with *hello.qmd* - change to html
+
+[Indentation Matters in YAML]{style="color: orange;"}
+
+
+## A bit more on YAML
+
+YAML stands for "YAML Ain't markup Language" 
+
+its a human readable way to control and configure applications/documents
+
+Also used in 
+-   GitHub Actions - automate code testing and deployment of website
+-   Docker - code containers
+-   Automating R documentation
+
+
 ## Yaml Header {.scrollable}
 
 Some other things you can put in YAML header 
@@ -76,6 +93,13 @@ Some other things you can put in YAML header
 - resources (e.g. images, css files) 
 - format (for presentations)
 
+Try adding an author and date
+
+- author: "Naomi Tague"
+- date: "2024-06-01"
+
+# Format in YAML header {.scrollable}
+
 Some Format types can include themes 
 
 For presentation format (**revealjs**) themes include
@@ -84,7 +108,7 @@ For presentation format (**revealjs**) themes include
 - night 
 - sky
 
-To add format and theme in YAML header, indentation matters
+To add format and theme in YAML header, *indentation matters* 
 
 format:
   revealjs:
@@ -104,7 +128,7 @@ So if you have an image in a folder called "images" that is in the same director
 
 
 
-## Yaml Execute
+## YAML Execute
 
 The `execute` section of the YAML header sets how code chunks are executed. For example,
 
@@ -125,15 +149,27 @@ Quarto can also include chunks in other languages
 - Python
 - JavaScript.
 
-## Lets look at the code in *hello.qmd* and see how it works
+## Lets look at the code in *hello.qmd* and see how it works {.scrollable}
+
+
+NOTE - code chunks have options that control how they are executed and how they appear in the final document.
 
 ```{r}
 #| label: load-packages
-#| include: false
+#| include: FALSE
+#| echo: FALSE
 
 library(tidyverse)
 library(palmerpenguins)
 ```
+
+Alternative
+
+```{r, load-packagesalt, include=TRUE, echo=TRUE}
+library(tidyverse)
+library(palmerpenguins)
+```
+
 
 ## Meet the penguins {.scrollable}
 
@@ -202,6 +238,18 @@ knitr::opts_chunk$set(
 
 -   use the "include" option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)
 
+
+## Assignment 1
+
+Goal: Practice working with Quarto and 'wake-up' you Data Analysis skills from 206
+
+Dataset of Estimated Biological, Hydrologic and Climate Variables for a field site
+in the California Sierra
+
+
+[P301 Watershed](https://czo-archive.criticalzone.org/sierra/infrastructure/field-area/providence-creek-subcatchment-p301/)
+
+Use your educated intuition to explore (find relationships/patterns of interest). 
 
 ## Start working on Assignment 1
 
