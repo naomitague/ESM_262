@@ -197,7 +197,7 @@ ggplot(penguins,
   theme_minimal()
 ```
 
-## Play
+## Play {.scrollable}
 
 Make some changes to the hello.qmd
 
@@ -211,7 +211,7 @@ Make some changes to the hello.qmd
 -   render the document and see how it works!
 
 
-## Set up R enviroment in Quarto
+## Set up R enviroment in Quarto {.scrollable}
 
 -   start with a setup R chunk at the top to load all packages
 -  can also  set global options for your code chunks (e.g. echo, warning, message) but better to do in quarto YAML header   
