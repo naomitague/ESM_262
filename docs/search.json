@@ -263,35 +263,42 @@
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-content",
     "title": "Quarto- Spring 2026",
     "section": "Markdown Content",
-    "text": "Markdown Content\nWhat you are familiar with\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks (text here!)\nBold (double asterisk) & italics (single asterisk)"
+    "text": "Markdown Content\nWhat you are familiar with\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
     "title": "Quarto- Spring 2026",
     "section": "YAML header",
-    "text": "YAML header\nThe YAML header is where you specify\n\nthe title of your document,\nthe output format, and other metadata.\n\nIn this example, the output format is revealjs, which is a presentation format.\nOther formats include\n\nhtml\npdf\nword\n\nYou may need to install additional software to use some of these formats (e.g. pandoc, latex)."
+    "text": "YAML header\nThe YAML header is where you specify\n\nthe title of your document,\nthe output format, and other metadata.\n\nIn this quarto, the output format is revealjs, which is a presentation format.\nOther formats include\n\nhtml\npdf\nword\n\nYou may need to install additional software to use some of these formats (e.g. pandoc, latex)."
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
     "title": "Quarto- Spring 2026",
     "section": "Yaml Header",
-    "text": "Yaml Header\nSome other things you can put in YAML header - author - date - resources (e.g. images, css files) - theme (for presentations)\nResources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.\nPaths will be relative to the location of your .qmd file. So if you have an image in a folder called “images” that is in the same directory as your .qmd file, you can specify the path to that image as “images/image.png”.\nSome themes for presentaion inlucde - solarized - metropolis - night - sky"
+    "text": "Yaml Header\nSome other things you can put in YAML header\n\nauthor\ndate\nresources (e.g. images, css files)\nformat (for presentations)\n\nSome Format types can include themes\nFor presentation format (revealjs) themes include\n\nsolarized\nnight\nsky\n\nTo add format and theme in YAML header, indentation matters\nformat: revealjs: theme: sky"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#resources",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#resources",
+    "title": "Quarto- Spring 2026",
+    "section": "Resources",
+    "text": "Resources\nResources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.\nresources: [“../images/”]"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-execute",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-execute",
     "title": "Quarto- Spring 2026",
     "section": "Yaml Execute",
-    "text": "Yaml Execute\nThe execute section of the YAML header sets how code chunks are executed. For example, - echo: false. - warning: false - message: false.\nYou can overrides in an R code chunk using\n#| echo: true"
+    "text": "Yaml Execute\nThe execute section of the YAML header sets how code chunks are executed. For example,\n\necho: false.\nwarning: false\nmessage: false\n\nYou can overrides in an R code chunk header by adding\n\n#/ echo: true"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-and-code-chunks",
-    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-and-code-chunks",
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#r-code-chunks",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#r-code-chunks",
     "title": "Quarto- Spring 2026",
-    "section": "Markdown and Code Chunks",
-    "text": "Markdown and Code Chunks\nShould be familiar to you - much like R Markdown.\nQuarto can also include other languages, such as Python, Julia, and JavaScript."
+    "section": "R Code Chunks",
+    "text": "R Code Chunks\nShould be familiar to you - much like R Markdown.\nQuarto can also include chunks in other languages\n\nPython\nJavaScript."
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-look-at-the-code-in-hello.qmd-and-see-how-it-works",
@@ -312,14 +319,21 @@
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#play",
     "title": "Quarto- Spring 2026",
     "section": "Play",
-    "text": "Play\nMake some changes to the hello.qmd\n\nchange the title\nadd a new R code chunk\nadd some markdown content\nchange to a presentation by replacing html in YAML header “format: revealjs: theme: solarized”\ntry a different theme\nrender the document and see how it works!"
+    "text": "Play\nMake some changes to the hello.qmd\n\nchange the title\nadd a new R code chunk\nadd some markdown content\nchange to a presentation by replacing html in YAML header\n\nformat: revealjs:\ntheme: solarized\n\ntry a different theme\nrender the document and see how it works!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#set-up-r-enviroment-in-quarto",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#set-up-r-enviroment-in-quarto",
+    "title": "Quarto- Spring 2026",
+    "section": "Set up R enviroment in Quarto",
+    "text": "Set up R enviroment in Quarto\n\nstart with a setup R chunk at the top to load all packages\ncan also set global options for your code chunks (e.g. echo, warning, message) but better to do in quarto YAML header\n\n\nlibrary(here)\n\nhere() starts at /Users/naomitague/Desktop/Courses/ESM_262\n\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(\n  echo = TRUE,\n  warning = FALSE,\n  message = FALSE\n)"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
     "title": "Quarto- Spring 2026",
     "section": "Some Hints",
-    "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nstart with a setup R chunk at the top to load all packages and set global options for your code chunks (e.g. echo, warning, message)\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
+    "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#start-working-on-assignment-1",
@@ -459,7 +473,7 @@
     "href": "course-materials/lecture-slides/lecture1.intro-slides.html#try-it",
     "title": "Intro- Spring 2026",
     "section": "Try it",
-    "text": "Try it\nmake sure you can render hello.qmd and see the output in the visual view.\nAND before next class\n\nComplete Installation Part 1\nComplete the getting to know you survey\nRead one of the AI papers and think of one thing you found interesting"
+    "text": "Try it\nmake sure you can render hello.qmd and see the output in the visual view.\nAND before next class\n\nComplete Installation\nComplete the getting to know you survey\nRead one of the AI papers and think of one thing you found interesting"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git",
@@ -585,7 +599,7 @@
     "href": "course-materials/lecture-slides/lecture3.datatypes.html#example",
     "title": "Data Types and Structures",
     "section": "Example",
-    "text": "Example\n\n# want to random start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=20, replace=T)\npick\n\n [1] 2004 2018 2018 2002 2001 2012 2013 2025 2003 2021 2015 2000 2007 2022 2020\n[16] 2006 2001 2007 2016 2013\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2006 2001 2024 2019 2005 2002 2014 2018 2004 2016 2009 2003 2010 2023 2013\n[16] 2007 2011 2021 2017 2000"
+    "text": "Example\n\n# want to random start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=20, replace=T)\npick\n\n [1] 2011 2007 2018 2004 2000 2024 2020 2000 2016 2012 2010 2005 2025 2020 2014\n[16] 2004 2023 2000 2019 2015\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2024 2013 2019 2003 2008 2012 2021 2007 2006 2005 2016 2014 2009 2011 2025\n[16] 2001 2002 2020 2015 2004"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#on-your-own",
@@ -641,14 +655,14 @@
     "href": "course-materials/week1.html",
     "title": "Working with Quarto",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv"
+    "text": "Lecture slides\nMaterials\nReading\n\n\n\n\nLecture 1.1: topic Intro\nDownload hello.qmd\nCommunications of the ACM  Practical overview/perspective  Recent review on potential harmful consequences\n\n\nLecture 1.2: topic Quarto\nDownload p301.csv"
   },
   {
     "objectID": "course-materials/week1.html#lecture-materials",
     "href": "course-materials/week1.html#lecture-materials",
     "title": "Working with Quarto",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv"
+    "text": "Lecture slides\nMaterials\nReading\n\n\n\n\nLecture 1.1: topic Intro\nDownload hello.qmd\nCommunications of the ACM  Practical overview/perspective  Recent review on potential harmful consequences\n\n\nLecture 1.2: topic Quarto\nDownload p301.csv"
   },
   {
     "objectID": "course-materials/week1.html#assignment-reminders",

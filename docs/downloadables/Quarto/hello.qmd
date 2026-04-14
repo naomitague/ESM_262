@@ -1,6 +1,8 @@
 ---
 title: "Hello, Quarto"
-format: html
+format:
+  revealjs:
+    theme: sky
 editor: visual
 execute:
   echo: false

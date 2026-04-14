@@ -3,7 +3,7 @@ title: 'Intro- Spring 2026'
 format:
   revealjs:
     theme: solarized
-    resources: ["../images/"]
+resources: ["../images/"]
 editor: visual
 ---
 
@@ -56,11 +56,11 @@ High level perspective
 
 -   includes some thoughts on job market preparation
 
--   [Communications of the ACM](%22../papers/AIinComputingEducation.pdf%22)
+-   [Communications of the ACM](%22../dpwmloadables/papers/AIinComputingEducation.pdf%22)
 
--   [Practical overview/perspective](%22../papers/perspectives_ai_coding.pdf%22)
+-   [Practical overview/perspective](%22../downloadables/papers/perspectives_ai_coding.pdf%22)
 
--   [Recent review on potential harmful consequenses](%22../papers/review-of-harms-fromAIcodingedu.pdf%22)
+-   [Recent review on potential harmful consequenses](%22../downloadables/papers/review-of-harms-fromAIcodingedu.pdf%22)
 
 ## Using AI-tools in this course{.scrollable}
 
@@ -111,7 +111,7 @@ make sure you can render *hello.qmd* and see the output in the visual view.
 
 AND before next class
 
--   Complete Installation Part 1
+-   Complete Installation 
 -   Complete the getting to know you survey
 -   Read one of the AI papers and think of one thing you found interesting
 
