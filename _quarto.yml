@@ -7,7 +7,7 @@ project:
     - "assignments.qmd"
     - "resources.qmd"
     - "install-guide.qmd"
-    - "!downloadables/**"
+
   resources:
     - downloadables/**
     
