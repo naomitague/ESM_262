@@ -1,7 +1,7 @@
 ---
-title: "Assignment #1"
+title: "Assignment #1: Quarto Data Analysis"
 subtitle: "Assigned Thursday 16/04/2026 Due Monday 20/04/2026"
-format: html
+format: pdf
 author: "Naomi Tague"
 ---
 
