@@ -3,7 +3,7 @@ title: 'Quarto- Spring 2026'
 format:
   revealjs:
     theme: solarized
-    resources: ["images"]
+resources: ["images"]
 editor: visual
 execute:
   echo: true
@@ -16,7 +16,9 @@ execute:
 ## Classic Example of Quarto
 
 -   download [hello.qmd](%22../downloadables/Quarto/hello.qmd%22) from the course website
--   open it in RStudio
+format:
+  revealjs:
+    theme: solarized-   open it in RStudio
 
 ## Rendering
 
@@ -69,9 +71,11 @@ Try it with *hello.qmd* - change format
 
 format:
 
-  revealjs:
-  
-    theme: solarized
+revealjs:
+
+```         
+theme: solarized
+```
 
 [Indentation Matters in YAML]{style="color: orange;"}
 
@@ -81,12 +85,12 @@ YAML stands for "YAML Ain't markup Language"
 
 its a human readable way to control and configure applications/documents
 
-Also used in 
+Also used in
 
-- GitHub Actions 
-- automate code testing and deployment of website 
-- Docker code containers 
-- Automating R documentation
+-   GitHub Actions
+-   automate code testing and deployment of website
+-   Docker code containers
+-   Automating R documentation
 
 ## Yaml Header {.scrollable}
 
