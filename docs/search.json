@@ -32,21 +32,21 @@
     "href": "course-materials/week2.html",
     "title": "Git and Reproducible Workflows",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Collaborating with Git"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub"
   },
   {
     "objectID": "course-materials/week2.html#lecture-materials",
     "href": "course-materials/week2.html#lecture-materials",
     "title": "Git and Reproducible Workflows",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Collaborating with Git"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub"
   },
   {
     "objectID": "course-materials/week2.html#assignment-reminders",
     "href": "course-materials/week2.html#assignment-reminders",
     "title": "Git and Reproducible Workflows",
     "section": " Assignments",
-    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #2\n16/4/2026\n20/4/2026 , 11:59pm PT"
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment - TBA\n16/4/2026\n20/4/2026 , 11:59pm PT"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture4.modularity.html#output-is-a-sorted-version-of-saved-to-result",
@@ -133,13 +133,6 @@
     "text": "Assignment 2: Git and Stream Temperature\nFor this assignment, you will work in pairs\nFirst download some USGS data on stream temperature from the Willametter River in Oregon\nHere’s some R code to download it, * X_00010_00003 is the water temperature in C\n\n#install.packages(\"dataRetrieval\")\nlibrary(dataRetrieval)\n\nsiteNumbers &lt;- c(\"14211720\", \"14211010\", \"14166000\")\nparameterCd &lt;- \"00010\"  # water temperature\nstartDate &lt;- \"2010-01-01\"\nendDate &lt;- \"2023-12-31\"\n\ntemp_data &lt;- readNWISdv(siteNumbers, parameterCd, startDate, endDate)\n\nWarning in readNWISdv(siteNumbers, parameterCd, startDate, endDate): NWIS\nservers are slated for decommission. Please begin to migrate to\nread_waterdata_daily.\n\n\nGET: https://waterservices.usgs.gov/nwis/dv/?site=14211720%2C14211010%2C14166000&format=waterml%2C1.1&ParameterCd=00010&StatCd=00003&startDT=2010-01-01&endDT=2023-12-31\n\n# rename columns for clarity\ncolnames(temp_data) &lt;- c(\"agency_cd\", \"site_no\", \"Date\", \"temp_C\")\n# extract some date info for use later\ntemp_data$month = month(temp_data$Date, label=TRUE)\ntemp_data$year = year(temp_data$Date)\n\n# check by plotting\nggplot(temp_data, aes(x=Date, y=temp_C, color=site_no)) +\n  geom_line() +\n  labs(title=\"Stream Temperature at Willamette River Sites\",\n       x=\"Date\", y=\"Temperature (°C)\", color=\"Site Number\") +\n  theme_minimal()\n\n\nWorking together create a new repository that you will share\n\nadd a quarto file, with nice documentation, that downloads the data (call it something informative)\nalso store the data in the repository (e.g. as a csv or RData file) so that you can work with it without having to download it again\nin your quarto file, add the option to load the data instead of accessing from NWIS server\nadd a code chunk that plots the data (e.g. using ggplot)\nadd a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)\n\nMake sure you push to GitHub.\nNow imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if the slope (trend) is positive (increasing) or negative (decreasing) and c) if there are differences between sites\nHave each partner focus on trends for a different month\nHere’s some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)\n\nEstimate for year tells you slope for first site\nEstimate for year:site_no14211010, year:site_no14211720 tells you how much greater (if positive) slope is for this site relative to first site\nEstimates for Intercept and site_no14211010, site_no14211010 set the baseline temperature to make regression work. You won’t use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)\n\n\nlibrary(tidyverse)\n# filter for July temperatures\njuly_data &lt;- subset(temp_data, month == \"Jul\")\n# fit a GLM model to see if there is a trend in July temperatures over time, separated by site\njuly_model &lt;- glm(temp_C ~ year*site_no, data = july_data)\nsummary(july_model)\n\n\nCall:\nglm(formula = temp_C ~ year * site_no, data = july_data)\n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)          -278.16357   39.88799  -6.974 4.91e-12 ***\nyear                    0.14714    0.01978   7.439 1.85e-13 ***\nsite_no14211010      -172.34776   56.41460  -3.055  0.00230 ** \nsite_no14211720       -76.71493   56.49555  -1.358  0.17473    \nyear:site_no14211010    0.08592    0.02798   3.071  0.00218 ** \nyear:site_no14211720    0.03982    0.02802   1.421  0.15550    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 2.759493)\n\n    Null deviance: 7333  on 1298  degrees of freedom\nResidual deviance: 3568  on 1293  degrees of freedom\nAIC: 5012.9\n\nNumber of Fisher Scoring iterations: 2\n\n\nEach partner creates their own branch, and does their own analysis, in a separate quarto document, based on a particular month (e.g. one person does July, another might pick August, etc.) and then pushes to GitHub\nThen merge your branches back into main and create a summary document (quarto), that analyzes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager\nTurn in your GitHub repo link on Canvas\nGrading Rubric\n\nCode is well documented and organized (20 points)\nCreated a new repository and added a quarto file with code to download, load, and analyze the data (20 points)\nEach partner created a branch and analyzed trends for a particular month, correctly interpreting trends in temperature and differences between sites (20 points)\nMerged branches back into main (20 points)\nSummary plot and meaningful analysis of your conclusion from the data analysis (20 points)"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#pair-and-share",
-    "href": "course-materials/lecture-slides/lecture2.git-slides.html#pair-and-share",
-    "title": "Git Spring 2026",
-    "section": "Pair and Share",
-    "text": "Pair and Share\nLook at your partner’s Quarto - Any suggestions?"
-  },
-  {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#file-organization",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#file-organization",
     "title": "Git Spring 2026",
@@ -147,18 +140,18 @@
     "text": "File Organization\nRecall from ESM-206\n\nfile structure example"
   },
   {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#project-folder-organization",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#project-folder-organization",
+    "title": "Git Spring 2026",
+    "section": "Project Folder Organization",
+    "text": "Project Folder Organization\n\nDepends on project and who you are collaborating with\nFolders for R scripts for functions (TBD)\n\nmust be called R when building a package\n\nSub folders\n\nimages\ndocuments\ndata\n\nOrganize by project components for complex projects\n\n(see RHESSys example)\n\nYou might consider having a course project and organize by week (for week1 folder etc)"
+  },
+  {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#remember-the-here-command",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#remember-the-here-command",
     "title": "Git Spring 2026",
     "section": "Remember the “here” command!",
     "text": "Remember the “here” command!\n\nlibrary(here)\nlibrary(tidyverse)\n\n\n# this will show you the path to your project folder\nhere()\n\n[1] \"/Users/naomitague/Courses/ESM_262\"\n\n# this will let you open a file in your project folder\np301 = read.csv(here(\"downloadables/Data\", \"p301.csv\"))\n\n# lets make month names nicer\np301$month_lab &lt;- factor(p301$month, levels = 1:12, labels = month.abb)\n\n# plot direct solar radiation by month\nggplot(p301, aes(x = month_lab,\n                y = direct_solar,\n                group = month_lab,\n                fill = month_lab)) +\n  geom_boxplot() +\n  theme_bw() +\n  labs(y = \"Direct Solar Radiation \\n(W/m^2)\", x = \"Month\") +\n  theme(legend.position = \"none\")"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#suggested-organization",
-    "href": "course-materials/lecture-slides/lecture2.git-slides.html#suggested-organization",
-    "title": "Git Spring 2026",
-    "section": "Suggested Organization",
-    "text": "Suggested Organization\n\nR Project for this course\nFolders for R scripts for functions (TBD)\nSub folders for each Week, with Data, Images subfolders\n\nCreate this as a new R project in Rstudio\nCheck: Create a git repository\nAdd you Assignment 1 to the Week1 Folder"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility",
@@ -172,7 +165,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-and-gitgithub",
     "title": "Git Spring 2026",
     "section": "Reproducibility and Git/Github",
-    "text": "Reproducibility and Git/Github\nVersion control systems help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)\nGit is a free and open source distributed version control system. Its the most popular, used by millions\nGit works with many code-bases - not just R, but also Python, C, Java, etc. and can be used also for data storage, websites, and more\nDeveloped by programmer (creater of Linux - Linus Torvalds) -\nGitHub platform acquired by Microsoft in 2018"
+    "text": "Reproducibility and Git/Github\nVersion control systems help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)\nGit is a free and open source distributed version control system. Its the most popular, used by millions\nGit works with many code-bases not just R\n\nPython, C, Java, etc.\ncan be used also for data storage, websites, and more\n\nDeveloped by programmer (creator of Linux - Linus Torvalds)\nGithub platform for managing and sharing git repositories - acquired by Microsoft in 2018"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
@@ -200,21 +193,28 @@
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#example",
     "title": "Git Spring 2026",
     "section": "Example",
-    "text": "Example\nGitHub Repository that I’ll use in this course\n\nDirectly under the navigation bar (top-left) you will find the name of the repository\nnext line tel you information about current branch - other branches\nthe Code button gives you the identifier of the repository that you can use to download locally\nAbove the files listing, there is information about the latest commit to this repository\nOn the left, you will have the files and folder names\nIn the middle, the last commit message on this file (or file contained in a folder)\nOn the right, the time stamps of the latest commit"
+    "text": "Example\nGitHub Repository that I’ll use in this course\n\nDirectly under the navigation bar (top-left) you will find the name of the repository\nnext line tells you information about current branch - other branches\nthe Code button gives you the identifier of the repository that you can use to download locally\nAbove the files listing, there is information about the latest commit to this repository\nOn the left, you will have the files and folder names\nIn the middle, the last commit message on this file (or file contained in a folder)\nOn the right, the time stamps of the latest commit"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
     "title": "Git Spring 2026",
-    "section": "Lets try",
-    "text": "Lets try\nSteps\n\nIn Rstudio open your class project;\n\nrun the following in the R console\nnote this only works if you successfully set up a personal access token (PAT)\n\n\n\ninstall.packages(\"usethis\")\nusethis::use_git()        # initializes git\nusethis::use_github()     # creates the GitHub repo and links it\n\n\nGo to GitHub and check to see that all of your files are in your repo\n\n\n\n\n\n\n\nNote\n\n\nif PAT doesn’t work, you can do this manually\n\nCreate a new repository (no readme file) on GitHub - give it a name\nin the Terminal window using\n\n\ngit init\ngit add .\ngit commit -m “Initial commit”\ngit branch -M main\ngit remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git\ngit push -u origin main"
+    "section": "Lets Try",
+    "text": "Lets Try\nFirst local Git\nWith your partner\n\nCreate a new R project in Rstudio\n\nNotice all 3 options - particularly what to do if you already have a Github repository\nFor this one - we will create a local git first\n\nCheck: Create a git repository\nMake a folder called Week1 - add Assignment 1 repository to that folder\nMake a Data Directory - copy p301.csv into that directory"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try-it---tracking-changes",
-    "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try-it---tracking-changes",
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#now-create-a-github-repo",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#now-create-a-github-repo",
     "title": "Git Spring 2026",
-    "section": "Lets try it - Tracking Changes",
-    "text": "Lets try it - Tracking Changes\nNow change something in your Quarto file; you could just add a comment ,then go to the Git tab\n-   add your change and save the file\n\n-   see how this shows up in git diff\n\nOnce you like what you changed, commit it\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
+    "section": "Now create a GitHub repo",
+    "text": "Now create a GitHub repo\nGitHub\nMultiple ways to do this..\nEasy from Rstudio, with usethis package\nBefore we start check your status by getting a situation report\n\ninstall.packages(\"usethis\")\nusethis::git_sitrep()\n\n\nCreate a GitHub repo\n\nrun the following in the R console\n\ninstall.packages(\"usethis\")\nusethis::use_git()        # initializes git\nusethis::use_github()     # creates the GitHub repo and links it\n\n\nGo to GitHub and check to see that all of your files are in your repo\n\nWhile you are there review the GitHub interface parts…any questions?"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#workflow---tracking-changes",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#workflow---tracking-changes",
+    "title": "Git Spring 2026",
+    "section": "Workflow - Tracking Changes",
+    "text": "Workflow - Tracking Changes\n\nChange something in your Quarto file; you could just add a comment\nSave the file\n\n\nsee how this shows up in git tab in RStudio\n\n\nCommit\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by Push\nGo to github and check to see if your file and recent changes are there"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
@@ -606,7 +606,7 @@
     "href": "course-materials/lecture-slides/lecture3.datatypes.html#example",
     "title": "Data Types and Structures",
     "section": "Example",
-    "text": "Example\n\n# want to random start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=20, replace=T)\npick\n\n [1] 2025 2007 2004 2012 2018 2023 2020 2001 2013 2021 2011 2013 2024 2014 2004\n[16] 2009 2006 2014 2016 2015\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2021 2007 2006 2002 2014 2009 2024 2019 2023 2012 2025 2013 2004 2000 2016\n[16] 2018 2010 2015 2008 2022"
+    "text": "Example\n\n# want to random start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=20, replace=T)\npick\n\n [1] 2000 2017 2017 2022 2022 2017 2013 2025 2006 2025 2004 2008 2019 2007 2015\n[16] 2018 2024 2010 2000 2017\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2003 2017 2000 2004 2011 2024 2019 2012 2010 2025 2001 2021 2009 2002 2008\n[16] 2006 2005 2020 2014 2023"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#on-your-own",

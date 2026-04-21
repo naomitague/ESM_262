@@ -3,7 +3,7 @@ title: 'Git Spring 2026'
 format:
   revealjs:
     theme: solarized
-    resources: ["images"]
+    resources: ["../images"]
 editor: visual
 execute:
   echo: true
@@ -11,15 +11,31 @@ execute:
   message: true
 ---
 
-## Pair and Share
-
-Look at your partner's Quarto - Any suggestions?
-
 ## File Organization
 
 Recall from ESM-206
 
-![file structure example](images/week2/filestructure.png)
+![file structure example](../../images/filestructure.png)
+
+## Project Folder Organization
+
+-   Depends on project and who you are collaborating with
+
+-   Folders for R scripts for functions (TBD)
+
+    -   must be called R when building a package
+
+-   Sub folders
+
+    -   images
+    -   documents
+    -   data
+
+-   Organize by project components for complex projects
+
+(see RHESSys example)
+
+-   You might consider having a course project and organize by week (for week1 folder etc)
 
 ## Remember the "here" command! {.scrollable}
 
@@ -49,20 +65,6 @@ ggplot(p301, aes(x = month_lab,
   theme(legend.position = "none")
 ```
 
-## Suggested Organization
-
--   R Project for this course
-
--   Folders for R scripts for functions (TBD)
-
--   Sub folders for each Week, with Data, Images subfolders
-
-Create this as a new R project in Rstudio
-
-[Check: Create a git repository]{style="color:red"}
-
-Add you Assignment 1 to the Week1 Folder
-
 ## Reproducibility
 
 -   Why reproducibility and what does it mean?
@@ -73,21 +75,25 @@ Add you Assignment 1 to the Week1 Folder
     -   often involves iterative steps
     -   often involves multiple people
 
-## Reproducibility and Git/Github
+## Reproducibility and Git/Github {.scrollable}
 
-*Version control systems* help you track all of the changes to your files, (kind of like track changes for data, programs...everything ...and more sophisticated)
+[*Version control systems*]{style="color:orange"} help you track all of the changes to your files, (kind of like track changes for data, programs...everything ...and more sophisticated)
 
-*Git* is a free and open source distributed version control system. Its the most popular, used by millions
+[*Git*]{style="color:orange"} is a free and open source distributed version control system. Its the most popular, used by millions
 
-*Git* works with many code-bases - not just R, but also Python, C, Java, etc. and can be used also for data storage, websites, and more
+*Git* works with many code-bases  not just R
 
-Developed by programmer (creater of Linux - Linus Torvalds) -
+- Python, C, Java, etc.
+- can be used also for data storage, websites, and more
 
-GitHub platform acquired by Microsoft in 2018
+Developed by programmer (creator of Linux - Linus Torvalds) 
+
+[*Github*]{style="color:orange"} platform for managing and sharing *git* repositories
+  - acquired by Microsoft in 2018
 
 ## Git Concept
 
-![git local remote](images/week2/gitconcept.png)
+![git local remote](../../images/gitconcept.png)
 
 "Artwork by @allison_horst".
 
@@ -105,7 +111,7 @@ GitHub platform acquired by Microsoft in 2018
     -   others who will use your code
     -   coding together
 
-![git figure with connections](%22week2/gitandgithub.jpg%22)
+![git figure with connections](../../images/gitandgithub.jpg)
 
 ## The Basics {.scrollable}
 
@@ -140,7 +146,7 @@ GitHub platform acquired by Microsoft in 2018
 
 -   Directly under the navigation bar (top-left) you will find the name of the repository
 
--   next line tel you information about current branch - other branches
+-   next line tells you information about current branch - other branches
 
 -   the Code button gives you the identifier of the repository that you can use to download locally
 
@@ -152,14 +158,45 @@ GitHub platform acquired by Microsoft in 2018
 
 -   On the right, the time stamps of the latest commit
 
-## [Lets try]{style="color:orange"} {.scrollable}
+## Lets Try {.scrollable}
 
-Steps
+[First local Git]{style="color:orange"}
 
-1.  In *Rstudio* open your class project;
+With your partner
 
-    -   run the following in the R console
-    -   note this only works if you successfully set up a personal access token (PAT)
+-   Create a new R project in Rstudio
+
+    -   Notice all 3 options - particularly what to do if you already have a *Github* repository
+
+    -   For this one - we will create a *local git* first
+
+-   [Check: Create a git repository]{style="color:red"}
+
+-   Make a folder called Week1 - add Assignment 1 repository to that folder
+
+-   Make a Data Directory - copy p301.csv into that directory
+
+## Now create a *GitHub* repo {.scrollable}
+
+[GitHub]{style="color:orange"}
+
+Multiple ways to do this..
+
+Easy from Rstudio, with *usethis* package
+
+Before we start check your status by getting a situation report
+
+```{r, githubstart, echo=TRUE, eval=FALSE}
+install.packages("usethis")
+usethis::git_sitrep()
+```
+
+
+1.  Create a *GitHub* repo
+
+run the following in the R console
+
+
 
 ```{r, github, echo=TRUE, eval=FALSE}
 install.packages("usethis")
@@ -169,12 +206,20 @@ usethis::use_github()     # creates the GitHub repo and links it
 
 2.  Go to *GitHub* and check to see that all of your files are in your repo
 
+While you are there review the *GitHub* interface parts...any questions?
+
+# Alternative
+
+You can also create a repository on *Github* itself and then later link you local repository
+
+*Caution* if you do this, make sure to create the repository without a readme file, otherwise you will have to merge the two repositories (local and remote) which is a little more complicated
+
 ::: callout-note
 if PAT doesn't work, you can do this **manually**
 
 1.  Create a new repository (no readme file) on *GitHub* - give it a name
 
-2.  in the Terminal window using
+2.  in the Terminal window in R studio using
 
 -   git init
 -   git add .
@@ -184,31 +229,50 @@ if PAT doesn't work, you can do this **manually**
 -   git push -u origin main
 :::
 
-## Lets try it - Tracking Changes {.scrollable}
+## Workflow -  Tracking Changes {.scrollable}
 
-Now change something in your Quarto file; you could just add a comment ,then go to the Git tab
+3.  Change something in your Quarto file; you could just add a comment
 
-```         
--   add your change and save the file
+4.  Save the file
 
--   see how this shows up in git diff
-```
+-   see how this shows up in git tab in RStudio
 
-6.  Once you like what you changed, commit it
+5.  [Commit]{style="color:green"}
 
     -   your file should have an *M* for modified, check this to "stage" your changes for commit
-
     -   add a message briefly describing what you changed
-
     -   commit
 
-7.  Send changes to *github* by pushing
+6.  Send changes to *github* by [Push]{style="color:green"}
 
-8.  Go to *github* and check to see if your file and recent changes are there
+7.  Go to *github* and check to see if your file and recent changes are there
 
 # Adding another file {.scrollable}
 
-1.  Create a new file - maybe another Quatro file
+1.  Create a new file -  another Quatro file that is a demonstration of how to find the total streamflow and total precipitation in each year and % of precip that becomes streamflow
+and then computes mean and standard deviation of across years. You can use the p301.csv file for this.
+
+If you need a hint on how to do this - here's some R code that you might use in the Quarto file
+
+```{r, totalexample, echo=TRUE, eval=TRUE}
+library(here)
+library(tidyverse)
+# read in the data
+p301 = read.csv(here("downloadables/Data", "p301.csv"))
+
+# aggregate by water year
+p301_yearly <- p301 %>%
+  group_by(wy) %>%
+  summarise(total_streamflow = sum(streamflow),
+            total_precip = sum(precip),
+            percent_streamflow = (total_streamflow / total_precip) * 100)
+
+# calculate mean, range and standard deviation of percent streamflow across year
+mean(p301_yearly$percent_streamflow)
+range(p301_yearly$percent_streamflow)
+sd(p301_yearly$percent_streamflow)
+```
+
 
 2.  Save it into the appropriate directory ( using organized directory structures is good programming practice )
 
@@ -223,6 +287,7 @@ Now change something in your Quarto file; you could just add a comment ,then go 
     -   commit
 
 4.  When you are ready Send changes to *github* by pushing
+5.  Go to *github* and check to see if your file and recent changes are there
 
 ## Correcting Mistakes {.scrollable}
 

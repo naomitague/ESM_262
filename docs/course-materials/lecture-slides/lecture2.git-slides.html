@@ -199,15 +199,32 @@
 </div>
 
 </section>
-<section id="pair-and-share" class="slide level2">
-<h2>Pair and Share</h2>
-<p>Look at your partner’s Quarto - Any suggestions?</p>
-</section>
 <section id="file-organization" class="slide level2">
 <h2>File Organization</h2>
 <p>Recall from ESM-206</p>
 
-<img data-src="images/week2/filestructure.png" class="r-stretch quarto-figure-center"><p class="caption">file structure example</p></section>
+<img data-src="../../images/filestructure.png" class="r-stretch quarto-figure-center"><p class="caption">file structure example</p></section>
+<section id="project-folder-organization" class="slide level2">
+<h2>Project Folder Organization</h2>
+<ul>
+<li><p>Depends on project and who you are collaborating with</p></li>
+<li><p>Folders for R scripts for functions (TBD)</p>
+<ul>
+<li>must be called R when building a package</li>
+</ul></li>
+<li><p>Sub folders</p>
+<ul>
+<li>images</li>
+<li>documents</li>
+<li>data</li>
+</ul></li>
+<li><p>Organize by project components for complex projects</p></li>
+</ul>
+<p>(see RHESSys example)</p>
+<ul>
+<li>You might consider having a course project and organize by week (for week1 folder etc)</li>
+</ul>
+</section>
 <section id="remember-the-here-command" class="slide level2 scrollable">
 <h2>Remember the “here” command!</h2>
 <div class="cell">
@@ -238,17 +255,6 @@
 
 </div>
 <img data-src="lecture2.git-slides_files/figure-revealjs/demouse-1.png" width="960" class="r-stretch"></section>
-<section id="suggested-organization" class="slide level2">
-<h2>Suggested Organization</h2>
-<ul>
-<li><p>R Project for this course</p></li>
-<li><p>Folders for R scripts for functions (TBD)</p></li>
-<li><p>Sub folders for each Week, with Data, Images subfolders</p></li>
-</ul>
-<p>Create this as a new R project in Rstudio</p>
-<p><span style="color:red">Check: Create a git repository</span></p>
-<p>Add you Assignment 1 to the Week1 Folder</p>
-</section>
 <section id="reproducibility" class="slide level2">
 <h2>Reproducibility</h2>
 <ul>
@@ -261,18 +267,22 @@
 </ul></li>
 </ul>
 </section>
-<section id="reproducibility-and-gitgithub" class="slide level2">
+<section id="reproducibility-and-gitgithub" class="slide level2 scrollable">
 <h2>Reproducibility and Git/Github</h2>
-<p><em>Version control systems</em> help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)</p>
-<p><em>Git</em> is a free and open source distributed version control system. Its the most popular, used by millions</p>
-<p><em>Git</em> works with many code-bases - not just R, but also Python, C, Java, etc. and can be used also for data storage, websites, and more</p>
-<p>Developed by programmer (creater of Linux - Linus Torvalds) -</p>
-<p>GitHub platform acquired by Microsoft in 2018</p>
+<p><span style="color:orange"><em>Version control systems</em></span> help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)</p>
+<p><span style="color:orange"><em>Git</em></span> is a free and open source distributed version control system. Its the most popular, used by millions</p>
+<p><em>Git</em> works with many code-bases not just R</p>
+<ul>
+<li>Python, C, Java, etc.</li>
+<li>can be used also for data storage, websites, and more</li>
+</ul>
+<p>Developed by programmer (creator of Linux - Linus Torvalds)</p>
+<p><span style="color:orange"><em>Github</em></span> platform for managing and sharing <em>git</em> repositories - acquired by Microsoft in 2018</p>
 </section>
 <section id="git-concept" class="slide level2">
 <h2>Git Concept</h2>
 
-<img data-src="images/week2/gitconcept.png" class="r-stretch quarto-figure-center"><p class="caption">git local remote</p><p>“Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span>”.</p>
+<img data-src="../../images/gitconcept.png" class="r-stretch quarto-figure-center"><p class="caption">git local remote</p><p>“Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span>”.</p>
 </section>
 <section id="git-concept-more" class="slide level2 scrollable">
 <h2>Git Concept More</h2>
@@ -291,7 +301,7 @@
 </ul></li>
 </ul>
 
-<img data-src="&quot;week2/gitandgithub.jpg&quot;" class="r-stretch quarto-figure-center"><p class="caption">git figure with connections</p></section>
+<img data-src="../../images/gitandgithub.jpg" class="r-stretch quarto-figure-center"><p class="caption">git figure with connections</p></section>
 <section id="the-basics" class="slide level2 scrollable">
 <h2>The Basics</h2>
 <p><span style="color:green">Commit</span></p>
@@ -325,7 +335,7 @@
 <p><a href="https://github.com/naomitague/ESM_262_Examples">GitHub Repository that I’ll use in this course</a></p>
 <ul>
 <li><p>Directly under the navigation bar (top-left) you will find the name of the repository</p></li>
-<li><p>next line tel you information about current branch - other branches</p></li>
+<li><p>next line tells you information about current branch - other branches</p></li>
 <li><p>the Code button gives you the identifier of the repository that you can use to download locally</p></li>
 <li><p>Above the files listing, there is information about the latest commit to this repository</p></li>
 <li><p>On the left, you will have the files and folder names</p></li>
@@ -334,23 +344,49 @@
 </ul>
 </section>
 <section id="lets-try" class="slide level2 scrollable">
-<h2><span style="color:orange">Lets try</span></h2>
-<p>Steps</p>
-<ol type="1">
-<li><p>In <em>Rstudio</em> open your class project;</p>
+<h2>Lets Try</h2>
+<p><span style="color:orange">First local Git</span></p>
+<p>With your partner</p>
 <ul>
-<li>run the following in the R console</li>
-<li>note this only works if you successfully set up a personal access token (PAT)</li>
+<li><p>Create a new R project in Rstudio</p>
+<ul>
+<li><p>Notice all 3 options - particularly what to do if you already have a <em>Github</em> repository</p></li>
+<li><p>For this one - we will create a <em>local git</em> first</p></li>
 </ul></li>
-</ol>
+<li><p><span style="color:red">Check: Create a git repository</span></p></li>
+<li><p>Make a folder called Week1 - add Assignment 1 repository to that folder</p></li>
+<li><p>Make a Data Directory - copy p301.csv into that directory</p></li>
+</ul>
+</section>
+<section id="now-create-a-github-repo" class="slide level2 scrollable">
+<h2>Now create a <em>GitHub</em> repo</h2>
+<p><span style="color:orange">GitHub</span></p>
+<p>Multiple ways to do this..</p>
+<p>Easy from Rstudio, with <em>usethis</em> package</p>
+<p>Before we start check your status by getting a situation report</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
-<span id="cb5-2"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()        <span class="co"># initializes git</span></span>
-<span id="cb5-3"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()     <span class="co"># creates the GitHub repo and links it</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-2"><a></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="1">
+<li>Create a <em>GitHub</em> repo</li>
+</ol>
+<p>run the following in the R console</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
+<span id="cb6-2"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()        <span class="co"># initializes git</span></span>
+<span id="cb6-3"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()     <span class="co"># creates the GitHub repo and links it</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li>Go to <em>GitHub</em> and check to see that all of your files are in your repo</li>
 </ol>
+<p>While you are there review the <em>GitHub</em> interface parts…any questions?</p>
+</section>
+<section>
+<section id="alternative" class="title-slide slide level1 center">
+<h1>Alternative</h1>
+<p>You can also create a repository on <em>Github</em> itself and then later link you local repository</p>
+<p><em>Caution</em> if you do this, make sure to create the repository without a readme file, otherwise you will have to merge the two repositories (local and remote) which is a little more complicated</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -363,7 +399,7 @@
 <p>if PAT doesn’t work, you can do this <strong>manually</strong></p>
 <ol type="1">
 <li><p>Create a new repository (no readme file) on <em>GitHub</em> - give it a name</p></li>
-<li><p>in the Terminal window using</p></li>
+<li><p>in the Terminal window in R studio using</p></li>
 </ol>
 <ul>
 <li>git init</li>
@@ -377,28 +413,61 @@
 </div>
 </div>
 </section>
-<section id="lets-try-it---tracking-changes" class="slide level2 scrollable">
-<h2>Lets try it - Tracking Changes</h2>
-<p>Now change something in your Quarto file; you could just add a comment ,then go to the Git tab</p>
-<pre><code>-   add your change and save the file
-
--   see how this shows up in git diff</code></pre>
-<ol start="6" type="1">
-<li><p>Once you like what you changed, commit it</p>
+<section id="workflow---tracking-changes" class="slide level2 scrollable">
+<h2>Workflow - Tracking Changes</h2>
+<ol start="3" type="1">
+<li><p>Change something in your Quarto file; you could just add a comment</p></li>
+<li><p>Save the file</p></li>
+</ol>
 <ul>
-<li><p>your file should have an <em>M</em> for modified, check this to “stage” your changes for commit</p></li>
-<li><p>add a message briefly describing what you changed</p></li>
-<li><p>commit</p></li>
+<li>see how this shows up in git tab in RStudio</li>
+</ul>
+<ol start="5" type="1">
+<li><p><span style="color:green">Commit</span></p>
+<ul>
+<li>your file should have an <em>M</em> for modified, check this to “stage” your changes for commit</li>
+<li>add a message briefly describing what you changed</li>
+<li>commit</li>
 </ul></li>
-<li><p>Send changes to <em>github</em> by pushing</p></li>
+<li><p>Send changes to <em>github</em> by <span style="color:green">Push</span></p></li>
 <li><p>Go to <em>github</em> and check to see if your file and recent changes are there</p></li>
 </ol>
-</section>
+</section></section>
 <section>
 <section id="adding-another-file" class="title-slide slide level1 scrollable center">
 <h1>Adding another file</h1>
 <ol type="1">
-<li><p>Create a new file - maybe another Quatro file</p></li>
+<li>Create a new file - another Quatro file that is a demonstration of how to find the total streamflow and total precipitation in each year and % of precip that becomes streamflow and then computes mean and standard deviation of across years. You can use the p301.csv file for this.</li>
+</ol>
+<p>If you need a hint on how to do this - here’s some R code that you might use in the Quarto file</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb7-2"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-3"><a></a><span class="co"># read in the data</span></span>
+<span id="cb7-4"><a></a>p301 <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"downloadables/Data"</span>, <span class="st">"p301.csv"</span>))</span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a><span class="co"># aggregate by water year</span></span>
+<span id="cb7-7"><a></a>p301_yearly <span class="ot">&lt;-</span> p301 <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a></a>  <span class="fu">group_by</span>(wy) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a></a>  <span class="fu">summarise</span>(<span class="at">total_streamflow =</span> <span class="fu">sum</span>(streamflow),</span>
+<span id="cb7-10"><a></a>            <span class="at">total_precip =</span> <span class="fu">sum</span>(precip),</span>
+<span id="cb7-11"><a></a>            <span class="at">percent_streamflow =</span> (total_streamflow <span class="sc">/</span> total_precip) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb7-12"><a></a></span>
+<span id="cb7-13"><a></a><span class="co"># calculate mean, range and standard deviation of percent streamflow across year</span></span>
+<span id="cb7-14"><a></a><span class="fu">mean</span>(p301_yearly<span class="sc">$</span>percent_streamflow)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25.50839</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">range</span>(p301_yearly<span class="sc">$</span>percent_streamflow)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  0.00000 59.61193</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">sd</span>(p301_yearly<span class="sc">$</span>percent_streamflow)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18.96631</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
 <li><p>Save it into the appropriate directory ( using organized directory structures is good programming practice )</p></li>
 <li><p>Add it to Git local</p>
 <ul>
@@ -408,6 +477,7 @@
 <li><p>commit</p></li>
 </ul></li>
 <li><p>When you are ready Send changes to <em>github</em> by pushing</p></li>
+<li><p>Go to <em>github</em> and check to see if your file and recent changes are there</p></li>
 </ol>
 </section>
 <section id="correcting-mistakes" class="slide level2 scrollable">

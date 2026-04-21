@@ -288,15 +288,15 @@
 <span id="cb9-3"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
 <span id="cb9-4"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2025 2007 2004 2012 2018 2023 2020 2001 2013 2021 2011 2013 2024 2014 2004
-[16] 2009 2006 2014 2016 2015</code></pre>
+<pre><code> [1] 2000 2017 2017 2022 2022 2017 2013 2025 2006 2025 2004 2008 2019 2007 2015
+[16] 2018 2024 2010 2000 2017</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># no repeat years</span></span>
 <span id="cb11-2"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>F)</span>
 <span id="cb11-3"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2021 2007 2006 2002 2014 2009 2024 2019 2023 2012 2025 2013 2004 2000 2016
-[16] 2018 2010 2015 2008 2022</code></pre>
+<pre><code> [1] 2003 2017 2000 2004 2011 2024 2019 2012 2010 2025 2001 2021 2009 2002 2008
+[16] 2006 2005 2020 2014 2023</code></pre>
 </div>
 </div>
 </section></section>
@@ -344,7 +344,7 @@
 <span id="cb17-2"><a></a>ozone_sample <span class="ot">=</span> <span class="fu">sample</span>(airquality<span class="sc">$</span>Ozone, <span class="at">size=</span><span class="dv">5</span>, <span class="at">replace=</span>F)</span>
 <span id="cb17-3"><a></a>ozone_sample</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 22 13 NA 30  1</code></pre>
+<pre><code>[1] 18 11 39 NA 22</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># plot our sample days</span></span>
 <span id="cb19-2"><a></a></span>
@@ -412,10 +412,10 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb29-7"><a></a><span class="co"># because possible.fish was a factor catch1 will be a factor</span></span>
 <span id="cb29-8"><a></a>catch1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "salmon"    "tuna"      "cod"       "tuna"      "salmon"    "shark"    
- [7] "cod"       "shark"     "tuna"      "steelhead" "cod"       "tuna"     
-[13] "steelhead" "tuna"      "tuna"      "steelhead" "tuna"      "shark"    
-[19] "tuna"      "cod"      </code></pre>
+<pre><code> [1] "steelhead" "shark"     "cod"       "shark"     "cod"       "cod"      
+ [7] "shark"     "cod"       "tuna"      "salmon"    "steelhead" "steelhead"
+[13] "tuna"      "steelhead" "cod"       "shark"     "shark"     "salmon"   
+[19] "steelhead" "cod"      </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -430,7 +430,7 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb33-6"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      cod    salmon     shark steelhead      tuna 
-        4         2         3         3         8 </code></pre>
+        6         2         5         5         2 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">plot</span>(catch1, <span class="at">col=</span><span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
@@ -443,18 +443,18 @@ Levels: 1 1.3 4 22</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># maximum frequency</span></span>
 <span id="cb38-2"><a></a><span class="fu">max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
+<pre><code>[1] 6</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="co"># which fish was most frequently caught</span></span>
 <span id="cb40-2"><a></a><span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tuna 
-   5 </code></pre>
+<pre><code>cod 
+  1 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="co">#to get just the name </span></span>
 <span id="cb42-2"><a></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "tuna"</code></pre>
+<pre><code>[1] "cod"</code></pre>
 </div>
 </div>
 <img data-src="lecture3.datatypes_files/figure-revealjs/fishes-1.png" width="960" class="r-stretch"></section>
