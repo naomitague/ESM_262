@@ -1,0 +1,15 @@
+---
+title: "play_with_git"
+editor: visual
+format: html
+author: Naomi
+---
+
+# Use this to play with git and github
+
+I can explore 
+* revert
+* reset
+* checkout
+
+# What about conflicts
