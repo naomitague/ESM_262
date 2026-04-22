@@ -12,6 +12,6 @@ I can explore
 * reset
 * checkout
 
-Lets make this one committed - then we can try reverting it and see what happens
+Lets make this one committed
 
 # What about conflicts 
