@@ -10,6 +10,7 @@ description: "Monday April 20^th^, 2026"
 | Lecture slides | Materials |
 |----------------|-----------|
 | [Lecture 2.1:  Git and GitHub](lecture-slides/lecture2.git-slides.qmd){target="_blank"} |  |
+| [Lecture 2.2:  Git and Collaboration](lecture-slides/lecture2.git-collab.qmd){target="_blank"} |  |
 
 
 
@@ -17,5 +18,5 @@ description: "Monday April 20^th^, 2026"
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| HW              | Homework Assignment - TBA | 16/4/2026      | 20/4/2026 , 11:59pm PT     |
+| HW              | Homework for Git next week|     | 
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 

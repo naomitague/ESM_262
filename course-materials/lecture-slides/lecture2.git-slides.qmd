@@ -204,7 +204,7 @@ usethis::use_github()     # creates the GitHub repo and links it
 
 While you are there review the *GitHub* interface parts...any questions?
 
-# Alternative {.scrollable}
+## Alternative {.scrollable}
 
 You can also create a repository on *Github* itself and then later link you local repository
 
@@ -243,7 +243,7 @@ if PAT doesn't work, you can do this **manually**
 
 7.  Go to *github* and check to see if your file and recent changes are there
 
-# Adding another file {.scrollable}
+## Adding another file {.scrollable}
 
 1.  Create a new file - another Quatro file that is a demonstration of how to find the total streamflow and total precipitation in each year and % of precip that becomes streamflow and then computes mean and standard deviation of across years. You can use the p301.csv file for this.
 

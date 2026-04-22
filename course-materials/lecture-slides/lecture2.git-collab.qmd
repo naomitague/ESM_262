@@ -18,7 +18,7 @@ library(tidyverse)
 
 ## Git
 
-![git local remote](images/week2/gitconcept.png)
+![git and github](../../images/gitandgithub.jpg)
 
 ## The Basics {.scrollable}
 
@@ -35,7 +35,56 @@ library(tidyverse)
 
 [Git Guides](https://github.com/git-guides) are a really wonderful resource to refer to!
 
-# History with GIT
+## Information about your project git {.scrollable}
+
+Here are some useful commands if you run into set up issues (and in general)
+
+-   to check that you have your git credentials set up correctly
+
+```{r, eval=TRUE, echo=TRUE}
+
+#To see all info about your credentials and current repo
+#note that before you connect to GitHub the first time, it won't know about branches etc
+usethis::git_sitrep()
+
+# just to check who you are
+gh::gh_whoami()
+
+```
+
+- alternatively you can use *git config*  in terminal window to check your credentials
+
+[Config]{style="color:green"}
+
+*git config --global --list*
+
+::: callout-note
+What about a new computer? Can I reuse my access token (PAT)
+Yes if you saved it,
+
+```{r, eval=FALSE, echo=TRUE}
+
+#gitcreds::gitcreds_set()
+
+```
+
+::: 
+
+## Checking your remote {.scrollable}
+
+To find your current *GitHub* repository (e.g what repo names is on GitHub)
+
+```{r, remote, eval=TRUE, echo=TRUE}
+usethis::git_remotes()
+```
+
+Can also find under *Git* tab in Rstudio project setup will show you remote
+
+In terminal, try 
+
+*git remote -v*
+
+## History with GIT {.scrollable}
 
 locally- use the little clock button or **commit**
 
@@ -46,12 +95,15 @@ locally- use the little clock button or **commit**
 informative commit messages helps understand history
 :::
 
+In terminal window use *log* for history
+[git log]{style="color:green"}
+
 ## Correcting Misktakes if you haven't committed {.scrollable}
 
 -   make a change and save
 -   click *revert* to get rid of the changes that you don't want
 
-I'll try it
+Try it
 
 ## Correcting Mistakes if you have committed
 
@@ -79,7 +131,7 @@ I'll try and then you
 
 ## Go back farther in time
 
-![git revert](images/week2/gitrevert.png)
+![git revert](../../images/gitrevert.png)
 
 ## Git commands
 
@@ -87,7 +139,7 @@ I'll try and then you
 
 commit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.
 
-*git revert <commit ID>*
+*git revert* <commit ID>
 
 Find the SHA number (same as commit ID) in your Git History
 
@@ -123,7 +175,7 @@ useful to keep things from getting 'messy' but we won't go into here
 
 ## Collaboration with GitHub
 
-![git and github](images/week2/gitandgithub.jpg)
+![git and github](../../images/gitandgithub.jpg)
 
 ## Collaboration through GitHub {.scrollable}
 
@@ -153,22 +205,24 @@ useful to keep things from getting 'messy' but we won't go into here
 -   check on *GitHub* to see if your change is there
 
 ## Conflicts
-![git conflicts](images/week2/git_workflow_diagram.svg)
+
+![git conflicts](../../images/gitconflict.jpg)
 
 ## Conflicts {.scrollable}
 
-- what happens if you and your collaborator change the same file and try to push/pull 
+-   what happens if you and your collaborator change the same file and try to push/pull
 
-- this could be you from two different computers :)
+-   this could be you from two different computers :)
 
-- *Git* and *GitHub* manage this
-  - *Github* will try to merge the changes 
-  - if it can't (you both changed the same line or something like that) - **Conflict**
-  
-- when a Conflict occurs
-  - *Git* rewrites the file to show you the conflicting changes using markers
-  
-  
+-   *Git* and *GitHub* manage this
+
+    -   *Github* will try to merge the changes
+    -   if it can't (you both changed the same line or something like that) - **Conflict**
+
+-   when a Conflict occurs
+
+    -   *Git* rewrites the file to show you the conflicting changes using markers
+
 ## Conflict Markers in Git {.scrollable}
 
 In the file where the conflict occurs - *Git* marks it by
@@ -177,32 +231,24 @@ In the file where the conflict occurs - *Git* marks it by
 -   `=======` - divider between your local version and *Github* version
 -   `>>>>>>> commit-ID` - the end of the conflicting changes from the remote
 
-Lets try it
-
+I'll demo
 
 ## What you do
 
-* when file is conflicted Rstudio markes it with a U (unmerged)
-* edit that file to resolve conflict by choosing which version you want
-* stage and commit the resolved file and push to GitHub
+-   when file is conflicted Rstudio marks it with a U (unmerged)
+-   edit that file to resolve conflict by choosing which version you want
+-   stage and commit the resolved file and push to GitHub
 
+# Practice {.scrollable}
 
-# For Next Class {.scrollable}
+-   add a collaborator to your repository
 
-* add a collaborator to your repository
+-   create a conflict by editing the same file and pushing/pulling
 
-* create a conflict by editing the same file and pushing/pulling
+-   edit the conflicted file to resolve the conflict and push the resolved version to GitHub
 
-* edit the conflicted file to resolve the conflict and push the resolved version to GitHub
+**IMPORTANT**
 
-**IMPORTANT** 
-
-you will have two R Projects - yours and your partners - make sure they are in separte places on your computer 
+you will have two R Projects - yours and your partners - make sure they are in separate places on your computer
 
 you should try this twice - once for each persons repository
-
-
-
-
-
-

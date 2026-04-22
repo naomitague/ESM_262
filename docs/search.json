@@ -32,21 +32,21 @@
     "href": "course-materials/week2.html",
     "title": "Git and Reproducible Workflows",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Git and Collaboration"
   },
   {
     "objectID": "course-materials/week2.html#lecture-materials",
     "href": "course-materials/week2.html#lecture-materials",
     "title": "Git and Reproducible Workflows",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub"
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Git and Collaboration"
   },
   {
     "objectID": "course-materials/week2.html#assignment-reminders",
     "href": "course-materials/week2.html#assignment-reminders",
     "title": "Git and Reproducible Workflows",
     "section": " Assignments",
-    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment - TBA\n16/4/2026\n20/4/2026 , 11:59pm PT"
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework for Git next week"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture4.modularity.html#output-is-a-sorted-version-of-saved-to-result",
@@ -210,11 +210,25 @@
     "text": "Now create a GitHub repo\nGitHub\nMultiple ways to do this..\nEasy from Rstudio, with usethis package\nBefore we start check your status by getting a situation report\n\ninstall.packages(\"usethis\")\nusethis::git_sitrep()\n\n\nCreate a GitHub repo\n\nrun the following in the R console\n\ninstall.packages(\"usethis\")\nusethis::use_git()        # initializes git\nusethis::use_github()     # creates the GitHub repo and links it\n\n\nGo to GitHub and check to see that all of your files are in your repo\n\nWhile you are there review the GitHub interface parts…any questions?"
   },
   {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#alternative",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#alternative",
+    "title": "Git Spring 2026",
+    "section": "Alternative",
+    "text": "Alternative\nYou can also create a repository on Github itself and then later link you local repository\nCaution if you do this, make sure to create the repository without a readme file, otherwise you will have to merge the two repositories (local and remote) which is a little more complicated\n\n\n\n\n\n\nNote\n\n\nif PAT doesn’t work, you can do this manually\n\nCreate a new repository (no readme file) on GitHub - give it a name\nin the Terminal window in R studio using\n\n\ngit init\ngit add .\ngit commit -m “Initial commit”\ngit branch -M main\ngit remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git\ngit push -u origin main"
+  },
+  {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#workflow---tracking-changes",
     "href": "course-materials/lecture-slides/lecture2.git-slides.html#workflow---tracking-changes",
     "title": "Git Spring 2026",
     "section": "Workflow - Tracking Changes",
     "text": "Workflow - Tracking Changes\n\nChange something in your Quarto file; you could just add a comment\nSave the file\n\n\nsee how this shows up in git tab in RStudio\n\n\nCommit\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by Push\nGo to github and check to see if your file and recent changes are there"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#adding-another-file",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#adding-another-file",
+    "title": "Git Spring 2026",
+    "section": "Adding another file",
+    "text": "Adding another file\n\nCreate a new file - another Quatro file that is a demonstration of how to find the total streamflow and total precipitation in each year and % of precip that becomes streamflow and then computes mean and standard deviation of across years. You can use the p301.csv file for this.\n\nIf you need a hint on how to do this - here’s some R code that you might use in the Quarto file\n\nlibrary(here)\nlibrary(tidyverse)\n# read in the data\np301 = read.csv(here(\"downloadables/Data\", \"p301.csv\"))\n\n# aggregate by water year\np301_yearly &lt;- p301 %&gt;%\n  group_by(wy) %&gt;%\n  summarise(total_streamflow = sum(streamflow),\n            total_precip = sum(precip),\n            percent_streamflow = (total_streamflow / total_precip) * 100)\n\n# calculate mean, range and standard deviation of percent streamflow across year\nmean(p301_yearly$percent_streamflow)\n\n[1] 25.50839\n\nrange(p301_yearly$percent_streamflow)\n\n[1]  0.00000 59.61193\n\nsd(p301_yearly$percent_streamflow)\n\n[1] 18.96631\n\n\n\nSave it into the appropriate directory ( using organized directory structures is good programming practice )\nAdd it to Git local\n\ngo to Git and then commit\nfind your file, should have a “?”, check so that it becomes an “A”\nadd a commit message\ncommit\n\nWhen you are ready Send changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
@@ -487,7 +501,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#git",
     "title": "Git Collaborate and Revise",
     "section": "Git",
-    "text": "Git\n\ngit local remote"
+    "text": "Git\n\ngit and github"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
@@ -497,11 +511,25 @@
     "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nGit Guides are a really wonderful resource to refer to!"
   },
   {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#credential-check",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#credential-check",
+    "title": "Git Collaborate and Revise",
+    "section": "Credential Check",
+    "text": "Credential Check\n\nto check that you have your git credentials set up correctly\nnote that before you connect to GitHub, it won’t know about branches etc\n\n\n#in RStudio\nusethis::git_sitrep()\n\n\n\n\n── Git global (user) \n\n\n• Name: \"Naomi Tague\"\n\n\n• Email: \"ctague@bren.ucsb.edu\"\n\n\n• Global (user-level) gitignore file:\n\n\n• Vaccinated: FALSE\n\n\nℹ See `usethis::git_vaccinate()` to learn more.\n\n\n• Default Git protocol: \"https\"\n\n\n• Default initial branch name: &lt;unset&gt;\n\n\n\n\n\n── GitHub user \n\n\n• Default GitHub host: \"https://github.com\"\n\n\n• Personal access token for \"https://github.com\": &lt;discovered&gt;\n\n\n• GitHub user: \"naomitague\"\n\n\n• Token scopes: \"gist\", \"repo\", \"user\", and \"workflow\"\n\n\n• Email(s): \"ctague@bren.ucsb.edu (primary)\" and \"tague@ucsb.edu\"\n\n\n\n\n\n── Active usethis project: \"/Users/naomitague/Courses/ESM_262\" ──\n\n\n\n\n\n── Git local (project) \n\n\n• Name: \"Naomi Tague\"\n\n\n• Email: \"ctague@bren.ucsb.edu\"\n\n\n• Default branch: \"main\"\n\n\n• Current local branch → remote tracking branch:\n\n\n  \"main\" → \"origin/main\"\n\n\n\n\n\n── GitHub project \n\n\n• Type = \"ours\"\n\n\n• Host = \"https://github.com\"\n\n\n• Config supports a pull request = TRUE\n\n\n• origin = \"naomitague/ESM_262\" (can push)\n\n\n• upstream = &lt;not configured&gt;\n\n\nℹ \"origin\" is both the source and primary repo.\n\n\nℹ Read more about the GitHub remote configurations that usethis supports at:\n\n\n  &lt;https://happygitwithr.com/common-remote-setups.html&gt;.\n\n\n\nalternatively you can use git config in terminal window to check your credentials\n\nConfig\ngit config –global –list"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#history-with-git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#history-with-git",
+    "title": "Git Collaborate and Revise",
+    "section": "History with GIT",
+    "text": "History with GIT\nlocally- use the little clock button or commit\n\nsee the history of your commits\nclick on a commit to see what changed\n\n\n\n\n\n\n\nNote\n\n\ninformative commit messages helps understand history"
+  },
+  {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
     "title": "Git Collaborate and Revise",
     "section": "Correcting Misktakes if you haven’t committed",
-    "text": "Correcting Misktakes if you haven’t committed\n\nmake a change and save\nclick revert to get rid of the changes that you don’t want\n\nI’ll try it"
+    "text": "Correcting Misktakes if you haven’t committed\n\nmake a change and save\nclick revert to get rid of the changes that you don’t want\n\nTry it"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
@@ -585,14 +613,14 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflict-markers-in-git",
     "title": "Git Collaborate and Revise",
     "section": "Conflict Markers in Git",
-    "text": "Conflict Markers in Git\nIn the file where the conflict occurs - Git marks it by\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - start of your local version\n======= - divider between your local version and Github version\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; commit-ID - the end of the conflicting changes from the remote\n\nLets try it"
+    "text": "Conflict Markers in Git\nIn the file where the conflict occurs - Git marks it by\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - start of your local version\n======= - divider between your local version and Github version\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; commit-ID - the end of the conflicting changes from the remote\n\nI’ll demo"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
     "title": "Git Collaborate and Revise",
     "section": "What you do",
-    "text": "What you do\n\nwhen file is conflicted Rstudio markes it with a U (unmerged)\nedit that file to resolve conflict by choosing which version you want\nstage and commit the resolved file and push to GitHub"
+    "text": "What you do\n\nwhen file is conflicted Rstudio marks it with a U (unmerged)\nedit that file to resolve conflict by choosing which version you want\nstage and commit the resolved file and push to GitHub"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#ways-to-generate-data",
@@ -606,7 +634,7 @@
     "href": "course-materials/lecture-slides/lecture3.datatypes.html#example",
     "title": "Data Types and Structures",
     "section": "Example",
-    "text": "Example\n\n# want to random start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=20, replace=T)\npick\n\n [1] 2000 2017 2017 2022 2022 2017 2013 2025 2006 2025 2004 2008 2019 2007 2015\n[16] 2018 2024 2010 2000 2017\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2003 2017 2000 2004 2011 2024 2019 2012 2010 2025 2001 2021 2009 2002 2008\n[16] 2006 2005 2020 2014 2023"
+    "text": "Example\n\n# want to random start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=20, replace=T)\npick\n\n [1] 2002 2006 2009 2025 2015 2006 2021 2000 2018 2020 2005 2009 2024 2022 2003\n[16] 2012 2010 2003 2020 2024\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2016 2015 2021 2002 2020 2008 2003 2022 2001 2017 2018 2012 2025 2010 2005\n[16] 2004 2000 2013 2019 2011"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#on-your-own",
@@ -712,5 +740,19 @@
     "title": "ESM 262",
     "section": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE",
     "text": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE\nLater in the course we will learn about using Git and Github\nfor reproducibility, collaboration and tracking code changes\nSetting up requires some use of the terminal in Rstudio, if you are familiar with that you can go ahead and set up - otherwise wait and we will take you through\n\n4. Git -\n\nCheck to see if git is installed\nOpen RStudio\nIn the Terminal, run the following command (choose the option for your operating system):\n\n\n Mac Windows\n\n\n\n\n\nRStudio Terminal\n\nwhich git\n\n\n\n\n\n\n\nRStudio Terminal\n\nwhere git\n\n\n\n\n\n\nIf you get something that looks like a file path to git on your computer (e.g. /usr/local/bin/git on a Mac, C:\\Program Files\\Git\\mingw64\\bin\\git.exe on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download & install git here: git-scm.com/downloads\n\n\n\n5. Create a GitHub account\n\nIf you don’t already have a GitHub account, go to https://github.com and create one. Check out Jenny Bryan’s Happy Git with R, Ch. 4 for some helpful considerations when choosing a username. We suggest that you use a personal email or your @bren.ucsb.edu email when setting up your account (rather than your @ucsb.edu email, which will be deactivated after you graduate).\n\n\n\n6. Configure git\n\nIn RStudio, open the Terminal. Run the following commands (by pressing return after each line). Be sure to replace the username (keep the quotation marks!) with your GitHub username and the email with the email you used for your GitHub account.\n\n\n\n\nRStudio Terminal\n\ngit config --global user.name \"Jane Doe\"\ngit config --global user.email janedoe@example.com\n\n\n\nThen, in the Terminal run the following, and carefully check that the name and email returned match your GitHub information:\n\n\n\n\nRStudio Terminal\n\ngit config --list --global\n\n\n\n\n\n\n\n\nImportantFOR FUTURE REFERENCE: If you’re configuring git on a Bren server (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal\n\n\n\n\n\n\nRStudio Terminal\n\ngit config --global credential.helper 'cache --timeout=10000000'\n\n\nThis prevents important credentials (e.g. a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You do not need to complete this step when configuring git on your local computer.\n\n\n\n\n7. Store your GitHub personal access token (PAT)\nFirst: What even is a personal access token? From GitHub’s documentation:\n\nPersonal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.\n\nThis means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. Importantly, you’ll need to generate a PAT for each computer you wish to work from. For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:\n\nOnce you have git configured successfully, install the {usethis} package in R by running the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\ninstall.packages(\"usethis\")\n\n\nA lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.\n\n\n\n\n\n\n\n\n\n\nRun the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\nusethis::create_github_token() \n\n\n\nEnter your GitHub password if/when prompted. You’ll be taken to a screen that looks like this:\n\n\n\n\n\n\n\n\n\n\n\nIn the Note field, you should see some autopopulated text: R:GITHUB_PAT. We suggest changing this to something that signifies what machine it’s being used for. For example, if you are generating a PAT for your laptop, you might choose to rename it, My Personal Laptop.\nNext, you’ll see a section called Select scopes with reasonable options already selected for you. Do not change anything. Just scroll down to the bottom of that page and click the green Generate token button:\n\n\n\n\n\n\n\n\n\n\n\nCopy the generated PAT to your clipboard\nBack in RStudio, run the following in the Console:\n\n\n\n\nRStudio Console\n\ngitcreds::gitcreds_set()\n\n\nThis will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):\n\n\n\n\n\n\n\n\n\n\nIn the RStudio Console, run:\n\n\n\n\nRStudio Console\n\nusethis::git_sitrep()\n\n\nDoes it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteA note on expiring tokens:\n\n\n\nSetting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it’s time to regenerate a token that’s about to expire. Follow the email prompts, then use gitcreds::gitcreds_set() to reset your token.\n\n\n\n~ END Installation Guide ~"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#information-about-your-project-git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#information-about-your-project-git",
+    "title": "Git Collaborate and Revise",
+    "section": "Information about your project git",
+    "text": "Information about your project git\nHere are some useful commands if you run into set up issues (and in general)\n\nto check that you have your git credentials set up correctly\n\n\n#To see all info about your credentials and current repo\n#note that before you connect to GitHub the first time, it won't know about branches etc\nusethis::git_sitrep()\n\n\n\n\n── Git global (user) \n\n\n• Name: \"Naomi Tague\"\n\n\n• Email: \"ctague@bren.ucsb.edu\"\n\n\n• Global (user-level) gitignore file:\n\n\n• Vaccinated: FALSE\n\n\nℹ See `usethis::git_vaccinate()` to learn more.\n\n\n• Default Git protocol: \"https\"\n\n\n• Default initial branch name: &lt;unset&gt;\n\n\n\n\n\n── GitHub user \n\n\n• Default GitHub host: \"https://github.com\"\n\n\n• Personal access token for \"https://github.com\": &lt;discovered&gt;\n\n\n• GitHub user: \"naomitague\"\n\n\n• Token scopes: \"gist\", \"repo\", \"user\", and \"workflow\"\n\n\n• Email(s): \"ctague@bren.ucsb.edu (primary)\" and \"tague@ucsb.edu\"\n\n\n\n\n\n── Active usethis project: \"/Users/naomitague/Courses/ESM_262\" ──\n\n\n\n\n\n── Git local (project) \n\n\n• Name: \"Naomi Tague\"\n\n\n• Email: \"ctague@bren.ucsb.edu\"\n\n\n• Default branch: \"main\"\n\n\n• Current local branch → remote tracking branch:\n\n\n  \"main\" → \"origin/main\"\n\n\n\n\n\n── GitHub project \n\n\n• Type = \"ours\"\n\n\n• Host = \"https://github.com\"\n\n\n• Config supports a pull request = TRUE\n\n\n• origin = \"naomitague/ESM_262\" (can push)\n\n\n• upstream = &lt;not configured&gt;\n\n\nℹ \"origin\" is both the source and primary repo.\n\n\nℹ Read more about the GitHub remote configurations that usethis supports at:\n\n\n  &lt;https://happygitwithr.com/common-remote-setups.html&gt;.\n\n# just to check who you are\ngh::gh_whoami()\n\n{\n  \"name\": \"Naomi Tague\",\n  \"login\": \"naomitague\",\n  \"html_url\": \"https://github.com/naomitague\",\n  \"scopes\": \"gist, repo, user, workflow\",\n  \"token\": \"ghp_...Q3GE\"\n} \n\n\n\nalternatively you can use git config in terminal window to check your credentials\n\nConfig\ngit config –global –list\n\n\n\n\n\n\nNote\n\n\nWhat about a new computer? Can I reuse my access token (PAT) Yes if you saved it,\n\n#gitcreds::gitcreds_set()"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#checking-your-remote",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#checking-your-remote",
+    "title": "Git Collaborate and Revise",
+    "section": "Checking your remote",
+    "text": "Checking your remote\nTo find your current GitHub repository (e.g what repo names is on GitHub)\n\nusethis::git_remotes()\n\n$origin\n[1] \"https://github.com/naomitague/ESM_262.git\"\n\n\nCan also find under Git tab in Rstudio project setup will show you remote\nIn terminal, try\ngit remote -v"
   }
 ]
