@@ -12,6 +12,6 @@ I can explore
 * reset
 * checkout
 
-Lets make this one committed
+Lets make this one committed this time
 
 # What about conflicts 
