@@ -14,5 +14,5 @@ I can explore
 
 Lets make this one committed
 
-# What about conflicts 
+# What about conflicts a different issue here 
 Now I'm going to edit on github
