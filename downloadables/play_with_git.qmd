@@ -14,5 +14,6 @@ I can explore
 
 Lets make this one committed
 
-# What about conflicts - I can make a change here and commit it and then make a change on github and see what happens when I pull the changes to my local repo
-Now I'm going to edit on github
+# What about conflicts - fixed the mess
+
+
