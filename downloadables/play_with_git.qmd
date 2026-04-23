@@ -6,7 +6,8 @@ author: Naomi
 ---
 
 I'm going to create a conflict
-# Use this to play with git and github
+
+\# Use this to play with git and github
 
 I can explore \* revert \* reset \* checkout
 
