@@ -5,6 +5,7 @@ format: html
 author: Naomi
 ---
 
+change the same file from github (or your collaborator)
 # Use this to play with git and github
 
 I can explore 
