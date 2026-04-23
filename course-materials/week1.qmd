@@ -10,8 +10,9 @@ description: "Monday April 14^th^, 2026"
 
 | Lecture slides | Materials | Reading |
 |----------------|------------------|------------------|
-| [Lecture 1.1: topic Intro](lecture-slides/lecture1.intro-slides.qmd){target="_blank"}   |<a href="../downloadables/week1/hello.qmd" download>Download hello.qmd</a>| [Communications of the ACM](../downloadables/Papers/AIinComputingEducation.pdf) <br> [Practical overview/perspective](../downloadables/Papers/perspectives_ai_coding.pdf) <br> [Recent review on potential harmful consequences](../downloadables/Papers/review-of-harms-fromAIcodingedu.pdf) |
-| [Lecture 1.2: topic Quarto](lecture-slides/lecture1.quarto-slides.qmd){target="_blank"} |<a href="../downloadables/week1/p301.csv" download>Download p301.csv</a> | |
+| [Lecture 1.1: topic Intro](lecture-slides/lecture1.intro-slides.qmd){target="_blank"}   |<a href="../downloadables/Quarto/hello.qmd" download>Download hello.qmd</a>| [Communications of the ACM](../downloadables/Papers/AIinComputingEducation.pdf) <br> [Practical overview/perspective](../downloadables/Papers/perspective_ai_coding.pdf) <br> [Recent review on potential harmful consequences](../downloadables/Papers/AIharmcodingedu.pdf) |
+| [Lecture 1.2: topic Quarto](lecture-slides/lecture1.quarto-slides.qmd){target="_blank"} |<a href="../downloadables/Data/p301.csv" download>Download p301.csv</a> | |
+
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |

@@ -7,7 +7,9 @@ project:
     - "assignments.qmd"
     - "resources.qmd"
     - "install-guide.qmd"
-    - "!downloadables/**"
+    - "!downloadables/Data/**"
+    - "!downloadables/Quarto/**"
+    
   resources:
     - downloadables/**
     
@@ -24,8 +26,8 @@ website:
         menu:
           - text: week 1 
             href: course-materials/week1.qmd
-#          - text: week 2 
-#            href: course-materials/week2.qmd
+          - text: week 2 
+            href: course-materials/week2.qmd
       - text: assignments
         href: assignments.qmd
       - text: resources

@@ -3,7 +3,7 @@ title: 'Quarto- Spring 2026'
 format:
   revealjs:
     theme: solarized
-    resources: ["images"]
+resources: ["images"]
 editor: visual
 execute:
   echo: true
@@ -16,7 +16,9 @@ execute:
 ## Classic Example of Quarto
 
 -   download [hello.qmd](%22../downloadables/Quarto/hello.qmd%22) from the course website
--   open it in RStudio
+format:
+  revealjs:
+    theme: solarized-   open it in RStudio
 
 ## Rendering
 
@@ -28,8 +30,6 @@ In Rstudio - you have two views of the *quarto* document
 
 -   *Source* view is where you write your code and markdown.
 -   *Visual* view is where you see the final output of your document.
-
-
 
 ## Lets go through the code in hello.qmd and see how it works
 
@@ -67,54 +67,82 @@ Other formats include
 
 You may need to install additional software to use some of these formats (e.g. pandoc, latex).
 
+Try it with *hello.qmd* - change format
+
+format:
+
+revealjs:
+
+```         
+theme: solarized
+```
+
+[Indentation Matters in YAML]{style="color: orange;"}
+
+## A bit more on YAML
+
+YAML stands for "YAML Ain't markup Language"
+
+its a human readable way to control and configure applications/documents
+
+Also used in
+
+-   GitHub Actions
+-   automate code testing and deployment of website
+-   Docker code containers
+-   Automating R documentation
+
 ## Yaml Header {.scrollable}
 
-Some other things you can put in YAML header 
+Some other things you can put in YAML header
 
-- author 
-- date
-- resources (e.g. images, css files) 
-- format (for presentations)
+-   author
+-   date
+-   resources (e.g. images, css files)
+-   format (for presentations)
 
-Some Format types can include themes 
+Try adding an author and date
+
+-   author: "Naomi Tague"
+-   date: "2024-06-01"
+
+# Format in YAML header {.scrollable}
+
+Some Format types can include themes
 
 For presentation format (**revealjs**) themes include
 
-- solarized 
-- night 
-- sky
+-   solarized
+-   night
+-   sky
 
-To add format and theme in YAML header, indentation matters
+To add format and theme in YAML header, *indentation matters*
 
-format:
-  revealjs:
-    theme: sky
+format: revealjs: theme: sky
 
 ## Resources
 
 Resources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.
 
-resources: ["../images/"]
+resources: \["../images/"\]
 
 # Paths to resources can be relative or absolute.
 
-Paths will be relative to the location of your .qmd file. 
+Paths will be relative to the location of your .qmd file.
 
 So if you have an image in a folder called "images" that is in the same directory as your .qmd file, you can specify the path to that image as "images/image.png".
 
-
-
-## Yaml Execute
+## YAML Execute
 
 The `execute` section of the YAML header sets how code chunks are executed. For example,
 
-- `echo: false`. 
-- `warning: false`
-- `message: false`
+-   `echo: false`.
+-   `warning: false`
+-   `message: false`
 
 You can overrides in an R code chunk header by adding
 
-- #/ echo: true
+-   #/ echo: true
 
 ## R Code Chunks
 
@@ -122,15 +150,25 @@ Should be familiar to you - much like R Markdown.
 
 Quarto can also include chunks in other languages
 
-- Python
-- JavaScript.
+-   Python
+-   JavaScript.
 
 ## Lets look at the code in *hello.qmd* and see how it works {.scrollable}
 
-```{r}
-#|label: load-packages
-#|include: false
+NOTE - code chunks have options that control how they are executed and how they appear in the final document.
 
+```{r}
+#| label: load-packages
+#| include: FALSE
+#| echo: FALSE
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+Alternative
+
+```{r, load-packagesalt, include=TRUE, echo=TRUE}
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -161,7 +199,7 @@ ggplot(penguins,
   theme_minimal()
 ```
 
-## Play
+## Play {.scrollable}
 
 Make some changes to the hello.qmd
 
@@ -169,17 +207,15 @@ Make some changes to the hello.qmd
 -   add a new R code chunk
 -   add some markdown content
 -   change to a presentation by replacing html in YAML header
-    - format: revealjs: 
-    - theme: solarized
+    -   format: revealjs:
+    -   theme: solarized
 -   try a different theme
 -   render the document and see how it works!
 
-
-## Set up R enviroment in Quarto
+## Set up R enviroment in Quarto {.scrollable}
 
 -   start with a setup R chunk at the top to load all packages
--  can also  set global options for your code chunks (e.g. echo, warning, message) but better to do in quarto YAML header   
-
+-   can also set global options for your code chunks (e.g. echo, warning, message) but better to do in quarto YAML header
 
 ```{r}
 #| label: setup
@@ -202,6 +238,15 @@ knitr::opts_chunk$set(
 
 -   use the "include" option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)
 
+## Assignment 1
+
+Goal: Practice working with Quarto and 'wake-up' you Data Analysis skills from 206
+
+Dataset of Estimated Biological, Hydrologic and Climate Variables for a field site in the California Sierra
+
+[P301 Watershed](https://czo-archive.criticalzone.org/sierra/infrastructure/field-area/providence-creek-subcatchment-p301/)
+
+Use your educated intuition to explore (find relationships/patterns of interest).
 
 ## Start working on Assignment 1
 

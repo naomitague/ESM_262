@@ -17,7 +17,7 @@ library(here)
 knitr::include_graphics(here::here("images/whoIam.jpeg"))
 ```
 
-## [Course description]{style="color:orange"}{.scrollable}
+## [Course description]{style="color:orange"} {.scrollable}
 
 ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.
 
@@ -50,7 +50,7 @@ Teaching Team
 -   **email** (ojassarup\@ucsb.edu )
 -   **git user id** osarup
 
-## [Learning objectives]{style="color:orange"}{.scrollable}
+## [Learning objectives]{style="color:orange"} {.scrollable}
 
 -   practice partner coding and reproducible workflows
 
@@ -64,7 +64,7 @@ Teaching Team
 
 -   learn some new Rskills that are helpful for a wide variety of data science applications
 
-## [Computing set up]{style="color:orange"}{.scrollable}
+## [Computing set up]{style="color:orange"} {.scrollable}
 
 -   Please complete the install-guide on the course website
 
@@ -80,8 +80,6 @@ Class time will involve lectures and working on practical applications . This wa
 
 Why structure it this way? You learn to code by doing - not so much by watching others do!
 
-
-
 # Using AI-tools in this course
 
 -   AI-tools great resources but effective use requires understanding how to ask good questions
@@ -95,8 +93,9 @@ Why structure it this way? You learn to code by doing - not so much by watching 
 -   For assignments/practice
 
     -   **Always** write the code yourself -
-    
+
     -   Supportive ways to use AI-tools
+
         -   use AI-tools to help find syntax
         -   Use AI-tools to explain other peoples code (including class examples)
         -   Use AI-tools to help interpret error messages

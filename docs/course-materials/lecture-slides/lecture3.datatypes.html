@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <title>ESM 262 – Data Types and Structures</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,7 @@
 <span id="cb3-2"><a></a>firestarts <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">100</span>)</span>
 <span id="cb3-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">firestarts=</span>firestarts), <span class="fu">aes</span>(firestarts))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -261,7 +261,7 @@
 <span id="cb5-2"><a></a>otterweight <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)</span>
 <span id="cb5-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(otterweight), <span class="fu">aes</span>(otterweight))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -274,7 +274,7 @@
 <span id="cb7-2"><a></a>otterweight <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">2000</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)</span>
 <span id="cb7-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(otterweight), <span class="fu">aes</span>(otterweight))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -288,15 +288,15 @@
 <span id="cb9-3"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
 <span id="cb9-4"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2011 2007 2018 2004 2000 2024 2020 2000 2016 2012 2010 2005 2025 2020 2014
-[16] 2004 2023 2000 2019 2015</code></pre>
+<pre><code> [1] 2002 2006 2009 2025 2015 2006 2021 2000 2018 2020 2005 2009 2024 2022 2003
+[16] 2012 2010 2003 2020 2024</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># no repeat years</span></span>
 <span id="cb11-2"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>F)</span>
 <span id="cb11-3"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2024 2013 2019 2003 2008 2012 2021 2007 2006 2005 2016 2014 2009 2011 2025
-[16] 2001 2002 2020 2015 2004</code></pre>
+<pre><code> [1] 2016 2015 2021 2002 2020 2008 2003 2022 2001 2017 2018 2012 2025 2010 2005
+[16] 2004 2000 2013 2019 2011</code></pre>
 </div>
 </div>
 </section></section>
@@ -344,7 +344,7 @@
 <span id="cb17-2"><a></a>ozone_sample <span class="ot">=</span> <span class="fu">sample</span>(airquality<span class="sc">$</span>Ozone, <span class="at">size=</span><span class="dv">5</span>, <span class="at">replace=</span>F)</span>
 <span id="cb17-3"><a></a>ozone_sample</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] NA  8 NA 13 85</code></pre>
+<pre><code>[1] 11  9 18 14 NA</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># plot our sample days</span></span>
 <span id="cb19-2"><a></a></span>
@@ -355,7 +355,7 @@
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
@@ -412,10 +412,10 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb29-7"><a></a><span class="co"># because possible.fish was a factor catch1 will be a factor</span></span>
 <span id="cb29-8"><a></a>catch1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "steelhead" "salmon"    "tuna"      "salmon"    "shark"     "salmon"   
- [7] "salmon"    "cod"       "salmon"    "cod"       "shark"     "cod"      
-[13] "cod"       "salmon"    "tuna"      "salmon"    "shark"     "steelhead"
-[19] "cod"       "salmon"   </code></pre>
+<pre><code> [1] "cod"       "tuna"      "tuna"      "tuna"      "tuna"      "salmon"   
+ [7] "cod"       "cod"       "tuna"      "tuna"      "tuna"      "shark"    
+[13] "salmon"    "cod"       "cod"       "shark"     "steelhead" "tuna"     
+[19] "tuna"      "salmon"   </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -430,7 +430,7 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb33-6"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      cod    salmon     shark steelhead      tuna 
-        5         8         3         2         2 </code></pre>
+        5         3         2         1         9 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">plot</span>(catch1, <span class="at">col=</span><span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
@@ -443,18 +443,18 @@ Levels: 1 1.3 4 22</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># maximum frequency</span></span>
 <span id="cb38-2"><a></a><span class="fu">max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
+<pre><code>[1] 9</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="co"># which fish was most frequently caught</span></span>
 <span id="cb40-2"><a></a><span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>salmon 
-     2 </code></pre>
+<pre><code>tuna 
+   5 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="co">#to get just the name </span></span>
 <span id="cb42-2"><a></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "salmon"</code></pre>
+<pre><code>[1] "tuna"</code></pre>
 </div>
 </div>
 <img data-src="lecture3.datatypes_files/figure-revealjs/fishes-1.png" width="960" class="r-stretch"></section>
@@ -502,7 +502,7 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb44-5"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_histogram(stat = "count"): Ignoring unknown parameters:
-`binwidth` and `bins`</code></pre>
+`binwidth`, `bins`, and `pad`</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -516,7 +516,7 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb46-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_histogram(stat = "count"): Ignoring unknown parameters:
-`binwidth` and `bins`</code></pre>
+`binwidth`, `bins`, and `pad`</code></pre>
 </div>
 <div class="cell-output-display">
 <div>

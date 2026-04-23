@@ -1,15 +1,17 @@
 ---
-title: "Assignment #1"
-subtitle: "Assigned Thursday 16/04/2026| Due Monday 20/04/2026"
+title: "Assignment #1: Quarto Data Analysis"
+subtitle: "Assigned Thursday 16/04/2026 Due Monday 20/04/2026"
+format: pdf
+author: "Naomi Tague"
 ---
 
 Work with a partner!
 
 1. Download and read in  *p301.csv* - find it under materials for Week 1
 
-2. In an Quarto document, complete two data-analysis task (whatever you think might be interesting)
+2. In an Quarto document, complete two data-analysis tasks (whatever you think might be interesting)
 
-3. Documents your motivation, and comment on results
+3. In your document, describe your motivation, and comment on results
 
 4. Render your Quarto complete with code, comments and results
 
