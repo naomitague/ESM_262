@@ -7,6 +7,8 @@ author: Naomi
 
 # Use this to play with git and github
 
+make this mistake a bit more permanant
+
 I can explore 
 * revert
 * reset
