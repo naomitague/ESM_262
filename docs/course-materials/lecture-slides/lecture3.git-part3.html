@@ -28,6 +28,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-832775eafbd512325564c8c290c39367.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -139,15 +205,53 @@
 <section id="git" class="slide level2">
 <h2>Git</h2>
 
-<img data-src="images/week2/gitconcept.png" class="r-stretch quarto-figure-center"><p class="caption">git local remote</p></section>
-<section id="conflicts" class="slide level2 scrollable">
-<h2>Conflicts</h2>
+<img data-src="images/week2/git_workflow_diagram.svg" class="r-stretch quarto-figure-center"><p class="caption">git conflicts</p></section>
+<section id="conflicts-review" class="slide level2 scrollable">
+<h2>Conflicts Review</h2>
+<ul>
+<li><p>note that conflicts must be resolved before continuing</p></li>
+<li><p>remember if you really mess up you can <em>revert</em> to earlier version</p></li>
+<li><p>frequent <em>push</em> and <em>pull</em> can help avoid conflicts</p></li>
+</ul>
 </section>
-<section id="branching-and-forking" class="slide level2">
-<h2>Branching and Forking</h2>
+<section id="branching" class="slide level2">
+<h2>Branching</h2>
+<p>Sometimes you want to experiment with a new feature or make a change that might break things, could get messy to do this with <em>commit</em> and then <em>revert</em> if it doesn’t work</p>
+<p><em>Git</em> thought of this and created <em>branching</em></p>
+<p><em>Branching</em> allows you to create a separate version of your code where you can make changes without affecting the main version (called <em>main</em> branch)</p>
+<p>Later once branch is working you can, if desired, <em>merge</em> into <em>main</em> branch</p>
 </section>
-<section id="getting-other-repos" class="slide level2">
-<h2>Getting other repos</h2>
+<section id="branching-1" class="slide level2">
+<h2>Branching</h2>
+
+<img data-src="images/week3/git_branching_animals.svg" class="r-stretch quarto-figure-center"><p class="caption">git branchings</p></section>
+<section id="lets-try" class="slide level2">
+<h2>Lets try</h2>
+<ul>
+<li><p>working in your class repo</p></li>
+<li><p>create a new branch called <em>experiment</em></p></li>
+<li><p>add a new quarto document, and in it describe some data analysis that you’d like to experiment with</p></li>
+</ul>
+</section>
+<section id="merging" class="slide level2">
+<h2>Merging</h2>
+<ul>
+<li><p>in a collaborative project, or if you want to maintain a good copy of your code, you might want to merge branch back into main</p></li>
+<li><p>go back to <em>main</em> branch on git</p></li>
+<li><p><em>pull</em> to get any recent changes</p></li>
+<li><p>click <em>merge</em> and select the branch you want to merge in</p></li>
+</ul>
+<p>or in terminal</p>
+<p><em>git merge experiment</em></p>
+<p>Try it</p>
+</section>
+<section id="forking" class="slide level2">
+<h2>Forking</h2>
+<p>Forking is more removed than branching - it creates a new (copy) of the entire repository under your GitHub account</p>
+<p>Forks are their own <em>repo</em></p>
+<p>How do forks interact with original? - fork can pull from original repo - to integrate back to original <em>pull request</em> is initiated and owner of original decides whether to accept it</p>
+<p>Forks are good when you are working independently - might not want to integrate changes - not closely collaborating with owner of original</p>
+<p>We won’t practice <em>forks</em> here but good to know</p>
 </section>
 <section id="recall-useful-git-commands-in-terminal" class="slide level2 scrollable">
 <h2>Recall useful Git commands in Terminal</h2>
@@ -161,47 +265,108 @@
 <li><p><code>git commit -a -m "your commit message"</code> - commits all your changes with a message describing what you did.</p></li>
 <li><p><code>git add filename</code> - stages a file for commit (you need to stage files before you can commit them)</p></li>
 <li><p><code>git checkout -- filename</code> - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)</p></li>
+<li><p><code>git branch branchname</code> - creates a new branch with the name “branchname”</p></li>
+<li><p><code>git checkout branchname</code> - switches to the branch “branchname”</p></li>
+<li><p><code>git merge branchname</code> - merges the branch “branchname” into the current branch</p></li>
 </ul>
 </section>
-<section id="collaboration-with-github" class="slide level2">
-<h2>Collaboration with GitHub</h2>
+<section id="assignment-2-git-and-stream-temperature" class="slide level2">
+<h2>Assignment 2: Git and Stream Temperature</h2>
+<p>For this assignment, you will work in pairs</p>
+<p>First download some USGS data on stream temperature from the Willametter River in Oregon</p>
+<p>Here’s some R code to download it, * X_00010_00003 is the water temperature in C</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co">#install.packages("dataRetrieval")</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(dataRetrieval)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>siteNumbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"14211720"</span>, <span class="st">"14211010"</span>, <span class="st">"14166000"</span>)</span>
+<span id="cb1-5"><a></a>parameterCd <span class="ot">&lt;-</span> <span class="st">"00010"</span>  <span class="co"># water temperature</span></span>
+<span id="cb1-6"><a></a>startDate <span class="ot">&lt;-</span> <span class="st">"2010-01-01"</span></span>
+<span id="cb1-7"><a></a>endDate <span class="ot">&lt;-</span> <span class="st">"2023-12-31"</span></span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a>temp_data <span class="ot">&lt;-</span> <span class="fu">readNWISdv</span>(siteNumbers, parameterCd, startDate, endDate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in readNWISdv(siteNumbers, parameterCd, startDate, endDate): NWIS
+servers are slated for decommission. Please begin to migrate to
+read_waterdata_daily.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>GET: https://waterservices.usgs.gov/nwis/dv/?site=14211720%2C14211010%2C14166000&amp;format=waterml%2C1.1&amp;ParameterCd=00010&amp;StatCd=00003&amp;startDT=2010-01-01&amp;endDT=2023-12-31</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># rename columns for clarity</span></span>
+<span id="cb4-2"><a></a><span class="fu">colnames</span>(temp_data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"agency_cd"</span>, <span class="st">"site_no"</span>, <span class="st">"Date"</span>, <span class="st">"temp_C"</span>)</span>
+<span id="cb4-3"><a></a><span class="co"># extract some date info for use later</span></span>
+<span id="cb4-4"><a></a>temp_data<span class="sc">$</span>month <span class="ot">=</span> <span class="fu">month</span>(temp_data<span class="sc">$</span>Date, <span class="at">label=</span><span class="cn">TRUE</span>)</span>
+<span id="cb4-5"><a></a>temp_data<span class="sc">$</span>year <span class="ot">=</span> <span class="fu">year</span>(temp_data<span class="sc">$</span>Date)</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a><span class="co"># check by plotting</span></span>
+<span id="cb4-8"><a></a><span class="fu">ggplot</span>(temp_data, <span class="fu">aes</span>(<span class="at">x=</span>Date, <span class="at">y=</span>temp_C, <span class="at">color=</span>site_no)) <span class="sc">+</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-10"><a></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Stream Temperature at Willamette River Sites"</span>,</span>
+<span id="cb4-11"><a></a>       <span class="at">x=</span><span class="st">"Date"</span>, <span class="at">y=</span><span class="st">"Temperature (°C)"</span>, <span class="at">color=</span><span class="st">"Site Number"</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-<img data-src="images/week2/gitandgithub.jpg" class="r-stretch quarto-figure-center"><p class="caption">git and github</p></section>
-<section>
-<section id="packages-in-r" class="title-slide slide level1 center">
-<h1><span style="color:orange">PACKAGES in R</span></h1>
+</div>
+<img data-src="lecture3.git-part3_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><p>Working together create a new repository that you will share</p>
+<ul>
+<li>add a quarto file, with nice documentation, that downloads the data (call it something informative)</li>
+<li>also store the data in the repository (e.g.&nbsp;as a csv or RData file) so that you can work with it without having to download it again</li>
+<li>in your quarto file, add the option to load the data instead of accessing from NWIS server</li>
+<li>add a code chunk that plots the data (e.g.&nbsp;using ggplot)</li>
+<li>add a code chunk that calculates some summary statistics (e.g.&nbsp;mean, max, min temperature for each site)</li>
+</ul>
+<p>Make sure you push to <em>GitHub</em>.</p>
+<p>Now imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if the slope (trend) is positive (increasing) or negative (decreasing) and c) if there are differences between sites</p>
+<p>Have each partner focus on trends for a different month</p>
+<p>Here’s some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)</p>
+<ul>
+<li>Estimate for <em>year</em> tells you slope for first site</li>
+<li>Estimate for <em>year:site_no14211010</em>, <em>year:site_no14211720</em> tells you how much greater (if positive) slope is for this site relative to first site</li>
+<li>Estimates for <em>Intercept</em> and <em>site_no14211010</em>, <em>site_no14211010</em> set the baseline temperature to make regression work. You won’t use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-2"><a></a><span class="co"># filter for July temperatures</span></span>
+<span id="cb5-3"><a></a>july_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(temp_data, month <span class="sc">==</span> <span class="st">"Jul"</span>)</span>
+<span id="cb5-4"><a></a><span class="co"># fit a GLM model to see if there is a trend in July temperatures over time, separated by site</span></span>
+<span id="cb5-5"><a></a>july_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(temp_C <span class="sc">~</span> year<span class="sc">*</span>site_no, <span class="at">data =</span> july_data)</span>
+<span id="cb5-6"><a></a><span class="fu">summary</span>(july_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = temp_C ~ year * site_no, data = july_data)
 
-</section>
-<section id="definitions" class="slide level2">
-<h2><span style="color:orange">Definitions</span></h2>
+Coefficients:
+                       Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)          -278.16357   39.88799  -6.974 4.91e-12 ***
+year                    0.14714    0.01978   7.439 1.85e-13 ***
+site_no14211010      -172.34776   56.41460  -3.055  0.00230 ** 
+site_no14211720       -76.71493   56.49555  -1.358  0.17473    
+year:site_no14211010    0.08592    0.02798   3.071  0.00218 ** 
+year:site_no14211720    0.03982    0.02802   1.421  0.15550    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 2.759493)
+
+    Null deviance: 7333  on 1298  degrees of freedom
+Residual deviance: 3568  on 1293  degrees of freedom
+AIC: 5012.9
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<p>Each partner creates their own branch, and does their own analysis, in a separate quarto document, based on a particular month (e.g.&nbsp;one person does July, another might pick August, etc.) and then pushes to GitHub</p>
+<p>Then merge your branches back into main and create a summary document (quarto), that analyzes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager</p>
+<p>Turn in your <em>GitHub</em> repo link on Canvas</p>
+<p>Grading Rubric</p>
 <ul>
-<li><strong>Package</strong>: An extension of the R base system with functions, data and documentation in standardized format.</li>
-<li><strong>Library</strong>: A directory containing installed packages.</li>
-<li><strong>Repository</strong>: A website providing packages for installation.</li>
-<li><strong>Source</strong>: The original version of a package with human-readable text and code.</li>
-<li><strong>Binary</strong>: A compiled version of a package with computer-readable text and code, may work only on a specic platform.</li>
-<li><strong>Base packages</strong>: Part of the R source tree, maintained by R Core.</li>
-<li><strong>Recommended packages</strong>: Part of every R installation, but not necessarily maintained by R Core.</li>
-<li><strong>Contributed packages</strong>: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.</li>
-<li><strong>User packages</strong>: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R</li>
+<li>Code is well documented and organized (20 points)</li>
+<li>Created a new repository and added a quarto file with code to download, load, and analyze the data (20 points)</li>
+<li>Each partner created a branch and analyzed trends for a particular month, correctly interpreting trends in temperature and differences between sites (20 points)</li>
+<li>Merged branches back into main (20 points)</li>
+<li>Summary plot and meaningful analysis of your conclusion from the data analysis (20 points)</li>
 </ul>
-</section></section>
-<section id="installing-user-packages" class="title-slide slide level1 center">
-<h1><span style="color:orange">Installing User Packages</span></h1>
-<ul>
-<li><p>looks similar to CRAN packages</p></li>
-<li><p>uncompiled (they can be compiled but not always) so you can <strong>see</strong> the code</p></li>
-</ul>
-<p>You can load my package <em>rainbow</em> by</p>
-<ul>
-<li>downloading <em>rainbow.tar.gz </em>
-<ul>
-<li>DON’T UNZIP</li>
-</ul></li>
-<li>install from a <em>package archive</em></li>
-</ul>
-<p>Alternatively you can install from <em>github</em> - you need the <em>devtools</em> library to do this</p>
-<p>install_github(“naomitague/rainbow”)</p>
 
 
 </section>

@@ -3,11 +3,13 @@ title: 'Intro- Spring 2026'
 format:
   revealjs:
     theme: solarized
-    resources: ["images/Week1"]
+resources: ["../images/"]
 editor: visual
 ---
 
-## Attendance
+## Syllabus
+
+## Attendance{.scrollable}
 
 1.  Why Attendance Matters
 
@@ -17,7 +19,7 @@ editor: visual
 
 -   asking questions and getting help in real time
 
--   building connections with peers and instructors \*\*YOUR CONTRIBUTIONS MATTER - we learn together\*\*
+-   building connections with peers and instructors \*\* YOUR CONTRIBUTIONS MATTER - we learn togetheer \*\*
 
 -   some assignments and quizzes are done in class
 
@@ -37,9 +39,16 @@ editor: visual
 
 Should we use it? When? How? Why? Why not?
 
--   used I use tools like ChatGPT, github copilot to help me in this course?
+There are pro's and con's to using AI-tools while you are learning coding
 
--   benefit/costs?
+Tools
+
+-   Github Copilot (widely used by programmers)
+-   ChatGPT, Claude Code
+
+What are the pro's?
+What are the con's?
+
 
 ## Some thoughtful papers for further reading
 
@@ -47,13 +56,17 @@ High level perspective
 
 -   includes some thoughts on job market preparation
 
--   [Communications of the ACM](%22../papers/AIinComputingEducation.pdf%22)
+-   [Communications of the ACM](%22../dpwmloadables/papers/AIinComputingEducation.pdf%22)
 
--   [Practical overview/perspective](%22../papers/perspectives_ai_coding.pdf%22)
+-   [Practical overview/perspective](%22../downloadables/papers/perspectives_ai_coding.pdf%22)
 
+<<<<<<< HEAD
 -   [Recent review on potential harmful consequences](%22../papers/review-of-harms-fromAIcodingedu.pdf%22)
+=======
+-   [Recent review on potential harmful consequenses](%22../downloadables/papers/review-of-harms-fromAIcodingedu.pdf%22)
+>>>>>>> 0b302df00959c7723cc0f84e5b35bfbbce776307
 
-# Using AI-tools in this course
+## Using AI-tools in this course{.scrollable}
 
 -   AI-tools great resources but effective use requires understanding how to ask good questions
 
@@ -64,14 +77,45 @@ High level perspective
 -   For assignments/practice
 
     -   **Always** write the code yourself -
-    -   How we will use AI - tools later in the course
+    -   we will engage with AI-tools later in the course
     -   Supportive ways to use AI-tools
         -   Use AI-tools to help find syntax
         -   Use AI-tools to explain other peoples code (including class examples)
         -   Use AI-tools to help interpret error messages
 
-# Homework (not-graded)
 
--   Complete Installation Part 1
+## Quarto
+
+Quarto is a scientific and technical publishing system built on Pandoc (a universal document converter). It enables you to combine content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+Its a lot like R Markdown, but with more features and capabilities.
+
+similarities to Jupyter Notebooks, but with more features and capabilities.
+
+## Classic Example of Quarto
+
+-   download [hello.qmd](%22../downloadables/Quarto/hello.qmd%22) from the course website
+-   open it in RStudio
+
+## Rendering
+
+To render a Quarto document, use the "Render" button in RStudio.
+
+When you render a Quarto document, it will execute all the code chunks and include the output in the final document.
+
+In Rstudio - you have two views of the *quarto* document
+
+-   *Source* view is where you write your code and markdown.
+-   *Visual* view is where you see the final output of your document.
+
+
+## Try it
+
+make sure you can render *hello.qmd* and see the output in the visual view.
+
+AND before next class
+
+-   Complete Installation 
 -   Complete the getting to know you survey
 -   Read one of the AI papers and think of one thing you found interesting
+

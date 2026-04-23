@@ -74,49 +74,63 @@
     "href": "course-materials/lecture-slides/lecture3.git-part3.html#git",
     "title": "Git Part 3",
     "section": "Git",
-    "text": "Git\n\ngit local remote"
+    "text": "Git\n\ngit conflicts"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#conflicts",
-    "href": "course-materials/lecture-slides/lecture3.git-part3.html#conflicts",
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#conflicts-review",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#conflicts-review",
     "title": "Git Part 3",
-    "section": "Conflicts",
-    "text": "Conflicts"
+    "section": "Conflicts Review",
+    "text": "Conflicts Review\n\nnote that conflicts must be resolved before continuing\nremember if you really mess up you can revert to earlier version\nfrequent push and pull can help avoid conflicts"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#branching-and-forking",
-    "href": "course-materials/lecture-slides/lecture3.git-part3.html#branching-and-forking",
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#branching",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#branching",
     "title": "Git Part 3",
-    "section": "Branching and Forking",
-    "text": "Branching and Forking"
+    "section": "Branching",
+    "text": "Branching\nSometimes you want to experiment with a new feature or make a change that might break things, could get messy to do this with commit and then revert if it doesn’t work\nGit thought of this and created branching\nBranching allows you to create a separate version of your code where you can make changes without affecting the main version (called main branch)\nLater once branch is working you can, if desired, merge into main branch"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#getting-other-repos",
-    "href": "course-materials/lecture-slides/lecture3.git-part3.html#getting-other-repos",
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#branching-1",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#branching-1",
     "title": "Git Part 3",
-    "section": "Getting other repos",
-    "text": "Getting other repos"
+    "section": "Branching",
+    "text": "Branching\n\ngit branchings"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#lets-try",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#lets-try",
+    "title": "Git Part 3",
+    "section": "Lets try",
+    "text": "Lets try\n\nworking in your class repo\ncreate a new branch called experiment\nadd a new quarto document, and in it describe some data analysis that you’d like to experiment with"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#merging",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#merging",
+    "title": "Git Part 3",
+    "section": "Merging",
+    "text": "Merging\n\nin a collaborative project, or if you want to maintain a good copy of your code, you might want to merge branch back into main\ngo back to main branch on git\npull to get any recent changes\nclick merge and select the branch you want to merge in\n\nor in terminal\ngit merge experiment\nTry it"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#forking",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#forking",
+    "title": "Git Part 3",
+    "section": "Forking",
+    "text": "Forking\nForking is more removed than branching - it creates a new (copy) of the entire repository under your GitHub account\nForks are their own repo\nHow do forks interact with original? - fork can pull from original repo - to integrate back to original pull request is initiated and owner of original decides whether to accept it\nForks are good when you are working independently - might not want to integrate changes - not closely collaborating with owner of original\nWe won’t practice forks here but good to know"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#recall-useful-git-commands-in-terminal",
     "href": "course-materials/lecture-slides/lecture3.git-part3.html#recall-useful-git-commands-in-terminal",
     "title": "Git Part 3",
     "section": "Recall useful Git commands in Terminal",
-    "text": "Recall useful Git commands in Terminal\n\ngit status - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)\ngit log - shows you the commit history with commit messages and IDs\ngit diff - shows you the differences between your current files and the last commit (what changes you have made)\ngit push - pushes your local commits to GitHub\ngit pull - pulls the latest changes from GitHub to your local repository\ngit commit filename -m \"your commit message\" - commits your changes to the file with a message describing what you did.\ngit commit -a -m \"your commit message\" - commits all your changes with a message describing what you did.\ngit add filename - stages a file for commit (you need to stage files before you can commit them)\ngit checkout -- filename - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)"
+    "text": "Recall useful Git commands in Terminal\n\ngit status - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)\ngit log - shows you the commit history with commit messages and IDs\ngit diff - shows you the differences between your current files and the last commit (what changes you have made)\ngit push - pushes your local commits to GitHub\ngit pull - pulls the latest changes from GitHub to your local repository\ngit commit filename -m \"your commit message\" - commits your changes to the file with a message describing what you did.\ngit commit -a -m \"your commit message\" - commits all your changes with a message describing what you did.\ngit add filename - stages a file for commit (you need to stage files before you can commit them)\ngit checkout -- filename - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)\ngit branch branchname - creates a new branch with the name “branchname”\ngit checkout branchname - switches to the branch “branchname”\ngit merge branchname - merges the branch “branchname” into the current branch"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#collaboration-with-github",
-    "href": "course-materials/lecture-slides/lecture3.git-part3.html#collaboration-with-github",
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#assignment-2-git-and-stream-temperature",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#assignment-2-git-and-stream-temperature",
     "title": "Git Part 3",
-    "section": "Collaboration with GitHub",
-    "text": "Collaboration with GitHub\n\ngit and github"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#definitions",
-    "href": "course-materials/lecture-slides/lecture3.git-part3.html#definitions",
-    "title": "Git Part 3",
-    "section": "Definitions",
-    "text": "Definitions\n\nPackage: An extension of the R base system with functions, data and documentation in standardized format.\nLibrary: A directory containing installed packages.\nRepository: A website providing packages for installation.\nSource: The original version of a package with human-readable text and code.\nBinary: A compiled version of a package with computer-readable text and code, may work only on a specic platform.\nBase packages: Part of the R source tree, maintained by R Core.\nRecommended packages: Part of every R installation, but not necessarily maintained by R Core.\nContributed packages: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.\nUser packages: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R"
+    "section": "Assignment 2: Git and Stream Temperature",
+    "text": "Assignment 2: Git and Stream Temperature\nFor this assignment, you will work in pairs\nFirst download some USGS data on stream temperature from the Willametter River in Oregon\nHere’s some R code to download it, * X_00010_00003 is the water temperature in C\n\n#install.packages(\"dataRetrieval\")\nlibrary(dataRetrieval)\n\nsiteNumbers &lt;- c(\"14211720\", \"14211010\", \"14166000\")\nparameterCd &lt;- \"00010\"  # water temperature\nstartDate &lt;- \"2010-01-01\"\nendDate &lt;- \"2023-12-31\"\n\ntemp_data &lt;- readNWISdv(siteNumbers, parameterCd, startDate, endDate)\n\nWarning in readNWISdv(siteNumbers, parameterCd, startDate, endDate): NWIS\nservers are slated for decommission. Please begin to migrate to\nread_waterdata_daily.\n\n\nGET: https://waterservices.usgs.gov/nwis/dv/?site=14211720%2C14211010%2C14166000&format=waterml%2C1.1&ParameterCd=00010&StatCd=00003&startDT=2010-01-01&endDT=2023-12-31\n\n# rename columns for clarity\ncolnames(temp_data) &lt;- c(\"agency_cd\", \"site_no\", \"Date\", \"temp_C\")\n# extract some date info for use later\ntemp_data$month = month(temp_data$Date, label=TRUE)\ntemp_data$year = year(temp_data$Date)\n\n# check by plotting\nggplot(temp_data, aes(x=Date, y=temp_C, color=site_no)) +\n  geom_line() +\n  labs(title=\"Stream Temperature at Willamette River Sites\",\n       x=\"Date\", y=\"Temperature (°C)\", color=\"Site Number\") +\n  theme_minimal()\n\n\nWorking together create a new repository that you will share\n\nadd a quarto file, with nice documentation, that downloads the data (call it something informative)\nalso store the data in the repository (e.g. as a csv or RData file) so that you can work with it without having to download it again\nin your quarto file, add the option to load the data instead of accessing from NWIS server\nadd a code chunk that plots the data (e.g. using ggplot)\nadd a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)\n\nMake sure you push to GitHub.\nNow imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if the slope (trend) is positive (increasing) or negative (decreasing) and c) if there are differences between sites\nHave each partner focus on trends for a different month\nHere’s some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)\n\nEstimate for year tells you slope for first site\nEstimate for year:site_no14211010, year:site_no14211720 tells you how much greater (if positive) slope is for this site relative to first site\nEstimates for Intercept and site_no14211010, site_no14211010 set the baseline temperature to make regression work. You won’t use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)\n\n\nlibrary(tidyverse)\n# filter for July temperatures\njuly_data &lt;- subset(temp_data, month == \"Jul\")\n# fit a GLM model to see if there is a trend in July temperatures over time, separated by site\njuly_model &lt;- glm(temp_C ~ year*site_no, data = july_data)\nsummary(july_model)\n\n\nCall:\nglm(formula = temp_C ~ year * site_no, data = july_data)\n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)          -278.16357   39.88799  -6.974 4.91e-12 ***\nyear                    0.14714    0.01978   7.439 1.85e-13 ***\nsite_no14211010      -172.34776   56.41460  -3.055  0.00230 ** \nsite_no14211720       -76.71493   56.49555  -1.358  0.17473    \nyear:site_no14211010    0.08592    0.02798   3.071  0.00218 ** \nyear:site_no14211720    0.03982    0.02802   1.421  0.15550    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 2.759493)\n\n    Null deviance: 7333  on 1298  degrees of freedom\nResidual deviance: 3568  on 1293  degrees of freedom\nAIC: 5012.9\n\nNumber of Fisher Scoring iterations: 2\n\n\nEach partner creates their own branch, and does their own analysis, in a separate quarto document, based on a particular month (e.g. one person does July, another might pick August, etc.) and then pushes to GitHub\nThen merge your branches back into main and create a summary document (quarto), that analyzes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager\nTurn in your GitHub repo link on Canvas\nGrading Rubric\n\nCode is well documented and organized (20 points)\nCreated a new repository and added a quarto file with code to download, load, and analyze the data (20 points)\nEach partner created a branch and analyzed trends for a particular month, correctly interpreting trends in temperature and differences between sites (20 points)\nMerged branches back into main (20 points)\nSummary plot and meaningful analysis of your conclusion from the data analysis (20 points)"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#pair-and-share",
@@ -217,18 +231,11 @@
     "text": "A few things to note\n\nthere are ways to add git and github to an existing project Happy Git is a good resource here\nwhat is .gitignore\n\nThis file tells git the types of files you don’t want to track W\n\nautomatically generated files that collaborators don’t need (re-generated by R)\nreally big files you don’t want to share\nprivate stuff you don’t want to share\ncomputer specific stuff (usually also auto-generated)"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#comments-on-papers",
-    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#comments-on-papers",
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#paper-thoughts",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#paper-thoughts",
     "title": "Quarto- Spring 2026",
-    "section": "Comments on papers",
-    "text": "Comments on papers"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#quarto",
-    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#quarto",
-    "title": "Quarto- Spring 2026",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto is a scientific and technical publishing system built on Pandoc. It enables you to combine content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\nIts a lot like R Markdown, but with more features and capabilities.\nsimilarities to Jupyter Notebooks, but with more features and capabilities."
+    "section": "Paper Thoughts?",
+    "text": "Paper Thoughts?"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#classic-example-of-quarto",
@@ -256,35 +263,42 @@
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-content",
     "title": "Quarto- Spring 2026",
     "section": "Markdown Content",
-    "text": "Markdown Content\nWhat you are familiar with\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks (text here!)\nBold (double asterisk) & italics (single asterisk)"
+    "text": "Markdown Content\nWhat you are familiar with\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
     "title": "Quarto- Spring 2026",
     "section": "YAML header",
-    "text": "YAML header\nThe YAML header is where you specify\n\nthe title of your document,\nthe output format, and other metadata.\n\nIn this example, the output format is revealjs, which is a presentation format.\nOther formats include\n\nhtml\npdf\nword\n\nYou may need to install additional software to use some of these formats (e.g. pandoc, latex)."
+    "text": "YAML header\nThe YAML header is where you specify\n\nthe title of your document,\nthe output format, and other metadata.\n\nIn this quarto, the output format is revealjs, which is a presentation format.\nOther formats include\n\nhtml\npdf\nword\n\nYou may need to install additional software to use some of these formats (e.g. pandoc, latex)."
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
     "title": "Quarto- Spring 2026",
     "section": "Yaml Header",
-    "text": "Yaml Header\nSome other things you can put in YAML header - author - date - resources (e.g. images, css files) - theme (for presentations)\nResources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.\nPaths will be relative to the location of your .qmd file. So if you have an image in a folder called “images” that is in the same directory as your .qmd file, you can specify the path to that image as “images/image.png”.\nSome themes for presentaion inlucde - solarized - metropolis - night - sky"
+    "text": "Yaml Header\nSome other things you can put in YAML header\n\nauthor\ndate\nresources (e.g. images, css files)\nformat (for presentations)\n\nSome Format types can include themes\nFor presentation format (revealjs) themes include\n\nsolarized\nnight\nsky\n\nTo add format and theme in YAML header, indentation matters\nformat: revealjs: theme: sky"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#resources",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#resources",
+    "title": "Quarto- Spring 2026",
+    "section": "Resources",
+    "text": "Resources\nResources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.\nresources: [“../images/”]"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-execute",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-execute",
     "title": "Quarto- Spring 2026",
     "section": "Yaml Execute",
-    "text": "Yaml Execute\nThe execute section of the YAML header sets how code chunks are executed. For example, - echo: false. - warning: false - message: false.\nYou can overrides in an R code chunk using\n#| echo: true"
+    "text": "Yaml Execute\nThe execute section of the YAML header sets how code chunks are executed. For example,\n\necho: false.\nwarning: false\nmessage: false\n\nYou can overrides in an R code chunk header by adding\n\n#/ echo: true"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-and-code-chunks",
-    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-and-code-chunks",
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#r-code-chunks",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#r-code-chunks",
     "title": "Quarto- Spring 2026",
-    "section": "Markdown and Code Chunks",
-    "text": "Markdown and Code Chunks\nShould be familiar to you - much like R Markdown.\nQuarto can also include other languages, such as Python, Julia, and JavaScript."
+    "section": "R Code Chunks",
+    "text": "R Code Chunks\nShould be familiar to you - much like R Markdown.\nQuarto can also include chunks in other languages\n\nPython\nJavaScript."
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-look-at-the-code-in-hello.qmd-and-see-how-it-works",
@@ -305,14 +319,21 @@
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#play",
     "title": "Quarto- Spring 2026",
     "section": "Play",
-    "text": "Play\nMake some changes to the hello.qmd\n\nchange the title\nadd a new R code chunk\nadd some markdown content\nchange to a presentation by replacing html in YAML header “format: revealjs: theme: solarized”\ntry a different theme\nrender the document and see how it works!"
+    "text": "Play\nMake some changes to the hello.qmd\n\nchange the title\nadd a new R code chunk\nadd some markdown content\nchange to a presentation by replacing html in YAML header\n\nformat: revealjs:\ntheme: solarized\n\ntry a different theme\nrender the document and see how it works!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#set-up-r-enviroment-in-quarto",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#set-up-r-enviroment-in-quarto",
+    "title": "Quarto- Spring 2026",
+    "section": "Set up R enviroment in Quarto",
+    "text": "Set up R enviroment in Quarto\n\nstart with a setup R chunk at the top to load all packages\ncan also set global options for your code chunks (e.g. echo, warning, message) but better to do in quarto YAML header\n\n\nlibrary(here)\n\nhere() starts at /Users/naomitague/Desktop/Courses/ESM_262\n\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(\n  echo = TRUE,\n  warning = FALSE,\n  message = FALSE\n)"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
     "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
     "title": "Quarto- Spring 2026",
     "section": "Some Hints",
-    "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nstart with a setup R chunk at the top to load all packages and set global options for your code chunks (e.g. echo, warning, message)\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
+    "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#start-working-on-assignment-1",
@@ -350,11 +371,18 @@
     "text": "Tidy Data Review\nExample untidy / wide data:\n\n# create some untidy temperature data ----\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\n# print it out ----\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\nUsing pivot_longer() to “lengthen” / tidy our data:\n\n# convert data from wide &gt; long ----\ntemp_data_long &lt;- temp_data_wide |&gt; \n  pivot_longer(cols = starts_with(\"station\"),\n               names_to = \"station_id\",\n               values_to = \"temp_c\")\n\n# print it out ----\nprint(temp_data_long)\n\n# A tibble: 9 × 3\n  date       station_id temp_c\n  &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n1 2023-10-01 station1     30.1\n2 2023-10-01 station2     29.8\n3 2023-10-01 station3     31.2\n4 2023-11-01 station1     28.6\n5 2023-11-01 station2     29.1\n6 2023-11-01 station3     33.4\n7 2023-12-01 station1     29.9\n8 2023-12-01 station2     28.5\n9 2023-12-01 station3     32.3"
   },
   {
-    "objectID": "course-materials/assignments/HW1.html",
-    "href": "course-materials/assignments/HW1.html",
-    "title": "Assignment #1",
+    "objectID": "course-materials/assignments/HW2.html",
+    "href": "course-materials/assignments/HW2.html",
+    "title": "ESM 262",
     "section": "",
-    "text": "Work with a partner!\n\nDownload and read in p301.csv - find it under materials for Week 1\nIn an Quarto document, complete two data-analysis task (whatever you think might be interesting)\nDocuments your motivation, and comment on results\nRender your Quarto complete with code, comments and results\nSubmit pdf on Canvas for Assignment 1\n\nYou can be creative here - you could summarize precipitation by water year, find the mean annual precipitation and then graph annual time series (don’t pick this one, since I suggested it :) You could look at the relationship between two variables using regression or correlation; you could split the data in some way and do a t-test to look at whether means are different; you could look at trends. Its up to you\n\nThe data\np301.csv\nClimate and estimates of water and forest carbon information from USFS experimental watershed in the Southern California Sierra (above Fresno )\n\n\nWhat the variables are (metadata)\n\n\n\n\n\n\n\n\n\n\nVariable\nDescription\nUnits\n\n\n\n\nmonth\nMonth\n\n\n\nyear\nYear\n\n\n\nday\nDay\n\n\n\nwy\nWater Year (Oct–Sept hydrologic year)\n\n\n\ntmax\nMaximum daily temperature\n°C\n\n\ntmin\nMinimum daily temperature\n°C\n\n\nprecip\nDepth of precipitation\nmm\n\n\ntranspiration\nEstimated forest transpiration\nm/m²/day\n\n\nevaporation\nEstimated evaporation\nm/m²/day\n\n\nNPP\nEstimated net carbon uptake by trees\nkgC/m²/day\n\n\nplant_carbon\nEstimated standing biomass in units of carbon\nkg/m²\n\n\nstreamflow\nStreamflow (per watershed area)\nm/m²/day\n\n\nsnowpack\nAmount of snow on the ground (water equivalent)\nm/m²\n\n\ndirect solar\nIncoming direct solar radiation\nkJ/m²/day\n\n\ndiffuse solar\nIncoming diffuse solar radiation\nkJ/m²/day"
+    "text": "title: “Assignment #2” subtitle: “Assigned Tuesday 28/04/2026| Due Monday 04/05/2026” —"
+  },
+  {
+    "objectID": "course-materials/assignments/HW2.html#assignment-2-git-and-stream-temperature",
+    "href": "course-materials/assignments/HW2.html#assignment-2-git-and-stream-temperature",
+    "title": "ESM 262",
+    "section": "Assignment 2: Git and Stream Temperature",
+    "text": "Assignment 2: Git and Stream Temperature\nFor this assignment, you will work in pairs\nFirst download some USGS data on stream temperature from the Willametter River in Oregon\nHere’s some R code to download it, * X_00010_00003 is the water temperature in C\n\n#install.packages(\"dataRetrieval\")\nlibrary(dataRetrieval)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.6\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.1     ✔ tibble    3.3.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.2\n✔ purrr     1.2.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nsiteNumbers &lt;- c(\"14211720\", \"14211010\", \"14166000\")\nparameterCd &lt;- \"00010\"  # water temperature\nstartDate &lt;- \"2010-01-01\"\nendDate &lt;- \"2023-12-31\"\n\ntemp_data &lt;- readNWISdv(siteNumbers, parameterCd, startDate, endDate)\n\nWarning in readNWISdv(siteNumbers, parameterCd, startDate, endDate): NWIS\nservers are slated for decommission. Please begin to migrate to\nread_waterdata_daily.\n\n\nGET: https://waterservices.usgs.gov/nwis/dv/?site=14211720%2C14211010%2C14166000&format=waterml%2C1.1&ParameterCd=00010&StatCd=00003&startDT=2010-01-01&endDT=2023-12-31\n\n# rename columns for clarity\ncolnames(temp_data) &lt;- c(\"agency_cd\", \"site_no\", \"Date\", \"temp_C\")\n# extract some date info for use later\ntemp_data$month = month(temp_data$Date, label=TRUE)\ntemp_data$year = year(temp_data$Date)\n\n# check by plotting\nggplot(temp_data, aes(x=Date, y=temp_C, color=site_no)) +\n  geom_line() +\n  labs(title=\"Stream Temperature at Willamette River Sites\",\n       x=\"Date\", y=\"Temperature (°C)\", color=\"Site Number\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWorking together create a new repository that you will share\n\nadd a quarto file, with nice documentation, that downloads the data (call it something informative)\nalso store the data in the repository (e.g. as a csv or RData file) so that you can work with it without having to download it again\nin your quarto file, add the option to load the data instead of accessing from NWIS server\nadd a code chunk that plots the data (e.g. using ggplot)\nadd a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)\n\nMake sure you push to GitHub.\nNow imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if the slope (trend) is positive (increasing) or negative (decreasing) and c) if there are differences between sites\nHave each partner focus on trends for a different month\nHere’s some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)\n\nEstimate for year tells you slope for first site\nEstimate for year:site_no14211010, year:site_no14211720 tells you how much greater (if positive) slope is for this site relative to first site\nEstimates for Intercept and site_no14211010, site_no14211010 set the baseline temperature to make regression work. You won’t use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)\n\n\nlibrary(tidyverse)\n# filter for July temperatures\njuly_data &lt;- subset(temp_data, month == \"Jul\")\n# fit a GLM model to see if there is a trend in July temperatures over time, separated by site\njuly_model &lt;- glm(temp_C ~ year*site_no, data = july_data)\nsummary(july_model)\n\n\nCall:\nglm(formula = temp_C ~ year * site_no, data = july_data)\n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)          -278.16357   39.88799  -6.974 4.91e-12 ***\nyear                    0.14714    0.01978   7.439 1.85e-13 ***\nsite_no14211010      -172.34776   56.41460  -3.055  0.00230 ** \nsite_no14211720       -76.71493   56.49555  -1.358  0.17473    \nyear:site_no14211010    0.08592    0.02798   3.071  0.00218 ** \nyear:site_no14211720    0.03982    0.02802   1.421  0.15550    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 2.759493)\n\n    Null deviance: 7333  on 1298  degrees of freedom\nResidual deviance: 3568  on 1293  degrees of freedom\nAIC: 5012.9\n\nNumber of Fisher Scoring iterations: 2\n\n\nEach partner creates their own branch, and does their own analysis, in a separate quarto document, based on a particular month (e.g. one person does July, another might pick August, etc.) and then pushes to GitHub\nThen merge your branches back into main and create a summary document (quarto), that analyzes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager\nTurn in your GitHub repo link on Canvas\nGrading Rubric\n\nCode is well documented and organized (20 points)\nCreated a new repository and added a quarto file with code to download, load, and analyze the data (20 points)\nEach partner created a branch and analyzed trends for a particular month, correctly interpreting trends in temperature and differences between sites (20 points)\nMerged branches back into main (20 points)\nSummary plot and meaningful analysis of your conclusion from the data analysis (20 points)"
   },
   {
     "objectID": "assignments.html",
@@ -362,6 +390,13 @@
     "title": "Assignments",
     "section": "",
     "text": "ImportantImportant: 11:59 PM submission deadline\n\n\n\nAll assignments are due at 11:59 PM on the dates listed in the table, below.\n\n\n\n\n\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHomework Assignment #1\n16/4/2026\n20/4/2026\n\n\nHomework Assignment #2\nDD/MM/YYY\nDD/MM/YYY\n\n\nHomework Assignment #3\nDD/MM/YYY\nDD/MM/YYY\n\n\nHomework Assignment #4\nDD/MM/YYY\nDD/MM/YYY"
+  },
+  {
+    "objectID": "course-materials/assignments/HW1.html",
+    "href": "course-materials/assignments/HW1.html",
+    "title": "Assignment #1",
+    "section": "",
+    "text": "Work with a partner!\n\nDownload and read in p301.csv - find it under materials for Week 1\nIn an Quarto document, complete two data-analysis task (whatever you think might be interesting)\nDocuments your motivation, and comment on results\nRender your Quarto complete with code, comments and results\nSubmit pdf on Canvas for Assignment 1\n\nYou can be creative here - you could summarize precipitation by water year, find the mean annual precipitation and then graph annual time series (don’t pick this one, since I suggested it :) You could look at the relationship between two variables using regression or correlation; you could split the data in some way and do a t-test to look at whether means are different; you could look at trends. Its up to you\n\nThe data\np301.csv\nClimate and estimates of water and forest carbon information from USFS experimental watershed in the Southern California Sierra (above Fresno )\n\n\nWhat the variables are (metadata)\n\n\n\n\n\n\n\n\n\n\nVariable\nDescription\nUnits\n\n\n\n\nmonth\nMonth\n\n\n\nyear\nYear\n\n\n\nday\nDay\n\n\n\nwy\nWater Year (Oct–Sept hydrologic year)\n\n\n\ntmax\nMaximum daily temperature\n°C\n\n\ntmin\nMinimum daily temperature\n°C\n\n\nprecip\nDepth of precipitation\nmm\n\n\ntranspiration\nEstimated forest transpiration\nm/m²/day\n\n\nevaporation\nEstimated evaporation\nm/m²/day\n\n\nNPP\nEstimated net carbon uptake by trees\nkgC/m²/day\n\n\nplant_carbon\nEstimated standing biomass in units of carbon\nkg/m²\n\n\nstreamflow\nStreamflow (per watershed area)\nm/m²/day\n\n\nsnowpack\nAmount of snow on the ground (water equivalent)\nm/m²\n\n\ndirect solar\nIncoming direct solar radiation\nkJ/m²/day\n\n\ndiffuse solar\nIncoming diffuse solar radiation\nkJ/m²/day"
   },
   {
     "objectID": "course-materials/discussion-materials/week1-discussion-slides.html#title-slide",
@@ -378,18 +413,25 @@
     "text": "Slide title"
   },
   {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#syllabus",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#syllabus",
+    "title": "Intro- Spring 2026",
+    "section": "Syllabus",
+    "text": "Syllabus"
+  },
+  {
     "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
     "href": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
     "title": "Intro- Spring 2026",
     "section": "Attendance",
-    "text": "Attendance\n\nWhy Attendance Matters\n\n\nhands-on learning in class\nstaying on track with course material and assignments\nasking questions and getting help in real time\nbuilding connections with peers and instructors ** YOUR CONTRIBUTIONS ARE MATTER - we learn togetheer **\nsome assignments and quizes are done in class\n\n\nMissing a class\n\n\nif you are sick - stay home! -health is key\nemail Ojas and I so we know\ncheck course website and Canvas for lectures/assignments\n\ngo through them\nattend Ojas’s office hours if you have questions\nemail us with questions\n\nif you need to be late for an assignment - let us know in advance\nfor group assignments or quizes in class, we can let you know how to make up\nif absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs"
+    "text": "Attendance\n\nWhy Attendance Matters\n\n\nhands-on learning in class\nstaying on track with course material and assignments\nasking questions and getting help in real time\nbuilding connections with peers and instructors ** YOUR CONTRIBUTIONS MATTER - we learn togetheer **\nsome assignments and quizes are done in class\n\n\nMissing a class\n\n\nif you are sick - stay home! -health is key\nemail Ojas and I so we know\ncheck course website and Canvas for lectures/assignments\n\ngo through them\nattend Ojas’s office hours if you have questions\nemail us with questions\n\nif you need to be late for an assignment - let us know in advance\nfor group assignments or quizes in class, we can let you know how to make up\nif absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
     "href": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
     "title": "Intro- Spring 2026",
     "section": "new AI tools and Data Science",
-    "text": "new AI tools and Data Science\nShould we use it? When? How? Why? Why not?\n\nused I use tools like ChatGPT, github copilot to help me in this course?\nbenefit/costs?"
+    "text": "new AI tools and Data Science\nShould we use it? When? How? Why? Why not?\nThere are pro’s and con’s to using AI-tools while you are learning coding\nTools\n\nGithub Copilot (widely used by programmers)\nChatGPT, Claude Code\n\nWhat are the pro’s? What are the con’s?"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#some-thoughful-papers-for-further-reading",
@@ -397,6 +439,41 @@
     "title": "Intro- Spring 2026",
     "section": "Some thoughful papers for further reading",
     "text": "Some thoughful papers for further reading\nHigh level perspective\n\nincludes some thoughts on job market preparation\nCommunications of the ACM\nPractical overview/perspective\nRecent review on potential harmful consequenses"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#using-ai-tools-in-this-course",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#using-ai-tools-in-this-course",
+    "title": "Intro- Spring 2026",
+    "section": "Using AI-tools in this course",
+    "text": "Using AI-tools in this course\n\nAI-tools great resources but effective use requires understanding how to ask good questions\nUse this course to build that understanding,\nYou gain skills by Practicing, so start without AI-tools\nFor assignments/practice\n\nAlways write the code yourself -\nwe will engage with AI-tools later in the course\nSupportive ways to use AI-tools\n\nuse AI-tools to help find syntax\nUse AI-tools to explain other peoples code (including class examples)\nUse AI-tools to help interpret error messages"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#quarto",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#quarto",
+    "title": "Intro- Spring 2026",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is a scientific and technical publishing system built on Pandoc (a universal document converter). It enables you to combine content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\nIts a lot like R Markdown, but with more features and capabilities.\nsimilarities to Jupyter Notebooks, but with more features and capabilities."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#classic-example-of-quarto",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#classic-example-of-quarto",
+    "title": "Intro- Spring 2026",
+    "section": "Classic Example of Quarto",
+    "text": "Classic Example of Quarto\n\ndownload hello.qmd from the course website\nopen it in RStudio"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#rendering",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#rendering",
+    "title": "Intro- Spring 2026",
+    "section": "Rendering",
+    "text": "Rendering\nTo render a Quarto document, use the “Render” button in RStudio.\nWhen you render a Quarto document, it will execute all the code chunks and include the output in the final document.\nIn Rstudio - you have two views of the quarto document\n\nSource view is where you write your code and markdown.\nVisual view is where you see the final output of your document."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#try-it",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#try-it",
+    "title": "Intro- Spring 2026",
+    "section": "Try it",
+    "text": "Try it\nmake sure you can render hello.qmd and see the output in the visual view.\nAND before next class\n\nComplete Installation\nComplete the getting to know you survey\nRead one of the AI papers and think of one thing you found interesting"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git",
@@ -483,11 +560,46 @@
     "text": "Try it\n\nwith a partner, add each other to your repo\nstart a new Rproject -\n\nselect the option to clone from existing repo\nmake sure you save different directory than your original project!\n\nmake a change (maybe add a file, edit their quarto file, etc.)\n\ncommit and push\n\ncheck on GitHub to see if your change is there"
   },
   {
-    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#homework",
-    "href": "course-materials/lecture-slides/lecture2.git-collab.html#homework",
-    "title": "Git Continued",
-    "section": "homework",
-    "text": "homework\nFor practice - add an additional piece of data analysis to your partner’s quarto file and commit and push the change to GitHub"
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts",
+    "title": "Git Collaborate and Revise",
+    "section": "Conflicts",
+    "text": "Conflicts\n\ngit conflicts"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts-1",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts-1",
+    "title": "Git Collaborate and Revise",
+    "section": "Conflicts",
+    "text": "Conflicts\n\nwhat happens if you and your collaborator change the same file and try to push/pull\nthis could be you from two different computers :)\nGit and GitHub manage this\n\nGithub will try to merge the changes\nif it can’t (you both changed the same line or something like that) - Conflict\n\nwhen a Conflict occurs\n\nGit rewrites the file to show you the conflicting changes using markers"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflict-markers-in-git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflict-markers-in-git",
+    "title": "Git Collaborate and Revise",
+    "section": "Conflict Markers in Git",
+    "text": "Conflict Markers in Git\nIn the file where the conflict occurs - Git marks it by\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - start of your local version\n======= - divider between your local version and Github version\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; commit-ID - the end of the conflicting changes from the remote\n\nLets try it"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
+    "title": "Git Collaborate and Revise",
+    "section": "What you do",
+    "text": "What you do\n\nwhen file is conflicted Rstudio markes it with a U (unmerged)\nedit that file to resolve conflict by choosing which version you want\nstage and commit the resolved file and push to GitHub"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#ways-to-generate-data",
+    "href": "course-materials/lecture-slides/lecture3.datatypes.html#ways-to-generate-data",
+    "title": "Data Types and Structures",
+    "section": "Ways to generate data",
+    "text": "Ways to generate data\nFor testing your code, often helpful to generate test data\nWe also often generate random data to explore the behavior of our code and to understand how it works\n-   *runif(min,max)* (sampling from a uniform distribution)\n-   *rnorm(mean,sd)* (sampling from uniform and normal distributions)\n-   *rpois(lambda)* (sampling from a Poisson distribution)\n(many other options - here’s a good cheatsheet for random number generation in R\nRandom Generation\nOther ways to generate data\n-   *sample(vector,size,replace)* (sampling from a vector of values)\n\n-   *seq(start,end,by)* (for creating a sequence of numbers)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#example",
+    "href": "course-materials/lecture-slides/lecture3.datatypes.html#example",
+    "title": "Data Types and Structures",
+    "section": "Example",
+    "text": "Example\n\n# want to random start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=20, replace=T)\npick\n\n [1] 2011 2007 2018 2004 2000 2024 2020 2000 2016 2012 2010 2005 2025 2020 2014\n[16] 2004 2023 2000 2019 2015\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2024 2013 2019 2003 2008 2012 2021 2007 2006 2005 2016 2014 2009 2011 2025\n[16] 2001 2002 2020 2015 2004"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#on-your-own",
@@ -501,28 +613,56 @@
     "href": "course-materials/lecture-slides/lecture3.datatypes.html#strings-and-how-to-work-with-them",
     "title": "Data Types and Structures",
     "section": "Strings and how to work with them",
-    "text": "Strings and how to work with them\nIn R"
+    "text": "Strings and how to work with them\nStrings are character data types that are used to represent text\nAll programming languages have ways to deal with strings Some commonly used R functions - paste and paste0 for concatenating strings together - strsplit for splitting strings into parts - sprintf for creating formatted strings - gsub for replacing parts of strings - tolower and toupper for changing case - nchar for counting the number of characters in a string\nMost of these are easy to use - just look at help for the function and try it out\nsprintf however takes some specialized knowledge"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#creating-strings-with-sprintf",
     "href": "course-materials/lecture-slides/lecture3.datatypes.html#creating-strings-with-sprintf",
     "title": "Data Types and Structures",
     "section": "Creating strings with sprintf",
-    "text": "Creating strings with sprintf\nsprintf\nsome useful syntax if you want to generate strings\n\n%s replace with a string\n%d replace with an integer value\n%f replace with a real value\n%4.1f replace with a real value with 4 digist, two after decimal\n\\n add a line return\n\nTry it\nmake a string with sprintf and add to plot title\nThe syntax of sprintf is a bit weird but it is very useful for creating informative text and plot titles of course you can also use paste and paste0 but sprintf gives you more control over formatting\nAND sprintf syntax is used in many other programing languages\n\n# use results for creating text\n# sprintf creates a string %s mean use what ever is after the , to fill in a string\nplottitle=sprintf(\"We like %s\", names(which.max(summary(catch1))))\n\nggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=\"count\")+labs(title=plottitle)\n\nWarning in geom_histogram(stat = \"count\"): Ignoring unknown parameters:\n`binwidth` and `bins`\n\n\n\n\n\n\n\n\n# you can also add numbers to the string\nplottitle=sprintf(\"We mostly caught %s \\n max catch(%d)\", names(which.max(summary(catch1))), max(summary(catch1)))\nggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=\"count\")+labs(title=plottitle)\n\nWarning in geom_histogram(stat = \"count\"): Ignoring unknown parameters:\n`binwidth` and `bins`"
+    "text": "Creating strings with sprintf\nsprintf used something called format string syntax to create formatted strings\nformat string syntax is used in many places -for searching for and creating strings - AND - its used by many programming languages\n\nC / C++ → printf\nPython → old-style % formatting and str.format()\nJava / JavaScript → similar formatting ideas\nSQL (some dialects),\nUnix Shell (terminal window)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#format-string-syntax",
+    "href": "course-materials/lecture-slides/lecture3.datatypes.html#format-string-syntax",
+    "title": "Data Types and Structures",
+    "section": "format string syntax",
+    "text": "format string syntax\n\n%s replace with a string\n%d replace with an integer value\n%f replace with a real value\n%4.1f replace with a real value with 4 digits, two after decimal\n\\n add a line return"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#example-1",
+    "href": "course-materials/lecture-slides/lecture3.datatypes.html#example-1",
+    "title": "Data Types and Structures",
+    "section": "Example",
+    "text": "Example\nmake a string with sprintf and add to plot title\n\n# use results for creating text\n# sprintf creates a string %s mean use what ever is after the , to fill in a string\nplottitle=sprintf(\"We like %s\", names(which.max(summary(catch1))))\n\nggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=\"count\")+labs(title=plottitle)\n\nWarning in geom_histogram(stat = \"count\"): Ignoring unknown parameters:\n`binwidth` and `bins`\n\n\n\n\n\n\n\n\n# you can also add numbers to the string\nplottitle=sprintf(\"We mostly caught %s \\n max catch(%d)\", names(which.max(summary(catch1))), max(summary(catch1)))\nggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=\"count\")+labs(title=plottitle)\n\nWarning in geom_histogram(stat = \"count\"): Ignoring unknown parameters:\n`binwidth` and `bins`"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#but-i-dont-want-a-factor",
+    "href": "course-materials/lecture-slides/lecture3.datatypes.html#but-i-dont-want-a-factor",
+    "title": "Data Types and Structures",
+    "section": "But I don’t want a factor",
+    "text": "But I don’t want a factor\nSometimes you don’t want factors and R thinks something should be How to change back? as.numeric makes sense …but\n\na = as.factor(c(1.3, 1, 4, 1.3, 22))\n#sum(a)\n\n# try to make a numeric version from the factor\nb = as.numeric(a)\nsum(b)\n\n[1] 12\n\nb\n\n[1] 2 1 3 2 4\n\n# better\nb = as.character(a)\nb = as.numeric(b)\nb\n\n[1]  1.3  1.0  4.0  1.3 22.0\n\nsum(b)\n\n[1] 29.6"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.datatypes.html#installing-packages-from-github",
+    "href": "course-materials/lecture-slides/lecture3.datatypes.html#installing-packages-from-github",
+    "title": "Data Types and Structures",
+    "section": "Installing packages from GitHub",
+    "text": "Installing packages from GitHub\nyou can install user packages from github - you need the devtools library to do this\ninstall_github(“naomitague/rainbow”)\nImportant this doesn’t create a repo of rainbow inside you working repository - so its safe! But you cannot clone or create a repo inside the directory structure of another one"
   },
   {
     "objectID": "course-materials/week1.html",
     "href": "course-materials/week1.html",
     "title": "Working with Quarto",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv"
+    "text": "Lecture slides\nMaterials\nReading\n\n\n\n\nLecture 1.1: topic Intro\nDownload hello.qmd\nCommunications of the ACM  Practical overview/perspective  Recent review on potential harmful consequences\n\n\nLecture 1.2: topic Quarto\nDownload p301.csv"
   },
   {
     "objectID": "course-materials/week1.html#lecture-materials",
     "href": "course-materials/week1.html#lecture-materials",
     "title": "Working with Quarto",
     "section": "",
-    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 1.1: topic Intro\n\n\n\nLecture 1.2: topic Quarto\nDownload hello.qmd\n\n\n\nDownload p301.csv"
+    "text": "Lecture slides\nMaterials\nReading\n\n\n\n\nLecture 1.1: topic Intro\nDownload hello.qmd\nCommunications of the ACM  Practical overview/perspective  Recent review on potential harmful consequences\n\n\nLecture 1.2: topic Quarto\nDownload p301.csv"
   },
   {
     "objectID": "course-materials/week1.html#assignment-reminders",
@@ -565,26 +705,5 @@
     "title": "ESM 262",
     "section": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE",
     "text": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE\nLater in the course we will learn about using Git and Github\nfor reproducibility, collaboration and tracking code changes\nSetting up requires some use of the terminal in Rstudio, if you are familiar with that you can go ahead and set up - otherwise wait and we will take you through\n\n4. Git -\n\nCheck to see if git is installed\nOpen RStudio\nIn the Terminal, run the following command (choose the option for your operating system):\n\n\n Mac Windows\n\n\n\n\n\nRStudio Terminal\n\nwhich git\n\n\n\n\n\n\n\nRStudio Terminal\n\nwhere git\n\n\n\n\n\n\nIf you get something that looks like a file path to git on your computer (e.g. /usr/local/bin/git on a Mac, C:\\Program Files\\Git\\mingw64\\bin\\git.exe on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download & install git here: git-scm.com/downloads\n\n\n\n5. Create a GitHub account\n\nIf you don’t already have a GitHub account, go to https://github.com and create one. Check out Jenny Bryan’s Happy Git with R, Ch. 4 for some helpful considerations when choosing a username. We suggest that you use a personal email or your @bren.ucsb.edu email when setting up your account (rather than your @ucsb.edu email, which will be deactivated after you graduate).\n\n\n\n6. Configure git\n\nIn RStudio, open the Terminal. Run the following commands (by pressing return after each line). Be sure to replace the username (keep the quotation marks!) with your GitHub username and the email with the email you used for your GitHub account.\n\n\n\n\nRStudio Terminal\n\ngit config --global user.name \"Jane Doe\"\ngit config --global user.email janedoe@example.com\n\n\n\nThen, in the Terminal run the following, and carefully check that the name and email returned match your GitHub information:\n\n\n\n\nRStudio Terminal\n\ngit config --list --global\n\n\n\n\n\n\n\n\nImportantFOR FUTURE REFERENCE: If you’re configuring git on a Bren server (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal\n\n\n\n\n\n\nRStudio Terminal\n\ngit config --global credential.helper 'cache --timeout=10000000'\n\n\nThis prevents important credentials (e.g. a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You do not need to complete this step when configuring git on your local computer.\n\n\n\n\n7. Store your GitHub personal access token (PAT)\nFirst: What even is a personal access token? From GitHub’s documentation:\n\nPersonal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.\n\nThis means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. Importantly, you’ll need to generate a PAT for each computer you wish to work from. For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:\n\nOnce you have git configured successfully, install the {usethis} package in R by running the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\ninstall.packages(\"usethis\")\n\n\nA lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.\n\n\n\n\n\n\n\n\n\n\nRun the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\nusethis::create_github_token() \n\n\n\nEnter your GitHub password if/when prompted. You’ll be taken to a screen that looks like this:\n\n\n\n\n\n\n\n\n\n\n\nIn the Note field, you should see some autopopulated text: R:GITHUB_PAT. We suggest changing this to something that signifies what machine it’s being used for. For example, if you are generating a PAT for your laptop, you might choose to rename it, My Personal Laptop.\nNext, you’ll see a section called Select scopes with reasonable options already selected for you. Do not change anything. Just scroll down to the bottom of that page and click the green Generate token button:\n\n\n\n\n\n\n\n\n\n\n\nCopy the generated PAT to your clipboard\nBack in RStudio, run the following in the Console:\n\n\n\n\nRStudio Console\n\ngitcreds::gitcreds_set()\n\n\nThis will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):\n\n\n\n\n\n\n\n\n\n\nIn the RStudio Console, run:\n\n\n\n\nRStudio Console\n\nusethis::git_sitrep()\n\n\nDoes it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteA note on expiring tokens:\n\n\n\nSetting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it’s time to regenerate a token that’s about to expire. Follow the email prompts, then use gitcreds::gitcreds_set() to reset your token.\n\n\n\n~ END Installation Guide ~"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts",
-    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts",
-    "title": "Git Collaborate and Revise",
-    "section": "Conflicts",
-    "text": "Conflicts\n\nwhat happens if you and your collaborator change the same file and try to push/pull\nthis could be you from two different computers :)\nGit and GitHub manage this\n\nGithub will try to merge the changes\nif it can’t (you both changed the same line or something like that) - Conflict\n\nwhen a Conflict occurs\n\nGit rewrites the file to show you the conflicting changes using markers"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflict-markers-in-git",
-    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflict-markers-in-git",
-    "title": "Git Collaborate and Revise",
-    "section": "Conflict Markers in Git",
-    "text": "Conflict Markers in Git\nIn the file where the conflict occurs - Git marks it by\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - start of your local version\n======= - divider between your local version and Github version\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; commit-ID - the end of the conflicting changes from the remote"
-  },
-  {
-    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
-    "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
-    "title": "Git Collaborate and Revise",
-    "section": "What you do",
-    "text": "What you do\n\nwhen file is conflicted Rstudio markes it with a U (unmerged)\nedit that file to resolve conflict by choosing which version you want\nstage and commit the resolved file and push to GitHub"
   }
 ]
