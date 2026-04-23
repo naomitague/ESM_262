@@ -106,7 +106,7 @@ We won't practice *forks* here but good to know
 
 -   `git merge branchname` - merges the branch "branchname" into the current branch
 
-## Assignment 2: Git and Stream Temperature
+## Assignment 2: Git and Stream Temperature {.scrollable}
 
 For this assignment, you will work in pairs
 
