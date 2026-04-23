@@ -5,15 +5,12 @@ format: html
 author: Naomi
 ---
 
-# Use this to play with git and github
+I'm going to create a conflict
 
-I can explore 
-* revert
-* reset
-* checkout
+\# Use this to play with git and github
+
+I can explore \* revert \* reset \* checkout
 
 Lets make this one committed
 
 # What about conflicts - fixed the mess
-
-
