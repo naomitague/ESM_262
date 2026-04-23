@@ -522,7 +522,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#history-with-git",
     "title": "Git Collaborate and Revise",
     "section": "History with GIT",
-    "text": "History with GIT\nlocally- use the little clock button or commit\n\nsee the history of your commits\nclick on a commit to see what changed\n\n\n\n\n\n\n\nNote\n\n\ninformative commit messages helps understand history"
+    "text": "History with GIT\nlocally- use the little clock button or commit\n\nsee the history of your commits\nclick on a commit to see what changed\n\n\n\n\n\n\n\nNote\n\n\ninformative commit messages helps understand history\n\n\n\nIn terminal window use log for history git log"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
@@ -543,7 +543,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
     "title": "Git Collaborate and Revise",
     "section": "What to do in Terminal to get your code back to an earlier version",
-    "text": "What to do in Terminal to get your code back to an earlier version\n\nmake a change and save\ncommit the change\nin terminal type git revert HEAD\nthis will create a new commit that undoes the changes you just made\n\nI’ll try and then you"
+    "text": "What to do in Terminal to get your code back to an earlier version\n\nmake a change and save\ncommit the change\nin terminal type git revert HEAD\nthis will create a new commit that undoes the changes you just made - the commit message shows up in terminal also - you can edit the message if you want to - but its good to have a record of what you did and why you reverted it\nsave the commit message to complete the commit\n\nI’ll try and then you"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#go-back-farther-in-time",
@@ -557,7 +557,7 @@
     "href": "course-materials/lecture-slides/lecture2.git-collab.html#git-commands",
     "title": "Git Collaborate and Revise",
     "section": "Git commands",
-    "text": "Git commands\ngit revert HEAD goes back to the last change but if you want to go back to a specific commit, you can use the commit ID\ncommit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.\ngit revert \nFind the SHA number (same as commit ID) in your Git History\nTry it!"
+    "text": "Git commands\ngit revert HEAD goes back to the last change but if you want to go back to a specific commit, you can use the commit ID\ncommit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.\ngit revert \nFind the SHA number (same as commit ID) in your Git History\n\n\n\n\n\n\nNote\n\n\nGitHub has a nice interface for exploring commit history and reverting to earlier versions\nSometimes revert easier with GitHub - nicer interface\n\n\n\nTry it!"
   },
   {
     "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#other-ways-to-go-back-in-time",
