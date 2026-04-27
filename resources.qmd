@@ -8,3 +8,6 @@ toc: true
 Henny Bryan's [Happy Git with R, Ch. 4](https://happygitwithr.com)
 
 GitHub's [Git Guides](https://github.com/git-guides) 
+
+
+[Random Test Data Generation Tools in R](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Randomh)

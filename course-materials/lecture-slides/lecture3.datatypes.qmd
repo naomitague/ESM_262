@@ -19,7 +19,7 @@ library(tidyverse)
 
 ```
 
-# <span style="color:blue"> Data types
+## <span style="color:orange"> Data types {.scrollable}
 
 All programming languages use data-types, or structures to hold information
 
@@ -28,7 +28,9 @@ All programming languages use data-types, or structures to hold information
 -   character
 -   string
 
-Often data types are multi-dimensional Some useful ones in R
+Often data types are multi-dimensional
+
+Some useful ones in R
 
 -   vector
 -   matrix
@@ -52,22 +54,24 @@ For testing your code, often helpful to generate *test* data
 
 We also often generate random data to explore the behavior of our code and to understand how it works
 
-    -   *runif(min,max)* (sampling from a uniform distribution)
-    -   *rnorm(mean,sd)* (sampling from uniform and normal distributions)
-    -   *rpois(lambda)* (sampling from a Poisson distribution)
-    
-(many other options - here's a good *cheatsheet* for random number generation in R 
+-   *runif(min,max)* (sampling from a uniform distribution)
+-   *rnorm(mean,sd)* (sampling from uniform and normal distributions)
+-   *rpois(lambda)* (sampling from a Poisson distribution)
+
+(many other options - here's a good *cheatsheet* for random number generation in R
 
 [Random Generation](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Randomh)
 
 Other ways to generate data
 
-    -   *sample(vector,size,replace)* (sampling from a vector of values)
-    
-    -   *seq(start,end,by)* (for creating a sequence of numbers)
+-   *sample(vector,size,replace)* (sampling from a vector of values)
+-   *seq(start,end,by)* (for creating a sequence of numbers)
 
+## Examples {.scrollable}
 
-## Example
+-   Fire starts - uniform distribution
+-   Otter weights - normal distribution
+-   Randomly picking years from a sequence of years
 
 ```{r}
 # want to random start 20  fires in a fire model, locations numbered from 1 to 100
@@ -91,13 +95,30 @@ pick
 
 ```
 
+## Now you try
+
+Write the R code to create test data where we are simulating how many bear-visitor encounters are likely
+
+We know that the number of encounters per day follows a Poisson distribution with a mean of 1 encounters per day 
+
+We a total of 1000 visitors and we want to simulate how many encounters they have
+
+Poisson distribution is a discrete distribution that describes the number of events that occur in a fixed interval of time or space, given a known average rate of occurrence (e.g lambda =1, in rpois)
+
+Generate sample data and plot the distribution of encounters 
+
+Whats the maximum number of encounters any visitor had?
+
+Add to quiz on Canvas
+
+
 # Data in R Packages
 
-* Many Packages in R have datasets associated with them
+-   Many Packages in R have datasets associated with them
 
-* To see this you can use the **data()** command
+-   To see this you can use the **data()** command
 
-* To load a dataset from a package you can use **data(datasetname)**
+-   To load a dataset from a package you can use **data(datasetname)**
 
 Lets try and then use *sample* to sample from one
 
@@ -114,20 +135,32 @@ help(airquality)
 str(airquality)
 
 # does Ozone correlate with air temperature
-ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()
+ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+ggtitle("Ozone vs Temperature")
 
 # lets say we are testing a new product and we want a sample of 5 ozone measurement that conforms to the distribution in this dataset
 ozone_sample = sample(airquality$Ozone, size=5, replace=F)
 ozone_sample
-
+# this works but we can't link that Ozone with other measurements in the dataset - we need to sample the row number instead of ozone
+ozone_sample = sample(1:nrow(airquality), size=5, replace=F)
+ozone_sample
+airquality[ozone_sample,]
 # plot our sample days
 
 ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+
-  geom_point(data=data.frame(Temp=airquality$Temp[ozone_sample], Ozone=ozone_sample), color="red", size=3)
+  geom_point(data=data.frame(Temp=airquality$Temp[ozone_sample], Ozone=airquality$Ozone[ozone_sample]), color="red", size=3)
 
 ```
 
-# <span style="color:blue"> Data Types: Factors \span
+# Try it
+
+On your own with the airquality data set 
+1) find the median Wind speed
+2) Sample 10 Wind speed measurements
+3) compute their median
+
+Submit both on Canvas quiz
+
+# <span style="color:orange"> Data Types: Factors \span
 
 something that has different **classes** or **groups** useful for doing calculations with categories
 
@@ -198,64 +231,11 @@ names(which.max(summary(catch1)))
 
 ## On your own
 
-In a quarto document \* create a new population of some creature (could be mythical) \* sample from the population \* use summary to explore the distribution of your sample
+In a quarto document
 
-## Strings and how to work with them
-
-Strings are character data types that are used to represent text
-
-All programming languages have ways to deal with strings
-Some commonly used R functions
--   **paste** and **paste0** for concatenating strings together
--   **strsplit** for splitting strings into parts
--  **sprintf** for creating formatted strings 
--   **gsub** for replacing parts of strings
--   **tolower** and **toupper** for changing case
--   **nchar** for counting the number of characters in a string
-
-Most of these are easy to use - just look at help for the function and try it out
-
-**sprintf** however takes some specialized knowledge
-
-## Creating strings with sprintf
-
-**sprintf** used something called
-*format string syntax* to create formatted strings
-
-*format string syntax* is used in many places -for searching for and creating strings - AND - its used by many programming languages 
-
-- C / C++ → printf
-- Python → old-style % formatting and str.format()
-- Java / JavaScript → similar formatting ideas
-- SQL (some dialects), 
-- Unix Shell (terminal window) 
-
-## format string syntax
-
--   **%s** replace with a string
--   **%d** replace with an integer value
--   **%f** replace with a real value
--   **%4.1f** replace with a real value with 4 digits, two after decimal
--   **\\n** add a line return
-
-
-## Example
-
-make a string with **sprintf** and add to plot title
-
-
-```{r}
-# use results for creating text
-# sprintf creates a string %s mean use what ever is after the , to fill in a string
-plottitle=sprintf("We like %s", names(which.max(summary(catch1))))
-
-ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
-
-# you can also add numbers to the string
-plottitle=sprintf("We mostly caught %s \n max catch(%d)", names(which.max(summary(catch1))), max(summary(catch1)))
-ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
-
-```
+* create a new population of some creature (could be mythical) 
+* sample from the population 
+* use summary to explore the distribution of your sample
 
 ## But I don't want a factor
 
@@ -278,8 +258,78 @@ b
 sum(b)
 ```
 
-# <span style="color:blue"> Lists \span
+## Strings and how to work with them
 
+Strings are character data types that are used to represent text
+
+All programming languages have ways to deal with strings Some commonly used R functions 
+
+- **paste** and **paste0** for concatenating strings together 
+- **strsplit** for splitting strings into parts 
+- **sprintf** for creating formatted strings 
+- **gsub** for replacing parts of strings 
+- **tolower** and **toupper** for changing case 
+- **nchar** for counting the number of characters in a string
+
+Most of these are easy to use - just look at help for the function and try it out
+
+**sprintf** however takes some specialized knowledge
+
+## Creating strings with sprintf
+
+**sprintf** used something called *format string syntax* to create formatted strings
+
+*format string syntax* is used in many places -for searching for and creating strings - AND - its used by many programming languages
+
+-   C / C++ → printf
+-   Python → old-style % formatting and str.format()
+-   Java / JavaScript → similar formatting ideas
+-   SQL (some dialects),
+-   Unix Shell (terminal window)
+
+## format string syntax
+
+-   **%s** replace with a string
+-   **%d** replace with an integer value
+-   **%f** replace with a real value
+-   **%4.1f** replace with a real value with 4 digits, two after decimal
+-   **\\n** add a line return
+
+## Example
+
+make a string with **sprintf** and add to plot title
+
+```{r}
+# use results for creating text
+# sprintf creates a string %s mean use what ever is after the , to fill in a string
+plottitle=sprintf("We like %s", names(which.max(summary(catch1))))
+
+ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
+
+# you can also add numbers to the string
+plottitle=sprintf("We mostly caught %s \n max catch(%d)", names(which.max(summary(catch1))), max(summary(catch1)))
+ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
+
+```
+
+# Another Example with Sprintf
+
+Try making a plot with the airquality dataset, and make a title that includes the mean Ozone level in the dataset, then a line return
+and then the mean Ozone level in the sample you took earlier
+
+```{r, anothersprintfexample}
+
+title = sprintf("Mean Ozone in dataset: %4.1f \n Mean Ozone in sample: %4.1f", mean(airquality$Ozone, na.rm=T), mean(airquality$Ozone[ozone_sample], na.rm=T))
+title
+
+ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+
+  geom_point(data=data.frame(Temp=airquality$Temp[ozone_sample], Ozone=airquality$Ozone[ozone_sample]), color="red", size=3) +ggtitle(title)
+```
+
+
+
+
+# <span style="color:blue"> Lists \span
 
 -   Lists are the most “informal” data structures in R
 -   List are really useful for keeping track of and organizing groups of things that are not all the same
@@ -331,26 +381,7 @@ sum(sale[[4]])
 # What you've learned
 
 -   common data types
--   ways to generate data 
+-   ways to generate data
 -   string format syntax
 -   lists
 
-# <span style="color:orange">PACKAGES from Git/span\>
-
--   **Package**: An extension of the R base system with functions, data and documentation in standardized format.
--   **Library**: A directory containing installed packages.
--   **Repository**: A website providing packages for installation.
--   **Source**: The original version of a package with human-readable text and code.
--   **Binary**: A compiled version of a package with computer-readable text and code, may work only on a specic platform.
--   **Base packages**: Part of the R source tree, maintained by R Core.
--   **Recommended packages**: Part of every R installation, but not necessarily maintained by R Core.
--   **Contributed packages**: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.
--   **User packages**: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R
-
-## [Installing packages from GitHub]{style="color:orange"}
-
-you can install user packages from *github* - you need the *devtools* library to do this
-
-install_github("naomitague/rainbow")
-
-*Important* this doesn't create a *repo* of rainbow inside you working repository - so its safe! But you cannot *clone* or create a *repo* inside the directory structure of another one

@@ -1,8 +1,13 @@
-title: "Assignment #2"
-subtitle: "Assigned Tuesday 28/04/2026| Due Monday 04/05/2026"
+---
+title: "Assignment #2" 
+
+format: html
 ---
 
 ## Assignment 2: Git and Stream Temperature
+
+* Assigned Tuesday 28/04/2026
+* Due Monday 04/05/2026" 
 
 For this assignment, you will work in pairs
 
@@ -10,7 +15,9 @@ First download some USGS data on stream temperature from the Willametter River i
 
 Here's some R code to download it, \* X_00010_00003 is the water temperature in C
 
-```{r}
+Note that there may be some warming messages about server slated for decommision - you can ignore those 
+
+```{r, warn=FALSE}
 #install.packages("dataRetrieval")
 library(dataRetrieval)
 library(tidyverse)
@@ -39,7 +46,7 @@ Working together create a new repository that you will share
 
 -   add a quarto file, with nice documentation, that downloads the data (call it something informative)
 -   also store the data in the repository (e.g. as a csv or RData file) so that you can work with it without having to download it again
--   in your quarto file, add the option to load the data instead of accessing from NWIS server 
+-   in your quarto file, add the option to load the data instead of accessing from NWIS server
 -   add a code chunk that plots the data (e.g. using ggplot)
 -   add a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)
 
@@ -49,12 +56,11 @@ Now imagine you are working on a project, where you are looking trends in water 
 
 Have each partner focus on trends for a different month
 
-Here's some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year) 
+Here's some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)
 
-- Estimate for *year* tells you slope for first site
-- Estimate for *year:site_no14211010*, *year:site_no14211720*   tells you how much greater (if positive) slope is for this site relative to first site
-- Estimates for *Intercept* and *site_no14211010*, *site_no14211010* set the baseline temperature to make regression work. You won't use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)
-
+-   Estimate for *year* tells you slope for first site
+-   Estimate for *year:site_no14211010*, *year:site_no14211720* tells you how much greater (if positive) slope is for this site relative to first site
+-   Estimates for *Intercept* and *site_no14211010*, *site_no14211010* set the baseline temperature to make regression work. You won't use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)
 
 ```{r}
 library(tidyverse)

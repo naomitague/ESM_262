@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>hw2 – ESM 262</title>
+<title>Assignment #2 – ESM 262</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,6 +148,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../../course-materials/week2.html">
  <span class="dropdown-text">week 2</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../course-materials/week3.html">
+ <span class="dropdown-text">week 3</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -194,7 +198,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Assignment #2</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -212,13 +232,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>title: “Assignment #2” subtitle: “Assigned Tuesday 28/04/2026| Due Monday 04/05/2026” —</p>
+
 <section id="assignment-2-git-and-stream-temperature" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-2-git-and-stream-temperature">Assignment 2: Git and Stream Temperature</h2>
+<ul>
+<li>Assigned Tuesday 28/04/2026</li>
+<li>Due Monday 04/05/2026”</li>
+</ul>
 <p>For this assignment, you will work in pairs</p>
 <p>First download some USGS data on stream temperature from the Willametter River in Oregon</p>
 <p>Here’s some R code to download it, * X_00010_00003 is the water temperature in C</p>
-<div class="cell">
+<p>Note that there may be some warming messages about server slated for decommision - you can ignore those</p>
+<div class="cell" data-warn="false">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("dataRetrieval")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dataRetrieval)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
