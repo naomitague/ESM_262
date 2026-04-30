@@ -95,24 +95,23 @@ pick
 
 ```
 
-## Now you try
+## Now you try {.scrollable}
 
 Write the R code to create test data where we are simulating how many bear-visitor encounters are likely
 
-We know that the number of encounters per day follows a Poisson distribution with a mean of 1 encounters per day 
+We know that the number of encounters per day follows a Poisson distribution with a mean of 1 encounters per day
 
 We a total of 1000 visitors and we want to simulate how many encounters they have
 
 Poisson distribution is a discrete distribution that describes the number of events that occur in a fixed interval of time or space, given a known average rate of occurrence (e.g lambda =1, in rpois)
 
-Generate sample data and plot the distribution of encounters 
+Generate sample data and plot the distribution of encounters
 
 Whats the maximum number of encounters any visitor had?
 
 Add to quiz on Canvas
 
-
-# Data in R Packages
+## <span style="color:orange">Data in R Packages {.scrollable}
 
 -   Many Packages in R have datasets associated with them
 
@@ -151,12 +150,9 @@ ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+
 
 ```
 
-# Try it
+## Try it {.scrollable}
 
-On your own with the airquality data set 
-1) find the median Wind speed
-2) Sample 10 Wind speed measurements
-3) compute their median
+On your own with the airquality data set 1) find the median Wind speed 2) Sample 10 Wind speed measurements 3) compute their median
 
 Submit both on Canvas quiz
 
@@ -233,9 +229,9 @@ names(which.max(summary(catch1)))
 
 In a quarto document
 
-* create a new population of some creature (could be mythical) 
-* sample from the population 
-* use summary to explore the distribution of your sample
+-   create a new population of some creature (could be mythical)
+-   sample from the population
+-   use summary to explore the distribution of your sample
 
 ## But I don't want a factor
 
@@ -258,18 +254,18 @@ b
 sum(b)
 ```
 
-## Strings and how to work with them
+## <span style="color:orange">Strings and how to work with them
 
 Strings are character data types that are used to represent text
 
-All programming languages have ways to deal with strings Some commonly used R functions 
+All programming languages have ways to deal with strings Some commonly used R functions
 
-- **paste** and **paste0** for concatenating strings together 
-- **strsplit** for splitting strings into parts 
-- **sprintf** for creating formatted strings 
-- **gsub** for replacing parts of strings 
-- **tolower** and **toupper** for changing case 
-- **nchar** for counting the number of characters in a string
+-   **paste** and **paste0** for concatenating strings together
+-   **strsplit** for splitting strings into parts
+-   **sprintf** for creating formatted strings
+-   **gsub** for replacing parts of strings
+-   **tolower** and **toupper** for changing case
+-   **nchar** for counting the number of characters in a string
 
 Most of these are easy to use - just look at help for the function and try it out
 
@@ -312,10 +308,13 @@ ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=
 
 ```
 
-# Another Example with Sprintf
+## Another Example with Sprintf {.scrollable}
 
-Try making a plot with the airquality dataset, and make a title that includes the mean Ozone level in the dataset, then a line return
-and then the mean Ozone level in the sample you took earlier
+1. Try making a plot with the airquality dataset
+2. add a title that includes
+  * the mean Ozone level in the dataset, 
+  * a line return 
+  * the mean Ozone level in the sample you took earlier
 
 ```{r, anothersprintfexample}
 
@@ -325,9 +324,6 @@ title
 ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+
   geom_point(data=data.frame(Temp=airquality$Temp[ozone_sample], Ozone=airquality$Ozone[ozone_sample]), color="red", size=3) +ggtitle(title)
 ```
-
-
-
 
 # <span style="color:blue"> Lists \span
 
@@ -384,4 +380,3 @@ sum(sale[[4]])
 -   ways to generate data
 -   string format syntax
 -   lists
-

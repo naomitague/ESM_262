@@ -10,7 +10,7 @@ description: "Monday April 20^th^, 2026"
 | Lecture slides | Materials |
 |----------------|-----------|
 | [Lecture 3.1:  Git Branching ](lecture-slides/lecture3.git-part3.qmd){target="_blank"} |  |
-| [Lecture 3.2: TBA ](lecture-slides/placeholder.qmd){target="_blank"} |  |
+| [Lecture 3.2: Data Types ](lecture-slides/lecture3.datatypes.qmd){target="_blank"} |  |
 
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
