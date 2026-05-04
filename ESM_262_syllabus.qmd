@@ -146,11 +146,11 @@ schedule <- data.frame(
   )
 )
 
-# Evening lectures: Mondays May 11 and May 18, 2026
+# Evening lectures: Tues May 12 and May 19, 2026
 # Insert after May 7 (Thu) and May 14 (Thu)
 evening_rows <- data.frame(
   Lecture = NA,
-  Date = format(as.Date(c("2026-05-11", "2026-05-18")), "%a, %b %e"),
+  Date = format(as.Date(c("2026-05-12", "2026-05-19")), "%a, %b %e"),
   Type = "Evening",
   Topic = c(
     "Functions!",
