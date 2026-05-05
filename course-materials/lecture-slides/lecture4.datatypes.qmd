@@ -88,7 +88,7 @@ ggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()
 
 # sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025
 # two options - we allow a year to be picked more than once
-pick = sample(seq(2000,2025), size=20, replace=T)
+pick = sample(seq(2000,2025), size=2, replace=T)
 pick
 # no repeat years
 pick = sample(seq(2000,2025), size=20, replace=F)
