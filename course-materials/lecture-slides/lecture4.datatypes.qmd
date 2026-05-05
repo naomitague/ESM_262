@@ -1,0 +1,419 @@
+---
+title: 'Data Types and Structures '
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+knitr::opts_chunk$set(error=TRUE)
+
+library(tidyverse)
+
+```
+
+## <span style="color:orange"> Data types {.scrollable}
+
+All programming languages use data-types, or structures to hold information
+
+-   integer
+-   floating point/ real / numeric
+-   character
+-   string
+
+Often data types are multi-dimensional
+
+Some useful ones in R
+
+-   vector
+-   matrix
+-   data frame
+-   tibble
+-   factors
+-   lists
+
+Programming often involves selecting and building data structures
+
+Good data structures are
+
+-   as simple as possible
+-   easy to understand (readable names)
+-   easy to manipulate
+-   easy to visualize
+
+## Ways to generate data {.scrollable}
+
+For testing your code, often helpful to generate *test* data
+
+We also often generate random data to explore the behavior of our code and to understand how it works
+
+-   *runif(min,max)* (sampling from a uniform distribution)
+-   *rnorm(mean,sd)* (sampling from uniform and normal distributions)
+-   *rpois(lambda)* (sampling from a Poisson distribution)
+
+(many other options for sampling from distributions)
+
+## Other ways to generate data
+
+-   *sample(vector,size,replace)* (sampling from a vector of values)
+-   *seq(start,end,by)* (for creating a sequence of numbers)
+
+## Examples {.scrollable}
+
+-   Fire starts - uniform distribution
+-   Otter weights - normal distribution
+-   Randomly picking years from a sequence of years
+
+```{r}
+# want to randomly start 20  fires in a fire model, locations numbered from 1 to 100
+firestarts = runif(20, min=0, max=100)
+ggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()
+
+
+# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg
+otterweight = rnorm(20, mean=10, sd=2)
+ggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()
+
+# notice how the more you sample the more it looks normal
+otterweight = rnorm(2000, mean=10, sd=2)
+ggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()
+
+
+# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025
+# two options - we allow a year to be picked more than once
+pick = sample(seq(2000,2025), size=20, replace=T)
+pick
+# no repeat years
+pick = sample(seq(2000,2025), size=20, replace=F)
+pick
+
+```
+
+## Now you try {.scrollable}
+
+Write the R code to create test data where we are simulating how many bear-visitor encounters are likely, if we know that
+
+-   the number of encounters per day follows a Poisson distribution with a mean of 1 encounter per day
+
+-   there are 1000 visitors
+
+We want to simulate how many encounters they have
+
+**Poisson distribution** is a discrete distribution that describes the number of events that occur in a fixed interval of time or space, given a known average rate of occurrence (e.g lambda =1, in *rpois*)
+
+Generate sample data and plot the distribution of encounters
+
+Whats the maximum number of encounters any visitor had?
+
+Add to quiz on Canvas
+
+## <span style="color:orange">Data in R Packages {.scrollable}
+
+-   Many Packages in R have datasets associated with them
+
+-   To see this you can use the **data()** command
+
+-   To load a dataset from a package you can use **data(datasetname)**
+
+-  A useful thing to do is run **help(datasetname)** to learn about the dataset and its structure
+
+-   OR in R you can always use (**attributes**, **str**) to learn about the structure of the data
+
+Lets try and then use *sample* to sample from one
+
+```{r}
+
+data()
+
+# Lets look at New York Air Quality Measurement
+# load into your R environment
+data(airquality)
+# learn about dataset
+help(airquality)
+# a good way to see structure of data
+str(airquality)
+attributes(airquality)
+
+# does Ozone correlate with air temperature
+ggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+ggtitle("Ozone vs Temperature")
+
+# lets say we are testing a new product and we want a sample of 5 ozone measurement that conforms to the distribution in this dataset
+ozone_sample = sample(airquality$Ozone, size=5, replace=F)
+ozone_sample
+# this works but we have some NA values - maybe subset
+airquality_clean = na.omit(airquality)
+
+# Issue 2 - we can't link that Ozone with other measurements in the dataset - we need to sample the row number instead of ozone
+ozone_sample = sample(1:nrow(airquality_clean), size=5, replace=F)
+ozone_sample
+airquality_clean[ozone_sample,]
+# plot our sample days
+
+ggplot(airquality_clean, aes(x=Temp, y=Ozone))+geom_point()+
+  geom_point(data=data.frame(Temp=airquality_clean$Temp[ozone_sample], Ozone=airquality_clean$Ozone[ozone_sample]), color="red", size=3)
+
+```
+
+## What we are learning {.scrollable}
+
+* How to generate data (often needed for testing code)
+* Some data cleaning practices
+* Always plot your data after processing to make sure what you did makes sense
+
+Practicing sampling from a dataset
+
+On your own with the airquality data set
+
+1) find the median Wind speed 
+2) Sample 10 Wind speed measurements
+3) compute their median
+
+Submit both on Canvas quiz
+
+## <span style="color:orange"> Data Types: Factors \span {.scrollabe}
+
+something that has different **classes** or **groups** useful for doing calculations with categories
+
+Here's an example:
+
+First lets look at a standard numeric vector
+
+```{r}
+a = c(1.3, 1, 4, 1.3, 22)
+# compute the mean
+mean(a)
+```
+
+What if **a** is a factor
+
+What do commands like **mean** do
+
+```{r}
+a = as.factor(a)
+# compute the mean
+mean(a)
+
+#why? lets look
+a
+
+
+
+
+```
+
+## Exploring factors {.scrollable}
+
+We can use **summary** with factors to get frequencies in each category (or “level” )
+
+```{r fishes}
+
+# create vector of possible fish 
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
+
+# we can use sample to simulate a random recording of catch by fisherman, lets say we pick 20 fish from the net
+
+catch1 = base::sample(possible.fish, size=20, replace=T)
+# because possible.fish was a factor catch1 will be a factor
+catch1
+
+summary(catch1)
+# if we want summary to be more useful - make this a factor
+catch1 = as.factor(catch1)
+
+
+# to quickly get frequencies of different fish and to plot 
+summary(catch1)
+plot(catch1, col="blue")
+
+
+# we can also use summary to explore and return information about the distribution
+# mean frequency of a particular type of fish
+mean(summary(catch1))
+
+# maximum frequency
+max(summary(catch1))
+
+# which fish was most frequently caught
+which.max(summary(catch1))
+
+#to get just the name 
+names(which.max(summary(catch1)))
+
+```
+
+## On your own {.scrollable}
+
+In a quarto document
+
+-   create a new population of some creature (could be mythical)
+-   sample from the population
+-   use summary to explore the distribution of your sample
+
+## But I don't want a factor
+
+Sometimes you don't want factors and R thinks something should be How to change back? **as.numeric** makes sense ...but
+
+```{r, echo=TRUE}
+
+a = as.factor(c(1.3, 1, 4, 1.3, 22))
+#sum(a)
+
+# try to make a numeric version from the factor
+b = as.numeric(a)
+sum(b)
+b
+
+# better
+b = as.character(a)
+b = as.numeric(b)
+b
+sum(b)
+```
+
+## <span style="color:orange">Strings and how to work with them {.scrollable}
+
+Strings are character data types that are used to represent text
+```{r}
+examplestring = "River Otters"
+nchar(examplestring)
+```
+
+All programming languages have ways to deal with strings Some commonly used R functions
+
+-   **paste**  for concatenating strings together
+-   **strsplit** for splitting strings into parts
+-   **sprintf** for creating formatted strings
+-   **gsub** for replacing parts of strings
+-   **tolower** and **toupper** for changing case
+-   **nchar** for counting the number of characters in a string
+
+Most of these are easy to use - just look at help for the function and try it out
+
+**sprintf** however takes some specialized knowledge
+
+## Creating strings with sprintf. {.scrollable}
+
+**sprintf** used something called *format string syntax* to create formatted strings
+
+*format string syntax* is used in many places -for searching for and creating strings - AND - its used by many programming languages
+
+-   C / C++ → printf
+-   Python → old-style % formatting and str.format()
+-   Java / JavaScript → similar formatting ideas
+-   SQL (some dialects),
+-   Unix Shell (terminal window)
+
+## format string syntax {.scrollable}
+
+*sprintf* uses format 'code' to tell it how to create a string, based on the values you give it
+
+Example
+```{r}
+sprintf("We found %d %s %3.1f miles from shore", 4,"Otters", 18.95632342)
+```
+
+
+-   **%s** replace with a string
+-   **%d** replace with an integer value
+-   **%f** replace with a real value
+-   **%4.1f** replace with a real value with 4 digits, two after decimal
+-   **\\n** add a line return
+
+## Example {.scrollable}
+
+make a string with **sprintf** and add to plot title
+
+```{r}
+# use results for creating text
+# sprintf creates a string %s mean use what ever is after the , to fill in a string
+plottitle=sprintf("We like %s", names(which.max(summary(catch1))))
+
+ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
+
+# you can also add numbers to the string
+plottitle=sprintf("We mostly caught %s \n max catch(%d)", names(which.max(summary(catch1))), max(summary(catch1)))
+ggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat="count")+labs(title=plottitle)
+
+```
+
+## Another Example with Sprintf {.scrollable}
+
+1.  Try making a plot with the airquality dataset
+2.  add a title that includes
+
+-   the mean Ozone level in the dataset,
+-   a line return
+-   the mean Ozone level in the sample you took earlier
+
+```{r, anothersprintfexample}
+
+title = sprintf("Mean Ozone in dataset: %4.1f \n Mean Ozone in sample: %4.1f", mean(airquality$Ozone, na.rm=T), mean(airquality_clean$Ozone[ozone_sample], na.rm=T))
+title
+
+ggplot(airquality_clean, aes(x=Temp, y=Ozone))+geom_point()+
+  geom_point(data=data.frame(Temp=airquality_clean$Temp[ozone_sample], Ozone=airquality_clean$Ozone[ozone_sample]), color="red", size=3) +ggtitle(title)
+```
+
+## <span style="color:orange"> Lists \span {.scrollable}
+
+-   Lists are the most “informal” data structures in R
+-   List are really useful for keeping track of and organizing groups of things that are not all the same
+-   A list could be a table where number of rows is different for each column
+-   A list can have numeric, character, factors all mixed together
+-   List are often used for returning more complex information from function (e.g. lm)
+
+## Example of lists {.scrollable}
+```{r introlist, echo=TRUE}
+
+# make a list
+sale = list(id=2, quality="high", contents=c("apple","cherry"), cost=c(4,5))
+sale
+
+#ways to access elements
+sale$id
+sale$what
+
+# you can also access by list item number
+# the [x] denotes the xth item in the list
+sale[[3]]
+sale[["contents"]]
+
+
+# how do you get the second element in the vector that has the contents
+# there are two ways
+
+
+# add to a list
+sale$location = "Farmers market"
+sale
+# or remove
+sale$location = NULL
+sale
+
+# some tricky things
+# correct accessing items in list
+sale$cost
+sale[[4]]
+
+# works but
+#sale[4]
+
+
+sum(sale$cost)
+sum(sale[[4]])
+
+```
+
+## <span style="color:orange"> What we've explored \span {.scrollable}
+
+-   common data types
+-   ways to generate data
+-   string format syntax
+-   lists
