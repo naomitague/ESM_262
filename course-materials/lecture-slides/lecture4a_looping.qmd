@@ -1,0 +1,482 @@
+---
+title: 'Looping'
+author: "Naomi Tague"
+date: "Spring 2026"
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+
+library(tidyverse)
+library(purrr)
+library(ggpubr)
+```
+
+Fixing Git when trying to pull from partner's repo
+
+In terminal
+
+*git config pull.rebase false*
+
+Has to do with default settings
+
+# <span style="color:orange">Looping (or repetition)
+
+Repeating something is a fundamental concept in programming
+
+We usually call this *looping*
+
+All programming languages have ways to do this - sometimes hidden
+
+Lets start with the basics of how you do repetition
+
+# <span style="color:orange">For loops
+
+**for** statement
+
+-   defines a loop using a counter that is incremented each time you go through the loop
+
+-   the counter - could be any variable (we often use *i*) but you could use what ever variable you want
+
+-   repeats the commands between the *{* and *}* after the *for* keyword and loop definition
+
+-   these commands are repeated until counter conditions is TRUE
+
+```{r loop }
+
+# simple example - use a loop to sum the numbers from 1 to 5
+# a = 0+1+2+3+4+5
+a=0
+for (i in 1:5) {
+ a = a+i
+}
+a
+
+#if you want to keep track of a for each iteration
+# start with a data structure to hold the results - there will be 5 iterations
+
+a = rep(x=0, times=5)
+for (i in 1:5) {
+ a[i] = a[i]+i
+}
+a
+
+# note that R has alternatives using function that does this looping for you
+a = sum(seq(from=1, to=5))
+a
+```
+
+# <span style="color:orange">Try a loop on your own
+
+Make a loop that computes the mean/average of a set of numbers, use *runif* to generate a test/example set of 100 random numbers
+
+Generating test data is a helpful way to check your code Take advantage of built in R functions to sample from distributions *normal*, *uniform*, ...
+
+[Nice list of options](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html)
+
+```{r}
+testnumbers = runif(min=0, max=20, n=100)
+```
+
+Check if your loop is correct using *mean*
+
+# <span style="color:orange">My answer
+
+```{r}
+testnumbers = runif(min=0, max=20, n=100)
+
+total = 0
+nvalues = 100
+for (i in 1:nvalues) {
+  total = testnumbers[i]+total
+}
+total/nvalues
+
+mean(testnumbers)
+```
+
+# <span style="color:orange">Another example
+
+Calculating net income from revenue minus expenses
+
+```{r}
+
+
+# lets say we wanted to look income minus expenses for net income
+# create some data for an example
+
+income = runif(min=1000, max=5000, n=10)
+income
+expenses = rnorm(mean=1500, sd=500, n=10)
+expenses
+
+# it is possible that this approach could generate negative expenses
+expenses = ifelse(expenses < 0, 0, expenses)
+
+
+# normally we can just do
+net = income-expenses
+net
+
+
+# lets make this a data frame for nice plotting
+account = data.frame(income=income, expenses=expenses, net = net)
+ggplot(account, aes(income, expenses))+geom_point()
+
+# lets add a year
+account$year = seq(from=2000, length.out=nrow(account))
+
+
+# we could have computed net income with a for loop
+# lets add a column for our net computed by a loop
+# sometimes we use NA to show we haven't computed it yet, so "initialize" as NA
+
+account$netloop=NA
+account
+
+# note I can use any variable I want to as a counter - 
+# notice how I'm now using n to access each row of the data frame
+for (n in 1:10) {
+  account$netloop[n] = account$income[n]-account$expenses[n]
+}
+
+# as expected net and netloop are the same :)
+head(account)
+```
+
+# <span style="color:orange">Why loop
+
+While *sum* and *mean* are functions created by R community, what if you were doing something more complex to each row
+
+What if we wanted to use data from multiple rows for each calculations?
+
+For example, we want to carry forward net from the previous year (info from a different row)
+
+So carry forward net income is current year's net income plus last year's net
+
+```{r loop2 }
+
+#View(account)
+
+# note: we treat the first year differently because we don't have carry forward
+# initialize our column to zero, start counter (n) at 2 instead of 1
+# make the first value equal to the net of first year
+
+account$carryforwardnet = 0
+account$carryforwardnet[1]=account$net[1]
+# now loop - looking backward one year to get previous years carry forward
+for (n in 2:10) {
+  account$carryforwardnet[n] = account$net[n]+account$carryforwardnet[n-1]
+}
+
+# plot - and use color to show current years contribution as positive or negative
+ggplot(account, aes(year, carryforwardnet, fill=net, group=year))+geom_col()+scale_fill_gradient(low="red", high="black")
+
+
+# another example - find the maximum speed from a set of speeds - lets make up an example
+# by sampling from a random uniform distribution
+speeds = runif(min=0, max=150, n=300)
+
+
+maxspeed=0
+for ( i  in 1:length(speeds)) {
+  maxspeed = ifelse(speeds[i] > maxspeed, speeds[i], maxspeed)
+}
+
+maxspeed
+max(speeds)
+
+
+
+```
+
+# <span style="color:orange">Add some complexity
+
+Lets imagine that we have data on running speeds of a creature we are trying to develop a conservation plan for -
+
+We think that when the creature is running at 35 km/hr and about they are hunting. We want to estimate how often they are hunting
+
+Build a for loop to do this (there are other ways to get there with R but we want to practice looping)
+
+As before, generate some test data using functions in R that allow you to generate data by sampling from distributions with known parameters
+
+# My answer
+
+```{r}
+
+# make up sample data
+
+speeds = runif(min=0, max=50, n=300)
+
+# note how its useful to set a variable for our threshold hunting speed
+# makes it easy to change and helps improve code readibility
+hunting_speed = 35
+num_hunting_speeds=0
+for ( i  in 1:length(speeds)) {
+  num_hunting_speeds = num_hunting_speeds + ifelse(speeds[i] >= hunting_speed, 1, 0)
+}
+
+num_hunting_speeds
+
+# as a percent of recorded speeds
+num_hunting_speeds/length(speeds)*100
+```
+
+# <span style="color:orange"> Steps for running function over multiple inputs
+
+1.  design a data structure to store results: sometimes this is automatic but not always
+2.  generate the data (or read it in)
+3.  find ways to repeat things efficiently
+
+-   *purr* family of function in R
+-   more generally looping (*for*, *while*, ...others)
+
+# <span style="color:orange"> A bit more on Looping
+
+Loops can be "nested" with one loop inside the other
+
+"Nesting" means loops inside loops
+
+useful for "doing" something to each row and each column
+
+**FOR** (i in 1:nrow) {
+
+**FOR** (j in 1: ncol)
+
+...
+
+}}
+
+In nested loops, the inner loop (last **FOR** in the sequences, gets done first)
+
+So the loop above will all columns for the first row and then go to the next row
+
+# <span style="color:orange"> Simple Example
+
+Imagine we have a running speeds from our creature for different locations - stored in a array where rows are locations and columns are observations
+
+Find number of times hunting occured across all locations
+
+```{r}
+
+# create some sample data
+nobs = 100
+nlocation = 15
+# matrix function in R lets you initialize with data
+creatureobs = matrix(runif(nobs*nlocation, min=0, max=100), nrow=nlocation)
+# check to see that it a matrix with rows and columns
+str(creatureobs)
+
+
+# nested for loop example, use o as counter for observation; l as a counter for locatin
+# outer loop for location
+hunting_speed = 35
+num_hunting_speeds=0
+for (l in 1:nlocation) {
+  # inner loop for observations 
+  for (o in 1:nobs) {
+     num_hunting_speeds = num_hunting_speeds + ifelse(creatureobs[l,o] >= hunting_speed, 1, 0)
+  }
+}
+
+num_hunting_speeds
+# as percent
+num_hunting_speeds/(nobs*nlocation)*100
+    
+```
+
+# <span style="color:orange"> More Complex Example
+
+Example
+
+Calculate NPV for
+
+-   a range of different interest rates and
+-   a range of damages
+-   that may be incurred 10 years in the future
+
+**Steps**
+
+-   define inputs (interest rates, damages)
+-   define output (NPV)
+-   write the function
+-   create a data structure to store results where we vary both interest rates and damages
+-   use nested for loops to fill in the data structure
+
+Try it first...
+
+# <span style="color:orange">Rcode
+
+```{r npvfor, echo=TRUE, error=FALSE}
+
+# write a function to compute npv
+source("../R/compute_NPV.R")
+compute_NPV
+compute_NPV(20, discount=0.01, time=20)
+
+
+#generate some input
+damages = c(25,33,91,24)
+damages
+# sensitivity to discount rate
+discount_rates = seq(from=0.01, to=0.04, by=0.005)
+discount_rates
+yr=10
+
+# note that the "simple" application doesn't work - why?
+compute_NPV(20, discount=discount_rates, value=damages)
+
+# compute some npv's for different discount rates for each damage
+# first generate a dataframe to store results - we have both damages and discount rates that are changing - so we need rows and columns
+npvs = data.frame(matrix(nrow=length(damages), ncol=length(discount_rates)))
+
+# here we have a 2-dimensional array - rows and columns
+head(npvs)
+
+# now use a nested for loop to populate
+ for (i in 1:length(damages)) {
+         for (j in 1:length(discount_rates)) {
+       npvs[i,j]= compute_NPV(value=damages[i],       discount=discount_rates[j],time=yr )
+
+         }
+ }
+ npvs
+ 
+ 
+ #some data wrangling to make it pretty
+colnames(npvs)=discount_rates
+rownames(npvs)=damages
+ npvs
+ 
+# how do I plot this with ggplot - add a column for original value and then rearrange
+ npvs$damage = damages
+ npvsg =npvs %>% pivot_longer(!damage,names_to="dis", values_to="npv")
+ head(npvsg)
+ ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
+ 
+ # how about summing all the damages
+ npv.total =npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+
+  
+```
+
+# An alternative method
+
+An alternative (R specific) is to use functions from the **purr** package
+
+Specifically *pmap* - which applies a function over multiple inputs
+
+```{r}
+ # we could also do the repetition with pmap from the purr family of functions
+
+# use damages and discount rates from above
+
+discount_rates
+damages
+
+# with purr family, pmap runs the function for each value and returns as a data frame 
+
+npvs = pmap(list(discount_rates),compute_NPV, time=10, value=damages)
+# turn into a data frame
+npvs = as.data.frame(npvs, col.names=discount_rates)
+colnames(npvs) = discount_rates
+npvs$damage = damages
+# clean up and plot
+ npvsg =npvs %>% pivot_longer(!damage,names_to="dis", values_to="npv")
+ head(npvsg)
+ ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
+ 
+ 
+ # how about summing all the damages
+ npv.total =npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+
+ 
+ 
+```
+
+# A bit more on nesting loops
+
+we could even have multiple nesting (think about doings something to a 3 dimensional matrix time and space (x,y)
+
+useful for "doings" something to each row and each column
+
+```         
+**FOR** (x in 1:nrow) {
+
+    **FOR** (y in 1: ncol)  
+
+      **FOR**  (t in 1: ntime)
+
+
+            ...
+
+    }
+  }
+}
+```
+
+To illustrate
+
+```{r}
+
+# lets ocean be a 3 dimensional array - space (x,y) and time
+# lets say is a 2 by 3 spatial maps (2 units across, 3 units down), and 2 time steps
+ocean = array(dim=c(20,30,10))
+
+ocean
+
+# lets make up data for our ocean
+
+ocean[1,1,1] = runif(n=1, min=0, max=1)
+
+# second time step
+ocean[1,1,2] = runif(n=1, min=0, max=1)
+
+# next column, first time step
+ocean[2,1,1] = runif(n=1, min=0, max=1)
+
+# for loops let us do this quickly
+for (x in 1:nrow(ocean)) {
+  for (y in 1:ncol(ocean)) {
+    for (t in 1:dim(ocean)[3]) {
+      ocean[x,y, t] = rnorm(mean=16+t, sd=2, n=1)
+      # imagine running a model to estimate ocean temperature
+      # then feeding it into a model that uses that temperature to impact corals
+    }}}
+
+
+```
+
+# To Review for next class
+
+*Looping.Rmd*
+
+You can either clone the following repository or just go to the repo on github and download the file
+
+[Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git)
+
+"git clone https://github.com/naomitague/ESM_262_Examples.git"
+
+**IF Your are Cloning**
+
+-   make sure this is in a completely R project in a separate directory from your assignments directory (git doesn't like two different repos in the same place!)
+
+-   find and review *Rmarkdown/starting_functions.Rmd* BEFORE next class - play with it; come ready to ask questions in class
+
+If you just want the files
+
+```{r error=TRUE}
+library(devtools)
+ install_github("naomitague/ESM_262_Examples")
+```
