@@ -122,7 +122,7 @@ Add to quiz on Canvas
 
 -   To load a dataset from a package you can use **data(datasetname)**
 
--  A useful thing to do is run **help(datasetname)** to learn about the dataset and its structure
+-   A useful thing to do is run **help(datasetname)** to learn about the dataset and its structure
 
 -   OR in R you can always use (**attributes**, **str**) to learn about the structure of the data
 
@@ -163,17 +163,17 @@ ggplot(airquality_clean, aes(x=Temp, y=Ozone))+geom_point()+
 
 ## What we are learning {.scrollable}
 
-* How to generate data (often needed for testing code)
-* Some data cleaning practices
-* Always plot your data after processing to make sure what you did makes sense
+-   How to generate data (often needed for testing code)
+-   Some data cleaning practices
+-   Always plot your data after processing to make sure what you did makes sense
 
 Practicing sampling from a dataset
 
 On your own with the airquality data set
 
-1) find the median Wind speed 
-2) Sample 10 Wind speed measurements
-3) compute their median
+1)  find the median Wind speed
+2)  Sample 10 Wind speed measurements
+3)  compute their median
 
 Submit both on Canvas quiz
 
@@ -280,6 +280,7 @@ sum(b)
 ## <span style="color:orange">Strings and how to work with them {.scrollable}
 
 Strings are character data types that are used to represent text
+
 ```{r}
 examplestring = "River Otters"
 nchar(examplestring)
@@ -287,7 +288,7 @@ nchar(examplestring)
 
 All programming languages have ways to deal with strings Some commonly used R functions
 
--   **paste**  for concatenating strings together
+-   **paste** for concatenating strings together
 -   **strsplit** for splitting strings into parts
 -   **sprintf** for creating formatted strings
 -   **gsub** for replacing parts of strings
@@ -315,10 +316,10 @@ Most of these are easy to use - just look at help for the function and try it ou
 *sprintf* uses format 'code' to tell it how to create a string, based on the values you give it
 
 Example
+
 ```{r}
 sprintf("We found %d %s %3.1f miles from shore", 4,"Otters", 18.95632342)
 ```
-
 
 -   **%s** replace with a string
 -   **%d** replace with an integer value
@@ -361,59 +362,9 @@ ggplot(airquality_clean, aes(x=Temp, y=Ozone))+geom_point()+
   geom_point(data=data.frame(Temp=airquality_clean$Temp[ozone_sample], Ozone=airquality_clean$Ozone[ozone_sample]), color="red", size=3) +ggtitle(title)
 ```
 
-## <span style="color:orange"> Lists \span {.scrollable}
-
--   Lists are the most “informal” data structures in R
--   List are really useful for keeping track of and organizing groups of things that are not all the same
--   A list could be a table where number of rows is different for each column
--   A list can have numeric, character, factors all mixed together
--   List are often used for returning more complex information from function (e.g. lm)
-
-## Example of lists {.scrollable}
-```{r introlist, echo=TRUE}
-
-# make a list
-sale = list(id=2, quality="high", contents=c("apple","cherry"), cost=c(4,5))
-sale
-
-#ways to access elements
-sale$id
-sale$what
-
-# you can also access by list item number
-# the [x] denotes the xth item in the list
-sale[[3]]
-sale[["contents"]]
-
-
-# how do you get the second element in the vector that has the contents
-# there are two ways
-
-
-# add to a list
-sale$location = "Farmers market"
-sale
-# or remove
-sale$location = NULL
-sale
-
-# some tricky things
-# correct accessing items in list
-sale$cost
-sale[[4]]
-
-# works but
-#sale[4]
-
-
-sum(sale$cost)
-sum(sale[[4]])
-
-```
-
 ## <span style="color:orange"> What we've explored \span {.scrollable}
 
 -   common data types
 -   ways to generate data
 -   string format syntax
--   lists
+

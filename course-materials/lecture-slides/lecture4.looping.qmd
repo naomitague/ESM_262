@@ -1,0 +1,358 @@
+---
+title: 'Looping'
+author: "Naomi Tague"
+date: last-modified
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+
+library(tidyverse)
+library(purrr)
+library(ggpubr)
+```
+
+## Quick Review: Creating strings with sprintf. {.scrollable}
+
+**sprintf** used something called *format string syntax* to create formatted strings
+
+*format string syntax* is used in many places -for searching for and creating strings - AND - its used by many programming languages
+
+
+*sprintf* uses format 'code' to tell it how to create a string, based on the values you give it
+
+Example
+
+```{r}
+sprintf("We found %d %s %3.1f miles from shore", 4,"Otters", 18.95632342)
+```
+
+-   **%s** replace with a string
+-   **%d** replace with an integer value
+-   **%f** replace with a real value
+-   **%4.1f** replace with a real value with 4 digits, two after decimal
+-   **\\n** add a line return
+
+## Example {.scrollable}
+
+make a string with **sprintf** and add to plot title
+
+```{r, eval=TRUE, echo=TRUE}
+# # create vector of possible flowers 
+possible.flowers = c("tulip","rose","lily","iris","marigold","daisy")
+
+# we can use sample to simulate a random recording of purchases at the market, lets create data that had 300 flower purchases
+
+purchases = sample(possible.flowers, size=20, replace=T)
+purchases= as.factor(purchases)
+
+# make it a data frame for plotting later
+# maybe we want to add more information about the purchases later - like price, time of day, etc. - so make column name flower
+purchases  = data.frame(flower=purchases) 
+
+# to quickly get information of flower purchases 
+summary(purchases$flower)
+# sprintf creates a string %s mean use what ever is after the , to fill in a string
+plottitle=sprintf("The most frequently bought flower was %s\n There were %d bought", names(which.max(summary(purchases$flower))), max(summary(purchases$flower)))
+
+# now plot
+ggplot(purchases, aes(flower, fill=flower))+geom_histogram(stat="count")+labs(title=plottitle)+
+  theme(legend.position="none")
+
+```
+
+
+## <span style="color:orange"> What we've explored \span {.scrollable}
+
+-   common data types
+-   ways to generate data
+-   string format syntax
+
+
+## [Looping (or repetition)]{style="color:orange"}
+
+Repeating something is a fundamental concept in programming
+
+We usually call this *looping*
+
+All programming languages have ways to do this - sometimes hidden
+
+Lets start with the basics of how you do repetition - 
+  * the *for* loop - used in many languages
+
+## [For loops]{style="color:orange"} {.scrollable}
+
+**for** statement
+
+-   defines a loop using a counter that is incremented each time you go through the loop
+
+-   the counter - could be any variable (we often use *i*) but you could use whatever variable you want
+
+-   repeats the commands between the *{* and *}* after the *for* keyword and loop definition
+
+-   these commands are repeated until the counter condition is TRUE
+
+```{r loop }
+
+# simple example - use a loop to sum the numbers from 1 to 5
+# a = 0+1+2+3+4+5
+a=0
+for (i in 1:5) {
+ a = a+i
+}
+a
+```
+
+## Break it down
+
+* for (i in 1:5) - mean you start with i=1
+* the commands in the loop are executed - a = a+i
+* then you go back to the top of the loop and increment i to 2
+
+* i = 1
+* a = 0 + 1 = 1
+* i = 2
+* a = 1 + 2 = 3
+* i = 3
+* a = 3 + 3 = 6
+* i = 4
+* a = 6 + 4 = 10
+* i = 5
+* a = 10 + 5 = 15
+
+after the loop a = 15
+
+## Keeping track of what happens each step/interation
+
+* start with a data structure to hold the results - 
+
+* initialize to 0 
+  - *its good practice to initialize data before a loop*
+  - initialize means to create a data structure and set values, usually to zero but sometimes NA
+  
+```{r}
+
+# if you want to keep track of a for each iteration
+# start with a data structure to hold the results - 
+# there will be 5 iterations, so a vector of length 5
+# initialize to 0 
+
+av = rep(x=0, times=5)
+
+# now we can fill in the vector with the sum at each iteration
+# we can use the counter (i) to access the correct element of the vector
+# note that we have to treat the first iteration differently because we don't have a previous value to add to
+
+for (i in 1:5) {
+  if (i==1) {
+    av[i] = 1
+  } else {
+  av[i] = av[i-1]+i
+  }
+}
+av
+
+# note that R has alternatives using functions that do this looping for you
+a = sum(seq(from=1, to=5))
+a
+```
+
+
+## [When to use loops]{style="color:orange"}
+
+* When you want to repeat something a specific number of times
+* R has many built in functions to do this 
+  * BUT sometimes won't do exactly what you want
+  * other languages also use versions of the *for* loop 
+  
+## [Try a loop on your own]{style="color:orange"} {.scrollable}
+
+Make a loop that computes
+
+  * the mean of a set of numbers, 
+  * use *runif* to generate a test/example set of 100 random numbers
+  * test your loop by comparing to the built in *mean* function
+
+Generating test data is a helpful way to check your code. 
+Take advantage of built-in R functions to sample from distributions as we did last class
+
+
+```{r}
+testnumbers = runif(min=0, max=20, n=100)
+```
+
+Check if your loop is correct using *mean*
+
+## [My answer]{style="color:orange"}
+
+```{r}
+testnumbers = runif(min=0, max=20, n=100)
+
+total = 0
+nvalues = 100
+for (i in 1:nvalues) {
+  total = testnumbers[i]+total
+}
+total/nvalues
+
+mean(testnumbers)
+```
+
+## [Another example]{style="color:orange"} {.scrollable}
+
+Lets look at some more slightly more complex examples
+
+Calculating net income from revenue minus expenses
+
+```{r}
+
+# lets say we wanted to look at income minus expenses for net income
+# create some data for an example
+
+income = runif(min=1000, max=5000, n=10)
+income
+expenses = rnorm(mean=1500, sd=500, n=10)
+expenses
+
+# it is possible that this approach could generate negative expenses
+expenses = ifelse(expenses < 0, 0, expenses)
+
+# lets make this a data frame for organization
+account = data.frame(income=income, expenses=expenses)
+# lets add a year
+account$year = seq(from=2000, length.out=nrow(account))
+
+# now compute net income - we could do this with a loop but R is designed to do this without loops
+# normally we can just do
+account = account %>% mutate(net = income-expenses)
+head(account)
+
+
+# lets plot
+ggplot(account, aes(income, expenses))+geom_point()
+
+
+
+# we could have computed net income with a for loop
+# lets add a column for our net computed by a loop
+# sometimes we use NA to show we haven't computed it yet, so "initialize" as NA
+
+account$netloop=NA
+account
+
+# note that I can use any variable I want as a counter -
+# notice how I'm now using n to access each row of the data frame
+for (n in 1:10) {
+  account$netloop[n] = account$income[n]-account$expenses[n]
+}
+
+# as expected net and netloop are the same :)
+head(account)
+```
+
+## [Why loop: cross-row dependencies]{style="color:orange"} {.scrollable}
+
+While *sum* and *mean* are functions created by the R community, what if you were doing something more complex to each row?
+
+What if we needed data from a **previous row** for each calculation?
+
+Example: carry-forward net income = current year's net + last year's carry-forward
+
+```{r loop2 }
+
+# note: we treat the first year differently because we don't have carry forward
+# initialize our column to zero, start counter (n) at 2 instead of 1
+# make the first value equal to the net of first year
+
+account$carryforwardnet = 0
+account$carryforwardnet[1]=account$net[1]
+# now loop - looking backward one year to get previous years carry forward
+for (n in 2:10) {
+  account$carryforwardnet[n] = account$net[n]+account$carryforwardnet[n-1]
+}
+
+# plot - use color to show current year's contribution as positive or negative
+ggplot(account, aes(year, carryforwardnet, fill=net, group=year))+geom_col()+
+  scale_fill_gradient(low="red", high="black")
+```
+
+## [Why loop: sequential comparisons]{style="color:orange"} {.scrollable}
+
+Another case where loops are necessary: comparing across elements one at a time
+
+Lets say we are measuring speeds and we want to determine the number of times speeds are above a threshold 
+
+There are many ways to do this - but *for* will always work
+
+```{r}
+
+# speed limit 
+speedthresh = 120
+# create some sample speeds 
+speeds = runif(min=0, max=150, n=300)
+
+nthresh = 0
+for ( i  in 1:length(speeds)) {
+   if(speeds[i] > speedthresh)
+     nthresh = nthresh + 1
+}
+
+nthresh
+
+```
+
+## [Add some complexity]{style="color:orange"}
+
+Lets imagine that we have data on running speeds of a creature we are trying to develop a conservation plan for
+
+We think that 
+  * when the creature is running at 35 km/hr and above they are hunting.
+  * when they are moving below 5 km/hr they are socializing
+  * when they are moving as speeds between this they are traveling 
+  
+  We want to estimate how often they are in each of these categories based 
+  
+Build a for loop to do this (there are other ways to get there with R but we want to practice looping)
+
+As before, generate some test data using functions in R that allow you to generate data by sampling from distributions with known parameters
+
+## [My answer]{style="color:orange"}
+
+```{r}
+
+# make up sample data
+speeds = runif(min=0, max=50, n=300)
+
+# setting a named variable for the threshold makes the code easier to read and change
+hunting_speed = 35
+social_speed = 5
+num_hunting_speeds=0
+num_social_speeds = 0
+for ( i  in 1:length(speeds)) {
+  num_hunting_speeds = num_hunting_speeds + ifelse(speeds[i] >= hunting_speed, 1, 0)
+    num_social_speeds = num_social_speeds + ifelse(speeds[i] <  social_speed, 1, 0)
+}
+
+num_hunting_speeds
+num_social_speeds
+
+# other speeds are traveling, is remainder
+num_traveling_speeds = length(speeds) - num_hunting_speeds - num_social_speeds
+
+# as a percent of recorded speeds
+num_hunting_speeds/length(speeds)*100
+num_social_speeds/length(speeds)*100
+num_traveling_speeds/length(speeds)*100
+
+```
+
+# See Assignment 3

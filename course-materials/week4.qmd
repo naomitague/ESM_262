@@ -1,0 +1,21 @@
+---
+title: "Data Types"
+subtitle: "Week 4"
+description: "Monday April 20^th^, 2026"
+---
+
+
+
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
+| Lecture slides | Materials |
+|----------------|-----------|
+| [Lecture 4.1:  Data Types Exploration ](lecture-slides/lecture4.datatypes.qmd){target="_blank"} |  |
+| [Lecture 4.2: Looping ](lecture-slides/lecture4.looping.qmd){target="_blank"} |  |
+
+
+## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
+
+| Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
+|-----------------|-----------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #2](assignments/HW2.qmd) | 16/4/2026      | 20/4/2026 , 11:59pm PT     |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"} 

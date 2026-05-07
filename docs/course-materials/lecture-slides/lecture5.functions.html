@@ -199,11 +199,122 @@
 </div>
 
 </section>
+<section>
 <section id="finish-up-data-types" class="title-slide slide level1 center">
 <h1>Finish Up Data Types</h1>
 
 </section>
+<section id="lists" class="slide level2">
+<h2><span style="color:orange"> Lists </span></h2>
+<ul>
+<li>Lists are the most “informal” data structures in R</li>
+<li>List are really useful for keeping track of and organizing groups of things that are not all the same</li>
+<li>A list could be a table where number of rows is different for each column</li>
+<li>A list can have numeric, character, factors all mixed together</li>
+<li>List are often used for returning more complex information from function (e.g.&nbsp;lm)</li>
+</ul>
+</section>
+<section id="example-of-lists" class="slide level2 scrollable">
+<h2>Example of lists</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># make a list</span></span>
+<span id="cb1-2"><a></a>sale <span class="ot">=</span> <span class="fu">list</span>(<span class="at">id=</span><span class="dv">2</span>, <span class="at">quality=</span><span class="st">"high"</span>, <span class="at">contents=</span><span class="fu">c</span>(<span class="st">"apple"</span>,<span class="st">"cherry"</span>), <span class="at">cost=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>))</span>
+<span id="cb1-3"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$id
+[1] 2
 
+$quality
+[1] "high"
+
+$contents
+[1] "apple"  "cherry"
+
+$cost
+[1] 4 5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#ways to access elements</span></span>
+<span id="cb3-2"><a></a>sale<span class="sc">$</span>id</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>sale<span class="sc">$</span>what</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># you can also access by list item number</span></span>
+<span id="cb7-2"><a></a><span class="co"># the [x] denotes the xth item in the list</span></span>
+<span id="cb7-3"><a></a>sale[[<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "apple"  "cherry"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>sale[[<span class="st">"contents"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "apple"  "cherry"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># how do you get the second element in the vector that has the contents</span></span>
+<span id="cb11-2"><a></a><span class="co"># there are two ways</span></span>
+<span id="cb11-3"><a></a></span>
+<span id="cb11-4"><a></a></span>
+<span id="cb11-5"><a></a><span class="co"># add to a list</span></span>
+<span id="cb11-6"><a></a>sale<span class="sc">$</span>location <span class="ot">=</span> <span class="st">"Farmers market"</span></span>
+<span id="cb11-7"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$id
+[1] 2
+
+$quality
+[1] "high"
+
+$contents
+[1] "apple"  "cherry"
+
+$cost
+[1] 4 5
+
+$location
+[1] "Farmers market"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># or remove</span></span>
+<span id="cb13-2"><a></a>sale<span class="sc">$</span>location <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb13-3"><a></a>sale</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$id
+[1] 2
+
+$quality
+[1] "high"
+
+$contents
+[1] "apple"  "cherry"
+
+$cost
+[1] 4 5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># some tricky things</span></span>
+<span id="cb15-2"><a></a><span class="co"># correct accessing items in list</span></span>
+<span id="cb15-3"><a></a>sale<span class="sc">$</span>cost</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>sale[[<span class="dv">4</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># works but</span></span>
+<span id="cb19-2"><a></a><span class="co">#sale[4]</span></span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a></span>
+<span id="cb19-5"><a></a><span class="fu">sum</span>(sale<span class="sc">$</span>cost)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">sum</span>(sale[[<span class="dv">4</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+</div>
+</section></section>
 <section id="programming-always-starts-with" class="title-slide slide level1 center">
 <h1>Programming Always Starts with</h1>
 <p><span style="color: cyan;">Conceptual Design</span></p>
@@ -245,8 +356,8 @@
 <p>Value is between 0 and 1, with lower values associated with <em>lower</em> diversity</p>
 <p>See <a href="http://www.countrysideinfo.co.uk/simpsons.htm">Simpson Biodiversity</a></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_simpson_index.R"</span>))</span>
-<span id="cb1-2"><a></a>compute_simpson_index</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_simpson_index.R"</span>))</span>
+<span id="cb23-2"><a></a>compute_simpson_index</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (species) 
 {
@@ -256,20 +367,20 @@
     return(diversity)
 }</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>possible.fish <span class="ot">=</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">"salmon"</span>,<span class="st">"steelhead"</span>,<span class="st">"shark"</span>,<span class="st">"tuna"</span>,<span class="st">"cod"</span>))</span>
-<span id="cb3-2"><a></a><span class="co"># simulate a random recording of catch by fisherman</span></span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a></span>
-<span id="cb3-5"><a></a><span class="co"># note here is answer to above challenge</span></span>
-<span id="cb3-6"><a></a>catch1 <span class="ot">=</span> <span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.4</span>), <span class="at">replace=</span>T)</span>
-<span id="cb3-7"><a></a><span class="co"># lets create a test case that should have low diversity, by repeating the same thing</span></span>
-<span id="cb3-8"><a></a>catch2 <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"salmon"</span>, <span class="at">times=</span><span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">"cod"</span>, <span class="at">times=</span><span class="dv">10</span>))</span>
-<span id="cb3-9"><a></a></span>
-<span id="cb3-10"><a></a><span class="fu">compute_simpson_index</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>possible.fish <span class="ot">=</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">"salmon"</span>,<span class="st">"steelhead"</span>,<span class="st">"shark"</span>,<span class="st">"tuna"</span>,<span class="st">"cod"</span>))</span>
+<span id="cb25-2"><a></a><span class="co"># simulate a random recording of catch by fisherman</span></span>
+<span id="cb25-3"><a></a></span>
+<span id="cb25-4"><a></a></span>
+<span id="cb25-5"><a></a><span class="co"># note here is answer to above challenge</span></span>
+<span id="cb25-6"><a></a>catch1 <span class="ot">=</span> <span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.4</span>), <span class="at">replace=</span>T)</span>
+<span id="cb25-7"><a></a><span class="co"># lets create a test case that should have low diversity, by repeating the same thing</span></span>
+<span id="cb25-8"><a></a>catch2 <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"salmon"</span>, <span class="at">times=</span><span class="dv">10</span>), <span class="fu">rep</span>(<span class="st">"cod"</span>, <span class="at">times=</span><span class="dv">10</span>))</span>
+<span id="cb25-9"><a></a></span>
+<span id="cb25-10"><a></a><span class="fu">compute_simpson_index</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.28</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">compute_simpson_index</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">compute_simpson_index</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5</code></pre>
 </div>
@@ -285,10 +396,10 @@
 <li>number of distinct species</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># repeat with a list</span></span>
-<span id="cb7-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/computediversity.R"</span>))</span>
-<span id="cb7-3"><a></a></span>
-<span id="cb7-4"><a></a>computediversity</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># repeat with a list</span></span>
+<span id="cb29-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/computediversity.R"</span>))</span>
+<span id="cb29-3"><a></a></span>
+<span id="cb29-4"><a></a>computediversity</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (species) 
 {
@@ -301,7 +412,7 @@
     return(list(num = nspecies, simpson = diversity, dominant = dominant))
 }</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">computediversity</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">computediversity</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$num
 [1] 5
@@ -310,9 +421,9 @@ $simpson
 [1] 0.72
 
 $dominant
-[1] "steelhead"</code></pre>
+[1] "cod"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">computediversity</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">computediversity</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$num
 [1] 2
@@ -330,8 +441,8 @@ $dominant
 <h1>Another example</h1>
 <p>We can also allow the user to make choices about what to return</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_season_meanflow.R"</span>))</span>
-<span id="cb13-2"><a></a>compute_season_flow</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_season_meanflow.R"</span>))</span>
+<span id="cb35-2"><a></a>compute_season_flow</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (str, kind = "mean") 
 {
@@ -348,9 +459,9 @@ $dominant
     return(list(summer = summer, winter = winter))
 }</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>str <span class="ot">=</span> <span class="fu">read.table</span>(<span class="fu">here</span>(<span class="st">"downloadables/Data"</span>, <span class="st">"str.txt"</span>), <span class="at">header=</span>T)</span>
-<span id="cb15-2"><a></a></span>
-<span id="cb15-3"><a></a><span class="fu">compute_season_flow</span>(str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>str <span class="ot">=</span> <span class="fu">read.table</span>(<span class="fu">here</span>(<span class="st">"downloadables/Data"</span>, <span class="st">"str.txt"</span>), <span class="at">header=</span>T)</span>
+<span id="cb37-2"><a></a></span>
+<span id="cb37-3"><a></a><span class="fu">compute_season_flow</span>(str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$summer
 [1] 0.02982467
@@ -358,7 +469,7 @@ $dominant
 $winter
 [1] 0.06705754</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">compute_season_flow</span>(str, <span class="at">kind=</span><span class="st">"max"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">compute_season_flow</span>(str, <span class="at">kind=</span><span class="st">"max"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$summer
 [1] 0.642605

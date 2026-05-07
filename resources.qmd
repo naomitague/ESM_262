@@ -11,3 +11,6 @@ GitHub's [Git Guides](https://github.com/git-guides)
 
 
 [Random Test Data Generation Tools in R](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Randomh)
+
+
+[R Distributions](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html)

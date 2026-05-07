@@ -1,0 +1,88 @@
+---
+title: "Assignment #3" 
+
+format: html
+---
+
+## Assignment 3: Air Quality and For Loops
+
+* Assigned Thursday  07/05/2026
+* Due Thursday 13/05/2026" 
+
+---
+title: "Assignment: Air Quality Risk Assessment"
+format: html
+---
+
+## Overview
+
+In this assignment you will simulate a year of air quality monitoring data, classify pollution risk levels, and summarize patterns across seasons. Complete all work in this Quarto document with visible code and output.
+
+## Part 1 – Build the Dataset
+
+Create a data frame with 365 rows representing daily air quality readings at a monitoring station. Your data frame must include the following columns:
+
+1. `day` — a sequence of integers from 1 to 365
+2. `pm25` — daily PM2.5 concentration (µg/m³), sampled from a distribution of your choice using one of the data generation functions covered in class (`runif`, `rnorm`, `rpois`). Choose parameters that produce realistic values — look up typical urban PM2.5 ranges to guide your choices.
+3. `season` — a factor column with levels `"winter"`, `"spring"`, `"summer"`, `"fall"`, assigned based on day number (days 1–90, 91–180, 181–270, 271–365)
+4. `risk` — an empty column initialized to `NA` — you will fill this in Part 2
+
+## Part 2 – Classify Risk with a For Loop
+
+Using a `for` loop, fill in the `risk` column for each day based on the following PM2.5 thresholds (adapted from EPA AQI guidelines):
+
+- `"good"` — PM2.5 below 12 µg/m³
+- `"moderate"` — PM2.5 between 12 and 35.4 µg/m³  
+- `"unhealthy"` — PM2.5 above 35.4 µg/m³
+
+*Important* while there are many ways to do this - you must use a *for* loop
+
+Within the same loop, also track the longest consecutive streak of `"unhealthy"` days. This will require checking the previous row's risk classification at each step. Store the final streak length in a variable called `max_unhealthy_streak`
+
+
+## Part 3 – Seasonal Summary with a For Loop
+
+Write a `for` loop that computes number of days in each season that fall into unhealthy risk category 
+
+## Part 4 – Visualize and Report
+
+Produce at least two plots:
+
+1. A time series or histogram showing PM2.5 concentration across the year, colored or faceted by season
+2. A bar chart showing the count of days in each risk category,
+
+Each plot must have a title generated using `sprintf` that includes the the max_unhealthy_streak value you calculated in Part 2.
+
+Even though this is artifical data - imagine this was actual results. Write a 1 paragraph summary for managers  interpreting the patterns you see in the data and plots - and note any implications for public health or policy. You can make it up - as long as it is consistent with the data you generated.
+
+Put your quarto and a rendered version (pdf or html) in your GitHub repository for this assignment. You can use the same repository you created for HW2, but make you name the files clearly (or put in a new directory) so that I can find them. For example, you could put the quarto file in a new directory called "HW3" and name it something like "HW3_air_quality.qmd".
+
+
+Turn in your *GitHub* repo link on Canvas
+
+
+## Grading Rubric
+
+**Part 1 – Build the Dataset (20 points)**
+
+- `day`, `pm25`, `season`, and `risk` columns are all present and correctly structured (10 points)
+- `season` is stored as a factor with correct levels and day-number assignment (5 points)
+- Distribution choice is justified in a text block with reference to realistic PM2.5 ranges (5 points)
+
+**Part 2 – Classify Risk with a For Loop (30 points)**
+
+- A `for` loop is used (not `mutate` or `ifelse` alone) to fill the `risk` column (10 points)
+- All three risk thresholds are correctly implemented (10 points)
+- Consecutive unhealthy streak is tracked within the loop using the previous row, stored as `max_unhealthy_streak` (10 points)
+
+**Part 3 – Seasonal Summary with a For Loop (20 points)**
+
+- A `for` loop is used to count unhealthy days per season (10 points)
+- Results are stored in a clear format (e.g., a named vector or data frame) (10 points)
+
+**Part 4 – Visualize and Report (30 points)**
+
+- Time series or histogram of PM2.5 across the year, colored or faceted by season (8 points)
+- Bar chart of risk category counts (7 points)
+- Both plot titles generated with `sprintf` and include `max_unhealthy_streak` (5 points)
+- One-paragraph management summary is consistent with the data and addresses public health or policy implications (10 points)

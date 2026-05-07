@@ -16,7 +16,59 @@ library(here)
 library(tidyverse)
 ```
 
-# Finish Up Data Types   
+# Finish Up Data Types
+
+## <span style="color:orange"> Lists \span {.scrollable}
+
+-   Lists are the most “informal” data structures in R
+-   List are really useful for keeping track of and organizing groups of things that are not all the same
+-   A list could be a table where number of rows is different for each column
+-   A list can have numeric, character, factors all mixed together
+-   List are often used for returning more complex information from function (e.g. lm)
+
+## Example of lists {.scrollable}
+
+```{r introlist, echo=TRUE}
+
+# make a list
+sale = list(id=2, quality="high", contents=c("apple","cherry"), cost=c(4,5))
+sale
+
+#ways to access elements
+sale$id
+sale$what
+
+# you can also access by list item number
+# the [x] denotes the xth item in the list
+sale[[3]]
+sale[["contents"]]
+
+
+# how do you get the second element in the vector that has the contents
+# there are two ways
+
+
+# add to a list
+sale$location = "Farmers market"
+sale
+# or remove
+sale$location = NULL
+sale
+
+# some tricky things
+# correct accessing items in list
+sale$cost
+sale[[4]]
+
+# works but
+#sale[4]
+
+
+sum(sale$cost)
+sum(sale[[4]])
+
+```
+
 # Programming Always Starts with
 
 [Conceptual Design]{style="color: cyan;"}

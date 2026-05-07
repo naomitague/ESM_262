@@ -1,0 +1,295 @@
+---
+title: 'Looping'
+author: "Naomi Tague"
+date: last-modified
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+
+library(tidyverse)
+library(purrr)
+library(ggpubr)
+```
+
+## [Add some complexity]{style="color:orange"}
+
+Lets imagine that we have data on running speeds of a creature we are trying to develop a conservation plan for
+
+We think that \* when the creature is running at 35 km/hr and above they are hunting. \* when they are moving below 5 km/hr they are socializing \* when they are moving as speeds between this they are traveling
+
+We want to estimate how often they are in each of these categories based
+
+Build a for loop to do this (there are other ways to get there with R but we want to practice looping)
+
+As before, generate some test data using functions in R that allow you to generate data by sampling from distributions with known parameters
+
+## [My answer]{style="color:orange"}
+
+```{r}
+
+# make up sample data
+speeds = runif(min=0, max=50, n=300)
+
+# setting a named variable for the threshold makes the code easier to read and change
+hunting_speed = 35
+social_speed = 5
+num_hunting_speeds=0
+num_social_speeds = 0
+for ( i  in 1:length(speeds)) {
+  num_hunting_speeds = num_hunting_speeds + ifelse(speeds[i] >= hunting_speed, 1, 0)
+    num_social_speeds = num_social_speeds + ifelse(speeds[i] <  social_speed, 1, 0)
+}
+
+num_hunting_speeds
+num_social_speeds
+
+# other speeds are traveling, is remainder
+num_traveling_speeds = length(speeds) - num_hunting_speeds - num_social_speeds
+
+# as a percent of recorded speeds
+num_hunting_speeds/length(speeds)*100
+num_social_speeds/length(speeds)*100
+num_traveling_speeds/length(speeds)*100
+
+```
+
+## [Steps for running a function over multiple inputs]{style="color:orange"}
+
+1.  design a data structure to store results: sometimes this is automatic but not always
+2.  generate the data (or read it in)
+3.  find ways to repeat things efficiently
+
+-   *purrr* family of functions in R
+-   more generally looping (*for*, *while*, ...others)
+
+## [A bit more on Looping]{style="color:orange"}
+
+Loops can be "nested" with one loop inside the other
+
+"Nesting" means loops inside loops
+
+Useful for doing something to each row AND each column
+
+```         
+FOR (i in 1:nrow) {
+
+  FOR (j in 1:ncol) {
+
+    ...
+
+  }
+}
+```
+
+For each single step of the outer loop, the inner loop runs through **all** its iterations
+
+So the loop above processes all columns for the first row, then moves to the next row
+
+## [Simple Example]{style="color:orange"} {.scrollable}
+
+Imagine we have running speeds from our creature for different locations - stored in a matrix where rows are locations and columns are observations
+
+Find number of times hunting occurred across all locations
+
+```{r}
+
+# create some sample data
+nobs = 100
+nlocation = 15
+# matrix function in R lets you initialize with data
+creatureobs = matrix(runif(nobs*nlocation, min=0, max=100), nrow=nlocation)
+# check to see that it is a matrix with rows and columns
+str(creatureobs)
+
+
+# nested for loop: use o as counter for observation; l as counter for location
+# outer loop for location
+hunting_speed = 35
+num_hunting_speeds=0
+for (l in 1:nlocation) {
+  # inner loop for observations
+  for (o in 1:nobs) {
+     num_hunting_speeds = num_hunting_speeds + ifelse(creatureobs[l,o] >= hunting_speed, 1, 0)
+  }
+}
+
+num_hunting_speeds
+# as percent
+num_hunting_speeds/(nobs*nlocation)*100
+
+```
+
+## [More Complex Example]{style="color:orange"}
+
+Calculate NPV for
+
+-   a range of different interest rates and
+-   a range of damages
+-   that may be incurred 10 years in the future
+
+**Steps**
+
+-   define inputs (interest rates, damages)
+-   define output (NPV)
+-   write the function
+-   create a data structure to store results where we vary both interest rates and damages
+-   use nested for loops to fill in the data structure
+
+Try it first...
+
+## [NPV: Nested For Loop Example]{style="color:orange"} {.scrollable}
+
+```{r npvfor, echo=TRUE, error=FALSE}
+
+# write a function to compute npv
+source("../R/compute_NPV.R")
+compute_NPV
+compute_NPV(20, discount=0.01, time=20)
+
+
+# generate some input
+damages = c(25,33,91,24)
+damages
+# sensitivity to discount rate
+discount_rates = seq(from=0.01, to=0.04, by=0.005)
+discount_rates
+yr=10
+
+# simple vectorization doesn't give all combinations -
+# R recycles the shorter vector (gives 7 results with a warning, not 4x7=28)
+compute_NPV(value=damages, discount=discount_rates, time=yr)
+
+# compute npv's for all combinations of damages and discount rates
+# first generate a dataframe to store results - rows = damages, columns = discount rates
+npvs = data.frame(matrix(nrow=length(damages), ncol=length(discount_rates)))
+
+# here we have a 2-dimensional array - rows and columns
+head(npvs)
+
+# now use a nested for loop to populate
+for (i in 1:length(damages)) {
+  for (j in 1:length(discount_rates)) {
+    npvs[i,j] = compute_NPV(value=damages[i], discount=discount_rates[j], time=yr)
+  }
+}
+npvs
+
+# some data wrangling to make it pretty
+colnames(npvs) = discount_rates
+rownames(npvs) = damages
+npvs
+
+# how do I plot this with ggplot - add a column for original value and then rearrange
+npvs$damage = damages
+npvsg = npvs %>% pivot_longer(!damage, names_to="dis", values_to="npv")
+head(npvsg)
+ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
+
+# how about summing all the damages
+npv.total = npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+
+```
+
+## [An alternative method]{style="color:orange"} {.scrollable}
+
+An alternative (R specific) is to use functions from the **purrr** package
+
+Specifically *map* - which applies a function over a vector of inputs
+
+```{r}
+# use damages and discount rates from above
+discount_rates
+damages
+
+# map applies compute_NPV for each discount rate,
+# passing the full damages vector each time (compute_NPV is vectorized over value)
+npvs = map(discount_rates, ~compute_NPV(value=damages, discount=.x, time=10))
+
+# each element of npvs is a vector of NPVs (one per damage) at that discount rate
+# convert to a data frame - each column is a discount rate
+npvs = as.data.frame(npvs)
+colnames(npvs) = discount_rates
+npvs$damage = damages
+
+# clean up and plot
+npvsg = npvs %>% pivot_longer(!damage, names_to="dis", values_to="npv")
+head(npvsg)
+ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
+
+# how about summing all the damages
+npv.total = npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+```
+
+## [A bit more on nesting loops]{style="color:orange"} {.scrollable}
+
+We could even have multiple levels of nesting — think about doing something to a 3-dimensional matrix of time and space (x, y)
+
+```         
+FOR (x in 1:nrow) {
+
+  FOR (y in 1:ncol) {
+
+    FOR (t in 1:ntime) {
+
+      ...
+
+    }
+  }
+}
+```
+
+To illustrate
+
+```{r}
+
+# a 3-dimensional array: space (x=20, y=30) and time (10 steps)
+ocean = array(dim=c(20,30,10))
+str(ocean)
+
+# fill with simulated temperature data using nested loops
+for (x in 1:nrow(ocean)) {
+  for (y in 1:ncol(ocean)) {
+    for (t in 1:dim(ocean)[3]) {
+      ocean[x,y,t] = rnorm(mean=16+t, sd=2, n=1)
+      # imagine running a model to estimate ocean temperature
+      # then feeding it into a model that uses that temperature to impact corals
+    }
+  }
+}
+
+```
+
+## [To Review for next class]{style="color:orange"}
+
+*Looping.Rmd*
+
+You can either clone the following repository or just go to the repo on GitHub and download the file
+
+[Example/Review Repo](https://github.com/naomitague/ESM_262_Examples.git)
+
+"git clone https://github.com/naomitague/ESM_262_Examples.git"
+
+**If you are Cloning**
+
+-   make sure this is in a completely separate R project directory from your assignments directory (git doesn't like two different repos in the same place!)
+
+-   find and review *Rmarkdown/starting_functions.Rmd* BEFORE next class - play with it; come ready to ask questions in class
+
+If you just want the files
+
+```{r error=TRUE}
+library(devtools)
+ install_github("naomitague/ESM_262_Examples")
+```
