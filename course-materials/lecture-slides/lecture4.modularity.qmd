@@ -10,32 +10,13 @@ execute:
   warning: true
   message: true
 ---
-# <span style="color:orange">PACKAGES from Git/span\>
-
--   **Package**: An extension of the R base system with functions, data and documentation in standardized format.
--   **Library**: A directory containing installed packages.
--   **Repository**: A website providing packages for installation.
--   **Source**: The original version of a package with human-readable text and code.
--   **Binary**: A compiled version of a package with computer-readable text and code, may work only on a specic platform.
--   **Base packages**: Part of the R source tree, maintained by R Core.
--   **Recommended packages**: Part of every R installation, but not necessarily maintained by R Core.
--   **Contributed packages**: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.
--   **User packages**: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R
-
-## [Installing packages from GitHub]{style="color:orange"}
-
-you can install user packages from *github* - you need the *devtools* library to do this
-
-install_github("naomitague/rainbow")
-
-*Important* this doesn't create a *repo* of rainbow inside you working repository - so its safe! But you cannot *clone* or create a *repo* inside the directory structure of another one
 
 ```{r, setup, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
 library(here)
 library(tidyverse)
 ```
 
-# Programming Always Starts with
+## Programming Always Starts with
 
 [Conceptual Design]{style="color: cyan;"}
 
@@ -45,14 +26,14 @@ library(tidyverse)
     -   What are the inputs
     -   What are the outputs
 
-# Modularity
+## Modularity
 
 -   Programs are made up of building blocks
 -   A **main program** that controls the flow and **calls** functions/modules/building blocks
 
 [Modular Housing](https://images.app.goo.gl/moGdSXVHWiRvHm3X8/)
 
-# Modules take you from inputs to outputs in pieces
+## Modules take you from inputs to outputs in pieces
 
 -   helpful to start a software engineering project by **diagramming** or **flow charting** your program
 
@@ -64,7 +45,7 @@ library(tidyverse)
 
 -   how do you put the blocks together to go from input to output - main program
 
-# Flow Chart Example
+## Flow Chart Example
 
 [Flow chart Example](https://images.app.goo.gl/ktxjSGC2Dyi1WQFA6)
 
@@ -72,20 +53,20 @@ library(tidyverse)
 
 Breaking your instructions down into individual pieces
 
-identifying instructions that can be reused
+Identifying instructions that can be reused
 
 EXAMPLES
 
 -   an ecosystem model might re-use instructions for calculating how a living organism grows
 -   an accounting program might re-use instructions for computing net present value from interest rates
 
-# Designing Modularity
+## Designing Modularity
 
 Modules often become ‘black boxes’ which hides detail that might make understanding the program overly complex
 
 Most languages have lots of black boxes already written and most allow you to write your own
 
-# STEPS IN Program Design for Each Module and Overal Program Design
+## STEPS IN Program Design for Each Module and Overall Program Design
 
 1.  Clearly define your goal in words/figures as precisely as possible, what do you want your program to do
 
@@ -109,7 +90,7 @@ Most languages have lots of black boxes already written and most allow you to wr
 
 # Some Examples
 
-**Inputs** - sometimes separated into input data and parameters
+**Inputs** — sometimes separated into input data and parameters
 
 -   input data = the “what” that is manipulated
 -   parameters determine “how” the manipulation is done
@@ -120,7 +101,7 @@ Here's an example of a R black box function -**sort**
 
 -   parameters - how to do the sort
 
-# Some Examples
+## Some Examples
 
 ```{r eval=TRUE, echo=TRUE  }
 
@@ -144,27 +125,27 @@ head(result)
 
 In this example, parameters are **decreasing** and **method**
 
-## output is a sorted version of saved to “result”
+Output is a sorted version of demand saved to `result`.
 
-# Another Example
+## Another Example
 
 An phone app for calculating car mileage
 
 -   inputs are location, price, gallons and odometer readings at each fill up
--   graph of is miles/gallon over time
+-   graph of miles/gallon over time
 -   parameters control units (could be km/liter, output couple be presented as a graph or an average value)
 
 [Gas Mileage App](https://www.igeeksblog.com/jerrycan-iphone-app/)
 
 *examples a) simple (single box); b) more complex (3 boxes)*
 
-# Designing Modularity
+## Designing Modularity
 
-Breaking your instructions down into individual pieces identifying instructions that can be reused
+Breaking your instructions down into individual pieces; identifying instructions that can be reused
 
 basic modules are called **functions** in R
 
-# Learn to think in terms of functions/modules
+## Learn to think in terms of functions/modules
 
 -   break your tasks into boxes with inputs, parameters and output
 -   **WRITE DOWN** the *contract* for each box/function
@@ -174,13 +155,13 @@ basic modules are called **functions** in R
 -   if the users gives you A, the function with return B
 -   specify A and B as precisely as you can (units, time/space scale, parameters, options)
 
-# A simple function example - just one module
+## A simple function example - just one module
 
 Lets say we want to develop a program that computes power generated from hydro-reservoir
 
 We know that power generation depends on water release rates and the potential energy (from the reservoir height)
 
-# Lets break it down
+## Lets break it down
 
 Contract
 
@@ -212,16 +193,16 @@ P is Power in watts, ρ is the density of water (\~1000 kg/m3), h is height in m
 
 -   Compute Power from a given reservoir height and flow rate (compute_power)
 -   Keep track of reservoir volume given inflow and output (reservoir_state)
--   Determine flow rate, given operator desiered flow rate but need for minium capacity (determine_flow_rate)
+-   Determine flow rate, given operator desired flow rate but need for minimum capacity (determine_flow_rate)
 -   Compute profit from power (compute_profit)
 
 Each module would have its own inputs, parameters and output
 
-Flow control diagrm - puts the modules together
+Flow control diagram - puts the modules together
 
 # Making Diagrams
 
-There are many options for making flow charts or diagrams to support your programmming
+There are many options for making flow charts or diagrams to support your programming
 
 I like this free one accessible online from chrome
 
@@ -229,16 +210,10 @@ I like this free one accessible online from chrome
 
 [Example](https://drive.google.com/file/d/1UaDyKDgf0RQCjicMWUXA7gr4l1QK-X1y/view?usp=sharing)
 
-# Your Task
+## As practice (don't need to turn in)
 
-With your group, think of an example program that you might want to design that is complex enough to involve several modules
+Think of an example program that you might want to design that is complex enough to involve several modules
 
 -   write a contract for the overall program (input, output, parameters)
 -   break the program in to modules (naming them appropriately), write a contract for each one
--   create a diagram that shows how these modules would be put together to go from inputs to output for the overall program (you can use diagram.net OR any other software - your choice!)
-
-Create a document that includes the diagram and the contract for the overall program and each of the modules in the diagram. Submit as a pdf
-
--   [Submit on Canvas as GROUP submission for Assignment 1]{style="color: maroon;"}
-
-**Due Monday Feb 17th**
+-   sketch a diagram that shows how these modules would be put together to go from inputs to output for the overall program

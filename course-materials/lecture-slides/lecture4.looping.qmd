@@ -27,7 +27,6 @@ library(ggpubr)
 
 *format string syntax* is used in many places -for searching for and creating strings - AND - its used by many programming languages
 
-
 *sprintf* uses format 'code' to tell it how to create a string, based on the values you give it
 
 Example
@@ -70,13 +69,11 @@ ggplot(purchases, aes(flower, fill=flower))+geom_histogram(stat="count")+labs(ti
 
 ```
 
-
 ## <span style="color:orange"> What we've explored \span {.scrollable}
 
 -   common data types
 -   ways to generate data
 -   string format syntax
-
 
 ## [Looping (or repetition)]{style="color:orange"}
 
@@ -86,8 +83,7 @@ We usually call this *looping*
 
 All programming languages have ways to do this - sometimes hidden
 
-Lets start with the basics of how you do repetition - 
-  * the *for* loop - used in many languages
+Lets start with the basics of how you do repetition - \* the *for* loop - used in many languages
 
 ## [For loops]{style="color:orange"} {.scrollable}
 
@@ -114,31 +110,43 @@ a
 
 ## Break it down
 
-* for (i in 1:5) - mean you start with i=1
-* the commands in the loop are executed - a = a+i
-* then you go back to the top of the loop and increment i to 2
+-   for (i in 1:5) - mean you start with i=1
 
-* i = 1
-* a = 0 + 1 = 1
-* i = 2
-* a = 1 + 2 = 3
-* i = 3
-* a = 3 + 3 = 6
-* i = 4
-* a = 6 + 4 = 10
-* i = 5
-* a = 10 + 5 = 15
+-   the commands in the loop are executed - a = a+i
+
+-   then you go back to the top of the loop and increment i to 2
+
+-   i = 1
+
+-   a = 0 + 1 = 1
+
+-   i = 2
+
+-   a = 1 + 2 = 3
+
+-   i = 3
+
+-   a = 3 + 3 = 6
+
+-   i = 4
+
+-   a = 6 + 4 = 10
+
+-   i = 5
+
+-   a = 10 + 5 = 15
 
 after the loop a = 15
 
 ## Keeping track of what happens each step/interation
 
-* start with a data structure to hold the results - 
+-   start with a data structure to hold the results -
 
-* initialize to 0 
-  - *its good practice to initialize data before a loop*
-  - initialize means to create a data structure and set values, usually to zero but sometimes NA
-  
+-   initialize to 0
+
+    -   *its good practice to initialize data before a loop*
+    -   initialize means to create a data structure and set values, usually to zero but sometimes NA
+
 ```{r}
 
 # if you want to keep track of a for each iteration
@@ -166,25 +174,22 @@ a = sum(seq(from=1, to=5))
 a
 ```
 
-
 ## [When to use loops]{style="color:orange"}
 
-* When you want to repeat something a specific number of times
-* R has many built in functions to do this 
-  * BUT sometimes won't do exactly what you want
-  * other languages also use versions of the *for* loop 
-  
+-   When you want to repeat something a specific number of times
+-   R has many built in functions to do this
+    -   BUT sometimes won't do exactly what you want
+    -   other languages also use versions of the *for* loop
+
 ## [Try a loop on your own]{style="color:orange"} {.scrollable}
 
 Make a loop that computes
 
-  * the mean of a set of numbers, 
-  * use *runif* to generate a test/example set of 100 random numbers
-  * test your loop by comparing to the built in *mean* function
+-   the mean of a set of numbers,
+-   use *runif* to generate a test/example set of 100 random numbers
+-   test your loop by comparing to the built in *mean* function
 
-Generating test data is a helpful way to check your code. 
-Take advantage of built-in R functions to sample from distributions as we did last class
-
+Generating test data is a helpful way to check your code. Take advantage of built-in R functions to sample from distributions as we did last class
 
 ```{r}
 testnumbers = runif(min=0, max=20, n=100)
@@ -289,7 +294,7 @@ ggplot(account, aes(year, carryforwardnet, fill=net, group=year))+geom_col()+
 
 Another case where loops are necessary: comparing across elements one at a time
 
-Lets say we are measuring speeds and we want to determine the number of times speeds are above a threshold 
+Lets say we are measuring speeds and we want to determine the number of times speeds are above a threshold
 
 There are many ways to do this - but *for* will always work
 
@@ -310,17 +315,18 @@ nthresh
 
 ```
 
-## [Add some complexity]{style="color:orange"}
+## [Add some complexity]{style="color:orange"} {.scrollable}
 
 Lets imagine that we have data on running speeds of a creature we are trying to develop a conservation plan for
 
-We think that 
-  * when the creature is running at 35 km/hr and above they are hunting.
-  * when they are moving below 5 km/hr they are socializing
-  * when they are moving as speeds between this they are traveling 
-  
-  We want to estimate how often they are in each of these categories based 
-  
+We think that
+
+-   when the creature is running at 35 km/hr and above they are hunting.
+-   when they are moving below 5 km/hr they are socializing
+-   when they are moving as speeds between this they are traveling
+
+We want to estimate how often they are in each of these categories based
+
 Build a for loop to do this (there are other ways to get there with R but we want to practice looping)
 
 As before, generate some test data using functions in R that allow you to generate data by sampling from distributions with known parameters
@@ -330,7 +336,7 @@ As before, generate some test data using functions in R that allow you to genera
 ```{r}
 
 # make up sample data
-speeds = runif(min=0, max=50, n=300)
+speeds = runif(min=0, max=50, n=500)
 
 # setting a named variable for the threshold makes the code easier to read and change
 hunting_speed = 35
@@ -342,6 +348,8 @@ for ( i  in 1:length(speeds)) {
     num_social_speeds = num_social_speeds + ifelse(speeds[i] <  social_speed, 1, 0)
 }
 
+
+for (i in 1:300)
 num_hunting_speeds
 num_social_speeds
 

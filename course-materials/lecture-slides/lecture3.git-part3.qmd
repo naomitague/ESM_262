@@ -114,7 +114,7 @@ First download some USGS data on stream temperature from the Willametter River i
 
 Here's some R code to download it, \* X_00010_00003 is the water temperature in C
 
-```{r}
+```{r, eval=FALSE, echo=TRUE  }
 #install.packages("dataRetrieval")
 library(dataRetrieval)
 
@@ -158,7 +158,7 @@ Here's some example code for how you might compute the trend of temperatures in 
 -   Estimate for *year:site_no14211010*, *year:site_no14211720* tells you how much greater (if positive) slope is for this site relative to first site
 -   Estimates for *Intercept* and *site_no14211010*, *site_no14211010* set the baseline temperature to make regression work. You won't use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)
 
-```{r}
+```{r, eval=FALSE, echo=TRUE  }
 library(tidyverse)
 # filter for July temperatures
 july_data <- subset(temp_data, month == "Jul")

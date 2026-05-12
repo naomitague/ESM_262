@@ -175,3 +175,106 @@ compute_season_flow(str, kind="max")
 If you need it a good source to review working with *purrr* to extract items from list and repeat operations
 
 [Useful Purrr Resource](https://www.rebeccabarter.com/blog/2019-08-19_purrr/)
+
+## [Loops and Functions]{style="color:orange"}
+
+Calculate NPV for
+
+-   a range of different interest rates and
+-   a range of damages
+-   that may be incurred 10 years in the future
+
+**Steps**
+
+-   define inputs (interest rates, damages)
+-   define output (NPV)
+-   write the function
+-   create a data structure to store results where we vary both interest rates and damages
+-   use nested for loops to fill in the data structure
+
+Try it first...
+
+## [NPV: Nested For Loop Example]{style="color:orange"} {.scrollable}
+
+```{r npvfor, echo=TRUE, error=FALSE}
+
+# write a function to compute npv
+source("../R/compute_NPV.R")
+compute_NPV
+compute_NPV(20, discount=0.01, time=20)
+
+
+# generate some input
+damages = c(25,33,91,24)
+damages
+# sensitivity to discount rate
+discount_rates = seq(from=0.01, to=0.04, by=0.005)
+discount_rates
+yr=10
+
+# simple vectorization doesn't give all combinations -
+# R recycles the shorter vector (gives 7 results with a warning, not 4x7=28)
+compute_NPV(value=damages, discount=discount_rates, time=yr)
+
+# compute npv's for all combinations of damages and discount rates
+# first generate a dataframe to store results - rows = damages, columns = discount rates
+npvs = data.frame(matrix(nrow=length(damages), ncol=length(discount_rates)))
+
+# here we have a 2-dimensional array - rows and columns
+head(npvs)
+
+# now use a nested for loop to populate
+for (i in 1:length(damages)) {
+  for (j in 1:length(discount_rates)) {
+    npvs[i,j] = compute_NPV(value=damages[i], discount=discount_rates[j], time=yr)
+  }
+}
+npvs
+
+# some data wrangling to make it pretty
+colnames(npvs) = discount_rates
+rownames(npvs) = damages
+npvs
+
+# how do I plot this with ggplot - add a column for original value and then rearrange
+npvs$damage = damages
+npvsg = npvs %>% pivot_longer(!damage, names_to="dis", values_to="npv")
+head(npvsg)
+ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
+
+# how about summing all the damages
+npv.total = npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+
+```
+
+## [An alternative method]{style="color:orange"} {.scrollable}
+
+An alternative (R specific) is to use functions from the **purrr** package
+
+Specifically *map* - which applies a function over a vector of inputs
+
+```{r}
+# use damages and discount rates from above
+discount_rates
+damages
+
+# map applies compute_NPV for each discount rate,
+# passing the full damages vector each time (compute_NPV is vectorized over value)
+npvs = map(discount_rates, ~compute_NPV(value=damages, discount=.x, time=10))
+
+# each element of npvs is a vector of NPVs (one per damage) at that discount rate
+# convert to a data frame - each column is a discount rate
+npvs = as.data.frame(npvs)
+colnames(npvs) = discount_rates
+npvs$damage = damages
+
+# clean up and plot
+npvsg = npvs %>% pivot_longer(!damage, names_to="dis", values_to="npv")
+head(npvsg)
+ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
+
+# how about summing all the damages
+npv.total = npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
+ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+```

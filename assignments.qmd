@@ -14,4 +14,5 @@ All assignments are due at 11:59 PM on the dates listed in the table, below.
 | [Homework Assignment #1](course-materials/assignments/HW1.qmd) | 16/4/2026      | 20/4/2026 |
 | [Homework Assignment #2](course-materials/assignments/HW2.qmd) | 28/4/2026      | 4/5/2026 |
 | [Homework Assignment #3](course-materials/assignments/HW3.qmd) | 7/5/2026      | 13/5/2026 |
-| Homework Assignment #4                                         | DD/MM/YYY      | DD/MM/YYY |      
+| [Homework Assignment #4](course-materials/assignments/HW4.qmd) | 12/5/2026      | 14/5/2026 |
+| Homework Assignment #5                                        | DD/MM/YYY      | DD/MM/YYY |      

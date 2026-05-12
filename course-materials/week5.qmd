@@ -1,0 +1,22 @@
+---
+title: "Data Types"
+subtitle: "Week 4"
+description: "Monday April 20^th^, 2026"
+---
+
+
+
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
+| Lecture slides | Materials |
+|----------------|-----------|
+| [Lecture 5.1:  Looping ](lecture-slides/lecture5_looping2.qmd){target="_blank"} |  |
+| [Lecture On Your Own:  Functions ](lecture-slides/lecture5m1_functions.qmd){target="_blank"} | [R power_gen_orig](../downloadables/R/power_gen_orig.R)  |
+| [Lecture 5.2: More on Functions ](lecture-slides/placeholder.qmd){target="_blank"} |  |
+
+
+## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
+
+| Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
+|-----------------|-----------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #4](assignments/HW4.qmd) | 12/4/2026      | 14/4/2026 , 11:59pm PT     |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"} 

@@ -52,23 +52,21 @@ gh::gh_whoami()
 
 ```
 
-- alternatively you can use *git config*  in terminal window to check your credentials
+-   alternatively you can use *git config* in terminal window to check your credentials
 
 [Config]{style="color:green"}
 
 *git config --global --list*
 
 ::: callout-note
-What about a new computer? Can I reuse my access token (PAT)
-Yes if you saved it,
+What about a new computer? Can I reuse my access token (PAT) Yes if you saved it,
 
 ```{r, eval=FALSE, echo=TRUE}
 
 #gitcreds::gitcreds_set()
 
 ```
-
-::: 
+:::
 
 ## Checking your remote {.scrollable}
 
@@ -80,7 +78,7 @@ usethis::git_remotes()
 
 Can also find under *Git* tab in Rstudio project setup will show you remote
 
-In terminal, try 
+In terminal, try
 
 *git remote -v*
 
@@ -95,8 +93,7 @@ locally- use the little clock button or **commit**
 informative commit messages helps understand history
 :::
 
-In terminal window use *log* for history
-[git log]{style="color:green"}
+In terminal window use *log* for history [git log]{style="color:green"}
 
 ## Correcting Misktakes if you haven't committed {.scrollable}
 
@@ -125,9 +122,9 @@ The terminal window allows you to access a *shell* - it's a way to interact with
 
 -   in terminal type *git revert HEAD*
 
--   this will create a new commit that undoes the changes you just made - the commit message shows up in terminal also  - you can edit the message if you want to - but its good to have a record of what you did and why you reverted it
+-   this will create a new commit that undoes the changes you just made - the commit message shows up in terminal also - you can edit the message if you want to - but its good to have a record of what you did and why you reverted it
 
-- save the commit message to complete the commit
+-   save the commit message to complete the commit
 
 I'll try and then you
 
@@ -146,23 +143,20 @@ commit-ID (the long string of numbers and letters that identifies each commit) i
 Find the SHA number (same as commit ID) in your Git History
 
 ::: callout-note
-*GitHub* has a nice interface for exploring commit history and reverting to earlier versions 
+*GitHub* has a nice interface for exploring commit history and reverting to earlier versions
 
 Sometimes *revert* easier with *GitHub* - nicer interface
 :::
 
-
 Try it!
 
 ## Other ways to go back in time
-
 
 There are other options, *git reset* and *git checkout*
 
 A bit more dangerous because they discard/overwrite changes instead of creating a new commit that undoes the changes
 
 useful to keep things from getting 'messy' but we won't go into here
-
 
 ## Some other useful Git commands in Terminal {.scrollable}
 

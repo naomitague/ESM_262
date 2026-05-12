@@ -1,0 +1,60 @@
+---
+title: "Assignment #4" 
+
+format:  pdf
+---
+## Building your first function
+
+Your task
+
+Write a function to compute a biodiversity index - we will use Simpson's Index (D) as an example
+
+"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species"
+
+Value is between 0 and 1, with lower values associated with *lower* diversity
+
+See [Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
+
+  - there are two versions you can pick either
+    - $D = \sum(n_i(n_i-1)) / (N(N-1))$
+        - where $n_i$ is the number of individuals of each species
+        - N is the total number of individuals of all species
+    - $D = \sum((n_i/N)^2)$
+      - where $n_i$ is the number of individuals of each species 
+      - N is the total number of individuals of all species
+
+Steps
+
+1. Define the contract 
+
+  -  in a quarto document describe
+      inputs, outputs and what the function will do
+2. Implement the function in R
+
+  - power_gen_orig is a good template to start with - copy and modify
+  - make sure you include documentation at the top for now follow style from power_gen_orig but you can be more descriptive if you want - as long as line starts with #, it is a comment and will not be executed as code
+  - save this file as a name.R file
+  - *hint* use factors to make it easier to count the number of individuals of each species
+  
+3. Test the function with some example data that you generate
+
+  - include you test code in the quarto document
+  
+Do this one on your own 
+
+Put both the function and quarto in directory on your github site and submit the link on Canvas
+
+Due Thursday May 14 8am
+
+# Grading Rubric
+
+Coding R function (30 points)
+
+  - 10 points: function is in correct format 
+  - 10 points: function runs without error
+  - 10 points: function has informative documentation
+
+Quarto document (20 points)
+
+  - 10 points: descriptions of inputs, outputs and what the function does
+  - 10 points: code to test the function  
