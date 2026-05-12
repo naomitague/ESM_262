@@ -1,0 +1,1458 @@
+[
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Recommended reading & materials",
+    "section": "",
+    "text": "Git\nHenny Bryan’s Happy Git with R, Ch. 4\nGitHub’s Git Guides\nRandom Test Data Generation Tools in R\nR Distributions"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Computing for Environmental Science and Management",
+    "section": "Course Description",
+    "text": "Course Description\nAn introduction to computing for environmental applications. The course provides practical training in some core programming skills and best practices for data science and software design. The course features R for programming, Git for version control, Quarto for workflow and editing, and GitHub for collaboration and publishing, but many concepts would be applicable in other software design tools."
+  },
+  {
+    "objectID": "index.html#teaching-team",
+    "href": "index.html#teaching-team",
+    "title": "Computing for Environmental Science and Management",
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\n\n\n\n\n\nInstructor\n\n\n\n\n\n\n\n\n\n\n\nNaomi Tague\nEmail: tague@ucsb.edu\n**Learn more:Tague Team Lab\n\n\n\n\n\nTA\n\n\n\n\n\n\n\n\n\n\n\nOjas Sarup\nEmail: ojassarup@ucsb.edu"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Computing for Environmental Science and Management",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nSpecial thanks to Samantha Shanny-Csik for web-page template and MEDS curriculum committee for inputs on course content."
+  },
+  {
+    "objectID": "course-materials/week5.html",
+    "href": "course-materials/week5.html",
+    "title": "Data Types",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 5.1: Looping\n\n\n\nLecture On Your Own: Functions\nR power_gen_orig\n\n\nLecture 5.2: More on Functions"
+  },
+  {
+    "objectID": "course-materials/week5.html#lecture-materials",
+    "href": "course-materials/week5.html#lecture-materials",
+    "title": "Data Types",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 5.1: Looping\n\n\n\nLecture On Your Own: Functions\nR power_gen_orig\n\n\nLecture 5.2: More on Functions"
+  },
+  {
+    "objectID": "course-materials/week5.html#assignment-reminders",
+    "href": "course-materials/week5.html#assignment-reminders",
+    "title": "Data Types",
+    "section": " Assignments",
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #4\n12/4/2026\n14/4/2026 , 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week3.html",
+    "href": "course-materials/week3.html",
+    "title": "More Git and Data",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 3.1: Git Branching\n\n\n\nLecture 3.2: Review and finished Git"
+  },
+  {
+    "objectID": "course-materials/week3.html#lecture-materials",
+    "href": "course-materials/week3.html#lecture-materials",
+    "title": "More Git and Data",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 3.1: Git Branching\n\n\n\nLecture 3.2: Review and finished Git"
+  },
+  {
+    "objectID": "course-materials/week3.html#assignment-reminders",
+    "href": "course-materials/week3.html#assignment-reminders",
+    "title": "More Git and Data",
+    "section": " Assignments",
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #2\n16/4/2026\n20/4/2026 , 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/week1.html",
+    "href": "course-materials/week1.html",
+    "title": "Working with Quarto",
+    "section": "",
+    "text": "Lecture slides\nMaterials\nReading\n\n\n\n\nLecture 1.1: topic Intro\nDownload hello.qmd\nCommunications of the ACM  Practical overview/perspective  Recent review on potential harmful consequences\n\n\nLecture 1.2: topic Quarto\nDownload p301.csv"
+  },
+  {
+    "objectID": "course-materials/week1.html#lecture-materials",
+    "href": "course-materials/week1.html#lecture-materials",
+    "title": "Working with Quarto",
+    "section": "",
+    "text": "Lecture slides\nMaterials\nReading\n\n\n\n\nLecture 1.1: topic Intro\nDownload hello.qmd\nCommunications of the ACM  Practical overview/perspective  Recent review on potential harmful consequences\n\n\nLecture 1.2: topic Quarto\nDownload p301.csv"
+  },
+  {
+    "objectID": "course-materials/week1.html#assignment-reminders",
+    "href": "course-materials/week1.html#assignment-reminders",
+    "title": "Working with Quarto",
+    "section": " Assignments",
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #1\n16/4/2026\n20/4/2026 , 11:59pm PT"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/packages.html",
+    "href": "course-materials/lecture-slides/packages.html",
+    "title": "packages",
+    "section": "",
+    "text": "Package: An extension of the R base system with functions, data and documentation in standardized format.\nLibrary: A directory containing installed packages.\nRepository: A website providing packages for installation.\nSource: The original version of a package with human-readable text and code.\nBinary: A compiled version of a package with computer-readable text and code, may work only on a specific platform.\nBase packages: Part of the R source tree, maintained by R Core.\nRecommended packages: Part of every R installation, but not necessarily maintained by R Core.\nContributed packages: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.\nUser packages: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R\n\n\n\nyou can install user packages from github - you need the devtools library to do this\ninstall_github(“naomitague/rainbow”)\nImportant this doesn’t create a repo of rainbow inside you working repository - so its safe! But you cannot clone or create a repo inside t"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/packages.html#installing-packages-from-github",
+    "href": "course-materials/lecture-slides/packages.html#installing-packages-from-github",
+    "title": "packages",
+    "section": "",
+    "text": "you can install user packages from github - you need the devtools library to do this\ninstall_github(“naomitague/rainbow”)\nImportant this doesn’t create a repo of rainbow inside you working repository - so its safe! But you cannot clone or create a repo inside t"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#looping",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#looping",
+    "title": "Looping",
+    "section": "Looping",
+    "text": "Looping\nA programming building block\nUsed to repeat instructions. In environmental science, often used for calculations that involve:\n\nspace (loop over location)\ntime (loop through time)\ntime and space\n\nQuestions?"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#steps-looping",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#steps-looping",
+    "title": "Looping",
+    "section": "Steps looping",
+    "text": "Steps looping\n\ndesign a data structure to store results: sometimes this is automatic but not always\nread in (or generate test data) the data\nfind ways to repeat things efficiently"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#looping-behind-the-scene",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#looping-behind-the-scene",
+    "title": "Looping",
+    "section": "Looping ‘behind’ the scene",
+    "text": "Looping ‘behind’ the scene\n\ncolumn manipulation with data frames\ndplyr and purrr family of functions in R"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#nesting-loops",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#nesting-loops",
+    "title": "Looping",
+    "section": "Nesting Loops",
+    "text": "Nesting Loops\nLoops can be “nested” with one loop inside the other\nExamples:\n\ndoing something to each row AND each column\ndoing something to each location AND each time step\ndoing something across categories AND through time"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#syntax-in-r",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#syntax-in-r",
+    "title": "Looping",
+    "section": "Syntax in R",
+    "text": "Syntax in R\nFOR (i in 1:nrow) {\n\n  FOR (j in 1:ncol) {\n\n    ...\n\n  }\n}\nFor each single step of the outer loop, the inner loop runs through all its iterations\nSo the loop above processes all columns for the first row, then moves to the next row\nAs before you don’t need to use i and j - these are just common variable names for counters but you can pick more meaningful ones"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#simple-example-of-nested-loops",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#simple-example-of-nested-loops",
+    "title": "Looping",
+    "section": "Simple Example of Nested Loops",
+    "text": "Simple Example of Nested Loops\n\n# simple example of nested loops - compute\n# the sum of all the elements in a matrix keeping track of something at each location\n# create some sample data\nntime = 5\nnlocation = 3\n# matrix function in R lets you initialize with data\n# here we are creating a matrix with nlocation rows and nobs columns, filled with integers between 1 and 10\ncreatureobs = matrix(sample(1:10, ntime*nlocation, replace=TRUE), nrow=nlocation)\ncolnames(creatureobs) = c(\"time1\", \"time2\", \"time3\", \"time4\", \"time5\")\nrownames(creatureobs) = c(\"east\", \"west\", \"north\")\n# check to see that it is a matrix with rows and columns\nstr(creatureobs)\n\n int [1:3, 1:5] 2 1 4 9 5 9 1 5 10 7 ...\n - attr(*, \"dimnames\")=List of 2\n  ..$ : chr [1:3] \"east\" \"west\" \"north\"\n  ..$ : chr [1:5] \"time1\" \"time2\" \"time3\" \"time4\" ...\n\ncreatureobs\n\n      time1 time2 time3 time4 time5\neast      2     9     1     7     9\nwest      1     5     5    10     7\nnorth     4     9    10     7    10\n\n# nested for loop: use t as counter for time; l as counter for location\n# initialization\n# outer loop for location\ntotalsum = 0\nfor (l in 1:nlocation) {\n  # inner loop for observations\n  for (t in 1:ntime) {\n     totalsum = totalsum + creatureobs[l,t]\n  }\n}\ntotalsum\n\n[1] 96\n\n## to see if work print out at each location and time step\ntotalsum = 0\nfor (l in 1:nlocation) {\n  # inner loop for observations\n  for (t in 1:ntime) {\n     totalsum = totalsum + creatureobs[l,t]\n     # use sprintf to print out the location, time, and sum so far, cat just prints out the string\n     cat(sprintf(\"\\nfor counter l=%d t=%d, location: %s, time: %s, sum so far: %s\", l, t, rownames(creatureobs)[l], colnames(creatureobs)[t], totalsum))\n  }\n}\n\n\nfor counter l=1 t=1, location: east, time: time1, sum so far: 2\nfor counter l=1 t=2, location: east, time: time2, sum so far: 11\nfor counter l=1 t=3, location: east, time: time3, sum so far: 12\nfor counter l=1 t=4, location: east, time: time4, sum so far: 19\nfor counter l=1 t=5, location: east, time: time5, sum so far: 28\nfor counter l=2 t=1, location: west, time: time1, sum so far: 29\nfor counter l=2 t=2, location: west, time: time2, sum so far: 34\nfor counter l=2 t=3, location: west, time: time3, sum so far: 39\nfor counter l=2 t=4, location: west, time: time4, sum so far: 49\nfor counter l=2 t=5, location: west, time: time5, sum so far: 56\nfor counter l=3 t=1, location: north, time: time1, sum so far: 60\nfor counter l=3 t=2, location: north, time: time2, sum so far: 69\nfor counter l=3 t=3, location: north, time: time3, sum so far: 79\nfor counter l=3 t=4, location: north, time: time4, sum so far: 86\nfor counter l=3 t=5, location: north, time: time5, sum so far: 96\n\ntotalsum\n\n[1] 96\n\n# R can do these for loops internally when you do\nsum(creatureobs)\n\n[1] 96"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#slightly-more-complex-example",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#slightly-more-complex-example",
+    "title": "Looping",
+    "section": "Slightly more complex example",
+    "text": "Slightly more complex example\nImagine we have running speeds of a species for different points in a transect\nObservations are given to you in a matrix where rows are locations in the transect and columns are observations of speeds at each location for different individuals\n\nFind number of times speeds were above the hunting threshold anywhere (easy)\n\n\njust count all values in the matrix above threshold (e.g. sum(matrix &gt;= threshold))\ncould do without a loop\n\n\nFind how often neighboring locations had speeds above the hunting threshold at the same time (harder)\n\n\nneed to loop through each location and observation and check if neighboring location also had a speed above the threshold at that time\nloops make this easy because you can go back and forth in time with your counter!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#start-with-1",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#start-with-1",
+    "title": "Looping",
+    "section": "Start with #1",
+    "text": "Start with #1\nfind number of times speeds were above the hunting threshold anywhere (easy)\ntry with a partner\n\n# create some sample data\nnobs = 4\nnlocation = 5\n# matrix function in R lets you initialize with data\ncreatureobs = matrix(runif(nobs*nlocation, min=0, max=100), nrow=nlocation)\n# check to see that it is a matrix with rows and columns\nstr(creatureobs)\n\n num [1:5, 1:4] 82.5 63.1 24.7 78.5 68.5 ...\n\ncreatureobs\n\n         [,1]     [,2]     [,3]     [,4]\n[1,] 82.52840 40.21942 65.69433 62.40322\n[2,] 63.09673 96.96481 89.99641 35.17449\n[3,] 24.72529 56.72276 36.55338 24.01281\n[4,] 78.48105 96.45130 99.14888 22.38366\n[5,] 68.45028 72.05670 98.88241 13.24150\n\n# nested for loop: use o as counter for observation; l as counter for location\n# outer loop for location\nhunting_speed = 60\nnum_hunting_speeds=0\nfor (l in 1:nlocation) {\n  # inner loop for observations\n  for (o in 1:nobs) {\n     num_hunting_speeds = num_hunting_speeds + ifelse(creatureobs[l,o] &gt;= hunting_speed, 1, 0)\n  }\n}\n\nnum_hunting_speeds\n\n[1] 12\n\n# as percent\nnum_hunting_speeds/(nobs*nlocation)*100\n\n[1] 60"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#now-lets-try-the-harder-task",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#now-lets-try-the-harder-task",
+    "title": "Looping",
+    "section": "Now let’s try the harder task",
+    "text": "Now let’s try the harder task\n\n# nested for loop: use o as counter for observation; l as counter for location\n# outer loop for location\nnum_hunting_speeds_neighbors=0\n\n# notice that we only go to the second last location\nfor (l in 1:(nlocation-1)) {\n  # inner loop for observations\n  for (o in 1:nobs) {\n      if (creatureobs[l,o] &gt;= hunting_speed & creatureobs[l+1,o] &gt; hunting_speed) {\n         checkneigh = 1\n      } else {\n         checkneigh = 0\n      }\n     num_hunting_speeds_neighbors = num_hunting_speeds_neighbors + checkneigh\n  }\n}\nnum_hunting_speeds_neighbors\n\n[1] 5\n\n# as percent of all observations\nnum_hunting_speeds_neighbors/((nobs*(nlocation-1)))*100\n\n[1] 31.25"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#a-bit-more-on-nesting-loops",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#a-bit-more-on-nesting-loops",
+    "title": "Looping",
+    "section": "A bit more on nesting loops",
+    "text": "A bit more on nesting loops\nWe could even have multiple levels of nesting — think about doing something to a 3-dimensional matrix of time and space (x, y)\nFOR (x in 1:nrow) {\n\n  FOR (y in 1:ncol) {\n\n    FOR (t in 1:ntime) {\n\n      ...\n\n    }\n  }\n}\nTo illustrate\n\n# a 3-dimensional array: space (x=20, y=30) and time (10 steps)\nocean = array(dim=c(20,30,10))\nstr(ocean)\n\n logi [1:20, 1:30, 1:10] NA NA NA NA NA NA ...\n\n# fill with simulated temperature data using nested loops\nfor (x in 1:nrow(ocean)) {\n  for (y in 1:ncol(ocean)) {\n    for (t in 1:dim(ocean)[3]) {\n      ocean[x,y,t] = rnorm(mean=16+t, sd=2, n=1)\n      # imagine running a model to estimate ocean temperature\n      # then feeding it into a model that uses that temperature to impact corals\n    }\n  }\n}"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#different-types-of-loops",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#different-types-of-loops",
+    "title": "Looping",
+    "section": "Different types of loops",
+    "text": "Different types of loops\n\nfor - works with a counter to decide how many times to repeat\nwhile - repeats until a condition is met"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#while-loop",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#while-loop",
+    "title": "Looping",
+    "section": "While loop",
+    "text": "While loop\nGoes through the loop until a condition is met\n\nuseful for when you don’t know how many times you need to repeat something but you want to keep going until a condition is met\noften for simulations where you want to keep going until you reach a threshold or a certain outcome"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#format-for-while",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#format-for-while",
+    "title": "Looping",
+    "section": "Format for while",
+    "text": "Format for while\nwhile (condition) {\n\n  ...\n\n}"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#example-of-while-loop",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#example-of-while-loop",
+    "title": "Looping",
+    "section": "Example of while loop",
+    "text": "Example of while loop\nImagine trying to estimate how long it will take for a water quality threshold to be exceeded when there is a leak of pollution into a lake;\n\nyou have an estimate of how much pollution is added each day; (pol_in)\nYou also know that the pollution is removed at a certain rate each day; (pol_out) but removal efficacy depend on the air temperature that day\n\nremoval is \\(pol_{out} = pol_{out,base} * (1 + 0.01 * air_{temp})\\)\n\nYou know air temperature is normally distributed mean 20 degrees Celsius and standard deviation of 5 degrees Celsius\n\nyou want to know how long it will take for the pollution to exceed a threshold\nNOTE: I’m also going to add a check to stop if too many days pass! (we will talk about why)\n\n# initialize parameters\npol_in = 10 # pollution added each day\npol_out_base = 5 # base pollution removed each day\nthreshold = 100 # pollution threshold\n\n# initialize pollution level and day counter\npollution_level = 0\nday = 0\n\nmaxday =365\n# while loop to simulate pollution levels over time\n# we use && for AND because we want to check both conditions - that pollution level is below threshold and that we haven't exceeded max days\n\nwhile ((pollution_level &lt; threshold) && (day &lt; maxday)) {\n  # update pollution level\n  air_temp = rnorm(mean=20, sd=5, n=1) #\n  pol_out = pol_out_base * (1 + 0.01*air_temp) # calculate pollution removed based on air temp\n  pollution_level = pollution_level + pol_in - pol_out # update pollution level\n  day = day + 1 # increment day counter\n}\ncat(sprintf(\"It takes %d days for pollution to exceed the threshold of %d, final level: %.1f\", day, threshold, pollution_level))\n\nIt takes 25 days for pollution to exceed the threshold of 100, final level: 100.3"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#why-do-we-need-a-check-for-max-days",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#why-do-we-need-a-check-for-max-days",
+    "title": "Looping",
+    "section": "Why do we need a check for max days?",
+    "text": "Why do we need a check for max days?\nWhat if pollutant level never exceeds threshold?\nInfinite Loop!\nyou can often use ‘ctrl C’ to break out of an infinite loop\nit is better to have a check in your code to stop if you exceed a certain number of iterations"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5_looping2.html#reminder-for-first-make-up-recorded-lecture",
+    "href": "course-materials/lecture-slides/lecture5_looping2.html#reminder-for-first-make-up-recorded-lecture",
+    "title": "Looping",
+    "section": "Reminder for first make up recorded lecture",
+    "text": "Reminder for first make up recorded lecture"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#programming-always-starts-with",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#programming-always-starts-with",
+    "title": "Functions",
+    "section": "Programming Always Starts with",
+    "text": "Programming Always Starts with\nConceptual Design\n\nWhat is the goal\nHow can you break this goal into sub-task\nFor the overall project and each sub-task\n\nWhat are the inputs\nWhat are the outputs"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#modularity",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#modularity",
+    "title": "Functions",
+    "section": "Modularity",
+    "text": "Modularity\n\nPrograms are made up of building blocks\nA main program that controls the flow and calls functions/modules/building blocks\n\nModular Housing"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#modules-take-you-from-inputs-to-outputs-in-pieces",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#modules-take-you-from-inputs-to-outputs-in-pieces",
+    "title": "Functions",
+    "section": "Modules take you from inputs to outputs in pieces",
+    "text": "Modules take you from inputs to outputs in pieces\n\nhelpful to start a software engineering project by diagramming or flow charting your program\nwhat is the goal\nwhat are key building blocks - modules or functions\ninputs and output\nhow do you put the blocks together to go from input to output - main program"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#flow-chart-example",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#flow-chart-example",
+    "title": "Functions",
+    "section": "Flow Chart Example",
+    "text": "Flow Chart Example\nFlow chart Example"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#designing-modularity-1",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#designing-modularity-1",
+    "title": "Functions",
+    "section": "Designing Modularity",
+    "text": "Designing Modularity\nModules often become ‘black boxes’ which hides detail that might make understanding the program overly complex\nMost languages have lots of black boxes already written and most allow you to write your own"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#steps-in-program-design-for-each-module-and-overall-program-design",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#steps-in-program-design-for-each-module-and-overall-program-design",
+    "title": "Functions",
+    "section": "STEPS IN Program Design for Each Module and Overall Program Design",
+    "text": "STEPS IN Program Design for Each Module and Overall Program Design\n\nClearly define your goal in words/figures as precisely as possible, what do you want your program to do\n\ninput/output of the entire program\nmodules\n\ninputs/parameters\noutputs\n\nflow between modules\n\nImplement AND document as you go\nTest\nRefine\nTest again\nCreate User Documentation and Distribute"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#some-examples-1",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#some-examples-1",
+    "title": "Functions",
+    "section": "Some Examples",
+    "text": "Some Examples\n\n# look at a R data set on Biological Oxygen Demand over time\n\n# notice the use of data - R function that brings pre-stored datasets into the work space\ndata(BOD)\n\n# notice \"help\" and the information that it provides\nhelp(BOD)\n\n# options for looking at data\nview(BOD)\n\nhead(BOD)\n\n  Time demand\n1    1    8.3\n2    2   10.3\n3    3   19.0\n4    4   16.0\n5    5   15.6\n6    7   19.8\n\n# example of a function - SORT\nresult = sort(BOD[,\"demand\"], decreasing=TRUE, method=\"quick\")\nhead(result)\n\n[1] 19.8 19.0 16.0 15.6 10.3  8.3\n\n\nIn this example, parameters are decreasing and method\nOutput is a sorted version of demand saved to result."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#another-example",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#another-example",
+    "title": "Functions",
+    "section": "Another Example",
+    "text": "Another Example\nAn phone app for calculating car mileage\n\ninputs are location, price, gallons and odometer readings at each fill up\ngraph of miles/gallon over time\nparameters control units (could be km/liter, output couple be presented as a graph or an average value)\n\nGas Mileage App\nexamples a) simple (single box); b) more complex (3 boxes)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#designing-modularity-2",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#designing-modularity-2",
+    "title": "Functions",
+    "section": "Designing Modularity",
+    "text": "Designing Modularity\nBreaking your instructions down into individual pieces; identifying instructions that can be reused\nbasic modules are called functions in R"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#learn-to-think-in-terms-of-functionsmodules",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#learn-to-think-in-terms-of-functionsmodules",
+    "title": "Functions",
+    "section": "Learn to think in terms of functions/modules",
+    "text": "Learn to think in terms of functions/modules\n\nbreak your tasks into boxes with inputs, parameters and output\nWRITE DOWN the contract for each box/function\n\nCONTRACT\n\nif the users gives you A, the function with return B\nspecify A and B as precisely as you can (units, time/space scale, parameters, options)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#a-simple-function-example---just-one-module",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#a-simple-function-example---just-one-module",
+    "title": "Functions",
+    "section": "A simple function example - just one module",
+    "text": "A simple function example - just one module\nLets say we want to develop a program that computes power generated from hydro-reservoir\nWe know that power generation depends on water release rates and the potential energy (from the reservoir height)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#lets-break-it-down",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#lets-break-it-down",
+    "title": "Functions",
+    "section": "Lets break it down",
+    "text": "Lets break it down\nContract\nInput: Reservoir height (m) and flow rate (m3/sec) (as a single value in time or a time series)\nOutput: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)\nParameters: KEff, ρ (density of water), g (acceleration due to gravity)\nWhat the function will do - compute power using the following equation - body of the function\nP = ρ * h * r * g * KEff;\nP is Power in watts, ρ is the density of water (~1000 kg/m3), h is height in meters, r is flow rate in cubic meters per second, g is acceleration due to gravity of 9.8 m/s2, KEff is a coefficient of efficiency ranging from 0 to 1."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#lets-think-about-a-more-complex-program",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#lets-think-about-a-more-complex-program",
+    "title": "Functions",
+    "section": "Lets think about a more complex program…",
+    "text": "Lets think about a more complex program…"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.modularity.html#as-practice-dont-need-to-turn-in",
+    "href": "course-materials/lecture-slides/lecture4.modularity.html#as-practice-dont-need-to-turn-in",
+    "title": "Functions",
+    "section": "As practice (don’t need to turn in)",
+    "text": "As practice (don’t need to turn in)\nThink of an example program that you might want to design that is complex enough to involve several modules\n\nwrite a contract for the overall program (input, output, parameters)\nbreak the program in to modules (naming them appropriately), write a contract for each one\nsketch a diagram that shows how these modules would be put together to go from inputs to output for the overall program"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#data-types",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#data-types",
+    "title": "Data Types and Structures",
+    "section": " Data types",
+    "text": "Data types\nAll programming languages use data-types, or structures to hold information\n\ninteger\nfloating point/ real / numeric\ncharacter\nstring\n\nOften data types are multi-dimensional\nSome useful ones in R\n\nvector\nmatrix\ndata frame\ntibble\nfactors\nlists\n\nProgramming often involves selecting and building data structures\nGood data structures are\n\nas simple as possible\neasy to understand (readable names)\neasy to manipulate\neasy to visualize"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#ways-to-generate-data",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#ways-to-generate-data",
+    "title": "Data Types and Structures",
+    "section": "Ways to generate data",
+    "text": "Ways to generate data\nFor testing your code, often helpful to generate test data\nWe also often generate random data to explore the behavior of our code and to understand how it works\n\nrunif(min,max) (sampling from a uniform distribution)\nrnorm(mean,sd) (sampling from uniform and normal distributions)\nrpois(lambda) (sampling from a Poisson distribution)\n\n(many other options for sampling from distributions)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#other-ways-to-generate-data",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#other-ways-to-generate-data",
+    "title": "Data Types and Structures",
+    "section": "Other ways to generate data",
+    "text": "Other ways to generate data\n\nsample(vector,size,replace) (sampling from a vector of values)\nseq(start,end,by) (for creating a sequence of numbers)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#examples",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#examples",
+    "title": "Data Types and Structures",
+    "section": "Examples",
+    "text": "Examples\n\nFire starts - uniform distribution\nOtter weights - normal distribution\nRandomly picking years from a sequence of years\n\n\n# want to randomly start 20  fires in a fire model, locations numbered from 1 to 100\nfirestarts = runif(20, min=0, max=100)\nggplot(data.frame(firestarts=firestarts), aes(firestarts))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# want to mimic a population of 20 otters with a mean weight of 10 kg and a standard deviation of 2 kg\notterweight = rnorm(20, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# notice how the more you sample the more it looks normal\notterweight = rnorm(2000, mean=10, sd=2)\nggplot(data.frame(otterweight), aes(otterweight))+geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n# sample allows you to pick from a vector of values, lets say we want to randomly pick years from a sequence of years from 2000 to 2025\n# two options - we allow a year to be picked more than once\npick = sample(seq(2000,2025), size=2, replace=T)\npick\n\n[1] 2015 2004\n\n# no repeat years\npick = sample(seq(2000,2025), size=20, replace=F)\npick\n\n [1] 2006 2003 2023 2010 2022 2018 2008 2016 2014 2012 2024 2004 2007 2011 2021\n[16] 2009 2013 2001 2020 2025"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#now-you-try",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#now-you-try",
+    "title": "Data Types and Structures",
+    "section": "Now you try",
+    "text": "Now you try\nWrite the R code to create test data where we are simulating how many bear-visitor encounters are likely, if we know that\n\nthe number of encounters per day follows a Poisson distribution with a mean of 1 encounter per day\nthere are 1000 visitors\n\nWe want to simulate how many encounters they have\nPoisson distribution is a discrete distribution that describes the number of events that occur in a fixed interval of time or space, given a known average rate of occurrence (e.g lambda =1, in rpois)\nGenerate sample data and plot the distribution of encounters\nWhats the maximum number of encounters any visitor had?\nAdd to quiz on Canvas"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#data-in-r-packages",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#data-in-r-packages",
+    "title": "Data Types and Structures",
+    "section": "Data in R Packages",
+    "text": "Data in R Packages\n\nMany Packages in R have datasets associated with them\nTo see this you can use the data() command\nTo load a dataset from a package you can use data(datasetname)\nA useful thing to do is run help(datasetname) to learn about the dataset and its structure\nOR in R you can always use (attributes, str) to learn about the structure of the data\n\nLets try and then use sample to sample from one\n\ndata()\n\n# Lets look at New York Air Quality Measurement\n# load into your R environment\ndata(airquality)\n# learn about dataset\nhelp(airquality)\n# a good way to see structure of data\nstr(airquality)\n\n'data.frame':   153 obs. of  6 variables:\n $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...\n $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...\n $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...\n $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...\n $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...\n $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...\n\nattributes(airquality)\n\n$names\n[1] \"Ozone\"   \"Solar.R\" \"Wind\"    \"Temp\"    \"Month\"   \"Day\"    \n\n$class\n[1] \"data.frame\"\n\n$row.names\n  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18\n [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36\n [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54\n [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72\n [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90\n [91]  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108\n[109] 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126\n[127] 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144\n[145] 145 146 147 148 149 150 151 152 153\n\n# does Ozone correlate with air temperature\nggplot(airquality, aes(x=Temp, y=Ozone))+geom_point()+ggtitle(\"Ozone vs Temperature\")\n\nWarning: Removed 37 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n# lets say we are testing a new product and we want a sample of 5 ozone measurement that conforms to the distribution in this dataset\nozone_sample = sample(airquality$Ozone, size=5, replace=F)\nozone_sample\n\n[1]  NA  NA  NA 135  32\n\n# this works but we have some NA values - maybe subset\nairquality_clean = na.omit(airquality)\n\n# Issue 2 - we can't link that Ozone with other measurements in the dataset - we need to sample the row number instead of ozone\nozone_sample = sample(1:nrow(airquality_clean), size=5, replace=F)\nozone_sample\n\n[1] 98 11 64 94 62\n\nairquality_clean[ozone_sample,]\n\n    Ozone Solar.R Wind Temp Month Day\n139    46     237  6.9   78     9  16\n15     18      65 13.2   58     5  15\n100    89     229 10.3   90     8   8\n135    21     259 15.5   76     9  12\n95     16      77  7.4   82     8   3\n\n# plot our sample days\n\nggplot(airquality_clean, aes(x=Temp, y=Ozone))+geom_point()+\n  geom_point(data=data.frame(Temp=airquality_clean$Temp[ozone_sample], Ozone=airquality_clean$Ozone[ozone_sample]), color=\"red\", size=3)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#what-we-are-learning",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#what-we-are-learning",
+    "title": "Data Types and Structures",
+    "section": "What we are learning",
+    "text": "What we are learning\n\nHow to generate data (often needed for testing code)\nSome data cleaning practices\nAlways plot your data after processing to make sure what you did makes sense\n\nPracticing sampling from a dataset\nOn your own with the airquality data set\n\nfind the median Wind speed\nSample 10 Wind speed measurements\ncompute their median\n\nSubmit both on Canvas quiz"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#data-types-factors",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#data-types-factors",
+    "title": "Data Types and Structures",
+    "section": " Data Types: Factors ",
+    "text": "Data Types: Factors \nsomething that has different classes or groups useful for doing calculations with categories\nHere’s an example:\nFirst lets look at a standard numeric vector\n\na = c(1.3, 1, 4, 1.3, 22)\n# compute the mean\nmean(a)\n\n[1] 5.92\n\n\nWhat if a is a factor\nWhat do commands like mean do\n\na = as.factor(a)\n# compute the mean\nmean(a)\n\nWarning in mean.default(a): argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n#why? lets look\na\n\n[1] 1.3 1   4   1.3 22 \nLevels: 1 1.3 4 22"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#exploring-factors",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#exploring-factors",
+    "title": "Data Types and Structures",
+    "section": "Exploring factors",
+    "text": "Exploring factors\nWe can use summary with factors to get frequencies in each category (or “level” )\n\n# create vector of possible fish \npossible.fish = c(\"salmon\",\"steelhead\",\"shark\",\"tuna\",\"cod\")\n\n# we can use sample to simulate a random recording of catch by fisherman, lets say we pick 20 fish from the net\n\ncatch1 = base::sample(possible.fish, size=20, replace=T)\n# because possible.fish was a factor catch1 will be a factor\ncatch1\n\n [1] \"tuna\"      \"tuna\"      \"tuna\"      \"shark\"     \"tuna\"      \"salmon\"   \n [7] \"tuna\"      \"steelhead\" \"steelhead\" \"steelhead\" \"cod\"       \"steelhead\"\n[13] \"salmon\"    \"steelhead\" \"shark\"     \"salmon\"    \"shark\"     \"cod\"      \n[19] \"cod\"       \"steelhead\"\n\nsummary(catch1)\n\n   Length     Class      Mode \n       20 character character \n\n# if we want summary to be more useful - make this a factor\ncatch1 = as.factor(catch1)\n\n\n# to quickly get frequencies of different fish and to plot \nsummary(catch1)\n\n      cod    salmon     shark steelhead      tuna \n        3         3         3         6         5 \n\nplot(catch1, col=\"blue\")\n\n# we can also use summary to explore and return information about the distribution\n# mean frequency of a particular type of fish\nmean(summary(catch1))\n\n[1] 4\n\n# maximum frequency\nmax(summary(catch1))\n\n[1] 6\n\n# which fish was most frequently caught\nwhich.max(summary(catch1))\n\nsteelhead \n        4 \n\n#to get just the name \nnames(which.max(summary(catch1)))\n\n[1] \"steelhead\""
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#on-your-own",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#on-your-own",
+    "title": "Data Types and Structures",
+    "section": "On your own",
+    "text": "On your own\nIn a quarto document\n\ncreate a new population of some creature (could be mythical)\nsample from the population\nuse summary to explore the distribution of your sample"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#but-i-dont-want-a-factor",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#but-i-dont-want-a-factor",
+    "title": "Data Types and Structures",
+    "section": "But I don’t want a factor",
+    "text": "But I don’t want a factor\nSometimes you don’t want factors and R thinks something should be How to change back? as.numeric makes sense …but\n\na = as.factor(c(1.3, 1, 4, 1.3, 22))\n#sum(a)\n\n# try to make a numeric version from the factor\nb = as.numeric(a)\nsum(b)\n\n[1] 12\n\nb\n\n[1] 2 1 3 2 4\n\n# better\nb = as.character(a)\nb = as.numeric(b)\nb\n\n[1]  1.3  1.0  4.0  1.3 22.0\n\nsum(b)\n\n[1] 29.6"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#strings-and-how-to-work-with-them",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#strings-and-how-to-work-with-them",
+    "title": "Data Types and Structures",
+    "section": "Strings and how to work with them",
+    "text": "Strings and how to work with them\nStrings are character data types that are used to represent text\n\nexamplestring = \"River Otters\"\nnchar(examplestring)\n\n[1] 12\n\n\nAll programming languages have ways to deal with strings Some commonly used R functions\n\npaste for concatenating strings together\nstrsplit for splitting strings into parts\nsprintf for creating formatted strings\ngsub for replacing parts of strings\ntolower and toupper for changing case\nnchar for counting the number of characters in a string\n\nMost of these are easy to use - just look at help for the function and try it out\nsprintf however takes some specialized knowledge"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#creating-strings-with-sprintf.",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#creating-strings-with-sprintf.",
+    "title": "Data Types and Structures",
+    "section": "Creating strings with sprintf.",
+    "text": "Creating strings with sprintf.\nsprintf used something called format string syntax to create formatted strings\nformat string syntax is used in many places -for searching for and creating strings - AND - its used by many programming languages\n\nC / C++ → printf\nPython → old-style % formatting and str.format()\nJava / JavaScript → similar formatting ideas\nSQL (some dialects),\nUnix Shell (terminal window)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#format-string-syntax",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#format-string-syntax",
+    "title": "Data Types and Structures",
+    "section": "format string syntax",
+    "text": "format string syntax\nsprintf uses format ‘code’ to tell it how to create a string, based on the values you give it\nExample\n\nsprintf(\"We found %d %s %3.1f miles from shore\", 4,\"Otters\", 18.95632342)\n\n[1] \"We found 4 Otters 19.0 miles from shore\"\n\n\n\n%s replace with a string\n%d replace with an integer value\n%f replace with a real value\n%4.1f replace with a real value with 4 digits, two after decimal\n\\n add a line return"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#example",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#example",
+    "title": "Data Types and Structures",
+    "section": "Example",
+    "text": "Example\nmake a string with sprintf and add to plot title\n\n# use results for creating text\n# sprintf creates a string %s mean use what ever is after the , to fill in a string\nplottitle=sprintf(\"We like %s\", names(which.max(summary(catch1))))\n\nggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=\"count\")+labs(title=plottitle)\n\nWarning in geom_histogram(stat = \"count\"): Ignoring unknown parameters:\n`binwidth`, `bins`, and `pad`\n\n\n\n\n\n\n\n\n# you can also add numbers to the string\nplottitle=sprintf(\"We mostly caught %s \\n max catch(%d)\", names(which.max(summary(catch1))), max(summary(catch1)))\nggplot(data.frame(catch1=catch1), aes(catch1, fill=catch1))+geom_histogram(stat=\"count\")+labs(title=plottitle)\n\nWarning in geom_histogram(stat = \"count\"): Ignoring unknown parameters:\n`binwidth`, `bins`, and `pad`"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#another-example-with-sprintf",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#another-example-with-sprintf",
+    "title": "Data Types and Structures",
+    "section": "Another Example with Sprintf",
+    "text": "Another Example with Sprintf\n\nTry making a plot with the airquality dataset\nadd a title that includes\n\n\nthe mean Ozone level in the dataset,\na line return\nthe mean Ozone level in the sample you took earlier\n\n\ntitle = sprintf(\"Mean Ozone in dataset: %4.1f \\n Mean Ozone in sample: %4.1f\", mean(airquality$Ozone, na.rm=T), mean(airquality_clean$Ozone[ozone_sample], na.rm=T))\ntitle\n\n[1] \"Mean Ozone in dataset: 42.1 \\n Mean Ozone in sample: 38.0\"\n\nggplot(airquality_clean, aes(x=Temp, y=Ozone))+geom_point()+\n  geom_point(data=data.frame(Temp=airquality_clean$Temp[ozone_sample], Ozone=airquality_clean$Ozone[ozone_sample]), color=\"red\", size=3) +ggtitle(title)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.datatypes.html#what-weve-explored",
+    "href": "course-materials/lecture-slides/lecture4.datatypes.html#what-weve-explored",
+    "title": "Data Types and Structures",
+    "section": " What we’ve explored ",
+    "text": "What we’ve explored \n\ncommon data types\nways to generate data\nstring format syntax"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#file-organization",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#file-organization",
+    "title": "Git Spring 2026",
+    "section": "File Organization",
+    "text": "File Organization\nRecall from ESM-206\n\nfile structure example"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#project-folder-organization",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#project-folder-organization",
+    "title": "Git Spring 2026",
+    "section": "Project Folder Organization",
+    "text": "Project Folder Organization\n\nDepends on project and who you are collaborating with\nFolders for R scripts for functions (TBD)\n\nmust be called R when building a package\n\nSub folders\n\nimages\ndocuments\ndata\n\nOrganize by project components for complex projects\n\n(see RHESSys example)\n\nYou might consider having a course project and organize by week (for week1 folder etc)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#remember-the-here-command",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#remember-the-here-command",
+    "title": "Git Spring 2026",
+    "section": "Remember the “here” command!",
+    "text": "Remember the “here” command!\n\nlibrary(here)\nlibrary(tidyverse)\n\n\n# this will show you the path to your project folder\nhere()\n\n[1] \"/Users/naomitague/Courses/ESM_262\"\n\n# this will let you open a file in your project folder\np301 = read.csv(here(\"downloadables/Data\", \"p301.csv\"))\n\n# lets make month names nicer\np301$month_lab &lt;- factor(p301$month, levels = 1:12, labels = month.abb)\n\n# plot direct solar radiation by month\nggplot(p301, aes(x = month_lab,\n                y = direct_solar,\n                group = month_lab,\n                fill = month_lab)) +\n  geom_boxplot() +\n  theme_bw() +\n  labs(y = \"Direct Solar Radiation \\n(W/m^2)\", x = \"Month\") +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility",
+    "title": "Git Spring 2026",
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\nWhy reproducibility and what does it mean?\nWhat is a workflow?\n\nnot usually linear\noften involves iterative steps\noften involves multiple people"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-and-gitgithub",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#reproducibility-and-gitgithub",
+    "title": "Git Spring 2026",
+    "section": "Reproducibility and Git/Github",
+    "text": "Reproducibility and Git/Github\nVersion control systems help you track all of the changes to your files, (kind of like track changes for data, programs…everything …and more sophisticated)\nGit is a free and open source distributed version control system. Its the most popular, used by millions\nGit works with many code-bases not just R\n\nPython, C, Java, etc.\ncan be used also for data storage, websites, and more\n\nDeveloped by programmer (creator of Linux - Linus Torvalds)\nGithub platform for managing and sharing git repositories - acquired by Microsoft in 2018"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept",
+    "title": "Git Spring 2026",
+    "section": "Git Concept",
+    "text": "Git Concept\n\ngit local remote“Artwork by @allison_horst”."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept-more",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#git-concept-more",
+    "title": "Git Spring 2026",
+    "section": "Git Concept More",
+    "text": "Git Concept More\nLocal Git\n\nkeep track of changes to your code on your computer\nwhen necessary, go back to early versions\n\nGitHub\n\naccess your code from different places\ncollaborate with others\n\nothers who will use your code\ncoding together\n\n\n\ngit figure with connections"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#the-basics",
+    "title": "Git Spring 2026",
+    "section": "The Basics",
+    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nHistory\n\nshows your sequence of commit messages\n\nDiff\n\nshows what changed in a file since last commit\n\nRevert\n\ngo back to last commit GitHub’s\n\nGit Guides are a really wonderful resource to refer to!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#example",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#example",
+    "title": "Git Spring 2026",
+    "section": "Example",
+    "text": "Example\nGitHub Repository that I’ll use in this course\n\nDirectly under the navigation bar (top-left) you will find the name of the repository\nnext line tells you information about current branch - other branches\nthe Code button gives you the identifier of the repository that you can use to download locally\nAbove the files listing, there is information about the latest commit to this repository\nOn the left, you will have the files and folder names\nIn the middle, the last commit message on this file (or file contained in a folder)\nOn the right, the time stamps of the latest commit"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#lets-try",
+    "title": "Git Spring 2026",
+    "section": "Lets Try",
+    "text": "Lets Try\nFirst local Git\nWith your partner\n\nCreate a new R project in Rstudio\n\nNotice all 3 options - particularly what to do if you already have a Github repository\nFor this one - we will create a local git first\n\nCheck: Create a git repository\nMake a folder called Week1 - add Assignment 1 repository to that folder\nMake a Data Directory - copy p301.csv into that directory"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#now-create-a-github-repo",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#now-create-a-github-repo",
+    "title": "Git Spring 2026",
+    "section": "Now create a GitHub repo",
+    "text": "Now create a GitHub repo\nGitHub\nMultiple ways to do this..\nEasy from Rstudio, with usethis package\nBefore we start check your status by getting a situation report\n\ninstall.packages(\"usethis\")\nusethis::git_sitrep()\n\n\nCreate a GitHub repo\n\nrun the following in the R console\n\ninstall.packages(\"usethis\")\nusethis::use_git()        # initializes git\nusethis::use_github()     # creates the GitHub repo and links it\n\n\nGo to GitHub and check to see that all of your files are in your repo\n\nWhile you are there review the GitHub interface parts…any questions?"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#alternative",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#alternative",
+    "title": "Git Spring 2026",
+    "section": "Alternative",
+    "text": "Alternative\nYou can also create a repository on Github itself and then later link you local repository\nCaution if you do this, make sure to create the repository without a readme file, otherwise you will have to merge the two repositories (local and remote) which is a little more complicated\n\n\n\n\n\n\nNote\n\n\nif PAT doesn’t work, you can do this manually\n\nCreate a new repository (no readme file) on GitHub - give it a name\nin the Terminal window in R studio using\n\n\ngit init\ngit add .\ngit commit -m “Initial commit”\ngit branch -M main\ngit remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git\ngit push -u origin main"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#workflow---tracking-changes",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#workflow---tracking-changes",
+    "title": "Git Spring 2026",
+    "section": "Workflow - Tracking Changes",
+    "text": "Workflow - Tracking Changes\n\nChange something in your Quarto file; you could just add a comment\nSave the file\n\n\nsee how this shows up in git tab in RStudio\n\n\nCommit\n\nyour file should have an M for modified, check this to “stage” your changes for commit\nadd a message briefly describing what you changed\ncommit\n\nSend changes to github by Push\nGo to github and check to see if your file and recent changes are there"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#adding-another-file",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#adding-another-file",
+    "title": "Git Spring 2026",
+    "section": "Adding another file",
+    "text": "Adding another file\n\nCreate a new file - another Quatro file that is a demonstration of how to find the total streamflow and total precipitation in each year and % of precip that becomes streamflow and then computes mean and standard deviation of across years. You can use the p301.csv file for this.\n\nIf you need a hint on how to do this - here’s some R code that you might use in the Quarto file\n\nlibrary(here)\nlibrary(tidyverse)\n# read in the data\np301 = read.csv(here(\"downloadables/Data\", \"p301.csv\"))\n\n# aggregate by water year\np301_yearly &lt;- p301 %&gt;%\n  group_by(wy) %&gt;%\n  summarise(total_streamflow = sum(streamflow),\n            total_precip = sum(precip),\n            percent_streamflow = (total_streamflow / total_precip) * 100)\n\n# calculate mean, range and standard deviation of percent streamflow across year\nmean(p301_yearly$percent_streamflow)\n\n[1] 25.50839\n\nrange(p301_yearly$percent_streamflow)\n\n[1]  0.00000 59.61193\n\nsd(p301_yearly$percent_streamflow)\n\n[1] 18.96631\n\n\n\nSave it into the appropriate directory ( using organized directory structures is good programming practice )\nAdd it to Git local\n\ngo to Git and then commit\nfind your file, should have a “?”, check so that it becomes an “A”\nadd a commit message\ncommit\n\nWhen you are ready Send changes to github by pushing\nGo to github and check to see if your file and recent changes are there"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#correcting-mistakes",
+    "title": "Git Spring 2026",
+    "section": "Correcting Mistakes",
+    "text": "Correcting Mistakes\nContinue to edit your file but this time add something you don’t want\n\nmake a change and save\ngo to your file and look at the changes\nclick revert to get rid of the changes that you don’t want\nlook at file to make sure unwanted edit is not there\n\nWe will talk about how to get something back after you’ve committed it next class"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-slides.html#a-few-things-to-note",
+    "href": "course-materials/lecture-slides/lecture2.git-slides.html#a-few-things-to-note",
+    "title": "Git Spring 2026",
+    "section": "A few things to note",
+    "text": "A few things to note\n\nthere are ways to add git and github to an existing project Happy Git is a good resource here\nwhat is .gitignore\n\nThis file tells git the types of files you don’t want to track W\n\nautomatically generated files that collaborators don’t need (re-generated by R)\nreally big files you don’t want to share\nprivate stuff you don’t want to share\ncomputer specific stuff (usually also auto-generated)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#paper-thoughts",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#paper-thoughts",
+    "title": "Quarto- Spring 2026",
+    "section": "Paper Thoughts?",
+    "text": "Paper Thoughts?"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#classic-example-of-quarto",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#classic-example-of-quarto",
+    "title": "Quarto- Spring 2026",
+    "section": "Classic Example of Quarto",
+    "text": "Classic Example of Quarto\n\ndownload hello.qmd from the course website format: revealjs: theme: solarized- open it in RStudio"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#rendering",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#rendering",
+    "title": "Quarto- Spring 2026",
+    "section": "Rendering",
+    "text": "Rendering\nTo render a Quarto document, use the “Render” button in RStudio.\nWhen you render a Quarto document, it will execute all the code chunks and include the output in the final document.\nIn Rstudio - you have two views of the quarto document\n\nSource view is where you write your code and markdown.\nVisual view is where you see the final output of your document."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-go-through-the-code-in-hello.qmd-and-see-how-it-works",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-go-through-the-code-in-hello.qmd-and-see-how-it-works",
+    "title": "Quarto- Spring 2026",
+    "section": "Lets go through the code in hello.qmd and see how it works",
+    "text": "Lets go through the code in hello.qmd and see how it works\nQuarto documents are made up of three main components:\n\nYAML header\nMarkdown content\nCode chunks"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-content",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#markdown-content",
+    "title": "Quarto- Spring 2026",
+    "section": "Markdown Content",
+    "text": "Markdown Content\nWhat you are familiar with\nSome text formatting\n\nHeaders (with different numbers of pound signs, #, ##, … to start the line)\nBullet points (asterisks, *, or dashes, -, to start lines)\nLinks ([text here!](link here))\nBold (double asterisk) & italics (single asterisk)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header",
+    "title": "Quarto- Spring 2026",
+    "section": "YAML header",
+    "text": "YAML header\nThe YAML header is where you specify\n\nthe title of your document,\nthe output format, and other metadata.\n\nIn this quarto, the output format is revealjs, which is a presentation format.\nOther formats include\n\nhtml\npdf\nword\n\nYou may need to install additional software to use some of these formats (e.g. pandoc, latex).\nTry it with hello.qmd - change format\nformat:\nrevealjs:\ntheme: solarized\nIndentation Matters in YAML"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#a-bit-more-on-yaml",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#a-bit-more-on-yaml",
+    "title": "Quarto- Spring 2026",
+    "section": "A bit more on YAML",
+    "text": "A bit more on YAML\nYAML stands for “YAML Ain’t markup Language”\nits a human readable way to control and configure applications/documents\nAlso used in\n\nGitHub Actions\nautomate code testing and deployment of website\nDocker code containers\nAutomating R documentation"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-header-1",
+    "title": "Quarto- Spring 2026",
+    "section": "Yaml Header",
+    "text": "Yaml Header\nSome other things you can put in YAML header\n\nauthor\ndate\nresources (e.g. images, css files)\nformat (for presentations)\n\nTry adding an author and date\n\nauthor: “Naomi Tague”\ndate: “2024-06-01”"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#resources",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#resources",
+    "title": "Quarto- Spring 2026",
+    "section": "Resources",
+    "text": "Resources\nResources are files that you want to include in your document, such as images or css files. You can specify the path to these files in the YAML header, and then use them in your document.\nresources: [“../images/”]"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-execute",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#yaml-execute",
+    "title": "Quarto- Spring 2026",
+    "section": "YAML Execute",
+    "text": "YAML Execute\nThe execute section of the YAML header sets how code chunks are executed. For example,\n\necho: false.\nwarning: false\nmessage: false\n\nYou can overrides in an R code chunk header by adding\n\n#/ echo: true"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#r-code-chunks",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#r-code-chunks",
+    "title": "Quarto- Spring 2026",
+    "section": "R Code Chunks",
+    "text": "R Code Chunks\nShould be familiar to you - much like R Markdown.\nQuarto can also include chunks in other languages\n\nPython\nJavaScript."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-look-at-the-code-in-hello.qmd-and-see-how-it-works",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#lets-look-at-the-code-in-hello.qmd-and-see-how-it-works",
+    "title": "Quarto- Spring 2026",
+    "section": "Lets look at the code in hello.qmd and see how it works",
+    "text": "Lets look at the code in hello.qmd and see how it works\nNOTE - code chunks have options that control how they are executed and how they appear in the final document.\nAlternative\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#meet-the-penguins",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#meet-the-penguins",
+    "title": "Quarto- Spring 2026",
+    "section": "Meet the penguins",
+    "text": "Meet the penguins\n\nThe penguins data from the palmerpenguins package contains size measurements for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica.\nThe plot below shows the relationship between flipper and bill lengths of these penguins."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#play",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#play",
+    "title": "Quarto- Spring 2026",
+    "section": "Play",
+    "text": "Play\nMake some changes to the hello.qmd\n\nchange the title\nadd a new R code chunk\nadd some markdown content\nchange to a presentation by replacing html in YAML header\n\nformat: revealjs:\ntheme: solarized\n\ntry a different theme\nrender the document and see how it works!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#set-up-r-enviroment-in-quarto",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#set-up-r-enviroment-in-quarto",
+    "title": "Quarto- Spring 2026",
+    "section": "Set up R enviroment in Quarto",
+    "text": "Set up R enviroment in Quarto\n\nstart with a setup R chunk at the top to load all packages\ncan also set global options for your code chunks (e.g. echo, warning, message) but better to do in quarto YAML header\n\n\nlibrary(here)\n\nhere() starts at /Users/naomitague/Courses/ESM_262\n\nlibrary(tidyverse)\n\nknitr::opts_chunk$set(\n  echo = TRUE,\n  warning = FALSE,\n  message = FALSE\n)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#some-hints",
+    "title": "Quarto- Spring 2026",
+    "section": "Some Hints",
+    "text": "Some Hints\n\nname your code chunks - this makes it easier to debug and understand your code\nuse the “include” option to control whether code chunks are included in the final document (put include: false in the YAML header of a code chunk to exclude it from the final document)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#assignment-1",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#assignment-1",
+    "title": "Quarto- Spring 2026",
+    "section": "Assignment 1",
+    "text": "Assignment 1\nGoal: Practice working with Quarto and ‘wake-up’ you Data Analysis skills from 206\nDataset of Estimated Biological, Hydrologic and Climate Variables for a field site in the California Sierra\nP301 Watershed\nUse your educated intuition to explore (find relationships/patterns of interest)."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#start-working-on-assignment-1",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#start-working-on-assignment-1",
+    "title": "Quarto- Spring 2026",
+    "section": "Start working on Assignment 1",
+    "text": "Start working on Assignment 1\n\naccess on website\ndo with a partner\nsubmit on Canvas before Tuesday’s class"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.quarto-slides.html#for-next-class",
+    "href": "course-materials/lecture-slides/lecture1.quarto-slides.html#for-next-class",
+    "title": "Quarto- Spring 2026",
+    "section": "For next class",
+    "text": "For next class\n\nGo through Git and Github set up in the “install-guide”\n\nreach out to Ojas if you have issues\n\nAssignment 1"
+  },
+  {
+    "objectID": "course-materials/keys/key1.1.html",
+    "href": "course-materials/keys/key1.1.html",
+    "title": "Lab 1.1 KEY",
+    "section": "",
+    "text": "# load packages ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "course-materials/keys/key1.1.html#setup",
+    "href": "course-materials/keys/key1.1.html#setup",
+    "title": "Lab 1.1 KEY",
+    "section": "",
+    "text": "# load packages ----\nlibrary(tidyverse)\nlibrary(palmerpenguins)"
+  },
+  {
+    "objectID": "course-materials/keys/key1.1.html#tidy-data-review",
+    "href": "course-materials/keys/key1.1.html#tidy-data-review",
+    "title": "Lab 1.1 KEY",
+    "section": "Tidy Data Review",
+    "text": "Tidy Data Review\nExample untidy / wide data:\n\n# create some untidy temperature data ----\ntemp_data_wide &lt;- tribble(\n  ~date, ~station1, ~station2,  ~station3,\n  \"2023-10-01\", 30.1, 29.8,  31.2,\n  \"2023-11-01\", 28.6, 29.1,  33.4,\n  \"2023-12-01\", 29.9, 28.5,  32.3\n)\n\n# print it out ----\nprint(temp_data_wide)\n\n# A tibble: 3 × 4\n  date       station1 station2 station3\n  &lt;chr&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1 2023-10-01     30.1     29.8     31.2\n2 2023-11-01     28.6     29.1     33.4\n3 2023-12-01     29.9     28.5     32.3\n\n\nUsing pivot_longer() to “lengthen” / tidy our data:\n\n# convert data from wide &gt; long ----\ntemp_data_long &lt;- temp_data_wide |&gt; \n  pivot_longer(cols = starts_with(\"station\"),\n               names_to = \"station_id\",\n               values_to = \"temp_c\")\n\n# print it out ----\nprint(temp_data_long)\n\n# A tibble: 9 × 3\n  date       station_id temp_c\n  &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;\n1 2023-10-01 station1     30.1\n2 2023-10-01 station2     29.8\n3 2023-10-01 station3     31.2\n4 2023-11-01 station1     28.6\n5 2023-11-01 station2     29.1\n6 2023-11-01 station3     33.4\n7 2023-12-01 station1     29.9\n8 2023-12-01 station2     28.5\n9 2023-12-01 station3     32.3"
+  },
+  {
+    "objectID": "course-materials/assignments/HW4.html",
+    "href": "course-materials/assignments/HW4.html",
+    "title": "Assignment #4",
+    "section": "",
+    "text": "Your task\nWrite a function to compute a biodiversity index - we will use Simpson’s Index (D) as an example\n“Simpson’s Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species”\nValue is between 0 and 1, with lower values associated with lower diversity\nSee Simpson Biodiversity\n\nthere are two versions you can pick either\n\n\\(D = \\sum(n_i(n_i-1)) / (N(N-1))\\)\n\nwhere \\(n_i\\) is the number of individuals of each species\nN is the total number of individuals of all species\n\n\\(D = \\sum((n_i/N)^2)\\)\n\nwhere \\(n_i\\) is the number of individuals of each species\nN is the total number of individuals of all species\n\n\n\nSteps\n\nDefine the contract\n\n\nin a quarto document describe inputs, outputs and what the function will do\n\n\nImplement the function in R\n\n\npower_gen_orig is a good template to start with - copy and modify\nmake sure you include documentation at the top for now follow style from power_gen_orig but you can be more descriptive if you want - as long as line starts with #, it is a comment and will not be executed as code\nsave this file as a name.R file\nhint use factors to make it easier to count the number of individuals of each species\n\n\nTest the function with some example data that you generate\n\n\ninclude you test code in the quarto document\n\nDo this one on your own\nPut both the function and quarto in directory on your github site and submit the link on Canvas\nDue Thursday May 14 8am"
+  },
+  {
+    "objectID": "course-materials/assignments/HW4.html#building-your-first-function",
+    "href": "course-materials/assignments/HW4.html#building-your-first-function",
+    "title": "Assignment #4",
+    "section": "",
+    "text": "Your task\nWrite a function to compute a biodiversity index - we will use Simpson’s Index (D) as an example\n“Simpson’s Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species”\nValue is between 0 and 1, with lower values associated with lower diversity\nSee Simpson Biodiversity\n\nthere are two versions you can pick either\n\n\\(D = \\sum(n_i(n_i-1)) / (N(N-1))\\)\n\nwhere \\(n_i\\) is the number of individuals of each species\nN is the total number of individuals of all species\n\n\\(D = \\sum((n_i/N)^2)\\)\n\nwhere \\(n_i\\) is the number of individuals of each species\nN is the total number of individuals of all species\n\n\n\nSteps\n\nDefine the contract\n\n\nin a quarto document describe inputs, outputs and what the function will do\n\n\nImplement the function in R\n\n\npower_gen_orig is a good template to start with - copy and modify\nmake sure you include documentation at the top for now follow style from power_gen_orig but you can be more descriptive if you want - as long as line starts with #, it is a comment and will not be executed as code\nsave this file as a name.R file\nhint use factors to make it easier to count the number of individuals of each species\n\n\nTest the function with some example data that you generate\n\n\ninclude you test code in the quarto document\n\nDo this one on your own\nPut both the function and quarto in directory on your github site and submit the link on Canvas\nDue Thursday May 14 8am"
+  },
+  {
+    "objectID": "course-materials/assignments/HW2.html",
+    "href": "course-materials/assignments/HW2.html",
+    "title": "Assignment #2",
+    "section": "",
+    "text": "Assigned Tuesday 28/04/2026\nDue Monday 04/05/2026”\n\nFor this assignment, you will work in pairs\nFirst download some USGS data on stream temperature from the Willametter River in Oregon\nHere’s some R code to download it, * X_00010_00003 is the water temperature in C\nNote that there may be some warming messages about server slated for decommision - you can ignore those\n\n#install.packages(\"dataRetrieval\")\nlibrary(dataRetrieval)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nsiteNumbers &lt;- c(\"14211720\", \"14211010\", \"14166000\")\nparameterCd &lt;- \"00010\"  # water temperature\nstartDate &lt;- \"2010-01-01\"\nendDate &lt;- \"2023-12-31\"\n\ntemp_data &lt;- readNWISdv(siteNumbers, parameterCd, startDate, endDate)\n\nWarning in readNWISdv(siteNumbers, parameterCd, startDate, endDate): NWIS\nservers are slated for decommission. Please begin to migrate to\nread_waterdata_daily.\n\n\nGET: https://waterservices.usgs.gov/nwis/dv/?site=14211720%2C14211010%2C14166000&format=waterml%2C1.1&ParameterCd=00010&StatCd=00003&startDT=2010-01-01&endDT=2023-12-31\n\n# rename columns for clarity\ncolnames(temp_data) &lt;- c(\"agency_cd\", \"site_no\", \"Date\", \"temp_C\")\n# extract some date info for use later\ntemp_data$month = month(temp_data$Date, label=TRUE)\ntemp_data$year = year(temp_data$Date)\n\n# check by plotting\nggplot(temp_data, aes(x=Date, y=temp_C, color=site_no)) +\n  geom_line() +\n  labs(title=\"Stream Temperature at Willamette River Sites\",\n       x=\"Date\", y=\"Temperature (°C)\", color=\"Site Number\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWorking together create a new repository that you will share\n\nadd a quarto file, with nice documentation, that downloads the data (call it something informative)\nalso store the data in the repository (e.g. as a csv or RData file) so that you can work with it without having to download it again\nin your quarto file, add the option to load the data instead of accessing from NWIS server\nadd a code chunk that plots the data (e.g. using ggplot)\nadd a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)\n\nMake sure you push to GitHub.\nNow imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if the slope (trend) is positive (increasing) or negative (decreasing) and c) if there are differences between sites\nHave each partner focus on trends for a different month\nHere’s some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)\n\nEstimate for year tells you slope for first site\nEstimate for year:site_no14211010, year:site_no14211720 tells you how much greater (if positive) slope is for this site relative to first site\nEstimates for Intercept and site_no14211010, site_no14211010 set the baseline temperature to make regression work. You won’t use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)\n\n\nlibrary(tidyverse)\n# filter for July temperatures\njuly_data &lt;- subset(temp_data, month == \"Jul\")\n# fit a GLM model to see if there is a trend in July temperatures over time, separated by site\njuly_model &lt;- glm(temp_C ~ year*site_no, data = july_data)\nsummary(july_model)\n\n\nCall:\nglm(formula = temp_C ~ year * site_no, data = july_data)\n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)          -278.16357   39.88799  -6.974 4.91e-12 ***\nyear                    0.14714    0.01978   7.439 1.85e-13 ***\nsite_no14211010      -172.34776   56.41460  -3.055  0.00230 ** \nsite_no14211720       -76.71493   56.49555  -1.358  0.17473    \nyear:site_no14211010    0.08592    0.02798   3.071  0.00218 ** \nyear:site_no14211720    0.03982    0.02802   1.421  0.15550    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 2.759493)\n\n    Null deviance: 7333  on 1298  degrees of freedom\nResidual deviance: 3568  on 1293  degrees of freedom\nAIC: 5012.9\n\nNumber of Fisher Scoring iterations: 2\n\n\nEach partner creates their own branch, and does their own analysis, in a separate quarto document, based on a particular month (e.g. one person does July, another might pick August, etc.) and then pushes to GitHub\nThen merge your branches back into main and create a summary document (quarto), that analyzes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager\nTurn in your GitHub repo link on Canvas\nGrading Rubric\n\nCode is well documented and organized (20 points)\nCreated a new repository and added a quarto file with code to download, load, and analyze the data (20 points)\nEach partner created a branch and analyzed trends for a particular month, correctly interpreting trends in temperature and differences between sites (20 points)\nMerged branches back into main (20 points)\nSummary plot and meaningful analysis of your conclusion from the data analysis (20 points)"
+  },
+  {
+    "objectID": "course-materials/assignments/HW2.html#assignment-2-git-and-stream-temperature",
+    "href": "course-materials/assignments/HW2.html#assignment-2-git-and-stream-temperature",
+    "title": "Assignment #2",
+    "section": "",
+    "text": "Assigned Tuesday 28/04/2026\nDue Monday 04/05/2026”\n\nFor this assignment, you will work in pairs\nFirst download some USGS data on stream temperature from the Willametter River in Oregon\nHere’s some R code to download it, * X_00010_00003 is the water temperature in C\nNote that there may be some warming messages about server slated for decommision - you can ignore those\n\n#install.packages(\"dataRetrieval\")\nlibrary(dataRetrieval)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nsiteNumbers &lt;- c(\"14211720\", \"14211010\", \"14166000\")\nparameterCd &lt;- \"00010\"  # water temperature\nstartDate &lt;- \"2010-01-01\"\nendDate &lt;- \"2023-12-31\"\n\ntemp_data &lt;- readNWISdv(siteNumbers, parameterCd, startDate, endDate)\n\nWarning in readNWISdv(siteNumbers, parameterCd, startDate, endDate): NWIS\nservers are slated for decommission. Please begin to migrate to\nread_waterdata_daily.\n\n\nGET: https://waterservices.usgs.gov/nwis/dv/?site=14211720%2C14211010%2C14166000&format=waterml%2C1.1&ParameterCd=00010&StatCd=00003&startDT=2010-01-01&endDT=2023-12-31\n\n# rename columns for clarity\ncolnames(temp_data) &lt;- c(\"agency_cd\", \"site_no\", \"Date\", \"temp_C\")\n# extract some date info for use later\ntemp_data$month = month(temp_data$Date, label=TRUE)\ntemp_data$year = year(temp_data$Date)\n\n# check by plotting\nggplot(temp_data, aes(x=Date, y=temp_C, color=site_no)) +\n  geom_line() +\n  labs(title=\"Stream Temperature at Willamette River Sites\",\n       x=\"Date\", y=\"Temperature (°C)\", color=\"Site Number\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\nWorking together create a new repository that you will share\n\nadd a quarto file, with nice documentation, that downloads the data (call it something informative)\nalso store the data in the repository (e.g. as a csv or RData file) so that you can work with it without having to download it again\nin your quarto file, add the option to load the data instead of accessing from NWIS server\nadd a code chunk that plots the data (e.g. using ggplot)\nadd a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)\n\nMake sure you push to GitHub.\nNow imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if the slope (trend) is positive (increasing) or negative (decreasing) and c) if there are differences between sites\nHave each partner focus on trends for a different month\nHere’s some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)\n\nEstimate for year tells you slope for first site\nEstimate for year:site_no14211010, year:site_no14211720 tells you how much greater (if positive) slope is for this site relative to first site\nEstimates for Intercept and site_no14211010, site_no14211010 set the baseline temperature to make regression work. You won’t use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)\n\n\nlibrary(tidyverse)\n# filter for July temperatures\njuly_data &lt;- subset(temp_data, month == \"Jul\")\n# fit a GLM model to see if there is a trend in July temperatures over time, separated by site\njuly_model &lt;- glm(temp_C ~ year*site_no, data = july_data)\nsummary(july_model)\n\n\nCall:\nglm(formula = temp_C ~ year * site_no, data = july_data)\n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)          -278.16357   39.88799  -6.974 4.91e-12 ***\nyear                    0.14714    0.01978   7.439 1.85e-13 ***\nsite_no14211010      -172.34776   56.41460  -3.055  0.00230 ** \nsite_no14211720       -76.71493   56.49555  -1.358  0.17473    \nyear:site_no14211010    0.08592    0.02798   3.071  0.00218 ** \nyear:site_no14211720    0.03982    0.02802   1.421  0.15550    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for gaussian family taken to be 2.759493)\n\n    Null deviance: 7333  on 1298  degrees of freedom\nResidual deviance: 3568  on 1293  degrees of freedom\nAIC: 5012.9\n\nNumber of Fisher Scoring iterations: 2\n\n\nEach partner creates their own branch, and does their own analysis, in a separate quarto document, based on a particular month (e.g. one person does July, another might pick August, etc.) and then pushes to GitHub\nThen merge your branches back into main and create a summary document (quarto), that analyzes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager\nTurn in your GitHub repo link on Canvas\nGrading Rubric\n\nCode is well documented and organized (20 points)\nCreated a new repository and added a quarto file with code to download, load, and analyze the data (20 points)\nEach partner created a branch and analyzed trends for a particular month, correctly interpreting trends in temperature and differences between sites (20 points)\nMerged branches back into main (20 points)\nSummary plot and meaningful analysis of your conclusion from the data analysis (20 points)"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "ImportantImportant: 11:59 PM submission deadline\n\n\n\nAll assignments are due at 11:59 PM on the dates listed in the table, below.\n\n\n\n\n\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHomework Assignment #1\n16/4/2026\n20/4/2026\n\n\nHomework Assignment #2\n28/4/2026\n4/5/2026\n\n\nHomework Assignment #3\n7/5/2026\n13/5/2026\n\n\nHomework Assignment #4\n12/5/2026\n14/5/2026\n\n\nHomework Assignment #5\nDD/MM/YYY\nDD/MM/YYY"
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html",
+    "href": "course-materials/assignments/HW3.html",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "",
+    "text": "Assigned Thursday 07/05/2026\nDue Thursday 13/05/2026”"
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html#assignment-3-air-quality-and-for-loops",
+    "href": "course-materials/assignments/HW3.html#assignment-3-air-quality-and-for-loops",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "",
+    "text": "Assigned Thursday 07/05/2026\nDue Thursday 13/05/2026”"
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html#overview",
+    "href": "course-materials/assignments/HW3.html#overview",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "Overview",
+    "text": "Overview\nIn this assignment you will simulate a year of air quality monitoring data, classify pollution risk levels, and summarize patterns across seasons. Complete all work in this Quarto document with visible code and output."
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html#part-1-build-the-dataset",
+    "href": "course-materials/assignments/HW3.html#part-1-build-the-dataset",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "Part 1 – Build the Dataset",
+    "text": "Part 1 – Build the Dataset\nCreate a data frame with 365 rows representing daily air quality readings at a monitoring station. Your data frame must include the following columns:\n\nday — a sequence of integers from 1 to 365\npm25 — daily PM2.5 concentration (µg/m³), sampled from a distribution of your choice using one of the data generation functions covered in class (runif, rnorm, rpois). Choose parameters that produce realistic values — look up typical urban PM2.5 ranges to guide your choices.\nseason — a factor column with levels \"winter\", \"spring\", \"summer\", \"fall\", assigned based on day number (days 1–90, 91–180, 181–270, 271–365)\nrisk — an empty column initialized to NA — you will fill this in Part 2"
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html#part-2-classify-risk-with-a-for-loop",
+    "href": "course-materials/assignments/HW3.html#part-2-classify-risk-with-a-for-loop",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "Part 2 – Classify Risk with a For Loop",
+    "text": "Part 2 – Classify Risk with a For Loop\nUsing a for loop, fill in the risk column for each day based on the following PM2.5 thresholds (adapted from EPA AQI guidelines):\n\n\"good\" — PM2.5 below 12 µg/m³\n\"moderate\" — PM2.5 between 12 and 35.4 µg/m³\n\n\"unhealthy\" — PM2.5 above 35.4 µg/m³\n\nImportant while there are many ways to do this - you must use a for loop\nWithin the same loop, also track the longest consecutive streak of \"unhealthy\" days. This will require checking the previous row’s risk classification at each step. Store the final streak length in a variable called max_unhealthy_streak"
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html#part-3-seasonal-summary-with-a-for-loop",
+    "href": "course-materials/assignments/HW3.html#part-3-seasonal-summary-with-a-for-loop",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "Part 3 – Seasonal Summary with a For Loop",
+    "text": "Part 3 – Seasonal Summary with a For Loop\nWrite a for loop that computes number of days in each season that fall into unhealthy risk category"
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html#part-4-visualize-and-report",
+    "href": "course-materials/assignments/HW3.html#part-4-visualize-and-report",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "Part 4 – Visualize and Report",
+    "text": "Part 4 – Visualize and Report\nProduce at least two plots:\n\nA time series or histogram showing PM2.5 concentration across the year, colored or faceted by season\nA bar chart showing the count of days in each risk category,\n\nEach plot must have a title generated using sprintf that includes the the max_unhealthy_streak value you calculated in Part 2.\nEven though this is artifical data - imagine this was actual results. Write a 1 paragraph summary for managers interpreting the patterns you see in the data and plots - and note any implications for public health or policy. You can make it up - as long as it is consistent with the data you generated.\nPut your quarto and a rendered version (pdf or html) in your GitHub repository for this assignment. You can use the same repository you created for HW2, but make you name the files clearly (or put in a new directory) so that I can find them. For example, you could put the quarto file in a new directory called “HW3” and name it something like “HW3_air_quality.qmd”.\nTurn in your GitHub repo link on Canvas"
+  },
+  {
+    "objectID": "course-materials/assignments/HW3.html#grading-rubric",
+    "href": "course-materials/assignments/HW3.html#grading-rubric",
+    "title": "Assignment: Air Quality Risk Assessment",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nPart 1 – Build the Dataset (20 points)\n\nday, pm25, season, and risk columns are all present and correctly structured (10 points)\nseason is stored as a factor with correct levels and day-number assignment (5 points)\nDistribution choice is justified in a text block with reference to realistic PM2.5 ranges (5 points)\n\nPart 2 – Classify Risk with a For Loop (30 points)\n\nA for loop is used (not mutate or ifelse alone) to fill the risk column (10 points)\nAll three risk thresholds are correctly implemented (10 points)\nConsecutive unhealthy streak is tracked within the loop using the previous row, stored as max_unhealthy_streak (10 points)\n\nPart 3 – Seasonal Summary with a For Loop (20 points)\n\nA for loop is used to count unhealthy days per season (10 points)\nResults are stored in a clear format (e.g., a named vector or data frame) (10 points)\n\nPart 4 – Visualize and Report (30 points)\n\nTime series or histogram of PM2.5 across the year, colored or faceted by season (8 points)\nBar chart of risk category counts (7 points)\nBoth plot titles generated with sprintf and include max_unhealthy_streak (5 points)\nOne-paragraph management summary is consistent with the data and addresses public health or policy implications (10 points)"
+  },
+  {
+    "objectID": "course-materials/discussion-materials/week1-discussion-slides.html#title-slide",
+    "href": "course-materials/discussion-materials/week1-discussion-slides.html#title-slide",
+    "title": "ESM 262",
+    "section": "",
+    "text": "EDS 240: Discussion 1\nToday’s topic here\n\nWeek 1 | January 7th, 2024"
+  },
+  {
+    "objectID": "course-materials/discussion-materials/week1-discussion-slides.html#slide-slug-here",
+    "href": "course-materials/discussion-materials/week1-discussion-slides.html#slide-slug-here",
+    "title": "ESM 262",
+    "section": "",
+    "text": "Slide title"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#syllabus",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#syllabus",
+    "title": "Intro- Spring 2026",
+    "section": "Syllabus",
+    "text": "Syllabus"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#attendance",
+    "title": "Intro- Spring 2026",
+    "section": "Attendance",
+    "text": "Attendance\n\nWhy Attendance Matters\n\n\nhands-on learning in class\nstaying on track with course material and assignments\nasking questions and getting help in real time\nbuilding connections with peers and instructors ** YOUR CONTRIBUTIONS MATTER - we learn togetheer **\nsome assignments and quizzes are done in class\n\n\nMissing a class\n\n\nif you are sick - stay home! -health is key\nemail Ojas and I so we know\ncheck course website and Canvas for lectures/assignments\n\ngo through them\nattend Ojas’s office hours if you have questions\nemail us with questions\n\nif you need to be late for an assignment - let us know in advance\nfor group assignments or quizzes in class, we can let you know how to make up\nif absences are extensive, we need a plan - contact the me, Ojas AND the Director of Student Affairs"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#new-ai-tools-and-data-science",
+    "title": "Intro- Spring 2026",
+    "section": "New AI tools and Data Science",
+    "text": "New AI tools and Data Science\nShould we use it? When? How? Why? Why not?\nThere are pro’s and con’s to using AI-tools while you are learning coding\nTools\n\nGithub Copilot (widely used by programmers)\nChatGPT, Claude Code\n\nWhat are the pro’s? What are the con’s?"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#some-thoughtful-papers-for-further-reading",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#some-thoughtful-papers-for-further-reading",
+    "title": "Intro- Spring 2026",
+    "section": "Some thoughtful papers for further reading",
+    "text": "Some thoughtful papers for further reading\nHigh level perspective\n\nincludes some thoughts on job market preparation\nCommunications of the ACM\nPractical overview/perspective\nRecent review on potential harmful consequenses"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#using-ai-tools-in-this-course",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#using-ai-tools-in-this-course",
+    "title": "Intro- Spring 2026",
+    "section": "Using AI-tools in this course",
+    "text": "Using AI-tools in this course\n\nAI-tools great resources but effective use requires understanding how to ask good questions\nUse this course to build that understanding,\nYou gain skills by Practicing, so start without AI-tools\nFor assignments/practice\n\nAlways write the code yourself -\nwe will engage with AI-tools later in the course\nSupportive ways to use AI-tools\n\nUse AI-tools to help find syntax\nUse AI-tools to explain other peoples code (including class examples)\nUse AI-tools to help interpret error messages"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#quarto",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#quarto",
+    "title": "Intro- Spring 2026",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto is a scientific and technical publishing system built on Pandoc (a universal document converter). It enables you to combine content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\nIts a lot like R Markdown, but with more features and capabilities.\nsimilarities to Jupyter Notebooks, but with more features and capabilities."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#classic-example-of-quarto",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#classic-example-of-quarto",
+    "title": "Intro- Spring 2026",
+    "section": "Classic Example of Quarto",
+    "text": "Classic Example of Quarto\n\ndownload hello.qmd from the course website\nopen it in RStudio"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#rendering",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#rendering",
+    "title": "Intro- Spring 2026",
+    "section": "Rendering",
+    "text": "Rendering\nTo render a Quarto document, use the “Render” button in RStudio.\nWhen you render a Quarto document, it will execute all the code chunks and include the output in the final document.\nIn Rstudio - you have two views of the quarto document\n\nSource view is where you write your code and markdown.\nVisual view is where you see the final output of your document."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture1.intro-slides.html#try-it",
+    "href": "course-materials/lecture-slides/lecture1.intro-slides.html#try-it",
+    "title": "Intro- Spring 2026",
+    "section": "Try it",
+    "text": "Try it\nmake sure you can render hello.qmd and see the output in the visual view.\nAND before next class\n\nComplete Installation\nComplete the getting to know you survey\nRead one of the AI papers and think of one thing you found interesting"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#git",
+    "title": "Git Collaborate and Revise",
+    "section": "Git",
+    "text": "Git\n\ngit and github"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#the-basics",
+    "title": "Git Collaborate and Revise",
+    "section": "The Basics",
+    "text": "The Basics\nCommit\n\nsaves the current version locally each commit has a label so you can backtrack if needed\nyou can look at what changes between commits\ngives you an opportunity to comment on what changes\n\nPush/Pull\n\npush integrates any local commits/changes to central GitHub\n\npull integrates any commits/changes from central GitHb to local\n\nGit Guides are a really wonderful resource to refer to!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#information-about-your-project-git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#information-about-your-project-git",
+    "title": "Git Collaborate and Revise",
+    "section": "Information about your project git",
+    "text": "Information about your project git\nHere are some useful commands if you run into set up issues (and in general)\n\nto check that you have your git credentials set up correctly\n\n\n#To see all info about your credentials and current repo\n#note that before you connect to GitHub the first time, it won't know about branches etc\nusethis::git_sitrep()\n\n\n\n\n── Git global (user) \n\n\n• Name: \"Naomi Tague\"\n\n\n• Email: \"ctague@bren.ucsb.edu\"\n\n\n• Global (user-level) gitignore file:\n\n\n• Vaccinated: FALSE\n\n\nℹ See `usethis::git_vaccinate()` to learn more.\n\n\n• Default Git protocol: \"https\"\n\n\n• Default initial branch name: &lt;unset&gt;\n\n\n\n\n\n── GitHub user \n\n\n• Default GitHub host: \"https://github.com\"\n\n\n• Personal access token for \"https://github.com\": &lt;discovered&gt;\n\n\n• GitHub user: \"naomitague\"\n\n\n• Token scopes: \"gist\", \"repo\", \"user\", and \"workflow\"\n\n\n• Email(s): \"ctague@bren.ucsb.edu (primary)\" and \"tague@ucsb.edu\"\n\n\n\n\n\n── Active usethis project: \"/Users/naomitague/Courses/ESM_262\" ──\n\n\n\n\n\n── Git local (project) \n\n\n• Name: \"Naomi Tague\"\n\n\n• Email: \"ctague@bren.ucsb.edu\"\n\n\n• Default branch: \"main\"\n\n\n• Current local branch → remote tracking branch:\n\n\n  \"main\" → \"origin/main\"\n\n\n\n\n\n── GitHub project \n\n\n• Type = \"ours\"\n\n\n• Host = \"https://github.com\"\n\n\n• Config supports a pull request = TRUE\n\n\n• origin = \"naomitague/ESM_262\" (can push)\n\n\n• upstream = &lt;not configured&gt;\n\n\nℹ \"origin\" is both the source and primary repo.\n\n\nℹ Read more about the GitHub remote configurations that usethis supports at:\n\n\n  &lt;https://happygitwithr.com/common-remote-setups.html&gt;.\n\n# just to check who you are\ngh::gh_whoami()\n\n{\n  \"name\": \"Naomi Tague\",\n  \"login\": \"naomitague\",\n  \"html_url\": \"https://github.com/naomitague\",\n  \"scopes\": \"gist, repo, user, workflow\",\n  \"token\": \"ghp_...Q3GE\"\n} \n\n\n\nalternatively you can use git config in terminal window to check your credentials\n\nConfig\ngit config –global –list\n\n\n\n\n\n\nNote\n\n\nWhat about a new computer? Can I reuse my access token (PAT) Yes if you saved it,\n\n#gitcreds::gitcreds_set()"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#checking-your-remote",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#checking-your-remote",
+    "title": "Git Collaborate and Revise",
+    "section": "Checking your remote",
+    "text": "Checking your remote\nTo find your current GitHub repository (e.g what repo names is on GitHub)\n\nusethis::git_remotes()\n\n$origin\n[1] \"https://github.com/naomitague/ESM_262.git\"\n\n\nCan also find under Git tab in Rstudio project setup will show you remote\nIn terminal, try\ngit remote -v"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#history-with-git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#history-with-git",
+    "title": "Git Collaborate and Revise",
+    "section": "History with GIT",
+    "text": "History with GIT\nlocally- use the little clock button or commit\n\nsee the history of your commits\nclick on a commit to see what changed\n\n\n\n\n\n\n\nNote\n\n\ninformative commit messages helps understand history\n\n\n\nIn terminal window use log for history git log"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-misktakes-if-you-havent-committed",
+    "title": "Git Collaborate and Revise",
+    "section": "Correcting Misktakes if you haven’t committed",
+    "text": "Correcting Misktakes if you haven’t committed\n\nmake a change and save\nclick revert to get rid of the changes that you don’t want\n\nTry it"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#correcting-mistakes-if-you-have-committed",
+    "title": "Git Collaborate and Revise",
+    "section": "Correcting Mistakes if you have committed",
+    "text": "Correcting Mistakes if you have committed\nHere we use the terminal window\nThe terminal window allows you to access a shell - it’s a way to interact with your computer using text commands instead of clicking on things.\nTerminal is a powerful tool that:\n\nallows you to do things that you can’t do with the graphical interface\nuses Git commands that work everywhere not just with R, Rstudio\nwe will work with Terminal command more in the course"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-to-do-in-terminal-to-get-your-code-back-to-an-earlier-version",
+    "title": "Git Collaborate and Revise",
+    "section": "What to do in Terminal to get your code back to an earlier version",
+    "text": "What to do in Terminal to get your code back to an earlier version\n\nmake a change and save\ncommit the change\nin terminal type git revert HEAD\nthis will create a new commit that undoes the changes you just made - the commit message shows up in terminal also - you can edit the message if you want to - but its good to have a record of what you did and why you reverted it\nsave the commit message to complete the commit\n\nI’ll try and then you"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#go-back-farther-in-time",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#go-back-farther-in-time",
+    "title": "Git Collaborate and Revise",
+    "section": "Go back farther in time",
+    "text": "Go back farther in time\n\ngit revert"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#git-commands",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#git-commands",
+    "title": "Git Collaborate and Revise",
+    "section": "Git commands",
+    "text": "Git commands\ngit revert HEAD goes back to the last change but if you want to go back to a specific commit, you can use the commit ID\ncommit-ID (the long string of numbers and letters that identifies each commit) instead of HEAD.\ngit revert \nFind the SHA number (same as commit ID) in your Git History\n\n\n\n\n\n\nNote\n\n\nGitHub has a nice interface for exploring commit history and reverting to earlier versions\nSometimes revert easier with GitHub - nicer interface\n\n\n\nTry it!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#other-ways-to-go-back-in-time",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#other-ways-to-go-back-in-time",
+    "title": "Git Collaborate and Revise",
+    "section": "Other ways to go back in time",
+    "text": "Other ways to go back in time\nThere are other options, git reset and git checkout\nA bit more dangerous because they discard/overwrite changes instead of creating a new commit that undoes the changes\nuseful to keep things from getting ‘messy’ but we won’t go into here"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#some-other-useful-git-commands-in-terminal",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#some-other-useful-git-commands-in-terminal",
+    "title": "Git Collaborate and Revise",
+    "section": "Some other useful Git commands in Terminal",
+    "text": "Some other useful Git commands in Terminal\n\ngit status - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)\ngit log - shows you the commit history with commit messages and IDs\ngit diff - shows you the differences between your current files and the last commit (what changes you have made)\ngit push - pushes your local commits to GitHub\ngit pull - pulls the latest changes from GitHub to your local repository\ngit commit filename -m \"your commit message\" - commits your changes to the file with a message describing what you did.\ngit commit -a -m \"your commit message\" - commits all your changes with a message describing what you did.\ngit add filename - stages a file for commit (you need to stage files before you can commit them)\ngit checkout -- filename - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-with-github",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-with-github",
+    "title": "Git Collaborate and Revise",
+    "section": "Collaboration with GitHub",
+    "text": "Collaboration with GitHub\n\ngit and github"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-through-github",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#collaboration-through-github",
+    "title": "Git Collaborate and Revise",
+    "section": "Collaboration through GitHub",
+    "text": "Collaboration through GitHub\n\nadd a collaborator to your GitHub repository\n\nunder settings on Github\n\nthey will get an email invitation to collaborate on your repository\nthey can clone the repository to their local computer and make changes\nthey can commit and push their changes to GitHub\n\n\n\n\n\n\n\nNote\n\n\nGit doesn’t like having nested repositories so don’t clone a repository inside another repository!!!"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#try-it",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#try-it",
+    "title": "Git Collaborate and Revise",
+    "section": "Try it",
+    "text": "Try it\n\nwith a partner, add each other to your repo\nstart a new Rproject -\n\nselect the option to clone from existing repo\nmake sure you save different directory than your original project!\n\nmake a change (maybe add a file, edit their quarto file, etc.)\n\ncommit and push\n\ncheck on GitHub to see if your change is there"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts",
+    "title": "Git Collaborate and Revise",
+    "section": "Conflicts",
+    "text": "Conflicts\n\ngit conflicts"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts-1",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflicts-1",
+    "title": "Git Collaborate and Revise",
+    "section": "Conflicts",
+    "text": "Conflicts\n\nwhat happens if you and your collaborator change the same file and try to push/pull\nthis could be you from two different computers :)\nGit and GitHub manage this\n\nGithub will try to merge the changes\nif it can’t (you both changed the same line or something like that) - Conflict\n\nwhen a Conflict occurs\n\nGit rewrites the file to show you the conflicting changes using markers"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#conflict-markers-in-git",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#conflict-markers-in-git",
+    "title": "Git Collaborate and Revise",
+    "section": "Conflict Markers in Git",
+    "text": "Conflict Markers in Git\nIn the file where the conflict occurs - Git marks it by\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - start of your local version\n======= - divider between your local version and Github version\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; commit-ID - the end of the conflicting changes from the remote\n\nI’ll demo"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
+    "href": "course-materials/lecture-slides/lecture2.git-collab.html#what-you-do",
+    "title": "Git Collaborate and Revise",
+    "section": "What you do",
+    "text": "What you do\n\nwhen file is conflicted Rstudio marks it with a U (unmerged)\nedit that file to resolve conflict by choosing which version you want\nstage and commit the resolved file and push to GitHub"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#any-questions",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#any-questions",
+    "title": "Git Part 3",
+    "section": "Any Questions?",
+    "text": "Any Questions?"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#git",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#git",
+    "title": "Git Part 3",
+    "section": "Git",
+    "text": "Git\n\ngit conflicts"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#conflicts-review",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#conflicts-review",
+    "title": "Git Part 3",
+    "section": "Conflicts Review",
+    "text": "Conflicts Review\n\nnote that conflicts must be resolved before continuing\nremember if you really mess up you can revert to earlier version\nfrequent push and pull can help avoid conflicts"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#branching",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#branching",
+    "title": "Git Part 3",
+    "section": "Branching",
+    "text": "Branching\nSometimes you want to experiment with a new feature or make a change that might break things, could get messy to do this with commit and then revert if it doesn’t work\nGit thought of this and created branching\nBranching allows you to create a separate version of your code where you can make changes without affecting the main version (called main branch)\nLater once branch is working you can, if desired, merge into main branch"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#branching-1",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#branching-1",
+    "title": "Git Part 3",
+    "section": "Branching",
+    "text": "Branching\n\ngit branchings"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#lets-try",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#lets-try",
+    "title": "Git Part 3",
+    "section": "Lets try",
+    "text": "Lets try\n\nworking in your class repo\ncreate a new branch called experiment\nadd a new quarto document, and in it describe some data analysis that you’d like to experiment with"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#merging",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#merging",
+    "title": "Git Part 3",
+    "section": "Merging",
+    "text": "Merging\n\nin a collaborative project, or if you want to maintain a good copy of your code, you might want to merge branch back into main\ngo back to main branch on git\npull to get any recent changes\nclick merge and select the branch you want to merge in\n\nor in terminal\ngit merge experiment\nTry it"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#forking",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#forking",
+    "title": "Git Part 3",
+    "section": "Forking",
+    "text": "Forking\nForking is more removed than branching - it creates a new (copy) of the entire repository under your GitHub account\nForks are their own repo\nHow do forks interact with original? - fork can pull from original repo - to integrate back to original pull request is initiated and owner of original decides whether to accept it\nForks are good when you are working independently - might not want to integrate changes - not closely collaborating with owner of original\nWe won’t practice forks here but good to know"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#recall-useful-git-commands-in-terminal",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#recall-useful-git-commands-in-terminal",
+    "title": "Git Part 3",
+    "section": "Recall useful Git commands in Terminal",
+    "text": "Recall useful Git commands in Terminal\n\ngit status - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)\ngit log - shows you the commit history with commit messages and IDs\ngit diff - shows you the differences between your current files and the last commit (what changes you have made)\ngit push - pushes your local commits to GitHub\ngit pull - pulls the latest changes from GitHub to your local repository\ngit commit filename -m \"your commit message\" - commits your changes to the file with a message describing what you did.\ngit commit -a -m \"your commit message\" - commits all your changes with a message describing what you did.\ngit add filename - stages a file for commit (you need to stage files before you can commit them)\ngit checkout -- filename - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)\ngit branch branchname - creates a new branch with the name “branchname”\ngit checkout branchname - switches to the branch “branchname”\ngit merge branchname - merges the branch “branchname” into the current branch"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture3.git-part3.html#assignment-2-git-and-stream-temperature",
+    "href": "course-materials/lecture-slides/lecture3.git-part3.html#assignment-2-git-and-stream-temperature",
+    "title": "Git Part 3",
+    "section": "Assignment 2: Git and Stream Temperature",
+    "text": "Assignment 2: Git and Stream Temperature\nFor this assignment, you will work in pairs\nFirst download some USGS data on stream temperature from the Willametter River in Oregon\nHere’s some R code to download it, * X_00010_00003 is the water temperature in C\n\n#install.packages(\"dataRetrieval\")\nlibrary(dataRetrieval)\n\nsiteNumbers &lt;- c(\"14211720\", \"14211010\", \"14166000\")\nparameterCd &lt;- \"00010\"  # water temperature\nstartDate &lt;- \"2010-01-01\"\nendDate &lt;- \"2023-12-31\"\n\ntemp_data &lt;- readNWISdv(siteNumbers, parameterCd, startDate, endDate)\n# rename columns for clarity\ncolnames(temp_data) &lt;- c(\"agency_cd\", \"site_no\", \"Date\", \"temp_C\")\n# extract some date info for use later\ntemp_data$month = month(temp_data$Date, label=TRUE)\ntemp_data$year = year(temp_data$Date)\n\n# check by plotting\nggplot(temp_data, aes(x=Date, y=temp_C, color=site_no)) +\n  geom_line() +\n  labs(title=\"Stream Temperature at Willamette River Sites\",\n       x=\"Date\", y=\"Temperature (°C)\", color=\"Site Number\") +\n  theme_minimal()\n\nWorking together create a new repository that you will share\n\nadd a quarto file, with nice documentation, that downloads the data (call it something informative)\nalso store the data in the repository (e.g. as a csv or RData file) so that you can work with it without having to download it again\nin your quarto file, add the option to load the data instead of accessing from NWIS server\nadd a code chunk that plots the data (e.g. using ggplot)\nadd a code chunk that calculates some summary statistics (e.g. mean, max, min temperature for each site)\n\nMake sure you push to GitHub.\nNow imagine you are working on a project, where you are looking trends in water temperature you want to figure out if a) there is a trend and b) if the slope (trend) is positive (increasing) or negative (decreasing) and c) if there are differences between sites\nHave each partner focus on trends for a different month\nHere’s some example code for how you might compute the trend of temperatures in a given month, the slope of the GLM model will tell you what the trend is (how much temperature increases/decreases per year)\n\nEstimate for year tells you slope for first site\nEstimate for year:site_no14211010, year:site_no14211720 tells you how much greater (if positive) slope is for this site relative to first site\nEstimates for Intercept and site_no14211010, site_no14211010 set the baseline temperature to make regression work. You won’t use these. (An easier way to look at differences in mean temperature across sites is to calculate means for each)\n\n\nlibrary(tidyverse)\n# filter for July temperatures\njuly_data &lt;- subset(temp_data, month == \"Jul\")\n# fit a GLM model to see if there is a trend in July temperatures over time, separated by site\njuly_model &lt;- glm(temp_C ~ year*site_no, data = july_data)\nsummary(july_model)\n\nEach partner creates their own branch, and does their own analysis, in a separate quarto document, based on a particular month (e.g. one person does July, another might pick August, etc.) and then pushes to GitHub\nThen merge your branches back into main and create a summary document (quarto), that analyzes your finding and adds one plot to illustrate what you think might be the most meaningful result for a manager\nTurn in your GitHub repo link on Canvas\nGrading Rubric\n\nCode is well documented and organized (20 points)\nCreated a new repository and added a quarto file with code to download, load, and analyze the data (20 points)\nEach partner created a branch and analyzed trends for a particular month, correctly interpreting trends in temperature and differences between sites (20 points)\nMerged branches back into main (20 points)\nSummary plot and meaningful analysis of your conclusion from the data analysis (20 points)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#quick-review-creating-strings-with-sprintf.",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#quick-review-creating-strings-with-sprintf.",
+    "title": "Looping",
+    "section": "Quick Review: Creating strings with sprintf.",
+    "text": "Quick Review: Creating strings with sprintf.\nsprintf used something called format string syntax to create formatted strings\nformat string syntax is used in many places -for searching for and creating strings - AND - its used by many programming languages\nsprintf uses format ‘code’ to tell it how to create a string, based on the values you give it\nExample\n\nsprintf(\"We found %d %s %3.1f miles from shore\", 4,\"Otters\", 18.95632342)\n\n[1] \"We found 4 Otters 19.0 miles from shore\"\n\n\n\n%s replace with a string\n%d replace with an integer value\n%f replace with a real value\n%4.1f replace with a real value with 4 digits, two after decimal\n\\n add a line return"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#example",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#example",
+    "title": "Looping",
+    "section": "Example",
+    "text": "Example\nmake a string with sprintf and add to plot title\n\n# # create vector of possible flowers \npossible.flowers = c(\"tulip\",\"rose\",\"lily\",\"iris\",\"marigold\",\"daisy\")\n\n# we can use sample to simulate a random recording of purchases at the market, lets create data that had 300 flower purchases\n\npurchases = sample(possible.flowers, size=20, replace=T)\npurchases= as.factor(purchases)\n\n# make it a data frame for plotting later\n# maybe we want to add more information about the purchases later - like price, time of day, etc. - so make column name flower\npurchases  = data.frame(flower=purchases) \n\n# to quickly get information of flower purchases \nsummary(purchases$flower)\n\n   daisy     iris     lily marigold     rose    tulip \n       3        3        2        5        5        2 \n\n# sprintf creates a string %s mean use what ever is after the , to fill in a string\nplottitle=sprintf(\"The most frequently bought flower was %s\\n There were %d bought\", names(which.max(summary(purchases$flower))), max(summary(purchases$flower)))\n\n# now plot\nggplot(purchases, aes(flower, fill=flower))+geom_histogram(stat=\"count\")+labs(title=plottitle)+\n  theme(legend.position=\"none\")\n\nWarning in geom_histogram(stat = \"count\"): Ignoring unknown parameters:\n`binwidth`, `bins`, and `pad`"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#what-weve-explored",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#what-weve-explored",
+    "title": "Looping",
+    "section": " What we’ve explored ",
+    "text": "What we’ve explored \n\ncommon data types\nways to generate data\nstring format syntax"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#looping-or-repetition",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#looping-or-repetition",
+    "title": "Looping",
+    "section": "Looping (or repetition)",
+    "text": "Looping (or repetition)\nRepeating something is a fundamental concept in programming\nWe usually call this looping\nAll programming languages have ways to do this - sometimes hidden\nLets start with the basics of how you do repetition - * the for loop - used in many languages"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#for-loops",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#for-loops",
+    "title": "Looping",
+    "section": "For loops",
+    "text": "For loops\nfor statement\n\ndefines a loop using a counter that is incremented each time you go through the loop\nthe counter - could be any variable (we often use i) but you could use whatever variable you want\nrepeats the commands between the { and } after the for keyword and loop definition\nthese commands are repeated until the counter condition is TRUE\n\n\n# simple example - use a loop to sum the numbers from 1 to 5\n# a = 0+1+2+3+4+5\na=0\nfor (i in 1:5) {\n a = a+i\n}\na\n\n[1] 15"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#break-it-down",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#break-it-down",
+    "title": "Looping",
+    "section": "Break it down",
+    "text": "Break it down\n\nfor (i in 1:5) - mean you start with i=1\nthe commands in the loop are executed - a = a+i\nthen you go back to the top of the loop and increment i to 2\ni = 1\na = 0 + 1 = 1\ni = 2\na = 1 + 2 = 3\ni = 3\na = 3 + 3 = 6\ni = 4\na = 6 + 4 = 10\ni = 5\na = 10 + 5 = 15\n\nafter the loop a = 15"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#keeping-track-of-what-happens-each-stepinteration",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#keeping-track-of-what-happens-each-stepinteration",
+    "title": "Looping",
+    "section": "Keeping track of what happens each step/interation",
+    "text": "Keeping track of what happens each step/interation\n\nstart with a data structure to hold the results -\ninitialize to 0\n\nits good practice to initialize data before a loop\ninitialize means to create a data structure and set values, usually to zero but sometimes NA\n\n\n\n# if you want to keep track of a for each iteration\n# start with a data structure to hold the results - \n# there will be 5 iterations, so a vector of length 5\n# initialize to 0 \n\nav = rep(x=0, times=5)\n\n# now we can fill in the vector with the sum at each iteration\n# we can use the counter (i) to access the correct element of the vector\n# note that we have to treat the first iteration differently because we don't have a previous value to add to\n\nfor (i in 1:5) {\n  if (i==1) {\n    av[i] = 1\n  } else {\n  av[i] = av[i-1]+i\n  }\n}\nav\n\n[1]  1  3  6 10 15\n\n# note that R has alternatives using functions that do this looping for you\na = sum(seq(from=1, to=5))\na\n\n[1] 15"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#when-to-use-loops",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#when-to-use-loops",
+    "title": "Looping",
+    "section": "When to use loops",
+    "text": "When to use loops\n\nWhen you want to repeat something a specific number of times\nR has many built in functions to do this\n\nBUT sometimes won’t do exactly what you want\nother languages also use versions of the for loop"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#try-a-loop-on-your-own",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#try-a-loop-on-your-own",
+    "title": "Looping",
+    "section": "Try a loop on your own",
+    "text": "Try a loop on your own\nMake a loop that computes\n\nthe mean of a set of numbers,\nuse runif to generate a test/example set of 100 random numbers\ntest your loop by comparing to the built in mean function\n\nGenerating test data is a helpful way to check your code. Take advantage of built-in R functions to sample from distributions as we did last class\n\ntestnumbers = runif(min=0, max=20, n=100)\n\nCheck if your loop is correct using mean"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#my-answer",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#my-answer",
+    "title": "Looping",
+    "section": "My answer",
+    "text": "My answer\n\ntestnumbers = runif(min=0, max=20, n=100)\n\ntotal = 0\nnvalues = 100\nfor (i in 1:nvalues) {\n  total = testnumbers[i]+total\n}\ntotal/nvalues\n\n[1] 10.025\n\nmean(testnumbers)\n\n[1] 10.025"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#another-example",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#another-example",
+    "title": "Looping",
+    "section": "Another example",
+    "text": "Another example\nLets look at some more slightly more complex examples\nCalculating net income from revenue minus expenses\n\n# lets say we wanted to look at income minus expenses for net income\n# create some data for an example\n\nincome = runif(min=1000, max=5000, n=10)\nincome\n\n [1] 2758.541 4369.736 4380.923 4654.719 3524.807 3624.079 4660.648 3522.054\n [9] 4941.922 4585.556\n\nexpenses = rnorm(mean=1500, sd=500, n=10)\nexpenses\n\n [1] 1836.3390 1877.2277 2460.0088 1824.0917 2235.8689  933.7510  849.1872\n [8] 1952.7582 1451.8643 1733.4157\n\n# it is possible that this approach could generate negative expenses\nexpenses = ifelse(expenses &lt; 0, 0, expenses)\n\n# lets make this a data frame for organization\naccount = data.frame(income=income, expenses=expenses)\n# lets add a year\naccount$year = seq(from=2000, length.out=nrow(account))\n\n# now compute net income - we could do this with a loop but R is designed to do this without loops\n# normally we can just do\naccount = account %&gt;% mutate(net = income-expenses)\nhead(account)\n\n    income expenses year       net\n1 2758.541 1836.339 2000  922.2018\n2 4369.736 1877.228 2001 2492.5079\n3 4380.923 2460.009 2002 1920.9140\n4 4654.719 1824.092 2003 2830.6271\n5 3524.807 2235.869 2004 1288.9385\n6 3624.079  933.751 2005 2690.3276\n\n# lets plot\nggplot(account, aes(income, expenses))+geom_point()\n\n# we could have computed net income with a for loop\n# lets add a column for our net computed by a loop\n# sometimes we use NA to show we haven't computed it yet, so \"initialize\" as NA\n\naccount$netloop=NA\naccount\n\n     income  expenses year       net netloop\n1  2758.541 1836.3390 2000  922.2018      NA\n2  4369.736 1877.2277 2001 2492.5079      NA\n3  4380.923 2460.0088 2002 1920.9140      NA\n4  4654.719 1824.0917 2003 2830.6271      NA\n5  3524.807 2235.8689 2004 1288.9385      NA\n6  3624.079  933.7510 2005 2690.3276      NA\n7  4660.648  849.1872 2006 3811.4604      NA\n8  3522.054 1952.7582 2007 1569.2955      NA\n9  4941.922 1451.8643 2008 3490.0574      NA\n10 4585.556 1733.4157 2009 2852.1400      NA\n\n# note that I can use any variable I want as a counter -\n# notice how I'm now using n to access each row of the data frame\nfor (n in 1:10) {\n  account$netloop[n] = account$income[n]-account$expenses[n]\n}\n\n# as expected net and netloop are the same :)\nhead(account)\n\n    income expenses year       net   netloop\n1 2758.541 1836.339 2000  922.2018  922.2018\n2 4369.736 1877.228 2001 2492.5079 2492.5079\n3 4380.923 2460.009 2002 1920.9140 1920.9140\n4 4654.719 1824.092 2003 2830.6271 2830.6271\n5 3524.807 2235.869 2004 1288.9385 1288.9385\n6 3624.079  933.751 2005 2690.3276 2690.3276"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#why-loop-cross-row-dependencies",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#why-loop-cross-row-dependencies",
+    "title": "Looping",
+    "section": "Why loop: cross-row dependencies",
+    "text": "Why loop: cross-row dependencies\nWhile sum and mean are functions created by the R community, what if you were doing something more complex to each row?\nWhat if we needed data from a previous row for each calculation?\nExample: carry-forward net income = current year’s net + last year’s carry-forward\n\n# note: we treat the first year differently because we don't have carry forward\n# initialize our column to zero, start counter (n) at 2 instead of 1\n# make the first value equal to the net of first year\n\naccount$carryforwardnet = 0\naccount$carryforwardnet[1]=account$net[1]\n# now loop - looking backward one year to get previous years carry forward\nfor (n in 2:10) {\n  account$carryforwardnet[n] = account$net[n]+account$carryforwardnet[n-1]\n}\n\n# plot - use color to show current year's contribution as positive or negative\nggplot(account, aes(year, carryforwardnet, fill=net, group=year))+geom_col()+\n  scale_fill_gradient(low=\"red\", high=\"black\")"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#why-loop-sequential-comparisons",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#why-loop-sequential-comparisons",
+    "title": "Looping",
+    "section": "Why loop: sequential comparisons",
+    "text": "Why loop: sequential comparisons\nAnother case where loops are necessary: comparing across elements one at a time\nLets say we are measuring speeds and we want to determine the number of times speeds are above a threshold\nThere are many ways to do this - but for will always work\n\n# speed limit \nspeedthresh = 120\n# create some sample speeds \nspeeds = runif(min=0, max=150, n=300)\n\nnthresh = 0\nfor ( i  in 1:length(speeds)) {\n   if(speeds[i] &gt; speedthresh)\n     nthresh = nthresh + 1\n}\n\nnthresh\n\n[1] 64"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#add-some-complexity",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#add-some-complexity",
+    "title": "Looping",
+    "section": "Add some complexity",
+    "text": "Add some complexity\nLets imagine that we have data on running speeds of a creature we are trying to develop a conservation plan for\nWe think that\n\nwhen the creature is running at 35 km/hr and above they are hunting.\nwhen they are moving below 5 km/hr they are socializing\nwhen they are moving as speeds between this they are traveling\n\nWe want to estimate how often they are in each of these categories based\nBuild a for loop to do this (there are other ways to get there with R but we want to practice looping)\nAs before, generate some test data using functions in R that allow you to generate data by sampling from distributions with known parameters"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture4.looping.html#my-answer-1",
+    "href": "course-materials/lecture-slides/lecture4.looping.html#my-answer-1",
+    "title": "Looping",
+    "section": "My answer",
+    "text": "My answer\n\n# make up sample data\nspeeds = runif(min=0, max=50, n=500)\n\n# setting a named variable for the threshold makes the code easier to read and change\nhunting_speed = 35\nsocial_speed = 5\nnum_hunting_speeds=0\nnum_social_speeds = 0\nfor ( i  in 1:length(speeds)) {\n  num_hunting_speeds = num_hunting_speeds + ifelse(speeds[i] &gt;= hunting_speed, 1, 0)\n    num_social_speeds = num_social_speeds + ifelse(speeds[i] &lt;  social_speed, 1, 0)\n}\n\n\nfor (i in 1:300)\nnum_hunting_speeds\nnum_social_speeds\n\n[1] 57\n\n# other speeds are traveling, is remainder\nnum_traveling_speeds = length(speeds) - num_hunting_speeds - num_social_speeds\n\n# as a percent of recorded speeds\nnum_hunting_speeds/length(speeds)*100\n\n[1] 27\n\nnum_social_speeds/length(speeds)*100\n\n[1] 11.4\n\nnum_traveling_speeds/length(speeds)*100\n\n[1] 61.6"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5.functions.html#lists",
+    "href": "course-materials/lecture-slides/lecture5.functions.html#lists",
+    "title": "Functions",
+    "section": " Lists ",
+    "text": "Lists \n\nLists are the most “informal” data structures in R\nList are really useful for keeping track of and organizing groups of things that are not all the same\nA list could be a table where number of rows is different for each column\nA list can have numeric, character, factors all mixed together\nList are often used for returning more complex information from function (e.g. lm)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5.functions.html#example-of-lists",
+    "href": "course-materials/lecture-slides/lecture5.functions.html#example-of-lists",
+    "title": "Functions",
+    "section": "Example of lists",
+    "text": "Example of lists\n\n# make a list\nsale = list(id=2, quality=\"high\", contents=c(\"apple\",\"cherry\"), cost=c(4,5))\nsale\n\n$id\n[1] 2\n\n$quality\n[1] \"high\"\n\n$contents\n[1] \"apple\"  \"cherry\"\n\n$cost\n[1] 4 5\n\n#ways to access elements\nsale$id\n\n[1] 2\n\nsale$what\n\nNULL\n\n# you can also access by list item number\n# the [x] denotes the xth item in the list\nsale[[3]]\n\n[1] \"apple\"  \"cherry\"\n\nsale[[\"contents\"]]\n\n[1] \"apple\"  \"cherry\"\n\n# how do you get the second element in the vector that has the contents\n# there are two ways\n\n\n# add to a list\nsale$location = \"Farmers market\"\nsale\n\n$id\n[1] 2\n\n$quality\n[1] \"high\"\n\n$contents\n[1] \"apple\"  \"cherry\"\n\n$cost\n[1] 4 5\n\n$location\n[1] \"Farmers market\"\n\n# or remove\nsale$location = NULL\nsale\n\n$id\n[1] 2\n\n$quality\n[1] \"high\"\n\n$contents\n[1] \"apple\"  \"cherry\"\n\n$cost\n[1] 4 5\n\n# some tricky things\n# correct accessing items in list\nsale$cost\n\n[1] 4 5\n\nsale[[4]]\n\n[1] 4 5\n\n# works but\n#sale[4]\n\n\nsum(sale$cost)\n\n[1] 9\n\nsum(sale[[4]])\n\n[1] 9"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5.functions.html#loops-and-functions",
+    "href": "course-materials/lecture-slides/lecture5.functions.html#loops-and-functions",
+    "title": "Functions",
+    "section": "Loops and Functions",
+    "text": "Loops and Functions\nCalculate NPV for\n\na range of different interest rates and\na range of damages\nthat may be incurred 10 years in the future\n\nSteps\n\ndefine inputs (interest rates, damages)\ndefine output (NPV)\nwrite the function\ncreate a data structure to store results where we vary both interest rates and damages\nuse nested for loops to fill in the data structure\n\nTry it first…"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5.functions.html#npv-nested-for-loop-example",
+    "href": "course-materials/lecture-slides/lecture5.functions.html#npv-nested-for-loop-example",
+    "title": "Functions",
+    "section": "NPV: Nested For Loop Example",
+    "text": "NPV: Nested For Loop Example\n\n# write a function to compute npv\nsource(\"../R/compute_NPV.R\")\ncompute_NPV\n\nfunction (value, time, discount) \n{\n    result = value/(1 + discount)^time\n    return(result)\n}\n\ncompute_NPV(20, discount=0.01, time=20)\n\n[1] 16.39089\n\n# generate some input\ndamages = c(25,33,91,24)\ndamages\n\n[1] 25 33 91 24\n\n# sensitivity to discount rate\ndiscount_rates = seq(from=0.01, to=0.04, by=0.005)\ndiscount_rates\n\n[1] 0.010 0.015 0.020 0.025 0.030 0.035 0.040\n\nyr=10\n\n# simple vectorization doesn't give all combinations -\n# R recycles the shorter vector (gives 7 results with a warning, not 4x7=28)\ncompute_NPV(value=damages, discount=discount_rates, time=yr)\n\nWarning in value/(1 + discount)^time: longer object length is not a multiple of\nshorter object length\n\n\n[1] 22.63217 28.43502 74.65170 18.74876 18.60235 23.39432 61.47634\n\n# compute npv's for all combinations of damages and discount rates\n# first generate a dataframe to store results - rows = damages, columns = discount rates\nnpvs = data.frame(matrix(nrow=length(damages), ncol=length(discount_rates)))\n\n# here we have a 2-dimensional array - rows and columns\nhead(npvs)\n\n  X1 X2 X3 X4 X5 X6 X7\n1 NA NA NA NA NA NA NA\n2 NA NA NA NA NA NA NA\n3 NA NA NA NA NA NA NA\n4 NA NA NA NA NA NA NA\n\n# now use a nested for loop to populate\nfor (i in 1:length(damages)) {\n  for (j in 1:length(discount_rates)) {\n    npvs[i,j] = compute_NPV(value=damages[i], discount=discount_rates[j], time=yr)\n  }\n}\nnpvs\n\n        X1       X2       X3       X4       X5       X6       X7\n1 22.63217 21.54168 20.50871 19.52996 18.60235 17.72297 16.88910\n2 29.87447 28.43502 27.07149 25.77955 24.55510 23.39432 22.29362\n3 82.38111 78.41172 74.65170 71.08905 67.71255 64.51161 61.47634\n4 21.72689 20.68001 19.68836 18.74876 17.85825 17.01405 16.21354\n\n# some data wrangling to make it pretty\ncolnames(npvs) = discount_rates\nrownames(npvs) = damages\nnpvs\n\n       0.01    0.015     0.02    0.025     0.03    0.035     0.04\n25 22.63217 21.54168 20.50871 19.52996 18.60235 17.72297 16.88910\n33 29.87447 28.43502 27.07149 25.77955 24.55510 23.39432 22.29362\n91 82.38111 78.41172 74.65170 71.08905 67.71255 64.51161 61.47634\n24 21.72689 20.68001 19.68836 18.74876 17.85825 17.01405 16.21354\n\n# how do I plot this with ggplot - add a column for original value and then rearrange\nnpvs$damage = damages\nnpvsg = npvs %&gt;% pivot_longer(!damage, names_to=\"dis\", values_to=\"npv\")\nhead(npvsg)\n\n# A tibble: 6 × 3\n  damage dis     npv\n   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;\n1     25 0.01   22.6\n2     25 0.015  21.5\n3     25 0.02   20.5\n4     25 0.025  19.5\n5     25 0.03   18.6\n6     25 0.035  17.7\n\nggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col=\"Discount\\nRate\")\n\n\n\n\n\n\n\n# how about summing all the damages\nnpv.total = npvsg %&gt;% group_by(dis) %&gt;% summarize(t=sum(npv))\nggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x=\"Discount Rate\", y=\"Total ($)\")"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5.functions.html#an-alternative-method",
+    "href": "course-materials/lecture-slides/lecture5.functions.html#an-alternative-method",
+    "title": "Functions",
+    "section": "An alternative method",
+    "text": "An alternative method\nAn alternative (R specific) is to use functions from the purrr package\nSpecifically map - which applies a function over a vector of inputs\n\n# use damages and discount rates from above\ndiscount_rates\n\n[1] 0.010 0.015 0.020 0.025 0.030 0.035 0.040\n\ndamages\n\n[1] 25 33 91 24\n\n# map applies compute_NPV for each discount rate,\n# passing the full damages vector each time (compute_NPV is vectorized over value)\nnpvs = map(discount_rates, ~compute_NPV(value=damages, discount=.x, time=10))\n\n# each element of npvs is a vector of NPVs (one per damage) at that discount rate\n# convert to a data frame - each column is a discount rate\nnpvs = as.data.frame(npvs)\ncolnames(npvs) = discount_rates\nnpvs$damage = damages\n\n# clean up and plot\nnpvsg = npvs %&gt;% pivot_longer(!damage, names_to=\"dis\", values_to=\"npv\")\nhead(npvsg)\n\n# A tibble: 6 × 3\n  damage dis     npv\n   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;\n1     25 0.01   22.6\n2     25 0.015  21.5\n3     25 0.02   20.5\n4     25 0.025  19.5\n5     25 0.03   18.6\n6     25 0.035  17.7\n\nggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col=\"Discount\\nRate\")\n\n\n\n\n\n\n\n# how about summing all the damages\nnpv.total = npvsg %&gt;% group_by(dis) %&gt;% summarize(t=sum(npv))\nggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x=\"Discount Rate\", y=\"Total ($)\")"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#modularity",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#modularity",
+    "title": "Functions",
+    "section": "Modularity",
+    "text": "Modularity\n\nPrograms are made up of building blocks\nA main program is a central piece of code that controls the flow and calls functions/modules/building blocks"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#functions",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#functions",
+    "title": "Functions",
+    "section": "Functions",
+    "text": "Functions\nAll programming languages have ways to build modules that you can re-use\nLego Blocks"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#modules---foundation-of-programming",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#modules---foundation-of-programming",
+    "title": "Functions",
+    "section": "Modules - foundation of programming",
+    "text": "Modules - foundation of programming\nBreaking tasks into functions is a central programming concept\nOften modules are called ‘functions’ but also called:\n\n‘procedures’\n‘subroutines’\n‘methods’\n‘subprograms’\n\nYou have already been using functions in R - e.g. mean(), lm(), plot() etc."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#designing-modularity",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#designing-modularity",
+    "title": "Functions",
+    "section": "Designing Modularity",
+    "text": "Designing Modularity\nWhen you start a programming/data science project - you should begin by:\n\nBreaking your goal down into individual pieces\nIdentifying instructions that can be reused\n\nEXAMPLES of Reuse\n\nan ecosystem model might re-use instructions for calculating how a living organism grows\ne.g you might have a function that calculates growth from temperature and moisture and you can re-use this function for different organisms or different species with slightly different inputs\nan accounting program might re-use instructions for computing net present value from interest rates, that you can re-use for different projects or different time periods"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#designing-modularity-1",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#designing-modularity-1",
+    "title": "Functions",
+    "section": "Designing Modularity",
+    "text": "Designing Modularity\nModules often become ‘black boxes’ which hides detail that might make understanding the program overly complex\nMost languages have lots of black boxes already written AND most allow you to write your own"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#inputs-and-parameters",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#inputs-and-parameters",
+    "title": "Functions",
+    "section": "Inputs and Parameters",
+    "text": "Inputs and Parameters\nAll functions/modules have inputs/parameters and outputs\nInputs — what you give the function - sometimes separated into input data and parameters\n\ninput data = the “what” that is manipulated\nparameters determine “how” the manipulation is done"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#an-example-of-a-r-black-box-function",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#an-example-of-a-r-black-box-function",
+    "title": "Functions",
+    "section": "an example of a R black box function",
+    "text": "an example of a R black box function\n-sort\n\ninputs - data stream\nparameters - how to do the sort"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#in-code",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#in-code",
+    "title": "Functions",
+    "section": "In code",
+    "text": "In code\n\n# look at a R data set on Biological Oxygen Demand over time\n\n# notice the use of data - R function that brings pre-stored datasets into the work space\ndata(BOD)\n\n# notice \"help\" and the information that it provides\nhelp(BOD)\n\n# options for looking at data\nview(BOD)\n\nhead(BOD)\n\n  Time demand\n1    1    8.3\n2    2   10.3\n3    3   19.0\n4    4   16.0\n5    5   15.6\n6    7   19.8\n\n# example of a function - SORT\nresult = sort(BOD[,\"demand\"], decreasing=TRUE, method=\"quick\")\nhead(result)\n\n[1] 19.8 19.0 16.0 15.6 10.3  8.3\n\n\nIn this example, parameters are decreasing and method - they determine how the function works\n**inputs* are the data to be sorted\nNote sometimes parameters can influence how the functions works (e.g method)\nOutput is a sorted version of demand saved to result."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#learn-to-think-in-terms-of-functionsmodules",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#learn-to-think-in-terms-of-functionsmodules",
+    "title": "Functions",
+    "section": "Learn to think in terms of functions/modules",
+    "text": "Learn to think in terms of functions/modules\n\nbreak your tasks into boxes with inputs, parameters and output\nWRITE DOWN the contract for each box/function\n\nCONTRACT\n\nif the users gives you A, the function with return B\nspecify A and B as precisely as you can (include units, time/space scale, parameters, options)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#a-simple-function-example---just-one-module",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#a-simple-function-example---just-one-module",
+    "title": "Functions",
+    "section": "A simple function example - just one module",
+    "text": "A simple function example - just one module\nLets say we want to develop a function that computes power generated from hydro-reservoir\nWe know that power generation depends on water release rates and the potential energy (from the reservoir height)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#steps-in-program-design",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#steps-in-program-design",
+    "title": "Functions",
+    "section": "STEPS IN Program Design",
+    "text": "STEPS IN Program Design\n\nClearly define your goal in words/figures as precisely as possible what do you want your program to do\n\ndecide on modules\nfor each module, write a contract - inputs, outputs and what it will do\n\nImplement AND document as you go\nTest\nRefine\nTest again\nCreate User Documentation and Distribute"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#a-simple-function-example",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#a-simple-function-example",
+    "title": "Functions",
+    "section": "A simple function example",
+    "text": "A simple function example\nPower generation from a reservoir\n\nhydro"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#first-describe-the-contract-in-natural-language",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#first-describe-the-contract-in-natural-language",
+    "title": "Functions",
+    "section": "First describe the ‘contract’ in natural language",
+    "text": "First describe the ‘contract’ in natural language\nContract\nInput: Reservoir height (m) and flow rate (m3/sec) (these inputs could be a single value in time or a time series)\nOutput: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)\nParameters: \\(K_{Eff}\\) reservoir efficiency, ρ (density of water), \\(g\\) (acceleration due to gravity)"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#what-the-function-will-do",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#what-the-function-will-do",
+    "title": "Functions",
+    "section": "What the function will do",
+    "text": "What the function will do\ncompute power using the following equation - body of the function\n\\(P = ρ * h * r * g * K_{Eff}\\)\n\nP is Power in watts,\nρ is the density of water (~1000 \\(kg/m^3\\))\nh is height in meters,\nr is flow rate in cubic meters per second,\ng is acceleration due to gravity of 9.8 \\(m/s^2\\),\n\\(K_{Eff}\\) is a coefficient of efficiency ranging from 0 to 1."
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#implementing-functions-in-r",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#implementing-functions-in-r",
+    "title": "Functions",
+    "section": "Implementing Functions in R",
+    "text": "Implementing Functions in R\nFormat for a basic function in R\n\nSome lines at the top that start with #’\nthese are documentation that describes inputs, outputs and what the function does\nwe will talk more about that - for now just follow the example, below\n\nThis is followed by the function definition\n\nFunction Name = function(inputs, parameters) {\nbody of the function (manipulation of inputs)\nreturn(values to return)\n}\n\nYou can name the function what every you want\n\ntry not to use names of function in R, like mean\ntry to use descriptive names that give a hint about what the function does"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#implementing-functions-in-r-1",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#implementing-functions-in-r-1",
+    "title": "Functions",
+    "section": "Implementing Functions in R",
+    "text": "Implementing Functions in R\nIn R, inputs and parameters are treated the same; but it is useful to think about them separately in designing the model - collectively they are sometimes referred to as arguments\nALWAYS USE Meaningful names for your function, its parameters and variables calculated within the function\n\nIn R we combine inputs/parameters in the first line of the function definition\nwe can provide “default” values that can be overwritten by the function user\nBody includes all calculations between { and }\n\nanything inside the body is not “seen” by the workspace so you can re-use variables\n\nreturn* tells R what the output is"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#heres-our-example",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#heres-our-example",
+    "title": "Functions",
+    "section": "Here’s our example",
+    "text": "Here’s our example\nYou could just write you function in-line\nBut best practice to keep as a file"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#lets-look-at-both-options",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#lets-look-at-both-options",
+    "title": "Functions",
+    "section": "Lets look at both options",
+    "text": "Lets look at both options\n\nopen power_gen_orig.R and look at the function definition\nsee how to read in the function from a file and use it\nsee how to write the function in-line\n\nBefore you start download the file power_gen_orig.R from the course github site and save it in a directory on your computer - you will need to change path to read it in\n\nlibrary(here)\n# source the function from a file - make sure you are in the right working directory\nsource(here(\"course-materials/R/power_gen_orig.R\"))\n\n# alternatively\n# function definition in-line\npower_gen_orig = function(height, flow, rho=1000, g=9.8, Keff=0.8) {\nresult = rho * height * flow * g * Keff\nreturn(result)\n}\n\n# note that height and flow don't have default values, so you must provide them when you use the function, but the other parameters have default values that you can overwrite if you want to"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#using-the-function-and-scoping",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#using-the-function-and-scoping",
+    "title": "Functions",
+    "section": "Using the function and scoping",
+    "text": "Using the function and scoping\nTo use the function we substitute “actual” values for each argument (parameter and inputs) (unless there are defaults)\nR assumes that arguments are in the order that they were specified in the function definition - unless you refer to them by name"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#example",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#example",
+    "title": "Functions",
+    "section": "Example",
+    "text": "Example\n\n# This use of the function\npower_gen_orig(20,1)\n\n[1] 156800\n\n# is the same as this\npower_gen_orig(height=20, flow=1)\n\n[1] 156800\n\n# or this; where we use the names of the arguments to specify which is which - this is especially useful if you have a lot of arguments and don't want to remember the order\npower_gen_orig(flow=1, height=20)\n\n[1] 156800\n\n# change the defaults\n# what if efficiency is less\n\npower_gen_orig(20,1, Keff=0.2)\n\n[1] 39200"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#scoping",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#scoping",
+    "title": "Functions",
+    "section": "Scoping",
+    "text": "Scoping\nThe scope of a variable in a program defines where it can be “seen” Variables defined inside a function cannot be “seen” outside of that function\nThere are advantages to this - the interior of the building block does not ‘interfere’ with other parts of the program"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#see-how-scoping-works",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#see-how-scoping-works",
+    "title": "Functions",
+    "section": "See how scoping works",
+    "text": "See how scoping works\n\n# specifying function name without () shows code\n# try it for internal R functions\npower_gen_orig\n\nfunction (height, flow, rho = 1000, g = 9.8, Keff = 0.8) \n{\n    result = rho * height * flow * g * Keff\n    return(result)\n}\n&lt;bytecode: 0x7fc50380a038&gt;\n\n# use the function and save the results\nreservoir1 = power_gen_orig(height=4, flow=7)\n\nreservoir2 = power_gen_orig(height=4, flow=7, Keff=0.2)\n\n# note that internal variables are not defined so these R statements will FAIL\n# try it\nheight\n\nError:\n! object 'height' not found\n\nKeff\n\nError:\n! object 'Keff' not found\n\nresults\n\nError:\n! object 'results' not found\n\n# only the outputs are in your workspace\nreservoir1\n\n[1] 219520\n\nreservoir2\n\n[1] 54880"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#some-conventions-helpful-later-in-the-course",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#some-conventions-helpful-later-in-the-course",
+    "title": "Functions",
+    "section": "Some conventions (helpful later in the course)",
+    "text": "Some conventions (helpful later in the course)\n\nAlways write your function in a text editor and then copy into R\nBy convention we name files with functions in them by the name of the function.R e.g. power_gen_orig.R\nyou can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory\nkeep organized by keeping all functions in a subdirectory called R"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#more-best-practices",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#more-best-practices",
+    "title": "Functions",
+    "section": "More best practices",
+    "text": "More best practices\n\nInclude comments both in the body of the function and at the top - there is a particular style of adding comments to the top of the function that we will use later to generate automatic documentation - so useful to start to follow it, more or less, now - see power_gen_orig.R for the style\nEventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#reading-in-functions",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#reading-in-functions",
+    "title": "Functions",
+    "section": "reading in functions",
+    "text": "reading in functions\nExample - source and use function\n\nlibrary(here)\nsource(here(\"course-materials/R/power_gen_orig.R\"))\npower_gen_orig(20,1)\n\n[1] 156800"
+  },
+  {
+    "objectID": "course-materials/lecture-slides/lecture5m1_functions.html#practicing---assignment-4",
+    "href": "course-materials/lecture-slides/lecture5m1_functions.html#practicing---assignment-4",
+    "title": "Functions",
+    "section": "Practicing - Assignment 4",
+    "text": "Practicing - Assignment 4\nComplete Assignment 4! before Thursday’s Lecture"
+  },
+  {
+    "objectID": "course-materials/week2.html",
+    "href": "course-materials/week2.html",
+    "title": "Git and Reproducible Workflows",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Git and Collaboration"
+  },
+  {
+    "objectID": "course-materials/week2.html#lecture-materials",
+    "href": "course-materials/week2.html#lecture-materials",
+    "title": "Git and Reproducible Workflows",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 2.1: Git and GitHub\n\n\n\nLecture 2.2: Git and Collaboration"
+  },
+  {
+    "objectID": "course-materials/week2.html#assignment-reminders",
+    "href": "course-materials/week2.html#assignment-reminders",
+    "title": "Git and Reproducible Workflows",
+    "section": " Assignments",
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework for Git next week"
+  },
+  {
+    "objectID": "course-materials/week4.html",
+    "href": "course-materials/week4.html",
+    "title": "Data Types",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 4.1: Data Types Exploration\n\n\n\nLecture 4.2: Looping"
+  },
+  {
+    "objectID": "course-materials/week4.html#lecture-materials",
+    "href": "course-materials/week4.html#lecture-materials",
+    "title": "Data Types",
+    "section": "",
+    "text": "Lecture slides\nMaterials\n\n\n\n\nLecture 4.1: Data Types Exploration\n\n\n\nLecture 4.2: Looping"
+  },
+  {
+    "objectID": "course-materials/week4.html#assignment-reminders",
+    "href": "course-materials/week4.html#assignment-reminders",
+    "title": "Data Types",
+    "section": " Assignments",
+    "text": "Assignments\n\n\n\n\n\n\n\n\n\nAssignment Type\nAssignment Title\nDate Assigned\nDate Due\n\n\n\n\nHW\nHomework Assignment #2\n16/4/2026\n20/4/2026 , 11:59pm PT"
+  },
+  {
+    "objectID": "downloadables/play_with_git.html",
+    "href": "downloadables/play_with_git.html",
+    "title": "play_with_git",
+    "section": "",
+    "text": "I’m going to create a conflict\n# Use this to play with git and github\nI can explore * revert * reset * checkout\nLets make this one committed\n\nWhat about conflicts - fixed the mess"
+  },
+  {
+    "objectID": "install-guide.html",
+    "href": "install-guide.html",
+    "title": "ESM 262",
+    "section": "",
+    "text": "Visit cloud.r-project.org to download the most recent version of R for your operating system. You should have at least version 4.4.0 (released 2024-04-24) running when you start MEDS."
+  },
+  {
+    "objectID": "install-guide.html#wait-on-this-untill-we-get-to-git-in-course",
+    "href": "install-guide.html#wait-on-this-untill-we-get-to-git-in-course",
+    "title": "ESM 262",
+    "section": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE",
+    "text": "WAIT ON THIS UNTILL WE GET TO GIT IN COURSE\nLater in the course we will learn about using Git and Github\nfor reproducibility, collaboration and tracking code changes\nSetting up requires some use of the terminal in Rstudio, if you are familiar with that you can go ahead and set up - otherwise wait and we will take you through\n\n4. Git -\n\nCheck to see if git is installed\nOpen RStudio\nIn the Terminal, run the following command (choose the option for your operating system):\n\n\n Mac Windows\n\n\n\n\n\nRStudio Terminal\n\nwhich git\n\n\n\n\n\n\n\nRStudio Terminal\n\nwhere git\n\n\n\n\n\n\nIf you get something that looks like a file path to git on your computer (e.g. /usr/local/bin/git on a Mac, C:\\Program Files\\Git\\mingw64\\bin\\git.exe on Windows, though it could differ slightly on your computer), then you have git installed. If you instead get no response at all, you should download & install git here: git-scm.com/downloads\n\n\n\n5. Create a GitHub account\n\nIf you don’t already have a GitHub account, go to https://github.com and create one. Check out Jenny Bryan’s Happy Git with R, Ch. 4 for some helpful considerations when choosing a username. We suggest that you use a personal email or your @bren.ucsb.edu email when setting up your account (rather than your @ucsb.edu email, which will be deactivated after you graduate).\n\n\n\n6. Configure git\n\nIn RStudio, open the Terminal. Run the following commands (by pressing return after each line). Be sure to replace the username (keep the quotation marks!) with your GitHub username and the email with the email you used for your GitHub account.\n\n\n\n\nRStudio Terminal\n\ngit config --global user.name \"Jane Doe\"\ngit config --global user.email janedoe@example.com\n\n\n\nThen, in the Terminal run the following, and carefully check that the name and email returned match your GitHub information:\n\n\n\n\nRStudio Terminal\n\ngit config --list --global\n\n\n\n\n\n\n\n\nImportantFOR FUTURE REFERENCE: If you’re configuring git on a Bren server (e.g. workbench-1.bren.ucsb.edu or workbench-2.bren.ucsb.edu), you must also run the following in the Terminal\n\n\n\n\n\n\nRStudio Terminal\n\ngit config --global credential.helper 'cache --timeout=10000000'\n\n\nThis prevents important credentials (e.g. a GitHub Personal Access Token, PAT, which you’ll set in step #7) from being removed from the server’s memory. You do not need to complete this step when configuring git on your local computer.\n\n\n\n\n7. Store your GitHub personal access token (PAT)\nFirst: What even is a personal access token? From GitHub’s documentation:\n\nPersonal access tokens (PATs) are an alternative to using passwords for authentication to GitHub when using the GitHub API or the command line.\n\nThis means that in order to push your work (files, scripts, etc.) from your laptop (or any other computer) to GitHub, you’ll need to first to generate a PAT. Importantly, you’ll need to generate a PAT for each computer you wish to work from. For example, we will complete the following steps to create a PAT for your personal laptop, but you’ll also need to create a PAT if/when you choose to work on a second computer at home or any of the Bren servers. Good news is that you can follow these same steps when you’re ready to set up additional PATs on other machines. For now, let’s get a PAT for our personal laptop squared away:\n\nOnce you have git configured successfully, install the {usethis} package in R by running the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\ninstall.packages(\"usethis\")\n\n\nA lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.\n\n\n\n\n\n\n\n\n\n\nRun the following in the RStudio Console:\n\n\n\n\nRStudio Console\n\nusethis::create_github_token() \n\n\n\nEnter your GitHub password if/when prompted. You’ll be taken to a screen that looks like this:\n\n\n\n\n\n\n\n\n\n\n\nIn the Note field, you should see some autopopulated text: R:GITHUB_PAT. We suggest changing this to something that signifies what machine it’s being used for. For example, if you are generating a PAT for your laptop, you might choose to rename it, My Personal Laptop.\nNext, you’ll see a section called Select scopes with reasonable options already selected for you. Do not change anything. Just scroll down to the bottom of that page and click the green Generate token button:\n\n\n\n\n\n\n\n\n\n\n\nCopy the generated PAT to your clipboard\nBack in RStudio, run the following in the Console:\n\n\n\n\nRStudio Console\n\ngitcreds::gitcreds_set()\n\n\nThis will prompt you to paste the PAT you just copied from GitHub. Paste the PAT, press Enter to run. You should see something like this show up if all is well so far (you’ll have pasted your PAT where the example below says “REDACTED”):\n\n\n\n\n\n\n\n\n\n\nIn the RStudio Console, run:\n\n\n\n\nRStudio Console\n\nusethis::git_sitrep()\n\n\nDoes it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteA note on expiring tokens:\n\n\n\nSetting an expiration date on personal access tokens is highly recommended in order to keep your information secure. GitHub will send you an email when it’s time to regenerate a token that’s about to expire. Follow the email prompts, then use gitcreds::gitcreds_set() to reset your token.\n\n\n\n~ END Installation Guide ~"
+  }
+]

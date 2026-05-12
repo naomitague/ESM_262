@@ -23,13 +23,11 @@ library(here)
 -   Programs are made up of building blocks
 -   A **main program** is a central piece of code that controls the flow and **calls** functions/modules/building blocks
 
-
 ## Functions {.scrollable}
 
 All programming languages have ways to build modules that you can re-use
 
-Lego Blocks 
-![lego](../../images/lego.png)
+Lego Blocks ![lego](../../images/lego.png)
 
 ## Modules - foundation of programming
 
@@ -37,27 +35,27 @@ Breaking tasks into functions is a central programming concept
 
 Often modules are called 'functions' but also called:
 
-  - 'procedures' 
-  - 'subroutines' 
-  - 'methods' 
-  - 'subprograms'
+-   'procedures'
+-   'subroutines'
+-   'methods'
+-   'subprograms'
 
 You have already been using functions in R - e.g. mean(), lm(), plot() etc.
-
 
 ## Designing Modularity {.scrollable}
 
 When you start a programming/data science project - you should begin by:
 
-- Breaking your goal down into individual pieces
+-   Breaking your goal down into individual pieces
 
-- Identifying instructions that can be reused
+-   Identifying instructions that can be reused
 
 EXAMPLES of Reuse
 
 -   an ecosystem model might re-use instructions for calculating how a living organism grows
-  - e.g you might have a function that calculates growth from temperature and moisture and you can re-use this function for different organisms or different species with slightly different inputs
-  
+
+-   e.g you might have a function that calculates growth from temperature and moisture and you can re-use this function for different organisms or different species with slightly different inputs
+
 -   an accounting program might re-use instructions for computing net present value from interest rates, that you can re-use for different projects or different time periods
 
 ## Designing Modularity {.scrollable}
@@ -65,7 +63,6 @@ EXAMPLES of Reuse
 Modules often become ‘black boxes’ which hides detail that might make understanding the program overly complex
 
 Most languages have lots of black boxes already written AND most allow you to write your own
-
 
 ## Inputs and Parameters {.scrollable}
 
@@ -76,9 +73,9 @@ All functions/modules have **inputs/parameters** and **outputs**
 -   input data = the “what” that is manipulated
 -   parameters determine “how” the manipulation is done
 
-##   an example of a R black box function
+## an example of a R black box function
 
--**sort**
+\-**sort**
 
 -   inputs - data stream
 
@@ -108,12 +105,11 @@ head(result)
 
 In this example, parameters are **decreasing** and **method** - they determine how the function works
 
-**inputs* are the data to be sorted
+\*\*inputs\* are the data to be sorted
 
-*Note*  sometimes parameters can influence how the functions works (e.g method)
+*Note* sometimes parameters can influence how the functions works (e.g method)
 
 Output is a sorted version of demand saved to `result`.
-
 
 ## Learn to think in terms of functions/modules
 
@@ -125,7 +121,7 @@ Output is a sorted version of demand saved to `result`.
 -   if the users gives you A, the function with return B
 -   specify A and B as precisely as you can (include units, time/space scale, parameters, options)
 
-## A simple function example - just one module 
+## A simple function example - just one module
 
 Lets say we want to develop a function that computes power generated from hydro-reservoir
 
@@ -148,11 +144,11 @@ Power generation from a reservoir
 
 ![hydro](../../images/reservoir_cm.jpeg)
 
-## First describe the 'contract' in natural language  {.scrollable}
+## First describe the 'contract' in natural language {.scrollable}
 
 Contract
 
-*Input*: Reservoir height (m) and flow rate (m3/sec) (these inputs could be  a single value in time or a time series)
+*Input*: Reservoir height (m) and flow rate (m3/sec) (these inputs could be a single value in time or a time series)
 
 *Output*: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)
 
@@ -164,31 +160,28 @@ compute power using the following equation - *body* of the function
 
 $P = ρ * h * r * g * K_{Eff}$
 
-- *P* is Power in watts,
-- *ρ* is the density of water (\~1000 $kg/m^3$)
-- *h* is height in meters, 
-- *r* is flow rate in cubic meters per second, 
-- *g* is acceleration due to gravity of 9.8 $m/s^2$, 
-- $K_{Eff}$ is a coefficient of efficiency ranging from 0 to 1.
+-   *P* is Power in watts,
+-   *ρ* is the density of water (\~1000 $kg/m^3$)
+-   *h* is height in meters,
+-   *r* is flow rate in cubic meters per second,
+-   *g* is acceleration due to gravity of 9.8 $m/s^2$,
+-   $K_{Eff}$ is a coefficient of efficiency ranging from 0 to 1.
 
 ## Implementing Functions in R
 
 Format for a basic function in R
 
 ::: {style="color: green;"}
-
-Some lines at the top that start with \#' 
+Some lines at the top that start with \#'
 
 these are documentation that describes inputs, outputs and what the function does
 
 we will talk more about that - for now just follow the example, below
+:::
 
-::: 
-
-This is followed by the function definition 
+This is followed by the function definition
 
 ::: {style="color: orange;"}
-
 *Function Name* = function(inputs, parameters) {
 
 body of the function (manipulation of inputs)
@@ -196,13 +189,12 @@ body of the function (manipulation of inputs)
 return(values to return)
 
 }
-::: 
+:::
 
 You can name the function what every you want
 
-- try not to use names of function in R, like *mean*
-- try to use descriptive names that give a hint about what the function does
-
+-   try not to use names of function in R, like *mean*
+-   try to use descriptive names that give a hint about what the function does
 
 ## Implementing Functions in R {.scrollable}
 
@@ -218,22 +210,21 @@ ALWAYS USE Meaningful names for your function, its parameters and variables calc
 
     -   anything inside the body is not "seen" by the workspace so you can re-use variables
 
--   [return]{style="color:green"}* tells R what the output is
+-   [return]{style="color:green"}\* tells R what the output is
 
 ## Here's our example {.scrollable}
 
- You could just write you function in-line  
+You could just write you function in-line
 
 But best practice to keep as a file
 
 ## Lets look at both options
 
-1. open power_gen_orig.R and look at the function definition
-2. see how to read in the function from a file and use it
-3. see how to write the function in-line
+1.  open power_gen_orig.R and look at the function definition
+2.  see how to read in the function from a file and use it
+3.  see how to write the function in-line
 
-Before you start download the file **power_gen_orig.R** from the course github site and save it in a directory on your computer - you will need to change path to read it in 
-
+Before you start download the file **power_gen_orig.R** from the course github site and save it in a directory on your computer - you will need to change path to read it in
 
 ```{r eval=TRUE, echo=TRUE  }
 
@@ -258,7 +249,6 @@ To use the function we substitute "actual" values for each argument (parameter a
 
 R assumes that arguments are in the order that they were specified in the function definition - unless you refer to them by name
 
-
 ## Example
 
 ```{r eval=TRUE, echo=TRUE  }
@@ -279,7 +269,6 @@ power_gen_orig(20,1, Keff=0.2)
 
 ```
 
-
 ## Scoping {.scrollable}
 
 The scope of a variable in a program defines where it can be “seen” Variables defined inside a function cannot be “seen” outside of that function
@@ -287,7 +276,6 @@ The scope of a variable in a program defines where it can be “seen” Variable
 There are advantages to this - the interior of the building block does not ‘interfere’ with other parts of the program
 
 ## See how scoping works {.scrollable}
-
 
 ```{r eval=TRUE, echo=TRUE  }
 
@@ -312,7 +300,6 @@ reservoir2
 
 
 ```
-
 
 ## Some conventions (helpful later in the course) {.scrollable}
 

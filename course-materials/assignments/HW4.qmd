@@ -1,7 +1,7 @@
 ---
 title: "Assignment #4" 
 
-format:  pdf
+format:  html
 ---
 ## Building your first function
 
