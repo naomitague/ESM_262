@@ -16,8 +16,67 @@ library(here)
 library(tidyverse)
 ```
 
-# Finish Up Data Types
+## Questions about functions so far
 
+## Pair and Share
+
+
+# Programming Always Starts with
+
+[Conceptual Design]{style="color: cyan;"}
+
+-   What is the goal
+-   How can you break this goal into sub-task
+-   For the overall project and each sub-task
+    -   What are the inputs
+    -   What are the outputs
+
+# Modularity
+
+-   Programs are made up of building blocks
+-   A **main program** that controls the flow and **calls** functions/modules/building blocks
+
+
+# <span style="color:blue"> Functions with factors
+
+Lets generate a function that makes use of categorical data species diversity is a good example
+
+"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species
+
+Value is between 0 and 1, with lower values associated with *lower* diversity
+
+See [Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
+
+```{r diversity, echo=TRUE}
+
+source(here("course-materials/R/compute_simpson_index.R"))
+compute_simpson_index
+
+
+possible.fish = as.factor(c("salmon","steelhead","shark","tuna","cod"))
+# simulate a random recording of catch by fisherman
+
+
+# note here is answer to above challenge
+catch1 = sample(possible.fish, size=10, prob = c(0.2, 0.2, 0.1, 0.1, 0.4), replace=T)
+# lets create a test case that should have low diversity, by repeating the same thing
+catch2 = c(rep("salmon", times=10), rep("cod", times=10))
+
+compute_simpson_index(catch1)
+compute_simpson_index(catch2)
+
+```
+
+
+## Returning values from a function
+
+return(value) - but what if you want to return multple items
+
+Diversity and most frequent species?
+
+In R - Lists
+
+## List Data Type
 ## <span style="color:orange"> Lists \span {.scrollable}
 
 -   Lists are the most “informal” data structures in R
@@ -69,72 +128,31 @@ sum(sale[[4]])
 
 ```
 
-# Programming Always Starts with
 
-[Conceptual Design]{style="color: cyan;"}
+## For now - key parts of list
 
--   What is the goal
--   How can you break this goal into sub-task
--   For the overall project and each sub-task
-    -   What are the inputs
-    -   What are the outputs
+* Lists can contain different types of data (numeric, character, factors, vectors, data frames, other lists)
 
-# Modularity
+* In R to create a list
+mylist = list(name="Bob", age=30, hobbies=c("fishing","hiking"), scores=data.frame(test1=c(90,80), test2=c(85,95)))
 
--   Programs are made up of building blocks
--   A **main program** that controls the flow and **calls** functions/modules/building blocks
+* to access something in a list - two options
+mylist$name
+mylist[["name"]]
 
-[Modular Housing](https://images.app.goo.gl/moGdSXVHWiRvHm3X8/)
-
-# Modules take you from inputs to outputs in pieces
-
--   helpful to start a software engineering project by **diagramming** or **flow charting** your program
-
--   what is the goal
-
--   what are key building blocks - modules or functions
-
--   inputs and output
-
--   how do you put the blocks together to go from input to output - main program
-
-# <span style="color:blue"> Functions with factors
-
-Lets generate a function that makes use of categorical data species diversity is a good example
-
-"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species
-
-Value is between 0 and 1, with lower values associated with *lower* diversity
-
-See [Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
-
-```{r diversity, echo=TRUE}
-
-source(here("course-materials/R/compute_simpson_index.R"))
-compute_simpson_index
-
-
-possible.fish = as.factor(c("salmon","steelhead","shark","tuna","cod"))
-# simulate a random recording of catch by fisherman
-
-
-# note here is answer to above challenge
-catch1 = sample(possible.fish, size=10, prob = c(0.2, 0.2, 0.1, 0.1, 0.4), replace=T)
-# lets create a test case that should have low diversity, by repeating the same thing
-catch2 = c(rep("salmon", times=10), rep("cod", times=10))
-
-compute_simpson_index(catch1)
-compute_simpson_index(catch2)
-
-```
+There is more to say about lists but this is all we need for now
 
 # Using lists to return multiple items from a function
+
+
 
 We can use *lists* to return multiple,diverse pieces of information from our functions Lets start with diversity - many be want to know a bit more about the dataset
 
 -   Simpson diversity
 -   most frequent species
 -   number of distinct species
+
+Try it
 
 ```{r diversitylist, echo=TRUE}
 
@@ -163,18 +181,6 @@ compute_season_flow(str)
 compute_season_flow(str, kind="max")
 ```
 
--   
-
-    -   
-
--   Repeating
-
-    -   in R - *purrr* package, also *apply* family of function
-    -   classic *for* loops
-
-If you need it a good source to review working with *purrr* to extract items from list and repeat operations
-
-[Useful Purrr Resource](https://www.rebeccabarter.com/blog/2019-08-19_purrr/)
 
 ## [Loops and Functions]{style="color:orange"}
 
