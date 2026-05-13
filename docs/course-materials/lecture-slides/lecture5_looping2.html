@@ -273,7 +273,7 @@ Naomi Tague
 <span id="cb2-11"><a></a><span class="co"># check to see that it is a matrix with rows and columns</span></span>
 <span id="cb2-12"><a></a><span class="fu">str</span>(creatureobs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> int [1:3, 1:5] 2 1 4 9 5 9 1 5 10 7 ...
+<pre><code> int [1:3, 1:5] 5 7 1 2 6 3 10 3 1 10 ...
  - attr(*, "dimnames")=List of 2
   ..$ : chr [1:3] "east" "west" "north"
   ..$ : chr [1:5] "time1" "time2" "time3" "time4" ...</code></pre>
@@ -281,9 +281,9 @@ Naomi Tague
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>creatureobs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      time1 time2 time3 time4 time5
-east      2     9     1     7     9
-west      1     5     5    10     7
-north     4     9    10     7    10</code></pre>
+east      5     2    10    10     5
+west      7     6     3     4     2
+north     1     3     1     8     3</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># nested for loop: use t as counter for time; l as counter for location</span></span>
 <span id="cb6-2"><a></a><span class="co"># initialization</span></span>
@@ -297,7 +297,7 @@ north     4     9    10     7    10</code></pre>
 <span id="cb6-10"><a></a>}</span>
 <span id="cb6-11"><a></a>totalsum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 96</code></pre>
+<pre><code>[1] 70</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="do">## to see if work print out at each location and time step</span></span>
 <span id="cb8-2"><a></a>totalsum <span class="ot">=</span> <span class="dv">0</span></span>
@@ -311,30 +311,30 @@ north     4     9    10     7    10</code></pre>
 <span id="cb8-10"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-for counter l=1 t=1, location: east, time: time1, sum so far: 2
-for counter l=1 t=2, location: east, time: time2, sum so far: 11
-for counter l=1 t=3, location: east, time: time3, sum so far: 12
-for counter l=1 t=4, location: east, time: time4, sum so far: 19
-for counter l=1 t=5, location: east, time: time5, sum so far: 28
-for counter l=2 t=1, location: west, time: time1, sum so far: 29
-for counter l=2 t=2, location: west, time: time2, sum so far: 34
-for counter l=2 t=3, location: west, time: time3, sum so far: 39
-for counter l=2 t=4, location: west, time: time4, sum so far: 49
-for counter l=2 t=5, location: west, time: time5, sum so far: 56
-for counter l=3 t=1, location: north, time: time1, sum so far: 60
-for counter l=3 t=2, location: north, time: time2, sum so far: 69
-for counter l=3 t=3, location: north, time: time3, sum so far: 79
-for counter l=3 t=4, location: north, time: time4, sum so far: 86
-for counter l=3 t=5, location: north, time: time5, sum so far: 96</code></pre>
+for counter l=1 t=1, location: east, time: time1, sum so far: 5
+for counter l=1 t=2, location: east, time: time2, sum so far: 7
+for counter l=1 t=3, location: east, time: time3, sum so far: 17
+for counter l=1 t=4, location: east, time: time4, sum so far: 27
+for counter l=1 t=5, location: east, time: time5, sum so far: 32
+for counter l=2 t=1, location: west, time: time1, sum so far: 39
+for counter l=2 t=2, location: west, time: time2, sum so far: 45
+for counter l=2 t=3, location: west, time: time3, sum so far: 48
+for counter l=2 t=4, location: west, time: time4, sum so far: 52
+for counter l=2 t=5, location: west, time: time5, sum so far: 54
+for counter l=3 t=1, location: north, time: time1, sum so far: 55
+for counter l=3 t=2, location: north, time: time2, sum so far: 58
+for counter l=3 t=3, location: north, time: time3, sum so far: 59
+for counter l=3 t=4, location: north, time: time4, sum so far: 67
+for counter l=3 t=5, location: north, time: time5, sum so far: 70</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>totalsum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 96</code></pre>
+<pre><code>[1] 70</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># R can do these for loops internally when you do</span></span>
 <span id="cb12-2"><a></a><span class="fu">sum</span>(creatureobs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 96</code></pre>
+<pre><code>[1] 70</code></pre>
 </div>
 </div>
 </section>
@@ -370,16 +370,16 @@ for counter l=3 t=5, location: north, time: time5, sum so far: 96</code></pre>
 <span id="cb14-6"><a></a><span class="co"># check to see that it is a matrix with rows and columns</span></span>
 <span id="cb14-7"><a></a><span class="fu">str</span>(creatureobs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> num [1:5, 1:4] 82.5 63.1 24.7 78.5 68.5 ...</code></pre>
+<pre><code> num [1:5, 1:4] 20.63 56.71 35.61 6.97 12.38 ...</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>creatureobs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         [,1]     [,2]     [,3]     [,4]
-[1,] 82.52840 40.21942 65.69433 62.40322
-[2,] 63.09673 96.96481 89.99641 35.17449
-[3,] 24.72529 56.72276 36.55338 24.01281
-[4,] 78.48105 96.45130 99.14888 22.38366
-[5,] 68.45028 72.05670 98.88241 13.24150</code></pre>
+<pre><code>          [,1]     [,2]     [,3]     [,4]
+[1,] 20.631145 35.88323 47.77625 73.08208
+[2,] 56.713341 40.74495 94.67442 62.30359
+[3,] 35.605020 27.47457 90.55232 63.23943
+[4,]  6.970256 98.16329 53.66386 46.90325
+[5,] 12.380339 21.63450 85.94373 51.50706</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># nested for loop: use o as counter for observation; l as counter for location</span></span>
 <span id="cb18-2"><a></a><span class="co"># outer loop for location</span></span>
@@ -394,12 +394,12 @@ for counter l=3 t=5, location: north, time: time5, sum so far: 96</code></pre>
 <span id="cb18-11"><a></a></span>
 <span id="cb18-12"><a></a>num_hunting_speeds</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
+<pre><code>[1] 7</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># as percent</span></span>
 <span id="cb20-2"><a></a>num_hunting_speeds<span class="sc">/</span>(nobs<span class="sc">*</span>nlocation)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 60</code></pre>
+<pre><code>[1] 35</code></pre>
 </div>
 </div>
 </section>
@@ -424,12 +424,12 @@ for counter l=3 t=5, location: north, time: time5, sum so far: 96</code></pre>
 <span id="cb22-16"><a></a>}</span>
 <span id="cb22-17"><a></a>num_hunting_speeds_neighbors</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 3</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># as percent of all observations</span></span>
 <span id="cb24-2"><a></a>num_hunting_speeds_neighbors<span class="sc">/</span>((nobs<span class="sc">*</span>(nlocation<span class="dv">-1</span>)))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 31.25</code></pre>
+<pre><code>[1] 18.75</code></pre>
 </div>
 </div>
 </section>
@@ -526,7 +526,7 @@ for counter l=3 t=5, location: north, time: time5, sum so far: 96</code></pre>
 <span id="cb31-20"><a></a>}</span>
 <span id="cb31-21"><a></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"It takes %d days for pollution to exceed the threshold of %d, final level: %.1f"</span>, day, threshold, pollution_level))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>It takes 25 days for pollution to exceed the threshold of 100, final level: 100.3</code></pre>
+<pre><code>It takes 26 days for pollution to exceed the threshold of 100, final level: 102.4</code></pre>
 </div>
 </div>
 </section>
