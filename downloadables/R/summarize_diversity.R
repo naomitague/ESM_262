@@ -13,25 +13,14 @@
 #' @references
 #' http://www.tiem.utk.edu/~gross/bioed/bealsmodules/simpsonDI.html
 
-computediversity = function(species, index="A", showplot=FALSE) {
+summarize_diversity = function(species) {
 
 species = as.factor(species)
 
-# decide which index calculation to use
-if (index=="B")
-  diversity=compute_simpson_indexB(species)
-else
-  diversity =compute_simpson_index(species)
-
-sm = as.data.frame(summary(species))
-colnames(sm)="frequency"
-sm$fish = rownames(sm)
-
-if (showplot) 
-  p=ggplot(sm,aes(x=fish,y=frequency, fill=fish))+geom_col()
-else
-  p=NULL
- 
+# use simple simpson form
+tmp = (summary(species)/sum(summary(species))) ** 2
+# change to simpson index - more intuitive
+diversity = 1.0-sum(tmp)
 
 # number of species
 nspecies = length(summary(species))
@@ -41,7 +30,7 @@ tmp = which.max(summary(species))
 dominant = names(summary(species)[tmp])
 
 # output from function
-return(list(num=nspecies, simpson=diversity, dominant=dominant, plt=p))
+return(list(num=nspecies, simpson=diversity, dominant=dominant))
 }
 
 

@@ -275,7 +275,7 @@ you want to know how long it will take for the pollution to exceed a threshold
 
 ```{r, whileexample, error=FALSE}
 # initialize parameters
-pol_in = 10 # pollution added each day
+pol_in = 1.0 # pollution added each day
 pol_out_base = 5 # base pollution removed each day
 threshold = 100 # pollution threshold
 
@@ -287,7 +287,7 @@ maxday =365
 # while loop to simulate pollution levels over time
 # we use && for AND because we want to check both conditions - that pollution level is below threshold and that we haven't exceeded max days
 
-while ((pollution_level < threshold) && (day < maxday)) {
+while ((pollution_level < threshold) && (day < maxday))   {
   # update pollution level
   air_temp = rnorm(mean=20, sd=5, n=1) #
   pol_out = pol_out_base * (1 + 0.01*air_temp) # calculate pollution removed based on air temp

@@ -7,11 +7,14 @@ description: "Monday April 20^th^, 2026"
 
 
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
-| Lecture slides | Materials |
+| Lecture Slides | Materials |
 |----------------|-----------|
-| [Lecture 5.1:  Looping ](lecture-slides/lecture5_looping2.qmd){target="_blank"} |  |
-| [Lecture On Your Own:  Functions ](lecture-slides/lecture5m1_functions.qmd){target="_blank"} | [R power_gen_orig](../downloadables/R/power_gen_orig.R)  |
-| [Lecture 5.2: More on Functions ](lecture-slides/placeholder.qmd){target="_blank"} |  |
+| [Lecture 5.1: Looping](lecture-slides/lecture5_looping2.qmd) | |
+| [Lecture On Your Own: Functions](lecture-slides/lecture5m1_functions.qmd) | [R power_gen_orig](../downloadables/R/power_gen_orig.R) |
+| [Lecture 5.2: More on Functions](lecture-slides/lecture5.functions.qmd) | [R analyze_water_quality](../downloadables/R/analyze_water_quality.R) |
+| | [R compute_diversity](../downloadables/R/compute_diversity.R) |
+| | [R summarize_diversity](../downloadables/R/summarize_diversity.R) |
+| | [R summarize_diversity2](../downloadables/R/summarize_diversity2.R) |
 
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}

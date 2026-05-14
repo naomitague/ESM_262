@@ -8,11 +8,12 @@
 #' @references
 #' http://www.tiem.utk.edu/~gross/bioed/bealsmodules/simpsonDI.html
 
-compute_simpson_index = function(species) {
+compute_diversity = function(species) {
 
 species = as.factor(species)
 tmp = (summary(species)/sum(summary(species))) ** 2
 diversity = sum(tmp)
+
 return(diversity)
 }
 

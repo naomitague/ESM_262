@@ -199,337 +199,195 @@
 </div>
 
 </section>
-<section id="modularity" class="slide level2">
-<h2>Modularity</h2>
+<section id="loops-and-functions" class="slide level2">
+<h2><span style="color:orange">Loops and Functions</span></h2>
+<p>Calculate NPV for</p>
 <ul>
-<li>Programs are made up of building blocks</li>
-<li>A <strong>main program</strong> is a central piece of code that controls the flow and <strong>calls</strong> functions/modules/building blocks</li>
+<li>a range of different interest rates and</li>
+<li>a range of damages</li>
+<li>that may be incurred 10 years in the future</li>
 </ul>
-</section>
-<section id="functions" class="slide level2 scrollable">
-<h2>Functions</h2>
-<p>All programming languages have ways to build modules that you can re-use</p>
-<p>Lego Blocks <img data-src="../../images/lego.png" alt="lego"></p>
-</section>
-<section id="modules---foundation-of-programming" class="slide level2">
-<h2>Modules - foundation of programming</h2>
-<p>Breaking tasks into functions is a central programming concept</p>
-<p>Often modules are called ‘functions’ but also called:</p>
+<p><strong>Steps</strong></p>
 <ul>
-<li>‘procedures’</li>
-<li>‘subroutines’</li>
-<li>‘methods’</li>
-<li>‘subprograms’</li>
+<li>define inputs (interest rates, damages)</li>
+<li>define output (NPV)</li>
+<li>write the function</li>
+<li>create a data structure to store results where we vary both interest rates and damages</li>
+<li>use nested for loops to fill in the data structure</li>
 </ul>
-<p>You have already been using functions in R - e.g.&nbsp;mean(), lm(), plot() etc.</p>
+<p>Try it first…</p>
 </section>
-<section id="designing-modularity" class="slide level2 scrollable">
-<h2>Designing Modularity</h2>
-<p>When you start a programming/data science project - you should begin by:</p>
-<ul>
-<li><p>Breaking your goal down into individual pieces</p></li>
-<li><p>Identifying instructions that can be reused</p></li>
-</ul>
-<p>EXAMPLES of Reuse</p>
-<ul>
-<li><p>an ecosystem model might re-use instructions for calculating how a living organism grows</p></li>
-<li><p>e.g you might have a function that calculates growth from temperature and moisture and you can re-use this function for different organisms or different species with slightly different inputs</p></li>
-<li><p>an accounting program might re-use instructions for computing net present value from interest rates, that you can re-use for different projects or different time periods</p></li>
-</ul>
-</section>
-<section id="designing-modularity-1" class="slide level2 scrollable">
-<h2>Designing Modularity</h2>
-<p>Modules often become ‘black boxes’ which hides detail that might make understanding the program overly complex</p>
-<p>Most languages have lots of black boxes already written AND most allow you to write your own</p>
-</section>
-<section id="inputs-and-parameters" class="slide level2 scrollable">
-<h2>Inputs and Parameters</h2>
-<p>All functions/modules have <strong>inputs/parameters</strong> and <strong>outputs</strong></p>
-<p><strong>Inputs</strong> — what you give the function - sometimes separated into input data and parameters</p>
-<ul>
-<li>input data = the “what” that is manipulated</li>
-<li>parameters determine “how” the manipulation is done</li>
-</ul>
-</section>
-<section id="an-example-of-a-r-black-box-function" class="slide level2">
-<h2>an example of a R black box function</h2>
-<p>-<strong>sort</strong></p>
-<ul>
-<li><p>inputs - data stream</p></li>
-<li><p>parameters - how to do the sort</p></li>
-</ul>
-</section>
-<section id="in-code" class="slide level2 scrollable">
-<h2>In code</h2>
+<section id="npv-nested-for-loop-example" class="slide level2 scrollable">
+<h2><span style="color:orange">NPV: Nested For Loop Example</span></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># look at a R data set on Biological Oxygen Demand over time</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># notice the use of data - R function that brings pre-stored datasets into the work space</span></span>
-<span id="cb1-4"><a></a><span class="fu">data</span>(BOD)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="co"># notice "help" and the information that it provides</span></span>
-<span id="cb1-7"><a></a><span class="fu">help</span>(BOD)</span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="co"># options for looking at data</span></span>
-<span id="cb1-10"><a></a><span class="fu">view</span>(BOD)</span>
-<span id="cb1-11"><a></a></span>
-<span id="cb1-12"><a></a><span class="fu">head</span>(BOD)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># write a function to compute npv</span></span>
+<span id="cb1-2"><a></a><span class="fu">source</span>(<span class="st">"../R/compute_NPV.R"</span>)</span>
+<span id="cb1-3"><a></a>compute_NPV</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  Time demand
-1    1    8.3
-2    2   10.3
-3    3   19.0
-4    4   16.0
-5    5   15.6
-6    7   19.8</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># example of a function - SORT</span></span>
-<span id="cb3-2"><a></a>result <span class="ot">=</span> <span class="fu">sort</span>(BOD[,<span class="st">"demand"</span>], <span class="at">decreasing=</span><span class="cn">TRUE</span>, <span class="at">method=</span><span class="st">"quick"</span>)</span>
-<span id="cb3-3"><a></a><span class="fu">head</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 19.8 19.0 16.0 15.6 10.3  8.3</code></pre>
-</div>
-</div>
-<p>In this example, parameters are <strong>decreasing</strong> and <strong>method</strong> - they determine how the function works</p>
-<p>**inputs* are the data to be sorted</p>
-<p><em>Note</em> sometimes parameters can influence how the functions works (e.g method)</p>
-<p>Output is a sorted version of demand saved to <code>result</code>.</p>
-</section>
-<section id="learn-to-think-in-terms-of-functionsmodules" class="slide level2">
-<h2>Learn to think in terms of functions/modules</h2>
-<ul>
-<li>break your tasks into boxes with inputs, parameters and output</li>
-<li><strong>WRITE DOWN</strong> the <em>contract</em> for each box/function</li>
-</ul>
-<p><strong>CONTRACT</strong></p>
-<ul>
-<li>if the users gives you A, the function with return B</li>
-<li>specify A and B as precisely as you can (include units, time/space scale, parameters, options)</li>
-</ul>
-</section>
-<section id="a-simple-function-example---just-one-module" class="slide level2">
-<h2>A simple function example - just one module</h2>
-<p>Lets say we want to develop a function that computes power generated from hydro-reservoir</p>
-<p>We know that power generation depends on water release rates and the potential energy (from the reservoir height)</p>
-</section>
-<section id="steps-in-program-design" class="slide level2 scrollable">
-<h2>STEPS IN Program Design</h2>
-<ol type="1">
-<li>Clearly define your goal in words/figures as precisely as possible what do you want your program to do
-<ul>
-<li>decide on modules</li>
-<li>for each module, write a contract - inputs, outputs and what it will do</li>
-</ul></li>
-<li>Implement AND document as you go</li>
-<li>Test</li>
-<li>Refine</li>
-<li>Test again</li>
-<li>Create User Documentation and Distribute</li>
-</ol>
-</section>
-<section id="a-simple-function-example" class="slide level2 scrollable">
-<h2>A simple function example</h2>
-<p>Power generation from a reservoir</p>
-
-<img data-src="../../images/reservoir_cm.jpeg" class="r-stretch quarto-figure-center"><p class="caption">hydro</p></section>
-<section id="first-describe-the-contract-in-natural-language" class="slide level2 scrollable">
-<h2>First describe the ‘contract’ in natural language</h2>
-<p>Contract</p>
-<p><em>Input</em>: Reservoir height (m) and flow rate (m3/sec) (these inputs could be a single value in time or a time series)</p>
-<p><em>Output</em>: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)</p>
-<p><em>Parameters</em>: <span class="math inline">\(K_{Eff}\)</span> reservoir efficiency, ρ (density of water), <span class="math inline">\(g\)</span> (acceleration due to gravity)</p>
-</section>
-<section id="what-the-function-will-do" class="slide level2 scrollable">
-<h2>What the function will do</h2>
-<p>compute power using the following equation - <em>body</em> of the function</p>
-<p><span class="math inline">\(P = ρ * h * r * g * K_{Eff}\)</span></p>
-<ul>
-<li><em>P</em> is Power in watts,</li>
-<li><em>ρ</em> is the density of water (~1000 <span class="math inline">\(kg/m^3\)</span>)</li>
-<li><em>h</em> is height in meters,</li>
-<li><em>r</em> is flow rate in cubic meters per second,</li>
-<li><em>g</em> is acceleration due to gravity of 9.8 <span class="math inline">\(m/s^2\)</span>,</li>
-<li><span class="math inline">\(K_{Eff}\)</span> is a coefficient of efficiency ranging from 0 to 1.</li>
-</ul>
-</section>
-<section id="implementing-functions-in-r" class="slide level2">
-<h2>Implementing Functions in R</h2>
-<p>Format for a basic function in R</p>
-<div style="color: green;">
-<p>Some lines at the top that start with #’</p>
-<p>these are documentation that describes inputs, outputs and what the function does</p>
-<p>we will talk more about that - for now just follow the example, below</p>
-</div>
-<p>This is followed by the function definition</p>
-<div style="color: orange;">
-<p><em>Function Name</em> = function(inputs, parameters) {</p>
-<p>body of the function (manipulation of inputs)</p>
-<p>return(values to return)</p>
-<p>}</p>
-</div>
-<p>You can name the function what every you want</p>
-<ul>
-<li>try not to use names of function in R, like <em>mean</em></li>
-<li>try to use descriptive names that give a hint about what the function does</li>
-</ul>
-</section>
-<section id="implementing-functions-in-r-1" class="slide level2 scrollable">
-<h2>Implementing Functions in R</h2>
-<p>In R, inputs and parameters are treated the same; but it is useful to think about them separately in designing the model - collectively they are sometimes referred to as arguments</p>
-<p>ALWAYS USE Meaningful names for your function, its parameters and variables calculated within the function</p>
-<ul>
-<li><p>In R we combine inputs/parameters in the first line of the function definition</p></li>
-<li><p>we can provide “default” values that can be overwritten by the function user</p></li>
-<li><p><span style="color:green">Body</span> includes all calculations between { and }</p>
-<ul>
-<li>anything inside the body is not “seen” by the workspace so you can re-use variables</li>
-</ul></li>
-<li><p><span style="color:green">return</span>* tells R what the output is</p></li>
-</ul>
-</section>
-<section id="heres-our-example" class="slide level2 scrollable">
-<h2>Here’s our example</h2>
-<p>You could just write you function in-line</p>
-<p>But best practice to keep as a file</p>
-</section>
-<section id="lets-look-at-both-options" class="slide level2">
-<h2>Lets look at both options</h2>
-<ol type="1">
-<li>open power_gen_orig.R and look at the function definition</li>
-<li>see how to read in the function from a file and use it</li>
-<li>see how to write the function in-line</li>
-</ol>
-<p>Before you start download the file <strong>power_gen_orig.R</strong> from the course github site and save it in a directory on your computer - you will need to change path to read it in</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(here)</span>
-<span id="cb5-2"><a></a><span class="co"># source the function from a file - make sure you are in the right working directory</span></span>
-<span id="cb5-3"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/power_gen_orig.R"</span>))</span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a><span class="co"># alternatively</span></span>
-<span id="cb5-6"><a></a><span class="co"># function definition in-line</span></span>
-<span id="cb5-7"><a></a>power_gen_orig <span class="ot">=</span> <span class="cf">function</span>(height, flow, <span class="at">rho=</span><span class="dv">1000</span>, <span class="at">g=</span><span class="fl">9.8</span>, <span class="at">Keff=</span><span class="fl">0.8</span>) {</span>
-<span id="cb5-8"><a></a>result <span class="ot">=</span> rho <span class="sc">*</span> height <span class="sc">*</span> flow <span class="sc">*</span> g <span class="sc">*</span> Keff</span>
-<span id="cb5-9"><a></a><span class="fu">return</span>(result)</span>
-<span id="cb5-10"><a></a>}</span>
-<span id="cb5-11"><a></a></span>
-<span id="cb5-12"><a></a><span class="co"># note that height and flow don't have default values, so you must provide them when you use the function, but the other parameters have default values that you can overwrite if you want to</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="using-the-function-and-scoping" class="slide level2 scrollable">
-<h2>Using the function and scoping</h2>
-<p>To use the function we substitute “actual” values for each argument (parameter and inputs) (unless there are defaults)</p>
-<p>R assumes that arguments are in the order that they were specified in the function definition - unless you refer to them by name</p>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># This use of the function</span></span>
-<span id="cb6-2"><a></a><span class="fu">power_gen_orig</span>(<span class="dv">20</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># is the same as this</span></span>
-<span id="cb8-2"><a></a><span class="fu">power_gen_orig</span>(<span class="at">height=</span><span class="dv">20</span>, <span class="at">flow=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># or this; where we use the names of the arguments to specify which is which - this is especially useful if you have a lot of arguments and don't want to remember the order</span></span>
-<span id="cb10-2"><a></a><span class="fu">power_gen_orig</span>(<span class="at">flow=</span><span class="dv">1</span>, <span class="at">height=</span><span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># change the defaults</span></span>
-<span id="cb12-2"><a></a><span class="co"># what if efficiency is less</span></span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="fu">power_gen_orig</span>(<span class="dv">20</span>,<span class="dv">1</span>, <span class="at">Keff=</span><span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 39200</code></pre>
-</div>
-</div>
-</section>
-<section id="scoping" class="slide level2 scrollable">
-<h2>Scoping</h2>
-<p>The scope of a variable in a program defines where it can be “seen” Variables defined inside a function cannot be “seen” outside of that function</p>
-<p>There are advantages to this - the interior of the building block does not ‘interfere’ with other parts of the program</p>
-</section>
-<section id="see-how-scoping-works" class="slide level2 scrollable">
-<h2>See how scoping works</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># specifying function name without () shows code</span></span>
-<span id="cb14-2"><a></a><span class="co"># try it for internal R functions</span></span>
-<span id="cb14-3"><a></a>power_gen_orig</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>function (height, flow, rho = 1000, g = 9.8, Keff = 0.8) 
+<pre><code>function (value, time, discount) 
 {
-    result = rho * height * flow * g * Keff
+    result = value/(1 + discount)^time
     return(result)
-}
-&lt;bytecode: 0x7fbf081e1cf8&gt;</code></pre>
+}</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># use the function and save the results</span></span>
-<span id="cb16-2"><a></a>reservoir1 <span class="ot">=</span> <span class="fu">power_gen_orig</span>(<span class="at">height=</span><span class="dv">4</span>, <span class="at">flow=</span><span class="dv">7</span>)</span>
-<span id="cb16-3"><a></a></span>
-<span id="cb16-4"><a></a>reservoir2 <span class="ot">=</span> <span class="fu">power_gen_orig</span>(<span class="at">height=</span><span class="dv">4</span>, <span class="at">flow=</span><span class="dv">7</span>, <span class="at">Keff=</span><span class="fl">0.2</span>)</span>
-<span id="cb16-5"><a></a></span>
-<span id="cb16-6"><a></a><span class="co"># note that internal variables are not defined so these R statements will FAIL</span></span>
-<span id="cb16-7"><a></a><span class="co"># try it</span></span>
-<span id="cb16-8"><a></a>height</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! object 'height' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>Keff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! object 'Keff' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! object 'results' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># only the outputs are in your workspace</span></span>
-<span id="cb22-2"><a></a>reservoir1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">compute_NPV</span>(<span class="dv">20</span>, <span class="at">discount=</span><span class="fl">0.01</span>, <span class="at">time=</span><span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 219520</code></pre>
+<pre><code>[1] 16.39089</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>reservoir2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># generate some input</span></span>
+<span id="cb5-2"><a></a>damages <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">33</span>,<span class="dv">91</span>,<span class="dv">24</span>)</span>
+<span id="cb5-3"><a></a>damages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 54880</code></pre>
+<pre><code>[1] 25 33 91 24</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># sensitivity to discount rate</span></span>
+<span id="cb7-2"><a></a>discount_rates <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="fl">0.01</span>, <span class="at">to=</span><span class="fl">0.04</span>, <span class="at">by=</span><span class="fl">0.005</span>)</span>
+<span id="cb7-3"><a></a>discount_rates</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.010 0.015 0.020 0.025 0.030 0.035 0.040</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>yr<span class="ot">=</span><span class="dv">10</span></span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a><span class="co"># simple vectorization doesn't give all combinations -</span></span>
+<span id="cb9-4"><a></a><span class="co"># R recycles the shorter vector (gives 7 results with a warning, not 4x7=28)</span></span>
+<span id="cb9-5"><a></a><span class="fu">compute_NPV</span>(<span class="at">value=</span>damages, <span class="at">discount=</span>discount_rates, <span class="at">time=</span>yr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in value/(1 + discount)^time: longer object length is not a multiple of
+shorter object length</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22.63217 28.43502 74.65170 18.74876 18.60235 23.39432 61.47634</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># compute npv's for all combinations of damages and discount rates</span></span>
+<span id="cb12-2"><a></a><span class="co"># first generate a dataframe to store results - rows = damages, columns = discount rates</span></span>
+<span id="cb12-3"><a></a>npvs <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="at">nrow=</span><span class="fu">length</span>(damages), <span class="at">ncol=</span><span class="fu">length</span>(discount_rates)))</span>
+<span id="cb12-4"><a></a></span>
+<span id="cb12-5"><a></a><span class="co"># here we have a 2-dimensional array - rows and columns</span></span>
+<span id="cb12-6"><a></a><span class="fu">head</span>(npvs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  X1 X2 X3 X4 X5 X6 X7
+1 NA NA NA NA NA NA NA
+2 NA NA NA NA NA NA NA
+3 NA NA NA NA NA NA NA
+4 NA NA NA NA NA NA NA</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># now use a nested for loop to populate</span></span>
+<span id="cb14-2"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(damages)) {</span>
+<span id="cb14-3"><a></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(discount_rates)) {</span>
+<span id="cb14-4"><a></a>    npvs[i,j] <span class="ot">=</span> <span class="fu">compute_NPV</span>(<span class="at">value=</span>damages[i], <span class="at">discount=</span>discount_rates[j], <span class="at">time=</span>yr)</span>
+<span id="cb14-5"><a></a>  }</span>
+<span id="cb14-6"><a></a>}</span>
+<span id="cb14-7"><a></a>npvs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        X1       X2       X3       X4       X5       X6       X7
+1 22.63217 21.54168 20.50871 19.52996 18.60235 17.72297 16.88910
+2 29.87447 28.43502 27.07149 25.77955 24.55510 23.39432 22.29362
+3 82.38111 78.41172 74.65170 71.08905 67.71255 64.51161 61.47634
+4 21.72689 20.68001 19.68836 18.74876 17.85825 17.01405 16.21354</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># some data wrangling to make it pretty</span></span>
+<span id="cb16-2"><a></a><span class="fu">colnames</span>(npvs) <span class="ot">=</span> discount_rates</span>
+<span id="cb16-3"><a></a><span class="fu">rownames</span>(npvs) <span class="ot">=</span> damages</span>
+<span id="cb16-4"><a></a>npvs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       0.01    0.015     0.02    0.025     0.03    0.035     0.04
+25 22.63217 21.54168 20.50871 19.52996 18.60235 17.72297 16.88910
+33 29.87447 28.43502 27.07149 25.77955 24.55510 23.39432 22.29362
+91 82.38111 78.41172 74.65170 71.08905 67.71255 64.51161 61.47634
+24 21.72689 20.68001 19.68836 18.74876 17.85825 17.01405 16.21354</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># how do I plot this with ggplot - add a column for original value and then rearrange</span></span>
+<span id="cb18-2"><a></a>npvs<span class="sc">$</span>damage <span class="ot">=</span> damages</span>
+<span id="cb18-3"><a></a>npvsg <span class="ot">=</span> npvs <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="sc">!</span>damage, <span class="at">names_to=</span><span class="st">"dis"</span>, <span class="at">values_to=</span><span class="st">"npv"</span>)</span>
+<span id="cb18-4"><a></a><span class="fu">head</span>(npvsg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  damage dis     npv
+   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+1     25 0.01   22.6
+2     25 0.015  21.5
+3     25 0.02   20.5
+4     25 0.025  19.5
+5     25 0.03   18.6
+6     25 0.035  17.7</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(npvsg, <span class="fu">aes</span>(<span class="at">x=</span>damage, <span class="at">y=</span>npv, <span class="at">col=</span>dis))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">labs</span>(<span class="at">col=</span><span class="st">"Discount</span><span class="sc">\n</span><span class="st">Rate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/npvfor-1.png" width="960"></p>
+</figure>
 </div>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># how about summing all the damages</span></span>
+<span id="cb21-2"><a></a>npv.total <span class="ot">=</span> npvsg <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dis) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">t=</span><span class="fu">sum</span>(npv))</span>
+<span id="cb21-3"><a></a><span class="fu">ggplot</span>(npv.total, <span class="fu">aes</span>(dis,t, <span class="at">fill=</span>dis))<span class="sc">+</span><span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Discount Rate"</span>, <span class="at">y=</span><span class="st">"Total ($)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/npvfor-2.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="some-conventions-helpful-later-in-the-course" class="slide level2 scrollable">
-<h2>Some conventions (helpful later in the course)</h2>
-<ul>
-<li><p>Always write your function in a text editor and then copy into R</p></li>
-<li><p>By convention we name files with functions in them by the name of the function.R e.g.&nbsp;<strong>power_gen_orig.R</strong></p></li>
-<li><p>you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory</p></li>
-<li><p>keep organized by keeping all functions in a subdirectory called <em>R</em></p></li>
-</ul>
-</section>
-<section id="more-best-practices" class="slide level2 scrollable">
-<h2>More best practices</h2>
-<ul>
-<li><p>Include comments both in the body of the function and at the top - there is a particular style of adding comments to the top of the function that we will use later to generate automatic documentation - so useful to start to follow it, more or less, now - see <strong>power_gen_orig.R</strong> for the style</p></li>
-<li><p>Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”</p></li>
-</ul>
-</section>
-<section id="reading-in-functions" class="slide level2">
-<h2>reading in functions</h2>
-<p>Example - source and use function</p>
+<section id="an-alternative-method" class="slide level2 scrollable">
+<h2><span style="color:orange">An alternative method</span></h2>
+<p>An alternative (R specific) is to use functions from the <strong>purrr</strong> package</p>
+<p>Specifically <em>map</em> - which applies a function over a vector of inputs</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(here)</span>
-<span id="cb26-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/power_gen_orig.R"</span>))</span>
-<span id="cb26-3"><a></a><span class="fu">power_gen_orig</span>(<span class="dv">20</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># use damages and discount rates from above</span></span>
+<span id="cb22-2"><a></a>discount_rates</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
+<pre><code>[1] 0.010 0.015 0.020 0.025 0.030 0.035 0.040</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>damages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25 33 91 24</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># map applies compute_NPV for each discount rate,</span></span>
+<span id="cb26-2"><a></a><span class="co"># passing the full damages vector each time (compute_NPV is vectorized over value)</span></span>
+<span id="cb26-3"><a></a>npvs <span class="ot">=</span> <span class="fu">map</span>(discount_rates, <span class="sc">~</span><span class="fu">compute_NPV</span>(<span class="at">value=</span>damages, <span class="at">discount=</span>.x, <span class="at">time=</span><span class="dv">10</span>))</span>
+<span id="cb26-4"><a></a></span>
+<span id="cb26-5"><a></a><span class="co"># each element of npvs is a vector of NPVs (one per damage) at that discount rate</span></span>
+<span id="cb26-6"><a></a><span class="co"># convert to a data frame - each column is a discount rate</span></span>
+<span id="cb26-7"><a></a>npvs <span class="ot">=</span> <span class="fu">as.data.frame</span>(npvs)</span>
+<span id="cb26-8"><a></a><span class="fu">colnames</span>(npvs) <span class="ot">=</span> discount_rates</span>
+<span id="cb26-9"><a></a>npvs<span class="sc">$</span>damage <span class="ot">=</span> damages</span>
+<span id="cb26-10"><a></a></span>
+<span id="cb26-11"><a></a><span class="co"># clean up and plot</span></span>
+<span id="cb26-12"><a></a>npvsg <span class="ot">=</span> npvs <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="sc">!</span>damage, <span class="at">names_to=</span><span class="st">"dis"</span>, <span class="at">values_to=</span><span class="st">"npv"</span>)</span>
+<span id="cb26-13"><a></a><span class="fu">head</span>(npvsg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  damage dis     npv
+   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+1     25 0.01   22.6
+2     25 0.015  21.5
+3     25 0.02   20.5
+4     25 0.025  19.5
+5     25 0.03   18.6
+6     25 0.035  17.7</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(npvsg, <span class="fu">aes</span>(<span class="at">x=</span>damage, <span class="at">y=</span>npv, <span class="at">col=</span>dis))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">labs</span>(<span class="at">col=</span><span class="st">"Discount</span><span class="sc">\n</span><span class="st">Rate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</figure>
 </div>
 </div>
-</section>
-<section id="practicing---assignment-4" class="slide level2">
-<h2>Practicing - Assignment 4</h2>
-<p>Complete Assignment 4! before Thursday’s Lecture</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># how about summing all the damages</span></span>
+<span id="cb29-2"><a></a>npv.total <span class="ot">=</span> npvsg <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dis) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">t=</span><span class="fu">sum</span>(npv))</span>
+<span id="cb29-3"><a></a><span class="fu">ggplot</span>(npv.total, <span class="fu">aes</span>(dis,t, <span class="at">fill=</span>dis))<span class="sc">+</span><span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Discount Rate"</span>, <span class="at">y=</span><span class="st">"Total ($)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/unnamed-chunk-1-2.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>

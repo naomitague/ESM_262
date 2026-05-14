@@ -132,16 +132,16 @@ schedule <- data.frame(
     "Git and GitHub",
     "Git and Collaboration",
     "Git a bit more",
-    "Data Types and Structures, Lists",
+    "Data Types and Structures",
     "Looping",
     "Modularity",
-    "Functions and Data",
-    "Flow Control",
-    "APIs and servers",
-    "Working with the shell",
+    "Functions ",
+    "Functions 2",
+    "Loops and Functions ",
+    "Modularity-Workflow",
     "Testing and debugging",
     "Documentation",
-    "Putting it together",
+    "Working with APIs",
     "Where does AI fit"
   )
 )

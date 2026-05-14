@@ -13,12 +13,13 @@
 #' @references
 #' http://www.tiem.utk.edu/~gross/bioed/bealsmodules/simpsonDI.html
 
-computediversity = function(species) {
+summarize_diversity = function(species) {
 
 species = as.factor(species)
 
 # use simple simpson form
 tmp = (summary(species)/sum(summary(species))) ** 2
+# change to simpson index - more intuitive
 diversity = 1.0-sum(tmp)
 
 # number of species

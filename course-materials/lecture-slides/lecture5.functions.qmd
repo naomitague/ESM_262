@@ -16,14 +16,10 @@ library(here)
 library(tidyverse)
 ```
 
-## Questions about functions so far
-
-## Pair and Share
 
 
-# Programming Always Starts with
+## Programming Always Starts... {style="color:orange"} {.scrollable}
 
-[Conceptual Design]{style="color: cyan;"}
 
 -   What is the goal
 -   How can you break this goal into sub-task
@@ -31,52 +27,69 @@ library(tidyverse)
     -   What are the inputs
     -   What are the outputs
 
-# Modularity
+## Modularity {.scrollable}
 
--   Programs are made up of building blocks
--   A **main program** that controls the flow and **calls** functions/modules/building blocks
+Programs are made up of building blocks
 
+When you start a programming/data science project - you should begin by:
 
-# <span style="color:blue"> Functions with factors
+-   Breaking your goal down into individual pieces
+
+-   Identifying instructions that can be reused
+
+-   Identify tasks that might be useful to others
+
+-   Identify tasks that you might want to be able to substitute different methods for
+  
+## Questions about functions so far {.scrollable}
+
+ <span style="color:blue"> Homework
 
 Lets generate a function that makes use of categorical data species diversity is a good example
 
-"Simpson's Index (D) measures the probability that two individuals randomly selected from a sample will belong to the same species
+Diversity (D) measures the probability that two individuals randomly selected from a sample will belong to the same species
 
-Value is between 0 and 1, with lower values associated with *lower* diversity
+To get value is between 0 and 1, with lower values associated with *lower* diversity 1-D from Assignment
+(Simpson Index)
 
-See [Simpson Biodiversity](http://www.countrysideinfo.co.uk/simpsons.htm)
 
+## Pair and Share
+
+## My version {.scrollable}
 ```{r diversity, echo=TRUE}
 
-source(here("course-materials/R/compute_simpson_index.R"))
-compute_simpson_index
+source(here("course-materials/R/compute_diversity.R"))
+compute_diversity
 
 
 possible.fish = as.factor(c("salmon","steelhead","shark","tuna","cod"))
 # simulate a random recording of catch by fisherman
 
+# we can control sample probablities as long as it sums to 1 - here we have a mix of fish but cod is most common
 
-# note here is answer to above challenge
+# to do this we assign probabities to each fish 
+# high prob more likely to be sampled
+# probabilities must sum to 1 
 catch1 = sample(possible.fish, size=10, prob = c(0.2, 0.2, 0.1, 0.1, 0.4), replace=T)
-# lets create a test case that should have low diversity, by repeating the same thing
-catch2 = c(rep("salmon", times=10), rep("cod", times=10))
 
-compute_simpson_index(catch1)
-compute_simpson_index(catch2)
+# lets create a test case that should have low diversity, making most fish salmon
+catch2 = sample(possible.fish, size=10, prob = c(0.8, 0.05, 0.05, 0.05, 0.05), replace=T)
+
+# note that the diversity index works 'backwards' - higher values are less diverse 
+compute_diversity(catch1)
+compute_diversity(catch2)
 
 ```
 
-
-## Returning values from a function
+## Returning values from a function {.scrollable}
 
 return(value) - but what if you want to return multple items
 
 Diversity and most frequent species?
 
-In R - Lists
+In R -We use Lists
 
-## List Data Type
+
 ## <span style="color:orange"> Lists \span {.scrollable}
 
 -   Lists are the most “informal” data structures in R
@@ -128,25 +141,69 @@ sum(sale[[4]])
 
 ```
 
+## For now - key parts of list {.scrollable}
 
-## For now - key parts of list
+-   Lists can contain different types of data (numeric, character, factors, vectors, data frames, other lists)
 
-* Lists can contain different types of data (numeric, character, factors, vectors, data frames, other lists)
+-   In R to create a list mylist = list(name="Bob", age=30, hobbies=c("fishing","hiking"), scores=data.frame(test1=c(90,80), test2=c(85,95)))
 
-* In R to create a list
-mylist = list(name="Bob", age=30, hobbies=c("fishing","hiking"), scores=data.frame(test1=c(90,80), test2=c(85,95)))
-
-* to access something in a list - two options
-mylist$name
-mylist[["name"]]
+-   to access something in a list - two options mylist\$name mylist\[\["name"\]\]
 
 There is more to say about lists but this is all we need for now
 
-# Using lists to return multiple items from a function
+## Using lists to return multiple items from a function {.scrollable}
+
+We can return a list from a function to give the user multiple pieces of information
+
+```{r, simple}
+
+# a function that returns the max and min of a vector of numbers
+minmax = function(x) {
+  minx = min(x)
+  maxx = max(x)
+  return(list(min=minx, max=maxx))
+}
+
+minmax(c(3,5,2,8,1))
+
+
+```
+
+## More complex example {.scrollable}
+
+Lets say we want to compute a water quality index that is based on multiple measurements (e.g. temperature, dissolved oxygen, turbidity)  
+
+* check if each measurement is above, within, or below a thresholdrange
+* return rating for each measurement (e.g. good, moderate, poor if above, within, or below threshold)
+* return an overall numeric rating
+* return an overall index of water quality (e.g. good, moderate, poor)
 
 
 
-We can use *lists* to return multiple,diverse pieces of information from our functions Lets start with diversity - many be want to know a bit more about the dataset
+Look through function - and ask you neighbor any questions
+
+```{r, usefunction, echo=TRUE}
+
+# Source the function
+source(here("course-materials/R/analyze_water_quality.R"))
+
+# --- Use defaults (most common case) ---
+results <- analyze_water_quality(ph = 7.2, dissolved_oxygen = 8.5, turbidity = 2.1)
+results
+
+# --- Override one limit, e.g. stricter turbidity standard for drinking water ---
+results_strict <- analyze_water_quality(
+  ph = 7.2, dissolved_oxygen = 8.5, turbidity = 2.1,
+  turbidity_max = 1.0
+)
+results_strict
+
+```
+
+## Practice
+
+Modify your diversity function to return a list with
+
 
 -   Simpson diversity
 -   most frequent species
@@ -154,133 +211,77 @@ We can use *lists* to return multiple,diverse pieces of information from our fun
 
 Try it
 
+## My answer {.scrollable}
+
 ```{r diversitylist, echo=TRUE}
 
+library(here)
+library(tidyverse)
 # repeat with a list
-source(here("course-materials/R/computediversity.R"))
+source(here("course-materials/R/summarize_diversity.R"))
 
-computediversity
+# lets compare two catches - with different levels of diversity
+possible.fish =c("salmon","steelhead","shark","tuna","cod")
 
-computediversity(catch1)
-computediversity(catch2)
+# we can control sample probablities as long as it sums to 1 - here we have a mix of fish but cod is most common
+
+# to do this we assign probabities to each fish 
+# high prob more likely to be sampled
+# probabilities must sum to 1 
+catch1 = sample(possible.fish, size=10, prob = c(0.2, 0.2, 0.1, 0.1, 0.4), replace=T)
+
+# lets create a test case that should have low diversity, making most fish steelhead
+catch2 = sample(possible.fish, size=10, prob = c(0.1, 0.7, 0.1, 0.1, 0.1), replace=T)
+
+summarize_diversity
+
+# run function and save results to a variable
+d1 = summarize_diversity(catch1)
+d2 = summarize_diversity(catch2)
+d1
+d2
+
+# just index
+d1$simpson
+d2$simpson
 ```
 
-# Another example
-
-We can also allow the user to make choices about what to return
-
-```{r str, echo=TRUE}
-
-source(here("course-materials/R/compute_season_meanflow.R"))
-compute_season_flow
-
-str = read.table(here("downloadables/Data", "str.txt"), header=T)
-
-compute_season_flow(str)
-
-compute_season_flow(str, kind="max")
-```
+## Other ways to use functions you might not think of {.scrollable}
 
 
-## [Loops and Functions]{style="color:orange"}
+* Use parameters to allow the user to make choices about what to return
 
-Calculate NPV for
+* Use parameters to allow the user to make choices about how to compute something
 
--   a range of different interest rates and
--   a range of damages
--   that may be incurred 10 years in the future
+* Use parameters to allow the user to make choices about what data to use
 
-**Steps**
+* Use parameters to apply different weighting to an index calculation
 
--   define inputs (interest rates, damages)
--   define output (NPV)
--   write the function
--   create a data structure to store results where we vary both interest rates and damages
--   use nested for loops to fill in the data structure
+## Example {.scrollable}
 
-Try it first...
+Lets let user choose between two different ways to compute the index 
 
-## [NPV: Nested For Loop Example]{style="color:orange"} {.scrollable}
+and also whether to show a plot of the data or not
 
-```{r npvfor, echo=TRUE, error=FALSE}
+```{r parametercontrol, echo=TRUE, eval=TRUE}
 
-# write a function to compute npv
-source("../R/compute_NPV.R")
-compute_NPV
-compute_NPV(20, discount=0.01, time=20)
+library(here)
+library(tidyverse)
+source(here("course-materials/R/summarize_diversity2.R"))
 
+testfish = c("cod","trout","salmon")
+# create a test catch that is dominated by cod, but has some trout and salmon
+testcatch = sample(testfish, size=20, replace=T, prob=c(0.8,0.2,0.2))
 
-# generate some input
-damages = c(25,33,91,24)
-damages
-# sensitivity to discount rate
-discount_rates = seq(from=0.01, to=0.04, by=0.005)
-discount_rates
-yr=10
+# lets compare different ways to compute the index  
+d1 = summarize_diversity(testcatch, index="A")
+d2 = summarize_diversity(testcatch, index="B")
 
-# simple vectorization doesn't give all combinations -
-# R recycles the shorter vector (gives 7 results with a warning, not 4x7=28)
-compute_NPV(value=damages, discount=discount_rates, time=yr)
+# just look at index
+d1$simpson
+d2$simpson
 
-# compute npv's for all combinations of damages and discount rates
-# first generate a dataframe to store results - rows = damages, columns = discount rates
-npvs = data.frame(matrix(nrow=length(damages), ncol=length(discount_rates)))
-
-# here we have a 2-dimensional array - rows and columns
-head(npvs)
-
-# now use a nested for loop to populate
-for (i in 1:length(damages)) {
-  for (j in 1:length(discount_rates)) {
-    npvs[i,j] = compute_NPV(value=damages[i], discount=discount_rates[j], time=yr)
-  }
-}
-npvs
-
-# some data wrangling to make it pretty
-colnames(npvs) = discount_rates
-rownames(npvs) = damages
-npvs
-
-# how do I plot this with ggplot - add a column for original value and then rearrange
-npvs$damage = damages
-npvsg = npvs %>% pivot_longer(!damage, names_to="dis", values_to="npv")
-head(npvsg)
-ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
-
-# how about summing all the damages
-npv.total = npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
-ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
-
-```
-
-## [An alternative method]{style="color:orange"} {.scrollable}
-
-An alternative (R specific) is to use functions from the **purrr** package
-
-Specifically *map* - which applies a function over a vector of inputs
-
-```{r}
-# use damages and discount rates from above
-discount_rates
-damages
-
-# map applies compute_NPV for each discount rate,
-# passing the full damages vector each time (compute_NPV is vectorized over value)
-npvs = map(discount_rates, ~compute_NPV(value=damages, discount=.x, time=10))
-
-# each element of npvs is a vector of NPVs (one per damage) at that discount rate
-# convert to a data frame - each column is a discount rate
-npvs = as.data.frame(npvs)
-colnames(npvs) = discount_rates
-npvs$damage = damages
-
-# clean up and plot
-npvsg = npvs %>% pivot_longer(!damage, names_to="dis", values_to="npv")
-head(npvsg)
-ggplot(npvsg, aes(x=damage, y=npv, col=dis))+geom_point()+labs(col="Discount\nRate")
-
-# how about summing all the damages
-npv.total = npvsg %>% group_by(dis) %>% summarize(t=sum(npv))
-ggplot(npv.total, aes(dis,t, fill=dis))+geom_col() + labs(x="Discount Rate", y="Total ($)")
+# run with instruction to plot
+d3 = summarize_diversity(testcatch, index="B", showplot=TRUE)
+d3$plt
 ```
