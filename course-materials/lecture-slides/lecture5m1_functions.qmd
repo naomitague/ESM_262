@@ -20,8 +20,8 @@ library(here)
 
 ## Modularity
 
--   Programs are made up of building blocks
--   A **main program** is a central piece of code that controls the flow and **calls** functions/modules/building blocks
+- Programs are made up of building blocks
+- A **main program** is a central piece of code that controls the flow and **calls** functions/modules/building blocks
 
 ## Functions {.scrollable}
 
@@ -35,10 +35,10 @@ Breaking tasks into functions is a central programming concept
 
 Often modules are called 'functions' but also called:
 
--   'procedures'
--   'subroutines'
--   'methods'
--   'subprograms'
+- 'procedures'
+- 'subroutines'
+- 'methods'
+- 'subprograms'
 
 You have already been using functions in R - e.g. mean(), lm(), plot() etc.
 
@@ -46,17 +46,17 @@ You have already been using functions in R - e.g. mean(), lm(), plot() etc.
 
 When you start a programming/data science project - you should begin by:
 
--   Breaking your goal down into individual pieces
+- Breaking your goal down into individual pieces
 
--   Identifying instructions that can be reused
+- Identifying instructions that can be reused
 
 EXAMPLES of Reuse
 
--   an ecosystem model might re-use instructions for calculating how a living organism grows
+- an ecosystem model might re-use instructions for calculating how a living organism grows
 
--   e.g you might have a function that calculates growth from temperature and moisture and you can re-use this function for different organisms or different species with slightly different inputs
+- e.g you might have a function that calculates growth from temperature and moisture and you can re-use this function for different organisms or different species with slightly different inputs
 
--   an accounting program might re-use instructions for computing net present value from interest rates, that you can re-use for different projects or different time periods
+- an accounting program might re-use instructions for computing net present value from interest rates, that you can re-use for different projects or different time periods
 
 ## Designing Modularity {.scrollable}
 
@@ -70,16 +70,16 @@ All functions/modules have **inputs/parameters** and **outputs**
 
 **Inputs** — what you give the function - sometimes separated into input data and parameters
 
--   input data = the “what” that is manipulated
--   parameters determine “how” the manipulation is done
+- input data = the “what” that is manipulated
+- parameters determine “how” the manipulation is done
 
 ## an example of a R black box function
 
 \-**sort**
 
--   inputs - data stream
+- inputs - data stream
 
--   parameters - how to do the sort
+- parameters - how to do the sort
 
 ## In code {.scrollable}
 
@@ -113,13 +113,13 @@ Output is a sorted version of demand saved to `result`.
 
 ## Learn to think in terms of functions/modules
 
--   break your tasks into boxes with inputs, parameters and output
--   **WRITE DOWN** the *contract* for each box/function
+- break your tasks into boxes with inputs, parameters and output
+- **WRITE DOWN** the *contract* for each box/function
 
 **CONTRACT**
 
--   if the users gives you A, the function with return B
--   specify A and B as precisely as you can (include units, time/space scale, parameters, options)
+- if the users gives you A, the function with return B
+- specify A and B as precisely as you can (include units, time/space scale, parameters, options)
 
 ## A simple function example - just one module
 
@@ -130,8 +130,8 @@ We know that power generation depends on water release rates and the potential e
 ## STEPS IN Program Design {.scrollable}
 
 1.  Clearly define your goal in words/figures as precisely as possible what do you want your program to do
-    -   decide on modules
-    -   for each module, write a contract - inputs, outputs and what it will do
+    - decide on modules
+    - for each module, write a contract - inputs, outputs and what it will do
 2.  Implement AND document as you go
 3.  Test
 4.  Refine
@@ -160,12 +160,12 @@ compute power using the following equation - *body* of the function
 
 $P = ρ * h * r * g * K_{Eff}$
 
--   *P* is Power in watts,
--   *ρ* is the density of water (\~1000 $kg/m^3$)
--   *h* is height in meters,
--   *r* is flow rate in cubic meters per second,
--   *g* is acceleration due to gravity of 9.8 $m/s^2$,
--   $K_{Eff}$ is a coefficient of efficiency ranging from 0 to 1.
+- *P* is Power in watts,
+- *ρ* is the density of water (\~1000 $kg/m^3$)
+- *h* is height in meters,
+- *r* is flow rate in cubic meters per second,
+- *g* is acceleration due to gravity of 9.8 $m/s^2$,
+- $K_{Eff}$ is a coefficient of efficiency ranging from 0 to 1.
 
 ## Implementing Functions in R
 
@@ -193,8 +193,8 @@ return(values to return)
 
 You can name the function what every you want
 
--   try not to use names of function in R, like *mean*
--   try to use descriptive names that give a hint about what the function does
+- try not to use names of function in R, like *mean*
+- try to use descriptive names that give a hint about what the function does
 
 ## Implementing Functions in R {.scrollable}
 
@@ -202,15 +202,15 @@ In R, inputs and parameters are treated the same; but it is useful to think abou
 
 ALWAYS USE Meaningful names for your function, its parameters and variables calculated within the function
 
--   In R we combine inputs/parameters in the first line of the function definition
+- In R we combine inputs/parameters in the first line of the function definition
 
--   we can provide "default" values that can be overwritten by the function user
+- we can provide "default" values that can be overwritten by the function user
 
--   [Body]{style="color:green"} includes all calculations between { and }
+- [Body]{style="color:green"} includes all calculations between { and }
 
-    -   anything inside the body is not "seen" by the workspace so you can re-use variables
+  - anything inside the body is not "seen" by the workspace so you can re-use variables
 
--   [return]{style="color:green"}\* tells R what the output is
+- [return]{style="color:green"}\* tells R what the output is
 
 ## Here's our example {.scrollable}
 
@@ -303,19 +303,19 @@ reservoir2
 
 ## Some conventions (helpful later in the course) {.scrollable}
 
--   Always write your function in a text editor and then copy into R
+- Always write your function in a text editor and then copy into R
 
--   By convention we name files with functions in them by the name of the function.R e.g. **power_gen_orig.R**
+- By convention we name files with functions in them by the name of the function.R e.g. **power_gen_orig.R**
 
--   you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory
+- you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory
 
--   keep organized by keeping all functions in a subdirectory called *R*
+- keep organized by keeping all functions in a subdirectory called *R*
 
 ## More best practices {.scrollable}
 
--   Include comments both in the body of the function and at the top - there is a particular style of adding comments to the top of the function that we will use later to generate automatic documentation - so useful to start to follow it, more or less, now - see **power_gen_orig.R** for the style
+- Include comments both in the body of the function and at the top - there is a particular style of adding comments to the top of the function that we will use later to generate automatic documentation - so useful to start to follow it, more or less, now - see **power_gen_orig.R** for the style
 
--   Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”
+- Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”
 
 ## reading in functions
 

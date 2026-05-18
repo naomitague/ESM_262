@@ -16,16 +16,13 @@ library(here)
 library(tidyverse)
 ```
 
+## Programming Always Starts {style="color:orange"} {.scrollable}
 
-
-## Programming Always Starts... {style="color:orange"} {.scrollable}
-
-
--   What is the goal
--   How can you break this goal into sub-task
--   For the overall project and each sub-task
-    -   What are the inputs
-    -   What are the outputs
+- What is the goal
+- How can you break this goal into sub-task
+- For the overall project and each sub-task
+  - What are the inputs
+  - What are the outputs
 
 ## Modularity {.scrollable}
 
@@ -33,29 +30,28 @@ Programs are made up of building blocks
 
 When you start a programming/data science project - you should begin by:
 
--   Breaking your goal down into individual pieces
+- Breaking your goal down into individual pieces
 
--   Identifying instructions that can be reused
+- Identifying instructions that can be reused
 
--   Identify tasks that might be useful to others
+- Identify tasks that might be useful to others
 
--   Identify tasks that you might want to be able to substitute different methods for
-  
+- Identify tasks that you might want to be able to substitute different methods for
+
 ## Questions about functions so far {.scrollable}
 
- <span style="color:blue"> Homework
+<span style="color:blue"> Homework
 
 Lets generate a function that makes use of categorical data species diversity is a good example
 
 Diversity (D) measures the probability that two individuals randomly selected from a sample will belong to the same species
 
-To get value is between 0 and 1, with lower values associated with *lower* diversity 1-D from Assignment
-(Simpson Index)
-
+To get value is between 0 and 1, with lower values associated with *lower* diversity 1-D from Assignment (Simpson Index)
 
 ## Pair and Share
 
 ## My version {.scrollable}
+
 ```{r diversity, echo=TRUE}
 
 source(here("course-materials/R/compute_diversity.R"))
@@ -89,14 +85,13 @@ Diversity and most frequent species?
 
 In R -We use Lists
 
-
 ## <span style="color:orange"> Lists \span {.scrollable}
 
--   Lists are the most “informal” data structures in R
--   List are really useful for keeping track of and organizing groups of things that are not all the same
--   A list could be a table where number of rows is different for each column
--   A list can have numeric, character, factors all mixed together
--   List are often used for returning more complex information from function (e.g. lm)
+- Lists are the most “informal” data structures in R
+- List are really useful for keeping track of and organizing groups of things that are not all the same
+- A list could be a table where number of rows is different for each column
+- A list can have numeric, character, factors all mixed together
+- List are often used for returning more complex information from function (e.g. lm)
 
 ## Example of lists {.scrollable}
 
@@ -143,11 +138,11 @@ sum(sale[[4]])
 
 ## For now - key parts of list {.scrollable}
 
--   Lists can contain different types of data (numeric, character, factors, vectors, data frames, other lists)
+- Lists can contain different types of data (numeric, character, factors, vectors, data frames, other lists)
 
--   In R to create a list mylist = list(name="Bob", age=30, hobbies=c("fishing","hiking"), scores=data.frame(test1=c(90,80), test2=c(85,95)))
+- In R to create a list mylist = list(name="Bob", age=30, hobbies=c("fishing","hiking"), scores=data.frame(test1=c(90,80), test2=c(85,95)))
 
--   to access something in a list - two options mylist\$name mylist\[\["name"\]\]
+- to access something in a list - two options mylist\$name mylist\[\["name"\]\]
 
 There is more to say about lists but this is all we need for now
 
@@ -171,14 +166,12 @@ minmax(c(3,5,2,8,1))
 
 ## More complex example {.scrollable}
 
-Lets say we want to compute a water quality index that is based on multiple measurements (e.g. temperature, dissolved oxygen, turbidity)  
+Lets say we want to compute a water quality index that is based on multiple measurements (e.g. temperature, dissolved oxygen, turbidity)
 
-* check if each measurement is above, within, or below a thresholdrange
-* return rating for each measurement (e.g. good, moderate, poor if above, within, or below threshold)
-* return an overall numeric rating
-* return an overall index of water quality (e.g. good, moderate, poor)
-
-
+- check if each measurement is above, within, or below a thresholdrange
+- return rating for each measurement (e.g. good, moderate, poor if above, within, or below threshold)
+- return an overall numeric rating
+- return an overall index of water quality (e.g. good, moderate, poor)
 
 Look through function - and ask you neighbor any questions
 
@@ -204,10 +197,9 @@ results_strict
 
 Modify your diversity function to return a list with
 
-
--   Simpson diversity
--   most frequent species
--   number of distinct species
+- Simpson diversity
+- most frequent species
+- number of distinct species
 
 Try it
 
@@ -248,18 +240,17 @@ d2$simpson
 
 ## Other ways to use functions you might not think of {.scrollable}
 
+- Use parameters to allow the user to make choices about what to return
 
-* Use parameters to allow the user to make choices about what to return
+- Use parameters to allow the user to make choices about how to compute something
 
-* Use parameters to allow the user to make choices about how to compute something
+- Use parameters to allow the user to make choices about what data to use
 
-* Use parameters to allow the user to make choices about what data to use
-
-* Use parameters to apply different weighting to an index calculation
+- Use parameters to apply different weighting to an index calculation
 
 ## Example {.scrollable}
 
-Lets let user choose between two different ways to compute the index 
+Lets let user choose between two different ways to compute the index
 
 and also whether to show a plot of the data or not
 

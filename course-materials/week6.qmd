@@ -1,0 +1,20 @@
+---
+title: "Data Types"
+subtitle: "Week 4"
+description: "Monday April 20^th^, 2026"
+---
+
+
+## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
+| Lecture Slides | Materials |
+|----------------|-----------|
+| [Lecture 6 - Make Up: Modularity](lecture-slides/lecture6a_modularity.qmd) | [R power_gen_orig](../downloadables/R/power_gen_orig.R) [R autopower](../downloadables/R/autopower.R) |
+| [Lecture 6 Tuesday Class](lecture-slides/placeholder.qmd) |  |
+| [Lecture 6: Thursday Class](lecture-slides/placeholder.qmd) | |
+
+## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
+
+| Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
+|-----------------|-----------------------------------------------|----------------|----------------------------|
+| HW              | [Homework Assignment #5](assignments/HW5.qmd) | 19/4/2026      | 26/4/2026 , 11:59pm PT     |
+: {.hover .bordered tbl-colwidths="[20,30,20,30]"} 

@@ -1,0 +1,29 @@
+---
+title: "Assignment #5" 
+
+format:  html
+---
+## Modularity
+
+With a partner
+
+Think of an example complex data science task/program that you might want to design with:
+
+  * at least *4* modules
+  * 1 module must be used at least twice
+  * at least one *for* (or *while*) loop
+
+*Planning - Step 1* 
+
+- sketch a diagram that shows how these modules would be put together to go from inputs to output for the overall program (30pts)
+- write a contract for the overall program (input, output, parameters) (10pts)
+- break the program in to modules (naming them appropriately), write a contract for each one (20pts)
+
+**Important - Check in with myself or Ojas to get the OK on your plan BEFORE you go to Step 2**
+
+*Implementation - Step 2* 
+
+- write functions (stored in separate documents) for each module (30pts)
+- write an overall program that manages *calls* to each function (10pts)
+- create some data and use it to test the program (10pts)
+

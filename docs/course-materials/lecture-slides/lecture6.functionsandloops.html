@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <title>ESM 262 – Functions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-832775eafbd512325564c8c290c39367.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1a8385bbf955fbb4448938bc10efacf4.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -388,6 +391,47 @@ shorter object length</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="lets-practice-automobile-power-generation" class="slide level2">
+<h2># <span style="color:orange"> Lets practice:: Automobile Power Generation </span></h2>
+<p>One of the equations used to compute automobile fuel efficiency is given below. This is the power required to keep a car moving at a given speed, and is as follows:</p>
+<p><span class="math inline">\(Pb = crolling * m *g *V + \frac{1}{2} * A*p_{air}*c_{drag}*V^3\)</span></p>
+<p>where crolling and cdrag are rolling and aerodynamic resistive coefficients, typical values are 0.015 and 0.3, respectively.</p>
+<ul>
+<li><p>V: is vehicle speed (assuming no headwind) in m/s (or mps) m: is vehicle mass in kg</p></li>
+<li><p>A is surface area of car <span class="math inline">\((m^2)\)</span></p></li>
+<li><p><em>g</em>: is acceleration due to gravity <span class="math inline">\((9.8 m/s^2 )\)</span></p></li>
+<li><p>p_air = density of air <span class="math inline">\((1.2kg/m^3 )\)</span></p></li>
+<li><p>Pb is power in Watts</p></li>
+</ul>
+<p>What would be the function’s contract - input/parameters? what will it do?</p>
+</section>
+<section id="lets-practice-automobile-power-generation-1" class="title-slide slide level1 center">
+<h1><span style="color:orange"> Lets practice:: Automobile Power Generation </span></h1>
+<ol type="1">
+<li>Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds, the surface area of this truck is 16 <span class="math inline">\(m^2\)</span></li>
+</ol>
+<ul>
+<li>30 m/s</li>
+<li>80 km/hr</li>
+<li>120 km/hr</li>
+<li>40 km/hr</li>
+<li>5 km/hr</li>
+</ul>
+<ol start="2" type="1">
+<li><p>Plot power as a function of speed</p></li>
+<li><p>Recompute for a lighter vehicle (15,000 kg) Add a second line to your graph for lighter vehicle</p></li>
+</ol>
+<ul>
+<li>Keep your function in its own file, store it in a subdirectory called <em>R</em> and then create a <strong>separate</strong> Rmarkdown (or Quarto) document to use the function and store the Rmarkdown in a different directory</li>
+</ul>
+</section>
+
+<section id="good-programming-practices" class="title-slide slide level1 center">
+<h1><strong>Good Programming Practices</strong></h1>
+<p>Name variables such that they are easy to understand</p>
+<p>Describe the contract at the top of the function (following the format for the <em>power_gen_orig.R</em> example)</p>
+<p>Also include the comments in the Quarto</p>
 
 
 </section>

@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <title>ESM 262 – Data Types and Structures</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-832775eafbd512325564c8c290c39367.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1a8385bbf955fbb4448938bc10efacf4.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -257,7 +260,7 @@
 <span id="cb1-2"><a></a>firestarts <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">100</span>)</span>
 <span id="cb1-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">firestarts=</span>firestarts), <span class="fu">aes</span>(firestarts))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -270,7 +273,7 @@
 <span id="cb3-2"><a></a>otterweight <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)</span>
 <span id="cb3-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(otterweight), <span class="fu">aes</span>(otterweight))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -283,7 +286,7 @@
 <span id="cb5-2"><a></a>otterweight <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">2000</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)</span>
 <span id="cb5-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(otterweight), <span class="fu">aes</span>(otterweight))<span class="sc">+</span><span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -297,14 +300,14 @@
 <span id="cb7-3"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">2</span>, <span class="at">replace=</span>T)</span>
 <span id="cb7-4"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2024 2015</code></pre>
+<pre><code>[1] 2006 2003</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># no repeat years</span></span>
 <span id="cb9-2"><a></a>pick <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">2000</span>,<span class="dv">2025</span>), <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>F)</span>
 <span id="cb9-3"><a></a>pick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2007 2019 2005 2010 2004 2014 2017 2022 2011 2020 2024 2002 2025 2023 2009
-[16] 2006 2000 2003 2021 2016</code></pre>
+<pre><code> [1] 2018 2019 2016 2005 2011 2014 2017 2025 2013 2009 2012 2024 2008 2003 2023
+[16] 2010 2001 2000 2015 2006</code></pre>
 </div>
 </div>
 </section>
@@ -386,7 +389,7 @@ $row.names
 <span id="cb17-2"><a></a>ozone_sample <span class="ot">=</span> <span class="fu">sample</span>(airquality<span class="sc">$</span>Ozone, <span class="at">size=</span><span class="dv">5</span>, <span class="at">replace=</span>F)</span>
 <span id="cb17-3"><a></a>ozone_sample</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  9 16 73 NA 21</code></pre>
+<pre><code>[1] 13 82 71 NA NA</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># this works but we have some NA values - maybe subset</span></span>
 <span id="cb19-2"><a></a>airquality_clean <span class="ot">=</span> <span class="fu">na.omit</span>(airquality)</span>
@@ -395,16 +398,16 @@ $row.names
 <span id="cb19-5"><a></a>ozone_sample <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(airquality_clean), <span class="at">size=</span><span class="dv">5</span>, <span class="at">replace=</span>F)</span>
 <span id="cb19-6"><a></a>ozone_sample</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 38 93 14 39 17</code></pre>
+<pre><code>[1] 92 24 87 33  7</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>airquality_clean[ozone_sample,]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Ozone Solar.R Wind Temp Month Day
-67     40     314 10.9   83     7   6
-134    44     236 14.9   81     9  11
-18      6      78 18.4   57     5  18
-68     77     276  5.1   88     7   7
-21      1       8  9.7   59     5  21</code></pre>
+133    24     259  9.7   73     9  10
+31     37     279  7.4   76     5  31
+128    47      95  7.4   87     9   5
+51     13     137 10.3   76     6  20
+9       8      19 20.1   61     5   9</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># plot our sample days</span></span>
 <span id="cb23-2"><a></a></span>
@@ -481,15 +484,15 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb31-7"><a></a><span class="co"># because possible.fish was a factor catch1 will be a factor</span></span>
 <span id="cb31-8"><a></a>catch1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "shark"     "shark"     "tuna"      "steelhead" "cod"       "salmon"   
- [7] "steelhead" "tuna"      "salmon"    "shark"     "tuna"      "cod"      
-[13] "shark"     "salmon"    "steelhead" "cod"       "salmon"    "cod"      
-[19] "salmon"    "tuna"     </code></pre>
+<pre><code> [1] "steelhead" "tuna"      "tuna"      "steelhead" "cod"       "shark"    
+ [7] "cod"       "steelhead" "steelhead" "steelhead" "steelhead" "cod"      
+[13] "steelhead" "tuna"      "salmon"    "cod"       "cod"       "tuna"     
+[19] "shark"     "steelhead"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Length     Class      Mode 
-       20 character character </code></pre>
+<pre><code>   Length  N.unique   N.blank Min.nchar Max.nchar 
+       20         5         0         3         9 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="co"># if we want summary to be more useful - make this a factor</span></span>
 <span id="cb35-2"><a></a>catch1 <span class="ot">=</span> <span class="fu">as.factor</span>(catch1)</span>
@@ -499,7 +502,7 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb35-6"><a></a><span class="fu">summary</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      cod    salmon     shark steelhead      tuna 
-        4         5         4         3         4 </code></pre>
+        5         1         2         8         4 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">plot</span>(catch1, <span class="at">col=</span><span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
@@ -512,18 +515,18 @@ Levels: 1 1.3 4 22</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="co"># maximum frequency</span></span>
 <span id="cb40-2"><a></a><span class="fu">max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code>[1] 8</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="co"># which fish was most frequently caught</span></span>
 <span id="cb42-2"><a></a><span class="fu">which.max</span>(<span class="fu">summary</span>(catch1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>salmon 
-     2 </code></pre>
+<pre><code>steelhead 
+        4 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="co">#to get just the name </span></span>
 <span id="cb44-2"><a></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(catch1)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "salmon"</code></pre>
+<pre><code>[1] "steelhead"</code></pre>
 </div>
 </div>
 <img data-src="lecture4.datatypes_files/figure-revealjs/fishes-1.png" width="960" class="r-stretch"></section>
@@ -629,7 +632,7 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb58-5"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_histogram(stat = "count"): Ignoring unknown parameters:
-`binwidth`, `bins`, and `pad`</code></pre>
+`binwidth` and `bins`</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -643,7 +646,7 @@ Levels: 1 1.3 4 22</code></pre>
 <span id="cb60-3"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">catch1=</span>catch1), <span class="fu">aes</span>(catch1, <span class="at">fill=</span>catch1))<span class="sc">+</span><span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>)<span class="sc">+</span><span class="fu">labs</span>(<span class="at">title=</span>plottitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_histogram(stat = "count"): Ignoring unknown parameters:
-`binwidth`, `bins`, and `pad`</code></pre>
+`binwidth` and `bins`</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -669,7 +672,7 @@ Levels: 1 1.3 4 22</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>title <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"Mean Ozone in dataset: %4.1f </span><span class="sc">\n</span><span class="st"> Mean Ozone in sample: %4.1f"</span>, <span class="fu">mean</span>(airquality<span class="sc">$</span>Ozone, <span class="at">na.rm=</span>T), <span class="fu">mean</span>(airquality_clean<span class="sc">$</span>Ozone[ozone_sample], <span class="at">na.rm=</span>T))</span>
 <span id="cb62-2"><a></a>title</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Mean Ozone in dataset: 42.1 \n Mean Ozone in sample: 33.6"</code></pre>
+<pre><code>[1] "Mean Ozone in dataset: 42.1 \n Mean Ozone in sample: 25.8"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a><span class="fu">ggplot</span>(airquality_clean, <span class="fu">aes</span>(<span class="at">x=</span>Temp, <span class="at">y=</span>Ozone))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb64-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">data=</span><span class="fu">data.frame</span>(<span class="at">Temp=</span>airquality_clean<span class="sc">$</span>Temp[ozone_sample], <span class="at">Ozone=</span>airquality_clean<span class="sc">$</span>Ozone[ozone_sample]), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span><span class="fu">ggtitle</span>(title)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

@@ -21,12 +21,12 @@ knitr::include_graphics(here::here("images/whoIam.jpeg"))
 
 ESM 262 is an introduction to computing for environmental applications. The course provides practical training in software design best practices.
 
--   programming language concepts
--   loops and repetition
--   data types and structures
--   modular program design;
--   reproducibility and version control;
--   testing, documentation, and workflow;
+- programming language concepts
+- loops and repetition
+- data types and structures
+- modular program design;
+- reproducibility and version control;
+- testing, documentation, and workflow;
 
 The course features **R** for programming, **Git** for version control, **Quarto** for workflow and editing, and **GitHub** for collaboration and publishing, but many concepts would be applicable in other software design tools.
 
@@ -40,35 +40,35 @@ Teaching Team
 
 **Instructor:** Naomi Tague (www.tagueteamlab.org)
 
--   **Office hours:** email me
--   **email** (tague\@ucsb.edu)
--   **git user id** naomitague
+- **Office hours:** email me
+- **email** (tague\@ucsb.edu)
+- **git user id** naomitague
 
 **Teaching assistant:** Ojas Sarup
 
--   **Office hours:** Thursday 11am - 1pm (Bren Hall 1005)
--   **email** (ojassarup\@ucsb.edu )
--   **git user id** osarup
+- **Office hours:** Thursday 11am - 1pm (Bren Hall 1005)
+- **email** (ojassarup\@ucsb.edu )
+- **git user id** osarup
 
 ## [Learning objectives]{style="color:orange"} {.scrollable}
 
--   practice partner coding and reproducible workflows
+- practice partner coding and reproducible workflows
 
--   3 *BIG* concepts in programming are *modularity*, *data structure*, *repetition* - we will learn skills related to all three of these
+- 3 *BIG* concepts in programming are *modularity*, *data structure*, *repetition* - we will learn skills related to all three of these
 
--   learn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)
+- learn and practice some coding/programming best practices (that will make your data science life easier - whatever you do!)
 
-    -   documentation
-    -   testing
-    -   reproducibity
+  - documentation
+  - testing
+  - reproducibity
 
--   learn some new Rskills that are helpful for a wide variety of data science applications
+- learn some new Rskills that are helpful for a wide variety of data science applications
 
 ## [Computing set up]{style="color:orange"} {.scrollable}
 
--   Please complete the install-guide on the course website
+- Please complete the install-guide on the course website
 
--   Please bring your laptop to class
+- Please bring your laptop to class
 
 ## [Course materials and how we will work]{style="color:orange"}
 
@@ -82,31 +82,31 @@ Why structure it this way? You learn to code by doing - not so much by watching 
 
 # Using AI-tools in this course
 
--   AI-tools great resources but effective use requires understanding how to ask good questions
+- AI-tools great resources but effective use requires understanding how to ask good questions
 
--   Use this course to build that understanding, think about the meta concepts.
+- Use this course to build that understanding, think about the meta concepts.
 
--   Ask yourself - What are situations you might apply a technique/idea/concept;
+- Ask yourself - What are situations you might apply a technique/idea/concept;
 
--   You gain skills by **Practicing**, so start without AI-tools
+- You gain skills by **Practicing**, so start without AI-tools
 
--   For assignments/practice
+- For assignments/practice
 
-    -   **Always** write the code yourself -
+  - **Always** write the code yourself -
 
-    -   Supportive ways to use AI-tools
+  - Supportive ways to use AI-tools
 
-        -   use AI-tools to help find syntax
-        -   Use AI-tools to explain other peoples code (including class examples)
-        -   Use AI-tools to help interpret error messages
+    - use AI-tools to help find syntax
+    - Use AI-tools to explain other peoples code (including class examples)
+    - Use AI-tools to help interpret error messages
 
 # Attendance
 
--   You are expected to come to class - its part of the learning!
+- You are expected to come to class - its part of the learning!
 
--   We will regularly have in-class quizzes - These are not really "quizzes" where you answer is right or wrong. They are designed to help you think through the material and provide feedback to me as the instructor. For each quiz you will get full credit for attempting the question in class.
+- We will regularly have in-class quizzes - These are not really "quizzes" where you answer is right or wrong. They are designed to help you think through the material and provide feedback to me as the instructor. For each quiz you will get full credit for attempting the question in class.
 
--   If you have to miss class let Ojas and me know by email
+- If you have to miss class let Ojas and me know by email
 
 ## [Tentative Schedule]{style="color:orange"} {.scrollable}
 
@@ -141,7 +141,7 @@ schedule <- data.frame(
     "Modularity-Workflow",
     "Testing and debugging",
     "Documentation",
-    "Working with APIs",
+    "Working with APIs/Command Line",
     "Where does AI fit"
   )
 )
@@ -184,8 +184,8 @@ There will be 6 assignments (more or less one for each week). You will usually h
 
 # Assignment expectations and grading
 
--   All assignments submitted on Canvas
--   Late Assignments 10% each day. Try to submit on time as we build on the concepts and materials covered in each assignment
--   Style counts; So make sure your follow good programming practices including adding documentation and using informative variable names
--   You can use AI (ChatGPT etc) to help you learn syntax, but write the code yourself; this is how you learn
--   You can resubmit your assignment for additional feedback and we will upgrade your grade. Please do so with in one week of getting the assignment back
+- All assignments submitted on Canvas
+- Late Assignments 10% each day. Try to submit on time as we build on the concepts and materials covered in each assignment
+- Style counts; So make sure your follow good programming practices including adding documentation and using informative variable names
+- You can use AI (ChatGPT etc) to help you learn syntax, but write the code yourself; this is how you learn
+- You can resubmit your assignment for additional feedback and we will upgrade your grade. Please do so with in one week of getting the assignment back

@@ -24,14 +24,14 @@ library(tidyverse)
 
 [Commit]{style="color:green"}
 
--   saves the current version locally each commit has a label so you can backtrack if needed
--   you can look at what changes between commits
--   gives you an opportunity to comment on what changes
+- saves the current version locally each commit has a label so you can backtrack if needed
+- you can look at what changes between commits
+- gives you an opportunity to comment on what changes
 
 [Push/Pull]{style="color:green"}
 
--   **push** integrates any local commits/changes to central GitHub\
--   **pull** integrates any commits/changes from central GitHb to local
+- **push** integrates any local commits/changes to central GitHub\
+- **pull** integrates any commits/changes from central GitHb to local
 
 [Git Guides](https://github.com/git-guides) are a really wonderful resource to refer to!
 
@@ -39,7 +39,7 @@ library(tidyverse)
 
 Here are some useful commands if you run into set up issues (and in general)
 
--   to check that you have your git credentials set up correctly
+- to check that you have your git credentials set up correctly
 
 ```{r, eval=TRUE, echo=TRUE}
 
@@ -52,7 +52,7 @@ gh::gh_whoami()
 
 ```
 
--   alternatively you can use *git config* in terminal window to check your credentials
+- alternatively you can use *git config* in terminal window to check your credentials
 
 [Config]{style="color:green"}
 
@@ -86,8 +86,8 @@ In terminal, try
 
 locally- use the little clock button or **commit**
 
--   see the history of your commits
--   click on a commit to see what changed
+- see the history of your commits
+- click on a commit to see what changed
 
 ::: callout-note
 informative commit messages helps understand history
@@ -97,8 +97,8 @@ In terminal window use *log* for history [git log]{style="color:green"}
 
 ## Correcting Misktakes if you haven't committed {.scrollable}
 
--   make a change and save
--   click *revert* to get rid of the changes that you don't want
+- make a change and save
+- click *revert* to get rid of the changes that you don't want
 
 Try it
 
@@ -110,21 +110,21 @@ The terminal window allows you to access a *shell* - it's a way to interact with
 
 *Terminal* is a powerful tool that:
 
--   allows you to do things that you can't do with the graphical interface
--   uses *Git* commands that work everywhere not just with R, Rstudio
--   we will work with *Terminal* command more in the course
+- allows you to do things that you can't do with the graphical interface
+- uses *Git* commands that work everywhere not just with R, Rstudio
+- we will work with *Terminal* command more in the course
 
 ## What to do in Terminal to get your code back to an earlier version
 
--   make a change and save
+- make a change and save
 
--   commit the change
+- commit the change
 
--   in terminal type *git revert HEAD*
+- in terminal type *git revert HEAD*
 
--   this will create a new commit that undoes the changes you just made - the commit message shows up in terminal also - you can edit the message if you want to - but its good to have a record of what you did and why you reverted it
+- this will create a new commit that undoes the changes you just made - the commit message shows up in terminal also - you can edit the message if you want to - but its good to have a record of what you did and why you reverted it
 
--   save the commit message to complete the commit
+- save the commit message to complete the commit
 
 I'll try and then you
 
@@ -160,23 +160,23 @@ useful to keep things from getting 'messy' but we won't go into here
 
 ## Some other useful Git commands in Terminal {.scrollable}
 
--   `git status` - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)
+- `git status` - shows you the status of your files (which ones are changed, which ones are staged for commit, etc.)
 
--   `git log` - shows you the commit history with commit messages and IDs
+- `git log` - shows you the commit history with commit messages and IDs
 
--   `git diff` - shows you the differences between your current files and the last commit (what changes you have made)
+- `git diff` - shows you the differences between your current files and the last commit (what changes you have made)
 
--   `git push` - pushes your local commits to GitHub
+- `git push` - pushes your local commits to GitHub
 
--   `git pull` - pulls the latest changes from GitHub to your local repository
+- `git pull` - pulls the latest changes from GitHub to your local repository
 
--   `git commit filename -m "your commit message"` - commits your changes to the file with a message describing what you did.
+- `git commit filename -m "your commit message"` - commits your changes to the file with a message describing what you did.
 
--   `git commit -a -m "your commit message"` - commits all your changes with a message describing what you did.
+- `git commit -a -m "your commit message"` - commits all your changes with a message describing what you did.
 
--   `git add filename` - stages a file for commit (you need to stage files before you can commit them)
+- `git add filename` - stages a file for commit (you need to stage files before you can commit them)
 
--   `git checkout -- filename` - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)
+- `git checkout -- filename` - discards changes in a file and reverts it to the last committed version (use with caution, as this will lose any unsaved changes in that file)
 
 ## Collaboration with GitHub
 
@@ -184,11 +184,11 @@ useful to keep things from getting 'messy' but we won't go into here
 
 ## Collaboration through GitHub {.scrollable}
 
--   add a collaborator to your *GitHub* repository
-    -   under *settings* on *Github*
--   they will get an email invitation to collaborate on your repository
--   they can clone the repository to their local computer and make changes
--   they can commit and push their changes to GitHub
+- add a collaborator to your *GitHub* repository
+  - under *settings* on *Github*
+- they will get an email invitation to collaborate on your repository
+- they can clone the repository to their local computer and make changes
+- they can commit and push their changes to GitHub
 
 ::: callout-note
 *Git* doesn't like having nested repositories so don't clone a repository inside another repository!!!
@@ -196,18 +196,18 @@ useful to keep things from getting 'messy' but we won't go into here
 
 ## Try it
 
--   with a partner, add each other to your repo
+- with a partner, add each other to your repo
 
--   start a new *Rproject* -
+- start a new *Rproject* -
 
-    -   select the option to clone from existing repo
-    -   make sure you save different directory than your original project!
+  - select the option to clone from existing repo
+  - make sure you save different directory than your original project!
 
--   make a change (maybe add a file, edit their quarto file, etc.)
+- make a change (maybe add a file, edit their quarto file, etc.)
 
-    -   commit and push
+  - commit and push
 
--   check on *GitHub* to see if your change is there
+- check on *GitHub* to see if your change is there
 
 ## Conflicts
 
@@ -215,42 +215,42 @@ useful to keep things from getting 'messy' but we won't go into here
 
 ## Conflicts {.scrollable}
 
--   what happens if you and your collaborator change the same file and try to push/pull
+- what happens if you and your collaborator change the same file and try to push/pull
 
--   this could be you from two different computers :)
+- this could be you from two different computers :)
 
--   *Git* and *GitHub* manage this
+- *Git* and *GitHub* manage this
 
-    -   *Github* will try to merge the changes
-    -   if it can't (you both changed the same line or something like that) - **Conflict**
+  - *Github* will try to merge the changes
+  - if it can't (you both changed the same line or something like that) - **Conflict**
 
--   when a Conflict occurs
+- when a Conflict occurs
 
-    -   *Git* rewrites the file to show you the conflicting changes using markers
+  - *Git* rewrites the file to show you the conflicting changes using markers
 
 ## Conflict Markers in Git {.scrollable}
 
 In the file where the conflict occurs - *Git* marks it by
 
--   `<<<<<<< HEAD` - start of your local version
--   `=======` - divider between your local version and *Github* version
--   `>>>>>>> commit-ID` - the end of the conflicting changes from the remote
+- `<<<<<<< HEAD` - start of your local version
+- `=======` - divider between your local version and *Github* version
+- `>>>>>>> commit-ID` - the end of the conflicting changes from the remote
 
 I'll demo
 
 ## What you do
 
--   when file is conflicted Rstudio marks it with a U (unmerged)
--   edit that file to resolve conflict by choosing which version you want
--   stage and commit the resolved file and push to GitHub
+- when file is conflicted Rstudio marks it with a U (unmerged)
+- edit that file to resolve conflict by choosing which version you want
+- stage and commit the resolved file and push to GitHub
 
 # Practice {.scrollable}
 
--   add a collaborator to your repository
+- add a collaborator to your repository
 
--   create a conflict by editing the same file and pushing/pulling
+- create a conflict by editing the same file and pushing/pulling
 
--   edit the conflicted file to resolve the conflict and push the resolved version to GitHub
+- edit the conflicted file to resolve the conflict and push the resolved version to GitHub
 
 **IMPORTANT**
 
