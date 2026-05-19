@@ -139,7 +139,7 @@ Try it first...
 ```{r npvfor, echo=TRUE, error=FALSE}
 
 # write a function to compute npv
-source("../R/compute_NPV.R")
+source(here("course-materials/R/compute_NPV.R"))
 compute_NPV
 compute_NPV(20, discount=0.01, time=20)
 
@@ -300,6 +300,8 @@ P is Power in watts, ρ is the density of water (\~1000 kg/m3), h is height in m
 
 *Output* Profit (\$)
 
+## Modules
+
 *Modules*
 
 - Compute Power from a given reservoir height and flow rate (compute_power)
@@ -329,7 +331,7 @@ With a partner
 
 Think of an example complex data science task/program that you might want to design with:
 
-- at least *4* modules
+- at least 3 modules
 - 1 module must be used at least twice
 - at least one *for* (or *while*) loop
 

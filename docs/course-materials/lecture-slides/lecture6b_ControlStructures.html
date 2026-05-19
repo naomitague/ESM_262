@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <title>ESM 262 – Functions</title>
+  <title>ESM 262 – Control Structures and Error Checking</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -196,242 +196,282 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Functions</h1>
+  <h1 class="title">Control Structures and Error Checking</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="loops-and-functions" class="slide level2">
-<h2><span style="color:orange">Loops and Functions</span></h2>
-<p>Calculate NPV for</p>
+<section id="what-weve-learned" class="slide level2">
+<h2><span style="color:orange"> What we’ve learned</span></h2>
 <ul>
-<li>a range of different interest rates and</li>
-<li>a range of damages</li>
-<li>that may be incurred 10 years in the future</li>
+<li>how to write a function</li>
+<li>how to generate data</li>
+<li>running functions with data</li>
 </ul>
-<p><strong>Steps</strong></p>
-<ul>
-<li>define inputs (interest rates, damages)</li>
-<li>define output (NPV)</li>
-<li>write the function</li>
-<li>create a data structure to store results where we vary both interest rates and damages</li>
-<li>use nested for loops to fill in the data structure</li>
-</ul>
-<p>Try it first…</p>
 </section>
-<section id="npv-nested-for-loop-example" class="slide level2 scrollable">
-<h2><span style="color:orange">NPV: Nested For Loop Example</span></h2>
+<section id="flow-control" class="slide level2">
+<h2><span style="color:orange"> Flow Control</span></h2>
+<p>Another KEY concept is flow control</p>
+<p>Allowing your function to “do” different things depending on a conditions</p>
+<p>CLASSIC example is</p>
+<p><em>IF</em> then <em>ELSE</em></p>
+</section>
+<section id="if-else-in-r" class="slide level2">
+<h2>If Else in R</h2>
+<p>Two ways in R</p>
+<ul>
+<li><em>ifelse</em> function
+<ul>
+<li>ifelse(condition, TRUE, FALSE)</li>
+<li>best used for simple application</li>
+</ul></li>
+<li>if..else structure
+<ul>
+<li>more formal way of deciding on two paths</li>
+</ul></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>classifying…</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># write a function to compute npv</span></span>
-<span id="cb1-2"><a></a><span class="fu">source</span>(<span class="st">"../R/compute_NPV.R"</span>)</span>
-<span id="cb1-3"><a></a>compute_NPV</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>a <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb1-2"><a></a>classr  <span class="ot">=</span> <span class="fu">ifelse</span>(a <span class="sc">&gt;</span> <span class="dv">90</span>, <span class="st">"high"</span>,<span class="st">"low"</span>)</span>
+<span id="cb1-3"><a></a>classr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>function (value, time, discount) 
-{
-    result = value/(1 + discount)^time
-    return(result)
-}</code></pre>
+<pre><code>[1] "low"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">compute_NPV</span>(<span class="dv">20</span>, <span class="at">discount=</span><span class="fl">0.01</span>, <span class="at">time=</span><span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># also works with multiple values</span></span>
+<span id="cb3-2"><a></a>a <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">100</span>, <span class="at">n=</span><span class="dv">5</span>)</span>
+<span id="cb3-3"><a></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 16.39089</code></pre>
+<pre><code>[1] 90.144941  2.751283 67.962071  1.941888 82.257994</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># generate some input</span></span>
-<span id="cb5-2"><a></a>damages <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">33</span>,<span class="dv">91</span>,<span class="dv">24</span>)</span>
-<span id="cb5-3"><a></a>damages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># ifelse can work with vectors</span></span>
+<span id="cb5-2"><a></a>classr  <span class="ot">=</span> <span class="fu">ifelse</span>(a <span class="sc">&gt;</span> <span class="dv">90</span>, <span class="st">"high"</span>,<span class="st">"low"</span>)</span>
+<span id="cb5-3"><a></a>classr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 25 33 91 24</code></pre>
+<pre><code>[1] "high" "low"  "low"  "low"  "low" </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># sensitivity to discount rate</span></span>
-<span id="cb7-2"><a></a>discount_rates <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="fl">0.01</span>, <span class="at">to=</span><span class="fl">0.04</span>, <span class="at">by=</span><span class="fl">0.005</span>)</span>
-<span id="cb7-3"><a></a>discount_rates</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.010 0.015 0.020 0.025 0.030 0.035 0.040</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>yr<span class="ot">=</span><span class="dv">10</span></span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a><span class="co"># simple vectorization doesn't give all combinations -</span></span>
-<span id="cb9-4"><a></a><span class="co"># R recycles the shorter vector (gives 7 results with a warning, not 4x7=28)</span></span>
-<span id="cb9-5"><a></a><span class="fu">compute_NPV</span>(<span class="at">value=</span>damages, <span class="at">discount=</span>discount_rates, <span class="at">time=</span>yr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="flow-control-in-functions" class="slide level2">
+<h2><span style="color:orange"> Flow control in functions</span></h2>
+<p>best to use if {} else {}</p>
+<p>see examaple in <em>summarize_diversity2.R</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning in value/(1 + discount)^time: longer object length is not a multiple of
-shorter object length</code></pre>
+<pre><code>here() starts at /Users/naomitague/Courses/ESM_262</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/summarize_diversity2.R"</span>))</span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a>flowers <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"rose"</span>,<span class="st">"peony"</span>,<span class="st">"daisy"</span>), <span class="at">replace=</span>T, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>, <span class="fl">0.1</span>),<span class="at">size=</span><span class="dv">30</span>)</span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a><span class="fu">summarize_diversity</span>(flowers, <span class="at">index=</span><span class="st">"B"</span>)<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 22.63217 28.43502 74.65170 18.74876 18.60235 23.39432 61.47634</code></pre>
+<pre><code>[1] 0.3844444</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># compute npv's for all combinations of damages and discount rates</span></span>
-<span id="cb12-2"><a></a><span class="co"># first generate a dataframe to store results - rows = damages, columns = discount rates</span></span>
-<span id="cb12-3"><a></a>npvs <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="at">nrow=</span><span class="fu">length</span>(damages), <span class="at">ncol=</span><span class="fu">length</span>(discount_rates)))</span>
-<span id="cb12-4"><a></a></span>
-<span id="cb12-5"><a></a><span class="co"># here we have a 2-dimensional array - rows and columns</span></span>
-<span id="cb12-6"><a></a><span class="fu">head</span>(npvs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">summarize_diversity</span>(flowers, <span class="at">index=</span><span class="st">"A"</span>)<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  X1 X2 X3 X4 X5 X6 X7
-1 NA NA NA NA NA NA NA
-2 NA NA NA NA NA NA NA
-3 NA NA NA NA NA NA NA
-4 NA NA NA NA NA NA NA</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># now use a nested for loop to populate</span></span>
-<span id="cb14-2"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(damages)) {</span>
-<span id="cb14-3"><a></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(discount_rates)) {</span>
-<span id="cb14-4"><a></a>    npvs[i,j] <span class="ot">=</span> <span class="fu">compute_NPV</span>(<span class="at">value=</span>damages[i], <span class="at">discount=</span>discount_rates[j], <span class="at">time=</span>yr)</span>
-<span id="cb14-5"><a></a>  }</span>
-<span id="cb14-6"><a></a>}</span>
-<span id="cb14-7"><a></a>npvs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>        X1       X2       X3       X4       X5       X6       X7
-1 22.63217 21.54168 20.50871 19.52996 18.60235 17.72297 16.88910
-2 29.87447 28.43502 27.07149 25.77955 24.55510 23.39432 22.29362
-3 82.38111 78.41172 74.65170 71.08905 67.71255 64.51161 61.47634
-4 21.72689 20.68001 19.68836 18.74876 17.85825 17.01405 16.21354</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># some data wrangling to make it pretty</span></span>
-<span id="cb16-2"><a></a><span class="fu">colnames</span>(npvs) <span class="ot">=</span> discount_rates</span>
-<span id="cb16-3"><a></a><span class="fu">rownames</span>(npvs) <span class="ot">=</span> damages</span>
-<span id="cb16-4"><a></a>npvs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       0.01    0.015     0.02    0.025     0.03    0.035     0.04
-25 22.63217 21.54168 20.50871 19.52996 18.60235 17.72297 16.88910
-33 29.87447 28.43502 27.07149 25.77955 24.55510 23.39432 22.29362
-91 82.38111 78.41172 74.65170 71.08905 67.71255 64.51161 61.47634
-24 21.72689 20.68001 19.68836 18.74876 17.85825 17.01405 16.21354</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># how do I plot this with ggplot - add a column for original value and then rearrange</span></span>
-<span id="cb18-2"><a></a>npvs<span class="sc">$</span>damage <span class="ot">=</span> damages</span>
-<span id="cb18-3"><a></a>npvsg <span class="ot">=</span> npvs <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="sc">!</span>damage, <span class="at">names_to=</span><span class="st">"dis"</span>, <span class="at">values_to=</span><span class="st">"npv"</span>)</span>
-<span id="cb18-4"><a></a><span class="fu">head</span>(npvsg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  damage dis     npv
-   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
-1     25 0.01   22.6
-2     25 0.015  21.5
-3     25 0.02   20.5
-4     25 0.025  19.5
-5     25 0.03   18.6
-6     25 0.035  17.7</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(npvsg, <span class="fu">aes</span>(<span class="at">x=</span>damage, <span class="at">y=</span>npv, <span class="at">col=</span>dis))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">labs</span>(<span class="at">col=</span><span class="st">"Discount</span><span class="sc">\n</span><span class="st">Rate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/npvfor-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># how about summing all the damages</span></span>
-<span id="cb21-2"><a></a>npv.total <span class="ot">=</span> npvsg <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dis) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">t=</span><span class="fu">sum</span>(npv))</span>
-<span id="cb21-3"><a></a><span class="fu">ggplot</span>(npv.total, <span class="fu">aes</span>(dis,t, <span class="at">fill=</span>dis))<span class="sc">+</span><span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Discount Rate"</span>, <span class="at">y=</span><span class="st">"Total ($)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/npvfor-2.png" width="960"></p>
-</figure>
-</div>
+<pre><code>[1] 0.3977011</code></pre>
 </div>
 </div>
 </section>
-<section id="an-alternative-method" class="slide level2 scrollable">
-<h2><span style="color:orange">An alternative method</span></h2>
-<p>An alternative (R specific) is to use functions from the <strong>purrr</strong> package</p>
-<p>Specifically <em>map</em> - which applies a function over a vector of inputs</p>
+<section id="multiple-conditions" class="slide level2 scrollable">
+<h2><span style="color:orange"> Multiple Conditions</span></h2>
+<p>If you have multiple conditions we can use <em>case_when</em>, requires <em>tidyverse</em> library - <em>switch</em> is another option</p>
+</section>
+<section id="fishing-example" class="slide level2 scrollable">
+<h2><span style="color:orange"> Fishing Example</span></h2>
+<p>Here’s a simple example of how it works</p>
+<p>Imagine you are recording fish catches at different locations (we are going to simulate this by sampling )</p>
+<p>Fish have grades…</p>
+<p>grade A, B, C</p>
+<ul>
+<li>steelhead are A,</li>
+<li>tuna are B</li>
+<li>everything else is C</li>
+</ul>
+<p>R and other languages have ways to do this multiple alternatives flow control in R an example is</p>
+<p><em>case_when</em></p>
+<p>case_when(</p>
+<p>condition ~ response,</p>
+<p>condition ~ response … )</p>
+<p>First a simple example where we only have one fist</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># use damages and discount rates from above</span></span>
-<span id="cb22-2"><a></a>discount_rates</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-2"><a></a>fish <span class="ot">=</span> <span class="st">"steelhead"</span></span>
+<span id="cb13-3"><a></a><span class="fu">case_when</span>((fish <span class="sc">==</span><span class="st">"steelhead"</span>)  <span class="sc">~</span> <span class="st">"A"</span>, (fish <span class="sc">==</span><span class="st">"tuna"</span>) <span class="sc">~</span> <span class="st">"B"</span>, <span class="sc">!</span>(fish <span class="sc">==</span> <span class="st">"tuna"</span>) <span class="sc">&amp;</span> <span class="sc">!</span>(fish<span class="sc">==</span><span class="st">"steelhead"</span>) <span class="sc">~</span> <span class="st">"C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.010 0.015 0.020 0.025 0.030 0.035 0.040</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>damages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 25 33 91 24</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># map applies compute_NPV for each discount rate,</span></span>
-<span id="cb26-2"><a></a><span class="co"># passing the full damages vector each time (compute_NPV is vectorized over value)</span></span>
-<span id="cb26-3"><a></a>npvs <span class="ot">=</span> <span class="fu">map</span>(discount_rates, <span class="sc">~</span><span class="fu">compute_NPV</span>(<span class="at">value=</span>damages, <span class="at">discount=</span>.x, <span class="at">time=</span><span class="dv">10</span>))</span>
-<span id="cb26-4"><a></a></span>
-<span id="cb26-5"><a></a><span class="co"># each element of npvs is a vector of NPVs (one per damage) at that discount rate</span></span>
-<span id="cb26-6"><a></a><span class="co"># convert to a data frame - each column is a discount rate</span></span>
-<span id="cb26-7"><a></a>npvs <span class="ot">=</span> <span class="fu">as.data.frame</span>(npvs)</span>
-<span id="cb26-8"><a></a><span class="fu">colnames</span>(npvs) <span class="ot">=</span> discount_rates</span>
-<span id="cb26-9"><a></a>npvs<span class="sc">$</span>damage <span class="ot">=</span> damages</span>
-<span id="cb26-10"><a></a></span>
-<span id="cb26-11"><a></a><span class="co"># clean up and plot</span></span>
-<span id="cb26-12"><a></a>npvsg <span class="ot">=</span> npvs <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="sc">!</span>damage, <span class="at">names_to=</span><span class="st">"dis"</span>, <span class="at">values_to=</span><span class="st">"npv"</span>)</span>
-<span id="cb26-13"><a></a><span class="fu">head</span>(npvsg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  damage dis     npv
-   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
-1     25 0.01   22.6
-2     25 0.015  21.5
-3     25 0.02   20.5
-4     25 0.025  19.5
-5     25 0.03   18.6
-6     25 0.035  17.7</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(npvsg, <span class="fu">aes</span>(<span class="at">x=</span>damage, <span class="at">y=</span>npv, <span class="at">col=</span>dis))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">labs</span>(<span class="at">col=</span><span class="st">"Discount</span><span class="sc">\n</span><span class="st">Rate"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># how about summing all the damages</span></span>
-<span id="cb29-2"><a></a>npv.total <span class="ot">=</span> npvsg <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(dis) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">t=</span><span class="fu">sum</span>(npv))</span>
-<span id="cb29-3"><a></a><span class="fu">ggplot</span>(npv.total, <span class="fu">aes</span>(dis,t, <span class="at">fill=</span>dis))<span class="sc">+</span><span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Discount Rate"</span>, <span class="at">y=</span><span class="st">"Total ($)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture6.functionsandloops_files/figure-revealjs/unnamed-chunk-1-2.png" width="960"></p>
-</figure>
-</div>
+<pre><code>[1] "A"</code></pre>
 </div>
 </div>
 </section>
-<section id="lets-practice-automobile-power-generation" class="slide level2">
-<h2># <span style="color:orange"> Lets practice:: Automobile Power Generation </span></h2>
-<p>One of the equations used to compute automobile fuel efficiency is given below. This is the power required to keep a car moving at a given speed, and is as follows:</p>
-<p><span class="math inline">\(Pb = crolling * m *g *V + \frac{1}{2} * A*p_{air}*c_{drag}*V^3\)</span></p>
-<p>where crolling and cdrag are rolling and aerodynamic resistive coefficients, typical values are 0.015 and 0.3, respectively.</p>
+<section id="make-an-ocean" class="slide level2 scrollable">
+<h2>Make an ocean</h2>
 <ul>
-<li><p>V: is vehicle speed (assuming no headwind) in m/s (or mps) m: is vehicle mass in kg</p></li>
-<li><p>A is surface area of car <span class="math inline">\((m^2)\)</span></p></li>
-<li><p><em>g</em>: is acceleration due to gravity <span class="math inline">\((9.8 m/s^2 )\)</span></p></li>
-<li><p>p_air = density of air <span class="math inline">\((1.2kg/m^3 )\)</span></p></li>
-<li><p>Pb is power in Watts</p></li>
+<li>notice how we build a function to make this ‘cleaner’</li>
 </ul>
-<p>What would be the function’s contract - input/parameters? what will it do?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># apply to all of our ocean</span></span>
+<span id="cb15-2"><a></a><span class="co"># start by making a function - this will be cleaner!</span></span>
+<span id="cb15-3"><a></a>classify_fish <span class="ot">=</span> <span class="cf">function</span>(fish) {</span>
+<span id="cb15-4"><a></a> class<span class="ot">=</span>  <span class="fu">case_when</span>((fish <span class="sc">==</span><span class="st">"steelhead"</span>)  <span class="sc">~</span> <span class="st">"A"</span>, (fish <span class="sc">==</span><span class="st">"tuna"</span>) <span class="sc">~</span> <span class="st">"B"</span>, <span class="sc">!</span>(fish <span class="sc">==</span> <span class="st">"tuna"</span>) <span class="sc">&amp;</span> <span class="sc">!</span>(fish<span class="sc">==</span><span class="st">"steelhead"</span>) <span class="sc">~</span> <span class="st">"C"</span>)</span>
+<span id="cb15-5"><a></a> <span class="fu">return</span>(class) }</span>
+<span id="cb15-6"><a></a></span>
+<span id="cb15-7"><a></a><span class="fu">classify_fish</span>(<span class="st">"steelhead"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "A"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">classify_fish</span>(<span class="st">"cod"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># apply to our ocean</span></span>
+<span id="cb19-2"><a></a>possible.fish <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"salmon"</span>,<span class="st">"steelhead"</span>,<span class="st">"shark"</span>,<span class="st">"tuna"</span>,<span class="st">"cod"</span>)</span>
+<span id="cb19-3"><a></a>catch2 <span class="ot">=</span> base<span class="sc">::</span><span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
+<span id="cb19-4"><a></a>catch2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "steelhead" "shark"     "tuna"      "tuna"      "steelhead" "tuna"     
+ [7] "cod"       "salmon"    "shark"     "tuna"      "cod"       "cod"      
+[13] "salmon"    "tuna"      "salmon"    "steelhead" "steelhead" "salmon"   
+[19] "cod"       "steelhead"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">classify_fish</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "A" "C" "B" "B" "A" "B" "C" "C" "C" "B" "C" "C" "C" "B" "C" "A" "A" "C" "C"
+[20] "A"</code></pre>
+</div>
+</div>
 </section>
-<section id="lets-practice-automobile-power-generation-1" class="title-slide slide level1 center">
-<h1><span style="color:orange"> Lets practice:: Automobile Power Generation </span></h1>
-<ol type="1">
-<li>Write a function to compute power, given a truck of m=31752 kg (parameters for a heavy truck) for a range of different highway speeds, the surface area of this truck is 16 <span class="math inline">\(m^2\)</span></li>
-</ol>
+<section id="a-more-interesting-example" class="slide level2 scrollable">
+<h2>A more interesting example</h2>
+<p>Lets imagine that we are monitoring pollution in a lake, and we want to write a function that will let us know (flag) if risk associated with nutrient pollution are high, medium or low</p>
+<p>From ecological studies, we know that</p>
+<p><em>High Risk Conditions</em></p>
 <ul>
-<li>30 m/s</li>
-<li>80 km/hr</li>
-<li>120 km/hr</li>
-<li>40 km/hr</li>
-<li>5 km/hr</li>
+<li>risk is high if water temperature is greater than a threshold for more than 5 days, and</li>
+<li>mean nutrient concentration is greater than a high threshold</li>
 </ul>
-<ol start="2" type="1">
-<li><p>Plot power as a function of speed</p></li>
-<li><p>Recompute for a lighter vehicle (15,000 kg) Add a second line to your graph for lighter vehicle</p></li>
-</ol>
+<p><em>Medium Risk Conditions</em></p>
 <ul>
-<li>Keep your function in its own file, store it in a subdirectory called <em>R</em> and then create a <strong>separate</strong> Rmarkdown (or Quarto) document to use the function and store the Rmarkdown in a different directory</li>
+<li>Risk is medium if water temperature is greater than a threshold for more than 5 days and</li>
+<li>mean nutrient concentration is greater than a medium threshold</li>
 </ul>
+<p><em>Everything else is low risk</em></p>
 </section>
+<section id="design-the-function" class="slide level2 scrollable">
+<h2>Design the function</h2>
+<p><strong>Inputs</strong>:</p>
+<ul>
+<li>nutrient concentration for at least 5 days</li>
+<li>temperature for at least 5 days</li>
+<li>thresholds for temperature and nutrient (with default values)</li>
+</ul>
+<p><strong>Output</strong>:</p>
+<ul>
+<li>Mean Nutrient Concentration</li>
+<li>Pollution Risk as “low”, “med” or “high”</li>
+</ul>
+<p>Take a look at classify_lake</p>
+<ul>
+<li>example of while</li>
+<li>example of flow control with if..else and case_when</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/classify_lake.R"</span>))</span>
+<span id="cb23-2"><a></a></span>
+<span id="cb23-3"><a></a><span class="co"># generate some data to try the function</span></span>
+<span id="cb23-4"><a></a>temperature <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">4</span>, <span class="at">max=</span><span class="dv">35</span>, <span class="at">n=</span><span class="dv">30</span>)</span>
+<span id="cb23-5"><a></a>nutrient <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">5</span>, <span class="at">max=</span><span class="dv">40</span>, <span class="at">n=</span><span class="dv">30</span>)</span>
+<span id="cb23-6"><a></a></span>
+<span id="cb23-7"><a></a><span class="co"># try it</span></span>
+<span id="cb23-8"><a></a>res<span class="ot">=</span><span class="fu">classify_lake</span>(<span class="at">temperature=</span>temperature, <span class="at">nutrient=</span>nutrient)</span>
+<span id="cb23-9"><a></a></span>
+<span id="cb23-10"><a></a><span class="co"># lets pick some numbers we know should give us a low value</span></span>
+<span id="cb23-11"><a></a>nutrient <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">5</span>, <span class="at">n=</span><span class="dv">30</span>)</span>
+<span id="cb23-12"><a></a><span class="fu">classify_lake</span>(<span class="at">temperature=</span>temperature, <span class="at">nutrient=</span>nutrient)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$risk
+[1] "low"
 
-<section id="good-programming-practices" class="title-slide slide level1 center">
-<h1><strong>Good Programming Practices</strong></h1>
-<p>Name variables such that they are easy to understand</p>
-<p>Describe the contract at the top of the function (following the format for the <em>power_gen_orig.R</em> example)</p>
-<p>Also include the comments in the Quarto</p>
+$mean_nutrient
+[1] 1.981489</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># now try high</span></span>
+<span id="cb25-2"><a></a><span class="co"># use repeat to generate the same value multiple times</span></span>
+<span id="cb25-3"><a></a>nutrient <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">50</span>, <span class="at">times=</span><span class="dv">30</span>)</span>
+<span id="cb25-4"><a></a>temperature <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">25</span>, <span class="at">times=</span><span class="dv">30</span>)</span>
+<span id="cb25-5"><a></a><span class="fu">classify_lake</span>(<span class="at">temperature=</span>temperature, <span class="at">nutrient=</span>nutrient)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$risk
+[1] "high"
+
+$mean_nutrient
+[1] 50</code></pre>
+</div>
+</div>
+</section>
+<section id="review." class="slide level2 scrollable">
+<h2><span style="color:orange"> Review.</span></h2>
+<ul>
+<li><p>We are using functions as a way to design modular programs (that might involve many functions that are linked together)</p></li>
+<li><p>We always start with clearly defininng our goal for the whole program and each piece (and diagramming this if needed for programs made of multiple functions)</p></li>
+<li><p>Always write your function in a text editor and then copy into R</p></li>
+<li><p>By convention we name files with functions in them by the name of the function.R e.g.&nbsp;<strong>power_gen_orig.R</strong></p></li>
+<li><p>you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory</p></li>
+<li><p>keep organized by keeping all functions in a subdirectory called <em>R</em></p></li>
+<li><p>Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”</p></li>
+</ul>
+</section>
+<section id="error-checking" class="slide level2 scrollable">
+<h2><span style="color:orange"> Error Checking</span></h2>
+<p>What will your function do if user gives you garbage data, imagine that you have a function that computes microbial growth rates with temperature</p>
+<ul>
+<li>Two options</li>
+</ul>
+<p><span style="color:skyblue">1. error-checking (nice)</span></p>
+<p>if temperature &lt; -100 or &gt; 100</p>
+<ul>
+<li>set results to NA</li>
+<li>or exit function with a warming</li>
+</ul>
+<p><span style="color:skyblue">2. assume user reads the contract :) return unrealistic values</span></p>
+<p>if input -999.0, will still try to output growth rate</p>
+<p>Error-checking is helpful if you are going to build a model made up of many functions- why?</p>
+</section>
+<section id="how-to-add-error-checking" class="slide level2 scrollable">
+<h2><span style="color:orange"> How to add error checking</span></h2>
+<p>Consider this example (I’m going to put the function definition inline for now so you can easily see it - later we will save to our R subdirectory for reuse)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>power_gen <span class="ot">=</span> <span class="cf">function</span>(height, flow, <span class="at">rho=</span><span class="dv">1000</span>, <span class="at">g=</span><span class="fl">9.8</span>, <span class="at">Keff=</span><span class="fl">0.8</span>) {</span>
+<span id="cb27-2"><a></a>  <span class="co"># make sure inputs are positive and if not set as NA so result will be NA</span></span>
+<span id="cb27-3"><a></a>   <span class="cf">if</span> (height <span class="sc">&lt;</span> <span class="dv">0</span>) height<span class="ot">=</span><span class="cn">NA</span></span>
+<span id="cb27-4"><a></a>  </span>
+<span id="cb27-5"><a></a> <span class="co"># an alterative is to exit the function prematurely </span></span>
+<span id="cb27-6"><a></a>  <span class="cf">if</span> (flow <span class="sc">&lt;</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="st">"Flow cannot be less than 0"</span>)</span>
+<span id="cb27-7"><a></a>  <span class="co">#    return("Height cannot be less than 0")</span></span>
+<span id="cb27-8"><a></a>      </span>
+<span id="cb27-9"><a></a>  <span class="co"># calculate power</span></span>
+<span id="cb27-10"><a></a>    result <span class="ot">=</span> rho <span class="sc">*</span> height <span class="sc">*</span> flow <span class="sc">*</span> g <span class="sc">*</span> Keff</span>
+<span id="cb27-11"><a></a>  <span class="fu">return</span>(result)</span>
+<span id="cb27-12"><a></a>}</span>
+<span id="cb27-13"><a></a></span>
+<span id="cb27-14"><a></a><span class="fu">power_gen</span>(<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 47040</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">power_gen</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">power_gen</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Flow cannot be less than 0"</code></pre>
+</div>
+</div>
 
 
 </section>

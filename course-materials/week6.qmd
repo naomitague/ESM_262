@@ -9,7 +9,7 @@ description: "Monday April 20^th^, 2026"
 | Lecture Slides | Materials |
 |----------------|-----------|
 | [Lecture 6 - Make Up: Modularity](lecture-slides/lecture6a_modularity.qmd) | [R power_gen_orig](../downloadables/R/power_gen_orig.R) [R autopower](../downloadables/R/autopower.R) |
-| [Lecture 6 Tuesday Class](lecture-slides/placeholder.qmd) |  |
+| [Lecture 6 Control Statement-Error Checking](lecture-slides/lecture6b_ControlStructures.qmd)| [R classify_lake](../downloadables/R/classify_lake.R) [R summarize_diversity2](../downloadables/R/summarize_diversity2.R) |
 | [Lecture 6: Thursday Class](lecture-slides/placeholder.qmd) | |
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}

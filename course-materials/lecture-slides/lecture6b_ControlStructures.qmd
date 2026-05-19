@@ -1,0 +1,256 @@
+---
+title: 'Control Structures and Error Checking'
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r setup, include=FALSE}
+
+library(tidyverse)
+
+```
+
+## <span style="color:orange"> What we've learned
+
+- how to write a function
+- how to generate data
+- running functions with data
+
+## <span style="color:orange"> Flow Control
+
+Another KEY concept is flow control
+
+Allowing your function to "do" different things depending on a conditions
+
+CLASSIC example is
+
+*IF* then *ELSE*
+
+## If Else in R
+
+Two ways in R
+
+- *ifelse* function
+  - ifelse(condition, TRUE, FALSE)
+  - best used for simple application
+- if..else structure
+  - more formal way of deciding on two paths
+
+## Example
+
+classifying...
+
+```{r, ifelse}
+a = 20
+classr  = ifelse(a > 90, "high","low")
+classr
+
+# also works with multiple values
+a = runif(min=1, max=100, n=5)
+a
+# ifelse can work with vectors
+classr  = ifelse(a > 90, "high","low")
+classr
+
+```
+
+## <span style="color:orange"> Flow control in functions
+
+best to use if {} else {}
+
+see examaple in *summarize_diversity2.R*
+
+```{r, ifelsefunction}
+
+library(here)
+source(here("course-materials/R/summarize_diversity2.R"))
+
+flowers = sample(c("rose","peony","daisy"), replace=T, prob = c(0.1, 0.8, 0.1),size=30)
+
+summarize_diversity(flowers, index="B")$simpson
+summarize_diversity(flowers, index="A")$simpson
+
+```
+
+## <span style="color:orange"> Multiple Conditions {.scrollable}
+
+If you have multiple conditions we can use *case_when*, requires *tidyverse* library - *switch* is another option
+
+## <span style="color:orange"> Fishing Example {.scrollable}
+
+Here's a simple example of how it works
+
+Imagine you are recording fish catches at different locations (we are going to simulate this by sampling )
+
+Fish have grades...
+
+grade A, B, C
+
+- steelhead are A,
+- tuna are B
+- everything else is C
+
+R and other languages have ways to do this multiple alternatives flow control in R an example is
+
+*case_when*
+
+case_when(
+
+condition \~ response,
+
+condition \~ response ... )
+
+First a simple example where we only have one fist
+
+```{r was}
+library(tidyverse)
+fish = "steelhead"
+case_when((fish =="steelhead")  ~ "A", (fish =="tuna") ~ "B", !(fish == "tuna") & !(fish=="steelhead") ~ "C")
+```
+
+## Make an ocean {.scrollable}
+
+- notice how we build a function to make this 'cleaner'
+
+```{r, ocean}
+# apply to all of our ocean
+# start by making a function - this will be cleaner!
+classify_fish = function(fish) {
+ class=  case_when((fish =="steelhead")  ~ "A", (fish =="tuna") ~ "B", !(fish == "tuna") & !(fish=="steelhead") ~ "C")
+ return(class) }
+
+classify_fish("steelhead")
+classify_fish("cod")
+
+# apply to our ocean
+possible.fish = c("salmon","steelhead","shark","tuna","cod")
+catch2 = base::sample(possible.fish, size=20, replace=T)
+catch2
+
+classify_fish(catch2)
+
+```
+
+## A more interesting example {.scrollable}
+
+Lets imagine that we are monitoring pollution in a lake, and we want to write a function that will let us know (flag) if risk associated with nutrient pollution are high, medium or low
+
+From ecological studies, we know that
+
+*High Risk Conditions*
+
+- risk is high if water temperature is greater than a threshold for more than 5 days, and
+- mean nutrient concentration is greater than a high threshold
+
+*Medium Risk Conditions*
+
+- Risk is medium if water temperature is greater than a threshold for more than 5 days and
+- mean nutrient concentration is greater than a medium threshold
+
+*Everything else is low risk*
+
+## Design the function {.scrollable}
+
+**Inputs**:
+
+- nutrient concentration for at least 5 days
+- temperature for at least 5 days
+- thresholds for temperature and nutrient (with default values)
+
+**Output**:
+
+- Mean Nutrient Concentration
+- Pollution Risk as "low", "med" or "high"
+
+Take a look at classify_lake
+
+- example of while
+- example of flow control with if..else and case_when
+
+```{r, classifylake}
+
+source(here("course-materials/R/classify_lake.R"))
+
+# generate some data to try the function
+temperature = runif(min=4, max=35, n=30)
+nutrient = runif(min=5, max=40, n=30)
+
+# try it
+res=classify_lake(temperature=temperature, nutrient=nutrient)
+
+# lets pick some numbers we know should give us a low value
+nutrient = runif(min=0, max=5, n=30)
+classify_lake(temperature=temperature, nutrient=nutrient)
+
+# now try high
+# use repeat to generate the same value multiple times
+nutrient = rep(50, times=30)
+temperature = rep(25, times=30)
+classify_lake(temperature=temperature, nutrient=nutrient)
+```
+
+## <span style="color:orange"> Review. {.scrollable}
+
+- We are using functions as a way to design modular programs (that might involve many functions that are linked together)
+
+- We always start with clearly defininng our goal for the whole program and each piece (and diagramming this if needed for programs made of multiple functions)
+
+- Always write your function in a text editor and then copy into R
+
+- By convention we name files with functions in them by the name of the function.R e.g. **power_gen_orig.R**
+
+- you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory
+
+- keep organized by keeping all functions in a subdirectory called *R*
+
+- Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”
+
+## <span style="color:orange"> Error Checking {.scrollable}
+
+What will your function do if user gives you garbage data, imagine that you have a function that computes microbial growth rates with temperature
+
+- Two options
+
+[ 1. error-checking (nice) ]{style="color:skyblue"}
+
+if temperature \< -100 or \> 100
+
+- set results to NA
+- or exit function with a warming
+
+[ 2. assume user reads the contract :) return unrealistic values ]{style="color:skyblue"}
+
+if input -999.0, will still try to output growth rate
+
+Error-checking is helpful if you are going to build a model made up of many functions- why?
+
+## <span style="color:orange"> How to add error checking {.scrollable}
+
+Consider this example (I'm going to put the function definition inline for now so you can easily see it - later we will save to our R subdirectory for reuse)
+
+```{r eval=TRUE, echo=TRUE  }
+
+power_gen = function(height, flow, rho=1000, g=9.8, Keff=0.8) {
+  # make sure inputs are positive and if not set as NA so result will be NA
+   if (height < 0) height=NA
+  
+ # an alterative is to exit the function prematurely 
+  if (flow < 0) return("Flow cannot be less than 0")
+  #    return("Height cannot be less than 0")
+      
+  # calculate power
+    result = rho * height * flow * g * Keff
+  return(result)
+}
+
+power_gen(2,3)
+power_gen(-2,3)
+power_gen(2,-3)
+```

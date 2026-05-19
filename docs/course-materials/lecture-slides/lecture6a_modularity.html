@@ -271,9 +271,9 @@
 <span id="cb6-5"><a></a>power <span class="ot">=</span> <span class="fu">power_gen_orig</span>(flow, height)</span>
 <span id="cb6-6"><a></a>power</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  247454.4 1167227.1  921679.7  980281.3  265254.5  553176.1 1663132.1
- [8]  267460.3 1734402.9 1495847.1  538459.8 1119741.2  539053.3  651616.9
-[15]  143974.8 1501109.9  326093.1  466790.0  498229.7  561932.3</code></pre>
+<pre><code> [1]  140946.4  760671.5  255842.0  177545.7  192759.1  514771.9 1554959.2
+ [8] 1211715.7  118088.9  846322.5  384129.7  383306.8  424106.9  258653.3
+[15]  337742.4  346343.4  183419.6 1312937.0  219191.7  336258.0</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">length</span>(power)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -289,9 +289,9 @@
 <span id="cb12-4"><a></a><span class="co"># it works but what is it doing?</span></span>
 <span id="cb12-5"><a></a> power</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]     0.00 69694.60     0.00 55060.40     0.00 60783.57     0.00 25398.49
- [9]     0.00 52812.76     0.00 51440.26     0.00 59670.36     0.00 51004.81
-[17]     0.00 16956.86     0.00 20646.88</code></pre>
+<pre><code> [1]     0.00 30295.50     0.00 30773.91     0.00 19462.29     0.00 64715.49
+ [9]     0.00 74392.04     0.00 44358.62     0.00 16974.25     0.00 16257.45
+[17]     0.00 51386.36     0.00 23694.19</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># unclear behaviors - best to not do it</span></span>
 <span id="cb14-2"><a></a><span class="co"># helps to define a data frame</span></span>
@@ -305,11 +305,11 @@
 <span id="cb14-10"><a></a> powerdf<span class="sc">$</span>lowK <span class="ot">=</span> <span class="fu">power_gen_orig</span>(flow, height, <span class="at">K=</span><span class="fl">0.9</span>)</span>
 <span id="cb14-11"><a></a> <span class="fu">mean</span>(powerdf<span class="sc">$</span>lowK)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 26070.13</code></pre>
+<pre><code>[1] 20942.44</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a> <span class="fu">mean</span>(powerdf<span class="sc">$</span>highK)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11586.72</code></pre>
+<pre><code>[1] 9307.753</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># helpful for graphing</span></span>
 <span id="cb18-2"><a></a></span>
@@ -342,7 +342,7 @@
 <h2><span style="color:orange">NPV: Nested For Loop Example</span></h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># write a function to compute npv</span></span>
-<span id="cb20-2"><a></a><span class="fu">source</span>(<span class="st">"../R/compute_NPV.R"</span>)</span>
+<span id="cb20-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span>
 <span id="cb20-3"><a></a>compute_NPV</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (value, time, discount) 
@@ -560,6 +560,9 @@ shorter object length</code></pre>
 <p><em>Input</em> Stream gage data (m3/sec)</p>
 <p><em>Parameters</em> Efficiency, ρ (density of water), g (acceleration due to gravity), Maximum Reservoir Capacity <span class="math inline">\((m^3)\)</span>, Minimum Reservoir Volume <span class="math inline">\((m^3)\)</span>, Set flow rate <span class="math inline">\((m^3/sec)\)</span>, Price of power <span class="math inline">\((\)</span>/W)$</p>
 <p><em>Output</em> Profit ($)</p>
+</section>
+<section id="modules" class="slide level2">
+<h2>Modules</h2>
 <p><em>Modules</em></p>
 <ul>
 <li>Compute Power from a given reservoir height and flow rate (compute_power)</li>
@@ -586,7 +589,7 @@ shorter object length</code></pre>
 <p>With a partner</p>
 <p>Think of an example complex data science task/program that you might want to design with:</p>
 <ul>
-<li>at least <em>4</em> modules</li>
+<li>at least 3 modules</li>
 <li>1 module must be used at least twice</li>
 <li>at least one <em>for</em> (or <em>while</em>) loop</li>
 </ul>
