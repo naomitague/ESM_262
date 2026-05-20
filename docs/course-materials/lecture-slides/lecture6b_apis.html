@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../images/bren-hex.png" rel="icon" type="image/png">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <title>ESM 262 – Getting Data from the Web - Working with APIs</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1a8385bbf955fbb4448938bc10efacf4.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Getting Data from the Web - Working with APIs</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="agenda-for-today" class="slide level2">
+<h2><span style="color:orange">Agenda for Today</span></h2>
+<ul>
+<li><p>What is an API and why should we care?</p></li>
+<li><p>How does the web actually work (just enough to be useful)</p></li>
+<li><p>Making API requests in R</p></li>
+<li><p>Parsing the data you get back</p></li>
+<li><p>Examples: air quality data and streamflow</p></li>
+</ul>
+</section>
+<section id="where-does-data-come-from" class="slide level2 scrollable">
+<h2><span style="color:orange">Where Does Data Come From?</span></h2>
+<p>So far we have mostly worked with data that already lives in a file:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># reading in data from a file - what you know already</span></span>
+<span id="cb1-2"><a></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"my_data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Or we’ve generated test data</p>
+<p>A huge amount of scientific and environmental data lives <strong>online</strong> and is updated continuously</p>
+<ul>
+<li>Current air quality at monitoring stations</li>
+<li>Real-time streamflow from USGS gauges</li>
+<li>Species occurrence records from citizen scientists</li>
+<li>Weather observations and forecasts</li>
+<li>Satellite-derived vegetation indices</li>
+</ul>
+<p>How do we access that data <strong>directly from R</strong>, without manually downloading files?</p>
+</section>
+<section id="enter-the-api" class="slide level2 scrollable">
+<h2><span style="color:orange">Enter: The API</span></h2>
+<p><strong>API</strong> = Application Programming Interface</p>
+<p>Think of it as a <strong>standardized way to ask a remote computer for data</strong></p>
+<p>Analogy: imagine a restaurant</p>
+<ul>
+<li>The <strong>kitchen</strong> is a database full of data (you can’t walk in yourself)</li>
+<li>The <strong>menu</strong> is the API — it lists exactly what you can ask for and how</li>
+<li>The <strong>waiter</strong> is the HTTP request — carries your order and brings back the result</li>
+<li>The <strong>meal</strong> is the data returned to you</li>
+</ul>
+</section>
+<section id="how-it-works-simplified" class="slide level2 scrollable">
+<h2><span style="color:orange">How It Works (Simplified)</span></h2>
+<p>You send a <strong>request</strong> to a URL — a web address with your question baked in</p>
+<p>Request format: Every API Request Has 4 Parts</p>
+<ul>
+<li>protocol (communication method usually HTTPS)</li>
+<li>base URL (where the API lives)</li>
+<li>endpoint (specific data you want)</li>
+<li>query parameters (details of your request, like location, date range, variables)</li>
+</ul>
+<p><em>BUT</em> you don’t build that yourself — you use R functions to construct the request</p>
+<p>The server reads your request and sends back data — usually in a format called <strong>JSON</strong></p>
+</section>
+<section id="what-is-json" class="slide level2 scrollable">
+<h2><span style="color:orange">What is JSON?</span></h2>
+<p><strong>JSON</strong> (JavaScript Object Notation) is how most APIs return data</p>
+<p>It looks a bit like an R list:</p>
+<pre><code>{
+  "city": "Santa Barbara",
+  "temperature": 18.4,
+  "humidity": 72,
+  "conditions": "partly cloudy",
+  "wind": {
+    "speed": 3.2,
+    "direction": "WSW"
+  }
+}</code></pre>
+<p>R has great tools to turn this into a usable data frame</p>
+</section>
+<section id="api-keys" class="slide level2 scrollable">
+<h2><span style="color:orange">API Keys</span></h2>
+<p>Many APIs require an <strong>API key</strong> — a unique identifier that:</p>
+<ul>
+<li>Tells the server who you are</li>
+<li>Lets providers track and limit usage</li>
+<li>Is usually <strong>free</strong> for research/student use</li>
+</ul>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Never share your API key or put it directly in your code!</strong></p>
+<p>Store it as an environment variable instead:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># in your .Renviron file (run usethis::edit_r_environ() to open it):</span></span>
+<span id="cb3-2"><a></a><span class="co"># OPENAQ_KEY=your_key_here</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># then in your R script, retrieve it safely:</span></span>
+<span id="cb3-5"><a></a>my_key <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"OPENAQ_KEY"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<p>Some APIs (including our examples) are <strong>open</strong> and need no key at all</p>
+</section>
+<section id="our-toolkit" class="slide level2">
+<h2><span style="color:orange">Our Toolkit</span></h2>
+<p>We’ll use two packages:</p>
+<ul>
+<li><strong><code>httr2</code></strong> — for sending HTTP requests (the “waiter”)</li>
+<li><strong><code>jsonlite</code></strong> — for parsing JSON into R objects (decoding the “meal”)</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">install.packages</span>(<span class="st">"httr2"</span>)</span>
+<span id="cb4-2"><a></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(httr2)</span>
+<span id="cb5-2"><a></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb5-3"><a></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="standard-api-workflow" class="slide level2" style="color:orange">
+<h2>Standard API Workflow</h2>
+<ul>
+<li><strong>Find the API</strong> — read the documentation to understand endpoints and parameters</li>
+<li><strong>Build a request</strong> — use <em>request</em> and <em>req_url_query</em>, functions to construct your query</li>
+<li><strong>Send it</strong> — <em>req_perform()</em> to get the response</li>
+<li><strong>Parse the response</strong> — usually <em>resp_body_json()</em> to turn JSON into an R, doesn’t always work <em>resp_content_type()</em> can help</li>
+</ul>
+</section>
+<section>
+<section id="example-1-air-quality" class="title-slide slide level1 center">
+<h1><span style="color:orange">Example 1: Air Quality</span></h1>
+<p>Using the <strong>Open-Meteo Air Quality API</strong> — free, no key needed</p>
+</section>
+<section id="open-meteo-air-quality" class="slide level2 scrollable">
+<h2><span style="color:orange">Open-Meteo Air Quality</span></h2>
+<p>Open-Meteo provides free weather and air quality data</p>
+<p>You could just use the website and download CSV file and upload into R…but API makes it easier</p>
+</section>
+<section id="making-the-request" class="slide level2 scrollable">
+<h2><span style="color:orange">Making the Request</span></h2>
+<ul>
+<li><p>API endpoint: <code>https://air-quality-api.open-meteo.com/v1/air-quality</code></p></li>
+<li><p>API host site will provide information on structure of available data including variables names and formats, and how to specify parameters in the request URL</p></li>
+<li><p>API documentation: <a href="https://open-meteo.com/en/docs/air-quality-api">open-meteo.com/en/docs/air-quality-api</a></p></li>
+</ul>
+<p>Let’s get hourly PM2.5 data for Santa Barbara:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Build the request URL</span></span>
+<span id="cb6-2"><a></a>req <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://air-quality-api.open-meteo.com/v1/air-quality"</span>)  <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a></a>  <span class="fu">req_url_query</span>(</span>
+<span id="cb6-4"><a></a>    <span class="at">latitude  =</span> <span class="fl">34.42</span>,</span>
+<span id="cb6-5"><a></a>    <span class="at">longitude =</span> <span class="sc">-</span><span class="fl">119.70</span>,</span>
+<span id="cb6-6"><a></a>    <span class="at">hourly    =</span> <span class="st">"pm2_5"</span>, </span>
+<span id="cb6-7"><a></a>    <span class="at">past_days =</span> <span class="dv">3</span>       <span class="co"># last 3 days of data</span></span>
+<span id="cb6-8"><a></a>  )</span>
+<span id="cb6-9"><a></a></span>
+<span id="cb6-10"><a></a><span class="co"># Send the request and parse the response</span></span>
+<span id="cb6-11"><a></a>resp <span class="ot">&lt;-</span> req <span class="sc">%&gt;%</span> <span class="fu">req_perform</span>()</span>
+<span id="cb6-12"><a></a></span>
+<span id="cb6-13"><a></a><span class="co"># what is this</span></span>
+<span id="cb6-14"><a></a><span class="fu">attributes</span>(resp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$names
+[1] "method"      "url"         "status_code" "headers"     "body"       
+[6] "timing"      "request"     "cache"      
+
+$class
+[1] "httr2_response"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">str</span>(resp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 8
+ $ method     : chr "GET"
+ $ url        : chr "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=34.42&amp;longitude=-119.7&amp;hourly=pm2_5&amp;past_days=3"
+ $ status_code: int 200
+ $ headers    : &lt;httr2_headers&gt;
+  ..$ Date             : chr "Wed, 20 May 2026 22:23:36 GMT"
+  ..$ Content-Type     : chr "application/json; charset=utf-8"
+  ..$ Transfer-Encoding: chr "chunked"
+  ..$ Connection       : chr "keep-alive"
+  ..$ Content-Encoding : chr "deflate"
+ $ body       : raw [1:4761] 7b 22 6c 61 ...
+ $ timing     : Named num [1:6] 0 0.00258 0.17419 0.51829 0.69202 ...
+  ..- attr(*, "names")= chr [1:6] "redirect" "namelookup" "connect" "pretransfer" ...
+ $ request    :List of 8
+  ..$ url     : chr "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=34.42&amp;longitude=-119.7&amp;hourly=pm2_5&amp;past_days=3"
+  ..$ method  : NULL
+  ..$ headers : list()
+  ..$ body    : NULL
+  ..$ fields  : list()
+  ..$ options : list()
+  ..$ policies: list()
+  ..$ state   :&lt;environment: 0x7faea8ac1618&gt; 
+  ..- attr(*, "class")= chr "httr2_request"
+ $ cache      :&lt;environment: 0x7fae8a49f520&gt; 
+ - attr(*, "class")= chr "httr2_response"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Convert  to an R list</span></span>
+<span id="cb10-2"><a></a><span class="co"># the simplifyVector to format NA's usually what you want</span></span>
+<span id="cb10-3"><a></a>aq_raw <span class="ot">&lt;-</span> resp <span class="sc">%&gt;%</span> <span class="fu">resp_body_json</span>(<span class="at">simplifyVector =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a><span class="co"># What did we get back?</span></span>
+<span id="cb10-6"><a></a><span class="fu">names</span>(aq_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "latitude"              "longitude"             "generationtime_ms"    
+[4] "utc_offset_seconds"    "timezone"              "timezone_abbreviation"
+[7] "elevation"             "hourly_units"          "hourly"               </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># Step 2 — What's inside a key?</span></span>
+<span id="cb12-2"><a></a><span class="fu">str</span>(aq_raw<span class="sc">$</span>hourly)          <span class="co"># compact overview of structure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 2
+ $ time : chr [1:192] "2026-05-17T00:00" "2026-05-17T01:00" "2026-05-17T02:00" "2026-05-17T03:00" ...
+ $ pm2_5: num [1:192] 7 7.3 7.3 7.6 7.7 7.7 8.1 8.6 9.1 9.8 ...</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">length</span>(aq_raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5) <span class="co"># how many values?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 192</code></pre>
+</div>
+</div>
+</section>
+<section id="parsing-the-response" class="slide level2 scrollable">
+<h2><span style="color:orange">Parsing the Response</span></h2>
+<p>The response is a nested list — we need to pull out what we want:</p>
+<p>This will use POSIX - date time format that R can understand, and unlist to pull out the actual values from the list</p>
+<p>We will cover POSIX data format in a future class</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Extract what you need to a data frame</span></span>
+<span id="cb16-2"><a></a>aq_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-3"><a></a>  <span class="co"># turn time into a POSIX data format</span></span>
+<span id="cb16-4"><a></a>  <span class="at">time  =</span> <span class="fu">as.POSIXct</span>(<span class="fu">unlist</span>(aq_raw<span class="sc">$</span>hourly<span class="sc">$</span>time), <span class="at">format =</span> <span class="st">"%Y-%m-%dT%H:%M"</span>),</span>
+<span id="cb16-5"><a></a>  <span class="at">pm2_5 =</span> <span class="fu">unlist</span>(aq_raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5)</span>
+<span id="cb16-6"><a></a>)</span>
+<span id="cb16-7"><a></a></span>
+<span id="cb16-8"><a></a><span class="fu">head</span>(aq_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 time pm2_5
+1 2026-05-17 00:00:00   7.0
+2 2026-05-17 01:00:00   7.3
+3 2026-05-17 02:00:00   7.3
+4 2026-05-17 03:00:00   7.6
+5 2026-05-17 04:00:00   7.7
+6 2026-05-17 05:00:00   7.7</code></pre>
+</div>
+</div>
+<p>Now it’s a regular R data frame</p>
+</section>
+<section id="visualising-pm2.5" class="slide level2 scrollable">
+<h2><span style="color:orange">Visualising PM2.5</span></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(aq_df, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> pm2_5)) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">12</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"orange"</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">min</span>(aq_df<span class="sc">$</span>time), <span class="at">y =</span> <span class="fl">13.5</span>,</span>
+<span id="cb18-5"><a></a>           <span class="at">label =</span> <span class="st">"EPA annual standard (12 µg/m³)"</span>,</span>
+<span id="cb18-6"><a></a>           <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">colour =</span> <span class="st">"orange"</span>) <span class="sc">+</span></span>
+<span id="cb18-7"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-8"><a></a>    <span class="at">title =</span> <span class="st">"PM2.5 Air Quality — Santa Barbara"</span>,</span>
+<span id="cb18-9"><a></a>    <span class="at">x     =</span> <span class="st">"Time"</span>,</span>
+<span id="cb18-10"><a></a>    <span class="at">y     =</span> <span class="st">"PM2.5 (µg/m³)"</span></span>
+<span id="cb18-11"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb18-12"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="lecture6b_apis_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="modifying-the-requeststylecolororange" class="slide level2 scrollable">
+<h2>Modifying the request{style=“color:orange”}</h2>
+<ul>
+<li>add <em>ozone</em></li>
+<li>add estimates for next 6 days</li>
+</ul>
+<p>Both are specified in the API documentation so you can add them to the request URL</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># Build the request URL</span></span>
+<span id="cb19-2"><a></a>req <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://air-quality-api.open-meteo.com/v1/air-quality"</span>)  <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">req_url_query</span>(</span>
+<span id="cb19-4"><a></a>    <span class="at">latitude  =</span> <span class="fl">34.42</span>,</span>
+<span id="cb19-5"><a></a>    <span class="at">longitude =</span> <span class="sc">-</span><span class="fl">119.70</span>,</span>
+<span id="cb19-6"><a></a>    <span class="at">hourly    =</span> <span class="st">"pm2_5,ozone"</span>,  <span class="co"># we can ask for multiple variables at once, you can't have spaces!!</span></span>
+<span id="cb19-7"><a></a>    <span class="at">past_days =</span> <span class="dv">3</span>,  <span class="co"># last 3 days of data</span></span>
+<span id="cb19-8"><a></a>    <span class="at">forecast_days =</span> <span class="dv">6</span> <span class="co"># add forecase days</span></span>
+<span id="cb19-9"><a></a>  )</span>
+<span id="cb19-10"><a></a></span>
+<span id="cb19-11"><a></a><span class="co"># Send the request and parse the response</span></span>
+<span id="cb19-12"><a></a>resp <span class="ot">&lt;-</span> req <span class="sc">%&gt;%</span> <span class="fu">req_perform</span>()</span>
+<span id="cb19-13"><a></a></span>
+<span id="cb19-14"><a></a><span class="co"># what is this</span></span>
+<span id="cb19-15"><a></a><span class="fu">attributes</span>(resp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$names
+[1] "method"      "url"         "status_code" "headers"     "body"       
+[6] "timing"      "request"     "cache"      
+
+$class
+[1] "httr2_response"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># Convert  to an R list</span></span>
+<span id="cb21-2"><a></a>aq2_raw <span class="ot">&lt;-</span> resp <span class="sc">%&gt;%</span> <span class="fu">resp_body_json</span>(<span class="at">simplifyVector =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-3"><a></a></span>
+<span id="cb21-4"><a></a><span class="co"># What did we get back?</span></span>
+<span id="cb21-5"><a></a><span class="fu">names</span>(aq2_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "latitude"              "longitude"             "generationtime_ms"    
+[4] "utc_offset_seconds"    "timezone"              "timezone_abbreviation"
+[7] "elevation"             "hourly_units"          "hourly"               </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">names</span>(aq2_raw<span class="sc">$</span>hourly)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "time"  "pm2_5" "ozone"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># Step 2 — What's inside a key?</span></span>
+<span id="cb25-2"><a></a><span class="fu">names</span>(aq_raw<span class="sc">$</span>hourly)          <span class="co"># compact overview of structure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "time"  "pm2_5"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="co"># how many values?</span></span>
+<span id="cb27-2"><a></a><span class="fu">length</span>(aq2_raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 216</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">length</span>(aq2_raw<span class="sc">$</span>hourly<span class="sc">$</span>ozone)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 216</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="co"># compare with previous call - longer time</span></span>
+<span id="cb31-2"><a></a><span class="co"># because we added forecast days</span></span>
+<span id="cb31-3"><a></a><span class="fu">length</span>(aq_raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 192</code></pre>
+</div>
+</div>
+</section>
+<section id="parsing-the-response-1" class="slide level2 scrollable">
+<h2><span style="color:orange">Parsing the Response</span></h2>
+<p>The response is a nested list — we need to pull out what we want:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="co"># Extract what you need to a data frame</span></span>
+<span id="cb33-2"><a></a>aq_df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb33-3"><a></a>  <span class="co"># turn time into a POSIX data format</span></span>
+<span id="cb33-4"><a></a>  <span class="at">time  =</span> <span class="fu">as.POSIXct</span>(<span class="fu">unlist</span>(aq2_raw<span class="sc">$</span>hourly<span class="sc">$</span>time), <span class="at">format =</span> <span class="st">"%Y-%m-%dT%H:%M"</span>),</span>
+<span id="cb33-5"><a></a>  <span class="at">pm2_5 =</span> <span class="fu">unlist</span>(aq2_raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5),</span>
+<span id="cb33-6"><a></a>  <span class="co"># add ozone to the data frame</span></span>
+<span id="cb33-7"><a></a>  <span class="at">ozone =</span> <span class="fu">unlist</span>(aq2_raw<span class="sc">$</span>hourly<span class="sc">$</span>ozone)</span>
+<span id="cb33-8"><a></a>)</span>
+<span id="cb33-9"><a></a></span>
+<span id="cb33-10"><a></a><span class="fu">head</span>(aq_df2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 time pm2_5 ozone
+1 2026-05-17 00:00:00   7.0    99
+2 2026-05-17 01:00:00   7.3    98
+3 2026-05-17 02:00:00   7.3    96
+4 2026-05-17 03:00:00   7.6    93
+5 2026-05-17 04:00:00   7.7    89
+6 2026-05-17 05:00:00   7.7    84</code></pre>
+</div>
+</div>
+<p>Now it’s a regular R data frame</p>
+</section>
+<section id="visualising-pm2.5-vs-ozone" class="slide level2 scrollable">
+<h2><span style="color:orange">Visualising PM2.5 vs ozone</span></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">ggplot</span>(aq_df2, <span class="fu">aes</span>(<span class="at">x =</span> ozone, <span class="at">y =</span> pm2_5)) <span class="sc">+</span></span>
+<span id="cb35-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb35-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb35-4"><a></a>    <span class="at">title =</span> <span class="st">"Ozone vs PM2.5 Air Quality — Santa Barbara"</span>,</span>
+<span id="cb35-5"><a></a>    <span class="at">x     =</span> <span class="st">"Ozone (µg/m³)"</span>,</span>
+<span id="cb35-6"><a></a>    <span class="at">y     =</span> <span class="st">"PM2.5 (µg/m³)"</span></span>
+<span id="cb35-7"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb35-8"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="lecture6b_apis_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="try-on-your-own" class="slide level2">
+<h2>Try on your own</h2>
+<p>Repeat above and extract PM10 instead of PM2.5 Compute mean PM10, and PM2.5 for your data frame Add to CANVAS quiz</p>
+</section>
+<section id="writing-a-reusable-api-function" class="slide level2">
+<h2><span style="color:orange">Writing a Reusable API Function</span></h2>
+<p>Connecting APIs to what we’ve been learning about modularity</p>
+</section>
+<section id="why-write-a-function" class="slide level2 scrollable">
+<h2><span style="color:orange">Why Write a Function?</span></h2>
+<p>What if we want air quality data for <strong>many</strong> locations?</p>
+<p>This is exactly the modularity pattern from last week — write a function with a clear <strong>contract</strong>:</p>
+<p><em>Input</em>: latitude, longitude</p>
+<p><em>Output</em>: a tidy data frame of hourly PM2.5 readings</p>
+<p><em>Parameters</em>: number of past days</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>get_pm25 <span class="ot">&lt;-</span> <span class="cf">function</span>(lat, lon, <span class="at">past_days =</span> <span class="dv">7</span>) {</span>
+<span id="cb36-2"><a></a>  </span>
+<span id="cb36-3"><a></a>  <span class="co"># Error checking</span></span>
+<span id="cb36-4"><a></a>  <span class="cf">if</span> (lat <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">90</span> <span class="sc">|</span> lat <span class="sc">&gt;</span> <span class="dv">90</span>) {</span>
+<span id="cb36-5"><a></a>    <span class="fu">return</span>(<span class="st">"Latitude must be between -90 and 90."</span>)</span>
+<span id="cb36-6"><a></a>  }</span>
+<span id="cb36-7"><a></a>  <span class="cf">if</span> (lon <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">180</span> <span class="sc">|</span> lon <span class="sc">&gt;</span> <span class="dv">180</span>) {</span>
+<span id="cb36-8"><a></a>    <span class="fu">return</span>(<span class="st">"Longitude must be between -180 and 180."</span>)</span>
+<span id="cb36-9"><a></a>  }                                                    <span class="co"># ← added this</span></span>
+<span id="cb36-10"><a></a>  </span>
+<span id="cb36-11"><a></a>  req <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://air-quality-api.open-meteo.com/v1/air-quality"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb36-12"><a></a>    <span class="fu">req_url_query</span>(</span>
+<span id="cb36-13"><a></a>      <span class="at">latitude  =</span> lat,</span>
+<span id="cb36-14"><a></a>      <span class="at">longitude =</span> lon,</span>
+<span id="cb36-15"><a></a>      <span class="at">hourly    =</span> <span class="st">"pm2_5"</span>,</span>
+<span id="cb36-16"><a></a>      <span class="at">past_days =</span> past_days</span>
+<span id="cb36-17"><a></a>    )</span>
+<span id="cb36-18"><a></a>  resp <span class="ot">&lt;-</span> req <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
+<span id="cb36-19"><a></a>  raw  <span class="ot">&lt;-</span> resp <span class="sc">|&gt;</span> <span class="fu">resp_body_json</span>(<span class="at">simplifyVector =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb36-20"><a></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb36-21"><a></a>    <span class="at">lat   =</span> lat,</span>
+<span id="cb36-22"><a></a>    <span class="at">lon   =</span> lon,</span>
+<span id="cb36-23"><a></a>    <span class="at">time  =</span> <span class="fu">as.POSIXct</span>(<span class="fu">unlist</span>(raw<span class="sc">$</span>hourly<span class="sc">$</span>time), <span class="at">format =</span> <span class="st">"%Y-%m-%dT%H:%M"</span>),</span>
+<span id="cb36-24"><a></a>    <span class="at">pm2_5 =</span> <span class="fu">unlist</span>(raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5)</span>
+<span id="cb36-25"><a></a>  )</span>
+<span id="cb36-26"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="using-our-function-with-multiple-locations" class="slide level2 scrollable">
+<h2><span style="color:orange">Using Our Function with Multiple Locations</span></h2>
+<p>Now we can use the iteration patterns from lecture 6:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="co"># Define several CA coastal cities</span></span>
+<span id="cb37-2"><a></a>locations <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb37-3"><a></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Santa Barbara"</span>, <span class="st">"Ventura"</span>, <span class="st">"San Luis Obispo"</span>),</span>
+<span id="cb37-4"><a></a>  <span class="at">lat  =</span> <span class="fu">c</span>(<span class="fl">34.42</span>,           <span class="fl">34.27</span>,     <span class="fl">35.28</span>),</span>
+<span id="cb37-5"><a></a>  <span class="at">lon  =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">119.70</span>,         <span class="sc">-</span><span class="fl">119.29</span>,   <span class="sc">-</span><span class="fl">120.66</span>)</span>
+<span id="cb37-6"><a></a>)</span>
+<span id="cb37-7"><a></a></span>
+<span id="cb37-8"><a></a><span class="co"># Use for loop to call our function for each row</span></span>
+<span id="cb37-9"><a></a></span>
+<span id="cb37-10"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(locations)) {</span>
+<span id="cb37-11"><a></a>  city <span class="ot">&lt;-</span> locations<span class="sc">$</span>city[i]</span>
+<span id="cb37-12"><a></a>  lat  <span class="ot">&lt;-</span> locations<span class="sc">$</span>lat[i]</span>
+<span id="cb37-13"><a></a>  lon  <span class="ot">&lt;-</span> locations<span class="sc">$</span>lon[i]</span>
+<span id="cb37-14"><a></a>  </span>
+<span id="cb37-15"><a></a>  aq_df <span class="ot">&lt;-</span> <span class="fu">get_pm25</span>(lat, lon, <span class="at">past_days =</span> <span class="dv">3</span>)</span>
+<span id="cb37-16"><a></a>  aq_df<span class="sc">$</span>city <span class="ot">&lt;-</span> city</span>
+<span id="cb37-17"><a></a>  </span>
+<span id="cb37-18"><a></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb37-19"><a></a>    aq_all <span class="ot">&lt;-</span> aq_df</span>
+<span id="cb37-20"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb37-21"><a></a>    aq_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(aq_all, aq_df)</span>
+<span id="cb37-22"><a></a>  }</span>
+<span id="cb37-23"><a></a>}</span>
+<span id="cb37-24"><a></a></span>
+<span id="cb37-25"><a></a></span>
+<span id="cb37-26"><a></a><span class="co"># Daily averages by city</span></span>
+<span id="cb37-27"><a></a>aq_daily <span class="ot">&lt;-</span> aq_all <span class="sc">%&gt;%</span></span>
+<span id="cb37-28"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(time)) <span class="sc">%&gt;%</span></span>
+<span id="cb37-29"><a></a>  <span class="fu">group_by</span>(city, date) <span class="sc">%&gt;%</span></span>
+<span id="cb37-30"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_pm2_5 =</span> <span class="fu">mean</span>(pm2_5, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb37-31"><a></a></span>
+<span id="cb37-32"><a></a><span class="fu">ggplot</span>(aq_daily, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> mean_pm2_5, <span class="at">colour =</span> city)) <span class="sc">+</span></span>
+<span id="cb37-33"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb37-34"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb37-35"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb37-36"><a></a>    <span class="at">title  =</span> <span class="st">"Daily Mean PM2.5 — Central Coast Cities"</span>,</span>
+<span id="cb37-37"><a></a>    <span class="at">x      =</span> <span class="st">"Date"</span>,</span>
+<span id="cb37-38"><a></a>    <span class="at">y      =</span> <span class="st">"PM2.5 (µg/m³)"</span>,</span>
+<span id="cb37-39"><a></a>    <span class="at">colour =</span> <span class="st">"City"</span></span>
+<span id="cb37-40"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb37-41"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="lecture6b_apis_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="extra-material-more-complex-apis-and-api-workflow" class="slide level2">
+<h2>Extra material: more complex APIs, and API workflow</h2>
+<p>Here’s another example from a different API and some additional on being a good API citizen</p>
+</section>
+<section id="example-2-streamflow" class="slide level2">
+<h2><span style="color:orange">Example 2: Streamflow</span></h2>
+<p>Using the <strong>USGS Water Services API</strong> — the backbone of US hydrology data</p>
+<p>The structure of the data is more complex - you would probably need help from the documentation to figure out how to navigate the nested list to get to the actual values, and then parse those into a data frame</p>
+<p>AI-is good support for this</p>
+<p>But now you understand the basic work flow!</p>
+</section>
+<section id="usgs-national-water-information-system" class="slide level2 scrollable">
+<h2><span style="color:orange">USGS National Water Information System</span></h2>
+<p>USGS maintains thousands of stream gauges across the US</p>
+<p>API documentation: <a href="https://waterservices.usgs.gov">waterservices.usgs.gov</a></p>
+<p>No API key needed — this is public data</p>
+<p>You could again download data but API makes it easier</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Get daily streamflow for the Santa Ynez River at Solvang (site 11128500)</span></span>
+<span id="cb38-2"><a></a>req_usgs <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://waterservices.usgs.gov/nwis/dv/"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb38-3"><a></a>  <span class="fu">req_url_query</span>(</span>
+<span id="cb38-4"><a></a>    <span class="at">format        =</span> <span class="st">"json"</span>,</span>
+<span id="cb38-5"><a></a>    <span class="at">sites         =</span> <span class="st">"11128500"</span>,    <span class="co"># USGS site number</span></span>
+<span id="cb38-6"><a></a>    <span class="at">parameterCd   =</span> <span class="st">"00060"</span>,       <span class="co"># parameter code for discharge (cfs)</span></span>
+<span id="cb38-7"><a></a>    <span class="at">startDT       =</span> <span class="st">"2024-01-01"</span>,</span>
+<span id="cb38-8"><a></a>    <span class="at">endDT         =</span> <span class="st">"2024-06-30"</span></span>
+<span id="cb38-9"><a></a>  )</span>
+<span id="cb38-10"><a></a></span>
+<span id="cb38-11"><a></a>resp_usgs <span class="ot">&lt;-</span> req_usgs <span class="sc">|&gt;</span> <span class="fu">req_perform</span>()</span>
+<span id="cb38-12"><a></a>flow_raw  <span class="ot">&lt;-</span> resp_usgs <span class="sc">|&gt;</span> <span class="fu">resp_body_json</span>()</span>
+<span id="cb38-13"><a></a></span>
+<span id="cb38-14"><a></a><span class="co"># figure out what the data looks like</span></span>
+<span id="cb38-15"><a></a><span class="co"># USGS returns a very nested JSON structure — we need to navigate it to get to the actual values</span></span>
+<span id="cb38-16"><a></a><span class="co"># Website will tell you this</span></span>
+<span id="cb38-17"><a></a><span class="co"># you can also try names, str, and length to explore the structure of the list</span></span>
+<span id="cb38-18"><a></a><span class="fu">names</span>(flow_raw)  <span class="co"># top-level keys</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "name"            "declaredType"    "scope"           "value"          
+[5] "nil"             "globalScope"     "typeSubstituted"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="co"># Navigate the nested list to the actual values</span></span>
+<span id="cb40-2"><a></a>flow_data <span class="ot">&lt;-</span> flow_raw<span class="sc">$</span>value<span class="sc">$</span>timeSeries[[<span class="dv">1</span>]]<span class="sc">$</span>values[[<span class="dv">1</span>]]<span class="sc">$</span>value</span>
+<span id="cb40-3"><a></a></span>
+<span id="cb40-4"><a></a><span class="co"># Parse into a data frame</span></span>
+<span id="cb40-5"><a></a><span class="co"># will use sapply to pull out date and value from each entry in the list</span></span>
+<span id="cb40-6"><a></a>flow_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb40-7"><a></a>  <span class="at">date        =</span> <span class="fu">as.Date</span>(<span class="fu">substr</span>(<span class="fu">sapply</span>(flow_data, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">"dateTime"</span>), <span class="dv">1</span>, <span class="dv">10</span>)),</span>
+<span id="cb40-8"><a></a>  <span class="at">discharge   =</span> <span class="fu">as.numeric</span>(<span class="fu">sapply</span>(flow_data, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">"value"</span>))</span>
+<span id="cb40-9"><a></a>)</span>
+<span id="cb40-10"><a></a></span>
+<span id="cb40-11"><a></a><span class="fu">head</span>(flow_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date discharge
+1 2024-01-01      18.8
+2 2024-01-02      18.2
+3 2024-01-03      19.7
+4 2024-01-04      18.2
+5 2024-01-05      18.8
+6 2024-01-06      18.4</code></pre>
+</div>
+</div>
+</section>
+<section id="visualising-streamflow" class="slide level2 scrollable">
+<h2><span style="color:orange">Visualising Streamflow</span></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">ggplot</span>(flow_df, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> discharge)) <span class="sc">+</span></span>
+<span id="cb42-2"><a></a>  <span class="fu">geom_area</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb42-3"><a></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb42-4"><a></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb42-5"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb42-6"><a></a>    <span class="at">title    =</span> <span class="st">"Daily Streamflow — Santa Ynez River at Solvang"</span>,</span>
+<span id="cb42-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"USGS Site 11128500 | Jan–Jun 2024"</span>,</span>
+<span id="cb42-8"><a></a>    <span class="at">x        =</span> <span class="st">"Date"</span>,</span>
+<span id="cb42-9"><a></a>    <span class="at">y        =</span> <span class="st">"Discharge (ft³/s, log scale)"</span></span>
+<span id="cb42-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb42-11"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="lecture6b_apis_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="error-handling" class="slide level2 scrollable">
+<h2><span style="color:orange">Error Handling</span></h2>
+<p>APIs can fail — rate limits, bad parameters, network issues</p>
+<p>Good practice: handle errors gracefully in your function</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>get_pm25_safe <span class="ot">&lt;-</span> <span class="cf">function</span>(lat, lon, <span class="at">past_days =</span> <span class="dv">7</span>) {</span>
+<span id="cb43-2"><a></a>  <span class="co"># tryCatch lets your program keep running if one request fails</span></span>
+<span id="cb43-3"><a></a>  <span class="fu">tryCatch</span>(</span>
+<span id="cb43-4"><a></a>    {</span>
+<span id="cb43-5"><a></a>      <span class="fu">get_pm25</span>(lat, lon, past_days)</span>
+<span id="cb43-6"><a></a>    },</span>
+<span id="cb43-7"><a></a>    <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb43-8"><a></a>      <span class="fu">message</span>(<span class="st">"Request failed for ("</span>, lat, <span class="st">", "</span>, lon, <span class="st">"): "</span>, e<span class="sc">$</span>message)</span>
+<span id="cb43-9"><a></a>      <span class="fu">return</span>(<span class="cn">NULL</span>)   <span class="co"># return nothing for this location instead of crashing</span></span>
+<span id="cb43-10"><a></a>    }</span>
+<span id="cb43-11"><a></a>  )</span>
+<span id="cb43-12"><a></a>}</span>
+<span id="cb43-13"><a></a></span>
+<span id="cb43-14"><a></a><span class="co"># Now safe to loop over many locations</span></span>
+<span id="cb43-15"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(locations)) {</span>
+<span id="cb43-16"><a></a>  city <span class="ot">&lt;-</span> locations<span class="sc">$</span>city[i]</span>
+<span id="cb43-17"><a></a>  lat  <span class="ot">&lt;-</span> locations<span class="sc">$</span>lat[i]</span>
+<span id="cb43-18"><a></a>  lon  <span class="ot">&lt;-</span> locations<span class="sc">$</span>lon[i]</span>
+<span id="cb43-19"><a></a>  </span>
+<span id="cb43-20"><a></a>  aq_df <span class="ot">&lt;-</span> <span class="fu">get_pm25_safe</span>(lat, lon, <span class="at">past_days =</span> <span class="dv">3</span>)</span>
+<span id="cb43-21"><a></a>  aq_df<span class="sc">$</span>city <span class="ot">&lt;-</span> city</span>
+<span id="cb43-22"><a></a>  </span>
+<span id="cb43-23"><a></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb43-24"><a></a>    aq_all <span class="ot">&lt;-</span> aq_df</span>
+<span id="cb43-25"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb43-26"><a></a>    aq_all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(aq_all, aq_df)</span>
+<span id="cb43-27"><a></a>  }</span>
+<span id="cb43-28"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="being-a-good-api-citizen" class="slide level2 scrollable">
+<h2><span style="color:orange">Being a Good API Citizen</span></h2>
+<p>APIs are a shared resource — follow these norms:</p>
+<ul>
+<li><strong>Read the docs</strong> — understand rate limits before looping over hundreds of requests</li>
+<li><strong>Cache results</strong> — save data locally so you don’t re-request what you already have</li>
+<li><strong>Throttle requests</strong> — <code>req_throttle()</code> in httr2 request, or <code>Sys.sleep()</code> in loops</li>
+<li><strong>Use your key responsibly</strong> — don’t share it or embed it in public code</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="co"># Simple caching pattern</span></span>
+<span id="cb44-2"><a></a>cache_file <span class="ot">&lt;-</span> <span class="st">"data/aq_santa_barbara.csv"</span></span>
+<span id="cb44-3"><a></a></span>
+<span id="cb44-4"><a></a><span class="cf">if</span> (<span class="fu">file.exists</span>(cache_file)) {</span>
+<span id="cb44-5"><a></a>  aq_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(cache_file)</span>
+<span id="cb44-6"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb44-7"><a></a>  aq_df <span class="ot">&lt;-</span> <span class="fu">get_pm25</span>(<span class="fl">34.42</span>, <span class="sc">-</span><span class="fl">119.70</span>, <span class="at">past_days =</span> <span class="dv">30</span>)</span>
+<span id="cb44-8"><a></a>  <span class="fu">write_csv</span>(aq_df, cache_file)</span>
+<span id="cb44-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="summary-the-api-workflow" class="slide level2 scrollable">
+<h2><span style="color:orange">Summary: The API Workflow</span></h2>
+<p>Every API interaction follows the same pattern:</p>
+<ol type="1">
+<li><strong>Find the API</strong> — check docs, understand endpoints and parameters</li>
+<li><strong>Build a request</strong> — <code>request()</code> + <code>req_url_query()</code> + any auth headers</li>
+<li><strong>Send it</strong> — <code>req_perform()</code></li>
+<li><strong>Parse the response</strong> — <code>resp_body_json()</code> → nested list → data frame</li>
+<li><strong>Clean and analyse</strong> — tidyverse tools you already know</li>
+<li><strong>Wrap in a function</strong> — for reuse and modularity</li>
+</ol>
+<p>This connects directly to what we’ve been building all semester:</p>
+<ul>
+<li>Functions with clear contracts</li>
+<li>Iteration over inputs (<code>map</code>, <code>for</code> loops)</li>
+<li>Data wrangling with <code>tidyverse</code></li>
+</ul>
+</section>
+<section id="useful-environmental-apis-to-explore" class="slide level2 scrollable">
+<h2><span style="color:orange">Useful Environmental APIs to Explore</span></h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 41%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>API</th>
+<th>What it provides</th>
+<th>Key needed?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Open-Meteo</td>
+<td>Weather &amp; air quality</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>USGS Water Services</td>
+<td>Streamflow, groundwater</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>iNaturalist</td>
+<td>Species observations</td>
+<td>No (read)</td>
+</tr>
+<tr class="even">
+<td>NASA Earthdata / POWER</td>
+<td>Climate, solar, precip</td>
+<td>Yes (free)</td>
+</tr>
+<tr class="odd">
+<td>NOAA CDO</td>
+<td>Historical climate records</td>
+<td>Yes (free)</td>
+</tr>
+<tr class="even">
+<td>GBIF</td>
+<td>Global biodiversity records</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>EPA AQS</td>
+<td>US air quality monitoring</td>
+<td>Yes (free)</td>
+</tr>
+<tr class="even">
+<td>OpenWeatherMap</td>
+<td>Current + forecast weather</td>
+<td>Yes (free tier)</td>
+</tr>
+</tbody>
+</table>
+<p>All offer free tiers suitable for research and coursework</p>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

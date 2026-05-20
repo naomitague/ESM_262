@@ -218,14 +218,14 @@ What will your function do if user gives you garbage data, imagine that you have
 
 - Two options
 
-[ 1. error-checking (nice) ]{style="color:skyblue"}
+[1. error-checking (nice)]{style="color:skyblue"}
 
 if temperature \< -100 or \> 100
 
 - set results to NA
 - or exit function with a warming
 
-[ 2. assume user reads the contract :) return unrealistic values ]{style="color:skyblue"}
+[2. assume user reads the contract :) return unrealistic values]{style="color:skyblue"}
 
 if input -999.0, will still try to output growth rate
 

@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <title>ESM 262 – Control Structures and Error Checking</title>
+  <title>ESM 262 – Functions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -196,282 +196,263 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Control Structures and Error Checking</h1>
+  <h1 class="title">Functions</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="what-weve-learned" class="slide level2">
-<h2><span style="color:orange"> What we’ve learned</span></h2>
+<section id="testing" class="title-slide slide level1 center">
+<h1><span style="color:orange">Testing</span></h1>
+<p>Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)</p>
 <ul>
-<li>how to write a function</li>
-<li>how to generate data</li>
-<li>running functions with data</li>
+<li>Tests reduce bugs in new features</li>
+<li>Tests reduce bugs in existing features</li>
+<li>Tests defend agains other programmers</li>
+<li>Testing forces you to slow down and think</li>
+<li>Testing makes development faster</li>
+<li>Tests reduce fear</li>
 </ul>
+<p>Model developers now often use software to help them automate the testing process Re-uses tests - makes it efficient to repeat many tests as you develop and modify the code</p>
+<p>Particularly helpful when you have multiple modules (as in our mangrove example)</p>
+<p>This type of software is available for R, Python, C etc.</p>
 </section>
-<section id="flow-control" class="slide level2">
-<h2><span style="color:orange"> Flow Control</span></h2>
-<p>Another KEY concept is flow control</p>
-<p>Allowing your function to “do” different things depending on a conditions</p>
-<p>CLASSIC example is</p>
-<p><em>IF</em> then <em>ELSE</em></p>
-</section>
-<section id="if-else-in-r" class="slide level2">
-<h2>If Else in R</h2>
-<p>Two ways in R</p>
+
+<section id="testing-in-r" class="title-slide slide level1 center">
+<h1><span style="color:orange">Testing in R</span></h1>
+<p>In R, <em>testthat</em> library install and add this library</p>
+<p>If you are in the working directory where you’ve stored the files in a specific directory (e.g <strong>R</strong>) you can use <em>testthat</em> to automate testing of your functions</p>
 <ul>
-<li><em>ifelse</em> function
-<ul>
-<li>ifelse(condition, TRUE, FALSE)</li>
-<li>best used for simple application</li>
-</ul></li>
-<li>if..else structure
-<ul>
-<li>more formal way of deciding on two paths</li>
-</ul></li>
+<li>need devtools and “testthat” libraries</li>
+<li>test_dir(“name”) :runs all tests in the “name” subdirectory (all files beginning with the word “test”</li>
+<li>test_file(“name”): runs all the tests in a file called “name”</li>
 </ul>
+<p>Testing in R uses expectation</p>
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>classifying…</p>
+
+<section id="expectation" class="title-slide slide level1 center">
+<h1><span style="color:orange">Expectation</span></h1>
+<p>tests you can use to make sure your code is working the way you think it should be working</p>
+<ul>
+<li>expect_true(condition)</li>
+<li>expect_equal(value, value)</li>
+<li>expect_match(string1, string2)</li>
+<li>expect_null(value)</li>
+<li>expect_length(object, n)</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>a <span class="ot">=</span> <span class="dv">20</span></span>
-<span id="cb1-2"><a></a>classr  <span class="ot">=</span> <span class="fu">ifelse</span>(a <span class="sc">&gt;</span> <span class="dv">90</span>, <span class="st">"high"</span>,<span class="st">"low"</span>)</span>
-<span id="cb1-3"><a></a>classr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "low"</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># runs a test on a statement and checks to see if it is correct</span></span>
+<span id="cb1-2"><a></a><span class="co"># this one should work</span></span>
+<span id="cb1-3"><a></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb1-4"><a></a><span class="co"># this one should 'throw and error'</span></span>
+<span id="cb1-5"><a></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! Expected `2 + 5` to equal 4.
+Differences:
+1/1 mismatches
+[1] 7 - 4 == 3</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># also works with multiple values</span></span>
-<span id="cb3-2"><a></a>a <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">100</span>, <span class="at">n=</span><span class="dv">5</span>)</span>
-<span id="cb3-3"><a></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 56.260227 68.352685 71.196005 33.493040  6.368615</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># we can also use expect_true</span></span>
+<span id="cb3-2"><a></a><span class="co"># works with variables two</span></span>
+<span id="cb3-3"><a></a>a <span class="ot">=</span> <span class="dv">200</span></span>
+<span id="cb3-4"><a></a><span class="fu">expect_true</span>(a <span class="sc">&gt;</span> <span class="dv">2</span> )</span>
+<span id="cb3-5"><a></a>a <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb3-6"><a></a><span class="fu">expect_true</span>(a <span class="sc">&gt;</span> <span class="dv">2</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! Expected `a &gt; 2` to be TRUE.
+Differences:
+`actual`:   FALSE
+`expected`: TRUE </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># ifelse can work with vectors</span></span>
-<span id="cb5-2"><a></a>classr  <span class="ot">=</span> <span class="fu">ifelse</span>(a <span class="sc">&gt;</span> <span class="dv">90</span>, <span class="st">"high"</span>,<span class="st">"low"</span>)</span>
-<span id="cb5-3"><a></a>classr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "low" "low" "low" "low" "low"</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># matches</span></span>
+<span id="cb5-2"><a></a>fish1 <span class="ot">=</span> <span class="st">"salmon"</span></span>
+<span id="cb5-3"><a></a>fish2 <span class="ot">=</span> <span class="st">"trout"</span></span>
+<span id="cb5-4"><a></a><span class="fu">expect_match</span>(fish1, fish2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! Expected `fish1` to match regexp "trout".
+Actual text:
+✖ │ salmon</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># length</span></span>
+<span id="cb7-2"><a></a>a <span class="ot">=</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span><span class="dv">10</span>)</span>
+<span id="cb7-3"><a></a><span class="fu">expect_length</span>(a, <span class="dv">10</span>)</span>
+<span id="cb7-4"><a></a><span class="fu">expect_length</span>(a, <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! Expected `a` to have length 11.
+Actual length: 10.</code></pre>
 </div>
-</section>
-<section id="flow-control-in-functions" class="slide level2">
-<h2><span style="color:orange"> Flow control in functions</span></h2>
-<p>best to use if {} else {}</p>
-<p>see examaple in <em>summarize_diversity2.R</em></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(here)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># We can use expectation with functions </span></span>
+<span id="cb9-2"><a></a><span class="co"># and test just to make sure they are working as expected</span></span>
+<span id="cb9-3"><a></a><span class="fu">source</span>(<span class="st">"R/compute_NPV.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>here() starts at /Users/naomitague/Courses/ESM_262</code></pre>
+<pre><code>Warning in file(filename, "r", encoding = encoding): cannot open file
+'R/compute_NPV.R': No such file or directory</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/summarize_diversity2.R"</span>))</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a>flowers <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"rose"</span>,<span class="st">"peony"</span>,<span class="st">"daisy"</span>), <span class="at">replace=</span>T, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.8</span>, <span class="fl">0.1</span>),<span class="at">size=</span><span class="dv">30</span>)</span>
-<span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a><span class="fu">summarize_diversity</span>(flowers, <span class="at">index=</span><span class="st">"B"</span>)<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `file()`:
+! cannot open the connection</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>futurevalue <span class="ot">=</span> <span class="dv">100</span></span>
+<span id="cb12-2"><a></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `compute_NPV()`:
+! could not find function "compute_NPV"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>futurevalue <span class="ot">=</span> <span class="sc">-</span><span class="dv">100</span></span>
+<span id="cb14-2"><a></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `compute_NPV()`:
+! could not find function "compute_NPV"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># what if function returns a list?</span></span>
+<span id="cb16-2"><a></a><span class="co"># we can use the buit in summary function to see how this works</span></span>
+<span id="cb16-3"><a></a>testdata <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">mean=</span><span class="dv">25</span>, <span class="at">sd=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">100</span>)</span>
+<span id="cb16-4"><a></a><span class="fu">summary</span>(testdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2866667</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  18.04   22.83   24.73   24.90   26.75   33.52 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">summarize_diversity</span>(flowers, <span class="at">index=</span><span class="st">"A"</span>)<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># it is actually returning a list, but what are the names?</span></span>
+<span id="cb18-2"><a></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2965517</code></pre>
+<pre><code>[1] "Min."    "1st Qu." "Median"  "Mean"    "3rd Qu." "Max."   </code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># now we can specify them</span></span>
+<span id="cb20-2"><a></a><span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Max. 
+33.52 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># and use in a test to make sure this function works -...hmm</span></span>
+<span id="cb22-2"><a></a><span class="co"># well the max should be greater than the min right?</span></span>
+<span id="cb22-3"><a></a></span>
+<span id="cb22-4"><a></a><span class="fu">expect_true</span>((<span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]<span class="sc">-</span><span class="fu">summary</span>(testdata)[<span class="st">"Min."</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb22-5"><a></a></span>
+<span id="cb22-6"><a></a><span class="co"># lets create a function with an error </span></span>
+<span id="cb22-7"><a></a><span class="co"># imagine total recharge of water to soil after rain (in mm) is daily rainfall minus interception (in mm with default of 1mm) lost on any given day</span></span>
+<span id="cb22-8"><a></a><span class="co"># lets define a function that returns total rainfall and total recharge given an input of</span></span>
+<span id="cb22-9"><a></a><span class="co"># rainfall and then a value for interception</span></span>
+<span id="cb22-10"><a></a></span>
+<span id="cb22-11"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interception_loss=</span><span class="dv">1</span>) {</span>
+<span id="cb22-12"><a></a>  </span>
+<span id="cb22-13"><a></a>  <span class="co"># easy part - get total rain</span></span>
+<span id="cb22-14"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
+<span id="cb22-15"><a></a>  </span>
+<span id="cb22-16"><a></a>  <span class="co"># interception happens everyday so we need a new vector</span></span>
+<span id="cb22-17"><a></a>  recharge <span class="ot">=</span> rain<span class="sc">-</span>interception_loss</span>
+<span id="cb22-18"><a></a>  totalrecharge <span class="ot">=</span> <span class="fu">sum</span>(recharge)</span>
+<span id="cb22-19"><a></a>  </span>
+<span id="cb22-20"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalrecharge=</span>totalrecharge))}</span>
+<span id="cb22-21"><a></a></span>
+<span id="cb22-22"><a></a></span>
+<span id="cb22-23"><a></a><span class="co"># lets do some simple test</span></span>
+<span id="cb22-24"><a></a><span class="co"># if it never rains for 730 days then both should be zero</span></span>
+<span id="cb22-25"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb22-26"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrain, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
+<span id="cb22-27"><a></a><span class="co"># so far so good, now for recharge</span></span>
+<span id="cb22-28"><a></a></span>
+<span id="cb22-29"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb22-30"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrecharge, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! Expected `x` to equal `expected`.
+Differences:
+1/1 mismatches
+[1] -730 - 0 == -730</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># what went wrong???</span></span>
+<span id="cb24-2"><a></a></span>
+<span id="cb24-3"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interception_loss=</span><span class="dv">1</span>) {</span>
+<span id="cb24-4"><a></a>  </span>
+<span id="cb24-5"><a></a>  <span class="co"># easy part - get total rain</span></span>
+<span id="cb24-6"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
+<span id="cb24-7"><a></a>  </span>
+<span id="cb24-8"><a></a>  <span class="co"># interception happens everyday so we need a new vector</span></span>
+<span id="cb24-9"><a></a>  recharge <span class="ot">=</span> rain<span class="sc">-</span>interception_loss</span>
+<span id="cb24-10"><a></a>  recharge <span class="ot">=</span> <span class="fu">pmax</span>(recharge,<span class="dv">0</span>)</span>
+<span id="cb24-11"><a></a>  totalrecharge <span class="ot">=</span> <span class="fu">sum</span>(recharge)</span>
+<span id="cb24-12"><a></a>  </span>
+<span id="cb24-13"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalrecharge=</span>totalrecharge))}</span>
+<span id="cb24-14"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb24-15"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrecharge, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="multiple-conditions" class="slide level2 scrollable">
-<h2><span style="color:orange"> Multiple Conditions</span></h2>
-<p>If you have multiple conditions we can use <em>case_when</em>, requires <em>tidyverse</em> library - <em>switch</em> is another option</p>
-</section>
-<section id="fishing-example" class="slide level2 scrollable">
-<h2><span style="color:orange"> Fishing Example</span></h2>
-<p>Here’s a simple example of how it works</p>
-<p>Imagine you are recording fish catches at different locations (we are going to simulate this by sampling )</p>
-<p>Fish have grades…</p>
-<p>grade A, B, C</p>
-<ul>
-<li>steelhead are A,</li>
-<li>tuna are B</li>
-<li>everything else is C</li>
-</ul>
-<p>R and other languages have ways to do this multiple alternatives flow control in R an example is</p>
-<p><em>case_when</em></p>
-<p>case_when(</p>
-<p>condition ~ response,</p>
-<p>condition ~ response … )</p>
-<p>First a simple example where we only have one fist</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb13-2"><a></a>fish <span class="ot">=</span> <span class="st">"steelhead"</span></span>
-<span id="cb13-3"><a></a><span class="fu">case_when</span>((fish <span class="sc">==</span><span class="st">"steelhead"</span>)  <span class="sc">~</span> <span class="st">"A"</span>, (fish <span class="sc">==</span><span class="st">"tuna"</span>) <span class="sc">~</span> <span class="st">"B"</span>, <span class="sc">!</span>(fish <span class="sc">==</span> <span class="st">"tuna"</span>) <span class="sc">&amp;</span> <span class="sc">!</span>(fish<span class="sc">==</span><span class="st">"steelhead"</span>) <span class="sc">~</span> <span class="st">"C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "A"</code></pre>
-</div>
-</div>
-</section>
-<section id="make-an-ocean" class="slide level2 scrollable">
-<h2>Make an ocean</h2>
-<ul>
-<li>notice how we build a function to make this ‘cleaner’</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># apply to all of our ocean</span></span>
-<span id="cb15-2"><a></a><span class="co"># start by making a function - this will be cleaner!</span></span>
-<span id="cb15-3"><a></a>classify_fish <span class="ot">=</span> <span class="cf">function</span>(fish) {</span>
-<span id="cb15-4"><a></a> class<span class="ot">=</span>  <span class="fu">case_when</span>((fish <span class="sc">==</span><span class="st">"steelhead"</span>)  <span class="sc">~</span> <span class="st">"A"</span>, (fish <span class="sc">==</span><span class="st">"tuna"</span>) <span class="sc">~</span> <span class="st">"B"</span>, <span class="sc">!</span>(fish <span class="sc">==</span> <span class="st">"tuna"</span>) <span class="sc">&amp;</span> <span class="sc">!</span>(fish<span class="sc">==</span><span class="st">"steelhead"</span>) <span class="sc">~</span> <span class="st">"C"</span>)</span>
-<span id="cb15-5"><a></a> <span class="fu">return</span>(class) }</span>
-<span id="cb15-6"><a></a></span>
-<span id="cb15-7"><a></a><span class="fu">classify_fish</span>(<span class="st">"steelhead"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "A"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">classify_fish</span>(<span class="st">"cod"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "C"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># apply to our ocean</span></span>
-<span id="cb19-2"><a></a>possible.fish <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"salmon"</span>,<span class="st">"steelhead"</span>,<span class="st">"shark"</span>,<span class="st">"tuna"</span>,<span class="st">"cod"</span>)</span>
-<span id="cb19-3"><a></a>catch2 <span class="ot">=</span> base<span class="sc">::</span><span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
-<span id="cb19-4"><a></a>catch2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "cod"       "tuna"      "salmon"    "steelhead" "shark"     "shark"    
- [7] "cod"       "tuna"      "steelhead" "tuna"      "cod"       "shark"    
-[13] "steelhead" "tuna"      "salmon"    "tuna"      "shark"     "shark"    
-[19] "shark"     "cod"      </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">classify_fish</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "C" "B" "C" "A" "C" "C" "C" "B" "A" "B" "C" "C" "A" "B" "C" "B" "C" "C" "C"
-[20] "C"</code></pre>
-</div>
-</div>
-</section>
-<section id="a-more-interesting-example" class="slide level2 scrollable">
-<h2>A more interesting example</h2>
-<p>Lets imagine that we are monitoring pollution in a lake, and we want to write a function that will let us know (flag) if risk associated with nutrient pollution are high, medium or low</p>
-<p>From ecological studies, we know that</p>
-<p><em>High Risk Conditions</em></p>
-<ul>
-<li>risk is high if water temperature is greater than a threshold for more than 5 days, and</li>
-<li>mean nutrient concentration is greater than a high threshold</li>
-</ul>
-<p><em>Medium Risk Conditions</em></p>
-<ul>
-<li>Risk is medium if water temperature is greater than a threshold for more than 5 days and</li>
-<li>mean nutrient concentration is greater than a medium threshold</li>
-</ul>
-<p><em>Everything else is low risk</em></p>
-</section>
-<section id="design-the-function" class="slide level2 scrollable">
-<h2>Design the function</h2>
-<p><strong>Inputs</strong>:</p>
-<ul>
-<li>nutrient concentration for at least 5 days</li>
-<li>temperature for at least 5 days</li>
-<li>thresholds for temperature and nutrient (with default values)</li>
-</ul>
-<p><strong>Output</strong>:</p>
-<ul>
-<li>Mean Nutrient Concentration</li>
-<li>Pollution Risk as “low”, “med” or “high”</li>
-</ul>
-<p>Take a look at classify_lake</p>
-<ul>
-<li>example of while</li>
-<li>example of flow control with if..else and case_when</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/classify_lake.R"</span>))</span>
-<span id="cb23-2"><a></a></span>
-<span id="cb23-3"><a></a><span class="co"># generate some data to try the function</span></span>
-<span id="cb23-4"><a></a>temperature <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">4</span>, <span class="at">max=</span><span class="dv">35</span>, <span class="at">n=</span><span class="dv">30</span>)</span>
-<span id="cb23-5"><a></a>nutrient <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">5</span>, <span class="at">max=</span><span class="dv">40</span>, <span class="at">n=</span><span class="dv">30</span>)</span>
-<span id="cb23-6"><a></a></span>
-<span id="cb23-7"><a></a><span class="co"># try it</span></span>
-<span id="cb23-8"><a></a>res<span class="ot">=</span><span class="fu">classify_lake</span>(<span class="at">temperature=</span>temperature, <span class="at">nutrient=</span>nutrient)</span>
-<span id="cb23-9"><a></a></span>
-<span id="cb23-10"><a></a><span class="co"># lets pick some numbers we know should give us a low value</span></span>
-<span id="cb23-11"><a></a>nutrient <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">5</span>, <span class="at">n=</span><span class="dv">30</span>)</span>
-<span id="cb23-12"><a></a><span class="fu">classify_lake</span>(<span class="at">temperature=</span>temperature, <span class="at">nutrient=</span>nutrient)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$risk
-[1] "low"
 
-$mean_nutrient
-[1] 2.295568</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># now try high</span></span>
-<span id="cb25-2"><a></a><span class="co"># use repeat to generate the same value multiple times</span></span>
-<span id="cb25-3"><a></a>nutrient <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">50</span>, <span class="at">times=</span><span class="dv">30</span>)</span>
-<span id="cb25-4"><a></a>temperature <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">25</span>, <span class="at">times=</span><span class="dv">30</span>)</span>
-<span id="cb25-5"><a></a><span class="fu">classify_lake</span>(<span class="at">temperature=</span>temperature, <span class="at">nutrient=</span>nutrient)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$risk
-[1] "high"
+<section id="the-art-of-testing" class="title-slide slide level1 center">
+<h1>The art of testing</h1>
+<p>It is good practice to create tests for functions (especially useful if you are going to have multiple functions and/or multiple developers)</p>
+<p>It make sure that the function returns what you think</p>
+<p>Recall when we designed contracts at the beginning of class, testing is a way to make sure the program is honoring the contract</p>
+<p>You need to be creative here - test for things you know will work (quick way to find bugs)</p>
+<p>Usually we want to run multiple tests..</p>
+</section>
 
-$mean_nutrient
-[1] 50</code></pre>
-</div>
-</div>
-</section>
-<section id="review." class="slide level2 scrollable">
-<h2><span style="color:orange"> Review.</span></h2>
-<ul>
-<li><p>We are using functions as a way to design modular programs (that might involve many functions that are linked together)</p></li>
-<li><p>We always start with clearly defininng our goal for the whole program and each piece (and diagramming this if needed for programs made of multiple functions)</p></li>
-<li><p>Always write your function in a text editor and then copy into R</p></li>
-<li><p>By convention we name files with functions in them by the name of the function.R e.g.&nbsp;<strong>power_gen_orig.R</strong></p></li>
-<li><p>you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory</p></li>
-<li><p>keep organized by keeping all functions in a subdirectory called <em>R</em></p></li>
-<li><p>Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”</p></li>
-</ul>
-</section>
-<section id="error-checking" class="slide level2 scrollable">
-<h2><span style="color:orange"> Error Checking</span></h2>
-<p>What will your function do if user gives you garbage data, imagine that you have a function that computes microbial growth rates with temperature</p>
-<ul>
-<li>Two options</li>
-</ul>
-<p><span style="color:skyblue">1. error-checking (nice)</span></p>
-<p>if temperature &lt; -100 or &gt; 100</p>
-<ul>
-<li>set results to NA</li>
-<li>or exit function with a warming</li>
-</ul>
-<p><span style="color:skyblue">2. assume user reads the contract :) return unrealistic values</span></p>
-<p>if input -999.0, will still try to output growth rate</p>
-<p>Error-checking is helpful if you are going to build a model made up of many functions- why?</p>
-</section>
-<section id="how-to-add-error-checking" class="slide level2 scrollable">
-<h2><span style="color:orange"> How to add error checking</span></h2>
-<p>Consider this example (I’m going to put the function definition inline for now so you can easily see it - later we will save to our R subdirectory for reuse)</p>
+<section id="testing-in-r-1" class="title-slide slide level1 center">
+<h1><span style="color:orange">Testing in R</span></h1>
+<p>A <strong>test</strong> runs an <strong>expectation</strong> function and returns a message</p>
+<p>Format</p>
+<p>test_that(description, series of expectations)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>power_gen <span class="ot">=</span> <span class="cf">function</span>(height, flow, <span class="at">rho=</span><span class="dv">1000</span>, <span class="at">g=</span><span class="fl">9.8</span>, <span class="at">Keff=</span><span class="fl">0.8</span>) {</span>
-<span id="cb27-2"><a></a>  <span class="co"># make sure inputs are positive and if not set as NA so result will be NA</span></span>
-<span id="cb27-3"><a></a>   <span class="cf">if</span> (height <span class="sc">&lt;</span> <span class="dv">0</span>) height<span class="ot">=</span><span class="cn">NA</span></span>
-<span id="cb27-4"><a></a>  </span>
-<span id="cb27-5"><a></a> <span class="co"># an alterative is to exit the function prematurely </span></span>
-<span id="cb27-6"><a></a>  <span class="cf">if</span> (flow <span class="sc">&lt;</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="st">"Flow cannot be less than 0"</span>)</span>
-<span id="cb27-7"><a></a>  <span class="co">#    return("Height cannot be less than 0")</span></span>
-<span id="cb27-8"><a></a>      </span>
-<span id="cb27-9"><a></a>  <span class="co"># calculate power</span></span>
-<span id="cb27-10"><a></a>    result <span class="ot">=</span> rho <span class="sc">*</span> height <span class="sc">*</span> flow <span class="sc">*</span> g <span class="sc">*</span> Keff</span>
-<span id="cb27-11"><a></a>  <span class="fu">return</span>(result)</span>
-<span id="cb27-12"><a></a>}</span>
-<span id="cb27-13"><a></a></span>
-<span id="cb27-14"><a></a><span class="fu">power_gen</span>(<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 47040</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">source</span>(<span class="st">"R/compute_NPV.R"</span>)</span>
+<span id="cb25-2"><a></a><span class="co"># lets do a simple test if profit is 0 , NPV should be 0</span></span>
+<span id="cb25-3"><a></a><span class="co"># if time is 0, NPV should be the original value</span></span>
+<span id="cb25-4"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_works"</span>, {</span>
+<span id="cb25-5"><a></a></span>
+<span id="cb25-6"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">0</span>,<span class="at">time=</span><span class="dv">100</span>,<span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">0</span>)</span>
+<span id="cb25-7"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">0</span>, <span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">100</span>)</span>
+<span id="cb25-8"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">power_gen</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA</code></pre>
+</section>
+
+<section id="using-tests" class="title-slide slide level1 center">
+<h1><span style="color:orange">Using tests </span></h1>
+<p>What we really want is to have tests that we <strong>always</strong> run, everytime we change something</p>
+<p>Store multiple test in a <em>name.R</em> file store these in these in the <em>tests/testthat</em> directory</p>
+<p>Two options</p>
+<p>To run all tests in a file, use <em>test_file</em></p>
+<p>To run all tests in a directory,use <em>test_dir</em> (you can also do this from Build menu)</p>
+<p>Goal: Make tests for each function in your package We will talk more about making packages next week</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># put your test in a file</span></span>
+<span id="cb26-2"><a></a><span class="fu">test_file</span>(<span class="st">"tests/test_compute_NPV.R"</span>)</span>
+<span id="cb26-3"><a></a></span>
+<span id="cb26-4"><a></a><span class="co"># consider another function</span></span>
+<span id="cb26-5"><a></a><span class="fu">source</span>(<span class="st">"R/spring_summary.R"</span>)</span>
+<span id="cb26-6"><a></a>spring_summary</span>
+<span id="cb26-7"><a></a></span>
+<span id="cb26-8"><a></a><span class="co"># to test this function we need to create some data</span></span>
+<span id="cb26-9"><a></a></span>
+<span id="cb26-10"><a></a></span>
+<span id="cb26-11"><a></a>clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
+<span id="cb26-12"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
+<span id="cb26-13"><a></a><span class="fu">spring_summary</span>(clim_data)</span>
+<span id="cb26-14"><a></a><span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))</span>
+<span id="cb26-15"><a></a></span>
+<span id="cb26-16"><a></a><span class="co"># we can add data to a test</span></span>
+<span id="cb26-17"><a></a><span class="co">#save this to a file called test_spring_summary</span></span>
+<span id="cb26-18"><a></a><span class="fu">test_that</span>(<span class="st">"spring_summary_works"</span> ,</span>
+<span id="cb26-19"><a></a>{clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
+<span id="cb26-20"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
+<span id="cb26-21"><a></a></span>
+<span id="cb26-22"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Pavg_spring,<span class="dv">0</span>)</span>
+<span id="cb26-23"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">4</span>)</span>
+<span id="cb26-24"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">2</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">2</span>)</span>
+<span id="cb26-25"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))<span class="sc">$</span>warmest_spring, <span class="dv">2001</span>)</span>
+<span id="cb26-26"><a></a></span>
+<span id="cb26-27"><a></a>})</span>
+<span id="cb26-28"><a></a></span>
+<span id="cb26-29"><a></a><span class="co"># see run a bunch of tests at once</span></span>
+<span id="cb26-30"><a></a><span class="fu">test_file</span>(<span class="st">"tests/test_spring_summary.R"</span>)</span>
+<span id="cb26-31"><a></a></span>
+<span id="cb26-32"><a></a><span class="co"># run all tests</span></span>
+<span id="cb26-33"><a></a><span class="fu">test_dir</span>(<span class="st">"tests"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">power_gen</span>(<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Flow cannot be less than 0"</code></pre>
-</div>
-</div>
+<p>A good source for more expectation code and ways to do testing</p>
+<p><a href="https://testthat.r-lib.org/reference/index.html">testing</a></p>
 
 
 </section>

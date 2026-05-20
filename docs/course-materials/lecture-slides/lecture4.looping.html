@@ -249,8 +249,8 @@ Naomi Tague
 <span id="cb3-13"><a></a><span class="co"># to quickly get information of flower purchases </span></span>
 <span id="cb3-14"><a></a><span class="fu">summary</span>(purchases<span class="sc">$</span>flower)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   daisy     lily marigold     rose    tulip 
-       2        4        5        4        5 </code></pre>
+<pre><code>   daisy     iris     lily marigold     rose    tulip 
+       2        4        3        2        4        5 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># sprintf creates a string %s mean use what ever is after the , to fill in a string</span></span>
 <span id="cb5-2"><a></a>plottitle<span class="ot">=</span><span class="fu">sprintf</span>(<span class="st">"The most frequently bought flower was %s</span><span class="sc">\n</span><span class="st"> There were %d bought"</span>, <span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">summary</span>(purchases<span class="sc">$</span>flower))), <span class="fu">max</span>(<span class="fu">summary</span>(purchases<span class="sc">$</span>flower)))</span>
@@ -399,11 +399,11 @@ Naomi Tague
 <span id="cb14-7"><a></a>}</span>
 <span id="cb14-8"><a></a>total<span class="sc">/</span>nvalues</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.2487</code></pre>
+<pre><code>[1] 10.18331</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">mean</span>(testnumbers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.2487</code></pre>
+<pre><code>[1] 10.18331</code></pre>
 </div>
 </div>
 </section>
@@ -418,14 +418,14 @@ Naomi Tague
 <span id="cb18-4"><a></a>income <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">1000</span>, <span class="at">max=</span><span class="dv">5000</span>, <span class="at">n=</span><span class="dv">10</span>)</span>
 <span id="cb18-5"><a></a>income</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 3866.551 4737.553 4322.462 2706.268 1039.794 3728.631 1233.698 2469.486
- [9] 2175.409 3494.957</code></pre>
+<pre><code> [1] 3909.843 3631.646 3321.554 3618.783 1989.052 4972.273 2873.058 4981.181
+ [9] 3415.581 4184.432</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>expenses <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">mean=</span><span class="dv">1500</span>, <span class="at">sd=</span><span class="dv">500</span>, <span class="at">n=</span><span class="dv">10</span>)</span>
 <span id="cb20-2"><a></a>expenses</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1652.4821 1141.6794 1060.5308 1235.8235  665.0781 1981.8102 1310.3527
- [8]  772.8861 1349.4351  829.7076</code></pre>
+<pre><code> [1] 1651.6457 1529.6825 2039.7734 1932.9845 1350.6899 1271.5777  942.2962
+ [8]  775.8855 1183.9620  520.0993</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># it is possible that this approach could generate negative expenses</span></span>
 <span id="cb22-2"><a></a>expenses <span class="ot">=</span> <span class="fu">ifelse</span>(expenses <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="dv">0</span>, expenses)</span>
@@ -440,13 +440,13 @@ Naomi Tague
 <span id="cb22-11"><a></a>account <span class="ot">=</span> account <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">net =</span> income<span class="sc">-</span>expenses)</span>
 <span id="cb22-12"><a></a><span class="fu">head</span>(account)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    income  expenses year       net
-1 3866.551 1652.4821 2000 2214.0687
-2 4737.553 1141.6794 2001 3595.8738
-3 4322.462 1060.5308 2002 3261.9309
-4 2706.268 1235.8235 2003 1470.4449
-5 1039.794  665.0781 2004  374.7156
-6 3728.631 1981.8102 2005 1746.8204</code></pre>
+<pre><code>    income expenses year       net
+1 3909.843 1651.646 2000 2258.1977
+2 3631.646 1529.682 2001 2101.9637
+3 3321.554 2039.773 2002 1281.7805
+4 3618.783 1932.985 2003 1685.7985
+5 1989.052 1350.690 2004  638.3616
+6 4972.273 1271.578 2005 3700.6956</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># lets plot</span></span>
 <span id="cb24-2"><a></a><span class="fu">ggplot</span>(account, <span class="fu">aes</span>(income, expenses))<span class="sc">+</span><span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -458,17 +458,17 @@ Naomi Tague
 <span id="cb25-5"><a></a>account<span class="sc">$</span>netloop<span class="ot">=</span><span class="cn">NA</span></span>
 <span id="cb25-6"><a></a>account</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     income  expenses year        net netloop
-1  3866.551 1652.4821 2000 2214.06873      NA
-2  4737.553 1141.6794 2001 3595.87379      NA
-3  4322.462 1060.5308 2002 3261.93092      NA
-4  2706.268 1235.8235 2003 1470.44494      NA
-5  1039.794  665.0781 2004  374.71564      NA
-6  3728.631 1981.8102 2005 1746.82039      NA
-7  1233.698 1310.3527 2006  -76.65474      NA
-8  2469.486  772.8861 2007 1696.60023      NA
-9  2175.409 1349.4351 2008  825.97393      NA
-10 3494.957  829.7076 2009 2665.24938      NA</code></pre>
+<pre><code>     income  expenses year       net netloop
+1  3909.843 1651.6457 2000 2258.1977      NA
+2  3631.646 1529.6825 2001 2101.9637      NA
+3  3321.554 2039.7734 2002 1281.7805      NA
+4  3618.783 1932.9845 2003 1685.7985      NA
+5  1989.052 1350.6899 2004  638.3616      NA
+6  4972.273 1271.5777 2005 3700.6956      NA
+7  2873.058  942.2962 2006 1930.7621      NA
+8  4981.181  775.8855 2007 4205.2959      NA
+9  3415.581 1183.9620 2008 2231.6186      NA
+10 4184.432  520.0993 2009 3664.3328      NA</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="co"># note that I can use any variable I want as a counter -</span></span>
 <span id="cb27-2"><a></a><span class="co"># notice how I'm now using n to access each row of the data frame</span></span>
@@ -479,13 +479,13 @@ Naomi Tague
 <span id="cb27-7"><a></a><span class="co"># as expected net and netloop are the same :)</span></span>
 <span id="cb27-8"><a></a><span class="fu">head</span>(account)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    income  expenses year       net   netloop
-1 3866.551 1652.4821 2000 2214.0687 2214.0687
-2 4737.553 1141.6794 2001 3595.8738 3595.8738
-3 4322.462 1060.5308 2002 3261.9309 3261.9309
-4 2706.268 1235.8235 2003 1470.4449 1470.4449
-5 1039.794  665.0781 2004  374.7156  374.7156
-6 3728.631 1981.8102 2005 1746.8204 1746.8204</code></pre>
+<pre><code>    income expenses year       net   netloop
+1 3909.843 1651.646 2000 2258.1977 2258.1977
+2 3631.646 1529.682 2001 2101.9637 2101.9637
+3 3321.554 2039.773 2002 1281.7805 1281.7805
+4 3618.783 1932.985 2003 1685.7985 1685.7985
+5 1989.052 1350.690 2004  638.3616  638.3616
+6 4972.273 1271.578 2005 3700.6956 3700.6956</code></pre>
 </div>
 </div>
 <img data-src="lecture4.looping_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
@@ -531,7 +531,7 @@ Naomi Tague
 <span id="cb30-11"><a></a></span>
 <span id="cb30-12"><a></a>nthresh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 66</code></pre>
+<pre><code>[1] 57</code></pre>
 </div>
 </div>
 </section>
@@ -569,7 +569,7 @@ Naomi Tague
 <span id="cb32-16"><a></a>num_hunting_speeds</span>
 <span id="cb32-17"><a></a>num_social_speeds</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 60</code></pre>
+<pre><code>[1] 46</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># other speeds are traveling, is remainder</span></span>
 <span id="cb34-2"><a></a>num_traveling_speeds <span class="ot">=</span> <span class="fu">length</span>(speeds) <span class="sc">-</span> num_hunting_speeds <span class="sc">-</span> num_social_speeds</span>
@@ -577,15 +577,15 @@ Naomi Tague
 <span id="cb34-4"><a></a><span class="co"># as a percent of recorded speeds</span></span>
 <span id="cb34-5"><a></a>num_hunting_speeds<span class="sc">/</span><span class="fu">length</span>(speeds)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 30.6</code></pre>
+<pre><code>[1] 32.6</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>num_social_speeds<span class="sc">/</span><span class="fu">length</span>(speeds)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
+<pre><code>[1] 9.2</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>num_traveling_speeds<span class="sc">/</span><span class="fu">length</span>(speeds)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 57.4</code></pre>
+<pre><code>[1] 58.2</code></pre>
 </div>
 </div>
 </section>

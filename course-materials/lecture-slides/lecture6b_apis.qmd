@@ -1,0 +1,572 @@
+---
+title: 'Getting Data from the Web - Working with APIs'
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r, setup, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(httr2)
+library(jsonlite)
+library(lubridate)
+```
+
+## [Agenda for Today]{style="color:orange"}
+
+- What is an API and why should we care?
+
+- How does the web actually work (just enough to be useful)
+
+- Making API requests in R
+
+- Parsing the data you get back
+
+- Examples: air quality data and streamflow
+
+## [Where Does Data Come From?]{style="color:orange"} {.scrollable}
+
+So far we have mostly worked with data that already lives in a file:
+
+```{r eval=FALSE}
+# reading in data from a file - what you know already
+data <- read_csv("my_data.csv")
+```
+
+Or we've generated test data
+
+A huge amount of scientific and environmental data lives **online** and is updated continuously
+
+- Current air quality at monitoring stations
+- Real-time streamflow from USGS gauges
+- Species occurrence records from citizen scientists
+- Weather observations and forecasts
+- Satellite-derived vegetation indices
+
+How do we access that data **directly from R**, without manually downloading files?
+
+## [Enter: The API]{style="color:orange"} {.scrollable}
+
+**API** = Application Programming Interface
+
+Think of it as a **standardized way to ask a remote computer for data**
+
+Analogy: imagine a restaurant
+
+- The **kitchen** is a database full of data (you can't walk in yourself)
+- The **menu** is the API — it lists exactly what you can ask for and how
+- The **waiter** is the HTTP request — carries your order and brings back the result
+- The **meal** is the data returned to you
+
+## [How It Works (Simplified)]{style="color:orange"} {.scrollable}
+
+You send a **request** to a URL — a web address with your question baked in
+
+Request format: Every API Request Has 4 Parts
+
+- protocol (communication method usually HTTPS)
+- base URL (where the API lives)
+- endpoint (specific data you want)
+- query parameters (details of your request, like location, date range, variables)
+
+*BUT* you don't build that yourself — you use R functions to construct the request
+
+The server reads your request and sends back data — usually in a format called **JSON**
+
+## [What is JSON?]{style="color:orange"} {.scrollable}
+
+**JSON** (JavaScript Object Notation) is how most APIs return data
+
+It looks a bit like an R list:
+
+```         
+{
+  "city": "Santa Barbara",
+  "temperature": 18.4,
+  "humidity": 72,
+  "conditions": "partly cloudy",
+  "wind": {
+    "speed": 3.2,
+    "direction": "WSW"
+  }
+}
+```
+
+R has great tools to turn this into a usable data frame
+
+## [API Keys]{style="color:orange"} {.scrollable}
+
+Many APIs require an **API key** — a unique identifier that:
+
+- Tells the server who you are
+- Lets providers track and limit usage
+- Is usually **free** for research/student use
+
+::: callout-warning
+**Never share your API key or put it directly in your code!**
+
+Store it as an environment variable instead:
+
+```{r eval=FALSE}
+# in your .Renviron file (run usethis::edit_r_environ() to open it):
+# OPENAQ_KEY=your_key_here
+
+# then in your R script, retrieve it safely:
+my_key <- Sys.getenv("OPENAQ_KEY")
+```
+:::
+
+Some APIs (including our examples) are **open** and need no key at all
+
+## [Our Toolkit]{style="color:orange"}
+
+We'll use two packages:
+
+- **`httr2`** — for sending HTTP requests (the "waiter")
+- **`jsonlite`** — for parsing JSON into R objects (decoding the "meal")
+
+```{r eval=FALSE}
+install.packages("httr2")
+install.packages("jsonlite")
+```
+
+```{r}
+library(httr2)
+library(jsonlite)
+library(tidyverse)
+```
+
+## Standard API Workflow {style="color:orange"}
+
+- **Find the API** — read the documentation to understand endpoints and parameters
+- **Build a request** — use *request* and *req_url_query*, functions to construct your query
+- **Send it** — *req_perform()* to get the response
+- **Parse the response** — usually *resp_body_json()* to turn JSON into an R, doesn't always work *resp_content_type()* can help
+
+# [Example 1: Air Quality]{style="color:orange"}
+
+Using the **Open-Meteo Air Quality API** — free, no key needed
+
+## [Open-Meteo Air Quality]{style="color:orange"} {.scrollable}
+
+Open-Meteo provides free weather and air quality data
+
+You could just use the website and download CSV file and upload into R...but API makes it easier
+
+## [Making the Request]{style="color:orange"} {.scrollable}
+
+- API endpoint: `https://air-quality-api.open-meteo.com/v1/air-quality`
+
+- API host site will provide information on structure of available data including variables names and formats, and how to specify parameters in the request URL
+
+- API documentation: [open-meteo.com/en/docs/air-quality-api](https://open-meteo.com/en/docs/air-quality-api)
+
+Let's get hourly PM2.5 data for Santa Barbara:
+
+```{r eval=TRUE}
+# Build the request URL
+req <- request("https://air-quality-api.open-meteo.com/v1/air-quality")  %>%
+  req_url_query(
+    latitude  = 34.42,
+    longitude = -119.70,
+    hourly    = "pm2_5", 
+    past_days = 3       # last 3 days of data
+  )
+
+# Send the request and parse the response
+resp <- req %>% req_perform()
+
+# what is this
+attributes(resp)
+str(resp)
+
+# Convert  to an R list
+# the simplifyVector to format NA's usually what you want
+aq_raw <- resp %>% resp_body_json(simplifyVector = TRUE)
+
+# What did we get back?
+names(aq_raw)
+# Step 2 — What's inside a key?
+str(aq_raw$hourly)          # compact overview of structure
+length(aq_raw$hourly$pm2_5) # how many values?
+```
+
+## [Parsing the Response]{style="color:orange"} {.scrollable}
+
+The response is a nested list — we need to pull out what we want:
+
+This will use POSIX - date time format that R can understand, and unlist to pull out the actual values from the list
+
+We will cover POSIX data format in a future class
+
+```{r eval=TRUE}
+# Extract what you need to a data frame
+aq_df <- data.frame(
+  # turn time into a POSIX data format
+  time  = as.POSIXct(unlist(aq_raw$hourly$time), format = "%Y-%m-%dT%H:%M"),
+  pm2_5 = unlist(aq_raw$hourly$pm2_5)
+)
+
+head(aq_df)
+```
+
+Now it's a regular R data frame
+
+## [Visualising PM2.5]{style="color:orange"} {.scrollable}
+
+```{r eval=TRUE, fig.height=4}
+ggplot(aq_df, aes(x = time, y = pm2_5)) +
+  geom_line(colour = "steelblue") +
+  geom_hline(yintercept = 12, linetype = "dashed", colour = "orange") +
+  annotate("text", x = min(aq_df$time), y = 13.5,
+           label = "EPA annual standard (12 µg/m³)",
+           hjust = 0, size = 3, colour = "orange") +
+  labs(
+    title = "PM2.5 Air Quality — Santa Barbara",
+    x     = "Time",
+    y     = "PM2.5 (µg/m³)"
+  ) +
+  theme_minimal()
+```
+
+## Modifying the request{style="color:orange"} {.scrollable}
+
+- add *ozone*
+- add estimates for next 6 days
+
+Both are specified in the API documentation so you can add them to the request URL
+
+```{r eval=TRUE}
+# Build the request URL
+req <- request("https://air-quality-api.open-meteo.com/v1/air-quality")  %>%
+  req_url_query(
+    latitude  = 34.42,
+    longitude = -119.70,
+    hourly    = "pm2_5,ozone",  # we can ask for multiple variables at once, you can't have spaces!!
+    past_days = 3,  # last 3 days of data
+    forecast_days = 6 # add forecase days
+  )
+
+# Send the request and parse the response
+resp <- req %>% req_perform()
+
+# what is this
+attributes(resp)
+
+
+# Convert  to an R list
+aq2_raw <- resp %>% resp_body_json(simplifyVector = TRUE)
+
+# What did we get back?
+names(aq2_raw)
+names(aq2_raw$hourly)
+# Step 2 — What's inside a key?
+names(aq_raw$hourly)          # compact overview of structure
+# how many values?
+length(aq2_raw$hourly$pm2_5) 
+length(aq2_raw$hourly$ozone)
+
+# compare with previous call - longer time
+# because we added forecast days
+length(aq_raw$hourly$pm2_5)
+```
+
+## [Parsing the Response]{style="color:orange"} {.scrollable}
+
+The response is a nested list — we need to pull out what we want:
+
+```{r eval=TRUE}
+# Extract what you need to a data frame
+aq_df2 <- data.frame(
+  # turn time into a POSIX data format
+  time  = as.POSIXct(unlist(aq2_raw$hourly$time), format = "%Y-%m-%dT%H:%M"),
+  pm2_5 = unlist(aq2_raw$hourly$pm2_5),
+  # add ozone to the data frame
+  ozone = unlist(aq2_raw$hourly$ozone)
+)
+
+head(aq_df2)
+```
+
+Now it's a regular R data frame
+
+## [Visualising PM2.5 vs ozone]{style="color:orange"} {.scrollable}
+
+```{r eval=TRUE, fig.height=4}
+ggplot(aq_df2, aes(x = ozone, y = pm2_5)) +
+  geom_point(colour = "steelblue") +
+  labs(
+    title = "Ozone vs PM2.5 Air Quality — Santa Barbara",
+    x     = "Ozone (µg/m³)",
+    y     = "PM2.5 (µg/m³)"
+  ) +
+  theme_minimal()
+```
+
+## Try on your own
+
+Repeat above and extract PM10 instead of PM2.5 Compute mean PM10, and PM2.5 for your data frame Add to CANVAS quiz
+
+## [Writing a Reusable API Function]{style="color:orange"}
+
+Connecting APIs to what we've been learning about modularity
+
+## [Why Write a Function?]{style="color:orange"} {.scrollable}
+
+What if we want air quality data for **many** locations?
+
+This is exactly the modularity pattern from last week — write a function with a clear **contract**:
+
+*Input*: latitude, longitude
+
+*Output*: a tidy data frame of hourly PM2.5 readings
+
+*Parameters*: number of past days
+
+```{r eval=TRUE}
+get_pm25 <- function(lat, lon, past_days = 7) {
+  
+  # Error checking
+  if (lat < -90 | lat > 90) {
+    return("Latitude must be between -90 and 90.")
+  }
+  if (lon < -180 | lon > 180) {
+    return("Longitude must be between -180 and 180.")
+  }                                                    # ← added this
+  
+  req <- request("https://air-quality-api.open-meteo.com/v1/air-quality") |>
+    req_url_query(
+      latitude  = lat,
+      longitude = lon,
+      hourly    = "pm2_5",
+      past_days = past_days
+    )
+  resp <- req |> req_perform()
+  raw  <- resp |> resp_body_json(simplifyVector = TRUE)
+  data.frame(
+    lat   = lat,
+    lon   = lon,
+    time  = as.POSIXct(unlist(raw$hourly$time), format = "%Y-%m-%dT%H:%M"),
+    pm2_5 = unlist(raw$hourly$pm2_5)
+  )
+}
+  
+```
+
+## [Using Our Function with Multiple Locations]{style="color:orange"} {.scrollable}
+
+Now we can use the iteration patterns from lecture 6:
+
+```{r eval=TRUE}
+# Define several CA coastal cities
+locations <- data.frame(
+  city = c("Santa Barbara", "Ventura", "San Luis Obispo"),
+  lat  = c(34.42,           34.27,     35.28),
+  lon  = c(-119.70,         -119.29,   -120.66)
+)
+
+# Use for loop to call our function for each row
+
+for (i in 1:nrow(locations)) {
+  city <- locations$city[i]
+  lat  <- locations$lat[i]
+  lon  <- locations$lon[i]
+  
+  aq_df <- get_pm25(lat, lon, past_days = 3)
+  aq_df$city <- city
+  
+  if (i == 1) {
+    aq_all <- aq_df
+  } else {
+    aq_all <- bind_rows(aq_all, aq_df)
+  }
+}
+
+
+# Daily averages by city
+aq_daily <- aq_all %>%
+  mutate(date = as.Date(time)) %>%
+  group_by(city, date) %>%
+  summarize(mean_pm2_5 = mean(pm2_5, na.rm = TRUE), .groups = "drop")
+
+ggplot(aq_daily, aes(x = date, y = mean_pm2_5, colour = city)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  labs(
+    title  = "Daily Mean PM2.5 — Central Coast Cities",
+    x      = "Date",
+    y      = "PM2.5 (µg/m³)",
+    colour = "City"
+  ) +
+  theme_minimal()
+```
+
+## Extra material: more complex APIs, and API workflow
+
+Here's another example from a different API and some additional on being a good API citizen
+
+## [Example 2: Streamflow]{style="color:orange"}
+
+Using the **USGS Water Services API** — the backbone of US hydrology data
+
+The structure of the data is more complex - you would probably need help from the documentation to figure out how to navigate the nested list to get to the actual values, and then parse those into a data frame
+
+AI-is good support for this
+
+But now you understand the basic work flow!
+
+## [USGS National Water Information System]{style="color:orange"} {.scrollable}
+
+USGS maintains thousands of stream gauges across the US
+
+API documentation: [waterservices.usgs.gov](https://waterservices.usgs.gov)
+
+No API key needed — this is public data
+
+You could again download data but API makes it easier
+
+```{r eval=TRUE}
+# Get daily streamflow for the Santa Ynez River at Solvang (site 11128500)
+req_usgs <- request("https://waterservices.usgs.gov/nwis/dv/") |>
+  req_url_query(
+    format        = "json",
+    sites         = "11128500",    # USGS site number
+    parameterCd   = "00060",       # parameter code for discharge (cfs)
+    startDT       = "2024-01-01",
+    endDT         = "2024-06-30"
+  )
+
+resp_usgs <- req_usgs |> req_perform()
+flow_raw  <- resp_usgs |> resp_body_json()
+
+# figure out what the data looks like
+# USGS returns a very nested JSON structure — we need to navigate it to get to the actual values
+# Website will tell you this
+# you can also try names, str, and length to explore the structure of the list
+names(flow_raw)  # top-level keys
+# Navigate the nested list to the actual values
+flow_data <- flow_raw$value$timeSeries[[1]]$values[[1]]$value
+
+# Parse into a data frame
+# will use sapply to pull out date and value from each entry in the list
+flow_df <- data.frame(
+  date        = as.Date(substr(sapply(flow_data, `[[`, "dateTime"), 1, 10)),
+  discharge   = as.numeric(sapply(flow_data, `[[`, "value"))
+)
+
+head(flow_df)
+```
+
+## [Visualising Streamflow]{style="color:orange"} {.scrollable}
+
+```{r eval=TRUE, fig.height=4}
+ggplot(flow_df, aes(x = date, y = discharge)) +
+  geom_area(fill = "steelblue", alpha = 0.4) +
+  geom_line(colour = "steelblue") +
+  scale_y_log10() +
+  labs(
+    title    = "Daily Streamflow — Santa Ynez River at Solvang",
+    subtitle = "USGS Site 11128500 | Jan–Jun 2024",
+    x        = "Date",
+    y        = "Discharge (ft³/s, log scale)"
+  ) +
+  theme_minimal()
+```
+
+## [Error Handling]{style="color:orange"} {.scrollable}
+
+APIs can fail — rate limits, bad parameters, network issues
+
+Good practice: handle errors gracefully in your function
+
+```{r eval=FALSE}
+get_pm25_safe <- function(lat, lon, past_days = 7) {
+  # tryCatch lets your program keep running if one request fails
+  tryCatch(
+    {
+      get_pm25(lat, lon, past_days)
+    },
+    error = function(e) {
+      message("Request failed for (", lat, ", ", lon, "): ", e$message)
+      return(NULL)   # return nothing for this location instead of crashing
+    }
+  )
+}
+
+# Now safe to loop over many locations
+for (i in 1:nrow(locations)) {
+  city <- locations$city[i]
+  lat  <- locations$lat[i]
+  lon  <- locations$lon[i]
+  
+  aq_df <- get_pm25_safe(lat, lon, past_days = 3)
+  aq_df$city <- city
+  
+  if (i == 1) {
+    aq_all <- aq_df
+  } else {
+    aq_all <- bind_rows(aq_all, aq_df)
+  }
+}
+
+
+```
+
+## [Being a Good API Citizen]{style="color:orange"} {.scrollable}
+
+APIs are a shared resource — follow these norms:
+
+- **Read the docs** — understand rate limits before looping over hundreds of requests
+- **Cache results** — save data locally so you don't re-request what you already have
+- **Throttle requests** — `req_throttle()` in httr2 request, or `Sys.sleep()` in loops
+- **Use your key responsibly** — don't share it or embed it in public code
+
+```{r eval=FALSE}
+# Simple caching pattern
+cache_file <- "data/aq_santa_barbara.csv"
+
+if (file.exists(cache_file)) {
+  aq_df <- read_csv(cache_file)
+} else {
+  aq_df <- get_pm25(34.42, -119.70, past_days = 30)
+  write_csv(aq_df, cache_file)
+}
+```
+
+## [Summary: The API Workflow]{style="color:orange"} {.scrollable}
+
+Every API interaction follows the same pattern:
+
+1.  **Find the API** — check docs, understand endpoints and parameters
+2.  **Build a request** — `request()` + `req_url_query()` + any auth headers
+3.  **Send it** — `req_perform()`
+4.  **Parse the response** — `resp_body_json()` → nested list → data frame
+5.  **Clean and analyse** — tidyverse tools you already know
+6.  **Wrap in a function** — for reuse and modularity
+
+This connects directly to what we've been building all semester:
+
+- Functions with clear contracts
+- Iteration over inputs (`map`, `for` loops)
+- Data wrangling with `tidyverse`
+
+## [Useful Environmental APIs to Explore]{style="color:orange"} {.scrollable}
+
+| API                    | What it provides            | Key needed?     |
+|------------------------|-----------------------------|-----------------|
+| Open-Meteo             | Weather & air quality       | No              |
+| USGS Water Services    | Streamflow, groundwater     | No              |
+| iNaturalist            | Species observations        | No (read)       |
+| NASA Earthdata / POWER | Climate, solar, precip      | Yes (free)      |
+| NOAA CDO               | Historical climate records  | Yes (free)      |
+| GBIF                   | Global biodiversity records | No              |
+| EPA AQS                | US air quality monitoring   | Yes (free)      |
+| OpenWeatherMap         | Current + forecast weather  | Yes (free tier) |
+
+All offer free tiers suitable for research and coursework

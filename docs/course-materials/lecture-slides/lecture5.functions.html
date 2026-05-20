@@ -265,11 +265,11 @@
 <span id="cb3-14"><a></a><span class="co"># note that the diversity index works 'backwards' - higher values are less diverse </span></span>
 <span id="cb3-15"><a></a><span class="fu">compute_diversity</span>(catch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.42</code></pre>
+<pre><code>[1] 0.34</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">compute_diversity</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.66</code></pre>
+<pre><code>[1] 0.82</code></pre>
 </div>
 </div>
 </section>
@@ -530,7 +530,7 @@ $overall_rating
 [1] 4
 
 $simpson
-[1] 0.58
+[1] 0.7
 
 $dominant
 [1] "cod"</code></pre>
@@ -541,7 +541,7 @@ $dominant
 [1] 4
 
 $simpson
-[1] 0.66
+[1] 0.48
 
 $dominant
 [1] "steelhead"</code></pre>
@@ -549,11 +549,11 @@ $dominant
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># just index</span></span>
 <span id="cb41-2"><a></a>d1<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.58</code></pre>
+<pre><code>[1] 0.7</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>d2<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.66</code></pre>
+<pre><code>[1] 0.48</code></pre>
 </div>
 </div>
 </section>
@@ -586,11 +586,11 @@ $dominant
 <span id="cb45-13"><a></a><span class="co"># just look at index</span></span>
 <span id="cb45-14"><a></a>d1<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2789474</code></pre>
+<pre><code>[1] 0.3526316</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>d2<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.265</code></pre>
+<pre><code>[1] 0.335</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="co"># run with instruction to plot</span></span>
 <span id="cb49-2"><a></a>d3 <span class="ot">=</span> <span class="fu">summarize_diversity</span>(testcatch, <span class="at">index=</span><span class="st">"B"</span>, <span class="at">showplot=</span><span class="cn">TRUE</span>)</span>
