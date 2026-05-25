@@ -170,6 +170,11 @@ You could just use the website and download CSV file and upload into R...but API
 Let's get hourly PM2.5 data for Santa Barbara:
 
 ```{r eval=TRUE}
+
+library(httr2)
+library(jsonlite)
+library(tidyverse)
+
 # Build the request URL
 req <- request("https://air-quality-api.open-meteo.com/v1/air-quality")  %>%
   req_url_query(

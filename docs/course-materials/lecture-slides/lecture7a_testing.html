@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <title>ESM 262 – Functions</title>
+  <title>ESM 262 – Testing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -196,56 +196,102 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Functions</h1>
+  <h1 class="title">Testing</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="testing" class="title-slide slide level1 center">
-<h1><span style="color:orange">Testing</span></h1>
+<section id="testing" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing</span></h2>
 <p>Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)</p>
 <ul>
 <li>Tests reduce bugs in new features</li>
 <li>Tests reduce bugs in existing features</li>
-<li>Tests defend agains other programmers</li>
+<li>Tests defend against other programmers</li>
 <li>Testing forces you to slow down and think</li>
 <li>Testing makes development faster</li>
 <li>Tests reduce fear</li>
 </ul>
-<p>Model developers now often use software to help them automate the testing process Re-uses tests - makes it efficient to repeat many tests as you develop and modify the code</p>
-<p>Particularly helpful when you have multiple modules (as in our mangrove example)</p>
-<p>This type of software is available for R, Python, C etc.</p>
+<p>Model developers now often use software to help them automate the testing process — reusing tests makes it efficient to repeat many checks as you develop and modify the code.</p>
+<p>Particularly helpful when you have multiple modules (as in our mangrove example).</p>
+<p>This type of software is available for R, Python, C, etc.</p>
 </section>
-
-<section id="testing-in-r" class="title-slide slide level1 center">
-<h1><span style="color:orange">Testing in R</span></h1>
-<p>In R, <em>testthat</em> library install and add this library</p>
-<p>If you are in the working directory where you’ve stored the files in a specific directory (e.g <strong>R</strong>) you can use <em>testthat</em> to automate testing of your functions</p>
+<section id="insightful-effective-testing" class="slide level2 scrollable">
+<h2><span style="color:orange">Insightful Effective Testing</span></h2>
+<p>Good tests require you to <em>think</em> through what you want your code to do</p>
 <ul>
-<li>need devtools and “testthat” libraries</li>
-<li>test_dir(“name”) :runs all tests in the “name” subdirectory (all files beginning with the word “test”</li>
-<li>test_file(“name”): runs all the tests in a file called “name”</li>
+<li>What should the output be for a given input?</li>
+<li>What should the output be for a range of inputs?</li>
+<li>What should the output be for edge cases (e.g.&nbsp;zero, negative, etc.)?</li>
 </ul>
-<p>Testing in R uses expectation</p>
-</section>
-
-<section id="expectation" class="title-slide slide level1 center">
-<h1><span style="color:orange">Expectation</span></h1>
-<p>tests you can use to make sure your code is working the way you think it should be working</p>
+<p>Requires you to come up with situations where you <em>know</em> what the answer should be — these make good tests.</p>
 <ul>
-<li>expect_true(condition)</li>
-<li>expect_equal(value, value)</li>
-<li>expect_match(string1, string2)</li>
-<li>expect_null(value)</li>
-<li>expect_length(object, n)</li>
+<li>Doesn’t have to be a specific number
+<ul>
+<li>Could be a range (e.g.&nbsp;NPV should be greater than zero)</li>
+<li>Relationship between variables (e.g.&nbsp;max should be greater than min)</li>
+<li>Relationship between outputs across inputs (e.g.&nbsp;if air temperature is always higher, snow should be less)</li>
+</ul></li>
+</ul>
+</section>
+<section id="insightful-effective-testing---more" class="slide level2 scrollable">
+<h2><span style="color:orange">Insightful Effective Testing - More</span></h2>
+<p>Good tests also require you to imagine the different ways your code might be used (and misused) and to test for those cases:</p>
+<ul>
+<li>Wrong input type, range, missing data, etc.</li>
+<li>Especially important when a function is part of a larger program</li>
+</ul>
+<p>Good tests also require creativity — think of things that will break your code and test for those:</p>
+<ul>
+<li>What happens with outlier data (e.g.&nbsp;negative rainfall, or 1000mm of rain in a day)?</li>
+</ul>
+</section>
+<section id="testing-in-the-ai-era" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing in the AI Era</span></h2>
+<p>Good testing becomes all the more important when AI is assisting you in writing code.</p>
+<p>AI can be a great help in writing code, but it can also introduce errors if you are not careful.</p>
+<p>AI can generate code that looks correct but may have hidden bugs or may not do exactly what you intended.</p>
+</section>
+<section id="formal-tests" class="slide level2 scrollable">
+<h2><span style="color:orange">Formal Tests</span></h2>
+<p>Most programming languages have ways for you to write tests and then run them automatically as part of a workflow:</p>
+<ul>
+<li>Makes testing much more efficient</li>
+<li>Allows you to run many tests at once</li>
+<li>Makes testing consistent across multiple developers</li>
+</ul>
+</section>
+<section id="testing-in-r" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing in R</span></h2>
+<p>In R, use the <em>testthat</em> library — install it and add it to your library calls.</p>
+<p>If you are in the working directory where your functions are stored in a specific subdirectory (e.g.&nbsp;<strong>R</strong>), you can use <em>testthat</em> to automate testing:</p>
+<ul>
+<li>Need <em>devtools</em> and <em>testthat</em> libraries</li>
+<li><em>test_dir(“name”)</em> — runs all tests in the “name” subdirectory (all files beginning with the word “test”)</li>
+<li><em>test_file(“name”)</em> — runs all the tests in a file called “name”</li>
+</ul>
+<p>Testing in R uses <strong>expectations</strong>.</p>
+</section>
+<section id="expectations" class="slide level2 scrollable">
+<h2><span style="color:orange">Expectations</span></h2>
+<p>Expectations are functions you use to verify that your code is working as intended:</p>
+<ul>
+<li><code>expect_true(condition)</code></li>
+<li><code>expect_equal(value, value)</code></li>
+<li><code>expect_match(string1, string2)</code></li>
+<li><code>expect_null(value)</code></li>
+<li><code>expect_length(object, n)</code></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># runs a test on a statement and checks to see if it is correct</span></span>
-<span id="cb1-2"><a></a><span class="co"># this one should work</span></span>
-<span id="cb1-3"><a></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
-<span id="cb1-4"><a></a><span class="co"># this one should 'throw and error'</span></span>
-<span id="cb1-5"><a></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(testthat)</span>
+<span id="cb1-4"><a></a><span class="co"># runs a test on a statement and checks to see if it is correct</span></span>
+<span id="cb1-5"><a></a><span class="co"># this one should work</span></span>
+<span id="cb1-6"><a></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb1-7"><a></a><span class="co"># this one should 'throw an error'</span></span>
+<span id="cb1-8"><a></a><span class="fu">expect_equal</span>(<span class="dv">2</span><span class="sc">+</span><span class="dv">5</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error:
 ! Expected `2 + 5` to equal 4.
@@ -254,7 +300,7 @@ Differences:
 [1] 7 - 4 == 3</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># we can also use expect_true</span></span>
-<span id="cb3-2"><a></a><span class="co"># works with variables two</span></span>
+<span id="cb3-2"><a></a><span class="co"># works with variables too</span></span>
 <span id="cb3-3"><a></a>a <span class="ot">=</span> <span class="dv">200</span></span>
 <span id="cb3-4"><a></a><span class="fu">expect_true</span>(a <span class="sc">&gt;</span> <span class="dv">2</span> )</span>
 <span id="cb3-5"><a></a>a <span class="ot">=</span> <span class="dv">0</span></span>
@@ -285,174 +331,240 @@ Actual text:
 ! Expected `a` to have length 11.
 Actual length: 10.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># We can use expectation with functions </span></span>
-<span id="cb9-2"><a></a><span class="co"># and test just to make sure they are working as expected</span></span>
-<span id="cb9-3"><a></a><span class="fu">source</span>(<span class="st">"R/compute_NPV.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in file(filename, "r", encoding = encoding): cannot open file
-'R/compute_NPV.R': No such file or directory</code></pre>
 </div>
+</section>
+<section id="testing-functions" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing Functions</span></h2>
+<p>We can use expectations with functions to make sure they are working as expected.</p>
+<p>Let’s try with <code>compute_NPV</code>.</p>
+<p>What do we know:</p>
+<ul>
+<li>If profit is zero, NPV should be zero</li>
+<li>If profit is positive, NPV should be positive</li>
+<li>If profit is negative, NPV should be negative</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb9-2"><a></a></span>
+<span id="cb9-3"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span>
+<span id="cb9-4"><a></a>futurevalue <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb9-5"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>),<span class="dv">0</span>)</span>
+<span id="cb9-6"><a></a>futurevalue <span class="ot">=</span> <span class="dv">100</span></span>
+<span id="cb9-7"><a></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb9-8"><a></a>futurevalue <span class="ot">=</span> <span class="sc">-</span><span class="dv">100</span></span>
+<span id="cb9-9"><a></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb9-10"><a></a></span>
+<span id="cb9-11"><a></a><span class="co"># lets introduce a bug in the function to see how tests catch it</span></span>
+<span id="cb9-12"><a></a>compute_NPV <span class="ot">=</span> <span class="cf">function</span>(value, time, discount) {</span>
+<span id="cb9-13"><a></a>  <span class="co"># use value to compute NPV</span></span>
+<span id="cb9-14"><a></a>  result <span class="ot">=</span> value <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">+</span> discount)<span class="sc">**</span>time</span>
+<span id="cb9-15"><a></a>  <span class="fu">return</span>(result)</span>
+<span id="cb9-16"><a></a>}</span>
+<span id="cb9-17"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">0</span>, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>),<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in `file()`:
-! cannot open the connection</code></pre>
+<pre><code>Error:
+! Expected `compute_NPV(value = 0, time = 10, discount = 0.01)` to equal 0.
+Differences:
+1/1 mismatches
+[1] -1.1 - 0 == -1.1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>futurevalue <span class="ot">=</span> <span class="dv">100</span></span>
-<span id="cb12-2"><a></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in `compute_NPV()`:
-! could not find function "compute_NPV"</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># lets reload the correct function</span></span>
+<span id="cb11-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>futurevalue <span class="ot">=</span> <span class="sc">-</span><span class="dv">100</span></span>
-<span id="cb14-2"><a></a><span class="fu">expect_true</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span>futurevalue, <span class="at">time=</span><span class="dv">10</span>, <span class="at">discount=</span><span class="fl">0.01</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in `compute_NPV()`:
-! could not find function "compute_NPV"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># what if function returns a list?</span></span>
-<span id="cb16-2"><a></a><span class="co"># we can use the buit in summary function to see how this works</span></span>
-<span id="cb16-3"><a></a>testdata <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">mean=</span><span class="dv">25</span>, <span class="at">sd=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">100</span>)</span>
-<span id="cb16-4"><a></a><span class="fu">summary</span>(testdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="testing-functions---syntax" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing Functions - Syntax</span></h2>
+<p>What if a function returns a list?</p>
+<ul>
+<li>You just access list items in your test</li>
+<li>You can also test for the names of the list items</li>
+<li>You can also test for relationships between list items (e.g.&nbsp;max should be greater than min)</li>
+</ul>
+<p>Example using the <em>summary</em> function in R — imagine we are testing whether it works correctly.</p>
+<p>Also explore generating test data for testing :)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># generate some test data</span></span>
+<span id="cb12-2"><a></a>testdata <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">mean=</span><span class="dv">25</span>, <span class="at">sd=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">100</span>)</span>
+<span id="cb12-3"><a></a><span class="fu">summary</span>(testdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  18.04   22.83   24.73   24.90   26.75   33.52 </code></pre>
+  18.68   23.20   24.68   24.82   26.38   33.86 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># it is actually returning a list, but what are the names?</span></span>
-<span id="cb18-2"><a></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># it is actually returning a named vector — what are the names?</span></span>
+<span id="cb14-2"><a></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Min."    "1st Qu." "Median"  "Mean"    "3rd Qu." "Max."   </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># now we can specify them</span></span>
-<span id="cb20-2"><a></a><span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># now we can access specific elements</span></span>
+<span id="cb16-2"><a></a><span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Max. 
-33.52 </code></pre>
+33.86 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># and use in a test to make sure this function works -...hmm</span></span>
-<span id="cb22-2"><a></a><span class="co"># well the max should be greater than the min right?</span></span>
-<span id="cb22-3"><a></a></span>
-<span id="cb22-4"><a></a><span class="fu">expect_true</span>((<span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]<span class="sc">-</span><span class="fu">summary</span>(testdata)[<span class="st">"Min."</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
-<span id="cb22-5"><a></a></span>
-<span id="cb22-6"><a></a><span class="co"># lets create a function with an error </span></span>
-<span id="cb22-7"><a></a><span class="co"># imagine total recharge of water to soil after rain (in mm) is daily rainfall minus interception (in mm with default of 1mm) lost on any given day</span></span>
-<span id="cb22-8"><a></a><span class="co"># lets define a function that returns total rainfall and total recharge given an input of</span></span>
-<span id="cb22-9"><a></a><span class="co"># rainfall and then a value for interception</span></span>
-<span id="cb22-10"><a></a></span>
-<span id="cb22-11"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interception_loss=</span><span class="dv">1</span>) {</span>
-<span id="cb22-12"><a></a>  </span>
-<span id="cb22-13"><a></a>  <span class="co"># easy part - get total rain</span></span>
-<span id="cb22-14"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
-<span id="cb22-15"><a></a>  </span>
-<span id="cb22-16"><a></a>  <span class="co"># interception happens everyday so we need a new vector</span></span>
-<span id="cb22-17"><a></a>  recharge <span class="ot">=</span> rain<span class="sc">-</span>interception_loss</span>
-<span id="cb22-18"><a></a>  totalrecharge <span class="ot">=</span> <span class="fu">sum</span>(recharge)</span>
-<span id="cb22-19"><a></a>  </span>
-<span id="cb22-20"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalrecharge=</span>totalrecharge))}</span>
-<span id="cb22-21"><a></a></span>
-<span id="cb22-22"><a></a></span>
-<span id="cb22-23"><a></a><span class="co"># lets do some simple test</span></span>
-<span id="cb22-24"><a></a><span class="co"># if it never rains for 730 days then both should be zero</span></span>
-<span id="cb22-25"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
-<span id="cb22-26"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrain, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
-<span id="cb22-27"><a></a><span class="co"># so far so good, now for recharge</span></span>
-<span id="cb22-28"><a></a></span>
-<span id="cb22-29"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
-<span id="cb22-30"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrecharge, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! Expected `x` to equal `expected`.
-Differences:
-1/1 mismatches
-[1] -730 - 0 == -730</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># what went wrong???</span></span>
-<span id="cb24-2"><a></a></span>
-<span id="cb24-3"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interception_loss=</span><span class="dv">1</span>) {</span>
-<span id="cb24-4"><a></a>  </span>
-<span id="cb24-5"><a></a>  <span class="co"># easy part - get total rain</span></span>
-<span id="cb24-6"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
-<span id="cb24-7"><a></a>  </span>
-<span id="cb24-8"><a></a>  <span class="co"># interception happens everyday so we need a new vector</span></span>
-<span id="cb24-9"><a></a>  recharge <span class="ot">=</span> rain<span class="sc">-</span>interception_loss</span>
-<span id="cb24-10"><a></a>  recharge <span class="ot">=</span> <span class="fu">pmax</span>(recharge,<span class="dv">0</span>)</span>
-<span id="cb24-11"><a></a>  totalrecharge <span class="ot">=</span> <span class="fu">sum</span>(recharge)</span>
-<span id="cb24-12"><a></a>  </span>
-<span id="cb24-13"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalrecharge=</span>totalrecharge))}</span>
-<span id="cb24-14"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
-<span id="cb24-15"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrecharge, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># and use in a test to make sure this function works</span></span>
+<span id="cb18-2"><a></a><span class="co"># the max should be greater than the min, right?</span></span>
+<span id="cb18-3"><a></a></span>
+<span id="cb18-4"><a></a><span class="fu">expect_true</span>((<span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>] <span class="sc">-</span> <span class="fu">summary</span>(testdata)[<span class="st">"Min."</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-
-<section id="the-art-of-testing" class="title-slide slide level1 center">
-<h1>The art of testing</h1>
-<p>It is good practice to create tests for functions (especially useful if you are going to have multiple functions and/or multiple developers)</p>
-<p>It make sure that the function returns what you think</p>
-<p>Recall when we designed contracts at the beginning of class, testing is a way to make sure the program is honoring the contract</p>
-<p>You need to be creative here - test for things you know will work (quick way to find bugs)</p>
-<p>Usually we want to run multiple tests..</p>
+<section id="quick-check" class="slide level2 scrollable">
+<h2>Quick Check</h2>
+<p>Write a test for the <em>mean</em> function in R:</p>
+<ul>
+<li>Generate test data</li>
+<li>Write a test using one of the <code>expect_*</code> functions</li>
+<li>Copy your answer to <em>Canvas Quiz</em></li>
+</ul>
 </section>
-
-<section id="testing-in-r-1" class="title-slide slide level1 center">
-<h1><span style="color:orange">Testing in R</span></h1>
-<p>A <strong>test</strong> runs an <strong>expectation</strong> function and returns a message</p>
-<p>Format</p>
-<p>test_that(description, series of expectations)</p>
+<section id="testing-functions---more-complex-example" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing Functions - More Complex Example</span></h2>
+<p>Let’s create a function.</p>
+<p><strong>Effective rainfall</strong> — estimates rainfall that actually reaches the soil after accounting for interception by vegetation.</p>
+<ul>
+<li>Inputs: daily rainfall (<code>rain</code>, mm), interception capacity (<code>interceptC</code>, mm)</li>
+<li>Outputs: <code>totalrain</code> (mm), <code>totalraineff</code> (mm)</li>
+</ul>
+<p>How it works: <span class="math inline">\(raineff = \sum(rainfall - interceptC)\)</span></p>
+</section>
+<section id="effective-rainfall-defining-and-testing" class="slide level2 scrollable">
+<h2><span style="color:orange">Effective Rainfall — Defining and Testing</span></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">source</span>(<span class="st">"R/compute_NPV.R"</span>)</span>
-<span id="cb25-2"><a></a><span class="co"># lets do a simple test if profit is 0 , NPV should be 0</span></span>
-<span id="cb25-3"><a></a><span class="co"># if time is 0, NPV should be the original value</span></span>
-<span id="cb25-4"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_works"</span>, {</span>
-<span id="cb25-5"><a></a></span>
-<span id="cb25-6"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">0</span>,<span class="at">time=</span><span class="dv">100</span>,<span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">0</span>)</span>
-<span id="cb25-7"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">0</span>, <span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">100</span>)</span>
-<span id="cb25-8"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interceptC=</span><span class="dv">1</span>) {</span>
+<span id="cb19-2"><a></a>  </span>
+<span id="cb19-3"><a></a>  <span class="co"># get total rain (in case user provides multiple days)</span></span>
+<span id="cb19-4"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
+<span id="cb19-5"><a></a>  </span>
+<span id="cb19-6"><a></a>  <span class="co"># interception happens every day so we need a new vector</span></span>
+<span id="cb19-7"><a></a>  raineff <span class="ot">=</span> rain<span class="sc">-</span>interceptC</span>
+<span id="cb19-8"><a></a>  totalraineff <span class="ot">=</span> <span class="fu">sum</span>(raineff)</span>
+<span id="cb19-9"><a></a>  </span>
+<span id="cb19-10"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalraineff=</span>totalraineff))}</span>
+<span id="cb19-11"><a></a></span>
+<span id="cb19-12"><a></a></span>
+<span id="cb19-13"><a></a><span class="co"># simple tests</span></span>
+<span id="cb19-14"><a></a><span class="co"># if it never rains for 730 days, both totalrain and totalraineff should be zero</span></span>
+<span id="cb19-15"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb19-16"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrain, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
+<span id="cb19-17"><a></a><span class="co"># so far so good, now for effective rainfall</span></span>
+<span id="cb19-18"><a></a></span>
+<span id="cb19-19"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb19-20"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalraineff, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
+<span id="cb19-21"><a></a></span>
+<span id="cb19-22"><a></a><span class="co"># what went wrong???</span></span>
+<span id="cb19-23"><a></a></span>
+<span id="cb19-24"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interceptC=</span><span class="dv">1</span>) {</span>
+<span id="cb19-25"><a></a>    </span>
+<span id="cb19-26"><a></a>  <span class="co"># easy part - get total rain</span></span>
+<span id="cb19-27"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
+<span id="cb19-28"><a></a>  </span>
+<span id="cb19-29"><a></a>  <span class="co"># interception happens every day so we need to apply it per day</span></span>
+<span id="cb19-30"><a></a>  <span class="co"># pmax ensures effective rain can't go below zero</span></span>
+<span id="cb19-31"><a></a>  raineff <span class="ot">=</span> rain<span class="sc">-</span>interceptC</span>
+<span id="cb19-32"><a></a>  raineff <span class="ot">=</span> <span class="fu">pmax</span>(raineff,<span class="dv">0</span>)</span>
+<span id="cb19-33"><a></a>  totalraineff <span class="ot">=</span> <span class="fu">sum</span>(raineff)</span>
+<span id="cb19-34"><a></a>  </span>
+<span id="cb19-35"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalraineff=</span>totalraineff))}</span>
+<span id="cb19-36"><a></a></span>
+<span id="cb19-37"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb19-38"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalraineff, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-
-<section id="using-tests" class="title-slide slide level1 center">
-<h1><span style="color:orange">Using tests </span></h1>
-<p>What we really want is to have tests that we <strong>always</strong> run, everytime we change something</p>
-<p>Store multiple test in a <em>name.R</em> file store these in these in the <em>tests/testthat</em> directory</p>
-<p>Two options</p>
-<p>To run all tests in a file, use <em>test_file</em></p>
-<p>To run all tests in a directory,use <em>test_dir</em> (you can also do this from Build menu)</p>
-<p>Goal: Make tests for each function in your package We will talk more about making packages next week</p>
+<section id="the-art-of-testing" class="slide level2 scrollable">
+<h2><span style="color:orange">The Art of Testing</span></h2>
+<p>It is good practice to create tests for <em>all</em> functions in a project — especially when there are multiple functions and/or multiple developers.</p>
+<p>Recall when we designed function contracts at the beginning of class — testing is a way to make sure the program is honoring the contract.</p>
+<p>You need to be creative:</p>
+<ul>
+<li>Test for things you know will work (quick way to find bugs)</li>
+<li>Usually we want to run multiple tests together</li>
+</ul>
+</section>
+<section id="testing-in-r-test_that" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing in R — test_that</span></h2>
+<p>A <strong>test</strong> runs one or more <strong>expectation</strong> functions and reports a message.</p>
+<p>Format: <code>test_that(description, { series of expectations })</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># put your test in a file</span></span>
-<span id="cb26-2"><a></a><span class="fu">test_file</span>(<span class="st">"tests/test_compute_NPV.R"</span>)</span>
-<span id="cb26-3"><a></a></span>
-<span id="cb26-4"><a></a><span class="co"># consider another function</span></span>
-<span id="cb26-5"><a></a><span class="fu">source</span>(<span class="st">"R/spring_summary.R"</span>)</span>
-<span id="cb26-6"><a></a>spring_summary</span>
-<span id="cb26-7"><a></a></span>
-<span id="cb26-8"><a></a><span class="co"># to test this function we need to create some data</span></span>
-<span id="cb26-9"><a></a></span>
-<span id="cb26-10"><a></a></span>
-<span id="cb26-11"><a></a>clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
-<span id="cb26-12"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
-<span id="cb26-13"><a></a><span class="fu">spring_summary</span>(clim_data)</span>
-<span id="cb26-14"><a></a><span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))</span>
-<span id="cb26-15"><a></a></span>
-<span id="cb26-16"><a></a><span class="co"># we can add data to a test</span></span>
-<span id="cb26-17"><a></a><span class="co">#save this to a file called test_spring_summary</span></span>
-<span id="cb26-18"><a></a><span class="fu">test_that</span>(<span class="st">"spring_summary_works"</span> ,</span>
-<span id="cb26-19"><a></a>{clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
-<span id="cb26-20"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
-<span id="cb26-21"><a></a></span>
-<span id="cb26-22"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Pavg_spring,<span class="dv">0</span>)</span>
-<span id="cb26-23"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">4</span>)</span>
-<span id="cb26-24"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">2</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">2</span>)</span>
-<span id="cb26-25"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))<span class="sc">$</span>warmest_spring, <span class="dv">2001</span>)</span>
-<span id="cb26-26"><a></a></span>
-<span id="cb26-27"><a></a>})</span>
-<span id="cb26-28"><a></a></span>
-<span id="cb26-29"><a></a><span class="co"># see run a bunch of tests at once</span></span>
-<span id="cb26-30"><a></a><span class="fu">test_file</span>(<span class="st">"tests/test_spring_summary.R"</span>)</span>
-<span id="cb26-31"><a></a></span>
-<span id="cb26-32"><a></a><span class="co"># run all tests</span></span>
-<span id="cb26-33"><a></a><span class="fu">test_dir</span>(<span class="st">"tests"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span>
+<span id="cb20-2"><a></a><span class="co"># if profit is 0, NPV should be 0</span></span>
+<span id="cb20-3"><a></a><span class="co"># if time is 0, NPV should equal the original value</span></span>
+<span id="cb20-4"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_works"</span>, {</span>
+<span id="cb20-5"><a></a></span>
+<span id="cb20-6"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">0</span>,<span class="at">time=</span><span class="dv">100</span>,<span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">0</span>)</span>
+<span id="cb20-7"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">0</span>, <span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">100</span>)</span>
+<span id="cb20-8"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>A good source for more expectation code and ways to do testing</p>
-<p><a href="https://testthat.r-lib.org/reference/index.html">testing</a></p>
+</section>
+<section id="using-tests" class="slide level2 scrollable">
+<h2><span style="color:orange">Using Tests</span></h2>
+<p>What we really want is to run tests <em>every time</em> we change something.</p>
+<p>Store multiple tests in a <em>name.R</em> file and keep those files in the <em>tests/testthat</em> directory.</p>
+<p>Two options:</p>
+<ul>
+<li>To run all tests in a file: <code>test_file("name")</code></li>
+<li>To run all tests in a directory: <code>test_dir("name")</code> (also available from the Build menu)</li>
+</ul>
+<p><strong>Goal:</strong> Write tests for each function in your package/project.</p>
+<p>Organization options:</p>
+<ul>
+<li>All tests for a given function in one file; all test files in one directory <em>(most common)</em></li>
+<li>All test types in one file <em>(less common)</em></li>
+</ul>
+</section>
+<section id="examples" class="slide level2 scrollable">
+<h2><span style="color:orange">Examples</span></h2>
+<ul>
+<li><code>test_compute_NPV.R</code> — tests for <code>compute_NPV</code> function</li>
+<li><code>test_spring_summary.R</code> — tests for <code>spring_summary</code> function</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># run tests in a file</span></span>
+<span id="cb21-2"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_compute_NPV.R"</span>))</span>
+<span id="cb21-3"><a></a></span>
+<span id="cb21-4"><a></a></span>
+<span id="cb21-5"><a></a><span class="co"># consider another function</span></span>
+<span id="cb21-6"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/spring_summary.R"</span>))</span>
+<span id="cb21-7"><a></a>spring_summary</span>
+<span id="cb21-8"><a></a></span>
+<span id="cb21-9"><a></a><span class="co"># to test this function we need to create some data</span></span>
+<span id="cb21-10"><a></a>clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
+<span id="cb21-11"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
+<span id="cb21-12"><a></a><span class="fu">spring_summary</span>(clim_data)</span>
+<span id="cb21-13"><a></a><span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))</span>
+<span id="cb21-14"><a></a></span>
+<span id="cb21-15"><a></a><span class="co"># we can embed data directly in a test</span></span>
+<span id="cb21-16"><a></a><span class="co"># save this to a file called test_spring_summary.R</span></span>
+<span id="cb21-17"><a></a><span class="fu">test_that</span>(<span class="st">"spring_summary_works"</span> ,</span>
+<span id="cb21-18"><a></a>{clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
+<span id="cb21-19"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
+<span id="cb21-20"><a></a></span>
+<span id="cb21-21"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Pavg_spring,<span class="dv">0</span>)</span>
+<span id="cb21-22"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">4</span>)</span>
+<span id="cb21-23"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">2</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">2</span>)</span>
+<span id="cb21-24"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))<span class="sc">$</span>warmest_spring, <span class="dv">2001</span>)</span>
+<span id="cb21-25"><a></a></span>
+<span id="cb21-26"><a></a>})</span>
+<span id="cb21-27"><a></a></span>
+<span id="cb21-28"><a></a><span class="co"># run a bunch of tests at once</span></span>
+<span id="cb21-29"><a></a></span>
+<span id="cb21-30"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_spring_summary.R"</span>))</span>
+<span id="cb21-31"><a></a></span>
+<span id="cb21-32"><a></a><span class="co"># run all tests</span></span>
+<span id="cb21-33"><a></a><span class="fu">test_dir</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="try-on-your-own" class="slide level2 scrollable">
+<h2>Try On Your Own</h2>
+<p>For one of the functions you have written:</p>
+<ul>
+<li>Write a test</li>
+<li>Run the test and make sure it works</li>
+<li>Add a <em>tests</em> directory to your project (Assignment 5)</li>
+<li>Add the test file there</li>
+<li>Run the test using <em>test_file</em> or <em>test_dir</em></li>
+</ul>
+<p><em>Remember to use git add and commit to save your work.</em></p>
+<p>More expectation functions and testing approaches:</p>
+<p><a href="https://testthat.r-lib.org/reference/index.html">testthat reference</a></p>
 
 
 </section>

@@ -347,20 +347,24 @@
 </ul>
 <p>Let’s get hourly PM2.5 data for Santa Barbara:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Build the request URL</span></span>
-<span id="cb6-2"><a></a>req <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://air-quality-api.open-meteo.com/v1/air-quality"</span>)  <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">req_url_query</span>(</span>
-<span id="cb6-4"><a></a>    <span class="at">latitude  =</span> <span class="fl">34.42</span>,</span>
-<span id="cb6-5"><a></a>    <span class="at">longitude =</span> <span class="sc">-</span><span class="fl">119.70</span>,</span>
-<span id="cb6-6"><a></a>    <span class="at">hourly    =</span> <span class="st">"pm2_5"</span>, </span>
-<span id="cb6-7"><a></a>    <span class="at">past_days =</span> <span class="dv">3</span>       <span class="co"># last 3 days of data</span></span>
-<span id="cb6-8"><a></a>  )</span>
-<span id="cb6-9"><a></a></span>
-<span id="cb6-10"><a></a><span class="co"># Send the request and parse the response</span></span>
-<span id="cb6-11"><a></a>resp <span class="ot">&lt;-</span> req <span class="sc">%&gt;%</span> <span class="fu">req_perform</span>()</span>
-<span id="cb6-12"><a></a></span>
-<span id="cb6-13"><a></a><span class="co"># what is this</span></span>
-<span id="cb6-14"><a></a><span class="fu">attributes</span>(resp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(httr2)</span>
+<span id="cb6-2"><a></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb6-3"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-4"><a></a></span>
+<span id="cb6-5"><a></a><span class="co"># Build the request URL</span></span>
+<span id="cb6-6"><a></a>req <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://air-quality-api.open-meteo.com/v1/air-quality"</span>)  <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a></a>  <span class="fu">req_url_query</span>(</span>
+<span id="cb6-8"><a></a>    <span class="at">latitude  =</span> <span class="fl">34.42</span>,</span>
+<span id="cb6-9"><a></a>    <span class="at">longitude =</span> <span class="sc">-</span><span class="fl">119.70</span>,</span>
+<span id="cb6-10"><a></a>    <span class="at">hourly    =</span> <span class="st">"pm2_5"</span>, </span>
+<span id="cb6-11"><a></a>    <span class="at">past_days =</span> <span class="dv">3</span>       <span class="co"># last 3 days of data</span></span>
+<span id="cb6-12"><a></a>  )</span>
+<span id="cb6-13"><a></a></span>
+<span id="cb6-14"><a></a><span class="co"># Send the request and parse the response</span></span>
+<span id="cb6-15"><a></a>resp <span class="ot">&lt;-</span> req <span class="sc">%&gt;%</span> <span class="fu">req_perform</span>()</span>
+<span id="cb6-16"><a></a></span>
+<span id="cb6-17"><a></a><span class="co"># what is this</span></span>
+<span id="cb6-18"><a></a><span class="fu">attributes</span>(resp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$names
 [1] "method"      "url"         "status_code" "headers"     "body"       
@@ -376,13 +380,13 @@ $class
  $ url        : chr "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=34.42&amp;longitude=-119.7&amp;hourly=pm2_5&amp;past_days=3"
  $ status_code: int 200
  $ headers    : &lt;httr2_headers&gt;
-  ..$ Date             : chr "Wed, 20 May 2026 22:23:36 GMT"
+  ..$ Date             : chr "Mon, 25 May 2026 18:46:30 GMT"
   ..$ Content-Type     : chr "application/json; charset=utf-8"
   ..$ Transfer-Encoding: chr "chunked"
   ..$ Connection       : chr "keep-alive"
   ..$ Content-Encoding : chr "deflate"
- $ body       : raw [1:4761] 7b 22 6c 61 ...
- $ timing     : Named num [1:6] 0 0.00258 0.17419 0.51829 0.69202 ...
+ $ body       : raw [1:4707] 7b 22 6c 61 ...
+ $ timing     : Named num [1:6] 0 0.0287 0.2026 0.5547 0.7281 ...
   ..- attr(*, "names")= chr [1:6] "redirect" "namelookup" "connect" "pretransfer" ...
  $ request    :List of 8
   ..$ url     : chr "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=34.42&amp;longitude=-119.7&amp;hourly=pm2_5&amp;past_days=3"
@@ -392,9 +396,9 @@ $class
   ..$ fields  : list()
   ..$ options : list()
   ..$ policies: list()
-  ..$ state   :&lt;environment: 0x7faea8ac1618&gt; 
+  ..$ state   :&lt;environment: 0x7fc07f606ea0&gt; 
   ..- attr(*, "class")= chr "httr2_request"
- $ cache      :&lt;environment: 0x7fae8a49f520&gt; 
+ $ cache      :&lt;environment: 0x7fc039012358&gt; 
  - attr(*, "class")= chr "httr2_response"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Convert  to an R list</span></span>
@@ -412,8 +416,8 @@ $class
 <span id="cb12-2"><a></a><span class="fu">str</span>(aq_raw<span class="sc">$</span>hourly)          <span class="co"># compact overview of structure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 2
- $ time : chr [1:192] "2026-05-17T00:00" "2026-05-17T01:00" "2026-05-17T02:00" "2026-05-17T03:00" ...
- $ pm2_5: num [1:192] 7 7.3 7.3 7.6 7.7 7.7 8.1 8.6 9.1 9.8 ...</code></pre>
+ $ time : chr [1:192] "2026-05-22T00:00" "2026-05-22T01:00" "2026-05-22T02:00" "2026-05-22T03:00" ...
+ $ pm2_5: num [1:192] 12.3 9.5 8.9 9.8 10.7 11.1 11.6 11.9 12.3 13 ...</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">length</span>(aq_raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5) <span class="co"># how many values?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -437,12 +441,12 @@ $class
 <span id="cb16-8"><a></a><span class="fu">head</span>(aq_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 time pm2_5
-1 2026-05-17 00:00:00   7.0
-2 2026-05-17 01:00:00   7.3
-3 2026-05-17 02:00:00   7.3
-4 2026-05-17 03:00:00   7.6
-5 2026-05-17 04:00:00   7.7
-6 2026-05-17 05:00:00   7.7</code></pre>
+1 2026-05-22 00:00:00  12.3
+2 2026-05-22 01:00:00   9.5
+3 2026-05-22 02:00:00   8.9
+4 2026-05-22 03:00:00   9.8
+5 2026-05-22 04:00:00  10.7
+6 2026-05-22 05:00:00  11.1</code></pre>
 </div>
 </div>
 <p>Now it’s a regular R data frame</p>
@@ -548,12 +552,12 @@ $class
 <span id="cb33-10"><a></a><span class="fu">head</span>(aq_df2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 time pm2_5 ozone
-1 2026-05-17 00:00:00   7.0    99
-2 2026-05-17 01:00:00   7.3    98
-3 2026-05-17 02:00:00   7.3    96
-4 2026-05-17 03:00:00   7.6    93
-5 2026-05-17 04:00:00   7.7    89
-6 2026-05-17 05:00:00   7.7    84</code></pre>
+1 2026-05-22 00:00:00  12.3   100
+2 2026-05-22 01:00:00   9.5    96
+3 2026-05-22 02:00:00   8.9    91
+4 2026-05-22 03:00:00   9.8    86
+5 2026-05-22 04:00:00  10.7    82
+6 2026-05-22 05:00:00  11.1    78</code></pre>
 </div>
 </div>
 <p>Now it’s a regular R data frame</p>

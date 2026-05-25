@@ -1,6 +1,5 @@
-
 ---
-title: 'Functions'
+title: 'Testing'
 format:
   revealjs:
     theme: solarized
@@ -12,7 +11,6 @@ execute:
   message: true
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo =TRUE)
 knitr::opts_chunk$set(error=TRUE)
@@ -21,69 +19,105 @@ library(tidyverse)
 library(devtools)
 library(roxygen2)
 library(testthat)
+library(here)
 
 
 ```
 
-
-
-# <span style="color:orange">Testing</span>
+## [Testing]{style="color:orange"} {.scrollable}
 
 Top 12 Reasons to Write Unit Tests - Burke and Coyner (Java programmers)
 
+- Tests reduce bugs in new features
+- Tests reduce bugs in existing features
+- Tests defend against other programmers
+- Testing forces you to slow down and think
+- Testing makes development faster
+- Tests reduce fear
 
+Model developers now often use software to help them automate the testing process — reusing tests makes it efficient to repeat many checks as you develop and modify the code.
 
-* Tests reduce bugs in new features
-* Tests reduce bugs in existing features
-* Tests defend agains other programmers
-* Testing forces you to slow down and think
-* Testing makes development faster
-* Tests reduce fear
+Particularly helpful when you have multiple modules (as in our mangrove example).
 
-Model developers now often use software to help them automate the testing process
-Re-uses tests - makes it efficient to repeat many tests as you develop and modify the code 
+This type of software is available for R, Python, C, etc.
 
-Particularly helpful when you have multiple modules (as in our mangrove example)
+## [Insightful Effective Testing]{style="color:orange"} {.scrollable}
 
-This type of software is available for R, Python, C etc.
+Good tests require you to *think* through what you want your code to do
 
-# <span style="color:orange">Testing in R</span>
+- What should the output be for a given input?
+- What should the output be for a range of inputs?
+- What should the output be for edge cases (e.g. zero, negative, etc.)?
 
-In R, *testthat* library 
-install and add this library
+Requires you to come up with situations where you *know* what the answer should be — these make good tests.
 
-If you are in the working directory where you’ve stored the files in a specific directory (e.g **R**) you can use *testthat* to automate testing of your functions
+- Doesn't have to be a specific number
+  - Could be a range (e.g. NPV should be greater than zero)
+  - Relationship between variables (e.g. max should be greater than min)
+  - Relationship between outputs across inputs (e.g. if air temperature is always higher, snow should be less)
 
-* need devtools and “testthat” libraries
-* test_dir(“name”) :runs all tests in the “name” subdirectory  (all files beginning with the word “test”
-* test_file(“name”): runs all  the tests in a file called “name”
+## [Insightful Effective Testing - More]{style="color:orange"} {.scrollable}
 
-Testing in R uses expectation
+Good tests also require you to imagine the different ways your code might be used (and misused) and to test for those cases:
 
-# <span style="color:orange">Expectation</span>
+- Wrong input type, range, missing data, etc.
+- Especially important when a function is part of a larger program
 
+Good tests also require creativity — think of things that will break your code and test for those:
 
-tests you can use to make sure your code is working the way you think it should be working
+- What happens with outlier data (e.g. negative rainfall, or 1000mm of rain in a day)?
 
-* expect_true(condition)
-* expect_equal(value, value)
-* expect_match(string1, string2)
-* expect_null(value)
-* expect_length(object, n)
+## [Testing in the AI Era]{style="color:orange"} {.scrollable}
 
+Good testing becomes all the more important when AI is assisting you in writing code.
 
+AI can be a great help in writing code, but it can also introduce errors if you are not careful.
+
+AI can generate code that looks correct but may have hidden bugs or may not do exactly what you intended.
+
+## [Formal Tests]{style="color:orange"} {.scrollable}
+
+Most programming languages have ways for you to write tests and then run them automatically as part of a workflow:
+
+- Makes testing much more efficient
+- Allows you to run many tests at once
+- Makes testing consistent across multiple developers
+
+## [Testing in R]{style="color:orange"} {.scrollable}
+
+In R, use the *testthat* library — install it and add it to your library calls.
+
+If you are in the working directory where your functions are stored in a specific subdirectory (e.g. **R**), you can use *testthat* to automate testing:
+
+- Need *devtools* and *testthat* libraries
+- *test_dir("name")* — runs all tests in the "name" subdirectory (all files beginning with the word "test")
+- *test_file("name")* — runs all the tests in a file called "name"
+
+Testing in R uses **expectations**.
+
+## [Expectations]{style="color:orange"} {.scrollable}
+
+Expectations are functions you use to verify that your code is working as intended:
+
+- `expect_true(condition)`
+- `expect_equal(value, value)`
+- `expect_match(string1, string2)`
+- `expect_null(value)`
+- `expect_length(object, n)`
 
 ```{r testingsimple, eval=TRUE, error=TRUE}
 
-
+library(tidyverse)
+library(devtools)
+library(testthat)
 # runs a test on a statement and checks to see if it is correct
 # this one should work
 expect_equal(2+2, 4)
-# this one should 'throw and error'
+# this one should 'throw an error'
 expect_equal(2+5, 4)
 
 # we can also use expect_true
-# works with variables two
+# works with variables too
 a = 200
 expect_true(a > 2 )
 a = 0
@@ -98,100 +132,158 @@ expect_match(fish1, fish2)
 a = seq(from=1, to=10)
 expect_length(a, 10)
 expect_length(a, 11)
+```
 
+## [Testing Functions]{style="color:orange"} {.scrollable}
 
-# We can use expectation with functions 
-# and test just to make sure they are working as expected
-source("R/compute_NPV.R")
+We can use expectations with functions to make sure they are working as expected.
+
+Let's try with `compute_NPV`.
+
+What do we know:
+
+- If profit is zero, NPV should be zero
+- If profit is positive, NPV should be positive
+- If profit is negative, NPV should be negative
+
+```{r, testfunctions}
+library(here)
+
+source(here("course-materials/R/compute_NPV.R"))
+futurevalue = 0
+expect_equal(compute_NPV(value=futurevalue, time=10, discount=0.01),0)
 futurevalue = 100
 expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
 futurevalue = -100
-expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) > 0)
+expect_true(compute_NPV(value=futurevalue, time=10, discount=0.01) < 0)
 
-# what if function returns a list?
-# we can use the buit in summary function to see how this works
+# lets introduce a bug in the function to see how tests catch it
+compute_NPV = function(value, time, discount) {
+  # use value to compute NPV
+  result = value - (1 + discount)**time
+  return(result)
+}
+expect_equal(compute_NPV(value=0, time=10, discount=0.01),0)
+
+# lets reload the correct function
+source(here("course-materials/R/compute_NPV.R"))
+```
+
+## [Testing Functions - Syntax]{style="color:orange"} {.scrollable}
+
+What if a function returns a list?
+
+- You just access list items in your test
+- You can also test for the names of the list items
+- You can also test for relationships between list items (e.g. max should be greater than min)
+
+Example using the *summary* function in R — imagine we are testing whether it works correctly.
+
+Also explore generating test data for testing :)
+
+```{r}
+
+# generate some test data
 testdata = rnorm(mean=25, sd=3, n=100)
 summary(testdata)
-# it is actually returning a list, but what are the names?
+# it is actually returning a named vector — what are the names?
 names(summary(testdata))
-# now we can specify them
+# now we can access specific elements
 summary(testdata)["Max."]
-# and use in a test to make sure this function works -...hmm
-# well the max should be greater than the min right?
+# and use in a test to make sure this function works
+# the max should be greater than the min, right?
 
-expect_true((summary(testdata)["Max."]-summary(testdata)["Min."]) > 0)
+expect_true((summary(testdata)["Max."] - summary(testdata)["Min."]) > 0)
+```
 
-# lets create a function with an error 
-# imagine total recharge of water to soil after rain (in mm) is daily rainfall minus interception (in mm with default of 1mm) lost on any given day
-# lets define a function that returns total rainfall and total recharge given an input of
-# rainfall and then a value for interception
+## Quick Check {.scrollable}
 
-effective_rain=function(rain, interception_loss=1) {
+Write a test for the *mean* function in R:
+
+- Generate test data
+- Write a test using one of the `expect_*` functions
+- Copy your answer to *Canvas Quiz*
+
+## [Testing Functions - More Complex Example]{style="color:orange"} {.scrollable}
+
+Let's create a function.
+
+**Effective rainfall** — estimates rainfall that actually reaches the soil after accounting for interception by vegetation.
+
+- Inputs: daily rainfall (`rain`, mm), interception capacity (`interceptC`, mm)
+- Outputs: `totalrain` (mm), `totalraineff` (mm)
+
+How it works: $raineff = \sum(rainfall - interceptC)$
+
+## [Effective Rainfall — Defining and Testing]{style="color:orange"} {.scrollable}
+
+```{r, eval=FALSE}
+
+
+effective_rain=function(rain, interceptC=1) {
   
-  # easy part - get total rain
+  # get total rain (in case user provides multiple days)
   totalrain = sum(rain)
   
-  # interception happens everyday so we need a new vector
-  recharge = rain-interception_loss
-  totalrecharge = sum(recharge)
+  # interception happens every day so we need a new vector
+  raineff = rain-interceptC
+  totalraineff = sum(raineff)
   
-  return(list(totalrain=totalrain, totalrecharge=totalrecharge))}
+  return(list(totalrain=totalrain, totalraineff=totalraineff))}
 
 
-# lets do some simple test
-# if it never rains for 730 days then both should be zero
+# simple tests
+# if it never rains for 730 days, both totalrain and totalraineff should be zero
 raindata = rep(0, times=730)
 expect_that(effective_rain(raindata)$totalrain, equals(0))
-# so far so good, now for recharge
+# so far so good, now for effective rainfall
 
 raindata = rep(0, times=730)
-expect_that(effective_rain(raindata)$totalrecharge, equals(0))
+expect_that(effective_rain(raindata)$totalraineff, equals(0))
 
 # what went wrong???
 
-effective_rain=function(rain, interception_loss=1) {
-  
+effective_rain=function(rain, interceptC=1) {
+    
   # easy part - get total rain
   totalrain = sum(rain)
   
-  # interception happens everyday so we need a new vector
-  recharge = rain-interception_loss
-  recharge = pmax(recharge,0)
-  totalrecharge = sum(recharge)
+  # interception happens every day so we need to apply it per day
+  # pmax ensures effective rain can't go below zero
+  raineff = rain-interceptC
+  raineff = pmax(raineff,0)
+  totalraineff = sum(raineff)
   
-  return(list(totalrain=totalrain, totalrecharge=totalrecharge))}
+  return(list(totalrain=totalrain, totalraineff=totalraineff))}
+
 raindata = rep(0, times=730)
-expect_that(effective_rain(raindata)$totalrecharge, equals(0))
+expect_that(effective_rain(raindata)$totalraineff, equals(0))
 
 ```
 
-# The art of testing
+## [The Art of Testing]{style="color:orange"} {.scrollable}
 
-It is good practice to create tests for functions (especially
-useful if you are going to have multiple functions and/or multiple developers)
+It is good practice to create tests for *all* functions in a project — especially when there are multiple functions and/or multiple developers.
 
-It make sure that the function returns what you think
+Recall when we designed function contracts at the beginning of class — testing is a way to make sure the program is honoring the contract.
 
-Recall when we designed contracts at the beginning of class, testing is a way to make sure the program is honoring the contract
+You need to be creative:
 
-You need to be creative here - test for things you know will work (quick way to find bugs)
+- Test for things you know will work (quick way to find bugs)
+- Usually we want to run multiple tests together
 
-Usually we want to run multiple tests..
+## [Testing in R — test_that]{style="color:orange"} {.scrollable}
 
-# <span style="color:orange">Testing in R</span>
+A **test** runs one or more **expectation** functions and reports a message.
 
+Format: `test_that(description, { series of expectations })`
 
-A **test** runs an **expectation** function and returns a message
-
-Format
-
-test_that(description, series of expectations)
 ```{r testing2, eval=FALSE}
 
 
-source("R/compute_NPV.R")
-# lets do a simple test if profit is 0 , NPV should be 0
-# if time is 0, NPV should be the original value
+source(here("course-materials/R/compute_NPV.R"))
+# if profit is 0, NPV should be 0
+# if time is 0, NPV should equal the original value
 test_that("compute_NPV_works", {
 
 expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
@@ -201,43 +293,49 @@ expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
 
 
 ```
-# <span style="color:orange">Using tests </span>
 
-What we really want is to have tests that we **always** run, everytime we change something
+## [Using Tests]{style="color:orange"} {.scrollable}
 
+What we really want is to run tests *every time* we change something.
 
-Store multiple test in a *name.R* file  store these in these in the *tests/testthat* directory
+Store multiple tests in a *name.R* file and keep those files in the *tests/testthat* directory.
 
-Two options
+Two options:
 
-To run all tests in a file, use *test_file*
+- To run all tests in a file: `test_file("name")`
+- To run all tests in a directory: `test_dir("name")` (also available from the Build menu)
 
+**Goal:** Write tests for each function in your package/project.
 
-To run all tests in a directory,use *test_dir*  (you can also do this from Build menu)
+Organization options:
 
+- All tests for a given function in one file; all test files in one directory *(most common)*
+- All test types in one file *(less common)*
 
-Goal: Make tests for each function in your package 
-We will talk more about making packages next week
+## [Examples]{style="color:orange"} {.scrollable}
+
+- `test_compute_NPV.R` — tests for `compute_NPV` function
+- `test_spring_summary.R` — tests for `spring_summary` function
+
 
 ```{r testing, eval=FALSE}
 
-# put your test in a file
-test_file("tests/test_compute_NPV.R")
+# run tests in a file
+test_file(here("course-materials/tests/test_compute_NPV.R"))
+
 
 # consider another function
-source("R/spring_summary.R")
+source(here("course-materials/R/spring_summary.R"))
 spring_summary
 
 # to test this function we need to create some data
-
-
 clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
                                  precip=rep(0, times=4), tavg=c(2,2,2,4)))
 spring_summary(clim_data)
 spring_summary(clim_data, spring_months=c(1,4))
 
-# we can add data to a test
-#save this to a file called test_spring_summary
+# we can embed data directly in a test
+# save this to a file called test_spring_summary.R
 test_that("spring_summary_works" ,
 {clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
                                  precip=rep(0, times=4), tavg=c(2,2,2,4)))
@@ -249,13 +347,26 @@ expect_equal(spring_summary(clim_data, spring_months=c(1:4))$warmest_spring, 200
 
 })
 
-# see run a bunch of tests at once
-test_file("tests/test_spring_summary.R")
+# run a bunch of tests at once
+
+test_file(here("course-materials/tests/test_spring_summary.R"))
 
 # run all tests
-test_dir("tests")
+test_dir(here("course-materials/tests"))
 ```
 
-A good source for more expectation code and ways to do testing
+## Try On Your Own {.scrollable}
 
-[testing](https://testthat.r-lib.org/reference/index.html)
+For one of the functions you have written:
+
+- Write a test
+- Run the test and make sure it works
+- Add a *tests* directory to your project (Assignment 5)
+- Add the test file there
+- Run the test using *test_file* or *test_dir*
+
+*Remember to use git add and commit to save your work.*
+
+More expectation functions and testing approaches:
+
+[testthat reference](https://testthat.r-lib.org/reference/index.html)
