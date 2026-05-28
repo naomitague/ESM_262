@@ -8,12 +8,12 @@ description: "Spring 2026"
 ## {{< fa person-chalkboard title="a person pointing at a chalkboard" >}} Lecture Materials {#lecture-materials}
 | Lecture Slides | Materials |
 |----------------|-----------|
-| [Lecture 7: Testing](lecture-slides/lecture7a_testing.qmd) | [Test test_compute_NPV](../downloadables/tests/test_compute_NPV.R) [R spring summary](../downloadables/R/spring_summary.R) [Test test_spring_summary](../downloadables/tests/test_spring_summary.R) |
-| [Lecture 7b](lecture-slides/placeholder.qmd) | |
+| [Lecture 7: Testing](lecture-slides/lecture7a_testing.qmd) | [Test test_compute_NPV](../downloadables/tests/test_compute_NPV.R)  [R compute_NPV](../downloadables/R/compute_NPV.R) [R spring summary](../downloadables/R/spring_summary.R) [Test test_spring_summary](../downloadables/tests/test_spring_summary.R) |
+| [Lecture 7b](lecture-slides/lecture7b_testdoc.qmd) | |
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
 
 | Assignment Type | Assignment Title                              | Date Assigned  | Date Due                   |
 |-----------------|-----------------------------------------------|----------------|----------------------------|
-| HW              | [Homework Assignment #6](assignments/HW6.qmd) | 28/5/2026      | 8/6/2026 , 11:59pm PT     |
+| HW              | [Homework Assignment #6](assignments/HW6.qmd) | 28/5/2026      | 11/6/2026 , 11:59pm PT     |
 : {.hover .bordered tbl-colwidths="[20,30,20,30]"} 

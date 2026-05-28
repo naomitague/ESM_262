@@ -336,7 +336,7 @@
 <span id="cb6-12"><a></a><span class="fu">summary</span>(speeds)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  10.47   22.83   28.57   30.04   34.68   80.81 </code></pre>
+  11.82   22.26   28.21   30.14   35.15   83.62 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">plot</span>(<span class="fu">density</span>(speeds), <span class="at">ylab=</span><span class="st">"Distribution of Speeds in (m/s)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -360,7 +360,7 @@
 <span id="cb11-4"><a></a><span class="fu">summary</span>(powerA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  19936   80663  134342  203776  216076 2208294 </code></pre>
+  23901   76407  130317  208881  223733 2438209 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># next car (row 2)</span></span>
 <span id="cb13-2"><a></a>powerB <span class="ot">=</span> <span class="fu">autopower</span>(<span class="at">V=</span>speeds, <span class="at">A =</span> possible_cars<span class="sc">$</span>area[<span class="dv">2</span>], <span class="at">m=</span>possible_cars<span class="sc">$</span>mass[<span class="dv">2</span>])</span>
@@ -368,7 +368,7 @@
 <span id="cb13-4"><a></a><span class="fu">summary</span>(powerB)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
- 106240  282354  398908  504722  556464 3621441 </code></pre>
+ 121804  272269  390667  512443  570527 3956190 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># next car (row 3)</span></span>
 <span id="cb15-2"><a></a>powerC <span class="ot">=</span> <span class="fu">autopower</span>(<span class="at">V=</span>speeds, <span class="at">A =</span> possible_cars<span class="sc">$</span>area[<span class="dv">3</span>], <span class="at">m=</span>possible_cars<span class="sc">$</span>mass[<span class="dv">3</span>])</span>
@@ -376,7 +376,7 @@
 <span id="cb15-4"><a></a><span class="fu">summary</span>(powerC)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  63031  174622  251935  327437  358800 2540896 </code></pre>
+  72533  168032  246410  332956  368431 2782384 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># we could put this together</span></span>
 <span id="cb17-2"><a></a>powerall1 <span class="ot">=</span> <span class="fu">cbind.data.frame</span>(powerA, powerB, powerC)</span>
@@ -392,12 +392,12 @@
 <pre><code># A tibble: 6 × 2
   car     power
   &lt;chr&gt;   &lt;dbl&gt;
-1 A     173516.
-2 B     476395.
-3 C     304229.
-4 A      19936.
-5 B     106240.
-6 C      63031.</code></pre>
+1 A      43672.
+2 B     186712.
+3 C     112991.
+4 A     112765.
+5 B     353947.
+6 C     221888.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># quick visualization</span></span>
 <span id="cb19-2"><a></a><span class="co"># lets save it so that we can compare</span></span>
@@ -468,13 +468,13 @@
 <span id="cb28-9"><a></a><span class="co"># now it looks like above</span></span>
 <span id="cb28-10"><a></a><span class="fu">head</span>(powerall2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         V1        V2        V3
-1 173515.66  476395.0 304229.11
-2  19936.33  106240.3  63031.48
-3 544281.36 1113768.9 746834.74
-4 146818.23  424084.9 268861.59
-5  58802.08  228389.9 139593.63
-6  26967.28  133079.6  79466.85</code></pre>
+<pre><code>         V1       V2        V3
+1  43672.29 186712.4 112991.00
+2 112765.35 353947.4 221888.09
+3  74456.57 267589.9 164980.34
+4  87696.71 298663.8 185317.63
+5  33641.84 155839.4  93586.89
+6 134000.94 398211.8 251467.92</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co"># we can add column names</span></span>
 <span id="cb30-2"><a></a><span class="fu">colnames</span>(powerall2)<span class="ot">=</span>possible_cars<span class="sc">$</span>name</span>
@@ -488,12 +488,12 @@
 <pre><code># A tibble: 6 × 2
   car     power
   &lt;chr&gt;   &lt;dbl&gt;
-1 A     173516.
-2 B     476395.
-3 C     304229.
-4 A      19936.
-5 B     106240.
-6 C      63031.</code></pre>
+1 A      43672.
+2 B     186712.
+3 C     112991.
+4 A     112765.
+5 B     353947.
+6 C     221888.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># quick visualization</span></span>
 <span id="cb32-2"><a></a>method2_plot <span class="ot">=</span> <span class="fu">ggplot</span>(powerallr2, <span class="fu">aes</span>(car,power, <span class="at">fill=</span>car))<span class="sc">+</span><span class="fu">geom_boxplot</span>()<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">"For Loop"</span>)</span>
@@ -503,24 +503,24 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>powerall1 <span class="sc">%&gt;%</span> <span class="fu">map</span>(mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$A
-[1] 203776
+[1] 208880.8
 
 $B
-[1] 504721.6
+[1] 512443.1
 
 $C
-[1] 327436.8</code></pre>
+[1] 332956.1</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>powerall2 <span class="sc">%&gt;%</span> <span class="fu">map</span>(mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$A
-[1] 203776
+[1] 208880.8
 
 $B
-[1] 504721.6
+[1] 512443.1
 
 $C
-[1] 327436.8</code></pre>
+[1] 332956.1</code></pre>
 </div>
 </div>
 <img data-src="lecture6.functionsandloops_files/figure-revealjs/withforloop-1.png" width="960" class="r-stretch"></section>
@@ -544,13 +544,13 @@ $C
 <span id="cb37-10"><a></a></span>
 <span id="cb37-11"><a></a><span class="fu">head</span>(powerall3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>          A         B         C
-1 173515.66  476395.0 304229.11
-2  19936.33  106240.3  63031.48
-3 544281.36 1113768.9 746834.74
-4 146818.23  424084.9 268861.59
-5  58802.08  228389.9 139593.63
-6  26967.28  133079.6  79466.85</code></pre>
+<pre><code>          A        B         C
+1  43672.29 186712.4 112991.00
+2 112765.35 353947.4 221888.09
+3  74456.57 267589.9 164980.34
+4  87696.71 298663.8 185317.63
+5  33641.84 155839.4  93586.89
+6 134000.94 398211.8 251467.92</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="co"># for plotting sometimes its useful to turn columns in to rows</span></span>
 <span id="cb39-2"><a></a>powerallr3 <span class="ot">=</span> powerall3 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="fu">everything</span>(), <span class="at">names_to=</span><span class="st">"car"</span>, <span class="at">values_to=</span><span class="st">"power"</span>)</span>
@@ -559,12 +559,12 @@ $C
 <pre><code># A tibble: 6 × 2
   car     power
   &lt;chr&gt;   &lt;dbl&gt;
-1 A     173516.
-2 B     476395.
-3 C     304229.
-4 A      19936.
-5 B     106240.
-6 C      63031.</code></pre>
+1 A      43672.
+2 B     186712.
+3 C     112991.
+4 A     112765.
+5 B     353947.
+6 C     221888.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># quick visualization</span></span>
 <span id="cb41-2"><a></a></span>
@@ -593,36 +593,36 @@ $C
 <pre><code># A tibble: 6 × 2
   car     power
   &lt;chr&gt;   &lt;dbl&gt;
-1 A     173516.
-2 B     476395.
-3 C     304229.
-4 A      19936.
-5 B     106240.
-6 C      63031.</code></pre>
+1 A      43672.
+2 B     186712.
+3 C     112991.
+4 A     112765.
+5 B     353947.
+6 C     221888.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">head</span>(powerallr1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   car     power
   &lt;chr&gt;   &lt;dbl&gt;
-1 A     173516.
-2 B     476395.
-3 C     304229.
-4 A      19936.
-5 B     106240.
-6 C      63031.</code></pre>
+1 A      43672.
+2 B     186712.
+3 C     112991.
+4 A     112765.
+5 B     353947.
+6 C     221888.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">head</span>(powerallr3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   car     power
   &lt;chr&gt;   &lt;dbl&gt;
-1 A     173516.
-2 B     476395.
-3 C     304229.
-4 A      19936.
-5 B     106240.
-6 C      63031.</code></pre>
+1 A      43672.
+2 B     186712.
+3 C     112991.
+4 A     112765.
+5 B     353947.
+6 C     221888.</code></pre>
 </div>
 </div>
 

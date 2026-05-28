@@ -1,0 +1,239 @@
+---
+title: 'Testing'
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+knitr::opts_chunk$set(error=TRUE)
+#knitr::opts_knit$set(root.dir = '/Users/christina/Desktop/Courses.local/ESM262n/docs/packages')
+library(tidyverse)
+library(devtools)
+library(roxygen2)
+library(testthat)
+library(here)
+
+
+```
+
+## [Insightful Effective Testing]{style="color:orange"} {.scrollable}
+
+Good tests require you to *think* through what you want your code to do
+
+- What should the output be for a given input?
+- What should the output be for a range of inputs?
+- What should the output be for edge cases (e.g. zero, negative, etc.)?
+
+Requires you to come up with situations where you *know* what the answer should be — these make good tests.
+
+*Especially important when a function is part of a larger program*
+
+
+
+
+
+
+## [Expectations]{style="color:orange"} {.scrollable}
+
+Testing in R uses **expectations**.
+
+Expectations are functions you use to verify that your code is working as intended:
+
+- `expect_true(condition)`
+- `expect_equal(value, value)`
+- `expect_match(string1, string2)`
+- `expect_null(value)`
+- `expect_length(object, n)`
+
+[testthat reference](https://testthat.r-lib.org/reference/index.html)
+
+## [Testing in R — test_that]{style="color:orange"} {.scrollable}
+
+A **test** runs one or more **expectation** functions and reports a message.
+
+You can also add test data to the test
+
+Format: `test_that(description, { series of expectations })`
+
+```{r testing2, eval=FALSE}
+
+
+source(here("course-materials/R/compute_NPV.R"))
+# if profit is 0, NPV should be 0
+# if time is 0, NPV should equal the original value
+
+# now lets write the test that combines several expectations
+test_that("compute_NPV_works", {
+
+expect_equal(compute_NPV(value=0,time=100,discount=0.1), 0)
+expect_equal(compute_NPV(value=100, time=0, discount=0.1), 100)
+})
+
+# now lets add a test that checks that NPV is higher for a shorter time period
+test_that("compute_NPV_time_works", {
+testdata = c(2, 4)
+short = compute_NPV(100, time=testdata[1], 0.01)
+long = compute_NPV(100, time = testdata[2], 0.01)
+expect_true(short > long)
+})
+```
+
+## [Testing Error Handling]{style="color:orange"} {.scrollable}
+
+- expect_warning — checks that a warning is returned
+- expect_error — checks that an error is returned
+- expect_message — checks that a message is returned
+- expect_condition - checks that a condition is returned (more general)
+
+* Warning versus Error*
+
+Use a *warning* when you want function to still return a result, but you want to alert the user that something MIGHT be wrong with the input.
+
+Use a *error* when you want the function to stop and not return a result if the input is wrong.
+in R, in the function
+
+  - use `stop()` to throw an error
+  - use `warning()` to throw a warning
+  - use `message()` to throw a message
+  
+I'll illustrate using a different version of compute_NPV
+ideally you'd fix in your *git* workflow and commit
+
+```{r testingwarning, eval=FALSE}
+
+
+source(here("course-materials/R/compute_NPV_witherror.R"))
+test_that("compute_NPV_haserrorchecking", {
+  # throw an error if time is negative 
+expect_error(compute_NPV(value=100, time=-1, discount=-0.1))  
+  # throw an error if discount is negative
+expect_error(compute_NPV(value=100, time=1, discount=-0.1))  
+  # throw a warning if value is negative
+ expect_warning(compute_NPV(value=-100, time=1, discount=0.1))
+})
+
+
+
+```
+## [Using Tests]{style="color:orange"} {.scrollable}
+
+What we really want is to run tests *every time* we change something.
+
+Store multiple tests in a *name.R* file and keep those files in the *tests/testthat* directory.
+
+Two options:
+- *test_dir("name")* — runs all tests in the "name" subdirectory (all files beginning with the word "test")
+- *test_file("name")* — runs all the tests in a file called "name"
+
+**Goal:** Write tests for each function in your package/project.
+
+Organization options:
+
+- All tests for a given function in one file; all test files in one directory *(most common)*
+- All test types in one file *(less common)*
+
+## [Examples]{style="color:orange"} {.scrollable}
+
+- `test_compute_NPV.R` — tests for `compute_NPV` function
+
+To illustrate we will try it on both versions so we can see what happens when we add error checking and when we don't have error checking.
+
+```{r testing, eval=FALSE}
+
+# source original function
+source(here("course-materials/R/compute_NPV.R"))
+# run tests in a file
+test_file(here("course-materials/tests/test_compute_NPV.R"))
+
+# now try  version with error checking
+source(here("course-materials/R/compute_NPV_witherror.R"))
+test_file(here("course-materials/tests/test_compute_NPV.R"))
+```
+
+
+## [Another Example]{style="color:orange"} {.scrollable}
+
+Lets consider a function designed to extract information of spring temperatures from  climate data. We want to make sure it is working correctly and that it is robust to different inputs.
+
+As always, define contract - inputs/outputs
+
+The function takes as input climate data with columns:
+
+- year
+- month
+- average temperature (tavg)
+
+*Optional Inputs*
+
+- *spring_months* (vector of integers) to include in spring; default 4,5,6  - s
+- *spring_out* (default FALSE) set to TRUE to output average spring  temperature for all years
+
+**Outputs**
+
+-*Tavg_spring*  mean_springT mean spring temperature (C) 
+
+-*Tmax_spring*    highest spring temperature  (C)  
+
+-*Tmin_spring*    lowest spring temperature  (C)  
+
+-*warmest_spring*   year with highest spring temperature  (year)  
+
+-*coldest_spring*   year with lowest spring temperature  (year)  
+
+
+OPTIONAL array of spring temperature means for all years 
+if *spring_out* set to TRUE
+
+In error checking, it will make use of *stopifnot* to check that the necessary columns are present in the data frame.
+
+
+```{r, springsummary}
+
+# source function
+source(here("course-materials/R/spring_summary.R"))
+spring_summary
+
+# to test this function we need to create some data, we can
+# add days and precip even though function doesn't use them to make sure it doesn't
+# mess up the function
+clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
+                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
+spring_summary(clim_data)
+spring_summary(clim_data, spring_months=c(1,4))
+
+# we can embed data directly in a test
+# save this to a file called test_spring_summary.R
+test_that("spring_summary_works" ,
+{clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
+                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
+expect_equal(spring_summary(clim_data, spring_months=4)$Tavg_spring, 4)
+expect_equal(spring_summary(clim_data, spring_months=2)$Tavg_spring, 2)
+expect_equal(spring_summary(clim_data, spring_months=c(1:4))$warmest_spring, 2001)
+
+})
+
+# run a bunch of tests at once
+
+test_file(here("course-materials/tests/test_spring_summary.R"))
+
+# run all tests
+test_dir(here("course-materials/tests"))
+```
+## [Quiz]{style="color:orange"} {.scrollable}
+
+What expectation function would you add to test_spring_summary to check whether is throws an error if one of the columns are missing?
+
+
+## Assignment 6 {.scrollable}
+
+Get started - Due Tuesday June 9th
+
+

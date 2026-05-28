@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <title>ESM 262 – Functions</title>
+  <title>ESM 262 – Testing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -196,343 +196,285 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Functions</h1>
+  <h1 class="title">Testing</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="modularity" class="slide level2">
-<h2>Modularity</h2>
+<section id="insightful-effective-testing" class="slide level2 scrollable">
+<h2><span style="color:orange">Insightful Effective Testing</span></h2>
+<p>Good tests require you to <em>think</em> through what you want your code to do</p>
 <ul>
-<li>Programs are made up of building blocks</li>
-<li>A <strong>main program</strong> is a central piece of code that controls the flow and <strong>calls</strong> functions/modules/building blocks</li>
+<li>What should the output be for a given input?</li>
+<li>What should the output be for a range of inputs?</li>
+<li>What should the output be for edge cases (e.g.&nbsp;zero, negative, etc.)?</li>
 </ul>
+<p>Requires you to come up with situations where you <em>know</em> what the answer should be — these make good tests.</p>
+<p><em>Especially important when a function is part of a larger program</em></p>
 </section>
-<section id="functions" class="slide level2 scrollable">
-<h2>Functions</h2>
-<p>All programming languages have ways to build modules that you can re-use</p>
-<p>Lego Blocks <img data-src="../../images/lego.png" alt="lego"></p>
-</section>
-<section id="modules---foundation-of-programming" class="slide level2">
-<h2>Modules - foundation of programming</h2>
-<p>Breaking tasks into functions is a central programming concept</p>
-<p>Often modules are called ‘functions’ but also called:</p>
+<section id="expectations" class="slide level2 scrollable">
+<h2><span style="color:orange">Expectations</span></h2>
+<p>Testing in R uses <strong>expectations</strong>.</p>
+<p>Expectations are functions you use to verify that your code is working as intended:</p>
 <ul>
-<li>‘procedures’</li>
-<li>‘subroutines’</li>
-<li>‘methods’</li>
-<li>‘subprograms’</li>
+<li><code>expect_true(condition)</code></li>
+<li><code>expect_equal(value, value)</code></li>
+<li><code>expect_match(string1, string2)</code></li>
+<li><code>expect_null(value)</code></li>
+<li><code>expect_length(object, n)</code></li>
 </ul>
-<p>You have already been using functions in R - e.g.&nbsp;mean(), lm(), plot() etc.</p>
+<p><a href="https://testthat.r-lib.org/reference/index.html">testthat reference</a></p>
 </section>
-<section id="designing-modularity" class="slide level2 scrollable">
-<h2>Designing Modularity</h2>
-<p>When you start a programming/data science project - you should begin by:</p>
-<ul>
-<li><p>Breaking your goal down into individual pieces</p></li>
-<li><p>Identifying instructions that can be reused</p></li>
-</ul>
-<p>EXAMPLES of Reuse</p>
-<ul>
-<li><p>an ecosystem model might re-use instructions for calculating how a living organism grows</p></li>
-<li><p>e.g you might have a function that calculates growth from temperature and moisture and you can re-use this function for different organisms or different species with slightly different inputs</p></li>
-<li><p>an accounting program might re-use instructions for computing net present value from interest rates, that you can re-use for different projects or different time periods</p></li>
-</ul>
-</section>
-<section id="designing-modularity-1" class="slide level2 scrollable">
-<h2>Designing Modularity</h2>
-<p>Modules often become ‘black boxes’ which hides detail that might make understanding the program overly complex</p>
-<p>Most languages have lots of black boxes already written AND most allow you to write your own</p>
-</section>
-<section id="inputs-and-parameters" class="slide level2 scrollable">
-<h2>Inputs and Parameters</h2>
-<p>All functions/modules have <strong>inputs/parameters</strong> and <strong>outputs</strong></p>
-<p><strong>Inputs</strong> — what you give the function - sometimes separated into input data and parameters</p>
-<ul>
-<li>input data = the “what” that is manipulated</li>
-<li>parameters determine “how” the manipulation is done</li>
-</ul>
-</section>
-<section id="an-example-of-a-r-black-box-function" class="slide level2">
-<h2>an example of a R black box function</h2>
-<p>-<strong>sort</strong></p>
-<ul>
-<li><p>inputs - data stream</p></li>
-<li><p>parameters - how to do the sort</p></li>
-</ul>
-</section>
-<section id="in-code" class="slide level2 scrollable">
-<h2>In code</h2>
+<section id="testing-in-r-test_that" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing in R — test_that</span></h2>
+<p>A <strong>test</strong> runs one or more <strong>expectation</strong> functions and reports a message.</p>
+<p>You can also add test data to the test</p>
+<p>Format: <code>test_that(description, { series of expectations })</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># look at a R data set on Biological Oxygen Demand over time</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># notice the use of data - R function that brings pre-stored datasets into the work space</span></span>
-<span id="cb1-4"><a></a><span class="fu">data</span>(BOD)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="co"># notice "help" and the information that it provides</span></span>
-<span id="cb1-7"><a></a><span class="fu">help</span>(BOD)</span>
-<span id="cb1-8"><a></a></span>
-<span id="cb1-9"><a></a><span class="co"># options for looking at data</span></span>
-<span id="cb1-10"><a></a><span class="fu">view</span>(BOD)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span>
+<span id="cb1-2"><a></a><span class="co"># if profit is 0, NPV should be 0</span></span>
+<span id="cb1-3"><a></a><span class="co"># if time is 0, NPV should equal the original value</span></span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a><span class="co"># now lets write the test that combines several expectations</span></span>
+<span id="cb1-6"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_works"</span>, {</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">0</span>,<span class="at">time=</span><span class="dv">100</span>,<span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">0</span>)</span>
+<span id="cb1-9"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">0</span>, <span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">100</span>)</span>
+<span id="cb1-10"><a></a>})</span>
 <span id="cb1-11"><a></a></span>
-<span id="cb1-12"><a></a><span class="fu">head</span>(BOD)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Time demand
-1    1    8.3
-2    2   10.3
-3    3   19.0
-4    4   16.0
-5    5   15.6
-6    7   19.8</code></pre>
+<span id="cb1-12"><a></a><span class="co"># now lets add a test that checks that NPV is higher for a shorter time period</span></span>
+<span id="cb1-13"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_time_works"</span>, {</span>
+<span id="cb1-14"><a></a>testdata <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb1-15"><a></a>short <span class="ot">=</span> <span class="fu">compute_NPV</span>(<span class="dv">100</span>, <span class="at">time=</span>testdata[<span class="dv">1</span>], <span class="fl">0.01</span>)</span>
+<span id="cb1-16"><a></a>long <span class="ot">=</span> <span class="fu">compute_NPV</span>(<span class="dv">100</span>, <span class="at">time =</span> testdata[<span class="dv">2</span>], <span class="fl">0.01</span>)</span>
+<span id="cb1-17"><a></a><span class="fu">expect_true</span>(short <span class="sc">&gt;</span> long)</span>
+<span id="cb1-18"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># example of a function - SORT</span></span>
-<span id="cb3-2"><a></a>result <span class="ot">=</span> <span class="fu">sort</span>(BOD[,<span class="st">"demand"</span>], <span class="at">decreasing=</span><span class="cn">TRUE</span>, <span class="at">method=</span><span class="st">"quick"</span>)</span>
-<span id="cb3-3"><a></a><span class="fu">head</span>(result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 19.8 19.0 16.0 15.6 10.3  8.3</code></pre>
-</div>
-</div>
-<p>In this example, parameters are <strong>decreasing</strong> and <strong>method</strong> - they determine how the function works</p>
-<p>**inputs* are the data to be sorted</p>
-<p><em>Note</em> sometimes parameters can influence how the functions works (e.g method)</p>
-<p>Output is a sorted version of demand saved to <code>result</code>.</p>
 </section>
-<section id="learn-to-think-in-terms-of-functionsmodules" class="slide level2">
-<h2>Learn to think in terms of functions/modules</h2>
+<section id="testing-error-handling" class="slide level2 scrollable">
+<h2><span style="color:orange">Testing Error Handling</span></h2>
 <ul>
-<li>break your tasks into boxes with inputs, parameters and output</li>
-<li><strong>WRITE DOWN</strong> the <em>contract</em> for each box/function</li>
+<li><p>expect_warning — checks that a warning is returned</p></li>
+<li><p>expect_error — checks that an error is returned</p></li>
+<li><p>expect_message — checks that a message is returned</p></li>
+<li><p>expect_condition - checks that a condition is returned (more general)</p></li>
+<li><p>Warning versus Error*</p></li>
 </ul>
-<p><strong>CONTRACT</strong></p>
+<p>Use a <em>warning</em> when you want function to still return a result, but you want to alert the user that something MIGHT be wrong with the input.</p>
+<p>Use a <em>error</em> when you want the function to stop and not return a result if the input is wrong. in R, in the function</p>
 <ul>
-<li>if the users gives you A, the function with return B</li>
-<li>specify A and B as precisely as you can (include units, time/space scale, parameters, options)</li>
+<li>use <code>stop()</code> to throw an error</li>
+<li>use <code>warning()</code> to throw a warning</li>
+<li>use <code>message()</code> to throw a message</li>
 </ul>
-</section>
-<section id="a-simple-function-example---just-one-module" class="slide level2">
-<h2>A simple function example - just one module</h2>
-<p>Lets say we want to develop a function that computes power generated from hydro-reservoir</p>
-<p>We know that power generation depends on water release rates and the potential energy (from the reservoir height)</p>
-</section>
-<section id="steps-in-program-design" class="slide level2 scrollable">
-<h2>STEPS IN Program Design</h2>
-<ol type="1">
-<li>Clearly define your goal in words/figures as precisely as possible what do you want your program to do
-<ul>
-<li>decide on modules</li>
-<li>for each module, write a contract - inputs, outputs and what it will do</li>
-</ul></li>
-<li>Implement AND document as you go</li>
-<li>Test</li>
-<li>Refine</li>
-<li>Test again</li>
-<li>Create User Documentation and Distribute</li>
-</ol>
-</section>
-<section id="a-simple-function-example" class="slide level2 scrollable">
-<h2>A simple function example</h2>
-<p>Power generation from a reservoir</p>
-
-<img data-src="../../images/reservoir_cm.jpeg" class="r-stretch quarto-figure-center"><p class="caption">hydro</p></section>
-<section id="first-describe-the-contract-in-natural-language" class="slide level2 scrollable">
-<h2>First describe the ‘contract’ in natural language</h2>
-<p>Contract</p>
-<p><em>Input</em>: Reservoir height (m) and flow rate (m3/sec) (these inputs could be a single value in time or a time series)</p>
-<p><em>Output</em>: Instantaneous power generation (W/s) (as a single value or value for each reservoir height and flow rate combination)</p>
-<p><em>Parameters</em>: <span class="math inline">\(K_{Eff}\)</span> reservoir efficiency, ρ (density of water), <span class="math inline">\(g\)</span> (acceleration due to gravity)</p>
-</section>
-<section id="what-the-function-will-do" class="slide level2 scrollable">
-<h2>What the function will do</h2>
-<p>compute power using the following equation - <em>body</em> of the function</p>
-<p><span class="math inline">\(P = ρ * h * r * g * K_{Eff}\)</span></p>
-<ul>
-<li><em>P</em> is Power in watts,</li>
-<li><em>ρ</em> is the density of water (~1000 <span class="math inline">\(kg/m^3\)</span>)</li>
-<li><em>h</em> is height in meters,</li>
-<li><em>r</em> is flow rate in cubic meters per second,</li>
-<li><em>g</em> is acceleration due to gravity of 9.8 <span class="math inline">\(m/s^2\)</span>,</li>
-<li><span class="math inline">\(K_{Eff}\)</span> is a coefficient of efficiency ranging from 0 to 1.</li>
-</ul>
-</section>
-<section id="implementing-functions-in-r" class="slide level2">
-<h2>Implementing Functions in R</h2>
-<p>Format for a basic function in R</p>
-<div style="color: green;">
-<p>Some lines at the top that start with #’</p>
-<p>these are documentation that describes inputs, outputs and what the function does</p>
-<p>we will talk more about that - for now just follow the example, below</p>
-</div>
-<p>This is followed by the function definition</p>
-<div style="color: orange;">
-<p><em>Function Name</em> = function(inputs, parameters) {</p>
-<p>body of the function (manipulation of inputs)</p>
-<p>return(values to return)</p>
-<p>}</p>
-</div>
-<p>You can name the function what every you want</p>
-<ul>
-<li>try not to use names of function in R, like <em>mean</em></li>
-<li>try to use descriptive names that give a hint about what the function does</li>
-</ul>
-</section>
-<section id="implementing-functions-in-r-1" class="slide level2 scrollable">
-<h2>Implementing Functions in R</h2>
-<p>In R, inputs and parameters are treated the same; but it is useful to think about them separately in designing the model - collectively they are sometimes referred to as arguments</p>
-<p>ALWAYS USE Meaningful names for your function, its parameters and variables calculated within the function</p>
-<ul>
-<li><p>In R we combine inputs/parameters in the first line of the function definition</p></li>
-<li><p>we can provide “default” values that can be overwritten by the function user</p></li>
-<li><p><span style="color:green">Body</span> includes all calculations between { and }</p>
-<ul>
-<li>anything inside the body is not “seen” by the workspace so you can re-use variables</li>
-</ul></li>
-<li><p><span style="color:green">return</span>* tells R what the output is</p></li>
-</ul>
-</section>
-<section id="heres-our-example" class="slide level2 scrollable">
-<h2>Here’s our example</h2>
-<p>You could just write you function in-line</p>
-<p>But best practice to keep as a file</p>
-</section>
-<section id="lets-look-at-both-options" class="slide level2">
-<h2>Lets look at both options</h2>
-<ol type="1">
-<li>open power_gen_orig.R and look at the function definition</li>
-<li>see how to read in the function from a file and use it</li>
-<li>see how to write the function in-line</li>
-</ol>
-<p>Before you start download the file <strong>power_gen_orig.R</strong> from the course github site and save it in a directory on your computer - you will need to change path to read it in</p>
+<p>I’ll illustrate using a different version of compute_NPV ideally you’d fix in your <em>git</em> workflow and commit</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(here)</span>
-<span id="cb5-2"><a></a><span class="co"># source the function from a file - make sure you are in the right working directory</span></span>
-<span id="cb5-3"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/power_gen_orig.R"</span>))</span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a><span class="co"># alternatively</span></span>
-<span id="cb5-6"><a></a><span class="co"># function definition in-line</span></span>
-<span id="cb5-7"><a></a>power_gen_orig <span class="ot">=</span> <span class="cf">function</span>(height, flow, <span class="at">rho=</span><span class="dv">1000</span>, <span class="at">g=</span><span class="fl">9.8</span>, <span class="at">Keff=</span><span class="fl">0.8</span>) {</span>
-<span id="cb5-8"><a></a>result <span class="ot">=</span> rho <span class="sc">*</span> height <span class="sc">*</span> flow <span class="sc">*</span> g <span class="sc">*</span> Keff</span>
-<span id="cb5-9"><a></a><span class="fu">return</span>(result)</span>
-<span id="cb5-10"><a></a>}</span>
-<span id="cb5-11"><a></a></span>
-<span id="cb5-12"><a></a><span class="co"># note that height and flow don't have default values, so you must provide them when you use the function, but the other parameters have default values that you can overwrite if you want to</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV_witherror.R"</span>))</span>
+<span id="cb2-2"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_haserrorchecking"</span>, {</span>
+<span id="cb2-3"><a></a>  <span class="co"># throw an error if time is negative </span></span>
+<span id="cb2-4"><a></a><span class="fu">expect_error</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="sc">-</span><span class="dv">1</span>, <span class="at">discount=</span><span class="sc">-</span><span class="fl">0.1</span>))  </span>
+<span id="cb2-5"><a></a>  <span class="co"># throw an error if discount is negative</span></span>
+<span id="cb2-6"><a></a><span class="fu">expect_error</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">1</span>, <span class="at">discount=</span><span class="sc">-</span><span class="fl">0.1</span>))  </span>
+<span id="cb2-7"><a></a>  <span class="co"># throw a warning if value is negative</span></span>
+<span id="cb2-8"><a></a> <span class="fu">expect_warning</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="sc">-</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">1</span>, <span class="at">discount=</span><span class="fl">0.1</span>))</span>
+<span id="cb2-9"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="using-the-function-and-scoping" class="slide level2 scrollable">
-<h2>Using the function and scoping</h2>
-<p>To use the function we substitute “actual” values for each argument (parameter and inputs) (unless there are defaults)</p>
-<p>R assumes that arguments are in the order that they were specified in the function definition - unless you refer to them by name</p>
+<section id="using-tests" class="slide level2 scrollable">
+<h2><span style="color:orange">Using Tests</span></h2>
+<p>What we really want is to run tests <em>every time</em> we change something.</p>
+<p>Store multiple tests in a <em>name.R</em> file and keep those files in the <em>tests/testthat</em> directory.</p>
+<p>Two options: - <em>test_dir(“name”)</em> — runs all tests in the “name” subdirectory (all files beginning with the word “test”) - <em>test_file(“name”)</em> — runs all the tests in a file called “name”</p>
+<p><strong>Goal:</strong> Write tests for each function in your package/project.</p>
+<p>Organization options:</p>
+<ul>
+<li>All tests for a given function in one file; all test files in one directory <em>(most common)</em></li>
+<li>All test types in one file <em>(less common)</em></li>
+</ul>
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
+<section id="examples" class="slide level2 scrollable">
+<h2><span style="color:orange">Examples</span></h2>
+<ul>
+<li><code>test_compute_NPV.R</code> — tests for <code>compute_NPV</code> function</li>
+</ul>
+<p>To illustrate we will try it on both versions so we can see what happens when we add error checking and when we don’t have error checking.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># This use of the function</span></span>
-<span id="cb6-2"><a></a><span class="fu">power_gen_orig</span>(<span class="dv">20</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># is the same as this</span></span>
-<span id="cb8-2"><a></a><span class="fu">power_gen_orig</span>(<span class="at">height=</span><span class="dv">20</span>, <span class="at">flow=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># or this; where we use the names of the arguments to specify which is which - this is especially useful if you have a lot of arguments and don't want to remember the order</span></span>
-<span id="cb10-2"><a></a><span class="fu">power_gen_orig</span>(<span class="at">flow=</span><span class="dv">1</span>, <span class="at">height=</span><span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># change the defaults</span></span>
-<span id="cb12-2"><a></a><span class="co"># what if efficiency is less</span></span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="fu">power_gen_orig</span>(<span class="dv">20</span>,<span class="dv">1</span>, <span class="at">Keff=</span><span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 39200</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># source original function</span></span>
+<span id="cb3-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span>
+<span id="cb3-3"><a></a><span class="co"># run tests in a file</span></span>
+<span id="cb3-4"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_compute_NPV.R"</span>))</span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a><span class="co"># now try  version with error checking</span></span>
+<span id="cb3-7"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV_witherror.R"</span>))</span>
+<span id="cb3-8"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_compute_NPV.R"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="scoping" class="slide level2 scrollable">
-<h2>Scoping</h2>
-<p>The scope of a variable in a program defines where it can be “seen” Variables defined inside a function cannot be “seen” outside of that function</p>
-<p>There are advantages to this - the interior of the building block does not ‘interfere’ with other parts of the program</p>
-</section>
-<section id="see-how-scoping-works" class="slide level2 scrollable">
-<h2>See how scoping works</h2>
+<section id="another-example" class="slide level2 scrollable">
+<h2><span style="color:orange">Another Example</span></h2>
+<p>Lets consider a function designed to extract information of spring temperatures from climate data. We want to make sure it is working correctly and that it is robust to different inputs.</p>
+<p>As always, define contract - inputs/outputs</p>
+<p>The function takes as input climate data with columns:</p>
+<ul>
+<li>year</li>
+<li>month</li>
+<li>average temperature (tavg)</li>
+</ul>
+<p><em>Optional Inputs</em></p>
+<ul>
+<li><em>spring_months</em> (vector of integers) to include in spring; default 4,5,6 - s</li>
+<li><em>spring_out</em> (default FALSE) set to TRUE to output average spring temperature for all years</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<p>-<em>Tavg_spring</em> mean_springT mean spring temperature (C)</p>
+<p>-<em>Tmax_spring</em> highest spring temperature (C)</p>
+<p>-<em>Tmin_spring</em> lowest spring temperature (C)</p>
+<p>-<em>warmest_spring</em> year with highest spring temperature (year)</p>
+<p>-<em>coldest_spring</em> year with lowest spring temperature (year)</p>
+<p>OPTIONAL array of spring temperature means for all years if <em>spring_out</em> set to TRUE</p>
+<p>In error checking, it will make use of <em>stopifnot</em> to check that the necessary columns are present in the data frame.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># specifying function name without () shows code</span></span>
-<span id="cb14-2"><a></a><span class="co"># try it for internal R functions</span></span>
-<span id="cb14-3"><a></a>power_gen_orig</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># source function</span></span>
+<span id="cb4-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/spring_summary.R"</span>))</span>
+<span id="cb4-3"><a></a>spring_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>function (height, flow, rho = 1000, g = 9.8, Keff = 0.8) 
+<pre><code>function (clim_data, spring_months = c(4:6), spring_out = FALSE) 
 {
-    result = rho * height * flow * g * Keff
-    return(result)
-}
-&lt;bytecode: 0x7fb716b1f488&gt;</code></pre>
+    library(tidyverse)
+    stopifnot(all(c("month", "year", "tavg") %in% names(clim_data)))
+    spring = clim_data %&gt;% subset(month %in% spring_months)
+    S_means_all = spring %&gt;% group_by(year) %&gt;% select(year, 
+        tavg) %&gt;% summarize_all(list(mean = mean))
+    S_extremes = spring %&gt;% summarize(Tavg_spring = mean(tavg), 
+        Tmax_spring = max(tavg), Tmin_spring = min(tavg), warmest_spring = year[which.max(tavg)], 
+        coldest_spring = year[which.min(tavg)])
+    if (spring_out) 
+        return(list(as.list(S_extremes), S_means_all[, c("year", 
+            "mean")]))
+    else return(as.list(S_extremes))
+}</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># use the function and save the results</span></span>
-<span id="cb16-2"><a></a>reservoir1 <span class="ot">=</span> <span class="fu">power_gen_orig</span>(<span class="at">height=</span><span class="dv">4</span>, <span class="at">flow=</span><span class="dv">7</span>)</span>
-<span id="cb16-3"><a></a></span>
-<span id="cb16-4"><a></a>reservoir2 <span class="ot">=</span> <span class="fu">power_gen_orig</span>(<span class="at">height=</span><span class="dv">4</span>, <span class="at">flow=</span><span class="dv">7</span>, <span class="at">Keff=</span><span class="fl">0.2</span>)</span>
-<span id="cb16-5"><a></a></span>
-<span id="cb16-6"><a></a><span class="co"># note that internal variables are not defined so these R statements will FAIL</span></span>
-<span id="cb16-7"><a></a><span class="co"># try it</span></span>
-<span id="cb16-8"><a></a>height</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># to test this function we need to create some data, we can</span></span>
+<span id="cb6-2"><a></a><span class="co"># add days and precip even though function doesn't use them to make sure it doesn't</span></span>
+<span id="cb6-3"><a></a><span class="co"># mess up the function</span></span>
+<span id="cb6-4"><a></a>clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
+<span id="cb6-5"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
+<span id="cb6-6"><a></a><span class="fu">spring_summary</span>(clim_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Tavg_spring
+[1] 4
+
+$Tmax_spring
+[1] 4
+
+$Tmin_spring
+[1] 4
+
+$warmest_spring
+[1] 2001
+
+$coldest_spring
+[1] 2001</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Tavg_spring
+[1] 3
+
+$Tmax_spring
+[1] 4
+
+$Tmin_spring
+[1] 2
+
+$warmest_spring
+[1] 2001
+
+$coldest_spring
+[1] 2000</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># we can embed data directly in a test</span></span>
+<span id="cb10-2"><a></a><span class="co"># save this to a file called test_spring_summary.R</span></span>
+<span id="cb10-3"><a></a><span class="fu">test_that</span>(<span class="st">"spring_summary_works"</span> ,</span>
+<span id="cb10-4"><a></a>{clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
+<span id="cb10-5"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
+<span id="cb10-6"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">4</span>)</span>
+<span id="cb10-7"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">2</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">2</span>)</span>
+<span id="cb10-8"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))<span class="sc">$</span>warmest_spring, <span class="dv">2001</span>)</span>
+<span id="cb10-9"><a></a></span>
+<span id="cb10-10"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Test passed with 3 successes 😀.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># run a bunch of tests at once</span></span>
+<span id="cb12-2"><a></a></span>
+<span id="cb12-3"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_spring_summary.R"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 0 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 1 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 3 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 4 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 5 ]</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># run all tests</span></span>
+<span id="cb14-2"><a></a><span class="fu">test_dir</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>✔ | F W  S  OK | Context
+
+⠏ |          0 | compute_NPV                                                    
+✖ | 2        2 | compute_NPV
+────────────────────────────────────────────────────────────────────────────────
+Error ('test_compute_NPV.R:5:1'): compute_NPV_works
+Error in `compute_NPV(100, time = testdata[1], 0.01)`: could not find function "compute_NPV"
+
+Error ('test_compute_NPV.R:18:3'): compute_NPV_haserrorchecking
+Error in `compute_NPV(value = -100, time = 1, discount = 0.1)`: could not find function "compute_NPV"
+Backtrace:
+    ▆
+ 1. └─testthat::expect_warning(...) at test_compute_NPV.R:18:3
+ 2.   └─testthat:::quasi_capture(...)
+ 3.     ├─testthat (local) .capture(...)
+ 4.     │ └─base::withCallingHandlers(...)
+ 5.     └─rlang::eval_bare(quo_get_expr(.quo), quo_get_env(.quo))
+────────────────────────────────────────────────────────────────────────────────
+
+⠏ |          0 | spring_summary                                                 
+✔ |          5 | spring_summary
+
+══ Results ═════════════════════════════════════════════════════════════════════
+── Failed tests ────────────────────────────────────────────────────────────────
+Error ('test_compute_NPV.R:5:1'): compute_NPV_works
+Error in `compute_NPV(100, time = testdata[1], 0.01)`: could not find function "compute_NPV"
+
+Error ('test_compute_NPV.R:18:3'): compute_NPV_haserrorchecking
+Error in `compute_NPV(value = -100, time = 1, discount = 0.1)`: could not find function "compute_NPV"
+Backtrace:
+    ▆
+ 1. └─testthat::expect_warning(...) at test_compute_NPV.R:18:3
+ 2.   └─testthat:::quasi_capture(...)
+ 3.     ├─testthat (local) .capture(...)
+ 4.     │ └─base::withCallingHandlers(...)
+ 5.     └─rlang::eval_bare(quo_get_expr(.quo), quo_get_env(.quo))
+
+[ FAIL 2 | WARN 0 | SKIP 0 | PASS 7 ]
+
+Don't worry, you'll get it.</code></pre>
+</div>
 <div class="cell-output cell-output-error">
 <pre><code>Error:
-! object 'height' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>Keff</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! object 'Keff' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! object 'results' not found</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># only the outputs are in your workspace</span></span>
-<span id="cb22-2"><a></a>reservoir1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 219520</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>reservoir2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 54880</code></pre>
+! Test failures.</code></pre>
 </div>
 </div>
 </section>
-<section id="some-conventions-helpful-later-in-the-course" class="slide level2 scrollable">
-<h2>Some conventions (helpful later in the course)</h2>
-<ul>
-<li><p>Always write your function in a text editor and then copy into R</p></li>
-<li><p>By convention we name files with functions in them by the name of the function.R e.g.&nbsp;<strong>power_gen_orig.R</strong></p></li>
-<li><p>you can have R read a text file by source(“power_gen.R”) - make sure you are in the right working directory</p></li>
-<li><p>keep organized by keeping all functions in a subdirectory called <em>R</em></p></li>
-</ul>
+<section id="quiz" class="slide level2 scrollable">
+<h2><span style="color:orange">Quiz</span></h2>
+<p>What expectation function would you add to test_spring_summary to check whether is throws an error if one of the columns are missing?</p>
 </section>
-<section id="more-best-practices" class="slide level2 scrollable">
-<h2>More best practices</h2>
-<ul>
-<li><p>Include comments both in the body of the function and at the top - there is a particular style of adding comments to the top of the function that we will use later to generate automatic documentation - so useful to start to follow it, more or less, now - see <strong>power_gen_orig.R</strong> for the style</p></li>
-<li><p>Eventually we will want our function to be part of a package (a library of many functions) - to create a package you must use this convention (name.R) place all function in a directory called “R”</p></li>
-</ul>
-</section>
-<section id="reading-in-functions" class="slide level2">
-<h2>reading in functions</h2>
-<p>Example - source and use function</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(here)</span>
-<span id="cb26-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/power_gen_orig.R"</span>))</span>
-<span id="cb26-3"><a></a><span class="fu">power_gen_orig</span>(<span class="dv">20</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 156800</code></pre>
-</div>
-</div>
-</section>
-<section id="practicing---assignment-4" class="slide level2">
-<h2>Practicing - Assignment 4</h2>
-<p>Complete Assignment 4! before Thursday’s Lecture</p>
+<section id="assignment-6" class="slide level2 scrollable">
+<h2>Assignment 6</h2>
+<p>Get started - Due Tuesday June 9th</p>
 
 
 </section>

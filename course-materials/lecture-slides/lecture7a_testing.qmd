@@ -144,7 +144,7 @@ What do we know:
 
 - If profit is zero, NPV should be zero
 - If profit is positive, NPV should be positive
-- If profit is negative, NPV should be negative
+
 
 ```{r, testfunctions}
 library(here)
@@ -166,7 +166,7 @@ compute_NPV = function(value, time, discount) {
 expect_equal(compute_NPV(value=0, time=10, discount=0.01),0)
 
 # lets reload the correct function
-source(here("course-materials/R/compute_NPV.R"))
+ex
 ```
 
 ## [Testing Functions - Syntax]{style="color:orange"} {.scrollable}
@@ -317,41 +317,12 @@ Organization options:
 - `test_compute_NPV.R` — tests for `compute_NPV` function
 - `test_spring_summary.R` — tests for `spring_summary` function
 
-
 ```{r testing, eval=FALSE}
 
 # run tests in a file
 test_file(here("course-materials/tests/test_compute_NPV.R"))
 
-
-# consider another function
-source(here("course-materials/R/spring_summary.R"))
-spring_summary
-
-# to test this function we need to create some data
-clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
-                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
-spring_summary(clim_data)
-spring_summary(clim_data, spring_months=c(1,4))
-
-# we can embed data directly in a test
-# save this to a file called test_spring_summary.R
-test_that("spring_summary_works" ,
-{clim_data = as.data.frame(cbind(month=c(1:4), day=rep(1, times=4), year=c(2000,2000,2001,2001), 
-                                 precip=rep(0, times=4), tavg=c(2,2,2,4)))
-
-expect_equal(spring_summary(clim_data, spring_months=4)$Pavg_spring,0)
-expect_equal(spring_summary(clim_data, spring_months=4)$Tavg_spring, 4)
-expect_equal(spring_summary(clim_data, spring_months=2)$Tavg_spring, 2)
-expect_equal(spring_summary(clim_data, spring_months=c(1:4))$warmest_spring, 2001)
-
-})
-
-# run a bunch of tests at once
-
-test_file(here("course-materials/tests/test_spring_summary.R"))
-
-# run all tests
+# run all tests in a directory 
 test_dir(here("course-materials/tests"))
 ```
 

@@ -6,4 +6,25 @@ format:  html
 
 ## Testing and Documentation
 
-TO BE ANNOUNCED
+With your same partner from Assignment #5, you will write tests and documentation for the functions you created in Assignment #5.
+
+*Tests*
+
+Create tests for each of your functions using the `testthat` package. You should have at least 2 tests for each function,  You can use the `expect_*` functions to create your tests. (30 pts)
+
+Add the tests to a new file in the `tests` folder. The file should be named `test_<function_name>.R`. For example, if you have a function called `compute_NPV`, your test file should be named `test_compute_NPV.R`. (20 pts)
+
+
+
+*Documentation*
+
+For at least one of your functions, add formal documentation using *roxygen* style comments. You can use the `roxygen2` package to create the documentation. The documentation should include a description of the function, its parameters, and its return value. (20)
+
+Add to tests and functions and quarto that goes through an example use to your github repository for Assignment 5 and commit your changes. (20 pts)
+
+Points for clear documentation, informative variable names within the code itself (10 pts)
+
+Bonus if you do this for all of your functions! (10 pts)
+We will cover this in Tuesday's lecture, but you can get started on it if you want by following the format in the example functions from class!
+
+

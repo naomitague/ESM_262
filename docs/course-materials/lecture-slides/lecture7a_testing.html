@@ -341,7 +341,6 @@ Actual length: 10.</code></pre>
 <ul>
 <li>If profit is zero, NPV should be zero</li>
 <li>If profit is positive, NPV should be positive</li>
-<li>If profit is negative, NPV should be negative</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(here)</span>
@@ -369,7 +368,11 @@ Differences:
 [1] -1.1 - 0 == -1.1</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># lets reload the correct function</span></span>
-<span id="cb11-2"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-2"><a></a>ex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! object 'ex' not found</code></pre>
+</div>
 </div>
 </section>
 <section id="testing-functions---syntax" class="slide level2 scrollable">
@@ -383,28 +386,28 @@ Differences:
 <p>Example using the <em>summary</em> function in R — imagine we are testing whether it works correctly.</p>
 <p>Also explore generating test data for testing :)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># generate some test data</span></span>
-<span id="cb12-2"><a></a>testdata <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">mean=</span><span class="dv">25</span>, <span class="at">sd=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">100</span>)</span>
-<span id="cb12-3"><a></a><span class="fu">summary</span>(testdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># generate some test data</span></span>
+<span id="cb13-2"><a></a>testdata <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">mean=</span><span class="dv">25</span>, <span class="at">sd=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">100</span>)</span>
+<span id="cb13-3"><a></a><span class="fu">summary</span>(testdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  18.68   23.20   24.68   24.82   26.38   33.86 </code></pre>
+  18.18   23.84   25.55   25.46   27.28   32.11 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># it is actually returning a named vector — what are the names?</span></span>
-<span id="cb14-2"><a></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># it is actually returning a named vector — what are the names?</span></span>
+<span id="cb15-2"><a></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Min."    "1st Qu." "Median"  "Mean"    "3rd Qu." "Max."   </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># now we can access specific elements</span></span>
-<span id="cb16-2"><a></a><span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># now we can access specific elements</span></span>
+<span id="cb17-2"><a></a><span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Max. 
-33.86 </code></pre>
+32.11 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># and use in a test to make sure this function works</span></span>
-<span id="cb18-2"><a></a><span class="co"># the max should be greater than the min, right?</span></span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a><span class="fu">expect_true</span>((<span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>] <span class="sc">-</span> <span class="fu">summary</span>(testdata)[<span class="st">"Min."</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># and use in a test to make sure this function works</span></span>
+<span id="cb19-2"><a></a><span class="co"># the max should be greater than the min, right?</span></span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a><span class="fu">expect_true</span>((<span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>] <span class="sc">-</span> <span class="fu">summary</span>(testdata)[<span class="st">"Min."</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="quick-check" class="slide level2 scrollable">
@@ -429,44 +432,44 @@ Differences:
 <section id="effective-rainfall-defining-and-testing" class="slide level2 scrollable">
 <h2><span style="color:orange">Effective Rainfall — Defining and Testing</span></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interceptC=</span><span class="dv">1</span>) {</span>
-<span id="cb19-2"><a></a>  </span>
-<span id="cb19-3"><a></a>  <span class="co"># get total rain (in case user provides multiple days)</span></span>
-<span id="cb19-4"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
-<span id="cb19-5"><a></a>  </span>
-<span id="cb19-6"><a></a>  <span class="co"># interception happens every day so we need a new vector</span></span>
-<span id="cb19-7"><a></a>  raineff <span class="ot">=</span> rain<span class="sc">-</span>interceptC</span>
-<span id="cb19-8"><a></a>  totalraineff <span class="ot">=</span> <span class="fu">sum</span>(raineff)</span>
-<span id="cb19-9"><a></a>  </span>
-<span id="cb19-10"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalraineff=</span>totalraineff))}</span>
-<span id="cb19-11"><a></a></span>
-<span id="cb19-12"><a></a></span>
-<span id="cb19-13"><a></a><span class="co"># simple tests</span></span>
-<span id="cb19-14"><a></a><span class="co"># if it never rains for 730 days, both totalrain and totalraineff should be zero</span></span>
-<span id="cb19-15"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
-<span id="cb19-16"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrain, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
-<span id="cb19-17"><a></a><span class="co"># so far so good, now for effective rainfall</span></span>
-<span id="cb19-18"><a></a></span>
-<span id="cb19-19"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
-<span id="cb19-20"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalraineff, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
-<span id="cb19-21"><a></a></span>
-<span id="cb19-22"><a></a><span class="co"># what went wrong???</span></span>
-<span id="cb19-23"><a></a></span>
-<span id="cb19-24"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interceptC=</span><span class="dv">1</span>) {</span>
-<span id="cb19-25"><a></a>    </span>
-<span id="cb19-26"><a></a>  <span class="co"># easy part - get total rain</span></span>
-<span id="cb19-27"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
-<span id="cb19-28"><a></a>  </span>
-<span id="cb19-29"><a></a>  <span class="co"># interception happens every day so we need to apply it per day</span></span>
-<span id="cb19-30"><a></a>  <span class="co"># pmax ensures effective rain can't go below zero</span></span>
-<span id="cb19-31"><a></a>  raineff <span class="ot">=</span> rain<span class="sc">-</span>interceptC</span>
-<span id="cb19-32"><a></a>  raineff <span class="ot">=</span> <span class="fu">pmax</span>(raineff,<span class="dv">0</span>)</span>
-<span id="cb19-33"><a></a>  totalraineff <span class="ot">=</span> <span class="fu">sum</span>(raineff)</span>
-<span id="cb19-34"><a></a>  </span>
-<span id="cb19-35"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalraineff=</span>totalraineff))}</span>
-<span id="cb19-36"><a></a></span>
-<span id="cb19-37"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
-<span id="cb19-38"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalraineff, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interceptC=</span><span class="dv">1</span>) {</span>
+<span id="cb20-2"><a></a>  </span>
+<span id="cb20-3"><a></a>  <span class="co"># get total rain (in case user provides multiple days)</span></span>
+<span id="cb20-4"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
+<span id="cb20-5"><a></a>  </span>
+<span id="cb20-6"><a></a>  <span class="co"># interception happens every day so we need a new vector</span></span>
+<span id="cb20-7"><a></a>  raineff <span class="ot">=</span> rain<span class="sc">-</span>interceptC</span>
+<span id="cb20-8"><a></a>  totalraineff <span class="ot">=</span> <span class="fu">sum</span>(raineff)</span>
+<span id="cb20-9"><a></a>  </span>
+<span id="cb20-10"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalraineff=</span>totalraineff))}</span>
+<span id="cb20-11"><a></a></span>
+<span id="cb20-12"><a></a></span>
+<span id="cb20-13"><a></a><span class="co"># simple tests</span></span>
+<span id="cb20-14"><a></a><span class="co"># if it never rains for 730 days, both totalrain and totalraineff should be zero</span></span>
+<span id="cb20-15"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb20-16"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalrain, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
+<span id="cb20-17"><a></a><span class="co"># so far so good, now for effective rainfall</span></span>
+<span id="cb20-18"><a></a></span>
+<span id="cb20-19"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb20-20"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalraineff, <span class="fu">equals</span>(<span class="dv">0</span>))</span>
+<span id="cb20-21"><a></a></span>
+<span id="cb20-22"><a></a><span class="co"># what went wrong???</span></span>
+<span id="cb20-23"><a></a></span>
+<span id="cb20-24"><a></a>effective_rain<span class="ot">=</span><span class="cf">function</span>(rain, <span class="at">interceptC=</span><span class="dv">1</span>) {</span>
+<span id="cb20-25"><a></a>    </span>
+<span id="cb20-26"><a></a>  <span class="co"># easy part - get total rain</span></span>
+<span id="cb20-27"><a></a>  totalrain <span class="ot">=</span> <span class="fu">sum</span>(rain)</span>
+<span id="cb20-28"><a></a>  </span>
+<span id="cb20-29"><a></a>  <span class="co"># interception happens every day so we need to apply it per day</span></span>
+<span id="cb20-30"><a></a>  <span class="co"># pmax ensures effective rain can't go below zero</span></span>
+<span id="cb20-31"><a></a>  raineff <span class="ot">=</span> rain<span class="sc">-</span>interceptC</span>
+<span id="cb20-32"><a></a>  raineff <span class="ot">=</span> <span class="fu">pmax</span>(raineff,<span class="dv">0</span>)</span>
+<span id="cb20-33"><a></a>  totalraineff <span class="ot">=</span> <span class="fu">sum</span>(raineff)</span>
+<span id="cb20-34"><a></a>  </span>
+<span id="cb20-35"><a></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">totalrain=</span>totalrain, <span class="at">totalraineff=</span>totalraineff))}</span>
+<span id="cb20-36"><a></a></span>
+<span id="cb20-37"><a></a>raindata <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">730</span>)</span>
+<span id="cb20-38"><a></a><span class="fu">expect_that</span>(<span class="fu">effective_rain</span>(raindata)<span class="sc">$</span>totalraineff, <span class="fu">equals</span>(<span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="the-art-of-testing" class="slide level2 scrollable">
@@ -484,14 +487,14 @@ Differences:
 <p>A <strong>test</strong> runs one or more <strong>expectation</strong> functions and reports a message.</p>
 <p>Format: <code>test_that(description, { series of expectations })</code></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span>
-<span id="cb20-2"><a></a><span class="co"># if profit is 0, NPV should be 0</span></span>
-<span id="cb20-3"><a></a><span class="co"># if time is 0, NPV should equal the original value</span></span>
-<span id="cb20-4"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_works"</span>, {</span>
-<span id="cb20-5"><a></a></span>
-<span id="cb20-6"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">0</span>,<span class="at">time=</span><span class="dv">100</span>,<span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">0</span>)</span>
-<span id="cb20-7"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">0</span>, <span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">100</span>)</span>
-<span id="cb20-8"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/compute_NPV.R"</span>))</span>
+<span id="cb21-2"><a></a><span class="co"># if profit is 0, NPV should be 0</span></span>
+<span id="cb21-3"><a></a><span class="co"># if time is 0, NPV should equal the original value</span></span>
+<span id="cb21-4"><a></a><span class="fu">test_that</span>(<span class="st">"compute_NPV_works"</span>, {</span>
+<span id="cb21-5"><a></a></span>
+<span id="cb21-6"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">0</span>,<span class="at">time=</span><span class="dv">100</span>,<span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">0</span>)</span>
+<span id="cb21-7"><a></a><span class="fu">expect_equal</span>(<span class="fu">compute_NPV</span>(<span class="at">value=</span><span class="dv">100</span>, <span class="at">time=</span><span class="dv">0</span>, <span class="at">discount=</span><span class="fl">0.1</span>), <span class="dv">100</span>)</span>
+<span id="cb21-8"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="using-tests" class="slide level2 scrollable">
@@ -517,39 +520,11 @@ Differences:
 <li><code>test_spring_summary.R</code> — tests for <code>spring_summary</code> function</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># run tests in a file</span></span>
-<span id="cb21-2"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_compute_NPV.R"</span>))</span>
-<span id="cb21-3"><a></a></span>
-<span id="cb21-4"><a></a></span>
-<span id="cb21-5"><a></a><span class="co"># consider another function</span></span>
-<span id="cb21-6"><a></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"course-materials/R/spring_summary.R"</span>))</span>
-<span id="cb21-7"><a></a>spring_summary</span>
-<span id="cb21-8"><a></a></span>
-<span id="cb21-9"><a></a><span class="co"># to test this function we need to create some data</span></span>
-<span id="cb21-10"><a></a>clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
-<span id="cb21-11"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
-<span id="cb21-12"><a></a><span class="fu">spring_summary</span>(clim_data)</span>
-<span id="cb21-13"><a></a><span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>))</span>
-<span id="cb21-14"><a></a></span>
-<span id="cb21-15"><a></a><span class="co"># we can embed data directly in a test</span></span>
-<span id="cb21-16"><a></a><span class="co"># save this to a file called test_spring_summary.R</span></span>
-<span id="cb21-17"><a></a><span class="fu">test_that</span>(<span class="st">"spring_summary_works"</span> ,</span>
-<span id="cb21-18"><a></a>{clim_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="at">month=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="at">day=</span><span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">year=</span><span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">2000</span>,<span class="dv">2001</span>,<span class="dv">2001</span>), </span>
-<span id="cb21-19"><a></a>                                 <span class="at">precip=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times=</span><span class="dv">4</span>), <span class="at">tavg=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>)))</span>
-<span id="cb21-20"><a></a></span>
-<span id="cb21-21"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Pavg_spring,<span class="dv">0</span>)</span>
-<span id="cb21-22"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">4</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">4</span>)</span>
-<span id="cb21-23"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="dv">2</span>)<span class="sc">$</span>Tavg_spring, <span class="dv">2</span>)</span>
-<span id="cb21-24"><a></a><span class="fu">expect_equal</span>(<span class="fu">spring_summary</span>(clim_data, <span class="at">spring_months=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))<span class="sc">$</span>warmest_spring, <span class="dv">2001</span>)</span>
-<span id="cb21-25"><a></a></span>
-<span id="cb21-26"><a></a>})</span>
-<span id="cb21-27"><a></a></span>
-<span id="cb21-28"><a></a><span class="co"># run a bunch of tests at once</span></span>
-<span id="cb21-29"><a></a></span>
-<span id="cb21-30"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_spring_summary.R"</span>))</span>
-<span id="cb21-31"><a></a></span>
-<span id="cb21-32"><a></a><span class="co"># run all tests</span></span>
-<span id="cb21-33"><a></a><span class="fu">test_dir</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># run tests in a file</span></span>
+<span id="cb22-2"><a></a><span class="fu">test_file</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests/test_compute_NPV.R"</span>))</span>
+<span id="cb22-3"><a></a></span>
+<span id="cb22-4"><a></a><span class="co"># run all tests in a directory </span></span>
+<span id="cb22-5"><a></a><span class="fu">test_dir</span>(<span class="fu">here</span>(<span class="st">"course-materials/tests"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="try-on-your-own" class="slide level2 scrollable">

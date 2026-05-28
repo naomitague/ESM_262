@@ -246,7 +246,7 @@
 <span id="cb3-2"><a></a>a <span class="ot">=</span> <span class="fu">runif</span>(<span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">100</span>, <span class="at">n=</span><span class="dv">5</span>)</span>
 <span id="cb3-3"><a></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  4.758258 34.671747 54.120602 66.645218 56.590493</code></pre>
+<pre><code>[1] 63.50658 17.87604 56.75380 21.41454 62.74404</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># ifelse can work with vectors</span></span>
 <span id="cb5-2"><a></a>classr  <span class="ot">=</span> <span class="fu">ifelse</span>(a <span class="sc">&gt;</span> <span class="dv">90</span>, <span class="st">"high"</span>,<span class="st">"low"</span>)</span>
@@ -271,11 +271,11 @@
 <span id="cb9-4"><a></a></span>
 <span id="cb9-5"><a></a><span class="fu">summarize_diversity</span>(flowers, <span class="at">index=</span><span class="st">"B"</span>)<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.38</code></pre>
+<pre><code>[1] 0.3711111</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">summarize_diversity</span>(flowers, <span class="at">index=</span><span class="st">"A"</span>)<span class="sc">$</span>simpson</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3931034</code></pre>
+<pre><code>[1] 0.383908</code></pre>
 </div>
 </div>
 </section>
@@ -334,15 +334,15 @@
 <span id="cb19-3"><a></a>catch2 <span class="ot">=</span> base<span class="sc">::</span><span class="fu">sample</span>(possible.fish, <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span>T)</span>
 <span id="cb19-4"><a></a>catch2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "steelhead" "salmon"    "cod"       "salmon"    "steelhead" "steelhead"
- [7] "salmon"    "cod"       "cod"       "salmon"    "shark"     "salmon"   
-[13] "steelhead" "tuna"      "steelhead" "shark"     "shark"     "tuna"     
-[19] "salmon"    "tuna"     </code></pre>
+<pre><code> [1] "steelhead" "tuna"      "shark"     "salmon"    "cod"       "cod"      
+ [7] "tuna"      "cod"       "shark"     "steelhead" "shark"     "salmon"   
+[13] "tuna"      "cod"       "shark"     "shark"     "salmon"    "shark"    
+[19] "cod"       "steelhead"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">classify_fish</span>(catch2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "A" "C" "C" "C" "A" "A" "C" "C" "C" "C" "C" "C" "A" "B" "A" "C" "C" "B" "C"
-[20] "B"</code></pre>
+<pre><code> [1] "A" "B" "C" "C" "C" "C" "B" "C" "C" "A" "C" "C" "B" "C" "C" "C" "C" "C" "C"
+[20] "A"</code></pre>
 </div>
 </div>
 </section>
@@ -398,7 +398,7 @@
 [1] "low"
 
 $mean_nutrient
-[1] 2.996915</code></pre>
+[1] 2.548495</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># now try high</span></span>
 <span id="cb25-2"><a></a><span class="co"># use repeat to generate the same value multiple times</span></span>
