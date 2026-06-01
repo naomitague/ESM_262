@@ -391,7 +391,7 @@ Differences:
 <span id="cb13-3"><a></a><span class="fu">summary</span>(testdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  18.28   23.43   25.35   25.36   27.38   33.03 </code></pre>
+  15.93   23.65   25.43   25.32   27.29   32.07 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># it is actually returning a named vector — what are the names?</span></span>
 <span id="cb15-2"><a></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -402,7 +402,7 @@ Differences:
 <span id="cb17-2"><a></a><span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Max. 
-33.03 </code></pre>
+32.07 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># and use in a test to make sure this function works</span></span>
 <span id="cb19-2"><a></a><span class="co"># the max should be greater than the min, right?</span></span>
