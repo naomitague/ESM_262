@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Spring 2026">
 
-<title>packages – ESM 262</title>
+<title>Testing and Documentation – ESM 262</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,24 +27,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../images/bren-hex.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-4416eb449187d038c775981408852c36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0183c4e52991136c66e793f606db2dae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/bren-hex.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7fb60bd1f9e42841000a673aab780b30.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0183c4e52991136c66e793f606db2dae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">ESM 262</span>
     </a>
   </div>
@@ -93,11 +96,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../ESM_262_syllabus.pdf"> 
+    <a class="nav-link" href="../ESM_262_syllabus.pdf"> 
 <span class="menu-text">syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -106,37 +109,41 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-course-materials">    
         <li>
-    <a class="dropdown-item" href="../../course-materials/week1.html">
+    <a class="dropdown-item" href="../course-materials/week1.html">
  <span class="dropdown-text">week 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/week2.html">
+    <a class="dropdown-item" href="../course-materials/week2.html">
  <span class="dropdown-text">week 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/week3.html">
+    <a class="dropdown-item" href="../course-materials/week3.html">
  <span class="dropdown-text">week 3</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/week4.html">
+    <a class="dropdown-item" href="../course-materials/week4.html">
  <span class="dropdown-text">week 4</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/week5.html">
+    <a class="dropdown-item" href="../course-materials/week5.html">
  <span class="dropdown-text">week 5</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/week6.html">
+    <a class="dropdown-item" href="../course-materials/week6.html">
  <span class="dropdown-text">week 6</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../course-materials/week7.html">
+    <a class="dropdown-item" href="../course-materials/week7.html">
  <span class="dropdown-text">week 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course-materials/week8.html">
+ <span class="dropdown-text">week 8</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../assignments.html"> 
+    <a class="nav-link" href="../assignments.html"> 
 <span class="menu-text">assignments</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -145,11 +152,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="../../resources.html">
+    <a class="dropdown-item" href="../resources.html">
  <span class="dropdown-text">Recommended readings &amp; resources</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../install-guide.html" target="_blank">
+    <a class="dropdown-item" href="../install-guide.html" target="_blank">
  <span class="dropdown-text">Installation guide</span></a>
   </li>  
     </ul>
@@ -182,8 +189,14 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">packages</h1>
-                      </div>
+      <h1 class="title">Testing and Documentation</h1>
+            <p class="subtitle lead">Week 9</p>
+                  <div>
+        <div class="description">
+          Spring 2026
+        </div>
+      </div>
+                </div>
   </div>
     
   
@@ -203,10 +216,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#packages-from-git" id="toc-packages-from-git" class="nav-link active" data-scroll-target="#packages-from-git"><span style="color:orange">PACKAGES from Git</span></a>
-  <ul class="collapse">
-  <li><a href="#installing-packages-from-github" id="toc-installing-packages-from-github" class="nav-link" data-scroll-target="#installing-packages-from-github"><span style="color:orange">Installing packages from GitHub</span></a></li>
-  </ul></li>
+  <li><a href="#lecture-materials" id="toc-lecture-materials" class="nav-link active" data-scroll-target="#lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</a></li>
+  <li><a href="#assignment-reminders" id="toc-assignment-reminders" class="nav-link" data-scroll-target="#assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignments</a></li>
   </ul>
 </nav>
     </div>
@@ -217,27 +228,55 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="packages-from-git" class="level1">
-<h1><span style="color:orange">PACKAGES from Git</span></h1>
-<ul>
-<li><strong>Package</strong>: An extension of the R base system with functions, data and documentation in standardized format.</li>
-<li><strong>Library</strong>: A directory containing installed packages.</li>
-<li><strong>Repository</strong>: A website providing packages for installation.</li>
-<li><strong>Source</strong>: The original version of a package with human-readable text and code.</li>
-<li><strong>Binary</strong>: A compiled version of a package with computer-readable text and code, may work only on a specific platform.</li>
-<li><strong>Base packages</strong>: Part of the R source tree, maintained by R Core.</li>
-<li><strong>Recommended packages</strong>: Part of every R installation, but not necessarily maintained by R Core.</li>
-<li><strong>Contributed packages</strong>: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.</li>
-<li><strong>User packages</strong>: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R</li>
-</ul>
-<section id="installing-packages-from-github" class="level2">
-<h2 class="anchored" data-anchor-id="installing-packages-from-github"><span style="color:orange">Installing packages from GitHub</span></h2>
-<p>you can install user packages from <em>github</em> - you need the <em>devtools</em> library to do this</p>
-<p>install_github(“naomitague/rainbow”)</p>
-<p><em>Important</em> this doesn’t create a <em>repo</em> of rainbow inside you working repository - so its safe! But you cannot <em>clone</em> or create a <em>repo</em> inside t</p>
-
-
+<section id="lecture-materials" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-materials"><i class="fa-solid fa-person-chalkboard" title="a person pointing at a chalkboard" aria-label="person-chalkboard"></i> Lecture Materials</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Lecture Slides</th>
+<th>Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../course-materials/lecture-slides/lecture8a_documentation.html">Lecture 8: Packages and Testing</a></td>
+<td><a href="../downloadables/R/compute_NPV.R">R compute_NPV</a></td>
+</tr>
+<tr class="even">
+<td><a href="../course-materials/lecture-slides/placeholder.html">Lecture 8b</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
+<section id="assignment-reminders" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-reminders"><i class="fa-solid fa-pencil" title="pencil" aria-label="pencil"></i> Assignments</h2>
+<table class="table-hover table-bordered caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assignment Type</th>
+<th>Assignment Title</th>
+<th>Date Assigned</th>
+<th>Date Due</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HW</td>
+<td><a href="../course-materials/assignments/HW6.html">Homework Assignment #6</a></td>
+<td>28/5/2026</td>
+<td>11/6/2026 , 11:59pm PT</td>
+</tr>
+</tbody>
+</table>
+
+
 </section>
 
 </main> <!-- /main -->

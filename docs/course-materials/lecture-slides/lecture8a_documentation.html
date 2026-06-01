@@ -7,10 +7,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cad2a2f8a56dfe71ee895a68e79c9b9a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <title>ESM 262 – week1-discussion-slides</title>
+  <title>ESM 262 – Documentation and Packages</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,12 +32,10 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-4c8de02291ab4c1ef58aeb73a70490ac.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1a8385bbf955fbb4448938bc10efacf4.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -131,18 +129,171 @@
   <div class="reveal">
     <div class="slides">
 
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Documentation and Packages</h1>
 
-<section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="#047C91">
-<h2></h2>
-<p><span class="custom-title">EDS 240: Discussion 1</span></p>
-<p><span class="custom-subtitle"><em>Today’s topic here</em></span></p>
-<hr class="hr-dark-blue">
-<p><span class="custom-subtitle3">Week 1 | January 7<sup>th</sup>, 2024</span></p>
+<div class="quarto-title-authors">
+</div>
+
 </section>
-<section id="slide-slug-here" class="slide level2" data-menu-title="Slide title for data menu here">
-<h2></h2>
-<p><span class="slide-title">Slide title</span></p>
-<hr>
+<section id="goals-for-today" class="slide level2 scrollable">
+<h2><span style="color:orange">Goals for today</span></h2>
+<ul>
+<li>learn about creating packages in R</li>
+<li>learn about documenting your code in R</li>
+<li>practice sharing code with others with <em>git</em></li>
+</ul>
+</section>
+<section id="packages-from-git" class="slide level2 scrollable">
+<h2><span style="color:orange">PACKAGES from Git</span></h2>
+<ul>
+<li><strong>Package</strong>: An extension of the R base system with functions, data and documentation in standardized format.</li>
+<li><strong>Library</strong>: A directory containing installed packages.</li>
+<li><strong>Repository</strong>: A website providing packages for installation.</li>
+<li><strong>Source</strong>: The original version of a package with human-readable text and code.</li>
+<li><strong>Binary</strong>: A compiled version of a package with computer-readable text and code, may work only on a specific platform.</li>
+<li><strong>Base packages</strong>: Part of the R source tree, maintained by R Core.</li>
+<li><strong>Recommended packages</strong>: Part of every R installation, but not necessarily maintained by R Core.</li>
+<li><strong>Contributed packages</strong>: All the rest. This does not mean that these packages are necessarily of lesser quality than the above, e.g., many contributed packages on CRAN are written and maintained by R Core members. They simply try to keep the base distribution as lean as possible.</li>
+<li><strong>User packages</strong>: Packages that you write, share with a smaller community - not downloadable from CRAN, but can be downloaded (or sent as a zip file) and loaded into R</li>
+</ul>
+</section>
+<section id="installing-packages-from-github" class="slide level2 scrollable">
+<h2><span style="color:orange">Installing packages from GitHub</span></h2>
+<ul>
+<li>you can transfer packages as a <em>tar</em> and <em>zipped</em> files, but most packages are now on git, so we can use devtools::install_github</li>
+</ul>
+<p>you can install user packages from <em>github</em> - you need the <em>devtools</em> library to do this</p>
+<p>install_github(“naomitague/rainbow”)</p>
+<p><em>Important</em> this doesn’t create a <em>repo</em> of rainbow inside you working repository - so its safe! But you can’t modify it</p>
+</section>
+<section id="write-your-own-packages" class="slide level2 scrollable">
+<h2><span style="color:orange">Write your own packages</span></h2>
+<ul>
+<li><p>to easily share functions and data with others with R-specific documentation</p></li>
+<li><p>have a set of tools (functions) that you often use, that can be easily loaded</p></li>
+<li><p>be part of the R community</p></li>
+<li><p>to share your work with others - you can make it available on GitHub,</p></li>
+<li><p>submit it to CRAN (the R package repository) - this is a great way to share your work and get feedback from others</p></li>
+</ul>
+<p><a href="https://r-pkgs.org/index.html">More about R-packages</a></p>
+</section>
+<section id="workflow-for-creating-your-own-package" class="slide level2 scrollable">
+<h2><span style="color:orange">Workflow for creating your own package</span></h2>
+<ul>
+<li><p>Create a new project in RStudio - select “New Project” and then “New Directory” and then “R Package”</p></li>
+<li><p>alternatively you can create a new package using the <em>usethis</em> package - this is a great way to create a new package and it will set up the structure for you</p>
+<ul>
+<li>syntax is <em>usethis::create_package(“path/to/your/package”)</em> - this will create a new package in the specified directory</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-happens" class="slide level2 scrollable">
+<h2><span style="color:orange">What happens</span></h2>
+<ul>
+<li><p>Creating a package will create a new directory with the following structure:</p></li>
+<li><p><em>DESCRIPTION</em> - a file that contains metadata about your package (name, version, author, etc.)</p></li>
+<li><p><em>NAMESPACE</em> - a file that contains information about the functions and data that are exported</p></li>
+<li><p><em>R/</em> - a directory that contains the R code for your package (functions, data, etc)</p></li>
+<li><p><em>man/</em> - a directory that contains the help files for your package (this is where the documentation generated by roxygen2 will go)</p></li>
+</ul>
+<p>You can also add other directories for data, tests, vignettes, etc. but these are the basic ones you need to get started</p>
+<ul>
+<li><em>Data</em> - a directory that contains data sets that are included in your package</li>
+<li><em>tests</em> - a directory that contains tests for your package</li>
+<li><em>vignettes</em> - a directory that contains long-form documentation for your package</li>
+</ul>
+</section>
+<section id="try-it" class="slide level2 scrollable">
+<h2><span style="color:orange">Try it</span></h2>
+<p>We will go through together</p>
+</section>
+<section id="adding-your-assignment-files-to-a-package" class="slide level2 scrollable">
+<h2><span style="color:orange">Adding your assignment files to a package</span></h2>
+<ul>
+<li><p>if you’ve already created an R subdirectory for Assignment 5 we can build a package around that</p>
+<ul>
+<li>here I’d recommend <code>usethis::create_package(".")</code> from inside your existing project directory</li>
+</ul></li>
+<li><p><em>important</em> all R files must be in the R subdirectory — scripts with loose code or <code>library()</code> calls outside functions will need to be cleaned up first</p></li>
+<li><p>alternatively you can start <em>fresh</em> and make a package in a new directory and then copy your R files into the R subdirectory of your package</p>
+<ul>
+<li>here I’d recommend starting in a clean directory and create a project with a new git repo</li>
+</ul></li>
+</ul>
+</section>
+<section id="documentation" class="slide level2 scrollable">
+<h2><span style="color:orange">Documentation</span></h2>
+<ul>
+<li><p>There is a standard format for documentation that can be read by automated tools (<strong>Doxygen</strong>)</p></li>
+<li><p><strong>roxygen2</strong> - an R package that generates “standard” R documentation (help pages) using Doxygen-style syntax</p></li>
+<li><p>Automated documentation tools encourage a structured, consistent approach to documenting your code</p></li>
+<li><p>We will use the conventions that work with roxygen2 - and then use this program to generate formal R documentation. Roxygen2 is similar to Doxygen which is used for C code — so it’s a widely used format</p></li>
+</ul>
+</section>
+<section id="documentation-in-r-with-roxygen" class="slide level2 scrollable">
+<h2><span style="color:orange">Documentation in R with Roxygen</span></h2>
+<p>Documentation is placed at the top of the <em>something.R</em> file; all lines start with <em>#’</em></p>
+<p>See compute_NPV.R for an example</p>
+</section>
+<section id="three-parts-to-r-documentation" class="slide level2 scrollable">
+<h2><span style="color:orange">Three Parts to R documentation</span></h2>
+<ul>
+<li><strong>Description</strong> - summary of what your function does</li>
+<li><strong>Tagged (using special “key” words)</strong></li>
+</ul>
+<p>Here are some common examples — there are many others:</p>
+<ul>
+<li><em>@param</em> input/parameter description</li>
+<li><em>@return</em> what your function returns (outputs)</li>
+<li><em>@example</em> how to use it</li>
+<li><em>@references</em> citations or URLs</li>
+<li><em>@author</em> YOU</li>
+</ul>
+<p>(You don’t need all of these. Start with at least <code>@param</code> and <code>@return</code>; <code>@examples</code> is also a good idea.)</p>
+<ul>
+<li><strong>Within function</strong> Any use of # within the body of the function (this does not get used in the Help)</li>
+</ul>
+</section>
+<section id="creating-help-pages" class="slide level2 scrollable">
+<h2><span style="color:orange">Creating Help pages</span></h2>
+<p>Once your roxygen comments are in place, generate help pages in one of two ways:</p>
+<ul>
+<li><p><code>roxygenise()</code> from the roxygen2 package</p></li>
+<li><p><code>document()</code> from the devtools package</p></li>
+<li><p>Both work on the *.R files in the R directory of your project</p></li>
+<li><p>so you can have many functions in many files and they will all be documented at once</p></li>
+</ul>
+</section>
+<section id="workflow-for-documentation" class="slide level2 scrollable">
+<h2><span style="color:orange">Workflow for documentation</span></h2>
+<ul>
+<li><p>Save your function, make sure that it is in the <em>R/</em> subdirectory your project directory eg <em>R/compute_NPV.R</em></p></li>
+<li><p>Set your working directory to your project directory</p></li>
+<li><p>Make sure you’ve run <code>library(devtools)</code></p></li>
+<li><p>Run <code>document()</code> from the RStudio menu or <em>document()</em> from command line - this will create documentation for all *.R files you have in the R directory (you can have many of them)</p></li>
+<li><p>try <code>help(functionname)</code> to see the results</p></li>
+</ul>
+</section>
+<section id="try-it-1" class="slide level2 scrollable">
+<h2><span style="color:orange">Try it</span></h2>
+<ul>
+<li><p>Add your functions from your Assignment 5 to the R subdirectory of your package</p></li>
+<li><p>Add documentation to one of the functions you built for Assignment 5</p></li>
+<li><p>Check that it works by running <code>help(functionname)</code></p></li>
+<li><p>If you created a new project directory (started fresh) - you’ll have to also make a new github repo</p>
+<ul>
+<li>remember (usethis::use_github() will do this for you)</li>
+</ul></li>
+</ul>
+</section>
+<section id="pair-and-share" class="slide level2 scrollable">
+<h2><span style="color:orange">Pair and Share</span></h2>
+<ul>
+<li>find a new partner - give them the link to one of the functions that you’ve developed</li>
+<li>let them download from git</li>
+<li>see if they can create data and run the function just by reading the documentation</li>
+</ul>
 
 
 </section>
@@ -160,7 +311,6 @@
   <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -182,8 +332,7 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -204,7 +353,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -354,7 +503,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -363,6 +512,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
