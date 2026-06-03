@@ -391,7 +391,7 @@ Differences:
 <span id="cb13-3"><a></a><span class="fu">summary</span>(testdata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  15.93   23.65   25.43   25.32   27.29   32.07 </code></pre>
+  17.98   23.02   25.19   25.27   27.21   31.90 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># it is actually returning a named vector — what are the names?</span></span>
 <span id="cb15-2"><a></a><span class="fu">names</span>(<span class="fu">summary</span>(testdata))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -401,8 +401,8 @@ Differences:
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># now we can access specific elements</span></span>
 <span id="cb17-2"><a></a><span class="fu">summary</span>(testdata)[<span class="st">"Max."</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> Max. 
-32.07 </code></pre>
+<pre><code>Max. 
+31.9 </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># and use in a test to make sure this function works</span></span>
 <span id="cb19-2"><a></a><span class="co"># the max should be greater than the min, right?</span></span>

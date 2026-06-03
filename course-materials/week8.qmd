@@ -9,7 +9,7 @@ description: "Spring 2026"
 | Lecture Slides | Materials |
 |----------------|-----------|
 | [Lecture 8: Packages and Testing](lecture-slides/lecture8a_documentation.qmd) |  [R compute_NPV](../downloadables/R/compute_NPV.R)  |
-| [Lecture 8b](lecture-slides/placeholder.qmd) | |
+| [Lecture 8b](lecture-slides/Wrap_Up.qmd) | |
 
 ## {{< fa pencil title="pencil" >}} Assignments {#assignment-reminders}
 

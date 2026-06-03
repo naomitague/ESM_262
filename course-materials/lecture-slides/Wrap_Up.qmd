@@ -1,0 +1,189 @@
+---
+title: 'A bit more on Packages and Wrap Up'
+format:
+  revealjs:
+    theme: solarized
+    resources: ["images"]
+editor: visual
+execute:
+  echo: true
+  warning: true
+  message: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo =TRUE)
+knitr::opts_chunk$set(error=TRUE)
+#knitr::opts_knit$set(root.dir = '/Users/christina/Desktop/Courses.local/ESM262n/docs/packages')
+library(tidyverse)
+library(devtools)
+library(roxygen2)
+library(testthat)
+library(here)
+
+
+```
+
+## [A bit more on packages]{style="color:orange"} {.scrollable}
+
+- development workflow
+- sharing workflow
+
+## [How to develop your package]{style="color:orange"} {.scrollable}
+
+Once you have a basic package structure, you want to have it work as a package.
+
+Do this each time you change something (or start an R session):
+
+install using either:
+
+- **Build** - **Build and Reload** from menu
+- **load_all()** command from command line
+
+This will load your functions in your package that is under development.
+
+You can add additional functions to the R subdirectory; when you do, you need to rebuild and reload (see above).
+
+## [A few more items]{style="color:orange"} {.scrollable}
+
+Note: You can edit the DESCRIPTION file to add useful information, particularly if you are going to share this package. It also includes dependencies — other packages that your package depends on (e.g. *tidyverse*) — we will come back to this.
+
+It is useful to keep a Quarto file or R script that lets you run your functions and helps you in development, but this will not be part of your package!
+
+Remember to commit your results as you go and push to **Github**.
+
+## [DESCRIPTION file dependencies]{style="color:orange"} {.scrollable}
+
+Your package may use other packages. To make sure they are available in your package, you can add them to DESCRIPTION using:
+
+**usethis::use_package("name")**
+
+For example:
+
+*usethis::use_package("purrr")*
+
+Now your functions can use *purrr* functions. It is good practice when writing your own packages to explicitly reference the package that any function comes from. For example:
+
+*purrr::map_df(fishes, fish_summary)*
+
+Tidyverse is a bit different since it is not really a single package. To include tidyverse in your package use:
+
+**use_tidy_dependencies()**
+
+NOTE these functions will change the DESCRIPTION file -you can look and see how
+
+You can directly edit the following fields in the **DESCRIPTION** file: Authors, Description, Title
+
+## [Creating Packages]{style="color:orange"} {.scrollable}
+
+- create and link with GitHub
+
+- edit your DESCRIPTION file to add a title and description of your package
+
+- populate with R functions
+
+- run *document()* to create help files
+
+- repeat as needed — add functions as you go, then *build* and *load*
+
+- add package dependencies with ***usethis::use_package("name")***, which updates your DESCRIPTION file
+
+- add tests
+
+## [Additional options]{style="color:orange"} {.scrollable}
+
+
+- add data
+
+- add testing
+
+- share your package
+
+A good reference; https://r-pkgs.org/
+
+## [Giving the package to others]{style="color:orange"} {.scrollable}
+
+
+To give the package to others (who will simply be using it):
+
+ if your users are comfortable with *GitHub*, you can use:
+
+*devtools::install_github("yourname/packagename")*
+
+This can also be a handy way to share the package with yourself. :)
+
+
+Alternatively - create a sharable file
+
+- build a source package (see the Build directory)
+
+- this will create a \*.gz file that you can distribute
+
+- the user will then **install** this package (see the installation menu, go to "Install from \*.gz file") in order to have access to the functions and data in your package
+
+## [WRAP UP — What we learned]{style="color:orange"} {.scrollable}
+
+**Best Practices**
+
+- reproducibility (track changes to your code)
+
+- modular programming
+
+- always start with a diagram/flow chart — break your task into modules with inputs/parameters and outputs
+
+- testing as you go (with sample datasets) and automated testing
+
+- write clear, informative documentation
+
+## [Programming Skills]{style="color:orange"} {.scrollable}
+
+- building functions
+
+- generating and storing data; data structures
+
+- repeating/looping
+
+- flow control (if, case statements)
+
+- working with APIs to incorporate data into your workflow
+
+- sharing code with others
+
+  - git — for other developers
+  - packages — for your clients
+
+
+## [Things we didn't get to (what I'd cover next)]{style="color:orange"} {.scrollable}
+
+
+- working on servers and cloud-based programming
+
+- data cleaning
+
+  - in general, what to look for
+  - specialized R tools
+
+- data manipulation in R
+
+  - specialized tools in packages like *purrr* and *tidyverse* for sorting, aggregating, and manipulating data
+
+- command line / terminal window
+
+  - basic Unix commands
+
+## [AI]{style="color:orange"} {.scrollable}
+
+- use what you know to guide your workflow — AI assists, you design!
+
+- use AI for syntax, and to learn about features and techniques you have questions about
+
+- take advantage of what you've learned about testing (think about what you can test and how to test functionality)
+
+- use *git* and reproducibility
+
+  - be able to go backwards if AI makes unwanted changes to your project
+  - consider tracking your **prompts** in a complex project
+
+## [Questions?]{style="color:orange"} {.scrollable}
+
+- feedback helps — please add comments to evaluations: what worked, and suggestions for changes

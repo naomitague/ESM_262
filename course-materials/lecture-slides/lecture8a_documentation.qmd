@@ -26,10 +26,9 @@ library(here)
 
 ## [Goals for today]{style="color:orange"} {.scrollable}
 
-* learn about creating packages in R
-* learn about documenting your code in R
-* practice sharing code with others with *git*
-
+- learn about creating packages in R
+- learn about documenting your code in R
+- practice sharing code with others with *git*
 
 ## [PACKAGES from Git]{style="color:orange"} {.scrollable}
 
@@ -175,13 +174,11 @@ Once your roxygen comments are in place, generate help pages in one of two ways:
 - Check that it works by running `help(functionname)`
 
 - If you created a new project directory (started fresh) - you'll have to also make a new github repo
-  - remember (usethis::use_github() will do this for you)
 
+  - remember (usethis::use_github() will do this for you)
 
 ## [Pair and Share]{style="color:orange"} {.scrollable}
 
 - find a new partner - give them the link to one of the functions that you've developed
 - let them download from git
 - see if they can create data and run the function just by reading the documentation
-
-

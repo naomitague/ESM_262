@@ -271,10 +271,9 @@
 <span id="cb6-5"><a></a>power <span class="ot">=</span> <span class="fu">power_gen_orig</span>(flow, height)</span>
 <span id="cb6-6"><a></a>power</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]   96127.23  363079.60  362539.51 1154621.81  588076.56  194215.20
- [7]  208126.19  249591.10  757143.74  188207.97  947162.55  676581.67
-[13]  815869.49 1468052.43  296080.70  934970.91  101138.83 1402715.88
-[19]  313963.77 1327358.74</code></pre>
+<pre><code> [1]  399042.5  744446.5  543014.9  750264.4  300270.6 1184358.8  680486.9
+ [8]  587780.8  528250.5  932668.5 1011852.3  438378.9  434086.5  333470.2
+[15]  413230.5  719823.9  599343.5  961593.3  666612.9  324217.3</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">length</span>(power)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -290,9 +289,9 @@
 <span id="cb12-4"><a></a><span class="co"># it works but what is it doing?</span></span>
 <span id="cb12-5"><a></a> power</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]     0.00 43727.42     0.00 43243.21     0.00 12133.22     0.00 28382.63
- [9]     0.00 16312.11     0.00 43622.22     0.00 54271.30     0.00 62442.33
-[17]     0.00 75910.75     0.00 46972.91</code></pre>
+<pre><code> [1]     0.00 42585.75     0.00 54448.39     0.00 46273.04     0.00 35671.80
+ [9]     0.00 76551.20     0.00 32293.08     0.00 25680.50     0.00 29031.64
+[17]     0.00 60618.37     0.00 22119.41</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># unclear behaviors - best to not do it</span></span>
 <span id="cb14-2"><a></a><span class="co"># helps to define a data frame</span></span>
@@ -306,11 +305,11 @@
 <span id="cb14-10"><a></a> powerdf<span class="sc">$</span>lowK <span class="ot">=</span> <span class="fu">power_gen_orig</span>(flow, height, <span class="at">K=</span><span class="fl">0.9</span>)</span>
 <span id="cb14-11"><a></a> <span class="fu">mean</span>(powerdf<span class="sc">$</span>lowK)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 24019.77</code></pre>
+<pre><code>[1] 23921.62</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a> <span class="fu">mean</span>(powerdf<span class="sc">$</span>highK)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10675.45</code></pre>
+<pre><code>[1] 10631.83</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># helpful for graphing</span></span>
 <span id="cb18-2"><a></a></span>

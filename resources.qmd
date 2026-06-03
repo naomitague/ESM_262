@@ -14,3 +14,5 @@ GitHub's [Git Guides](https://github.com/git-guides)
 
 
 [R Distributions](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html)
+
+[R Packages](https://r-pkgs.org/)

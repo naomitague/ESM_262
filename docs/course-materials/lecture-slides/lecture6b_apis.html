@@ -380,13 +380,13 @@ $class
  $ url        : chr "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=34.42&amp;longitude=-119.7&amp;hourly=pm2_5&amp;past_days=3"
  $ status_code: int 200
  $ headers    : &lt;httr2_headers&gt;
-  ..$ Date             : chr "Mon, 01 Jun 2026 18:47:55 GMT"
+  ..$ Date             : chr "Wed, 03 Jun 2026 16:40:53 GMT"
   ..$ Content-Type     : chr "application/json; charset=utf-8"
   ..$ Transfer-Encoding: chr "chunked"
   ..$ Connection       : chr "keep-alive"
   ..$ Content-Encoding : chr "deflate"
- $ body       : raw [1:4745] 7b 22 6c 61 ...
- $ timing     : Named num [1:6] 0 0.0373 0.2105 0.5586 0.7335 ...
+ $ body       : raw [1:4773] 7b 22 6c 61 ...
+ $ timing     : Named num [1:6] 0 0.0323 0.2101 0.575 0.7602 ...
   ..- attr(*, "names")= chr [1:6] "redirect" "namelookup" "connect" "pretransfer" ...
  $ request    :List of 8
   ..$ url     : chr "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=34.42&amp;longitude=-119.7&amp;hourly=pm2_5&amp;past_days=3"
@@ -396,9 +396,9 @@ $class
   ..$ fields  : list()
   ..$ options : list()
   ..$ policies: list()
-  ..$ state   :&lt;environment: 0x7fa3e48a9980&gt; 
+  ..$ state   :&lt;environment: 0x7fe4c3552d48&gt; 
   ..- attr(*, "class")= chr "httr2_request"
- $ cache      :&lt;environment: 0x7fa3858c5f90&gt; 
+ $ cache      :&lt;environment: 0x7fe4d17446e8&gt; 
  - attr(*, "class")= chr "httr2_response"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Convert  to an R list</span></span>
@@ -416,8 +416,8 @@ $class
 <span id="cb12-2"><a></a><span class="fu">str</span>(aq_raw<span class="sc">$</span>hourly)          <span class="co"># compact overview of structure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 2
- $ time : chr [1:192] "2026-05-29T00:00" "2026-05-29T01:00" "2026-05-29T02:00" "2026-05-29T03:00" ...
- $ pm2_5: num [1:192] 3.7 4.6 4 4 3.9 3.9 3.9 3.9 4 4 ...</code></pre>
+ $ time : chr [1:192] "2026-05-31T00:00" "2026-05-31T01:00" "2026-05-31T02:00" "2026-05-31T03:00" ...
+ $ pm2_5: num [1:192] 5.2 5.7 6.1 6.4 6.7 6.6 6.5 6.3 6.3 6.1 ...</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">length</span>(aq_raw<span class="sc">$</span>hourly<span class="sc">$</span>pm2_5) <span class="co"># how many values?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -441,12 +441,12 @@ $class
 <span id="cb16-8"><a></a><span class="fu">head</span>(aq_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 time pm2_5
-1 2026-05-29 00:00:00   3.7
-2 2026-05-29 01:00:00   4.6
-3 2026-05-29 02:00:00   4.0
-4 2026-05-29 03:00:00   4.0
-5 2026-05-29 04:00:00   3.9
-6 2026-05-29 05:00:00   3.9</code></pre>
+1 2026-05-31 00:00:00   5.2
+2 2026-05-31 01:00:00   5.7
+3 2026-05-31 02:00:00   6.1
+4 2026-05-31 03:00:00   6.4
+5 2026-05-31 04:00:00   6.7
+6 2026-05-31 05:00:00   6.6</code></pre>
 </div>
 </div>
 <p>Now it’s a regular R data frame</p>
@@ -552,12 +552,12 @@ $class
 <span id="cb33-10"><a></a><span class="fu">head</span>(aq_df2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 time pm2_5 ozone
-1 2026-05-29 00:00:00   3.7    82
-2 2026-05-29 01:00:00   4.6    81
-3 2026-05-29 02:00:00   4.0    80
-4 2026-05-29 03:00:00   4.0    79
-5 2026-05-29 04:00:00   3.9    78
-6 2026-05-29 05:00:00   3.9    77</code></pre>
+1 2026-05-31 00:00:00   5.2    92
+2 2026-05-31 01:00:00   5.7    92
+3 2026-05-31 02:00:00   6.1    91
+4 2026-05-31 03:00:00   6.4    88
+5 2026-05-31 04:00:00   6.7    82
+6 2026-05-31 05:00:00   6.6    74</code></pre>
 </div>
 </div>
 <p>Now it’s a regular R data frame</p>
